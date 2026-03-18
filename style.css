@@ -216,6 +216,45 @@ img {
   font-size: 1.5rem;
 }
 
+/* ========== LOGO IMAGES ========== */
+.logo-img {
+  display: block;
+  filter: hue-rotate(-120deg) saturate(2.5) brightness(1.1);
+  mix-blend-mode: screen;
+}
+
+.logo-img--header {
+  height: 56px;
+  width: auto;
+}
+
+.logo-img--footer {
+  height: 110px;
+  width: auto;
+  margin-bottom: 16px;
+}
+
+.hero__logo-watermark {
+  position: absolute;
+  right: 7%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.logo-img--watermark {
+  height: 360px;
+  width: auto;
+  filter: hue-rotate(-120deg) saturate(2.5) brightness(1.1);
+  mix-blend-mode: screen;
+  opacity: 0.14;
+}
+
+@media (max-width: 1100px) {
+  .hero__logo-watermark { display: none; }
+}
+
 .header__nav {
   display: flex;
   gap: 32px;

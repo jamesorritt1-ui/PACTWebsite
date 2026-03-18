@@ -1,0 +1,193 @@
+/* =========================================================
+   THE PERFORMANCE ACT — OUR WHANAU PAGE
+   team.css v1
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. PHILOSOPHY — Intro Section
+   --------------------------------------------------------- */
+
+.tm-philosophy {
+  background: var(--black);
+  padding: 80px 0 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tm-philosophy__text {
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.75;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tm-philosophy__text strong {
+  color: var(--yellow);
+  font-weight: 500;
+}
+
+
+/* ---------------------------------------------------------
+   2. BIO — Two-Column Bio Layout
+   --------------------------------------------------------- */
+
+.tm-bio {
+  background: var(--black);
+  padding: 80px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tm-bio__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.tm-bio--reverse .tm-bio__grid {
+  direction: rtl;
+}
+
+.tm-bio--reverse .tm-bio__grid > * {
+  direction: ltr;
+}
+
+.tm-bio__image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tm-bio__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(100%) contrast(1.1) brightness(0.85);
+  transition: filter 0.5s ease;
+}
+
+.tm-bio__image:hover img {
+  filter: grayscale(0%) contrast(1) brightness(1);
+}
+
+.tm-bio__name {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--yellow);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.tm-bio__role {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 8px;
+}
+
+.tm-bio__credential {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tm-bio__text p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.tm-bio__text p:last-child {
+  margin-bottom: 0;
+}
+
+.tm-bio__text strong {
+  color: var(--white);
+  font-weight: 500;
+}
+
+
+/* ---------------------------------------------------------
+   3. TESTIMONIAL — Blockquote
+   --------------------------------------------------------- */
+
+.tm-testimonial {
+  margin-top: 32px;
+  padding: 24px 28px;
+  border-left: 3px solid var(--yellow);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0 4px 4px 0;
+}
+
+.tm-testimonial p {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.tm-testimonial cite {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  font-style: normal;
+}
+
+
+/* ---------------------------------------------------------
+   4. RESPONSIVE BREAKPOINTS
+   --------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .tm-bio__grid {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tm-bio__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .tm-bio--reverse .tm-bio__grid {
+    direction: ltr;
+  }
+
+  .tm-philosophy {
+    padding: 60px 0 40px;
+  }
+
+  .tm-bio {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .tm-bio__name {
+    font-size: 1.5rem;
+  }
+}
