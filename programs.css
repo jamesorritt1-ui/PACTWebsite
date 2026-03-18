@@ -1,0 +1,322 @@
+/* =========================================================
+   THE PERFORMANCE ACT — PROGRAMS PAGE
+   programs.css v1
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   1. SECTIONS (numbered sections)
+   --------------------------------------------------------- */
+
+.pg-section {
+  padding: var(--section-padding) 0;
+}
+
+.pg-section--dark {
+  background: var(--black);
+}
+
+.pg-section--alt {
+  background: var(--gray-900, #1A1A1A);
+}
+
+.pg-section-header {
+  margin-bottom: 48px;
+}
+
+.pg-section-num {
+  font-family: var(--font-heading);
+  font-size: clamp(5rem, 10vw, 8rem);
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.08);
+  line-height: 0.85;
+  display: block;
+  margin-bottom: -20px;
+  user-select: none;
+}
+
+.pg-section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.pg-section-title em {
+  color: var(--yellow);
+  font-style: normal;
+}
+
+/* ---------------------------------------------------------
+   2. BESPOKE TEXT (intro paragraphs)
+   --------------------------------------------------------- */
+
+.pg-bespoke-text {
+  max-width: 780px;
+}
+
+.pg-bespoke-text p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.pg-bespoke-text p:last-child {
+  margin-bottom: 0;
+}
+
+.pg-bespoke-text strong {
+  color: var(--yellow);
+  font-weight: 500;
+}
+
+/* ---------------------------------------------------------
+   3. SCALE GRID & CARDS (individual / team / org)
+   --------------------------------------------------------- */
+
+.pg-scale-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.pg-scale-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  padding: 40px 32px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.pg-scale-card:hover {
+  border-color: var(--yellow);
+  transform: translateY(-4px);
+}
+
+.pg-scale-card__icon {
+  width: 48px;
+  height: 48px;
+  color: var(--yellow);
+  margin-bottom: 24px;
+}
+
+.pg-scale-card__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.pg-scale-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+}
+
+.pg-scale-card__desc {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.75;
+}
+
+/* ---------------------------------------------------------
+   4. PROGRAM GRID & CARDS (6 program tiles)
+   --------------------------------------------------------- */
+
+.pg-program-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.pg-program-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  padding: 36px 28px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.pg-program-card:hover {
+  border-color: var(--yellow);
+  transform: translateY(-4px);
+}
+
+.pg-program-card--cta {
+  border-style: dashed;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.pg-program-card--cta:hover {
+  border-color: var(--yellow);
+  border-style: dashed;
+}
+
+.pg-program-card__icon {
+  width: 40px;
+  height: 40px;
+  color: var(--yellow);
+  margin-bottom: 20px;
+}
+
+.pg-program-card__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.pg-program-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+
+.pg-program-card__desc {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.pg-program-card__example {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--yellow);
+  letter-spacing: 0.02em;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ---------------------------------------------------------
+   5. PROCESS (timeline with spine and numbered steps)
+   --------------------------------------------------------- */
+
+.pg-process {
+  position: relative;
+  max-width: 720px;
+  margin: 40px auto 0;
+  padding-left: 60px;
+}
+
+.pg-process__spine {
+  position: absolute;
+  left: 47px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--yellow) 0%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+}
+
+.pg-process-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding-bottom: 48px;
+  position: relative;
+}
+
+.pg-process-step:last-child {
+  padding-bottom: 0;
+}
+
+.pg-process-step__num {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--yellow);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--yellow);
+  position: relative;
+  left: -36px;
+  background: var(--black);
+}
+
+.pg-process-step__content {
+  padding-top: 8px;
+}
+
+.pg-process-step__title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.pg-process-step__content p {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.75;
+}
+
+/* ---------------------------------------------------------
+   6. RESPONSIVE
+   --------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .pg-program-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .pg-scale-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .pg-section {
+    padding: 70px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .pg-program-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pg-process {
+    padding-left: 48px;
+  }
+
+  .pg-process__spine {
+    left: 16px;
+  }
+
+  .pg-process-step__num {
+    width: 40px;
+    height: 40px;
+    left: -28px;
+  }
+}
