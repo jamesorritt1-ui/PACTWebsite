@@ -212,12 +212,12 @@
   position: relative;
   max-width: 720px;
   margin: 40px auto 0;
-  padding-left: 60px;
+  padding-left: 80px;
 }
 
 .pg-process__spine {
   position: absolute;
-  left: 47px;
+  left: 24px;
   top: 0;
   bottom: 0;
   width: 2px;
@@ -231,7 +231,7 @@
 .pg-process-step {
   display: flex;
   align-items: flex-start;
-  gap: 24px;
+  gap: 28px;
   padding-bottom: 48px;
   position: relative;
 }
@@ -254,7 +254,8 @@
   font-weight: 600;
   color: var(--yellow);
   position: relative;
-  left: -36px;
+  left: -56px;
+  margin-right: -56px;
   background: var(--black);
 }
 
@@ -307,16 +308,17 @@
   }
 
   .pg-process {
-    padding-left: 48px;
+    padding-left: 64px;
   }
 
   .pg-process__spine {
-    left: 16px;
+    left: 18px;
   }
 
   .pg-process-step__num {
     width: 40px;
     height: 40px;
-    left: -28px;
+    left: -46px;
+    margin-right: -46px;
   }
 }
