@@ -85,6 +85,17 @@
   margin-bottom: 8px;
 }
 
+.tm-bio__quals {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: rgba(255, 255, 255, 0.5);
+  display: block;
+  margin-top: 4px;
+}
+
 .tm-bio__role {
   font-family: var(--font-heading);
   font-size: 0.8rem;
