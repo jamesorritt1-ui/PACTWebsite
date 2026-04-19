@@ -212,4 +212,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
+  /* ---------- NZ SUPPORT LINES MODAL ---------- */
+  const slnBtn   = document.getElementById('supportLineBtn');
+  const slnModal = document.getElementById('supportLineModal');
+  const slnClose = document.getElementById('supportLineClose');
+  const slnBack  = slnModal ? slnModal.querySelector('.support-line-modal__backdrop') : null;
+
+  function openSln() {
+    if (!slnModal) return;
+    slnModal.classList.add('is-open');
+    slnModal.removeAttribute('aria-hidden');
+    document.body.style.overflow = 'hidden';
+    slnClose && slnClose.focus();
+  }
+
+  function closeSln() {
+    if (!slnModal) return;
+    slnModal.classList.remove('is-open');
+    slnModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    slnBtn && slnBtn.focus();
+  }
+
+  if (slnBtn)   slnBtn.addEventListener('click', openSln);
+  if (slnClose) slnClose.addEventListener('click', closeSln);
+  if (slnBack)  slnBack.addEventListener('click', closeSln);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && slnModal && slnModal.classList.contains('is-open')) closeSln();
+  });
+
 });

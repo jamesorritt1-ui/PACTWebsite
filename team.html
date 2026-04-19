@@ -8,11 +8,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=13">
+  <link rel="stylesheet" href="style.css?v=15">
   <link rel="stylesheet" href="approach.css?v=1">
-  <link rel="stylesheet" href="team.css?v=1">
+  <link rel="stylesheet" href="team.css?v=2">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="images/icon-48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="images/icon-512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
 </head>
 <body>
+
+  <!-- ========== SCROLL PROGRESS ========== -->
+  <div class="tm-scroll-progress" id="tmScrollProgress" aria-hidden="true"></div>
 
   <!-- ========== HEADER ========== -->
   <header class="header" id="header">
@@ -26,15 +36,15 @@
         <a href="index.html#about" class="nav-link">ABOUT</a>
         <a href="approach.html" class="nav-link">APPROACH</a>
         <a href="index.html#pillars" class="nav-link">OUR PACT</a>
-        <a href="programs.html" class="nav-link">PROGRAMS</a>
+        <a href="programs.html" class="nav-link">SUPPORT</a>
         <a href="team.html" class="nav-link active">TEAM</a>
         <a href="blog.html" class="nav-link">INSIGHTS</a>
-        <a href="https://forms.gle/AH3zUemRTNKgcB9E7" target="_blank" rel="noopener" class="nav-link">CONTACT</a>
+        <a href="contact.html" class="nav-link">CONTACT</a>
       </nav>
 
       <div class="header__actions">
-        <a href="programs.html" class="btn btn--primary btn--sm">VIEW PROGRAMS</a>
-        <a href="https://forms.gle/AH3zUemRTNKgcB9E7" target="_blank" rel="noopener" class="btn btn--outline btn--sm">GET IN TOUCH</a>
+        <a href="programs.html" class="btn btn--primary btn--sm">EXPLORE SUPPORT</a>
+        <a href="contact.html" class="btn btn--outline btn--sm">GET IN TOUCH</a>
       </div>
 
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -52,13 +62,13 @@
       <a href="index.html#about" class="mobile-nav__link">ABOUT</a>
       <a href="approach.html" class="mobile-nav__link">APPROACH</a>
       <a href="index.html#pillars" class="mobile-nav__link">OUR PACT</a>
-      <a href="programs.html" class="mobile-nav__link">PROGRAMS</a>
+      <a href="programs.html" class="mobile-nav__link">SUPPORT</a>
       <a href="team.html" class="mobile-nav__link">TEAM</a>
       <a href="blog.html" class="mobile-nav__link">INSIGHTS</a>
-      <a href="https://forms.gle/AH3zUemRTNKgcB9E7" target="_blank" rel="noopener" class="mobile-nav__link">CONTACT</a>
+      <a href="contact.html" class="mobile-nav__link">CONTACT</a>
       <div class="mobile-nav__actions">
-        <a href="programs.html" class="btn btn--primary">VIEW PROGRAMS</a>
-        <a href="https://forms.gle/AH3zUemRTNKgcB9E7" target="_blank" rel="noopener" class="btn btn--outline">GET IN TOUCH</a>
+        <a href="programs.html" class="btn btn--primary">EXPLORE SUPPORT</a>
+        <a href="contact.html" class="btn btn--outline">GET IN TOUCH</a>
       </div>
     </nav>
   </div>
@@ -70,7 +80,7 @@
       <div class="page-hero__content">
         <p class="page-hero__eyebrow">THE PERFORMANCE ACT</p>
         <h1 class="page-hero__title"><span class="accent">OUR WH&#256;NAU</span></h1>
-        <p class="page-hero__subtitle">Two practitioners, one shared commitment &mdash; walking alongside athletes, coaches, and wh&#257;nau across Aotearoa to grow hauora through sport.</p>
+        <p class="page-hero__subtitle">Different paths, one shared kaupapa. Grounded in research, shaped by sport, and built on real relationships.</p>
       </div>
     </div>
   </section>
@@ -78,12 +88,13 @@
   <!-- ========== TEAM PHILOSOPHY ========== -->
   <section class="tm-philosophy">
     <div class="container">
-      <p class="tm-philosophy__text">Behind every programme is a genuine relationship. Our work is built on <strong>trust</strong>, <strong>expertise</strong>, and a deep respect for the people and communities we serve. We don&rsquo;t just deliver content &mdash; we walk alongside you.</p>
+      <p class="tm-philosophy__text">Behind every programme is a genuine relationship. Our work is built on <strong>trust</strong>, <strong>expertise</strong>, and a deep respect for the people and communities we serve. We don&rsquo;t just deliver content. We walk alongside you.</p>
     </div>
   </section>
 
   <!-- ========== JASON YUILL PROCTOR ========== -->
   <section class="tm-bio" id="jason">
+    <span class="tm-bio__index" aria-hidden="true">01</span>
     <div class="container">
       <div class="tm-bio__grid">
         <div class="tm-bio__image">
@@ -91,12 +102,11 @@
         </div>
         <div class="tm-bio__content">
           <h2 class="tm-bio__name">JASON YUILL PROCTOR</h2>
-          <p class="tm-bio__role">Director of Performance Psychology</p>
+          <p class="tm-bio__role">Co-Founder &amp; Director of Performance Psychology</p>
           <p class="tm-bio__credential">Registered Psychologist</p>
           <div class="tm-bio__text">
-            <p>Jason is a registered psychologist with over a decade of experience working at the intersection of performance, wellbeing, and human development. His career has spanned elite sport, organisational leadership, and community settings &mdash; always grounded in a commitment to helping people perform under pressure and grow through challenge.</p>
-            <p>Across his career, Jason has worked with a wide variety of teams and athletes throughout the high performance sport system &mdash; supporting Olympians, world championship athletes, and coaches through some of the most demanding environments in sport. But his work extends well beyond the podium &mdash; from people taking on their first marathon to coaches navigating the pressures of their own development.</p>
-            <p>Jason brings particular depth in leadership development, coach education, and team building. His ability to translate the insights of performance psychology into practical, human-centred tools is what makes his work resonate across environments &mdash; from the sideline to the boardroom.</p>
+            <p>Jason is a registered psychologist with over a decade of experience working across performance, wellbeing, and human development. His career spans elite sport, organisational leadership, and community settings, always grounded in a commitment to helping people perform under pressure and grow through challenge.</p>
+            <p>He has worked alongside Olympians, world championship athletes, and coaches across the high performance sport system, while also supporting people at every level, from first-time marathoners to coaches navigating the pressures of their own growth. His depth in leadership development and coach education is what makes his work resonate far beyond the podium.</p>
           </div>
         </div>
       </div>
@@ -105,20 +115,43 @@
 
   <!-- ========== JAMES ORRITT ========== -->
   <section class="tm-bio tm-bio--reverse" id="james">
+    <span class="tm-bio__index" aria-hidden="true">02</span>
     <div class="container">
       <div class="tm-bio__grid">
         <div class="tm-bio__content">
           <h2 class="tm-bio__name">JAMES ORRITT <span class="tm-bio__quals">BSpC, BSc, PGDipClinPsyc, MSc</span></h2>
-          <p class="tm-bio__role">Registered Clinical Psychologist</p>
+          <p class="tm-bio__role">Co-Founder &amp; Registered Clinical Psychologist</p>
           <p class="tm-bio__credential">Registered Clinical Psychologist</p>
           <div class="tm-bio__text">
-            <p>James is a registered clinical psychologist whose work sits at the intersection of clinical practice, sport, and coaching. With a background spanning community mental health and elite sporting environments, he brings a breadth of understanding to the people and contexts he works with.</p>
-            <p>Having spent nine years involved in coaching and played rugby across a range of competitive environments, James understands the demands of sport from the inside. This lived experience, combined with four years working in sport psychology, shapes the way he connects with athletes and coaches &mdash; not as an outside expert, but as someone who genuinely understands the environment.</p>
-            <p>James&rsquo;s research into effective coaching conversations reflects his commitment to bridging the gap between evidence and practice. His clinical experience &mdash; including work within kaupapa M&#257;ori health settings and the Department of Corrections &mdash; has deepened his understanding of diverse contexts and strengthened his ability to walk alongside people from all walks of life.</p>
+            <p>James is a registered clinical psychologist whose work sits at the intersection of clinical practice, sport, and coaching. With backgrounds in community mental health and elite sporting environments, he brings a breadth of understanding to the people and contexts he works with.</p>
+            <p>Nine years of coaching and competitive rugby experience shape the way he connects with athletes and coaches, as someone who understands sport from the inside. His research on effective coaching conversations and clinical experience across diverse settings, including kaupapa M&#257;ori health, reflect his commitment to evidence-based, people-first practice.</p>
           </div>
         </div>
         <div class="tm-bio__image">
           <img src="images/james-workshop.jpg" alt="James Orritt">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== OLIVER HAWKINS ========== -->
+  <section class="tm-bio" id="oliver">
+    <span class="tm-bio__index" aria-hidden="true">03</span>
+    <div class="container">
+      <div class="tm-bio__grid">
+        <div class="tm-bio__image tm-bio__image--placeholder">
+          <div class="tm-bio__placeholder">
+            <span>OH</span>
+          </div>
+        </div>
+        <div class="tm-bio__content">
+          <h2 class="tm-bio__name">OLIVER HAWKINS</h2>
+          <p class="tm-bio__role">Co-Founder &amp; Community Sport Director</p>
+          <p class="tm-bio__credential">Founder, Proteus Sports Group</p>
+          <div class="tm-bio__text">
+            <p>Oliver is the founder of Proteus Sports Group, a Canterbury-based organisation that has become a trusted name in community sport coaching across schools, clubs, and academies. With extensive experience working across a wide range of sporting codes and environments, he understands what it takes to build strong sporting cultures from the ground up.</p>
+            <p>As a co-founder of The Performance Act, Oliver is passionate about exploring how sport psychology can be applied meaningfully in community and academy settings, not just at the elite end of the game. He bridges the worlds of practical coaching and evidence-based psychology, bringing a grounded, real-world perspective to everything we do.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -131,8 +164,8 @@
         <h2 class="ap-cta__title">READY TO<br><span>MEET US?</span></h2>
         <p class="ap-cta__text">Every great partnership starts with a conversation. Get in touch and let&rsquo;s find out how we can support your world.</p>
         <div class="ap-cta__actions">
-          <a href="https://forms.gle/AH3zUemRTNKgcB9E7" target="_blank" rel="noopener" class="btn btn--primary btn--lg">BOOK YOUR FREE CONSULTATION</a>
-          <a href="programs.html" class="btn btn--outline btn--lg">VIEW OUR PROGRAMS</a>
+          <a href="contact.html" class="btn btn--primary btn--lg">BOOK YOUR FREE CONSULTATION</a>
+          <a href="programs.html" class="btn btn--outline btn--lg">EXPLORE OUR SUPPORT</a>
         </div>
       </div>
     </div>
@@ -146,7 +179,7 @@
           <img src="images/logo-vertical.png" alt="The Performance Act" class="logo-img logo-img--footer">
           <p class="footer__tagline">Helping People Grow</p>
           <p class="footer__email">
-            <a href="mailto:info@performanceact.com">info@performanceact.com</a>
+            <a href="mailto:info@performance-act.com">info@performance-act.com</a>
           </p>
         </div>
 
@@ -160,10 +193,9 @@
         </div>
 
         <div class="footer-grid__links">
-          <h4 class="footer__heading">PROGRAMS</h4>
-          <a href="programs.html" class="footer__link">Athlete Workshops</a>
-          <a href="programs.html" class="footer__link">Coach Education</a>
-          <a href="programs.html" class="footer__link">Parental Support</a>
+          <h4 class="footer__heading">SUPPORT</h4>
+          <a href="support-individual.html" class="footer__link">Individual Support</a>
+          <a href="support-teams.html" class="footer__link">Team &amp; Organisational</a>
           <a href="grow.html" class="footer__link">GROW Platform</a>
         </div>
 
@@ -191,7 +223,7 @@
             </a>
           </div>
           <div class="footer__cta">
-            <a href="mailto:info@performanceact.com" class="btn btn--primary btn--sm">GET IN TOUCH</a>
+            <a href="mailto:info@performance-act.com" class="btn btn--primary btn--sm">GET IN TOUCH</a>
           </div>
         </div>
       </div>
@@ -213,28 +245,133 @@
     </svg>
   </button>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
   <script>
     (function () {
-      const selectors = [
-        '.tm-philosophy',
-        '.tm-bio',
-        '.tm-testimonial',
-        '.ap-cta__inner',
-      ];
-      const els = document.querySelectorAll(selectors.join(', '));
-      els.forEach(el => el.classList.add('reveal'));
-      const observer = new IntersectionObserver((entries) => {
+      // ---- Scroll progress bar ----
+      const bar = document.getElementById('tmScrollProgress');
+      const updateBar = () => {
+        const h = document.documentElement;
+        const max = h.scrollHeight - h.clientHeight;
+        const pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
+        if (bar) bar.style.width = pct + '%';
+      };
+      window.addEventListener('scroll', updateBar, { passive: true });
+      window.addEventListener('resize', updateBar);
+      updateBar();
+
+      // ---- Fade reveals (philosophy + CTA) ----
+      const fadeEls = document.querySelectorAll('.tm-philosophy, .ap-cta__inner');
+      fadeEls.forEach(el => el.classList.add('reveal'));
+      const fadeIo = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
+            fadeIo.unobserve(entry.target);
           }
         });
       }, { rootMargin: '0px 0px -60px 0px', threshold: 0.08 });
-      els.forEach(el => observer.observe(el));
+      fadeEls.forEach(el => fadeIo.observe(el));
+
+      // ---- Directional bio reveals ----
+      const bios = document.querySelectorAll('.tm-bio');
+      const bioIo = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-in');
+            bioIo.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -80px 0px', threshold: 0.15 });
+      bios.forEach(el => bioIo.observe(el));
+
+      // ---- Subtle image parallax ----
+      const bioImages = document.querySelectorAll('.tm-bio__image img');
+      let ticking = false;
+      const applyParallax = () => {
+        const vh = window.innerHeight;
+        bioImages.forEach(img => {
+          const wrap = img.parentElement;
+          const rect = wrap.getBoundingClientRect();
+          if (rect.bottom > 0 && rect.top < vh) {
+            const centerOffset = (rect.top + rect.height / 2) - (vh / 2);
+            const shift = -centerOffset * 0.06;
+            img.style.transform = `translate3d(0, ${shift}px, 0) scale(1.08)`;
+          }
+        });
+        ticking = false;
+      };
+      window.addEventListener('scroll', () => {
+        if (!ticking) { requestAnimationFrame(applyParallax); ticking = true; }
+      }, { passive: true });
+      window.addEventListener('resize', applyParallax);
+      applyParallax();
     })();
   </script>
+
+
+  <!-- ========== NZ SUPPORT LINES ========== -->
+  <button class="support-line-btn" id="supportLineBtn" aria-label="NZ support lines">
+    <span class="support-line-btn__dot" aria-hidden="true"></span>
+    Immediate Support
+  </button>
+
+  <div class="support-line-modal" id="supportLineModal" role="dialog" aria-modal="true" aria-labelledby="supportLineTitle" aria-hidden="true">
+    <div class="support-line-modal__backdrop"></div>
+    <div class="support-line-modal__panel">
+      <button class="support-line-modal__close" id="supportLineClose" aria-label="Close support lines">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <p class="support-line-modal__eyebrow">Aotearoa, New Zealand</p>
+      <h2 class="support-line-modal__title" id="supportLineTitle">Need immediate support?</h2>
+      <p class="support-line-modal__note">The Performance Act is a sport psychology practice, not a crisis or emergency service. If you or someone you care about needs immediate support, please reach out to one of these trusted services below. They are free, confidential, and available 24&#8202;/&#8202;7.</p>
+
+      <ul class="support-line-modal__list" role="list">
+        <li class="sln-resource">
+          <div class="sln-resource__info">
+            <p class="sln-resource__name">1737 &mdash; Need to Talk?</p>
+            <p class="sln-resource__desc">Free call or text, any time. Trained counsellors, 24&#47;7.</p>
+          </div>
+          <a href="tel:1737" class="sln-resource__number">Call or text 1737</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info">
+            <p class="sln-resource__name">Lifeline NZ</p>
+            <p class="sln-resource__desc">Crisis support and suicide prevention, 24&#47;7.</p>
+          </div>
+          <a href="tel:0800543354" class="sln-resource__number">0800 543 354</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info">
+            <p class="sln-resource__name">Youthline</p>
+            <p class="sln-resource__desc">For young people. Free call or text 234, 24&#47;7.</p>
+          </div>
+          <a href="tel:0800376633" class="sln-resource__number">0800 376 633</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info">
+            <p class="sln-resource__name">Suicide Crisis Helpline</p>
+            <p class="sln-resource__desc">0508 TAUTOKO. Support for those in crisis, 24&#47;7.</p>
+          </div>
+          <a href="tel:0508828865" class="sln-resource__number">0508 828 865</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info">
+            <p class="sln-resource__name">Samaritans</p>
+            <p class="sln-resource__desc">Confidential emotional support, any time of day or night.</p>
+          </div>
+          <a href="tel:0800726666" class="sln-resource__number">0800 726 666</a>
+        </li>
+      </ul>
+
+      <p class="support-line-modal__footer">
+        More resources at <a href="https://www.mentalhealth.org.nz/get-help/in-crisis" target="_blank" rel="noopener">Mental Health Foundation NZ</a> and <a href="https://www.depression.org.nz" target="_blank" rel="noopener">depression.org.nz</a>.
+      </p>
+    </div>
+  </div>
 
 </body>
 </html>

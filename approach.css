@@ -671,7 +671,7 @@
 }
 
 .ap-faq-item.open .ap-faq-item__a {
-  max-height: 600px;
+  max-height: 1200px;
   padding-bottom: 28px;
 }
 
@@ -680,7 +680,11 @@
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.62);
   line-height: 1.8;
-  margin: 0;
+  margin: 0 0 14px 0;
+}
+
+.ap-faq-item__a p:last-child {
+  margin-bottom: 0;
 }
 
 /* ---- CTA SECTION ---- */

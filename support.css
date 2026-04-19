@@ -1,0 +1,818 @@
+/* =====================================================
+   SUPPORT PAGE STYLES
+   Prefix: .sp-
+   Shared by: programs.html (landing),
+              support-individual.html, support-teams.html
+   ===================================================== */
+
+/* -----------------------------------------------------
+   0. HERO TITLE FIT (long-word override)
+   Used when the hero contains an unbreakable long word
+   like "ORGANISATIONAL" that would overflow on mobile.
+   ----------------------------------------------------- */
+.page-hero__title--fit {
+  font-size: clamp(2.4rem, 11vw, 6rem) !important;
+  line-height: 1.02 !important;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+.page-hero__title--fit br { line-height: 1; }
+
+/* -----------------------------------------------------
+   0b. IMMEDIATE SUPPORT NOTICE (programs.html)
+   ----------------------------------------------------- */
+.sp-imm {
+  padding: 0 0 60px;
+  background: var(--white);
+}
+
+.sp-imm__inner {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 28px 36px;
+  background: #f5f5f2;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-left: 4px solid #e63b2e;
+  border-radius: 4px;
+}
+
+.sp-imm__icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  color: #e63b2e;
+  opacity: 0.85;
+  overflow: hidden;
+}
+
+.sp-imm__icon svg {
+  display: block;
+  width: 44px;
+  height: 44px;
+}
+
+.sp-imm__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.sp-imm__title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--gray-900);
+  margin: 0 0 6px;
+  text-transform: uppercase;
+}
+
+.sp-imm__text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(0,0,0,0.65);
+  margin: 0;
+}
+
+.sp-imm__btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  border-radius: 3px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.sp-imm__btn:hover {
+  background: #1a1a1a;
+  color: var(--yellow);
+  transform: translateY(-1px);
+}
+
+.sp-imm__btn svg {
+  width: 18px;
+  height: 11px;
+  transition: transform 0.3s ease;
+}
+
+.sp-imm__btn:hover svg {
+  transform: translateX(3px);
+}
+
+.sp-imm__btn-dot {
+  width: 8px;
+  height: 8px;
+  background: #e63b2e;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: sln-pulse 2s ease-in-out infinite;
+}
+
+@media (max-width: 760px) {
+  .sp-imm__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px 20px;
+    gap: 18px;
+  }
+  .sp-imm__icon {
+    display: none;
+  }
+  .sp-imm__btn {
+    align-self: flex-start;
+  }
+}
+
+/* -----------------------------------------------------
+   1. REVEAL BASE
+   ----------------------------------------------------- */
+.sp-intro__text.reveal,
+.sp-choice-card.reveal,
+.sp-both__inner.reveal,
+.sp-section.reveal,
+.sp-card.reveal,
+.sp-lead.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.sp-intro__text.reveal.visible,
+.sp-choice-card.reveal.visible,
+.sp-both__inner.reveal.visible,
+.sp-section.reveal.visible,
+.sp-card.reveal.visible,
+.sp-lead.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sp-intro__text.reveal,
+  .sp-choice-card.reveal,
+  .sp-both__inner.reveal,
+  .sp-section.reveal,
+  .sp-card.reveal,
+  .sp-lead.reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* -----------------------------------------------------
+   2. INTRO (landing)
+   ----------------------------------------------------- */
+.sp-intro {
+  padding: 80px 0 40px;
+  background: var(--white);
+}
+
+.sp-intro__text {
+  max-width: 820px;
+  margin: 0 auto;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.125rem, 1.6vw, 1.35rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--gray-900);
+  text-align: center;
+}
+
+/* -----------------------------------------------------
+   3. CHOICE SECTION (landing)
+   ----------------------------------------------------- */
+.sp-choice {
+  padding: 40px 0 100px;
+  background: var(--white);
+}
+
+.sp-choice__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 900px) {
+  .sp-choice__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.sp-choice-card {
+  position: relative;
+  display: block;
+  min-height: 540px;
+  border-radius: 4px;
+  overflow: hidden;
+  color: var(--white);
+  text-decoration: none;
+  isolation: isolate;
+  cursor: pointer;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sp-choice-card:hover,
+.sp-choice-card:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.45);
+  outline: none;
+}
+
+.sp-choice-card__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 1;
+}
+
+.sp-choice-card:hover .sp-choice-card__bg {
+  transform: scale(1.12);
+}
+
+.sp-choice-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.65) 55%,
+    rgba(0, 0, 0, 0.92) 100%
+  );
+  z-index: 2;
+  transition: background 0.5s ease;
+}
+
+.sp-choice-card:hover .sp-choice-card__overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.72) 55%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+}
+
+.sp-choice-card__content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  min-height: 540px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px 40px 44px;
+}
+
+.sp-choice-card__num {
+  position: absolute;
+  top: 32px;
+  left: 40px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: var(--yellow);
+}
+
+.sp-choice-card__icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 20px;
+  color: var(--yellow);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sp-choice-card:hover .sp-choice-card__icon {
+  transform: translateY(-4px);
+}
+
+.sp-choice-card__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.sp-choice-card__title {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: 1px;
+  margin: 0 0 16px;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.sp-choice-card__desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0 0 20px;
+  max-width: 44ch;
+}
+
+.sp-choice-card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sp-choice-card__list li {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 229, 0, 0.35);
+  border-radius: 999px;
+  color: var(--white);
+  backdrop-filter: blur(4px);
+}
+
+.sp-choice-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--yellow);
+  align-self: flex-start;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--yellow);
+  transition: gap 0.4s ease, transform 0.4s ease;
+}
+
+.sp-choice-card:hover .sp-choice-card__cta {
+  gap: 20px;
+}
+
+.sp-choice-card__cta svg {
+  width: 22px;
+  height: 13px;
+  transition: transform 0.4s ease;
+}
+
+.sp-choice-card:hover .sp-choice-card__cta svg {
+  transform: translateX(4px);
+}
+
+@media (max-width: 600px) {
+  .sp-choice-card {
+    min-height: 460px;
+  }
+  .sp-choice-card__content {
+    min-height: 460px;
+    padding: 32px 24px 32px;
+  }
+  .sp-choice-card__num {
+    top: 24px;
+    left: 24px;
+  }
+}
+
+/* -----------------------------------------------------
+   4. BOTH PATHS (landing)
+   ----------------------------------------------------- */
+.sp-both {
+  padding: 100px 0;
+  background: var(--black);
+  color: var(--white);
+}
+
+.sp-both__inner {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sp-both__small {
+  display: inline-block;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: var(--yellow);
+  margin-bottom: 18px;
+}
+
+.sp-both__title {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 22px;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.sp-both__text {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0 0 36px;
+}
+
+/* -----------------------------------------------------
+   5. DETAIL PAGE: LEAD SECTION
+   (support-individual.html / support-teams.html)
+   ----------------------------------------------------- */
+.sp-lead {
+  padding: 80px 0 20px;
+  background: var(--white);
+}
+
+.sp-lead__inner {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sp-lead__eyebrow {
+  display: inline-block;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: var(--yellow);
+  margin-bottom: 14px;
+  padding: 6px 14px;
+  background: var(--black);
+  border-radius: 999px;
+}
+
+.sp-lead__title {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(1.75rem, 3.2vw, 2.4rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--gray-900);
+  margin: 0 0 18px;
+}
+
+.sp-lead__text {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--gray-900);
+  margin: 0;
+  opacity: 0.85;
+}
+
+/* -----------------------------------------------------
+   6. DETAIL PAGE: SECTION BLOCKS
+   ----------------------------------------------------- */
+.sp-section {
+  padding: 70px 0;
+  background: var(--white);
+}
+
+.sp-section--alt {
+  background: #f7f7f5;
+}
+
+.sp-section__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.sp-section__grid--reverse .sp-section__media {
+  order: 2;
+}
+
+@media (max-width: 900px) {
+  .sp-section__grid,
+  .sp-section__grid--reverse {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .sp-section__grid--reverse .sp-section__media {
+    order: 0;
+  }
+}
+
+.sp-section__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--gray-900);
+}
+
+.sp-section__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sp-section:hover .sp-section__media img {
+  transform: scale(1.03);
+}
+
+.sp-section__num {
+  position: absolute;
+  top: 14px;
+  left: 18px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--yellow);
+  z-index: 2;
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 2px;
+}
+
+.sp-section__tag {
+  display: inline-block;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--black);
+  margin-bottom: 14px;
+  padding: 5px 10px;
+  background: var(--yellow);
+  border-radius: 2px;
+}
+
+.sp-section__title {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--gray-900);
+  margin: 0 0 16px;
+  text-transform: uppercase;
+}
+
+.sp-section__lead {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--gray-900);
+  margin: 0 0 18px;
+  opacity: 0.88;
+}
+
+.sp-section__body p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--gray-900);
+  margin: 0 0 14px;
+  opacity: 0.82;
+}
+
+.sp-section__list {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 20px;
+}
+
+.sp-section__list li {
+  position: relative;
+  padding: 8px 0 8px 28px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--gray-900);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.sp-section__list li:last-child {
+  border-bottom: none;
+}
+
+.sp-section__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 18px;
+  width: 16px;
+  height: 2px;
+  background: var(--yellow);
+}
+
+/* Callout box for MI (Motivational Interviewing) */
+.sp-callout {
+  margin: 20px 0 4px;
+  padding: 20px 22px;
+  background: var(--black);
+  color: var(--white);
+  border-radius: 3px;
+  border-left: 4px solid var(--yellow);
+}
+
+.sp-callout__label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--yellow);
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+.sp-callout__text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+/* -----------------------------------------------------
+   7. DETAIL PAGE: STEPS / "HOW IT WORKS"
+   ----------------------------------------------------- */
+.sp-steps {
+  padding: 80px 0;
+  background: var(--black);
+  color: var(--white);
+}
+
+.sp-steps__head {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 48px;
+}
+
+.sp-steps__eyebrow {
+  display: inline-block;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: var(--yellow);
+  margin-bottom: 12px;
+}
+
+.sp-steps__title {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--white);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.sp-steps__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+@media (max-width: 800px) {
+  .sp-steps__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.sp-step {
+  padding: 28px 26px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.sp-step:hover {
+  transform: translateY(-4px);
+  border-color: var(--yellow);
+}
+
+.sp-step__num {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--yellow);
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.sp-step__title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--white);
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+.sp-step__text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
+}
+
+/* -----------------------------------------------------
+   8. DETAIL PAGE: CTA BLOCK
+   ----------------------------------------------------- */
+.sp-cta {
+  padding: 90px 0;
+  background: var(--white);
+  text-align: center;
+}
+
+.sp-cta__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.sp-cta__title {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--gray-900);
+  margin: 0 0 18px;
+  text-transform: uppercase;
+}
+
+.sp-cta__text {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--gray-900);
+  margin: 0 0 30px;
+  opacity: 0.85;
+}
+
+.sp-cta__actions {
+  display: inline-flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* -----------------------------------------------------
+   9. BACK LINK
+   ----------------------------------------------------- */
+.sp-back {
+  padding: 20px 0 0;
+  background: var(--white);
+}
+
+.sp-back__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gray-900);
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sp-back__link:hover {
+  opacity: 1;
+  transform: translateX(-3px);
+}
+
+.sp-back__link svg {
+  width: 14px;
+  height: 14px;
+}

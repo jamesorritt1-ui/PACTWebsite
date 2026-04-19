@@ -1,7 +1,25 @@
 /* =========================================================
    THE PERFORMANCE ACT — OUR WHANAU PAGE
-   team.css v1
+   team.css v2
    ========================================================= */
+
+
+/* ---------------------------------------------------------
+   0. SCROLL EXPERIENCE — Progress bar + motion primitives
+   --------------------------------------------------------- */
+
+.tm-scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: var(--yellow);
+  box-shadow: 0 0 10px rgba(255, 229, 0, 0.55);
+  z-index: 9999;
+  transition: width 0.08s linear;
+  pointer-events: none;
+}
 
 
 /* ---------------------------------------------------------
@@ -36,9 +54,41 @@
    --------------------------------------------------------- */
 
 .tm-bio {
+  position: relative;
   background: var(--black);
   padding: 80px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.tm-bio .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Oversized faint outlined index numerals (01 / 02 / 03) */
+.tm-bio__index {
+  position: absolute;
+  top: 50%;
+  right: -3vw;
+  transform: translateY(-50%);
+  font-family: var(--font-heading);
+  font-size: clamp(8rem, 20vw, 20rem);
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: -0.03em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 229, 0, 0.11);
+  text-stroke: 1px rgba(255, 229, 0, 0.11);
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.tm-bio--reverse .tm-bio__index {
+  right: auto;
+  left: -3vw;
 }
 
 .tm-bio__grid {
@@ -63,12 +113,41 @@
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+.tm-bio__image--placeholder {
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 360px;
+  border: 1px dashed rgba(255, 229, 0, 0.2);
+}
+
+.tm-bio__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border: 2px solid rgba(255, 229, 0, 0.25);
+  border-radius: 50%;
+}
+
+.tm-bio__placeholder span {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: rgba(255, 229, 0, 0.3);
+  letter-spacing: 0.06em;
+}
+
 .tm-bio__image img {
   width: 100%;
   height: auto;
   display: block;
   filter: grayscale(100%) contrast(1.1) brightness(0.85);
   transition: filter 0.5s ease;
+  will-change: transform;
+  transform: translate3d(0, 0, 0) scale(1.08);
 }
 
 .tm-bio__image:hover img {
@@ -169,6 +248,69 @@
 
 
 /* ---------------------------------------------------------
+   3b. DIRECTIONAL BIO REVEALS
+   --------------------------------------------------------- */
+
+.tm-bio .tm-bio__image,
+.tm-bio .tm-bio__content,
+.tm-bio .tm-bio__index {
+  opacity: 0;
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tm-bio .tm-bio__image {
+  transform: translateX(-50px);
+}
+
+.tm-bio--reverse .tm-bio__image {
+  transform: translateX(50px);
+}
+
+.tm-bio .tm-bio__content {
+  transform: translateY(40px);
+  transition-delay: 0.18s;
+}
+
+.tm-bio .tm-bio__index {
+  transform: translateY(-50%) translateX(30px);
+  transition-delay: 0.08s;
+}
+
+.tm-bio--reverse .tm-bio__index {
+  transform: translateY(-50%) translateX(-30px);
+}
+
+.tm-bio.is-in .tm-bio__image {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.tm-bio.is-in .tm-bio__content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tm-bio.is-in .tm-bio__index {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .tm-scroll-progress,
+  .tm-bio .tm-bio__image,
+  .tm-bio .tm-bio__content,
+  .tm-bio .tm-bio__index,
+  .tm-bio__image img {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+
+/* ---------------------------------------------------------
    4. RESPONSIVE BREAKPOINTS
    --------------------------------------------------------- */
 
@@ -194,6 +336,24 @@
 
   .tm-bio {
     padding: 60px 0;
+  }
+
+  .tm-bio__index {
+    font-size: 6rem;
+    top: 24px;
+    right: 16px;
+    transform: none;
+  }
+
+  .tm-bio--reverse .tm-bio__index {
+    left: 16px;
+    right: auto;
+    transform: none;
+  }
+
+  .tm-bio.is-in .tm-bio__index,
+  .tm-bio .tm-bio__index {
+    transform: none;
   }
 }
 
