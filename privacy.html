@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | The Performance Act</title>
+  <meta name="description" content="How The Performance Act collects, uses, stores, and protects your personal and health information. Version 3.0, April 2026.">
+  <link rel="canonical" href="https://www.performance-act.com/privacy.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.performance-act.com/privacy.html">
+  <meta property="og:title" content="Privacy Policy | The Performance Act">
+  <meta property="og:description" content="How The Performance Act collects, uses, stores, and protects your personal and health information.">
+  <meta property="og:site_name" content="The Performance Act">
+  <meta property="og:locale" content="en_NZ">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=15">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <style>
+    /* =========================================================
+       PRIVACY PAGE — LOCAL STYLES
+       ========================================================= */
+
+    /* Page hero */
+    .privacy-hero {
+      background-color: var(--black);
+      padding: 160px 0 80px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .privacy-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 80% 50%, rgba(255, 229, 0, 0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .privacy-hero__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    .privacy-hero__meta-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--gray-500);
+      text-transform: uppercase;
+    }
+
+    .privacy-hero__meta-item span {
+      color: var(--yellow);
+    }
+
+    .privacy-hero__badge {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      color: var(--yellow);
+      border: 1px solid rgba(255, 229, 0, 0.4);
+      padding: 6px 18px;
+      margin-bottom: 24px;
+    }
+
+    /* Layout */
+    .privacy-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 64px;
+      align-items: start;
+      padding: 80px 0 100px;
+    }
+
+    /* Sticky sidebar TOC */
+    .privacy-toc {
+      position: sticky;
+      top: calc(var(--header-height) + 24px);
+    }
+
+    .privacy-toc__label {
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      color: var(--yellow);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 229, 0, 0.2);
+    }
+
+    .privacy-toc__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .privacy-toc__item a {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      color: var(--gray-500);
+      padding: 6px 12px 6px 0;
+      border-left: 2px solid transparent;
+      transition: all 0.25s ease;
+      line-height: 1.4;
+    }
+
+    .privacy-toc__item a:hover,
+    .privacy-toc__item a.active {
+      color: var(--white);
+      border-left-color: var(--yellow);
+      padding-left: 10px;
+    }
+
+    .privacy-toc__item--sub a {
+      font-size: 0.78rem;
+      padding-left: 14px;
+      color: var(--gray-700);
+    }
+
+    .privacy-toc__item--sub a:hover,
+    .privacy-toc__item--sub a.active {
+      padding-left: 22px;
+    }
+
+    .privacy-toc__contact {
+      margin-top: 28px;
+      padding: 16px;
+      background-color: var(--gray-900);
+      border: 1px solid rgba(255, 229, 0, 0.15);
+    }
+
+    .privacy-toc__contact p {
+      font-size: 0.78rem;
+      color: var(--gray-500);
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    .privacy-toc__contact a {
+      font-size: 0.82rem;
+      color: var(--yellow);
+      transition: color 0.25s ease;
+    }
+
+    .privacy-toc__contact a:hover {
+      color: var(--white);
+    }
+
+    /* Content area */
+    .privacy-content {
+      min-width: 0;
+    }
+
+    /* Plain English Summary — prominent box */
+    .summary-box {
+      background-color: var(--yellow);
+      padding: 40px 44px;
+      margin-bottom: 64px;
+      position: relative;
+    }
+
+    .summary-box::before {
+      content: 'PLAIN ENGLISH SUMMARY';
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      color: rgba(0,0,0,0.5);
+      margin-bottom: 16px;
+    }
+
+    .summary-box__intro {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--black);
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+
+    .summary-box__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .summary-box__list li {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: var(--black);
+      line-height: 1.6;
+      padding: 10px 0 10px 22px;
+      position: relative;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .summary-box__list li:last-child {
+      border-bottom: none;
+    }
+
+    .summary-box__list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 18px;
+      width: 8px;
+      height: 8px;
+      background-color: var(--black);
+    }
+
+    /* Section blocks */
+    .privacy-section {
+      margin-bottom: 56px;
+      scroll-margin-top: calc(var(--header-height) + 32px);
+    }
+
+    .privacy-section__header {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .privacy-section__number {
+      font-family: var(--font-heading);
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--yellow);
+      line-height: 1;
+      flex-shrink: 0;
+      min-width: 52px;
+    }
+
+    .privacy-section__title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      line-height: 1.2;
+      padding-top: 4px;
+    }
+
+    /* Subsection */
+    .privacy-subsection {
+      margin-top: 28px;
+      padding-left: 20px;
+      border-left: 3px solid rgba(255, 229, 0, 0.25);
+      scroll-margin-top: calc(var(--header-height) + 32px);
+    }
+
+    .privacy-subsection__title {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--yellow);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    /* Body text */
+    .privacy-text {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--gray-300);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    .privacy-text:last-child {
+      margin-bottom: 0;
+    }
+
+    .privacy-text strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .privacy-text a {
+      color: var(--yellow);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.25s ease;
+    }
+
+    .privacy-text a:hover {
+      color: var(--white);
+    }
+
+    /* Bullet lists */
+    .privacy-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 16px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .privacy-list li {
+      font-family: var(--font-body);
+      font-size: 0.93rem;
+      color: var(--gray-300);
+      line-height: 1.65;
+      padding: 9px 0 9px 22px;
+      position: relative;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .privacy-list li:last-child {
+      border-bottom: none;
+    }
+
+    .privacy-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 17px;
+      width: 8px;
+      height: 8px;
+      background-color: var(--yellow);
+    }
+
+    .privacy-list li strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    /* Info callout cards */
+    .privacy-callout {
+      background-color: var(--gray-900);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-left: 4px solid var(--yellow);
+      padding: 24px 28px;
+      margin: 20px 0;
+    }
+
+    .privacy-callout p {
+      font-size: 0.93rem;
+      color: var(--gray-300);
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    .privacy-callout p:last-child {
+      margin-bottom: 0;
+    }
+
+    .privacy-callout p strong {
+      color: var(--white);
+    }
+
+    /* Principles list (Te Tiriti section) */
+    .privacy-principles {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .privacy-principle {
+      background-color: var(--gray-900);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 20px 22px;
+      transition: border-color 0.3s ease;
+    }
+
+    .privacy-principle:hover {
+      border-color: rgba(255, 229, 0, 0.3);
+    }
+
+    .privacy-principle__title {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--yellow);
+      margin-bottom: 6px;
+    }
+
+    .privacy-principle__desc {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+      line-height: 1.6;
+    }
+
+    /* Tools table */
+    .privacy-tools {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .privacy-tools li {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background-color: var(--gray-900);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 14px 18px;
+      font-size: 0.88rem;
+      transition: border-color 0.25s ease;
+    }
+
+    .privacy-tools li:hover {
+      border-color: rgba(255, 229, 0, 0.2);
+    }
+
+    .privacy-tools__name {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.04em;
+      min-width: 140px;
+      flex-shrink: 0;
+    }
+
+    .privacy-tools__desc {
+      color: var(--gray-500);
+      flex: 1;
+    }
+
+    .privacy-tools__link a {
+      color: var(--yellow);
+      font-size: 0.8rem;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      white-space: nowrap;
+      transition: color 0.25s ease;
+    }
+
+    .privacy-tools__link a:hover {
+      color: var(--white);
+    }
+
+    /* Contact section */
+    .privacy-contact-card {
+      background-color: var(--gray-900);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 32px 36px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px 40px;
+    }
+
+    .privacy-contact-card__role {
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      color: var(--yellow);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .privacy-contact-card__name {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .privacy-contact-card__sub {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+    }
+
+    .privacy-contact-card__divider {
+      grid-column: 1 / -1;
+      height: 1px;
+      background-color: rgba(255,255,255,0.06);
+    }
+
+    .privacy-contact-card__detail {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .privacy-contact-card__detail-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .privacy-contact-card__detail-label {
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: var(--gray-700);
+      text-transform: uppercase;
+    }
+
+    .privacy-contact-card__detail-value {
+      font-size: 0.9rem;
+      color: var(--gray-300);
+    }
+
+    .privacy-contact-card__detail-value a {
+      color: var(--yellow);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 0.25s ease;
+    }
+
+    .privacy-contact-card__detail-value a:hover {
+      color: var(--white);
+    }
+
+    /* Crisis callout */
+    .privacy-crisis {
+      background-color: rgba(255, 229, 0, 0.05);
+      border: 1px solid rgba(255, 229, 0, 0.25);
+      padding: 28px 32px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .privacy-crisis__icon {
+      width: 32px;
+      height: 32px;
+      color: var(--yellow);
+      flex-shrink: 0;
+    }
+
+    .privacy-crisis__body h4 {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--yellow);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .privacy-crisis__body p {
+      font-size: 0.9rem;
+      color: var(--gray-300);
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
+    .privacy-crisis__body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Version footer */
+    .privacy-version-bar {
+      margin-top: 64px;
+      padding: 20px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 32px;
+      align-items: center;
+    }
+
+    .privacy-version-bar span {
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      color: var(--gray-700);
+    }
+
+    .privacy-version-bar span strong {
+      color: var(--gray-500);
+    }
+
+    /* Mobile TOC toggle */
+    .privacy-toc-toggle {
+      display: none;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .privacy-layout {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 60px 0 80px;
+      }
+
+      .privacy-toc {
+        position: static;
+        margin-bottom: 48px;
+        display: none;
+      }
+
+      .privacy-toc.is-open {
+        display: block;
+      }
+
+      .privacy-toc-toggle {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: var(--font-heading);
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--yellow);
+        background: none;
+        border: 1px solid rgba(255, 229, 0, 0.3);
+        padding: 12px 20px;
+        cursor: pointer;
+        margin-bottom: 40px;
+        width: 100%;
+        justify-content: center;
+        transition: background 0.25s ease;
+      }
+
+      .privacy-toc-toggle:hover {
+        background: rgba(255, 229, 0, 0.05);
+      }
+
+      .privacy-toc-toggle svg {
+        width: 16px;
+        height: 16px;
+        transition: transform 0.25s ease;
+      }
+
+      .privacy-toc-toggle.is-open svg {
+        transform: rotate(180deg);
+      }
+
+      .privacy-principles {
+        grid-template-columns: 1fr;
+      }
+
+      .privacy-contact-card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .privacy-hero {
+        padding: 120px 0 60px;
+      }
+
+      .summary-box {
+        padding: 28px 24px;
+      }
+
+      .privacy-section__number {
+        font-size: 1.8rem;
+        min-width: 38px;
+      }
+
+      .privacy-section__title {
+        font-size: 1.1rem;
+      }
+
+      .privacy-tools li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+
+      .privacy-tools__name {
+        min-width: unset;
+      }
+
+      .privacy-contact-card {
+        padding: 24px 20px;
+      }
+
+      .privacy-version-bar {
+        flex-direction: column;
+        gap: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER / NAV ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="images/logo-horizontal.png" alt="The Performance Act" class="logo-img logo-img--header">
+      </a>
+
+      <nav class="header__nav" id="mainNav">
+        <a href="index.html" class="nav-link">HOME</a>
+        <a href="index.html#about" class="nav-link">ABOUT</a>
+        <a href="approach.html" class="nav-link">APPROACH</a>
+        <a href="index.html#pillars" class="nav-link">OUR PACT</a>
+        <a href="programs.html" class="nav-link">SUPPORT</a>
+        <a href="team.html" class="nav-link">TEAM</a>
+        <a href="blog.html" class="nav-link">INSIGHTS</a>
+        <a href="contact.html" class="nav-link">CONTACT</a>
+      </nav>
+
+      <div class="header__actions">
+        <a href="programs.html" class="btn btn--primary btn--sm">EXPLORE SUPPORT</a>
+        <a href="contact.html" class="btn btn--outline btn--sm">GET IN TOUCH</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav" id="mobileNav">
+    <nav class="mobile-nav__links">
+      <a href="index.html" class="mobile-nav__link">HOME</a>
+      <a href="index.html#about" class="mobile-nav__link">ABOUT</a>
+      <a href="approach.html" class="mobile-nav__link">APPROACH</a>
+      <a href="index.html#pillars" class="mobile-nav__link">OUR PACT</a>
+      <a href="programs.html" class="mobile-nav__link">SUPPORT</a>
+      <a href="team.html" class="mobile-nav__link">TEAM</a>
+      <a href="blog.html" class="mobile-nav__link">INSIGHTS</a>
+      <a href="contact.html" class="mobile-nav__link">CONTACT</a>
+      <div class="mobile-nav__actions">
+        <a href="programs.html" class="btn btn--primary">EXPLORE SUPPORT</a>
+        <a href="contact.html" class="btn btn--outline">GET IN TOUCH</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- ========== PAGE HERO ========== -->
+  <section class="privacy-hero">
+    <div class="container">
+      <div class="privacy-hero__badge">LEGAL &amp; PRIVACY</div>
+      <div class="section-heading section-heading--left" style="margin-bottom: 0;">
+        <h1 class="section-heading__title">PRIVACY POLICY</h1>
+      </div>
+      <div class="privacy-hero__meta">
+        <div class="privacy-hero__meta-item">VERSION <span>3.0</span></div>
+        <div class="privacy-hero__meta-item">LAST UPDATED <span>APRIL 2026</span></div>
+        <div class="privacy-hero__meta-item">LEAD PRIVACY OFFICER <span>JAMES ORRITT</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <div class="container">
+    <div class="privacy-layout">
+
+      <!-- ── SIDEBAR TOC ── -->
+      <aside>
+        <button class="privacy-toc-toggle" id="tocToggle" aria-expanded="false" aria-controls="privacyToc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="15" y2="18"/></svg>
+          JUMP TO SECTION
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+
+        <nav class="privacy-toc" id="privacyToc" aria-label="Page contents">
+          <p class="privacy-toc__label">CONTENTS</p>
+          <ul class="privacy-toc__list">
+            <li class="privacy-toc__item"><a href="#summary">Plain English Summary</a></li>
+            <li class="privacy-toc__item"><a href="#s1">1. Introduction</a></li>
+            <li class="privacy-toc__item"><a href="#s2">2. Who This Applies To</a></li>
+            <li class="privacy-toc__item"><a href="#s3">3. Why We Treat It as Health Information</a></li>
+            <li class="privacy-toc__item"><a href="#s4">4. Laws &amp; Standards</a></li>
+            <li class="privacy-toc__item"><a href="#s5">5. Information We Collect</a></li>
+            <li class="privacy-toc__item privacy-toc__item--sub"><a href="#s5-1">5.1 Administrative info</a></li>
+            <li class="privacy-toc__item privacy-toc__item--sub"><a href="#s5-2">5.2 Clinical &amp; health info</a></li>
+            <li class="privacy-toc__item privacy-toc__item--sub"><a href="#s5-3">5.3 Tamariki &amp; rangatahi</a></li>
+            <li class="privacy-toc__item privacy-toc__item--sub"><a href="#s5-4">5.4 Digital &amp; platform data</a></li>
+            <li class="privacy-toc__item privacy-toc__item--sub"><a href="#s5-5">5.5 Identifiers</a></li>
+            <li class="privacy-toc__item"><a href="#s6">6. How We Collect</a></li>
+            <li class="privacy-toc__item"><a href="#s7">7. How We Use Your Information</a></li>
+            <li class="privacy-toc__item"><a href="#s8">8. Protection &amp; Storage</a></li>
+            <li class="privacy-toc__item"><a href="#s9">9. Working with Young People</a></li>
+            <li class="privacy-toc__item"><a href="#s10">10. Confidentiality</a></li>
+            <li class="privacy-toc__item"><a href="#s11">11. Te Tiriti &amp; Māori Data</a></li>
+            <li class="privacy-toc__item"><a href="#s12">12. How Long We Keep Records</a></li>
+            <li class="privacy-toc__item"><a href="#s13">13. Reports for Organisations</a></li>
+            <li class="privacy-toc__item"><a href="#s14">14. Your Rights</a></li>
+            <li class="privacy-toc__item"><a href="#s15">15. Third-Party Tools &amp; Cookies</a></li>
+            <li class="privacy-toc__item"><a href="#s16">16. Privacy Breaches</a></li>
+            <li class="privacy-toc__item"><a href="#s17">17. Changes to This Policy</a></li>
+            <li class="privacy-toc__item"><a href="#s18">18. Crisis Support</a></li>
+            <li class="privacy-toc__item"><a href="#s19">19. Contact Us</a></li>
+          </ul>
+
+          <div class="privacy-toc__contact">
+            <p>Questions? Contact our Privacy Officer directly.</p>
+            <a href="mailto:info@performance-act.com">info@performance-act.com</a><br>
+            <a href="tel:02751384535">027 513 8435</a>
+          </div>
+        </nav>
+      </aside>
+
+      <!-- ── MAIN CONTENT ── -->
+      <main class="privacy-content">
+
+        <!-- PLAIN ENGLISH SUMMARY -->
+        <section id="summary" class="privacy-section" style="margin-bottom: 64px;">
+          <div class="summary-box">
+            <p class="summary-box__intro">Kia ora. Thank you for trusting us with your information. We know that privacy policies are usually long, so here is a one-page summary of what matters most. The full policy follows.</p>
+            <ul class="summary-box__list">
+              <li>We are a sport psychology practice. Our directors, Jason Yuill Proctor and James Orritt, are registered psychologists with the New Zealand Psychologists Board.</li>
+              <li>Anything you share with us in a one-to-one session is treated as health information, even if it is about performance rather than clinical concerns. We explain why in Section 3.</li>
+              <li>We store your clinical records in Carepatron, a dedicated practice management platform built for the health sector. We do not store your records on personal devices, in email, on paper, or on Google Drive.</li>
+              <li>We use WhatsApp only for adult programmes, only for logistics, and only with your consent. We never share clinical content there.</li>
+              <li>We never share your information with a coach, school, club, parent, or sporting organisation without your explicit consent, except in the limited circumstances required by law (for example, where there is a serious risk to safety).</li>
+              <li>Young people aged 16 and over can give their own consent. For those under 16, we work in partnership with parents and guardians, while still protecting the young person's right to a private therapeutic space.</li>
+              <li>You have the right to see what we hold about you, ask us to correct it, and ask us to delete it. You can complain to us, and to the Office of the Privacy Commissioner if you remain unhappy.</li>
+              <li>We keep clinical records for at least ten years after our last session with you, as required by NZ law. For records about young people, we keep them until they turn 25 or for ten years, whichever is longer.</li>
+              <li>We do not currently use any AI-assisted note-taking or transcription tools in your care. If we ever introduce one, we will tell you first and ask for your consent.</li>
+              <li>If anything in this policy is unclear, please email James at <a href="mailto:info@performance-act.com" style="color: var(--black); font-weight: 600; text-decoration: underline;">info@performance-act.com</a> or call <a href="tel:02751384535" style="color: var(--black); font-weight: 600; text-decoration: underline;">027 513 8435</a>. We genuinely want you to understand it.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- SECTION 1 -->
+        <section id="s1" class="privacy-section">
+          <div class="privacy-section__header">
+            <div class="privacy-section__number">01</div>
+            <h2 class="privacy-section__title">Introduction and Our Commitment to Hauora</h2>
+          </div>
+          <p class="privacy-text">Kia ora, and welcome to The Performance Act. We are a sport psychology practice based in Aotearoa New Zealand. Our work supports athletes through one-to-one sessions, group programmes, and consultation with the coaches, parents, and organisations around them. Our mission is to support the <strong>hauora</strong> (holistic wellbeing) of athletes, coaches, whānau, and sporting communities through evidence-informed psychological practice.</p>
+          <p class="privacy-text">Our directors, <strong>Jason Yuill Proctor</strong> and <strong>James Orritt</strong>, are registered psychologists with the New Zealand Psychologists Board. This Privacy Policy explains in plain language how we collect, use, store, share, and dispose of your personal and health information, and what your rights are.</p>
+          <div class="privacy-callout">
+            <p>Our practice is governed by the <strong>Privacy Act 2020</strong>, the <strong>Health Information Privacy Code 2020 (HIPC)</strong>, the Health (Retention of Health Information) Regulations 1996, the Care of Children Act 2004, the NZ Psychologists Board Code of Ethics, and the principles of <strong>Te Tiriti o Waitangi</strong>.</p>
+          </div>
+          <p class="privacy-text">If anything in this policy is unclear, please get in touch using the details in Section 19. We genuinely want you to understand it.</p>
+        </section>
+
+        <!-- SECTION 2 -->
+        <section id="s2" class="privacy-section">
+          <div class="privacy-section__header">
+            <div class="privacy-section__number">02</div>
+            <h2 class="privacy-section__title">Who This Policy Applies To</h2>
+          </div>
+          <p class="privacy-text">This policy applies to anyone whose personal or health information we collect or hold. That includes:</p>
+          <ul class="privacy-list">
+            <li>Adults and young people (<strong>tamariki</strong> and <strong>rangatahi</strong>) who engage in one-to-one sport psychology sessions or clinical support.</li>
+            <li>Athletes participating in our group programmes, academies, or team-based performance work, such as The Green Standard.</li>
+            <li>Parents, caregivers, and whānau who contact us, or whose information is provided to us in connection with a young person we are working with.</li>
+            <li>Coaches, teachers, and sporting organisation staff who engage us for education or consulting.</li>
+            <li>Visitors to our website and individuals who submit an inquiry through our online contact form.</li>
+            <li>Third parties such as schools, clubs, or coaches who provide us with information about a person we are engaged to support.</li>
+          </ul>
+        </section>
+
+        <!-- SECTION 3 -->
+        <section id="s3" class="privacy-section">
+          <div class="privacy-section__header">
+            <div class="privacy-section__number">03</div>
+            <h2 class="privacy-section__title">Why We Treat Your Information as Health Information</h2>
+          </div>
+          <p class="privacy-text">You may be wondering why information you share during a sport psychology session focused on performance — rather than a session focused on a clinical concern — is treated as health information. It is a fair question, and we want to answer it clearly so you understand exactly why we handle your information the way we do.</p>
+
+          <div class="privacy-subsection">
+            <h3 class="privacy-subsection__title">The law defines health information broadly</h3>
+            <p class="privacy-text">Under the Health Information Privacy Code 2020, "health information" is defined broadly. It includes any information about a person's physical or mental health, any disability, or any health service provided to them. The critical phrase is "in connection with." The law does not require a formal clinical diagnosis or a severe mental health presentation. If information is gathered in the context of a service that relates to someone's mental functioning or wellbeing, even in a performance context, it is captured by that definition.</p>
+          </div>
+
+          <div class="privacy-subsection">
+            <h3 class="privacy-subsection__title">The information itself is inherently psychological</h3>
+            <p class="privacy-text">Even when we are working purely on performance — helping an athlete manage nerves before a game, build focus, or develop a stronger pre-performance routine — the information we record reflects something about that person's psychological state. A psychometric snapshot, a Mental Gym plan, notes about self-talk patterns or emotional responses under pressure: all of these relate to how a person thinks and feels. The fact that the goal is performance rather than treatment does not change what the information actually is.</p>
+          </div>
+
+          <div class="privacy-subsection">
+            <h3 class="privacy-subsection__title">Performance and mental health sit on a continuum</h3>
+            <p class="privacy-text">Performance anxiety, confidence challenges, focus difficulties, and difficulty bouncing back all exist on a continuum. We deliberately limit our scope to moderate challenges and refer on when something falls outside our expertise. Even so, the information we gather along the way still relates to a person's psychological functioning.</p>
+          </div>
+
+          <div class="privacy-subsection">
+            <h3 class="privacy-subsection__title">Our registration carries its own obligations</h3>
+            <p class="privacy-text">Jason and James are registered psychologists. That registration attaches to them as practitioners, not to a specific type of session. When a registered psychologist gathers information about a person in a professional context, the full protections of the Health Information Privacy Code follow.</p>
+          </div>
+
+          <div class="privacy-subsection">
+            <h3 class="privacy-subsection__title">What this means for you</h3>
+            <p class="privacy-text">In practice, any information you share with us in a one-to-one context is handled to the same high standard, whether the session is clinical or performance focused. Group workshops, public events, and general education sessions where we do not collect or retain individual data are different. But any time we are working with you individually, we treat your information as health information, because that is what it is.</p>
+          </div>
+        </section>
+
+        <!-- SECTION 4 -->
+        <section id="s4" class="privacy-section">
+          <div class="privacy-section__header">
+            <div class="privacy-section__number">04</div>
+            <h2 class="privacy-section__title">The Laws and Standards That Govern Our Practice</h2>
+          </div>
+          <p class="privacy-text">Two laws sit at the foundation of how we handle your information.</p>
+          <p class="privacy-text">The <strong>Privacy Act 2020</strong> sets out general information privacy principles that apply to every organisation in New Zealand. The <strong>Health Information Privacy Code 2020 (HIPC)</strong> layers thirteen tailored rules on top of that, specifically for health agencies like us. Together, they govern every stage of how we handle your information, from the moment we collect it to the moment we destroy it.</p>
+          <div class="privacy-callout">
+            <p>Amendment No. 2 to the HIPC, in force since <strong>1 May 2026</strong>, strengthened our duty to be transparent when we collect information about you from someone other than you (for example, a school or a club). We address this in Section 6.</p>
+          </div>
+          <p class="privacy-text">Alongside these laws, we are bound by the NZ Psychologists Board Code of Ethics, its Best Practice Guidelines on Record Keeping, the Health (Retention of Health Information) Regulations 1996, and the Board's 2025 guidelines on the responsible use of artificial intelligence.</p>
+          <p class="privacy-text">We do not currently use any AI-assisted tools (clinical scribes, transcription software, or note-generation tools) in your care. If we ever introduce such a tool, we will complete a Privacy Impact Assessment first, update this policy, and ask for your consent before any AI tool is used in your care.</p>
+        </section>
+
+        <!-- SECTION 5 -->
+        <section id="s5" class="privacy-section">
+          <div class="privacy-section__header">
+            <div class="privacy-section__number">05</div>
+            <h2 class="privacy-section__title">The Information We Collect</h2>
+          </div>
+          <p class="privacy-text">We collect only the information we need to deliver safe and high-quality services. All collection is proportionate to the purpose for which it is needed.</p>
+
+          <div class="privacy-subsection" id="s5-1">
+            <h3 class="privacy-subsection__title">5.1 Administrative and contact information</h3>
+            <p class="privacy-text">When you make an inquiry or register for a programme, we collect basic details. These are your full name, age bracket, contact phone number, billing information, and the general category of support you are seeking (selected from a dropdown on our inquiry form).</p>
+          </div>
+
+          <div class="privacy-subsection" id="s5-2">
+            <h3 class="privacy-subsection__title">5.2 Clinical and health information</h3>
+            <p class="privacy-text">During the course of one-to-one sessions or specialist athlete support, we collect more sensitive information. This may include clinical session notes and assessment results, psychometric snapshots, Mental Gym plans, what you tell us about your mental, emotional, and physical performance, and any relevant history of previous psychological or health support where it is pertinent to your goals.</p>
+          </div>
+
+          <div class="privacy-subsection" id="s5-3">
+            <h3 class="privacy-subsection__title">5.3 Information regarding tamariki and rangatahi</h3>
+            <p class="privacy-text">For clients under 18, we collect the contact details of a parent or legal guardian and maintain signed consent records. We respect the developing autonomy of young people, and where appropriate, information may also be collected directly from them in a confidential one-to-one setting. Our approach to consent for young people is described in Section 9.</p>
+          </div>
+
+          <div class="privacy-subsection" id="s5-4">
+            <h3 class="privacy-subsection__title">5.4 Digital and platform data</h3>
+            <p class="privacy-text">We collect a small amount of information through our digital platforms to support service delivery. Within our GROW online learning hub, we collect module progress and engagement data. In programme-specific WhatsApp groups (used only with adult programmes, with consent: see Section 8.4), we collect the messages sent within those groups. On our website, we collect anonymised analytics about how visitors use our pages.</p>
+          </div>
+
+          <div class="privacy-subsection" id="s5-5">
+            <h3 class="privacy-subsection__title">5.5 Identifiers</h3>
+            <p class="privacy-text">We do not assign you a unique client number beyond what is required by our practice management system. We do not require you to disclose identifiers issued by other agencies (such as your NHI number) unless this is necessary for safe care or required by law. This is consistent with HIPC Rule 12.</p>
+          </div>
+        </section>
+
+        <!-- SECTION 6 -->
+        <section id="s6" class="privacy-section">
+          <div class="privacy-section__header">
+            <div class="privacy-section__number">06</div>
+            <h2 class="privacy-section__title">How and From Whom We Collect Your Information</h2>
+          </div>
+          <p class="privacy-text">We collect information directly from you wherever possible. This is both an ethical commitment and a legal one (under HIPC Rule 2).</p>
+
+          <div class="privacy-subsection">
+            <h3 class="privacy-subsection__title">6.1 Directly from you</h3>
+            <p class="privacy-text">The majority of information we hold comes directly from you, through one of these channels:</p>
+            <ul class="privacy-list">
+              <li>Our website inquiry form, hosted by Tally.so, used for administrative inquiries only.</li>
+              <li>Our Carepatron client portal, used for secure intake forms, signed consent, and clinical questionnaires.</li>
+              <li>Conversation and interaction during workshops, sport psychology sessions, or kōrero with Jason or James.</li>
+            </ul>
+          </div>
+
+          <div class="privacy-subsection">
+            <h3 class="privacy-subsection__title">6.2 From third parties</h3>
+            <p class="privacy-text">Sometimes we collect information about you from a third party, but only with your prior authorisation, or where the HIPC permits it. Third-party sources can include sports clubs, academies, or National Sporting Organisations who have commissioned our services; schools or teachers in charge of athlete development; parents or guardians acting on behalf of a young athlete; and other health practitioners where a coordinated care arrangement is in place.</p>
+            <div class="privacy-callout">
+              <p>When we receive information about you from a third party, we will tell you (or your parent or guardian, if you are under 16) at our first opportunity <strong>what was provided, by whom, and why</strong>. This commitment reflects IPP 3A under HIPC Amendment No. 2.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 7 -->
+        <section id="s7" class="privacy-section">
+          <div class="privacy-section__header">
+            <div class="privacy-section__number">07</div>
+            <h2 class="privacy-section__title">How We Use Your Information</h2>
+          </div>
+          <p class="privacy-text">We use your information only for the purposes for which it was collected. We do not repurpose health or clinical data for marketing, research, or any other secondary purpose without your explicit, informed consent.</p>
+          <p class="privacy-text">We use your information to:</p>
+          <ul class="privacy-list">
+            <li>Deliver tailored sport psychology assessment, intervention, and performance support.</li>
+            <li>Design and facilitate athlete development workshops, parent education, and coach education programmes.</li>
+            <li>Manage bookings, billing, and administrative communications.</li>
+            <li>Ensure the physical and psychological safety of all programme participants.</li>
+            <li>Fulfil our professional obligations for clinical supervision, record-keeping, and quality assurance.</li>
+          </ul>
+
+          <div class="privacy-subsection">
+            <h3 class="privacy-subsection__title">Accuracy</h3>
+            <p class="privacy-text">Before we use or disclose information about you, we take reasonable steps to make sure it is accurate, up to date, complete, relevant, and not misleading. If you tell us something has changed, we will update our records promptly. This commitment reflects HIPC Rule 8.</p>
+          </div>
+
+          <div class="privacy-subsection">
+            <h3 class="privacy-subsection__title">Marketing</h3>
+            <p class="privacy-text">We do not send marketing emails or operate a newsletter. We do publish a blog on our website, but you do not need to give us any personal information to read it.</p>
+          </div>
+        </section>
+
+        <!-- SECTION 8 -->
+        <section id="s8" class="privacy-section">
+          <div class="privacy-section__header">
+            <div class="privacy-section__number">08</div>
+            <h2 class="privacy-section__title">How We Protect and Store Your Information</h2>
+          </div>
+          <p class="privacy-text">As registered health professionals, we maintain rigorous, multi-layered safeguards to protect your information against unauthorised access, accidental loss, or misuse.</p>
+
+          <div class="privacy-subsection">
+            <h3 class="privacy-subsection__title">8.1 Clinical records: Carepatron</h3>
+            <p class="privacy-text">All of your clinical notes, psychometric results, and health-related records are stored in Carepatron, a practice management platform built specifically for the health sector. We do not store clinical records on personal devices, in email, on paper, or on Google Drive.</p>
+            <p class="privacy-text">Carepatron is independently certified as compliant with the New Zealand Privacy Act 2020, HIPAA (USA), GDPR (EU), SOC 2 Type 1 and Type 2, ISO 27001, and PIPEDA. Carepatron hosts data on Amazon Web Services, Microsoft Azure, and Google Cloud. Data hosting regions are aligned with applicable local regulatory requirements.</p>
+            <p class="privacy-text">Data is encrypted in transit (TLS) and at rest (AES-256). We use multi-factor authentication on all practitioner accounts, and access to clinical session notes is restricted by role to our registered psychologists. You can review Carepatron's Trust Center at <a href="https://trust.carepatron.com" target="_blank" rel="noopener">trust.carepatron.com</a>.</p>
+            <div class="privacy-callout">
+              <p>Because Carepatron may host data on infrastructure located outside New Zealand, this constitutes a cross-border disclosure under Principle 12 of the Privacy Act 2020. We are satisfied that Carepatron's contractual safeguards, certifications, and the privacy laws applying in the relevant hosting jurisdictions provide comparable protections to those in New Zealand.</p>
+            </div>
+          </div>
+
+          <div class="privacy-subsection">
+            <h3 class="privacy-subsection__title">8.2 Website inquiry forms: Tally.so</h3>
+            <p class="privacy-text">Our website contact form is hosted by Tally.so, a Belgian company whose data is stored on servers within the European Union. Because Tally.so operates under the GDPR (which the Office of the Privacy Commissioner considers comparable to the NZ Privacy Act 2020), this arrangement is consistent with Principle 12. We apply strict data minimisation to these forms: only administrative contact details and a pre-selected support category are collected. Submissions are transferred to our secure Carepatron system and then deleted from the Tally dashboard periodically.</p>
+          </div>
+
+          <div class="privacy-subsection">
+            <h3 class="privacy-subsection__title">8.3 GROW online learning hub</h3>
+            <p class="privacy-text">Access to our GROW online hub is password-protected. Engagement and progress data are kept confidential between the athlete and their psychologist and are not shared with coaches, organisations, or other athletes without explicit consent.</p>
+          </div>
+
+          <div class="privacy-subsection">
+            <h3 class="privacy-subsection__title">8.4 WhatsApp groups</h3>
+            <p class="privacy-text">We use WhatsApp only as a logistical and content-sharing channel, and only for programmes where every participant is aged 18 or over. We do not use WhatsApp for any programme involving young people, and we do not use it for clinical communication of any kind.</p>
+            <p class="privacy-text">Before you join a WhatsApp group, we ask for your consent through your intake form. You can decline, and we will provide an alternative communication channel.</p>
+            <ul class="privacy-list">
+              <li>WhatsApp is operated by Meta Platforms, Inc., and its data is processed on servers in the United States.</li>
+              <li>We never share clinical content in WhatsApp. If a clinical or personal disclosure happens in a group, we redirect it to a confidential one-to-one channel within Carepatron.</li>
+              <li>You can leave a WhatsApp group at any time without affecting your participation in our services.</li>
+            </ul>
+          </div>
+
+          <div class="privacy-subsection">
+            <h3 class="privacy-subsection__title">8.5 Mobile devices and remote practice</h3>
+            <p class="privacy-text">Sport psychology is inherently mobile. Any device we use to access Carepatron, send communications, or hold work-related information is encrypted, password-protected, and configured with remote-wipe capability, in line with the Privacy Commissioner's guidance on mobile health practice.</p>
+          </div>
+
+          <div class="privacy-subsection">
+            <h3 class="privacy-subsection__title">8.6 Other systems we use</h3>
+            <p class="privacy-text">We use Google Drive to store organisational documents, such as signed terms of service with sports clubs and schools. We do not store any individual private health information on Google Drive.</p>
+            <p class="privacy-text">Our website is hosted by Vercel.</p>
+          </div>
+        </section>
+
+        <!-- SECTION 9 -->
+        <section id="s9" class="privacy-section">
+          <div class="privacy-section__header">
+            <div class="privacy-section__number">09</div>
+            <h2 class="privacy-section__title">Working With Tamariki and Rangatahi</h2>
+          </div>
+          <p class="privacy-text">We frequently work with young people, and we take our obligations to them — and to their whānau — seriously. Our approach is guided by the Care of Children Act 2004, the HIPC 2020, and the NZ Psychologists Board's ethical guidelines on working with minors.</p>
+
+          <div class="privacy-subsection">
+            <h3 class="privacy-subsection__title">9.1 Initial meetings and consent</h3>
+            <p class="privacy-text">For any client under 18, we begin by meeting with their parents or legal guardians, either separately or alongside the young person. This is when we explain our approach, walk through this Privacy Policy, and obtain signed consent through our Terms of Service. Only after this conversation do one-to-one sessions begin.</p>
+          </div>
+
+          <div class="privacy-subsection">
+            <h3 class="privacy-subsection__title">9.2 Legal capacity to consent</h3>
+            <p class="privacy-text">Under section 36 of the Care of Children Act 2004, a young person aged <strong>16 or over</strong> is legally able to give their own informed consent for psychological services. For those under 16, we typically require written consent from a parent or legal guardian.</p>
+            <p class="privacy-text">That said, NZ courts have recognised the principle of "Gillick competence." A young person under 16 who demonstrates a mature understanding of the nature, purpose, and consequences of the service may, in the practitioner's clinical judgement, be able to consent independently to certain aspects of that support.</p>
+          </div>
+
+          <div class="privacy-subsection">
+            <h3 class="privacy-subsection__title">9.3 Privacy and confidentiality for young athletes</h3>
+            <p class="privacy-text">Parents and whānau are vital partners in a young athlete's growth. They do not, however, have an automatic right to access the content of their child's psychological sessions. The young person is entitled to a confidential therapeutic space.</p>
+            <p class="privacy-text">At the start of our work, we establish a clear and documented agreement with both the young person and their whānau. This agreement sets out what high-level themes may be shared with the home environment, and what specific details will remain strictly between the young person and the psychologist.</p>
+            <div class="privacy-callout">
+              <p>We will not share a young person's clinical information with a parent or guardian without that young person's consent, <strong>except where there is a serious and imminent risk to safety</strong>, or where we are required to do so by law.</p>
+            </div>
+          </div>
+
+          <div class="privacy-subsection">
+            <h3 class="privacy-subsection__title">9.4 A young person's right to their own information</h3>
+            <p class="privacy-text">Under HIPC Rule 6, young people have the right to access information we hold about them, regardless of who paid for the service. If a parent or guardian requests access to a young person's records, we will consider the request in light of the young person's age, maturity, expressed wishes, and best interests, and we will normally seek the young person's input before responding.</p>
+          </div>
+
+          <div class="privacy-subsection">
+            <h3 class="privacy-subsection__title">9.5 When a young person turns 18</h3>
+            <p class="privacy-text">When a young person we are working with turns 18, they are an adult under the law and the rights and obligations under this policy transfer fully to them. In practice, this means:</p>
+            <ul class="privacy-list">
+              <li>From the date of their 18th birthday, we no longer share any information with their parents or guardians without their explicit consent, even if we previously did so by agreement.</li>
+              <li>We will have a conversation with the young person before or shortly after their 18th birthday to confirm their preferences for ongoing communication, share-back arrangements, and family involvement.</li>
+              <li>We will refresh their consent through Carepatron so that the new arrangements are documented.</li>
+            </ul>
+            <p class="privacy-text">This approach reflects both the Code of Ethics for Psychologists and the principle that consent must always belong to the person whose information it is.</p>
+          </div>
+        </section>
+
+        <!-- SECTION 10 -->
+        <section id="s10" class="privacy-section">
+          <div class="privacy-section__header">
+            <div class="privacy-section__number">10</div>
+            <h2 class="privacy-section__title">Confidentiality: The Limits and the Exceptions</h2>
+          </div>
+          <p class="privacy-text">Confidentiality is a cornerstone of the therapeutic relationship, and we do not take any exception to it lightly. Your information is accessed only by our practising psychologists, Jason Yuill Proctor and James Orritt. <strong>We will never sell, rent, or trade your personal data to any third party.</strong></p>
+
+          <div class="privacy-subsection">
+            <h3 class="privacy-subsection__title">10.1 Professional supervision and peer consultation</h3>
+            <p class="privacy-text">Jason and James are required by the NZ Psychologists Board to engage in regular clinical supervision. Your case may be discussed within that supervisory or peer consultation context, with identifying information anonymised. Our supervisor is an external registered psychologist who is bound by the same Code of Ethics.</p>
+          </div>
+
+          <div class="privacy-subsection">
+            <h3 class="privacy-subsection__title">10.2 Team and organisational settings: need-to-know</h3>
+            <p class="privacy-text">In high-performance and team environments, such as The Green Standard, our psychologists may work alongside coaches, sport scientists, or other members of a performance team. In these settings, we work on a strict <strong>need-to-know basis</strong>.</p>
+            <p class="privacy-text">A coach may be told that an athlete is working through a personal issue that affects their availability (the "what"), but specific clinical details (the "why" and "how") remain entirely private unless you give us explicit written consent to share them. Where a third party such as an NSO or sports organisation is the commissioning body for our services, we will explain the limits of confidentiality with you before those services begin.</p>
+          </div>
+
+          <div class="privacy-subsection">
+            <h3 class="privacy-subsection__title">10.3 Mandatory exceptions</h3>
+            <p class="privacy-text">Under HIPC Rule 11 and our professional ethical obligations, there are a small number of circumstances in which we are legally or ethically required to disclose information without your prior consent:</p>
+            <ul class="privacy-list">
+              <li>Where there is a <strong>serious and imminent threat</strong> to your safety or the safety of an identifiable other person, and disclosure is necessary to prevent that harm.</li>
+              <li>Where we hold a genuine concern that a child or vulnerable person is at risk of <strong>abuse, neglect, or serious harm</strong>.</li>
+              <li>Where we are compelled to disclose information by a <strong>court order, statutory summons</strong>, or other valid legal requirement.</li>
+            </ul>
+            <p class="privacy-text">In every case where it is safe and practicable, we will discuss the intended disclosure with you before it is made.</p>
+          </div>
+        </section>
+
+        <!-- SECTION 11 -->
+        <section id="s11" class="privacy-section">
+          <div class="privacy-section__header">
+            <div class="privacy-section__number">11</div>
+            <h2 class="privacy-section__title">Bicultural Governance: Te Tiriti o Waitangi and Māori Data Sovereignty</h2>
+          </div>
+          <p class="privacy-text">The Performance Act acknowledges the unique and foundational status of Māori as Tangata Whenua of Aotearoa. We are committed to upholding the principles of Te Tiriti o Waitangi in our practice and in our governance of your information.</p>
+          <p class="privacy-text">Guided by the principles of Māori Data Sovereignty as articulated by Te Mana Raraunga, we recognise that data about an individual can hold significance for their whānau, hapū, and iwi. Health and performance information about a Māori person is not just an individual asset; it can be a taonga of collective importance. We commit to:</p>
+
+          <ul class="privacy-principles" role="list">
+            <li class="privacy-principle">
+              <p class="privacy-principle__title">Rangatiratanga — Authority</p>
+              <p class="privacy-principle__desc">We respect and uphold the right of Māori to exercise authority and control over their own data and wellbeing.</p>
+            </li>
+            <li class="privacy-principle">
+              <p class="privacy-principle__title">Whakapapa — Relationships</p>
+              <p class="privacy-principle__desc">We acknowledge that all data exists within a context of relationships, and that its collection, use, and storage must be understood within that relational framework.</p>
+            </li>
+            <li class="privacy-principle">
+              <p class="privacy-principle__title">Manaakitanga — Responsibility</p>
+              <p class="privacy-principle__desc">We treat all information entrusted to us with the highest respect, ensuring its use never stigmatises, diminishes, or causes collective harm.</p>
+            </li>
+            <li class="privacy-principle">
+              <p class="privacy-principle__title">Kaitiakitanga — Guardianship</p>
+              <p class="privacy-principle__desc">We act as kaitiaki, stewards, of the data we hold — not as owners.</p>
+            </li>
+          </ul>
+
+          <p class="privacy-text">On request, we will provide a summary of this policy or related correspondence in Te Reo Māori, and we will work to identify a kaupapa Māori practitioner or service for any client who would prefer one.</p>
+          <p class="privacy-text">We aspire, in time, to conduct periodic cultural reviews of our data governance to ensure it remains genuinely responsive to the needs of tamariki Māori and their whānau.</p>
+        </section>
+
+        <!-- SECTION 12 -->
+        <section id="s12" class="privacy-section">
+          <div class="privacy-section__header">
+            <div class="privacy-section__number">12</div>
+            <h2 class="privacy-section__title">How Long We Keep Your Information</h2>
+          </div>
+          <p class="privacy-text">We do not retain your information for longer than is necessary, subject to the minimum retention periods required by law.</p>
+          <div class="privacy-callout">
+            <p>Under the <strong>Health (Retention of Health Information) Regulations 1996</strong>, clinical health records must be retained for at least <strong>ten years</strong> from the day after we last provide a service to you. For records relating to a young person, best practice guidance recommends retention until the young person reaches the age of <strong>25</strong>, or for ten years from the last service date, whichever is longer.</p>
+          </div>
+          <p class="privacy-text">Other records:</p>
+          <ul class="privacy-list">
+            <li>Administrative data submitted through our Tally.so inquiry form is transferred to Carepatron and then deleted from the Tally dashboard periodically.</li>
+            <li>GROW hub engagement logs are retained for the duration of your active participation in a programme, and then anonymised for quality improvement.</li>
+            <li>WhatsApp group messages are deleted when the group is closed at the end of a programme.</li>
+            <li>Organisational documents on Google Drive (such as signed terms of service with clubs) are retained for the duration of the engagement and for seven years afterwards, in line with general business record-keeping practice.</li>
+          </ul>
+          <p class="privacy-text">Once mandatory retention periods have expired, we delete digital clinical records ourselves from Carepatron and from any associated cloud backups. We confirm in writing that this has been done.</p>
+        </section>
+
+        <!-- SECTION 13 -->
+        <section id="s13" class="privacy-section">
+          <div class="privacy-section__header">
+            <div class="privacy-section__number">13</div>
+            <h2 class="privacy-section__title">Reports for Schools, Clubs, and Sporting Organisations</h2>
+          </div>
+          <p class="privacy-text">When a school, club, or NSO commissions us to deliver a programme, they sometimes ask for a report at the end. Our standard practice is as follows:</p>
+          <ul class="privacy-list">
+            <li><strong>Standard reports do not contain individual identifiable information</strong> about athletes. They focus on programme delivery, themes, and aggregate observations.</li>
+            <li>We will always tell athletes if a report is being prepared for the commissioning organisation.</li>
+            <li>If an individual athlete's experience or input is referred to in any way in a report, we will ask that athlete for <strong>explicit consent</strong> first.</li>
+            <li>If the athlete does not consent, we will remove their information from the report.</li>
+          </ul>
+          <p class="privacy-text">This applies equally to written reports, verbal debriefs, and any other form of feedback we provide to a commissioning organisation.</p>
+        </section>
+
+        <!-- SECTION 14 -->
+        <section id="s14" class="privacy-section">
+          <div class="privacy-section__header">
+            <div class="privacy-section__number">14</div>
+            <h2 class="privacy-section__title">Your Rights Under the Privacy Act 2020 and HIPC 2020</h2>
+          </div>
+          <p class="privacy-text">You have important rights in relation to the personal and health information we hold about you. We are committed to upholding these rights promptly.</p>
+          <ul class="privacy-list">
+            <li><strong>Right of access.</strong> You can request a copy of the personal and health information we hold about you at any time. We will respond within twenty working days, as required by the Privacy Act 2020.</li>
+            <li><strong>Right to correction.</strong> If anything we hold about you is inaccurate, incomplete, or misleading, you can ask us to correct it. If we disagree, we will note your request on the relevant record.</li>
+            <li><strong>Right to withdraw consent.</strong> You can withdraw your consent for certain types of data processing at any time. We will explain the consequences if doing so affects our ability to continue providing services to you.</li>
+            <li><strong>Right to object.</strong> You can object to specific uses of your information (for example, being approached for service feedback). We will respect that objection unless we are required by law to process the information.</li>
+            <li><strong>Right to complain.</strong> If you believe we have breached your privacy or failed to honour your rights, please contact our Privacy Officer first. We will respond within ten working days. If you remain dissatisfied, you can complain to the Office of the Privacy Commissioner at <a href="https://www.privacy.org.nz" target="_blank" rel="noopener">www.privacy.org.nz</a>, by phone on <a href="tel:0800803909">0800 803 909</a>, or through their online complaint form.</li>
+          </ul>
+        </section>
+
+        <!-- SECTION 15 -->
+        <section id="s15" class="privacy-section">
+          <div class="privacy-section__header">
+            <div class="privacy-section__number">15</div>
+            <h2 class="privacy-section__title">Third-Party Tools, Cookies, and Website Analytics</h2>
+          </div>
+          <p class="privacy-text">We use a small number of third-party platforms to deliver our services. These third parties are subject to contractual obligations to handle your data appropriately. We encourage you to review their privacy policies.</p>
+
+          <ul class="privacy-tools">
+            <li>
+              <span class="privacy-tools__name">Carepatron</span>
+              <span class="privacy-tools__desc">Practice management and clinical records</span>
+              <span class="privacy-tools__link"><a href="https://www.carepatron.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></span>
+            </li>
+            <li>
+              <span class="privacy-tools__name">Tally.so</span>
+              <span class="privacy-tools__desc">Website inquiry form</span>
+              <span class="privacy-tools__link"><a href="https://tally.so/help/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></span>
+            </li>
+            <li>
+              <span class="privacy-tools__name">Vercel</span>
+              <span class="privacy-tools__desc">Website hosting and Vercel Analytics</span>
+              <span class="privacy-tools__link"><a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></span>
+            </li>
+            <li>
+              <span class="privacy-tools__name">Google Analytics</span>
+              <span class="privacy-tools__desc">Website analytics</span>
+              <span class="privacy-tools__link"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+            </li>
+            <li>
+              <span class="privacy-tools__name">Google Workspace</span>
+              <span class="privacy-tools__desc">Organisational documents only — no individual health information</span>
+              <span class="privacy-tools__link"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+            </li>
+            <li>
+              <span class="privacy-tools__name">WhatsApp / Meta</span>
+              <span class="privacy-tools__desc">Logistics for adult programmes only</span>
+              <span class="privacy-tools__link"><a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></span>
+            </li>
+          </ul>
+
+          <div class="privacy-subsection">
+            <h3 class="privacy-subsection__title">Cookies and analytics</h3>
+            <p class="privacy-text">Our website uses Vercel Analytics and Google Analytics to understand how visitors use our site. These tools use cookies and may collect information such as your approximate location, the pages you visit, and the type of device you are using. The data is used in aggregate and does not personally identify you. You can disable cookies through your browser settings at any time, and you can opt out of Google Analytics specifically by installing Google's Analytics Opt-out browser add-on.</p>
+            <p class="privacy-text"><strong>We do not use targeted advertising.</strong> We do not share your information with advertising networks or data brokers.</p>
+          </div>
+        </section>
+
+        <!-- SECTION 16 -->
+        <section id="s16" class="privacy-section">
+          <div class="privacy-section__header">
+            <div class="privacy-section__number">16</div>
+            <h2 class="privacy-section__title">Privacy Breaches</h2>
+          </div>
+          <p class="privacy-text">Despite the precautions we take, no digital system can guarantee absolute security.</p>
+          <p class="privacy-text">If a privacy breach occurs that is likely to cause serious harm to any affected person, we are required by the Privacy Act 2020 to notify both the affected person(s) and the Office of the Privacy Commissioner as soon as practicable. We will use the Privacy Commissioner's NotifyUs online tool, and our notification will tell you what happened, what information was involved, what we are doing in response, and what steps you can take to protect yourself.</p>
+          <div class="privacy-callout">
+            <p>If you become aware of, or suspect, any unauthorised access to your information held by us, please contact us immediately using the details in <a href="#s19">Section 19</a>.</p>
+          </div>
+        </section>
+
+        <!-- SECTION 17 -->
+        <section id="s17" class="privacy-section">
+          <div class="privacy-section__header">
+            <div class="privacy-section__number">17</div>
+            <h2 class="privacy-section__title">Changes to This Policy</h2>
+          </div>
+          <p class="privacy-text">We may update this Privacy Policy from time to time to reflect changes in our services, legislative requirements, or best practice guidance. When we update, we will revise the "Last Updated" date at the top of the policy. Where the changes are material, we will take reasonable steps to notify clients directly. We encourage you to review this policy periodically.</p>
+        </section>
+
+        <!-- SECTION 18 -->
+        <section id="s18" class="privacy-section">
+          <div class="privacy-section__header">
+            <div class="privacy-section__number">18</div>
+            <h2 class="privacy-section__title">Important Notice: Crisis Support</h2>
+          </div>
+
+          <div class="privacy-crisis">
+            <svg class="privacy-crisis__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <div class="privacy-crisis__body">
+              <h4>The Performance Act is not a crisis or emergency service</h4>
+              <p>Our website and email are not monitored around the clock. If you are in immediate distress or require urgent mental health support:</p>
+              <p><strong>Call or text <a href="tel:1737" style="color: var(--yellow);">1737</a></strong> — free, 24/7 mental health support in Aotearoa New Zealand.</p>
+              <p><strong>For an emergency, dial <a href="tel:111" style="color: var(--yellow);">111</a>.</strong></p>
+              <p style="margin-top: 12px; font-size: 0.82rem; color: var(--gray-500);">This policy does not constitute legal advice. For specific legal guidance regarding your privacy rights, we recommend consulting a qualified New Zealand privacy lawyer or the Office of the Privacy Commissioner.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 19 -->
+        <section id="s19" class="privacy-section">
+          <div class="privacy-section__header">
+            <div class="privacy-section__number">19</div>
+            <h2 class="privacy-section__title">Contact Our Privacy Officers</h2>
+          </div>
+          <p class="privacy-text">For any questions, concerns, access requests, or complaints regarding your personal or health information, please contact us:</p>
+
+          <div class="privacy-contact-card">
+            <div>
+              <p class="privacy-contact-card__role">Lead Privacy Officer</p>
+              <p class="privacy-contact-card__name">James Orritt</p>
+              <p class="privacy-contact-card__sub">Director &amp; Registered Clinical Psychologist<br>Designated under s.201 of the Privacy Act 2020</p>
+            </div>
+            <div>
+              <p class="privacy-contact-card__role">Co-Privacy Officer</p>
+              <p class="privacy-contact-card__name">Jason Yuill Proctor</p>
+              <p class="privacy-contact-card__sub">Director &amp; Registered Psychologist</p>
+            </div>
+            <div class="privacy-contact-card__divider"></div>
+            <div class="privacy-contact-card__detail">
+              <div class="privacy-contact-card__detail-item">
+                <span class="privacy-contact-card__detail-label">Email</span>
+                <span class="privacy-contact-card__detail-value"><a href="mailto:info@performance-act.com">info@performance-act.com</a></span>
+              </div>
+              <div class="privacy-contact-card__detail-item">
+                <span class="privacy-contact-card__detail-label">Phone</span>
+                <span class="privacy-contact-card__detail-value"><a href="tel:02751384535">027 513 8435</a></span>
+              </div>
+              <div class="privacy-contact-card__detail-item">
+                <span class="privacy-contact-card__detail-label">Website</span>
+                <span class="privacy-contact-card__detail-value"><a href="https://www.performance-act.com">www.performance-act.com</a></span>
+              </div>
+            </div>
+          </div>
+
+          <p class="privacy-text" style="margin-top: 16px; font-size: 0.88rem; color: var(--gray-500);">The Performance Act (Performance Act Limited) | Aotearoa New Zealand</p>
+        </section>
+
+        <!-- VERSION FOOTER -->
+        <div class="privacy-version-bar">
+          <span>Last Updated: <strong>April 2026</strong></span>
+          <span>Version: <strong>3.0</strong></span>
+          <span>Contact: <strong><a href="mailto:info@performance-act.com" style="color: var(--gray-500);">info@performance-act.com</a></strong></span>
+          <span style="font-style: italic;">Helping people grow.</span>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-grid__brand">
+          <img src="images/logo-vertical.png" alt="The Performance Act" class="logo-img logo-img--footer">
+          <p class="footer__tagline">Helping People Grow</p>
+          <p class="footer__email">
+            <a href="mailto:info@performance-act.com">info@performance-act.com</a>
+          </p>
+        </div>
+
+        <div class="footer-grid__links">
+          <h4 class="footer__heading">QUICK LINKS</h4>
+          <a href="index.html#about" class="footer__link">About Us</a>
+          <a href="approach.html" class="footer__link">Our Approach</a>
+          <a href="index.html#pillars" class="footer__link">Our PACT</a>
+          <a href="programs.html" class="footer__link">Programs</a>
+          <a href="team.html" class="footer__link">Our Whānau</a>
+        </div>
+
+        <div class="footer-grid__links">
+          <h4 class="footer__heading">SUPPORT</h4>
+          <a href="support-individual.html" class="footer__link">Individual Support</a>
+          <a href="support-teams.html" class="footer__link">Team &amp; Organisational</a>
+          <a href="grow.html" class="footer__link">GROW Platform</a>
+        </div>
+
+        <div class="footer-grid__social">
+          <h4 class="footer__heading">FOLLOW US</h4>
+          <div class="social-links">
+            <a href="https://www.instagram.com/performance__act/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <circle cx="12" cy="12" r="5"/>
+                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/ThePerformanceAct" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/company/performance-act-ltd/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+          </div>
+          <div class="footer__cta">
+            <a href="mailto:info@performance-act.com" class="btn btn--primary btn--sm">GET IN TOUCH</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 The Performance Act. All rights reserved. Aotearoa, New Zealand.</p>
+        <div class="footer__bottom-links">
+          <a href="privacy.html" style="color: var(--yellow);">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top button -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <script src="script.js?v=3"></script>
+
+  <script>
+    /* ── TOC toggle (mobile) ── */
+    const tocToggle = document.getElementById('tocToggle');
+    const privacyToc = document.getElementById('privacyToc');
+
+    if (tocToggle && privacyToc) {
+      tocToggle.addEventListener('click', () => {
+        const isOpen = privacyToc.classList.toggle('is-open');
+        tocToggle.classList.toggle('is-open', isOpen);
+        tocToggle.setAttribute('aria-expanded', isOpen);
+      });
+    }
+
+    /* ── Scroll-spy: highlight active TOC link ── */
+    const sections = document.querySelectorAll('.privacy-section[id]');
+    const tocLinks = document.querySelectorAll('.privacy-toc__item a');
+
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(a => a.classList.remove('active'));
+          const active = document.querySelector(`.privacy-toc__item a[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, {
+      rootMargin: '-20% 0px -70% 0px',
+      threshold: 0,
+    });
+
+    sections.forEach(s => spy.observe(s));
+
+    /* ── Smooth scroll from TOC links ── */
+    tocLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (!target) return;
+        const headerH = document.getElementById('header').offsetHeight;
+        window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - headerH - 24, behavior: 'smooth' });
+
+        /* close mobile TOC after navigation */
+        if (privacyToc && window.innerWidth < 1024) {
+          privacyToc.classList.remove('is-open');
+          tocToggle.classList.remove('is-open');
+          tocToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  </script>
+
+  <!-- ========== NZ SUPPORT LINES ========== -->
+  <button class="support-line-btn" id="supportLineBtn" aria-label="NZ support lines">
+    <span class="support-line-btn__dot" aria-hidden="true"></span>
+    Immediate Support
+  </button>
+
+  <div class="support-line-modal" id="supportLineModal" role="dialog" aria-modal="true" aria-labelledby="supportLineTitle" aria-hidden="true">
+    <div class="support-line-modal__backdrop"></div>
+    <div class="support-line-modal__panel">
+      <button class="support-line-modal__close" id="supportLineClose" aria-label="Close support lines">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <p class="support-line-modal__eyebrow">Aotearoa, New Zealand</p>
+      <h2 class="support-line-modal__title" id="supportLineTitle">Need immediate support?</h2>
+      <p class="support-line-modal__note">The Performance Act is a sport psychology practice, not a crisis or emergency service. If you or someone you care about needs immediate support, please reach out to one of these trusted services below. They are free, confidential, and available 24&#8202;/&#8202;7.</p>
+
+      <ul class="support-line-modal__list" role="list">
+        <li class="sln-resource">
+          <div class="sln-resource__info">
+            <p class="sln-resource__name">1737 &mdash; Need to Talk?</p>
+            <p class="sln-resource__desc">Free call or text, any time. Trained counsellors, 24&#47;7.</p>
+          </div>
+          <a href="tel:1737" class="sln-resource__number">Call or text 1737</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info">
+            <p class="sln-resource__name">Lifeline NZ</p>
+            <p class="sln-resource__desc">Crisis support and suicide prevention, 24&#47;7.</p>
+          </div>
+          <a href="tel:0800543354" class="sln-resource__number">0800 543 354</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info">
+            <p class="sln-resource__name">Youthline</p>
+            <p class="sln-resource__desc">For young people. Free call or text 234, 24&#47;7.</p>
+          </div>
+          <a href="tel:0800376633" class="sln-resource__number">0800 376 633</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info">
+            <p class="sln-resource__name">Suicide Crisis Helpline</p>
+            <p class="sln-resource__desc">0508 TAUTOKO. Support for those in crisis, 24&#47;7.</p>
+          </div>
+          <a href="tel:0508828865" class="sln-resource__number">0508 828 865</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info">
+            <p class="sln-resource__name">Samaritans</p>
+            <p class="sln-resource__desc">Confidential emotional support, any time of day or night.</p>
+          </div>
+          <a href="tel:0800726666" class="sln-resource__number">0800 726 666</a>
+        </li>
+      </ul>
+
+      <p class="support-line-modal__footer">
+        More resources at <a href="https://www.mentalhealth.org.nz/get-help/in-crisis" target="_blank" rel="noopener">Mental Health Foundation NZ</a> and <a href="https://www.depression.org.nz" target="_blank" rel="noopener">depression.org.nz</a>.
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>
