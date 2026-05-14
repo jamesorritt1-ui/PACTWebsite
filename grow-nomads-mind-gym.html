@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mind Gym | Nomads GROW | The Performance Act</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=15">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+
+  <style>
+    /* ============================================================
+       MIND GYM — ACT & Mindfulness Skill Stations
+       Nomads United AFC · The Performance Act
+    ============================================================ */
+    :root {
+      --club:        #0E3A84;
+      --club-dark:   #092970;
+      --club-light:  #1A52B0;
+      --club-accent: #C8102E;
+      --correct:     #22c55e;
+      --wrong:       #e63b2e;
+    }
+
+    /* ---------- PROGRESS BAR ---------- */
+    .at-progress-bar {
+      position: fixed; top: var(--header-height); left: 0; right: 0;
+      height: 3px; background: rgba(255,255,255,0.06); z-index: 999;
+    }
+    .at-progress-fill {
+      height: 100%; background: linear-gradient(90deg, var(--club) 0%, var(--club-accent) 100%);
+      width: 0%; transition: width 0.3s ease;
+    }
+
+    /* ---------- CLUB BANNER ---------- */
+    .at-club-banner {
+      background: linear-gradient(135deg, var(--club-dark) 0%, var(--club) 100%);
+      border-bottom: 3px solid var(--club-accent); padding: 16px 0;
+    }
+    .at-club-banner__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .at-club-banner__left { display: flex; align-items: center; gap: 12px; }
+    .at-club-logo { height: 40px; width: auto; }
+    .at-club-name {
+      font-family: var(--font-heading); font-size: 0.95rem;
+      font-weight: 700; letter-spacing: 0.1em; color: #fff; text-transform: uppercase;
+    }
+    .at-club-sub {
+      font-family: var(--font-heading); font-size: 0.6rem;
+      letter-spacing: 0.2em; color: rgba(255,255,255,0.55); text-transform: uppercase;
+    }
+    .at-back-btn {
+      font-family: var(--font-heading); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.65); background: transparent;
+      border: 1px solid rgba(255,255,255,0.2); padding: 8px 16px;
+      text-decoration: none; transition: all 0.3s ease; flex-shrink: 0;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .at-back-btn:hover { color: #fff; border-color: rgba(255,255,255,0.5); }
+
+    /* ---------- PAGE HERO ---------- */
+    .at-hero {
+      background: var(--black);
+      padding: calc(var(--header-height) + 80px) 0 80px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .at-hero__eyebrow {
+      font-family: var(--font-heading); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--club); margin-bottom: 16px; display: block;
+    }
+    .at-hero__title {
+      font-family: var(--font-heading); font-size: clamp(3.5rem, 10vw, 8rem);
+      font-weight: 700; line-height: 0.9; color: var(--white);
+      text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 24px;
+    }
+    .at-hero__title em { color: var(--club); font-style: normal; display: block; }
+    .at-hero__sub {
+      font-size: 1.05rem; color: var(--gray-500); line-height: 1.7;
+      max-width: 560px; border-left: 2px solid var(--club); padding-left: 20px;
+    }
+    .at-hero__meta { display: flex; align-items: center; gap: 24px; margin-top: 40px; flex-wrap: wrap; }
+    .at-hero__tag {
+      font-family: var(--font-heading); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 6px 14px; border: 1px solid rgba(255,255,255,0.12); color: var(--gray-500);
+    }
+    .at-hero__tag--blue { border-color: var(--club); color: var(--club); background: rgba(14,58,132,0.1); }
+
+    /* ---------- STATION NAV ---------- */
+    .mg-station-nav {
+      background: var(--gray-900); border-bottom: 1px solid rgba(255,255,255,0.06);
+      position: sticky; top: var(--header-height); z-index: 90; overflow-x: auto;
+    }
+    .mg-station-nav__inner {
+      display: flex; gap: 0; min-width: max-content;
+    }
+    .mg-station-pill {
+      font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-700);
+      padding: 14px 20px; border-right: 1px solid rgba(255,255,255,0.05);
+      text-decoration: none; transition: all 0.25s ease; white-space: nowrap;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .mg-station-pill:hover { color: var(--white); background: rgba(255,255,255,0.03); }
+    .mg-station-pill__num {
+      font-size: 0.55rem; color: var(--club); background: rgba(14,58,132,0.15);
+      padding: 2px 6px; border-radius: 2px;
+    }
+
+    /* ---------- SECTIONS ---------- */
+    .at-sec { padding: 100px 0; border-top: 1px solid rgba(255,255,255,0.05); }
+    .at-sec--alt { background: var(--gray-900); }
+    .at-sec-header { margin-bottom: 48px; }
+    .at-sec-num {
+      font-family: var(--font-heading); font-size: clamp(5rem, 10vw, 8rem);
+      font-weight: 700; color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,0.06);
+      line-height: 0.85; display: block; margin-bottom: -12px; user-select: none;
+    }
+    .at-sec-title {
+      font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700; color: var(--white); text-transform: uppercase; line-height: 1.05;
+    }
+    .at-sec-title em { color: var(--club); font-style: normal; }
+    .at-station-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--font-heading); font-size: 0.62rem; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--club);
+      margin-bottom: 32px;
+    }
+    .at-station-badge::before {
+      content: ''; display: block; width: 24px; height: 2px; background: var(--club);
+    }
+    .at-lead {
+      font-family: var(--font-heading); font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 500; color: var(--white); line-height: 1.35; margin-bottom: 20px;
+    }
+    .at-body {
+      font-size: 1rem; color: var(--gray-300); line-height: 1.8; margin-bottom: 16px;
+      max-width: 680px;
+    }
+    .at-body strong { color: var(--white); }
+    .at-body em { color: var(--club); font-style: normal; }
+
+    /* ---------- DEFUSION LAB ---------- */
+    .mg-defusion-wrap { margin: 40px 0; }
+    .mg-defusion-input-row {
+      display: flex; gap: 12px; align-items: flex-end; margin-bottom: 20px;
+    }
+    .mg-defusion-field { flex: 1; }
+    .mg-defusion-label {
+      font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--club);
+      display: block; margin-bottom: 8px;
+    }
+    .mg-defusion-input {
+      width: 100%; padding: 14px 18px;
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+      color: var(--white); font-family: var(--font-body); font-size: 0.95rem;
+      outline: none; transition: border-color 0.3s; box-sizing: border-box;
+    }
+    .mg-defusion-input:focus { border-color: var(--club); }
+    .mg-defusion-input::placeholder { color: var(--gray-700); }
+    .mg-defuse-btn {
+      font-family: var(--font-heading); font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 14px 28px; background: var(--club); color: #fff;
+      border: 2px solid var(--club); cursor: pointer; transition: all 0.3s; white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .mg-defuse-btn:hover { background: var(--club-dark); }
+    .mg-defusion-result { display: none; animation: fadeIn 0.4s ease; }
+    .mg-defusion-result.is-visible { display: block; }
+    .mg-defusion-fused {
+      padding: 20px 24px; background: rgba(230,59,46,0.06);
+      border: 1px solid rgba(230,59,46,0.2); margin-bottom: 12px;
+    }
+    .mg-defusion-fused__label {
+      font-family: var(--font-heading); font-size: 0.58rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(230,59,46,0.8); margin-bottom: 6px; display: block;
+    }
+    .mg-defusion-fused p { font-size: 0.95rem; color: var(--gray-300); font-style: italic; }
+    .mg-defusion-defused {
+      padding: 20px 24px; background: rgba(14,58,132,0.07);
+      border: 1px solid rgba(14,58,132,0.3);
+    }
+    .mg-defusion-defused__label {
+      font-family: var(--font-heading); font-size: 0.58rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--club); margin-bottom: 6px; display: block;
+    }
+    .mg-defusion-defused p { font-size: 0.95rem; color: var(--white); font-style: italic; font-weight: 500; }
+    .mg-defusion-note { font-size: 0.82rem; color: var(--gray-500); margin-top: 10px; line-height: 1.6; }
+
+    /* ---------- BREATHING EXERCISE ---------- */
+    .mg-breath-wrap {
+      background: var(--gray-900); border: 1px solid rgba(255,255,255,0.06);
+      padding: 48px 44px; text-align: center; margin: 40px 0;
+    }
+    .mg-breath-circle {
+      width: 140px; height: 140px; border-radius: 50%; margin: 0 auto 24px;
+      border: 2px solid rgba(14,58,132,0.3); background: rgba(14,58,132,0.08);
+      display: flex; align-items: center; justify-content: center;
+      transition: all 4s ease;
+      position: relative;
+    }
+    .mg-breath-circle.is-inhale {
+      transform: scale(1.4); border-color: var(--club); background: rgba(14,58,132,0.18);
+    }
+    .mg-breath-circle.is-hold {
+      transform: scale(1.4); border-color: var(--club); background: rgba(14,58,132,0.18);
+      transition: all 0.3s ease;
+    }
+    .mg-breath-circle.is-exhale {
+      transform: scale(1); border-color: rgba(14,58,132,0.3); background: rgba(14,58,132,0.06);
+    }
+    .mg-breath-label {
+      font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--club);
+    }
+    .mg-breath-instruction {
+      font-family: var(--font-heading); font-size: 1rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase; color: var(--white);
+      margin-bottom: 8px;
+    }
+    .mg-breath-count {
+      font-family: var(--font-heading); font-size: 2rem; font-weight: 700;
+      color: var(--club); line-height: 1;
+    }
+    .mg-breath-hint { font-size: 0.88rem; color: var(--gray-500); margin-bottom: 28px; }
+    .mg-breath-start {
+      font-family: var(--font-heading); font-size: 0.88rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 16px 36px; background: var(--club); color: #fff;
+      border: 2px solid var(--club); cursor: pointer; transition: all 0.3s;
+    }
+    .mg-breath-start:hover { background: var(--club-dark); }
+    .mg-breath-start.is-running { background: transparent; color: var(--gray-500); border-color: rgba(255,255,255,0.1); cursor: default; }
+    .mg-breath-done { display: none; font-size: 0.92rem; color: var(--club); margin-top: 16px; font-style: italic; }
+    .mg-breath-done.is-visible { display: block; animation: fadeIn 0.5s ease; }
+
+    /* ---------- OBSERVER CARDS ---------- */
+    .mg-observer-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px; margin: 40px 0;
+    }
+    .mg-observer-card {
+      background: var(--gray-900); border: 1px solid rgba(255,255,255,0.06);
+      padding: 28px 24px; cursor: pointer; transition: all 0.3s;
+      border-top: 3px solid transparent;
+    }
+    .mg-observer-card:hover { border-color: rgba(14,58,132,0.15); border-top-color: var(--club); }
+    .mg-observer-card.is-open { border-top-color: var(--club); }
+    .mg-observer-card__q {
+      font-family: var(--font-heading); font-size: 0.88rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase; color: var(--white);
+      margin-bottom: 12px; line-height: 1.3;
+    }
+    .mg-observer-card__tap {
+      font-family: var(--font-heading); font-size: 0.6rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gray-700); transition: color 0.3s;
+    }
+    .mg-observer-card:hover .mg-observer-card__tap { color: var(--club); }
+    .mg-observer-card__a {
+      display: none; margin-top: 16px; padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.88rem; color: var(--gray-300); line-height: 1.7;
+    }
+    .mg-observer-card.is-open .mg-observer-card__tap { display: none; }
+    .mg-observer-card.is-open .mg-observer-card__a { display: block; animation: fadeIn 0.3s ease; }
+    .mg-observer-card__a strong { color: var(--white); }
+
+    /* ---------- ACCEPTANCE METER ---------- */
+    .mg-accept-scenarios {
+      display: flex; flex-direction: column; gap: 16px; margin: 40px 0;
+    }
+    .mg-accept-item {
+      background: var(--gray-900); border: 1px solid rgba(255,255,255,0.06);
+      padding: 24px 28px;
+    }
+    .mg-accept-item__text { font-size: 0.95rem; color: var(--gray-300); line-height: 1.65; margin-bottom: 16px; }
+    .mg-accept-item__text strong { color: var(--white); }
+    .mg-accept-label {
+      font-family: var(--font-heading); font-size: 0.6rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gray-700); margin-bottom: 10px; display: block;
+    }
+    .mg-accept-slider {
+      width: 100%; accent-color: var(--club); cursor: pointer; height: 4px;
+    }
+    .mg-accept-scale {
+      display: flex; justify-content: space-between;
+      font-family: var(--font-heading); font-size: 0.58rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gray-700); margin-top: 6px;
+    }
+    .mg-accept-response {
+      display: none; margin-top: 14px; padding: 14px 18px;
+      border-left: 3px solid var(--club); background: rgba(14,58,132,0.05);
+      font-size: 0.85rem; color: var(--gray-300); line-height: 1.65;
+    }
+    .mg-accept-response.is-visible { display: block; animation: fadeIn 0.35s ease; }
+    .mg-accept-response strong { color: var(--white); }
+    .mg-accept-submit {
+      font-family: var(--font-heading); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 10px 22px; background: transparent; color: var(--gray-500);
+      border: 1px solid rgba(255,255,255,0.12); cursor: pointer; transition: all 0.3s;
+      margin-top: 12px;
+    }
+    .mg-accept-submit:hover { border-color: var(--club); color: var(--white); }
+
+    /* ---------- ACE CHALLENGE CARDS ---------- */
+    .mg-ace-challenges { display: flex; flex-direction: column; gap: 20px; margin: 40px 0; }
+    .mg-ace-challenge {
+      background: var(--gray-900); border: 1px solid rgba(255,255,255,0.06);
+      overflow: hidden;
+    }
+    .mg-ace-challenge__head {
+      padding: 24px 28px; cursor: pointer; display: flex;
+      align-items: center; justify-content: space-between; gap: 16px;
+      transition: background 0.25s;
+    }
+    .mg-ace-challenge__head:hover { background: rgba(255,255,255,0.02); }
+    .mg-ace-challenge__scenario { font-size: 0.92rem; color: var(--white); line-height: 1.55; flex: 1; }
+    .mg-ace-challenge__toggle {
+      font-family: var(--font-heading); font-size: 0.6rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--club); flex-shrink: 0; white-space: nowrap;
+    }
+    .mg-ace-challenge__body {
+      max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+    }
+    .mg-ace-challenge.is-open .mg-ace-challenge__body { max-height: 600px; }
+    .mg-ace-challenge__content {
+      padding: 0 28px 28px; border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .mg-ace-step-row { display: flex; gap: 14px; margin-top: 20px; }
+    .mg-ace-step-letter {
+      font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700;
+      color: var(--club); line-height: 1; flex-shrink: 0; width: 32px;
+    }
+    .mg-ace-step-detail { flex: 1; }
+    .mg-ace-step-word {
+      font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-500);
+      margin-bottom: 4px;
+    }
+    .mg-ace-step-text { font-size: 0.88rem; color: var(--gray-300); line-height: 1.65; }
+    .mg-ace-step-text strong { color: var(--white); }
+
+    /* ---------- QUIZ SYSTEM ---------- */
+    .at-quiz-wrap { margin-top: 48px; }
+    .at-quiz-label { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+    .at-quiz-badge {
+      font-family: var(--font-heading); font-size: 0.62rem; font-weight: 600;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      padding: 5px 12px; background: var(--club); color: #fff;
+    }
+    .at-quiz-progress {
+      font-family: var(--font-heading); font-size: 0.62rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gray-500);
+    }
+    .at-quiz {
+      background: var(--gray-900); border: 1px solid rgba(255,255,255,0.06); padding: 40px;
+    }
+    .at-quiz__q {
+      font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600;
+      color: var(--white); text-transform: uppercase; letter-spacing: 0.04em;
+      line-height: 1.3; margin-bottom: 28px;
+    }
+    .at-quiz__opts { display: flex; flex-direction: column; gap: 10px; }
+    .at-quiz__opt {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 16px 20px; background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.07); cursor: pointer; transition: all 0.25s ease;
+      font-family: var(--font-body); font-size: 0.9rem;
+      color: var(--gray-300); line-height: 1.45; text-align: left; width: 100%;
+    }
+    .at-quiz__opt:hover:not([disabled]) { border-color: rgba(14,58,132,0.4); background: rgba(14,58,132,0.06); }
+    .at-quiz__opt[disabled] { cursor: default; }
+    .at-quiz__opt.is-correct { border-color: var(--correct); background: rgba(34,197,94,0.07); color: var(--white); }
+    .at-quiz__opt.is-wrong { border-color: var(--wrong); background: rgba(230,59,46,0.07); color: var(--gray-700); }
+    .at-quiz__opt.is-highlight { border-color: var(--correct); background: rgba(34,197,94,0.07); color: var(--white); }
+    .at-opt-letter {
+      font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.1em; color: var(--gray-700); flex-shrink: 0; width: 22px; margin-top: 1px;
+    }
+    .at-quiz__opt.is-correct .at-opt-letter,
+    .at-quiz__opt.is-highlight .at-opt-letter { color: var(--correct); }
+    .at-quiz__opt.is-wrong .at-opt-letter { color: var(--wrong); }
+    .at-feedback {
+      display: none; margin-top: 20px; padding: 18px 22px;
+      border-left: 3px solid transparent; font-size: 0.9rem; line-height: 1.7; color: var(--gray-300);
+    }
+    .at-feedback.is-visible { display: block; animation: fadeIn 0.3s ease; }
+    .at-feedback.is-correct { border-color: var(--correct); background: rgba(34,197,94,0.05); }
+    .at-feedback.is-wrong { border-color: var(--wrong); background: rgba(230,59,46,0.05); }
+    .at-feedback strong { color: var(--white); }
+    .at-quiz-reset {
+      display: none; margin-top: 14px;
+      font-family: var(--font-heading); font-size: 0.68rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--gray-500);
+      background: none; border: none; cursor: pointer; text-decoration: underline;
+      text-underline-offset: 3px; transition: color 0.3s;
+    }
+    .at-quiz-reset.is-visible { display: inline-block; }
+    .at-quiz-reset:hover { color: var(--white); }
+    .at-insight {
+      margin-top: 32px; padding: 28px 32px;
+      border: 1px solid rgba(14,58,132,0.3); background: rgba(14,58,132,0.05); display: none;
+    }
+    .at-insight.is-visible { display: block; animation: fadeIn 0.4s ease; }
+    .at-insight__label {
+      font-family: var(--font-heading); font-size: 0.62rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--club); margin-bottom: 10px; display: block;
+    }
+    .at-insight p { font-size: 0.92rem; color: var(--gray-300); line-height: 1.8; }
+    .at-insight strong { color: var(--white); }
+
+    /* ---------- PAGE END ---------- */
+    .at-page-end {
+      background: var(--gray-900); padding: 100px 0;
+      border-top: 3px solid var(--club); text-align: center;
+    }
+    .at-page-end__badge {
+      font-family: var(--font-heading); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.25em; text-transform: uppercase; color: var(--club);
+      margin-bottom: 16px; display: block;
+    }
+    .at-page-end__title {
+      font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700; color: var(--white); text-transform: uppercase;
+      line-height: 1.1; margin-bottom: 20px;
+    }
+    .at-page-end__text {
+      font-size: 1rem; color: var(--gray-500); line-height: 1.7;
+      max-width: 500px; margin: 0 auto 40px;
+    }
+    .at-page-end__actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* ---------- VIDEO ---------- */
+    .at-video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+      margin: 40px 0; background: var(--gray-900);
+    }
+    .at-video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    .at-video-label {
+      font-family: var(--font-heading); font-size: 0.65rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--club); margin-bottom: 10px; display: block;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      .mg-breath-wrap { padding: 32px 20px; }
+      .at-quiz { padding: 28px 20px; }
+      .at-hero { padding: calc(var(--header-height) + 56px) 0 56px; }
+      .mg-defusion-input-row { flex-direction: column; }
+      .mg-defuse-btn { width: 100%; }
+    }
+
+    @keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="images/logo-horizontal.png" alt="The Performance Act" class="logo-img logo-img--header">
+      </a>
+      <nav class="header__nav" id="mainNav">
+        <a href="index.html" class="nav-link">HOME</a>
+        <a href="approach.html" class="nav-link">APPROACH</a>
+        <a href="programs.html" class="nav-link">SUPPORT</a>
+        <a href="blog.html" class="nav-link">INSIGHTS</a>
+        <a href="contact.html" class="nav-link">CONTACT</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <nav class="mobile-nav__links">
+      <a href="index.html" class="mobile-nav__link">HOME</a>
+      <a href="approach.html" class="mobile-nav__link">APPROACH</a>
+      <a href="programs.html" class="mobile-nav__link">SUPPORT</a>
+      <a href="blog.html" class="mobile-nav__link">INSIGHTS</a>
+      <a href="contact.html" class="mobile-nav__link">CONTACT</a>
+    </nav>
+  </div>
+
+  <!-- Progress Bar -->
+  <div class="at-progress-bar"><div class="at-progress-fill" id="progressFill"></div></div>
+
+  <!-- Club Banner -->
+  <div class="at-club-banner">
+    <div class="container">
+      <div class="at-club-banner__inner">
+        <div class="at-club-banner__left">
+          <img src="images/nomads-logo.png" alt="Nomads United AFC" class="at-club-logo" onerror="this.style.display='none'">
+          <div>
+            <div class="at-club-name">Nomads United AFC</div>
+            <div class="at-club-sub">GROW Platform · Powered by The Performance Act</div>
+          </div>
+        </div>
+        <a href="grow-nomads.html" class="at-back-btn">&#8592; Back to Resources</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="at-hero">
+    <div class="container">
+      <span class="at-hero__eyebrow">Skill Training · All Groups</span>
+      <h1 class="at-hero__title">THE MIND<br><em>GYM</em></h1>
+      <p class="at-hero__sub">Six short stations. Each one builds a real psychological skill from ACT and Mindfulness. Use this between sessions, before games, or whenever you want to train your mental game. No login required — just show up.</p>
+      <div class="at-hero__meta">
+        <span class="at-hero__tag at-hero__tag--blue">6 Stations</span>
+        <span class="at-hero__tag">6 Knowledge Checks</span>
+        <span class="at-hero__tag">ACT &amp; Mindfulness</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Station Nav -->
+  <nav class="mg-station-nav" aria-label="Mind Gym Stations">
+    <div class="container">
+      <div class="mg-station-nav__inner">
+        <a href="#sec-01" class="mg-station-pill"><span class="mg-station-pill__num">01</span>Defusion Lab</a>
+        <a href="#sec-02" class="mg-station-pill"><span class="mg-station-pill__num">02</span>Anchor Builder</a>
+        <a href="#sec-03" class="mg-station-pill"><span class="mg-station-pill__num">03</span>Present Moment</a>
+        <a href="#sec-04" class="mg-station-pill"><span class="mg-station-pill__num">04</span>The Observer</a>
+        <a href="#sec-05" class="mg-station-pill"><span class="mg-station-pill__num">05</span>Making Room</a>
+        <a href="#sec-06" class="mg-station-pill"><span class="mg-station-pill__num">06</span>ACE Master</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== STATION 01 — DEFUSION LAB ==================== -->
+  <section class="at-sec" id="sec-01">
+    <div class="container">
+      <span class="at-station-badge">Station 01 — Defusion Lab</span>
+      <div class="at-sec-header">
+        <span class="at-sec-num">01</span>
+        <h2 class="at-sec-title">THE DEFUSION<br><em>LAB</em></h2>
+      </div>
+
+      <p class="at-lead">Take any thought and defuse it. Right now. In seconds.</p>
+      <p class="at-body">Cognitive defusion is the ACT skill of creating distance between you and your thoughts. When you're <em>fused</em> with a thought — "I'm useless at this" — the thought feels like the truth. When you're <em>defused</em>, the thought is just a thought: something you notice, not something you are.</p>
+      <p class="at-body">The defusion technique you practised in the session: <strong>"I'm noticing the thought that..."</strong> It sounds simple. It changes everything. Try it below — type any unhelpful thought that shows up for you on the pitch.</p>
+
+      <div class="mg-defusion-wrap">
+        <div class="mg-defusion-input-row">
+          <div class="mg-defusion-field">
+            <label class="mg-defusion-label" for="fusedThought">Your unhelpful thought (write it as you actually think it)</label>
+            <input class="mg-defusion-input" id="fusedThought" type="text" placeholder="e.g. I'm going to mess this up" maxlength="100">
+          </div>
+          <button class="mg-defuse-btn" id="defuseBtn">Defuse It</button>
+        </div>
+        <div class="mg-defusion-result" id="defusionResult">
+          <div class="mg-defusion-fused">
+            <span class="mg-defusion-fused__label">Fused — you ARE the thought</span>
+            <p id="fusedOut"></p>
+          </div>
+          <div class="mg-defusion-defused">
+            <span class="mg-defusion-defused__label">Defused — you HAVE the thought</span>
+            <p id="defusedOut"></p>
+          </div>
+          <p class="mg-defusion-note">Say the defused version out loud — or silently in your head. Notice the tiny gap it creates between you and the thought. That gap is where your choice lives.</p>
+        </div>
+      </div>
+
+      <p class="at-body">You can also extend the defusion by naming the thought pattern. If your mind says "I'm useless," you might notice: <strong>"There's my 'I'm useless' story again."</strong> Naming the story type — rather than believing the content — creates even more distance.</p>
+
+      <div class="at-quiz-wrap">
+        <div class="at-quiz-label">
+          <span class="at-quiz-badge">CHECK 1 of 6</span>
+          <span class="at-quiz-progress">Defusion Lab</span>
+        </div>
+        <div class="at-quiz" id="q1">
+          <p class="at-quiz__q">Cognitive defusion works by...</p>
+          <div class="at-quiz__opts" id="q1-opts">
+            <button class="at-quiz__opt" data-i="0"><span class="at-opt-letter">A</span><span>Replacing the negative thought with a positive one</span></button>
+            <button class="at-quiz__opt" data-i="1"><span class="at-opt-letter">B</span><span>Proving the thought is factually wrong</span></button>
+            <button class="at-quiz__opt" data-i="2"><span class="at-opt-letter">C</span><span>Creating psychological distance so the thought loses its automatic grip on your behaviour</span></button>
+            <button class="at-quiz__opt" data-i="3"><span class="at-opt-letter">D</span><span>Reducing the frequency of unhelpful thoughts through practice</span></button>
+          </div>
+          <div class="at-feedback" id="q1-fb"></div>
+          <button class="at-quiz-reset" id="q1-reset">Try Again</button>
+        </div>
+        <div class="at-insight" id="q1-insight">
+          <span class="at-insight__label">The Insight</span>
+          <p>Defusion doesn't get rid of the thought, change it, or prove it wrong. <strong>It changes your relationship to it.</strong> When you say "I'm noticing the thought that I'm going to mess up," the thought is still there — but you're now observing it rather than being it. That shift in perspective breaks the automatic thought-to-behaviour pipeline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STATION 02 — ANCHOR BUILDER ==================== -->
+  <section class="at-sec at-sec--alt" id="sec-02">
+    <div class="container">
+      <span class="at-station-badge">Station 02 — Anchor Builder</span>
+      <div class="at-sec-header">
+        <span class="at-sec-num">02</span>
+        <h2 class="at-sec-title">THE ANCHOR<br><em>BUILDER</em></h2>
+      </div>
+
+      <p class="at-lead">An anchor is a fast route back to who you want to be. Train it here.</p>
+      <p class="at-body">You built your anchor in the Play Brave session. This station is where you practise it — and where you can refine it. The best anchors are simple, personal, and used repeatedly in training so they become automatic under pressure.</p>
+      <p class="at-body">Below is the full Nomads Compass — the three components of a strong anchor. Work through each one and build yours.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin:40px 0;">
+        <div style="background:rgba(14,58,132,0.07);border:1px solid rgba(14,58,132,0.2);padding:28px 24px;">
+          <div style="font-family:var(--font-heading);font-size:2rem;font-weight:700;color:var(--club);margin-bottom:8px;">⚓</div>
+          <div style="font-family:var(--font-heading);font-size:0.75rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--club);margin-bottom:10px;">The Anchor Word</div>
+          <p style="font-size:0.88rem;color:var(--gray-300);line-height:1.65;">One value. One word. The version of yourself you're choosing to embody — regardless of the feeling.<br><em style="color:var(--club);font-style:normal;">Examples: Brave · Resilient · Committed · Honest</em></p>
+        </div>
+        <div style="background:rgba(14,58,132,0.07);border:1px solid rgba(14,58,132,0.2);padding:28px 24px;">
+          <div style="font-family:var(--font-heading);font-size:2rem;font-weight:700;color:var(--club);margin-bottom:8px;">🌡️</div>
+          <div style="font-family:var(--font-heading);font-size:0.75rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--club);margin-bottom:10px;">The Weather Check</div>
+          <p style="font-size:0.88rem;color:var(--gray-300);line-height:1.65;">A one-second body scan. What's here? Name it — nerves, frustration, doubt — without judgment. You're the weather forecaster, not the storm.<br><em style="color:var(--club);font-style:normal;">"I'm noticing nerves — that's all."</em></p>
+        </div>
+        <div style="background:rgba(14,58,132,0.07);border:1px solid rgba(14,58,132,0.2);padding:28px 24px;">
+          <div style="font-family:var(--font-heading);font-size:2rem;font-weight:700;color:var(--club);margin-bottom:8px;">🔗</div>
+          <div style="font-family:var(--font-heading);font-size:0.75rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--club);margin-bottom:10px;">The Physical Cue</div>
+          <p style="font-size:0.88rem;color:var(--gray-300);line-height:1.65;">A subtle body action — touch, grip, breath — that links to your anchor word through repetition. Invisible to everyone else. Everything to you.<br><em style="color:var(--club);font-style:normal;">Examples: wrist touch · jersey grip · exhale</em></p>
+        </div>
+      </div>
+
+      <span class="at-video-label">Watch — How Olympic Athletes Use Pre-Performance Routines</span>
+      <div class="at-video-wrap">
+        <iframe src="https://www.youtube.com/embed/6PYaJgxhGM0?rel=0&modestbranding=1" title="Olympic Pre-Performance Routines" allowfullscreen></iframe>
+      </div>
+
+      <div class="at-quiz-wrap">
+        <div class="at-quiz-label">
+          <span class="at-quiz-badge">CHECK 2 of 6</span>
+          <span class="at-quiz-progress">Anchor Builder</span>
+        </div>
+        <div class="at-quiz" id="q2">
+          <p class="at-quiz__q">The Nomads Compass anchor combines three things: an anchor word, a weather check, and a physical cue. Why is the physical cue important?</p>
+          <div class="at-quiz__opts" id="q2-opts">
+            <button class="at-quiz__opt" data-i="0"><span class="at-opt-letter">A</span><span>It gives you something to focus on besides the noise, distracting the brain</span></button>
+            <button class="at-quiz__opt" data-i="1"><span class="at-opt-letter">B</span><span>Through repetition, the physical cue becomes a conditioned trigger that pulls the mind back to the present and the chosen value</span></button>
+            <button class="at-quiz__opt" data-i="2"><span class="at-opt-letter">C</span><span>It relaxes the body, reducing cortisol and physical tension before a big moment</span></button>
+            <button class="at-quiz__opt" data-i="3"><span class="at-opt-letter">D</span><span>It signals to teammates that you're mentally prepared</span></button>
+          </div>
+          <div class="at-feedback" id="q2-fb"></div>
+          <button class="at-quiz-reset" id="q2-reset">Try Again</button>
+        </div>
+        <div class="at-insight" id="q2-insight">
+          <span class="at-insight__label">The Insight</span>
+          <p><strong>B is correct.</strong> The physical cue works through conditioned association — the same principle as muscle memory. Each time you pair the cue with a deliberate return to your value in training, the neural link strengthens. Under match pressure, the cue fires automatically — not because you're consciously thinking about it, but because the nervous system has learned the pattern.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STATION 03 — PRESENT MOMENT ==================== -->
+  <section class="at-sec" id="sec-03">
+    <div class="container">
+      <span class="at-station-badge">Station 03 — Present Moment Training</span>
+      <div class="at-sec-header">
+        <span class="at-sec-num">03</span>
+        <h2 class="at-sec-title">PRESENT<br><em>MOMENT</em></h2>
+      </div>
+
+      <p class="at-lead">Your mind lives in the past and future. Your game is happening right now.</p>
+      <p class="at-body">Mindfulness is not meditation. It's not sitting still. In sport, present-moment awareness is a performance skill — the ability to keep your attention on what's actually in front of you instead of replaying the last mistake or worrying about the next challenge.</p>
+      <p class="at-body">The box breathing exercise below is one of the fastest ways to pull your nervous system into the present. It's used by Navy SEALs, Olympic athletes, and surgeons. Four counts in, four hold, four out, four hold. Try one complete cycle now.</p>
+
+      <div class="mg-breath-wrap">
+        <p class="mg-breath-instruction" id="breathInstruction">Ready</p>
+        <div class="mg-breath-circle" id="breathCircle">
+          <div>
+            <div class="mg-breath-count" id="breathCount">4</div>
+            <div class="mg-breath-label" id="breathLabel">—</div>
+          </div>
+        </div>
+        <p class="mg-breath-hint">One full cycle: Inhale 4 · Hold 4 · Exhale 4 · Hold 4</p>
+        <button class="mg-breath-start" id="breathStart">Start Breathing</button>
+        <p class="mg-breath-done" id="breathDone">Done. Notice how you feel. That's the present moment.</p>
+      </div>
+
+      <p class="at-body">Box breathing works because it activates the parasympathetic nervous system (your "rest and digest" mode), temporarily counteracting the fight-or-flight response. Combined with the physical sensation of breathing itself — which is always in the present — it gives your brain a concrete anchor to right now.</p>
+      <p class="at-body"><strong>Where to use it:</strong> before the kickoff. In the tunnel. While the other team takes a corner. At half time when emotions are high. Even once in bed the night before a big game.</p>
+
+      <div class="at-quiz-wrap">
+        <div class="at-quiz-label">
+          <span class="at-quiz-badge">CHECK 3 of 6</span>
+          <span class="at-quiz-progress">Present Moment Training</span>
+        </div>
+        <div class="at-quiz" id="q3">
+          <p class="at-quiz__q">In ACT and mindfulness, "present-moment awareness" during a game means...</p>
+          <div class="at-quiz__opts" id="q3-opts">
+            <button class="at-quiz__opt" data-i="0"><span class="at-opt-letter">A</span><span>Clearing your mind completely so you're in a blank, focused state</span></button>
+            <button class="at-quiz__opt" data-i="1"><span class="at-opt-letter">B</span><span>Keeping your attention on what's actually happening right now — the ball, the pitch, your body — rather than what happened or what might happen</span></button>
+            <button class="at-quiz__opt" data-i="2"><span class="at-opt-letter">C</span><span>Not letting yourself think about anything other than your next task</span></button>
+            <button class="at-quiz__opt" data-i="3"><span class="at-opt-letter">D</span><span>Meditating before the game so your mind is calm throughout</span></button>
+          </div>
+          <div class="at-feedback" id="q3-fb"></div>
+          <button class="at-quiz-reset" id="q3-reset">Try Again</button>
+        </div>
+        <div class="at-insight" id="q3-insight">
+          <span class="at-insight__label">The Insight</span>
+          <p><strong>B is correct.</strong> Present-moment awareness is NOT about having no thoughts (impossible) or being in a relaxed state (not always appropriate in sport). It's about where your attention is directed. You can notice a thought about the last mistake AND return your attention to what's in front of you — that's the skill. It's active, not passive. <strong>Mindfulness in sport is attention training, not relaxation training.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STATION 04 — THE OBSERVER ==================== -->
+  <section class="at-sec at-sec--alt" id="sec-04">
+    <div class="container">
+      <span class="at-station-badge">Station 04 — The Observer</span>
+      <div class="at-sec-header">
+        <span class="at-sec-num">04</span>
+        <h2 class="at-sec-title">THE<br><em>OBSERVER</em></h2>
+      </div>
+
+      <p class="at-lead">You are not your thoughts. You are the one noticing them.</p>
+      <p class="at-body">In ACT, this is called <strong>self-as-context</strong> — or the Observer Self. The idea is that there's a part of you that can watch your thoughts and feelings from a distance without being swept away by them. You've had nervous thoughts and survived them. You've had "I can't do this" thoughts and done it anyway. The thoughts change. You — the noticer — stay constant.</p>
+      <p class="at-body">This is one of the most powerful concepts in ACT, and the hardest to fully grasp. The questions below help you access it. Tap each one to reveal the reflection.</p>
+
+      <div class="mg-observer-grid">
+        <div class="mg-observer-card" id="obs1">
+          <p class="mg-observer-card__q">If your thoughts were clouds, what would you be?</p>
+          <div class="mg-observer-card__tap">Tap to explore</div>
+          <div class="mg-observer-card__a">You'd be the sky. <strong>The sky doesn't become the clouds — it holds them.</strong> The clouds change shape, grow dark, move through. The sky stays. In ACT, you're the sky. Thoughts and feelings are weather — they pass through you, they don't define you.</div>
+        </div>
+        <div class="mg-observer-card" id="obs2">
+          <p class="mg-observer-card__q">Can you remember a time a thought felt 100% true — but turned out to be wrong?</p>
+          <div class="mg-observer-card__tap">Tap to explore</div>
+          <div class="mg-observer-card__a">Almost everyone can. "I'm going to completely freeze." "They'll think I'm pathetic." "I can't do this." And then you did. <strong>If thoughts were facts, that couldn't happen.</strong> This is the Observer noticing: thoughts are events in the mind, not reports from reality.</div>
+        </div>
+        <div class="mg-observer-card" id="obs3">
+          <p class="mg-observer-card__q">Who is the 'you' that's watching your thoughts right now?</p>
+          <div class="mg-observer-card__tap">Tap to explore</div>
+          <div class="mg-observer-card__a">That's the Observer. It's always been there — watching your thoughts in a primary school classroom, watching your nerves before a game, watching this screen right now. <strong>The thoughts have changed completely. The one noticing them hasn't.</strong> That stable observer is where your psychological flexibility comes from.</div>
+        </div>
+        <div class="mg-observer-card" id="obs4">
+          <p class="mg-observer-card__q">When you're playing your best, where is your attention?</p>
+          <div class="mg-observer-card__tap">Tap to explore</div>
+          <div class="mg-observer-card__a"><strong>Not on the thoughts — on the game.</strong> When players describe "flow" or "being in the zone," they're describing the Observer at work: watching the pitch, not the mind's chatter. The Observer doesn't go away. It just stops watching the thoughts and starts watching what matters.</div>
+        </div>
+      </div>
+
+      <div class="at-quiz-wrap">
+        <div class="at-quiz-label">
+          <span class="at-quiz-badge">CHECK 4 of 6</span>
+          <span class="at-quiz-progress">The Observer</span>
+        </div>
+        <div class="at-quiz" id="q4">
+          <p class="at-quiz__q">In ACT, the "Observer Self" (self-as-context) is important because it...</p>
+          <div class="at-quiz__opts" id="q4-opts">
+            <button class="at-quiz__opt" data-i="0"><span class="at-opt-letter">A</span><span>Allows you to monitor your performance objectively during a game</span></button>
+            <button class="at-quiz__opt" data-i="1"><span class="at-opt-letter">B</span><span>Gives you a stable vantage point from which thoughts and feelings can be noticed without being automatically believed or acted upon</span></button>
+            <button class="at-quiz__opt" data-i="2"><span class="at-opt-letter">C</span><span>Helps you identify which thoughts are factually accurate and which are distortions</span></button>
+            <button class="at-quiz__opt" data-i="3"><span class="at-opt-letter">D</span><span>Creates emotional distance so you perform without feeling pressure</span></button>
+          </div>
+          <div class="at-feedback" id="q4-fb"></div>
+          <button class="at-quiz-reset" id="q4-reset">Try Again</button>
+        </div>
+        <div class="at-insight" id="q4-insight">
+          <span class="at-insight__label">The Insight</span>
+          <p><strong>B is correct.</strong> The Observer Self isn't about accurate performance monitoring or emotional removal. It's a stable perspective that allows you to be with difficult thoughts and feelings without being controlled by them. A is performance analysis — different skill. C is CBT (challenging thought accuracy) — ACT doesn't challenge whether thoughts are true; it changes your relationship to them. D confuses the Observer with emotional suppression.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STATION 05 — MAKING ROOM ==================== -->
+  <section class="at-sec" id="sec-05">
+    <div class="container">
+      <span class="at-station-badge">Station 05 — Making Room</span>
+      <div class="at-sec-header">
+        <span class="at-sec-num">05</span>
+        <h2 class="at-sec-title">MAKING<br><em>ROOM</em></h2>
+      </div>
+
+      <p class="at-lead">Acceptance isn't giving up. It's making room for difficult feelings without letting them drive.</p>
+      <p class="at-body">In ACT, <strong>acceptance</strong> means willingly holding a feeling — nerves, frustration, doubt, fear — without fighting it, avoiding it, or needing it to go away before you act. This is the opposite of suppression (don't think about the pink elephant) and the opposite of resignation (I feel bad so I'll perform badly).</p>
+      <p class="at-body">Below are three scenarios. For each one, rate how difficult the acceptance would feel — then see the ACT perspective. There are no right answers to the rating. It's just honest self-awareness.</p>
+
+      <div class="mg-accept-scenarios">
+        <div class="mg-accept-item">
+          <p class="mg-accept-item__text">You're feeling <strong>genuinely nervous</strong> before the biggest game of the season. Instead of trying to calm down, you decide to let the nerves be there — and play with them present.</p>
+          <span class="mg-accept-label">How hard would this acceptance feel? (1 = easy, 10 = very hard)</span>
+          <input type="range" class="mg-accept-slider" id="acc1slider" min="1" max="10" value="5">
+          <div class="mg-accept-scale"><span>1 — Easy</span><span>10 — Very Hard</span></div>
+          <button class="mg-accept-submit" id="acc1btn">See the ACT perspective</button>
+          <div class="mg-accept-response" id="acc1resp">
+            <strong>Normal range: 6–9.</strong> Pre-game nerves are hard to accept because every instinct says "fix this feeling." But nerves and performance are not opposites — research shows moderate arousal improves focus and reaction time. The elite shift isn't eliminating nerves. It's <strong>reframing them as readiness</strong> and playing with them present.
+          </div>
+        </div>
+        <div class="mg-accept-item">
+          <p class="mg-accept-item__text">You've just made a bad mistake. You feel <strong>embarrassed and frustrated</strong>. Instead of trying to push those feelings away quickly, you let yourself fully feel them — for 10 seconds — and then move.</p>
+          <span class="mg-accept-label">How hard would this acceptance feel? (1 = easy, 10 = very hard)</span>
+          <input type="range" class="mg-accept-slider" id="acc2slider" min="1" max="10" value="5">
+          <div class="mg-accept-scale"><span>1 — Easy</span><span>10 — Very Hard</span></div>
+          <button class="mg-accept-submit" id="acc2btn">See the ACT perspective</button>
+          <div class="mg-accept-response" id="acc2resp">
+            <strong>Normal range: 5–8.</strong> In sport we're trained to "move on" immediately — which often means suppression. But fully allowing a feeling for 10 seconds, then moving, is actually faster than fighting it. <strong>Acceptance doesn't mean lingering in the feeling — it means not letting the avoidance of the feeling drive the next action.</strong>
+          </div>
+        </div>
+        <div class="mg-accept-item">
+          <p class="mg-accept-item__text">Your team lost and you played poorly. You feel <strong>disappointed and a bit ashamed</strong>. A teammate asks how you are. Instead of saying "I'm fine," you say: "Yeah, I'm pretty disappointed with how I played."</p>
+          <span class="mg-accept-label">How hard would this acceptance feel? (1 = easy, 10 = very hard)</span>
+          <input type="range" class="mg-accept-slider" id="acc3slider" min="1" max="10" value="5">
+          <div class="mg-accept-scale"><span>1 — Easy</span><span>10 — Very Hard</span></div>
+          <button class="mg-accept-submit" id="acc3btn">See the ACT perspective</button>
+          <div class="mg-accept-response" id="acc3resp">
+            <strong>Normal range: 7–10.</strong> Emotional honesty in sport is one of the hardest acceptance tasks — especially in team environments where vulnerability feels like weakness. But research on team cohesion consistently shows that players who can honestly express difficult feelings create <strong>deeper trust and better collective recovery</strong> from setbacks than teams that suppress.
+          </div>
+        </div>
+      </div>
+
+      <div class="at-quiz-wrap">
+        <div class="at-quiz-label">
+          <span class="at-quiz-badge">CHECK 5 of 6</span>
+          <span class="at-quiz-progress">Making Room</span>
+        </div>
+        <div class="at-quiz" id="q5">
+          <p class="at-quiz__q">In ACT, "acceptance" of a difficult feeling means...</p>
+          <div class="at-quiz__opts" id="q5-opts">
+            <button class="at-quiz__opt" data-i="0"><span class="at-opt-letter">A</span><span>Believing the feeling is appropriate and giving in to it</span></button>
+            <button class="at-quiz__opt" data-i="1"><span class="at-opt-letter">B</span><span>Agreeing that the feeling is correct and will continue</span></button>
+            <button class="at-quiz__opt" data-i="2"><span class="at-opt-letter">C</span><span>Willingly making room for the feeling without fighting it or letting it control your next action</span></button>
+            <button class="at-quiz__opt" data-i="3"><span class="at-opt-letter">D</span><span>Deciding to feel the feeling fully before you're able to perform again</span></button>
+          </div>
+          <div class="at-feedback" id="q5-fb"></div>
+          <button class="at-quiz-reset" id="q5-reset">Try Again</button>
+        </div>
+        <div class="at-insight" id="q5-insight">
+          <span class="at-insight__label">The Insight</span>
+          <p><strong>C is correct.</strong> Acceptance in ACT has a precise meaning: you willingly hold the feeling — without fighting it, justifying it, or letting it dictate your behaviour. It's not resignation (A or B) and it's not waiting until it passes before you act (D). The key phrase: <strong>"make room for it and act anyway."</strong> The feeling can come along for the ride. It doesn't get to drive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STATION 06 — ACE MASTER ==================== -->
+  <section class="at-sec at-sec--alt" id="sec-06">
+    <div class="container">
+      <span class="at-station-badge">Station 06 — ACE Master</span>
+      <div class="at-sec-header">
+        <span class="at-sec-num">06</span>
+        <h2 class="at-sec-title">ACE<br><em>MASTER</em></h2>
+      </div>
+
+      <p class="at-lead">You know the skill. Now use it under pressure. Three high-intensity scenarios — real Nomads moments.</p>
+      <p class="at-body">ACE (Acknowledge · Come Back · Engage) is not a concept you understand once and then have. It's a skill you build through repetition. The more times you run it — in training, in games, in your head — the more automatic it becomes. These scenarios give you three more reps.</p>
+      <p class="at-body">For each one, tap to open the ACE response — then notice how the three steps apply in that specific context.</p>
+
+      <div class="mg-ace-challenges">
+        <div class="mg-ace-challenge" id="ace1">
+          <div class="mg-ace-challenge__head" data-target="ace1">
+            <p class="mg-ace-challenge__scenario"><strong>The referee has made a terrible call against you.</strong> You're furious. The noise says: "That's so unfair, I can't focus now, this always happens to us."</p>
+            <span class="mg-ace-challenge__toggle">Run ACE &#9660;</span>
+          </div>
+          <div class="mg-ace-challenge__body">
+            <div class="mg-ace-challenge__content">
+              <div class="mg-ace-step-row">
+                <div class="mg-ace-step-letter">A</div>
+                <div class="mg-ace-step-detail">
+                  <div class="mg-ace-step-word">Acknowledge</div>
+                  <p class="mg-ace-step-text"><strong>"I'm noticing real anger and frustration right now. That's here."</strong> Don't pretend it isn't. Don't apologise to yourself for feeling it. Name it: anger, injustice, heat. The naming creates the gap.</p>
+                </div>
+              </div>
+              <div class="mg-ace-step-row">
+                <div class="mg-ace-step-letter">C</div>
+                <div class="mg-ace-step-detail">
+                  <div class="mg-ace-step-word">Come Back</div>
+                  <p class="mg-ace-step-text">One breath — long, slow out. Feel your feet on the ground. Look at the pitch. The game is still happening. <strong>The referee's call is in the past. The next second is happening now.</strong></p>
+                </div>
+              </div>
+              <div class="mg-ace-step-row">
+                <div class="mg-ace-step-letter">E</div>
+                <div class="mg-ace-step-detail">
+                  <div class="mg-ace-step-word">Engage</div>
+                  <p class="mg-ace-step-text">Get into position before the free kick is taken. Show your teammates you're still in the game. <strong>The anger can come — it doesn't get the next 10 seconds.</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mg-ace-challenge" id="ace2">
+          <div class="mg-ace-challenge__head" data-target="ace2">
+            <p class="mg-ace-challenge__scenario"><strong>You've been dropped from the starting lineup.</strong> You're devastated and a little embarrassed. Warm-up starts in 10 minutes. The noise says: "I can't believe this. I should just phone it in tonight."</p>
+            <span class="mg-ace-challenge__toggle">Run ACE &#9660;</span>
+          </div>
+          <div class="mg-ace-challenge__body">
+            <div class="mg-ace-challenge__content">
+              <div class="mg-ace-step-row">
+                <div class="mg-ace-step-letter">A</div>
+                <div class="mg-ace-step-detail">
+                  <div class="mg-ace-step-word">Acknowledge</div>
+                  <p class="mg-ace-step-text"><strong>"I'm noticing hurt and embarrassment — that's real."</strong> Being dropped is genuinely difficult. Acknowledging it doesn't make it worse. Pretending it isn't there is what leads to "phoning it in."</p>
+                </div>
+              </div>
+              <div class="mg-ace-step-row">
+                <div class="mg-ace-step-letter">C</div>
+                <div class="mg-ace-step-detail">
+                  <div class="mg-ace-step-word">Come Back</div>
+                  <p class="mg-ace-step-text">Use your anchor. Touch the cue. Say the word. <strong>This moment — the warm-up — is where the response starts.</strong> Not next week. Not at training tomorrow. Now.</p>
+                </div>
+              </div>
+              <div class="mg-ace-step-row">
+                <div class="mg-ace-step-letter">E</div>
+                <div class="mg-ace-step-detail">
+                  <div class="mg-ace-step-word">Engage</div>
+                  <p class="mg-ace-step-text">Warm up as if you're starting. Support whoever is starting in your position. <strong>The kind of player you want to be is visible in how you respond to not being picked — not just in how you play.</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mg-ace-challenge" id="ace3">
+          <div class="mg-ace-challenge__head" data-target="ace3">
+            <p class="mg-ace-challenge__scenario"><strong>You've missed three shots in a row.</strong> It's late in the game. Your mind says: "Don't touch it again. What's the point — you're going to miss again. Disappear."</p>
+            <span class="mg-ace-challenge__toggle">Run ACE &#9660;</span>
+          </div>
+          <div class="mg-ace-challenge__body">
+            <div class="mg-ace-challenge__content">
+              <div class="mg-ace-step-row">
+                <div class="mg-ace-step-letter">A</div>
+                <div class="mg-ace-step-detail">
+                  <div class="mg-ace-step-word">Acknowledge</div>
+                  <p class="mg-ace-step-text"><strong>"I'm noticing the 'disappear' thought. I'm noticing the fear of missing again."</strong> This is the mind trying to protect you. It's not your coach. Name it and let it sit there without agreeing.</p>
+                </div>
+              </div>
+              <div class="mg-ace-step-row">
+                <div class="mg-ace-step-letter">C</div>
+                <div class="mg-ace-step-detail">
+                  <div class="mg-ace-step-word">Come Back</div>
+                  <p class="mg-ace-step-text">Feet. Breath. What's actually happening on the pitch right now? Scan for where you can be useful — <strong>not where it's safe, but where you're needed.</strong></p>
+                </div>
+              </div>
+              <div class="mg-ace-step-row">
+                <div class="mg-ace-step-letter">E</div>
+                <div class="mg-ace-step-detail">
+                  <div class="mg-ace-step-word">Engage</div>
+                  <p class="mg-ace-step-text">Ask for the ball. Make the run. <strong>The brave thing — the values-based thing — is to remain visible and available even when the noise says hide.</strong> That's what "Engage" means at its hardest.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="at-quiz-wrap">
+        <div class="at-quiz-label">
+          <span class="at-quiz-badge">CHECK 6 of 6</span>
+          <span class="at-quiz-progress">ACE Master</span>
+        </div>
+        <div class="at-quiz" id="q6">
+          <p class="at-quiz__q">In Scenario 3 (missing three shots in a row), what makes "Engage" the hardest step of ACE?</p>
+          <div class="at-quiz__opts" id="q6-opts">
+            <button class="at-quiz__opt" data-i="0"><span class="at-opt-letter">A</span><span>Because it requires overriding your physical instincts, which are slower than mental ones</span></button>
+            <button class="at-quiz__opt" data-i="1"><span class="at-opt-letter">B</span><span>Because it requires continuing to attempt something you've repeatedly failed at — in full view of others — against the mind's strongest protective instinct</span></button>
+            <button class="at-quiz__opt" data-i="2"><span class="at-opt-letter">C</span><span>Because it requires communicating with teammates while still feeling upset</span></button>
+            <button class="at-quiz__opt" data-i="3"><span class="at-opt-letter">D</span><span>Because "Engage" always comes last, making it hardest to remember under pressure</span></button>
+          </div>
+          <div class="at-feedback" id="q6-fb"></div>
+          <button class="at-quiz-reset" id="q6-reset">Try Again</button>
+        </div>
+        <div class="at-insight" id="q6-insight">
+          <span class="at-insight__label">The Insight</span>
+          <p><strong>B is correct.</strong> "Engage" is hard in this scenario because the mind's avoidance drive — "disappear, don't risk another miss" — is at its strongest after repeated failure. Remaining visible and asking for the ball despite three misses is values-based action at its most demanding. <strong>This is the core of ACT: you act from your values, not from what feels safest in the moment.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE END CTA -->
+  <section class="at-page-end">
+    <div class="container">
+      <span class="at-page-end__badge">Mind Gym Complete</span>
+      <h2 class="at-page-end__title">Six stations done.<br>Keep training.</h2>
+      <p class="at-page-end__text">The sessions are where the skills begin. The Mind Gym is where you build them. Come back whenever you want another set.</p>
+      <div class="at-page-end__actions">
+        <a href="grow-nomads-meet-your-mind.html" class="btn btn--primary btn--lg">MEET YOUR MIND &rarr;</a>
+        <a href="grow-nomads-play-brave.html" class="btn btn--outline btn--lg">PLAY BRAVE</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom" style="border-top:none;padding-top:0;">
+        <p>&copy; 2026 The Performance Act. All rights reserved. Aotearoa, New Zealand.</p>
+        <div class="footer__bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="grow-nomads.html">Back to GROW</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="support-line-btn" id="supportLineBtn"><span class="support-line-btn__dot"></span>Immediate Support</button>
+
+  <script src="script.js?v=3"></script>
+  <script>
+    /* Auth guard */
+    if (!localStorage.getItem('grow_nomads_club')) {
+      window.location.href = 'grow-nomads.html';
+    }
+
+    /* ---- QUIZ DATA ---- */
+    const QUIZZES = {
+      q1: { correct: 2,
+        correctFb: '<strong>Correct — C.</strong> Defusion changes your relationship to the thought — not its content. The thought stays; you just stop being it. That breaks the automatic pipeline from thought to behaviour.',
+        wrongFb: '<strong>C is correct.</strong> Defusion doesn\'t replace, challenge, or reduce thoughts. It creates distance — so the thought\'s grip on your behaviour loosens. You observe it rather than being it.' },
+      q2: { correct: 1,
+        correctFb: '<strong>B is correct.</strong> The physical cue is a conditioned trigger — it works through repetition, not in-the-moment distraction. It\'s psychological muscle memory.',
+        wrongFb: '<strong>B is correct.</strong> The cue becomes effective through repeated pairing with intentional state change in practice. Under pressure, the trained association fires automatically.' },
+      q3: { correct: 1,
+        correctFb: '<strong>B is correct.</strong> Present-moment awareness is about attention direction — not blank mind or relaxation. You can notice a thought and still return your attention to what\'s in front of you.',
+        wrongFb: '<strong>B is correct.</strong> Mindfulness in sport is attention training, not thought elimination. You notice where attention is going and redirect it — to the ball, the pitch, what\'s actually happening now.' },
+      q4: { correct: 1,
+        correctFb: '<strong>B is correct.</strong> The Observer Self provides a stable vantage point — you can hold difficult thoughts and feelings without being automatically controlled by them.',
+        wrongFb: '<strong>B is correct.</strong> The Observer Self isn\'t performance monitoring or emotional removal. It\'s a stable perspective that lets you notice thoughts without automatically believing or acting on them.' },
+      q5: { correct: 2,
+        correctFb: '<strong>C is correct.</strong> Acceptance = willingly making room without fighting or surrendering control. The feeling comes along; it doesn\'t drive.',
+        wrongFb: '<strong>C is correct.</strong> ACT acceptance means: hold the feeling without fighting it, without giving in to it, and without waiting for it to pass before acting. Make room. Then move.' },
+      q6: { correct: 1,
+        correctFb: '<strong>B is correct.</strong> Three misses activates the mind\'s strongest avoidance drive. Remaining visible against that drive is the hardest form of values-based action — which is exactly why it matters most.',
+        wrongFb: '<strong>B is correct.</strong> After repeated visible failure, the avoidance instinct ("disappear") is at maximum strength. Choosing to remain available and ask for the ball against that instinct is ACT in its most demanding form.' }
+    };
+
+    /* ---- QUIZ SETUP ---- */
+    Object.keys(QUIZZES).forEach(id => {
+      const data = QUIZZES[id];
+      const opts = document.querySelectorAll(`#${id}-opts .at-quiz__opt`);
+      const fb   = document.getElementById(`${id}-fb`);
+      const rst  = document.getElementById(`${id}-reset`);
+      const ins  = document.getElementById(`${id}-insight`);
+
+      opts.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const chosen = parseInt(btn.dataset.i, 10);
+          const right  = chosen === data.correct;
+          opts.forEach(b => {
+            b.disabled = true;
+            const i = parseInt(b.dataset.i, 10);
+            if (i === data.correct) b.classList.add('is-highlight');
+            if (i === chosen && !right) b.classList.add('is-wrong');
+            if (i === chosen && right)  b.classList.add('is-correct');
+          });
+          fb.innerHTML  = right ? data.correctFb : data.wrongFb;
+          fb.className  = `at-feedback is-visible ${right ? 'is-correct' : 'is-wrong'}`;
+          rst.classList.add('is-visible');
+          if (ins) ins.classList.add('is-visible');
+        });
+      });
+
+      rst.addEventListener('click', () => {
+        opts.forEach(b => { b.disabled = false; b.classList.remove('is-correct','is-wrong','is-highlight'); });
+        fb.className = 'at-feedback';
+        fb.innerHTML = '';
+        rst.classList.remove('is-visible');
+        if (ins) ins.classList.remove('is-visible');
+      });
+    });
+
+    /* ---- DEFUSION LAB ---- */
+    document.getElementById('defuseBtn').addEventListener('click', () => {
+      const thought = document.getElementById('fusedThought').value.trim();
+      if (!thought) return;
+      const clean = thought.replace(/^(i'm|im|i am)\s*/i, '').replace(/^(the thought that|thinking)\s*/i, '');
+      const capitalised = clean.charAt(0).toUpperCase() + clean.slice(1);
+      document.getElementById('fusedOut').textContent = '"' + capitalised + '"';
+      document.getElementById('defusedOut').textContent = '"I\'m noticing the thought that ' + clean.toLowerCase() + '."';
+      document.getElementById('defusionResult').classList.add('is-visible');
+    });
+    document.getElementById('fusedThought').addEventListener('keydown', e => {
+      if (e.key === 'Enter') document.getElementById('defuseBtn').click();
+    });
+
+    /* ---- BOX BREATHING ---- */
+    let breathRunning = false;
+    document.getElementById('breathStart').addEventListener('click', () => {
+      if (breathRunning) return;
+      breathRunning = true;
+      const btn = document.getElementById('breathStart');
+      btn.classList.add('is-running');
+      btn.textContent = 'Breathing…';
+
+      const circle      = document.getElementById('breathCircle');
+      const instruction = document.getElementById('breathInstruction');
+      const countEl     = document.getElementById('breathCount');
+      const labelEl     = document.getElementById('breathLabel');
+      const done        = document.getElementById('breathDone');
+
+      const phases = [
+        { name: 'Inhale', cls: 'is-inhale', dur: 4000, label: 'IN' },
+        { name: 'Hold',   cls: 'is-hold',   dur: 4000, label: 'HOLD' },
+        { name: 'Exhale', cls: 'is-exhale',  dur: 4000, label: 'OUT' },
+        { name: 'Hold',   cls: 'is-hold',    dur: 4000, label: 'HOLD' }
+      ];
+
+      let phaseIdx = 0;
+      let countdown = 4;
+      let countInterval;
+
+      function startPhase() {
+        if (phaseIdx >= phases.length) {
+          circle.className = 'mg-breath-circle';
+          instruction.textContent = 'Done';
+          countEl.textContent = '';
+          labelEl.textContent = '✓';
+          done.classList.add('is-visible');
+          btn.style.display = 'none';
+          breathRunning = false;
+          return;
+        }
+        const p = phases[phaseIdx];
+        circle.className = 'mg-breath-circle ' + p.cls;
+        instruction.textContent = p.name;
+        countdown = 4;
+        countEl.textContent = countdown;
+        labelEl.textContent = p.label;
+        clearInterval(countInterval);
+        countInterval = setInterval(() => {
+          countdown--;
+          countEl.textContent = countdown;
+          if (countdown <= 0) { clearInterval(countInterval); }
+        }, 1000);
+        setTimeout(() => { phaseIdx++; startPhase(); }, p.dur);
+      }
+      startPhase();
+    });
+
+    /* ---- OBSERVER CARDS ---- */
+    document.querySelectorAll('.mg-observer-card').forEach(card => {
+      card.addEventListener('click', () => card.classList.toggle('is-open'));
+    });
+
+    /* ---- ACCEPTANCE SLIDERS ---- */
+    ['1','2','3'].forEach(n => {
+      document.getElementById('acc' + n + 'btn').addEventListener('click', () => {
+        document.getElementById('acc' + n + 'resp').classList.add('is-visible');
+      });
+    });
+
+    /* ---- ACE CHALLENGE ACCORDION ---- */
+    document.querySelectorAll('.mg-ace-challenge__head').forEach(head => {
+      head.addEventListener('click', () => {
+        const card = head.closest('.mg-ace-challenge');
+        const isOpen = card.classList.contains('is-open');
+        document.querySelectorAll('.mg-ace-challenge').forEach(c => c.classList.remove('is-open'));
+        if (!isOpen) card.classList.add('is-open');
+      });
+    });
+
+    /* ---- PROGRESS BAR ---- */
+    const sections = document.querySelectorAll('.at-sec');
+    const fill = document.getElementById('progressFill');
+    function updateProgress() {
+      let maxVisible = 0;
+      sections.forEach((sec, i) => {
+        if (sec.getBoundingClientRect().top < window.innerHeight * 0.6) maxVisible = i + 1;
+      });
+      fill.style.width = `${(maxVisible / sections.length) * 100}%`;
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+
+    /* ---- SCROLL REVEAL ---- */
+    const revObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revObs.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -60px 0px', threshold: 0.08 });
+    document.querySelectorAll('.at-sec, .at-quiz, .mg-breath-wrap, .mg-observer-grid, .mg-ace-challenges').forEach(el => {
+      el.classList.add('reveal'); revObs.observe(el);
+    });
+  </script>
+</body>
+</html>

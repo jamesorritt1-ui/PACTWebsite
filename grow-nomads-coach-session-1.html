@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 1: Meeting Your Mind — Coach Guide | The Performance Act</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=15">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+
+  <style>
+    :root {
+      --club:        #0E3A84;
+      --club-dark:   #092970;
+      --club-light:  #1A52B0;
+      --club-accent: #C8102E;
+      --session-col: #0E3A84;
+    }
+
+    /* Progress bar */
+    .cs-progress {
+      position: fixed; top: var(--header-height); left: 0; right: 0;
+      height: 3px; background: rgba(255,255,255,0.06); z-index: 999;
+    }
+    .cs-progress-fill {
+      height: 100%; width: 0%;
+      background: linear-gradient(90deg, var(--club) 0%, var(--club-accent) 100%);
+      transition: width 0.25s ease;
+    }
+
+    /* Back nav */
+    .cs-back {
+      display: flex; align-items: center; gap: 8px; padding: 16px 0;
+      font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gray-600); text-decoration: none; transition: color 0.2s;
+    }
+    .cs-back:hover { color: var(--club); }
+    .cs-back svg { width: 14px; height: 14px; stroke: currentColor; }
+
+    /* Hero */
+    .cs-hero {
+      background: linear-gradient(150deg, var(--club-dark) 0%, #0c1e4a 65%, #080f28 100%);
+      border-bottom: 3px solid var(--club-accent);
+      padding: 56px 0 52px; position: relative; overflow: hidden;
+    }
+    .cs-hero::before {
+      content: ''; position: absolute; top: -60px; right: -60px;
+      width: 350px; height: 350px;
+      background: radial-gradient(circle, rgba(14,58,132,0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cs-hero__session {
+      font-family: var(--font-heading); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.3em; text-transform: uppercase; color: var(--club-accent);
+      margin-bottom: 12px; display: block;
+    }
+    .cs-hero__title {
+      font-family: var(--font-heading); font-size: clamp(2.2rem, 6vw, 3.4rem);
+      font-weight: 800; color: #fff; text-transform: uppercase; line-height: 0.95;
+      margin-bottom: 24px;
+    }
+    .cs-hero__sub {
+      font-size: 0.95rem; color: rgba(255,255,255,0.6); line-height: 1.75; max-width: 540px;
+      margin-bottom: 32px;
+    }
+    .cs-hero__pills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .cs-hero__pill {
+      font-family: var(--font-heading); font-size: 0.58rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      padding: 7px 14px; border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.04);
+    }
+
+    /* Section nav */
+    .cs-nav {
+      position: sticky; top: calc(var(--header-height) + 3px); z-index: 90;
+      background: var(--gray-900); border-bottom: 1px solid rgba(255,255,255,0.06);
+      overflow-x: auto; -webkit-overflow-scrolling: touch;
+    }
+    .cs-nav__inner {
+      display: flex; gap: 0; min-width: max-content; padding: 0 16px;
+    }
+    .cs-nav__btn {
+      font-family: var(--font-heading); font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      padding: 16px 20px; color: var(--gray-600); background: transparent;
+      border: none; border-bottom: 2px solid transparent;
+      cursor: pointer; white-space: nowrap; transition: all 0.2s;
+    }
+    .cs-nav__btn:hover { color: var(--white); }
+    .cs-nav__btn.is-active { color: var(--club); border-bottom-color: var(--club); }
+
+    /* Sections */
+    .cs-section { padding: 64px 0 72px; }
+    .cs-section--alt { background: rgba(255,255,255,0.015); }
+    .cs-section__eyebrow {
+      font-family: var(--font-heading); font-size: 0.58rem; font-weight: 700;
+      letter-spacing: 0.28em; text-transform: uppercase; color: var(--club-accent);
+      margin-bottom: 10px; display: block;
+    }
+    .cs-section__title {
+      font-family: var(--font-heading); font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 800; color: var(--white); text-transform: uppercase;
+      line-height: 1.05; margin-bottom: 14px;
+    }
+    .cs-section__intro {
+      font-size: 0.9rem; color: var(--gray-400); line-height: 1.8; max-width: 580px;
+      margin-bottom: 36px;
+    }
+
+    /* Session timeline */
+    .cs-timeline { display: flex; flex-direction: column; gap: 0; }
+    .cs-timeline-item {
+      display: flex; gap: 20px; padding: 24px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .cs-timeline-item:last-child { border-bottom: none; }
+    .cs-timeline-num {
+      font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.1em; color: var(--club);
+      min-width: 52px; padding-top: 2px;
+    }
+    .cs-timeline-content { flex: 1; }
+    .cs-timeline-label {
+      font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em; color: var(--white);
+      margin-bottom: 6px;
+    }
+    .cs-timeline-text { font-size: 0.86rem; color: var(--gray-400); line-height: 1.7; }
+    .cs-timeline-text strong { color: var(--white); }
+    .cs-timeline-text em { color: var(--club-accent); font-style: normal; }
+
+    /* ACE Accordion */
+    .cs-ace { display: flex; flex-direction: column; gap: 0; margin: 8px 0; }
+    .cs-ace-card {
+      border: 1px solid rgba(255,255,255,0.07);
+      border-top: none; cursor: pointer;
+    }
+    .cs-ace-card:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
+    .cs-ace-card__head {
+      display: flex; align-items: center; gap: 18px; padding: 22px 24px;
+      transition: background 0.2s;
+    }
+    .cs-ace-card__head:hover { background: rgba(255,255,255,0.025); }
+    .cs-ace-card.is-open .cs-ace-card__head { background: rgba(14,58,132,0.08); }
+    .cs-ace-card__letter {
+      font-family: var(--font-heading); font-size: 2rem; font-weight: 800;
+      color: var(--club); width: 40px; flex-shrink: 0; line-height: 1;
+    }
+    .cs-ace-card__meta { flex: 1; }
+    .cs-ace-card__word {
+      font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em; color: var(--white);
+      margin-bottom: 3px;
+    }
+    .cs-ace-card__cue { font-size: 0.78rem; color: var(--gray-600); font-style: italic; }
+    .cs-ace-card__toggle { color: var(--gray-700); transition: transform 0.25s; font-size: 0.8rem; }
+    .cs-ace-card.is-open .cs-ace-card__toggle { transform: rotate(180deg); color: var(--club); }
+    .cs-ace-card__body {
+      max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+    }
+    .cs-ace-card.is-open .cs-ace-card__body { max-height: 600px; }
+    .cs-ace-card__content { padding: 0 24px 28px 82px; }
+    @media (max-width: 560px) { .cs-ace-card__content { padding-left: 24px; } }
+    .cs-ace-card__desc { font-size: 0.88rem; color: var(--gray-300); line-height: 1.8; margin-bottom: 16px; }
+    .cs-ace-card__coach {
+      background: rgba(14,58,132,0.1); border-left: 3px solid var(--club);
+      padding: 14px 18px;
+    }
+    .cs-ace-card__coach-label {
+      font-family: var(--font-heading); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--club);
+      margin-bottom: 8px; display: block;
+    }
+    .cs-ace-card__coach p { font-size: 0.84rem; color: var(--gray-300); line-height: 1.7; }
+    .cs-ace-card__coach p em { color: var(--white); font-style: italic; }
+
+    /* Emotion coaching */
+    .cs-emo-cols {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+      margin-bottom: 32px;
+    }
+    @media (max-width: 580px) { .cs-emo-cols { grid-template-columns: 1fr; } }
+    .cs-emo-col {
+      padding: 24px; border: 1px solid rgba(255,255,255,0.08);
+    }
+    .cs-emo-col--validate { border-color: rgba(34,197,94,0.2); background: rgba(34,197,94,0.04); }
+    .cs-emo-col--name { border-color: rgba(14,58,132,0.3); background: rgba(14,58,132,0.06); }
+    .cs-emo-col__label {
+      font-family: var(--font-heading); font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 10px; display: block;
+    }
+    .cs-emo-col--validate .cs-emo-col__label { color: #22c55e; }
+    .cs-emo-col--name .cs-emo-col__label { color: var(--club); }
+    .cs-emo-col p { font-size: 0.86rem; color: var(--gray-300); line-height: 1.75; }
+    .cs-emo-col em { color: var(--white); font-style: italic; }
+
+    /* Noise table */
+    .cs-noise-table {
+      width: 100%; border-collapse: collapse; font-size: 0.84rem;
+      margin: 16px 0;
+    }
+    .cs-noise-table th {
+      font-family: var(--font-heading); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gray-600); padding: 10px 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.08); text-align: left;
+    }
+    .cs-noise-table td {
+      padding: 12px 14px; color: var(--gray-400); line-height: 1.55;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .cs-noise-table tr:last-child td { border-bottom: none; }
+    .cs-noise-table td:first-child { color: var(--white); font-weight: 600; white-space: nowrap; }
+    .cs-noise-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    /* Training drills */
+    .cs-drills { display: flex; flex-direction: column; gap: 0; }
+    .cs-drill {
+      border: 1px solid rgba(255,255,255,0.07); border-top: none;
+      cursor: pointer;
+    }
+    .cs-drill:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
+    .cs-drill__head {
+      display: flex; align-items: center; gap: 16px; padding: 20px 22px;
+      transition: background 0.2s;
+    }
+    .cs-drill__head:hover { background: rgba(255,255,255,0.025); }
+    .cs-drill.is-open .cs-drill__head { background: rgba(14,58,132,0.07); }
+    .cs-drill__num {
+      font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700;
+      color: var(--club-accent); width: 22px; flex-shrink: 0;
+    }
+    .cs-drill__info { flex: 1; }
+    .cs-drill__name {
+      font-family: var(--font-heading); font-size: 0.82rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em; color: var(--white); margin-bottom: 2px;
+    }
+    .cs-drill__skill { font-size: 0.72rem; color: var(--gray-600); font-style: italic; }
+    .cs-drill__toggle { color: var(--gray-700); transition: transform 0.25s; font-size: 0.8rem; }
+    .cs-drill.is-open .cs-drill__toggle { transform: rotate(180deg); color: var(--club); }
+    .cs-drill__body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .cs-drill.is-open .cs-drill__body { max-height: 400px; }
+    .cs-drill__content { padding: 0 22px 22px; }
+    .cs-drill__content p { font-size: 0.86rem; color: var(--gray-300); line-height: 1.75; margin-bottom: 8px; }
+    .cs-drill__content p:last-child { margin-bottom: 0; }
+    .cs-drill__content strong { color: var(--white); }
+    .cs-drill__content em { color: var(--club); font-style: italic; }
+
+    /* Reflect section */
+    .cs-reflect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 580px) { .cs-reflect-grid { grid-template-columns: 1fr; } }
+    .cs-reflect-item { display: flex; flex-direction: column; gap: 10px; }
+    .cs-reflect-label {
+      font-family: var(--font-heading); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--club);
+    }
+    .cs-reflect-q { font-size: 0.84rem; color: var(--gray-400); line-height: 1.7; }
+    .cs-reflect-textarea {
+      width: 100%; min-height: 100px; resize: vertical;
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+      color: var(--white); font-family: var(--font-body); font-size: 0.86rem;
+      line-height: 1.6; padding: 14px 16px; outline: none;
+      transition: border-color 0.2s;
+    }
+    .cs-reflect-textarea:focus { border-color: rgba(14,58,132,0.5); }
+    .cs-reflect-textarea::placeholder { color: var(--gray-700); }
+
+    /* Sideline ACE */
+    .cs-sideline-ace {
+      background: rgba(14,58,132,0.08); border: 1px solid rgba(14,58,132,0.2);
+      padding: 28px 28px; margin-bottom: 28px;
+    }
+    .cs-sideline-ace__label {
+      font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--club);
+      margin-bottom: 20px; display: block;
+    }
+    .cs-sideline-ace__row { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
+    .cs-sideline-ace__row:last-child { margin-bottom: 0; }
+    .cs-sideline-ace__letter {
+      font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800;
+      color: var(--club); width: 28px; flex-shrink: 0;
+    }
+    .cs-sideline-ace__text { font-size: 0.86rem; color: var(--gray-300); line-height: 1.7; }
+    .cs-sideline-ace__text strong { color: var(--white); }
+    .cs-sideline-ace__text em { color: var(--gray-500); font-style: italic; }
+
+    /* Do / Don't */
+    .cs-dodont { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    @media (max-width: 620px) { .cs-dodont { grid-template-columns: 1fr; } }
+    .cs-dodont__col { padding: 28px; border: 1px solid rgba(255,255,255,0.06); }
+    .cs-dodont__col--do { border-color: rgba(34,197,94,0.15); background: rgba(34,197,94,0.03); border-right: none; }
+    @media (max-width: 620px) { .cs-dodont__col--do { border-right: 1px solid rgba(34,197,94,0.15); border-bottom: none; } }
+    .cs-dodont__col--dont { border-color: rgba(200,16,46,0.15); background: rgba(200,16,46,0.03); }
+    .cs-dodont__head {
+      font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px; display: block;
+    }
+    .cs-dodont__col--do .cs-dodont__head { color: #22c55e; }
+    .cs-dodont__col--dont .cs-dodont__head { color: var(--club-accent); }
+    .cs-dodont__col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .cs-dodont__col ul li {
+      display: flex; gap: 10px; align-items: flex-start;
+      font-size: 0.84rem; color: var(--gray-300); line-height: 1.6;
+    }
+    .cs-dodont__col ul li::before {
+      flex-shrink: 0; margin-top: 3px; font-size: 0.7rem; font-weight: 700;
+    }
+    .cs-dodont__col--do ul li::before { content: '✓'; color: #22c55e; }
+    .cs-dodont__col--dont ul li::before { content: '✕'; color: var(--club-accent); }
+
+    /* Page footer nav */
+    .cs-footer-nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 40px 0 60px; border-top: 1px solid rgba(255,255,255,0.07);
+      gap: 16px; flex-wrap: wrap;
+    }
+    .cs-footer-link {
+      display: flex; align-items: center; gap: 8px; text-decoration: none;
+      font-family: var(--font-heading); font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-500);
+      transition: color 0.2s;
+    }
+    .cs-footer-link:hover { color: var(--club); }
+    .cs-footer-link svg { width: 14px; height: 14px; stroke: currentColor; flex-shrink: 0; }
+    .cs-footer-link--next { color: var(--club); }
+    .cs-footer-link--next:hover { color: var(--white); }
+
+    @keyframes csFadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+    .cs-section { animation: csFadeUp 0.5s ease both; }
+  </style>
+</head>
+<body>
+
+  <!-- Auth guard -->
+  <script>
+    if (!localStorage.getItem('grow_nomads_club')) window.location.href = 'grow-nomads.html';
+  </script>
+
+  <!-- Progress bar -->
+  <div class="cs-progress"><div class="cs-progress-fill" id="progressFill"></div></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner container">
+      <a href="index.html" class="logo">
+        <img src="images/pa-logo.png" alt="The Performance Act" style="height:48px;">
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Back nav -->
+    <div class="container">
+      <a href="grow-nomads.html" class="cs-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to Coach Hub
+      </a>
+    </div>
+
+    <!-- Hero -->
+    <div class="cs-hero">
+      <div class="container">
+        <span class="cs-hero__session">Session 01 · U13 &amp; U14 · Coach Guide</span>
+        <h1 class="cs-hero__title">Meeting<br>Your Mind</h1>
+        <p class="cs-hero__sub">What your U13s and U14s experienced, the language they're using, and exactly how you keep it alive on the training pitch and on matchday.</p>
+        <div class="cs-hero__pills">
+          <span class="cs-hero__pill">ACE Tool</span>
+          <span class="cs-hero__pill">The Saboteur</span>
+          <span class="cs-hero__pill">Emotion Coaching</span>
+          <span class="cs-hero__pill">Sideline Behaviours</span>
+          <span class="cs-hero__pill">Training Drills</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sticky section nav -->
+    <nav class="cs-nav" aria-label="Page sections">
+      <div class="cs-nav__inner">
+        <button class="cs-nav__btn is-active" data-target="session-what">What Happened</button>
+        <button class="cs-nav__btn" data-target="session-ace">The ACE Tool</button>
+        <button class="cs-nav__btn" data-target="session-emotion">Emotion Coaching</button>
+        <button class="cs-nav__btn" data-target="session-sideline">Sideline</button>
+        <button class="cs-nav__btn" data-target="session-drills">Training Drills</button>
+        <button class="cs-nav__btn" data-target="session-reflect">Your Reflection</button>
+      </div>
+    </nav>
+
+    <!-- 01 WHAT HAPPENED -->
+    <section class="cs-section" id="session-what">
+      <div class="container">
+        <span class="cs-section__eyebrow">Session Overview</span>
+        <h2 class="cs-section__title">What happened<br>in the room</h2>
+        <p class="cs-section__intro">Four acts. Ninety minutes. By the time they left, every player had named their inner critic, acknowledged a moment of mental noise, and practised ACE under live pressure. Here's exactly what they did — so the language you use matches theirs.</p>
+        <div class="cs-timeline">
+          <div class="cs-timeline-item">
+            <span class="cs-timeline-num">ACT 1</span>
+            <div class="cs-timeline-content">
+              <div class="cs-timeline-label">The Elite Norm</div>
+              <div class="cs-timeline-text">Players were shown evidence that the best athletes in the world — Djokovic, Haaland, Richie McCaw — all experience the same mental noise: doubt, fear, self-criticism. The point was not "they overcome it." The point was: <em>"They feel it too — and they keep playing."</em> Mental noise is not a weakness. It is a universal experience. The only variable is what you do with it.</div>
+            </div>
+          </div>
+          <div class="cs-timeline-item">
+            <span class="cs-timeline-num">ACT 2</span>
+            <div class="cs-timeline-content">
+              <div class="cs-timeline-label">The Pink Elephant Test</div>
+              <div class="cs-timeline-text">Players were asked to <strong>not think about a pink elephant</strong>. It failed — every time. This demonstrated the paradox of thought suppression: trying to get rid of a thought makes it louder. The ACT approach is the opposite: <em>notice it, name it, and keep playing.</em> You cannot control what thoughts show up. You can control what you do next.</div>
+            </div>
+          </div>
+          <div class="cs-timeline-item">
+            <span class="cs-timeline-num">ACT 3</span>
+            <div class="cs-timeline-content">
+              <div class="cs-timeline-label">Meet Your Saboteur</div>
+              <div class="cs-timeline-text">Every player drew their inner critic, gave it a name, and gave it a personality — something slightly ridiculous. When the inner critic has a cartoon form and a name, it stops feeling like the truth. Players left with a Saboteur they can <strong>talk to</strong> rather than believe. The key phrase is <em>"Thanks, mind"</em> — an acknowledgement that doesn't argue, doesn't suppress, and doesn't obey. Know each player's Saboteur name if you can. Using it correctly in training is incredibly powerful.</div>
+            </div>
+          </div>
+          <div class="cs-timeline-item">
+            <span class="cs-timeline-num">ACT 4</span>
+            <div class="cs-timeline-content">
+              <div class="cs-timeline-label">The ACE Skill — Live</div>
+              <div class="cs-timeline-text">Players learned and practised ACE under pressure conditions — not just theory. Every player did at least one live rep before leaving. They chose a physical <strong>Come Back anchor</strong> (feet, breath, fingertips). They identified a <strong>personal Engage action</strong>. The session ended with the group practising ACE together from a high-pressure scenario. They left with a tool that works, not just a framework they understand.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 THE ACE TOOL -->
+    <section class="cs-section cs-section--alt" id="session-ace">
+      <div class="container">
+        <span class="cs-section__eyebrow">Your Primary Tool</span>
+        <h2 class="cs-section__title">The ACE Tool —<br>Coach's Deep Dive</h2>
+        <p class="cs-section__intro">ACE is the five-second routine your players now use in any moment of pressure. Tap each letter to see how you reinforce it as a coach — the exact language to use and the moments to use it.</p>
+        <div class="cs-ace" id="aceAccordion">
+          <div class="cs-ace-card">
+            <div class="cs-ace-card__head">
+              <span class="cs-ace-card__letter">A</span>
+              <div class="cs-ace-card__meta">
+                <div class="cs-ace-card__word">Acknowledge</div>
+                <div class="cs-ace-card__cue">"Thanks, mind." · "I'm noticing…" · Name the Saboteur</div>
+              </div>
+              <span class="cs-ace-card__toggle">&#9660;</span>
+            </div>
+            <div class="cs-ace-card__body">
+              <div class="cs-ace-card__content">
+                <p class="cs-ace-card__desc">The player names what's happening inside — the thought, the feeling, the body signal — without fighting it or believing it automatically. In the U13/U14 session, players externalised this as their <strong>Saboteur</strong>: a cartoon inner critic with a name. "There's my Saboteur again." Once it has a name, it stops feeling like the truth and starts feeling like one voice among many.</p>
+                <p class="cs-ace-card__desc">The science: this is <em>cognitive defusion</em> — creating distance between the self and the thought. When a player says "I'm a terrible footballer," they're fused with that thought. When they say "My Saboteur is telling me I'm terrible," they're defused — the thought is observed rather than believed. Defused thoughts lose most of their power to dictate behaviour.</p>
+                <div class="cs-ace-card__coach">
+                  <span class="cs-ace-card__coach-label">Coach Language</span>
+                  <p>"What's your Saboteur saying right now?" · "Thanks, mind — now what's the next thing?" · "Sounds like there's a thought in there. Is it useful?" · When a player is visibly nervous before a match: <em>"Remember what Haaland said? Same noise. What's your ACE?"</em> · When a player self-critiques loudly: <em>"That sounds like your Saboteur. What does your Engage look like right now?"</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cs-ace-card">
+            <div class="cs-ace-card__head">
+              <span class="cs-ace-card__letter">C</span>
+              <div class="cs-ace-card__meta">
+                <div class="cs-ace-card__word">Come Back</div>
+                <div class="cs-ace-card__cue">Feet. One slow breath out. Feel the ball or the ground.</div>
+              </div>
+              <span class="cs-ace-card__toggle">&#9660;</span>
+            </div>
+            <div class="cs-ace-card__body">
+              <div class="cs-ace-card__content">
+                <p class="cs-ace-card__desc">The player pulls attention back to the only place where they can actually play: <strong>right now</strong>. The mental time machine — replaying the mistake, projecting the next one — burns cognitive resources and fragments focus. Feet are always present. Breath is always present. The ball is present. These are the anchors.</p>
+                <p class="cs-ace-card__desc">Important: this is not about feeling calm. A player can be fully activated, even physiologically aroused, and still be present. <strong>Present and activated is an excellent place to play football from.</strong> The Come Back does not remove the adrenaline — it just ensures the player is channelling it into the pitch rather than into the mental time machine.</p>
+                <div class="cs-ace-card__coach">
+                  <span class="cs-ace-card__coach-label">Coach Language</span>
+                  <p>"Feet on the ground. One breath. Look at the pitch — what's actually in front of you?" · "Come back to now — the last five minutes are done." · At half time, before any tactics: <em>"Feet on the floor. One slow breath out. Look around — we're still in this together."</em> · After a mistake: <em>"Done. It's gone. Come back. What's your next action?"</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cs-ace-card">
+            <div class="cs-ace-card__head">
+              <span class="cs-ace-card__letter">E</span>
+              <div class="cs-ace-card__meta">
+                <div class="cs-ace-card__word">Engage</div>
+                <div class="cs-ace-card__cue">Eyes up. One specific action that fits the value. Do it.</div>
+              </div>
+              <span class="cs-ace-card__toggle">&#9660;</span>
+            </div>
+            <div class="cs-ace-card__body">
+              <div class="cs-ace-card__content">
+                <p class="cs-ace-card__desc">The player chooses the next action that fits their <strong>value</strong> — not the action that fits the fear. The mind might say "hide." The value says "close down the ball." The player chooses the value. Engage must be <strong>small and specific</strong>. "I will play better" is not an engagement. "I will sprint to close the next ball into our half" is. One action. Then the next.</p>
+                <p class="cs-ace-card__desc">Watch for players who use "I'm just acknowledging" to avoid effort. ACE is not a relaxation technique — it's a performance tool. Acknowledge and Come Back exist to enable Engage. If a player is stuck, a single question returns them to the tool: <em>"Great — what's your Engage?"</em></p>
+                <div class="cs-ace-card__coach">
+                  <span class="cs-ace-card__coach-label">Coach Language</span>
+                  <p>"What's your Engage for this moment?" · "What's the one thing that matters right now?" · "One specific action — small, controllable, right now." · If a player is stuck at Acknowledge or Come Back: <em>"Great — what's your Engage?"</em> That single question puts the tool back to work.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 EMOTION COACHING -->
+    <section class="cs-section" id="session-emotion">
+      <div class="container">
+        <span class="cs-section__eyebrow">Essential Skill</span>
+        <h2 class="cs-section__title">Emotion Coaching —<br>Two Moves</h2>
+        <p class="cs-section__intro">The natural coaching instinct is to remove the noise — "don't worry," "just play your game," "you're fine." With your U13s and U14s, those phrases land as dismissal rather than support — and there's a biological reason for that, not just a social one. The prefrontal cortex (the part of the brain that regulates emotion and controls impulse) is still developing throughout the teenage years and doesn't fully mature until the mid-20s. This means that at 13–14, emotional reactions are genuinely more intense and harder to regulate than they appear from the outside. A mistake in a match can feel like a genuine threat to a young player's sense of self — not just a bad pass, but evidence of who they are. Dismissing that with "you're fine" doesn't calm the emotion — it just adds shame to it. The research alternative is two moves: validate, then name.</p>
+        <div class="cs-emo-cols">
+          <div class="cs-emo-col cs-emo-col--validate">
+            <span class="cs-emo-col__label">Move 1 — Validate</span>
+            <p>Acknowledge the feeling is real — not that they're right to feel it, just that it exists. Three seconds. No advice. No reframe.<br><br><em>"Makes sense you're frustrated." · "That would have annoyed me too." · "I'd be gutted after a game like that."</em></p>
+          </div>
+          <div class="cs-emo-col cs-emo-col--name">
+            <span class="cs-emo-col__label">Move 2 — Name</span>
+            <p>Help them put a more accurate word on it. Many young players have a limited emotional vocabulary — angry, sad, happy, fine. The more precisely an emotion is named, the more the brain calms — UCLA psychologist Matthew Lieberman's research (2007) showed that labelling an emotion activates the prefrontal cortex and measurably reduces the threat response. Offer options; don't diagnose.<br><br><em>"Is that frustration, or more like embarrassment?" · "Sounds like disappointment." · "I wonder if it's less anger and more feeling let down."</em></p>
+          </div>
+        </div>
+        <p style="font-family:var(--font-heading);font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray-600);margin-bottom:12px;">The noise that's hardest to spot — and does the most damage</p>
+        <div style="overflow-x:auto;">
+          <table class="cs-noise-table">
+            <thead>
+              <tr><th>Emotion / State</th><th>What it looks like on the pitch</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Anxiety</td><td>Hesitation on the ball, choosing the safe pass, asking to come off, pre-game silence, frequent bathroom trips.</td></tr>
+              <tr><td>Embarrassment</td><td>Avoiding eye contact, head down after a mistake, hiding from the next pass, laughing it off awkwardly.</td></tr>
+              <tr><td>Boredom ⚠️</td><td>Drifting in drills, lack of intensity, joking when the message is serious. Usually about not feeling stretched or seen — not the drill itself.</td></tr>
+              <tr><td>Self-criticism</td><td>Audible self put-downs, harsh body language after a mistake, perfectionism, paralysis after an error.</td></tr>
+              <tr><td>Overwhelm</td><td>Tears that seem disproportionate, freezing, asking many small questions, needing things said twice.</td></tr>
+              <tr><td>Resentment</td><td>Selective effort, body language that closes off when a particular teammate or coach speaks, sarcasm.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 SIDELINE BEHAVIOURS -->
+    <section class="cs-section cs-section--alt" id="session-sideline">
+      <div class="container">
+        <span class="cs-section__eyebrow">Matchday</span>
+        <h2 class="cs-section__title">On the Sideline —<br>Your Own ACE</h2>
+        <p class="cs-section__intro">Your players are watching how you handle pressure on the sideline. If you're tight and reactive, you're teaching them that's what adults do under pressure. Your behaviour is the most powerful reinforcement of everything they learned in the session. One additional note for this age group: at 13–14, social evaluation from a trusted adult (you) carries enormous weight. A visible negative reaction to a mistake — head in hands, turning away, shouting — doesn't just correct a performance issue. It signals to a developing brain that the mistake defines them. That signal is difficult to undo. The five seconds after a mistake is your most important coaching moment.</p>
+        <div class="cs-sideline-ace">
+          <span class="cs-sideline-ace__label">Your Sideline ACE</span>
+          <div class="cs-sideline-ace__row">
+            <span class="cs-sideline-ace__letter">A</span>
+            <div class="cs-sideline-ace__text"><strong>Acknowledge</strong> — Notice your own jaw, shoulders, voice speed. Are you clenching? Getting louder? "I'm noticing I'm getting wound up." That micro-observation creates the gap you need before you speak.</div>
+          </div>
+          <div class="cs-sideline-ace__row">
+            <span class="cs-sideline-ace__letter">C</span>
+            <div class="cs-sideline-ace__text"><strong>Come Back</strong> — Plant both feet. One slow out-breath. Look at the actual football — not the parents, not the referee, not the other bench. Watch one phase of play with no commentary.</div>
+          </div>
+          <div class="cs-sideline-ace__row">
+            <span class="cs-sideline-ace__letter">E</span>
+            <div class="cs-sideline-ace__text"><strong>Engage</strong> — One observation. One player. One short message. Then back to watching. <em>"Sam — stay tight on 9, drop two yards."</em> The coach who shouts continuous corrections is a coach whose own ACE has stopped working.</div>
+          </div>
+        </div>
+        <div class="cs-dodont">
+          <div class="cs-dodont__col cs-dodont__col--do">
+            <span class="cs-dodont__head">Do This</span>
+            <ul>
+              <li>Name your own noise occasionally — "I was nervous about this one" — it gives every player permission to do the same</li>
+              <li>Stay on the sideline when a player makes a mistake — your presence says "you're still on after that"</li>
+              <li>Ask "what's your value here?" instead of "come on, be more confident"</li>
+              <li>Validate first, analyse later — especially after a loss</li>
+              <li>Use the player's Saboteur name if you know it — it signals you've been paying attention</li>
+            </ul>
+          </div>
+          <div class="cs-dodont__col cs-dodont__col--dont">
+            <span class="cs-dodont__head">Stop Doing This</span>
+            <ul>
+              <li>Yelling instructions continuously — you become noise they learn to tune out</li>
+              <li>Reacting visibly to mistakes — head in hands, arms up signal that mistakes are catastrophic</li>
+              <li>Substituting immediately after a mistake — it teaches that errors mean removal</li>
+              <li>"You're fine." "Don't worry about it." "Man up." — these land as dismissal, not support</li>
+              <li>Treating nerves and doubt as weaknesses — it undoes the acceptance work done in the session</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 TRAINING DRILLS -->
+    <section class="cs-section" id="session-drills">
+      <div class="container">
+        <span class="cs-section__eyebrow">Put It Into Practice</span>
+        <h2 class="cs-section__title">Training Drills —<br>Session 1</h2>
+        <p class="cs-section__intro">Workshops plant seeds. Training environments grow them. These drills are designed to reinforce the Session 1 language — Saboteur, ACE, defusion — inside normal football activity. Tap each drill to expand.</p>
+        <div class="cs-drills" id="session1Drills">
+          <div class="cs-drill">
+            <div class="cs-drill__head">
+              <span class="cs-drill__num">01</span>
+              <div class="cs-drill__info">
+                <div class="cs-drill__name">The Saboteur Round</div>
+                <div class="cs-drill__skill">Trains: noticing habit · Time cost: 2 min per session</div>
+              </div>
+              <span class="cs-drill__toggle">&#9660;</span>
+            </div>
+            <div class="cs-drill__body">
+              <div class="cs-drill__content">
+                <p>In any technical drill — rondos, finishing, passing patterns — <strong>pause every 90 seconds and ask one player: "What's your Saboteur saying right now?"</strong> They name it. You say "Thanks, mind" back as a group. Then play resumes.</p>
+                <p>Effect: normalises the language, trains the noticing habit, reduces shame around mental noise. Total time cost: under two minutes. Within four to six sessions, players will start naming their Saboteur without being prompted.</p>
+              </div>
+            </div>
+          </div>
+          <div class="cs-drill">
+            <div class="cs-drill__head">
+              <span class="cs-drill__num">02</span>
+              <div class="cs-drill__info">
+                <div class="cs-drill__name">Three-Word Reset</div>
+                <div class="cs-drill__skill">Trains: ACE sequence under pressure · Time cost: 5 sec per goal</div>
+              </div>
+              <span class="cs-drill__toggle">&#9660;</span>
+            </div>
+            <div class="cs-drill__body">
+              <div class="cs-drill__content">
+                <p>After every goal scored or conceded in any match-play drill, the whole team stops for three seconds and says three words together: their team cue word (e.g. <em>"next"</em>), an emotion word (e.g. <em>"gutted"</em>), and a body anchor (e.g. <em>"feet"</em>).</p>
+                <p><strong>Trains the full ACE sequence in under five seconds.</strong> Used weekly, it becomes the team's reset reflex — firing automatically in real games without any instruction needed.</p>
+              </div>
+            </div>
+          </div>
+          <div class="cs-drill">
+            <div class="cs-drill__head">
+              <span class="cs-drill__num">03</span>
+              <div class="cs-drill__info">
+                <div class="cs-drill__name">The Anchor Game</div>
+                <div class="cs-drill__skill">Trains: reset reflex · Time cost: ongoing during SSGs</div>
+              </div>
+              <span class="cs-drill__toggle">&#9660;</span>
+            </div>
+            <div class="cs-drill__body">
+              <div class="cs-drill__content">
+                <p>Each player chooses a personal physical anchor (feet, breath, fingertips on shorts) and a cue word. During a small-sided game, <strong>you randomly call "ANCHOR" every few minutes</strong>. Every player immediately runs their anchor and cue word, then play continues.</p>
+                <p>Trains the reset reflex until it becomes automatic — the same principle as muscle memory. Within a few weeks, players will self-trigger their anchor without the call.</p>
+              </div>
+            </div>
+          </div>
+          <div class="cs-drill">
+            <div class="cs-drill__head">
+              <span class="cs-drill__num">04</span>
+              <div class="cs-drill__info">
+                <div class="cs-drill__name">Comeback Drill — Starting Behind</div>
+                <div class="cs-drill__skill">Trains: acceptance under pressure · Time cost: 8 min SSG</div>
+              </div>
+              <span class="cs-drill__toggle">&#9660;</span>
+            </div>
+            <div class="cs-drill__body">
+              <div class="cs-drill__content">
+                <p>Small-sided games starting at <strong>0–3 down with eight minutes to play</strong>. The team losing manages the noise of being behind. The team winning manages the noise of holding on. Both are training scenarios you cannot replicate any other way.</p>
+                <p>After the game, debrief with one question: <em>"What was your Saboteur saying at 0–3? And what did you choose to do anyway?"</em> The learning lives in that answer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="cs-drill">
+            <div class="cs-drill__head">
+              <span class="cs-drill__num">05</span>
+              <div class="cs-drill__info">
+                <div class="cs-drill__name">Be the Bad Ref</div>
+                <div class="cs-drill__skill">Trains: emotional regulation · Time cost: one session</div>
+              </div>
+              <span class="cs-drill__toggle">&#9660;</span>
+            </div>
+            <div class="cs-drill__body">
+              <div class="cs-drill__content">
+                <p>In a training game, become a <strong>deliberately inconsistent referee</strong>. Miss a clear handball. Give a phantom free kick. Add time when one team is winning. This is deliberate stress inoculation — tell the players in advance: <em>"I'm going to be a terrible ref today. Your job is to notice what happens inside you and choose your next action."</em></p>
+                <p>Always brief beforehand, spread the unfairness across both teams, never target an individual, stop if someone is distressed, and <strong>always debrief afterwards</strong>. Used regularly, this builds emotional regulation faster than any speech.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 REFLECTION -->
+    <section class="cs-section cs-section--alt" id="session-reflect">
+      <div class="container">
+        <span class="cs-section__eyebrow">For You</span>
+        <h2 class="cs-section__title">Your Own<br>Reflection</h2>
+        <p class="cs-section__intro">The most powerful reinforcer of Session 1 is a coach who has done the work on themselves. You cannot reinforce what you haven't felt. These mirror what your players completed — your answers stay here, on your screen.</p>
+        <div class="cs-reflect-grid">
+          <div class="cs-reflect-item">
+            <span class="cs-reflect-label">Your Saboteur</span>
+            <p class="cs-reflect-q">What does your inner critic say when your coaching gets hard? Write it as you actually hear it — not how you'd like it to sound.</p>
+            <textarea class="cs-reflect-textarea" placeholder="My Saboteur shows up when… It says things like…"></textarea>
+          </div>
+          <div class="cs-reflect-item">
+            <span class="cs-reflect-label">Your Come Back Anchor</span>
+            <p class="cs-reflect-q">What's your Come Back? The physical thing that pulls you back to now on the sideline. Feet? Breath? Something else?</p>
+            <textarea class="cs-reflect-textarea" placeholder="When I feel the pressure building, my Come Back is…"></textarea>
+          </div>
+          <div class="cs-reflect-item">
+            <span class="cs-reflect-label">Your Engage Pattern</span>
+            <p class="cs-reflect-q">When your coaching gets hard, what's the one specific action you most want to take? What does your Engage look like in the coaching context?</p>
+            <textarea class="cs-reflect-textarea" placeholder="When it gets hard, my best Engage is…"></textarea>
+          </div>
+          <div class="cs-reflect-item">
+            <span class="cs-reflect-label">This Week's Commitment</span>
+            <p class="cs-reflect-q">One small, visible, behavioural commitment for this week. Small enough you can't talk yourself out of it. Something a camera could actually see.</p>
+            <textarea class="cs-reflect-textarea" placeholder="This week I will… (e.g. 'pause before responding to a mistake', 'name my own nerves before the big game')"></textarea>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer nav -->
+    <div class="container">
+      <div class="cs-footer-nav">
+        <a href="grow-nomads.html" class="cs-footer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Coach Hub
+        </a>
+        <a href="grow-nomads-coach-session-2.html" class="cs-footer-link cs-footer-link--next">
+          Session 2: Play Brave
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer-bar">
+    <div class="container">
+      <p>&copy; 2025 The Performance Act. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js?v=3"></script>
+  <script>
+    /* Progress bar */
+    const progressFill = document.getElementById('progressFill');
+    function updateProgress() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      progressFill.style.width = (scrollTop / docHeight * 100) + '%';
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+
+    /* Section nav */
+    const navBtns = document.querySelectorAll('.cs-nav__btn');
+    const sections = document.querySelectorAll('section[id]');
+    navBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.target);
+        if (target) {
+          const headerOffset = 100;
+          const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+    function updateNav() {
+      let current = '';
+      sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
+      });
+      navBtns.forEach(btn => {
+        btn.classList.toggle('is-active', btn.dataset.target === current);
+      });
+    }
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+
+    /* ACE accordion */
+    document.querySelectorAll('#aceAccordion .cs-ace-card').forEach(card => {
+      card.querySelector('.cs-ace-card__head').addEventListener('click', () => {
+        const isOpen = card.classList.contains('is-open');
+        document.querySelectorAll('#aceAccordion .cs-ace-card').forEach(c => c.classList.remove('is-open'));
+        if (!isOpen) card.classList.add('is-open');
+      });
+    });
+
+    /* Training drills accordion */
+    document.querySelectorAll('#session1Drills .cs-drill').forEach(drill => {
+      drill.querySelector('.cs-drill__head').addEventListener('click', () => {
+        const isOpen = drill.classList.contains('is-open');
+        document.querySelectorAll('#session1Drills .cs-drill').forEach(d => d.classList.remove('is-open'));
+        if (!isOpen) drill.classList.add('is-open');
+      });
+    });
+  </script>
+</body>
+</html>

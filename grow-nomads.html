@@ -1,0 +1,3103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GROW | Nomads United AFC | The Performance Act</title>
+  <meta name="description" content="GROW — the exclusive online resource hub for Nomads United AFC players, coaches, and parents.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=15">
+  <link rel="stylesheet" href="grow.css?v=1">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+
+  <style>
+    /* ============================================================
+       GROW PLATFORM — NOMADS UNITED AFC
+       Club palette:  Navy #0E3A84 | Dark #092970 | Red #C8102E
+       NOTE: Confirm exact hex with Nomads brand guide if needed.
+    ============================================================ */
+
+    .gw-root {
+      --club:        #0E3A84;
+      --club-dark:   #092970;
+      --club-light:  #1A52B0;
+      --club-accent: #C8102E;
+    }
+
+    /* ---------- SCREEN SYSTEM ---------- */
+    .gw-screen { display: none; }
+    .gw-screen.is-active { display: block; }
+    .gw-gateway.is-active { display: flex; }
+    .gw-roles.is-active   { display: block; }
+    .gw-content.is-active { display: block; }
+
+    /* ---------- GATEWAY — black + yellow pre-login ---------- */
+    .gw-gateway {
+      min-height: 100vh;
+      background: #000;
+      align-items: center;
+      justify-content: center;
+      padding: calc(var(--header-height) + 40px) 24px 80px;
+      background-image:
+        radial-gradient(ellipse at 20% 80%, rgba(255,229,0,0.07) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 20%, rgba(255,229,0,0.04) 0%, transparent 55%);
+    }
+
+    /* Yellow accent variables scoped to the gateway only */
+    .gw-gateway { --gw-accent: #FFE500; --gw-accent-dark: #CDB800; }
+
+    .gw-card {
+      width: 100%;
+      max-width: 480px;
+      background: #0d0d0d;
+      border: 1px solid rgba(255,229,0,0.12);
+      border-top: 4px solid #FFE500;
+      padding: 52px 44px;
+      text-align: center;
+    }
+
+    .gw-card__logo-wrap {
+      margin: 0 auto 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .gw-card__logo-img {
+      height: 72px;
+      width: auto;
+    }
+
+    /* Text fallback if logo image unavailable */
+    .gw-card__logo-fallback {
+      width: 72px;
+      height: 72px;
+      background: #FFE500;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #000;
+      flex-shrink: 0;
+    }
+
+    .gw-card__eyebrow {
+      font-family: var(--font-heading);
+      font-size: 0.68rem;
+      letter-spacing: 0.28em;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .gw-card__title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.9rem, 5vw, 2.6rem);
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin-bottom: 6px;
+    }
+
+    .gw-card__title span { color: #FFE500; }
+
+    .gw-card__sub {
+      font-size: 0.88rem;
+      color: var(--gray-500);
+      margin-bottom: 40px;
+      line-height: 1.5;
+    }
+
+    .gw-form-group { margin-bottom: 16px; text-align: left; }
+
+    .gw-label {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .gw-input,
+    .gw-select {
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      padding: 14px 16px;
+      background: var(--gray-800);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.1);
+      outline: none;
+      transition: border-color 0.3s ease;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .gw-input:focus,
+    .gw-select:focus { border-color: #FFE500; }
+
+    .gw-select-wrap { position: relative; }
+
+    .gw-select-wrap::after {
+      content: '▾';
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      pointer-events: none;
+    }
+
+    .gw-input::placeholder { color: var(--gray-700); }
+
+    .gw-error {
+      font-size: 0.83rem;
+      color: #e63b2e;
+      margin-top: 8px;
+      display: none;
+      text-align: left;
+    }
+    .gw-error.is-visible { display: block; }
+
+    .gw-submit {
+      display: block;
+      width: 100%;
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 16px;
+      background: #FFE500;
+      color: #000;
+      border: 2px solid #FFE500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 24px;
+    }
+
+    .gw-submit:hover {
+      background: #CDB800;
+      border-color: #CDB800;
+    }
+
+    .gw-card__footer-note {
+      font-size: 0.76rem;
+      color: var(--gray-700);
+      margin-top: 20px;
+      line-height: 1.5;
+    }
+
+    /* ---------- CLUB BANNER ---------- */
+    .gw-club-banner {
+      background: linear-gradient(135deg, var(--club-dark) 0%, var(--club) 100%);
+      padding: 20px 0;
+      border-bottom: 3px solid var(--club-accent);
+    }
+
+    .gw-club-banner__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .gw-club-banner__left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .gw-club-banner__logo {
+      height: 44px;
+      width: auto;
+    }
+
+    .gw-club-banner__name {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #fff;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .gw-club-banner__platform {
+      font-family: var(--font-heading);
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      color: rgba(255,255,255,0.55);
+      text-transform: uppercase;
+    }
+
+    .gw-logout-btn {
+      font-family: var(--font-heading);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.55);
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 8px 16px;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .gw-logout-btn:hover {
+      color: #fff;
+      border-color: rgba(255,255,255,0.5);
+    }
+
+    /* ---------- ROLE SELECTION ---------- */
+    .gw-roles { background: var(--black); }
+
+    .gw-roles__body { padding: 80px 0 100px; }
+
+    .gw-roles__heading {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .gw-roles__title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .gw-roles__sub {
+      text-align: center;
+      font-size: 0.98rem;
+      color: var(--gray-500);
+      margin-bottom: 56px;
+    }
+
+    .gw-roles__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .gw-role-card {
+      background: var(--gray-900);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 3px solid transparent;
+      padding: 52px 32px 40px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .gw-role-card:hover {
+      border-color: rgba(255,255,255,0.08);
+      border-bottom-color: var(--club);
+      transform: translateY(-6px);
+    }
+
+    .gw-role-card__icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 24px;
+      color: var(--club);
+    }
+
+    .gw-role-card__icon svg { width: 100%; height: 100%; }
+
+    .gw-role-card__title {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .gw-role-card__desc {
+      font-size: 0.88rem;
+      color: var(--gray-500);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .gw-role-card__cta {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      color: var(--club);
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(14,58,132,0.35);
+      padding-bottom: 3px;
+      transition: border-color 0.3s;
+    }
+
+    .gw-role-card:hover .gw-role-card__cta { border-color: var(--club); }
+
+    /* ---------- CONTENT SCREEN ---------- */
+    .gw-content { background: var(--black); min-height: 100vh; }
+
+    .gw-content__nav {
+      background: var(--gray-900);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .gw-content__nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 54px;
+    }
+
+    .gw-role-indicator {
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      background: var(--club);
+      color: #fff;
+    }
+
+    .gw-change-role-btn {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      color: var(--gray-500);
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.3s;
+    }
+
+    .gw-change-role-btn:hover { color: var(--white); }
+
+    /* ---------- SECTIONS ---------- */
+    .gw-sec {
+      padding: 80px 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .gw-sec:first-child { border-top: none; padding-top: 64px; }
+
+    .gw-sec-header {
+      display: flex;
+      align-items: flex-end;
+      gap: 16px;
+      margin-bottom: 44px;
+    }
+
+    .gw-sec-num {
+      font-family: var(--font-heading);
+      font-size: clamp(5rem, 8vw, 7rem);
+      font-weight: 700;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255,255,255,0.06);
+      line-height: 0.85;
+      flex-shrink: 0;
+      user-select: none;
+    }
+
+    .gw-sec-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      line-height: 1.05;
+    }
+
+    .gw-sec-title em { color: var(--club); font-style: normal; }
+
+    .gw-sec-intro {
+      font-size: 0.95rem;
+      color: var(--gray-500);
+      line-height: 1.7;
+      max-width: 680px;
+      margin-bottom: 36px;
+    }
+
+    /* ---------- VIDEO GRID ---------- */
+    .gw-video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .gw-video-card {
+      background: var(--gray-900);
+      border: 1px solid rgba(255,255,255,0.06);
+      overflow: hidden;
+    }
+
+    .gw-video-embed {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .gw-video-embed iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    .gw-video-info { padding: 20px 24px 24px; }
+
+    .gw-video-badge {
+      font-family: var(--font-heading);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--club);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .gw-video-title {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .gw-video-desc {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+      line-height: 1.6;
+    }
+
+    /* ---------- PDF GRID ---------- */
+    .gw-pdf-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .gw-pdf-card {
+      background: var(--gray-900);
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: border-color 0.3s ease;
+    }
+
+    .gw-pdf-card:hover { border-color: rgba(14,58,132,0.45); }
+
+    .gw-pdf-icon {
+      width: 34px;
+      height: 34px;
+      color: var(--club);
+      flex-shrink: 0;
+    }
+
+    .gw-pdf-icon svg { width: 100%; height: 100%; }
+
+    .gw-pdf-badge {
+      font-family: var(--font-heading);
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-700);
+    }
+
+    .gw-pdf-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+    }
+
+    .gw-pdf-desc {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .gw-pdf-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--club);
+      border: 2px solid var(--club);
+      padding: 12px 20px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      align-self: flex-start;
+      margin-top: 4px;
+    }
+
+    .gw-pdf-btn:hover {
+      background: transparent;
+      color: var(--club);
+    }
+
+    .gw-pdf-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* ---------- REFLECTION TOGGLES ---------- */
+    .gw-reflections { display: flex; flex-direction: column; gap: 16px; }
+
+    .gw-reflect {
+      background: var(--gray-900);
+      border: 1px solid rgba(255,255,255,0.06);
+      overflow: hidden;
+    }
+
+    .gw-reflect__q {
+      padding: 24px 28px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .gw-reflect__q:hover { background: rgba(255,255,255,0.015); }
+
+    .gw-reflect__qbody { flex: 1; }
+
+    .gw-reflect__label {
+      font-family: var(--font-heading);
+      font-size: 0.62rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--club);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .gw-reflect__text {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--gray-300);
+      line-height: 1.6;
+    }
+
+    .gw-reflect__toggle {
+      flex-shrink: 0;
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      color: var(--gray-500);
+      margin-top: 2px;
+    }
+
+    .gw-reflect__toggle svg { width: 14px; height: 14px; transition: transform 0.3s; }
+
+    .gw-reflect.is-open .gw-reflect__toggle { border-color: var(--club); color: var(--club); }
+    .gw-reflect.is-open .gw-reflect__toggle svg { transform: rotate(180deg); }
+
+    .gw-reflect__insight {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.42s ease;
+    }
+
+    .gw-reflect.is-open .gw-reflect__insight { max-height: 500px; }
+
+    .gw-reflect__insight-inner {
+      padding: 20px 28px 28px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .gw-reflect__insight-inner p {
+      font-size: 0.92rem;
+      color: var(--gray-300);
+      line-height: 1.8;
+    }
+
+    .gw-reflect__insight-inner strong { color: var(--white); }
+    .gw-reflect__insight-inner em { color: var(--club); font-style: normal; }
+
+    /* ---------- QUIZ ---------- */
+    .gw-quiz {
+      background: var(--gray-900);
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 44px 40px;
+    }
+
+    .gw-quiz__label {
+      font-family: var(--font-heading);
+      font-size: 0.62rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--club);
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .gw-quiz__q {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 1.3;
+      margin-bottom: 28px;
+    }
+
+    .gw-quiz__options { display: flex; flex-direction: column; gap: 10px; }
+
+    .gw-quiz__opt {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 20px;
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.07);
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--gray-300);
+      line-height: 1.45;
+      text-align: left;
+      width: 100%;
+    }
+
+    .gw-quiz__opt:hover:not([disabled]) {
+      border-color: rgba(14,58,132,0.45);
+      background: rgba(14,58,132,0.06);
+    }
+
+    .gw-quiz__opt[disabled] { cursor: default; }
+
+    .gw-quiz__opt.is-correct {
+      border-color: #22c55e;
+      background: rgba(34,197,94,0.07);
+      color: var(--white);
+    }
+
+    .gw-quiz__opt.is-wrong {
+      border-color: #e63b2e;
+      background: rgba(230,59,46,0.07);
+      color: var(--gray-700);
+    }
+
+    .gw-quiz__opt.is-highlight {
+      border-color: #22c55e;
+      background: rgba(34,197,94,0.07);
+      color: var(--white);
+    }
+
+    .gw-quiz__opt-letter {
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--gray-700);
+      flex-shrink: 0;
+      width: 22px;
+      margin-top: 1px;
+    }
+
+    .gw-quiz__opt.is-correct .gw-quiz__opt-letter,
+    .gw-quiz__opt.is-highlight .gw-quiz__opt-letter { color: #22c55e; }
+    .gw-quiz__opt.is-wrong .gw-quiz__opt-letter { color: #e63b2e; }
+
+    .gw-quiz__feedback {
+      display: none;
+      margin-top: 20px;
+      padding: 16px 20px;
+      border-left: 3px solid transparent;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--gray-300);
+    }
+
+    .gw-quiz__feedback.is-visible { display: block; }
+    .gw-quiz__feedback.is-correct { border-color: #22c55e; background: rgba(34,197,94,0.05); }
+    .gw-quiz__feedback.is-wrong   { border-color: #e63b2e; background: rgba(230,59,46,0.05); }
+
+    .gw-quiz__reset {
+      display: none;
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin-top: 16px;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.3s;
+    }
+
+    .gw-quiz__reset.is-visible { display: inline-block; }
+    .gw-quiz__reset:hover { color: var(--white); }
+
+    /* ---------- MODULE LIST ---------- */
+    .gw-modules-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .gw-module-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 18px;
+      background: rgba(255,255,255,0.018);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .gw-module-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--club);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .gw-module-name { font-size: 0.88rem; color: var(--gray-300); line-height: 1.4; }
+
+    /* ---------- READING LIST ---------- */
+    .gw-reading-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 8px;
+    }
+
+    .gw-reading-card {
+      background: var(--gray-900);
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 28px 24px;
+    }
+
+    .gw-reading-tag {
+      font-family: var(--font-heading);
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--club-accent);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .gw-reading-title {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 1.25;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 900px) {
+      .gw-reading-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .gw-card { padding: 36px 24px; }
+      .gw-roles__grid { grid-template-columns: 1fr; gap: 16px; }
+      .gw-video-grid { grid-template-columns: 1fr; }
+      .gw-pdf-grid { grid-template-columns: 1fr; }
+      .gw-modules-grid { grid-template-columns: 1fr; }
+      .gw-quiz { padding: 28px 24px; }
+      .gw-club-banner__inner { flex-direction: row; }
+      .gw-reading-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .gw-sec { padding: 60px 0; }
+      .gw-roles__body { padding: 56px 0 80px; }
+      .gw-reflect__q { padding: 20px; }
+      .gw-reflect__insight-inner { padding: 16px 20px 24px; }
+    }
+
+    /* ---------- COACH HUB ---------- */
+    .ch-hero {
+      background: linear-gradient(150deg, var(--club-dark) 0%, #0c1e4a 60%, #0a1530 100%);
+      border-bottom: 3px solid var(--club-accent);
+      padding: 56px 0 52px; position: relative; overflow: hidden;
+    }
+    .ch-hero::before {
+      content: ''; position: absolute; top: -80px; right: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(200,16,46,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .ch-hero__eyebrow {
+      font-family: var(--font-heading); font-size: 0.62rem; font-weight: 600;
+      letter-spacing: 0.28em; text-transform: uppercase; color: var(--club-accent);
+      margin-bottom: 16px; display: block;
+    }
+    .ch-hero__title {
+      font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800; color: #fff; text-transform: uppercase; line-height: 1.0;
+      margin-bottom: 20px;
+    }
+    .ch-hero__title em { color: rgba(255,255,255,0.45); font-style: normal; display: block; font-size: 0.55em; letter-spacing: 0.04em; }
+    .ch-hero__sub {
+      font-size: 0.95rem; color: rgba(255,255,255,0.65); line-height: 1.75; max-width: 560px;
+      margin-bottom: 32px;
+    }
+    .ch-hero__stats {
+      display: flex; gap: 32px; flex-wrap: wrap;
+    }
+    .ch-hero__stat { display: flex; flex-direction: column; gap: 4px; }
+    .ch-hero__stat-num {
+      font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: #fff;
+    }
+    .ch-hero__stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.12em; }
+    .ch-hero__divider { width: 40px; height: 1px; background: rgba(255,255,255,0.15); align-self: center; }
+
+    /* Section layout */
+    .ch-section { padding: 72px 0 80px; }
+    .ch-section--alt { background: rgba(255,255,255,0.015); }
+    .ch-section__label {
+      font-family: var(--font-heading); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.3em; text-transform: uppercase; color: var(--club-accent);
+      margin-bottom: 10px; display: block;
+    }
+    .ch-section__heading {
+      font-family: var(--font-heading); font-size: clamp(1.4rem, 3vw, 1.9rem);
+      font-weight: 800; color: var(--white); text-transform: uppercase;
+      margin-bottom: 8px; line-height: 1.1;
+    }
+    .ch-section__sub {
+      font-size: 0.88rem; color: var(--gray-500); line-height: 1.7; max-width: 520px;
+      margin-bottom: 40px;
+    }
+
+    /* Session cards (2 large linked cards) */
+    .ch-sessions-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+    }
+    @media (max-width: 680px) { .ch-sessions-grid { grid-template-columns: 1fr; } }
+    .ch-session-card {
+      display: block; text-decoration: none;
+      background: var(--gray-900);
+      border: 1px solid rgba(255,255,255,0.07);
+      position: relative; overflow: hidden;
+      transition: border-color 0.25s, transform 0.2s;
+    }
+    .ch-session-card:hover { border-color: rgba(14,58,132,0.5); transform: translateY(-3px); }
+    .ch-session-card__stripe {
+      height: 4px;
+      background: linear-gradient(90deg, var(--club) 0%, var(--club-accent) 100%);
+    }
+    .ch-session-card__body { padding: 32px 28px 36px; }
+    .ch-session-card__num {
+      font-family: var(--font-heading); font-size: 0.58rem; font-weight: 700;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--club); margin-bottom: 14px; display: block;
+    }
+    .ch-session-card__title {
+      font-family: var(--font-heading); font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-weight: 800; color: var(--white); text-transform: uppercase;
+      line-height: 1.05; margin-bottom: 16px;
+    }
+    .ch-session-card__desc {
+      font-size: 0.85rem; color: var(--gray-400); line-height: 1.7; margin-bottom: 28px;
+    }
+    .ch-session-card__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+    .ch-session-card__tag {
+      font-family: var(--font-heading); font-size: 0.58rem; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--gray-600);
+      border: 1px solid rgba(255,255,255,0.08); padding: 5px 10px;
+    }
+    .ch-session-card__cta {
+      display: flex; align-items: center; gap: 8px;
+      font-family: var(--font-heading); font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase; color: var(--club);
+    }
+    .ch-session-card__cta svg { transition: transform 0.2s; }
+    .ch-session-card:hover .ch-session-card__cta svg { transform: translateX(4px); }
+
+    /* Resource blocks (3 cards with video) */
+    .ch-resources-stack { display: flex; flex-direction: column; gap: 40px; }
+    .ch-resource {
+      background: var(--gray-900); border: 1px solid rgba(255,255,255,0.06);
+      overflow: hidden;
+    }
+    .ch-resource__inner { display: grid; grid-template-columns: 1fr 1fr; }
+    @media (max-width: 800px) { .ch-resource__inner { grid-template-columns: 1fr; } }
+    .ch-resource__content { padding: 40px 36px; display: flex; flex-direction: column; justify-content: space-between; }
+    .ch-resource__badge {
+      font-family: var(--font-heading); font-size: 0.58rem; font-weight: 700;
+      letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--club-accent); margin-bottom: 14px; display: block;
+    }
+    .ch-resource__title {
+      font-family: var(--font-heading); font-size: clamp(1rem, 2.5vw, 1.35rem);
+      font-weight: 800; color: var(--white); text-transform: uppercase;
+      line-height: 1.1; margin-bottom: 16px;
+    }
+    .ch-resource__intro { font-size: 0.88rem; color: var(--gray-400); line-height: 1.75; margin-bottom: 24px; }
+    .ch-resource__insight {
+      background: rgba(14,58,132,0.12); border-left: 3px solid var(--club);
+      padding: 16px 20px; margin-bottom: 24px;
+    }
+    .ch-resource__insight-label {
+      font-family: var(--font-heading); font-size: 0.56rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--club);
+      margin-bottom: 6px; display: block;
+    }
+    .ch-resource__insight p { font-size: 0.85rem; color: var(--gray-300); line-height: 1.65; font-style: italic; }
+    .ch-resource__principles { display: flex; flex-direction: column; gap: 12px; }
+    .ch-resource__principle {
+      display: flex; gap: 12px; align-items: flex-start;
+    }
+    .ch-resource__principle-icon {
+      width: 28px; height: 28px; flex-shrink: 0;
+      background: rgba(14,58,132,0.18); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; font-weight: 700; font-family: var(--font-heading);
+      color: var(--club); letter-spacing: 0;
+    }
+    .ch-resource__principle-text { font-size: 0.82rem; color: var(--gray-400); line-height: 1.6; }
+    .ch-resource__principle-text strong { color: var(--white); display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; font-family: var(--font-heading); margin-bottom: 2px; }
+    .ch-resource__prompts { margin-top: 24px; }
+    .ch-resource__prompts-label {
+      font-family: var(--font-heading); font-size: 0.58rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-600);
+      margin-bottom: 12px; display: block;
+    }
+    .ch-resource__prompt {
+      font-size: 0.82rem; color: var(--gray-300); line-height: 1.55;
+      padding: 10px 14px; background: rgba(255,255,255,0.03);
+      border-left: 2px solid rgba(255,255,255,0.1);
+      margin-bottom: 8px; font-style: italic;
+    }
+    .ch-resource__video-panel {
+      background: #000; display: flex; flex-direction: column; justify-content: flex-end;
+      position: relative; min-height: 300px;
+    }
+    .ch-resource__embed {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    }
+    .ch-resource__embed iframe { width: 100%; height: 100%; border: none; display: block; }
+    .ch-resource__img-panel {
+      position: relative; overflow: hidden; min-height: 320px;
+    }
+    .ch-resource__img-panel img {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center; display: block;
+    }
+    .ch-resource__img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(6,10,20,0.18) 0%, rgba(6,10,20,0.55) 100%);
+    }
+
+    /* Coaching library accordion */
+    .ch-library { padding: 72px 0 80px; }
+    .ch-library__grid { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
+    @media (max-width: 680px) { .ch-library__grid { gap: 8px; } }
+    .ch-lib-item {
+      border: 1px solid rgba(255,255,255,0.07); background: var(--gray-900);
+      cursor: pointer; user-select: none;
+    }
+    .ch-lib-item__hdr {
+      display: flex; align-items: center; gap: 16px; padding: 20px 22px;
+      transition: background 0.2s;
+    }
+    .ch-lib-item__hdr:hover { background: rgba(255,255,255,0.03); }
+    .ch-lib-item__icon {
+      width: 36px; height: 36px; flex-shrink: 0;
+      background: rgba(14,58,132,0.15);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ch-lib-item__icon svg { width: 18px; height: 18px; stroke: var(--club); }
+    .ch-lib-item__meta { flex: 1; }
+    .ch-lib-item__cat {
+      font-family: var(--font-heading); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-600);
+      margin-bottom: 4px; display: block;
+    }
+    .ch-lib-item__name {
+      font-family: var(--font-heading); font-size: 0.78rem; font-weight: 700;
+      color: var(--white); text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .ch-lib-item__arrow {
+      color: var(--gray-700); transition: transform 0.25s; font-size: 0.9rem;
+    }
+    .ch-lib-item.is-open .ch-lib-item__arrow { transform: rotate(180deg); }
+    .ch-lib-item__body {
+      max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+    }
+    .ch-lib-item.is-open .ch-lib-item__body { max-height: 2400px; }
+    .ch-lib-item__content { padding: 0 22px 24px; }
+    .ch-lib-item__content p { font-size: 0.85rem; color: var(--gray-400); line-height: 1.75; margin-bottom: 12px; }
+    .ch-lib-item__content strong { color: var(--white); }
+    .ch-lib-item__pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .ch-lib-item__pill {
+      font-family: var(--font-heading); font-size: 0.58rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 6px 12px; background: rgba(14,58,132,0.18);
+      color: var(--club); border: 1px solid rgba(14,58,132,0.25);
+    }
+    .ch-lib-video { position: relative; padding-bottom: 56.25%; height: 0; margin-top: 16px; }
+    .ch-lib-video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    .ch-lib-reads { list-style: none; margin-top: 12px; }
+    .ch-lib-reads li {
+      display: flex; gap: 12px; align-items: flex-start;
+      padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .ch-lib-reads li:last-child { border-bottom: none; }
+    .ch-lib-reads__bullet {
+      width: 6px; height: 6px; background: var(--club-accent); border-radius: 50%;
+      flex-shrink: 0; margin-top: 6px;
+    }
+    .ch-lib-reads__text { font-size: 0.82rem; color: var(--gray-400); line-height: 1.55; }
+    .ch-lib-reads__text strong { color: var(--white); }
+    .ch-lib-qr {
+      background: rgba(14,58,132,0.08); border: 1px solid rgba(14,58,132,0.2);
+      padding: 24px 28px; margin-top: 0;
+    }
+    .ch-lib-qr__row { display: flex; gap: 12px; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); align-items: baseline; }
+    .ch-lib-qr__row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .ch-lib-qr__key { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; color: var(--white); flex-shrink: 0; width: 90px; }
+    .ch-lib-qr__val { font-size: 0.8rem; color: var(--gray-400); line-height: 1.55; font-style: italic; }
+
+    @keyframes chFadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+
+    .co-intro-strip {
+      background: linear-gradient(135deg, var(--club-dark) 0%, var(--club) 100%);
+      border-bottom: 3px solid var(--club-accent); padding: 48px 0;
+    }
+    .co-intro-strip__eyebrow {
+      font-family: var(--font-heading); font-size: 0.62rem; font-weight: 600;
+      letter-spacing: 0.28em; text-transform: uppercase; color: rgba(255,255,255,0.55);
+      margin-bottom: 12px; display: block;
+    }
+    .co-intro-strip__title {
+      font-family: var(--font-heading); font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700; color: #fff; text-transform: uppercase; line-height: 1.05;
+      margin-bottom: 16px;
+    }
+    .co-intro-strip__title em { color: rgba(255,255,255,0.6); font-style: normal; }
+    .co-intro-strip__sub { font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.7; max-width: 600px; }
+    .co-intro-strip__quote {
+      margin-top: 28px; padding: 20px 24px;
+      border-left: 3px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.06);
+    }
+    .co-intro-strip__quote p { font-size: 1rem; color: #fff; line-height: 1.6; font-style: italic; }
+    .co-intro-strip__quote cite { font-size: 0.78rem; color: rgba(255,255,255,0.5); font-style: normal; display: block; margin-top: 8px; }
+
+    /* Session overview cards */
+    .co-session-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 8px; }
+    @media (max-width: 720px) { .co-session-grid { grid-template-columns: 1fr; } }
+    .co-session-card {
+      background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08);
+      border-top: 4px solid var(--club); padding: 32px 28px;
+    }
+    .co-session-card__label {
+      font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600;
+      letter-spacing: 0.25em; text-transform: uppercase; color: var(--club);
+      margin-bottom: 12px; display: block;
+    }
+    .co-session-card__title {
+      font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700;
+      color: var(--white); text-transform: uppercase; margin-bottom: 16px; line-height: 1.05;
+    }
+    .co-session-card__acts { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+    .co-session-card__act {
+      display: flex; gap: 12px; align-items: flex-start;
+      font-size: 0.85rem; color: var(--gray-400); line-height: 1.5;
+    }
+    .co-session-card__act-num {
+      font-family: var(--font-heading); font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.12em; color: var(--club); flex-shrink: 0; padding-top: 2px; min-width: 40px;
+    }
+
+    /* Language cards (ACE / Anchor / BRAVE) */
+    .co-tool-grid { display: flex; flex-direction: column; gap: 16px; margin: 32px 0; }
+    .co-tool-card {
+      background: var(--gray-900); border: 1px solid rgba(255,255,255,0.06);
+      overflow: hidden;
+    }
+    .co-tool-card__head {
+      padding: 24px 28px; cursor: pointer; display: flex;
+      align-items: center; justify-content: space-between; gap: 16px;
+      transition: background 0.25s;
+    }
+    .co-tool-card__head:hover { background: rgba(255,255,255,0.02); }
+    .co-tool-card__letter {
+      font-family: var(--font-heading); font-size: 2.5rem; font-weight: 700;
+      color: var(--club); line-height: 1; flex-shrink: 0; width: 44px;
+    }
+    .co-tool-card__info { flex: 1; }
+    .co-tool-card__word {
+      font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); margin-bottom: 4px;
+    }
+    .co-tool-card__cue { font-size: 0.82rem; color: var(--gray-500); font-style: italic; }
+    .co-tool-card__toggle {
+      font-family: var(--font-heading); font-size: 0.6rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--club); flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    .co-tool-card.is-open .co-tool-card__toggle { transform: rotate(180deg); }
+    .co-tool-card__body {
+      max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+    }
+    .co-tool-card.is-open .co-tool-card__body { max-height: 600px; }
+    .co-tool-card__content {
+      padding: 0 28px 28px; border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .co-tool-card__desc { font-size: 0.9rem; color: var(--gray-300); line-height: 1.75; margin: 16px 0 12px; }
+    .co-tool-card__coach-cue {
+      padding: 14px 18px; background: rgba(14,58,132,0.07); border-left: 3px solid var(--club);
+      font-size: 0.85rem; color: var(--gray-300); line-height: 1.65;
+    }
+    .co-tool-card__coach-cue strong { color: var(--white); }
+
+    /* Halftime recipe */
+    .co-halftime-steps { display: flex; flex-direction: column; gap: 0; margin: 32px 0; }
+    .co-ht-step {
+      display: flex; gap: 0; align-items: stretch;
+      cursor: pointer; border: 1px solid rgba(255,255,255,0.07); margin-bottom: -1px;
+      transition: background 0.25s;
+    }
+    .co-ht-step:hover { background: rgba(255,255,255,0.02); }
+    .co-ht-step.is-open { background: rgba(14,58,132,0.05); border-color: rgba(14,58,132,0.25); z-index: 1; position: relative; }
+    .co-ht-step__phase {
+      font-family: var(--font-heading); font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase; color: #fff;
+      background: var(--club); writing-mode: vertical-rl; text-orientation: mixed;
+      transform: rotate(180deg); padding: 16px 12px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      min-width: 44px;
+    }
+    .co-ht-step.is-open .co-ht-step__phase { background: var(--club-dark); }
+    .co-ht-step__main { padding: 20px 24px; flex: 1; }
+    .co-ht-step__time {
+      font-family: var(--font-heading); font-size: 0.58rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--club); margin-bottom: 6px; display: block;
+    }
+    .co-ht-step__title {
+      font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700;
+      color: var(--white); text-transform: uppercase; margin-bottom: 4px;
+    }
+    .co-ht-step__preview { font-size: 0.82rem; color: var(--gray-600); }
+    .co-ht-step__detail {
+      display: none; padding: 16px 24px 20px; border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .co-ht-step.is-open .co-ht-step__detail { display: block; animation: coFadeIn 0.3s ease; }
+    .co-ht-step__detail p { font-size: 0.88rem; color: var(--gray-300); line-height: 1.75; margin-bottom: 10px; }
+    .co-ht-step__detail p:last-child { margin-bottom: 0; }
+    .co-ht-step__detail strong { color: var(--white); }
+    .co-ht-step__detail em { color: var(--club); font-style: italic; }
+
+    /* Noise table */
+    .co-noise-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+    .co-noise-table th {
+      font-family: var(--font-heading); font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--club);
+      padding: 12px 16px; text-align: left; border-bottom: 2px solid rgba(14,58,132,0.3);
+      background: rgba(14,58,132,0.07);
+    }
+    .co-noise-table td {
+      padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.04);
+      font-size: 0.85rem; color: var(--gray-300); line-height: 1.55; vertical-align: top;
+    }
+    .co-noise-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .co-noise-table td:first-child { font-weight: 600; color: var(--white); white-space: nowrap; width: 30%; }
+
+    /* Language cues */
+    .co-cue-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 24px 0; }
+    .co-cue-card {
+      padding: 22px 20px; background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+    .co-cue-card__label {
+      font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--club);
+      margin-bottom: 10px; display: block;
+    }
+    .co-cue-card p { font-size: 0.85rem; color: var(--gray-300); line-height: 1.65; font-style: italic; }
+    .co-cue-card p strong { color: var(--white); font-style: normal; }
+
+    /* Do / don't list */
+    .co-do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 24px 0; }
+    @media (max-width: 640px) { .co-do-dont { grid-template-columns: 1fr; } }
+    .co-do-col { padding: 24px 22px; }
+    .co-do-col--do { background: rgba(34,197,94,0.05); border: 1px solid rgba(34,197,94,0.15); }
+    .co-do-col--dont { background: rgba(230,59,46,0.05); border: 1px solid rgba(230,59,46,0.15); }
+    .co-do-col__head {
+      font-family: var(--font-heading); font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 14px; display: block;
+    }
+    .co-do-col--do .co-do-col__head { color: #22c55e; }
+    .co-do-col--dont .co-do-col__head { color: var(--wrong); }
+    .co-do-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+    .co-do-col li { font-size: 0.85rem; color: var(--gray-300); line-height: 1.55; padding-left: 18px; position: relative; }
+    .co-do-col--do li::before { content: '✓'; position: absolute; left: 0; color: #22c55e; font-size: 0.75rem; }
+    .co-do-col--dont li::before { content: '✕'; position: absolute; left: 0; color: var(--wrong); font-size: 0.75rem; }
+
+    /* Training tool accordion */
+    .co-training-tools { display: flex; flex-direction: column; gap: 0; margin: 24px 0; }
+    .co-training-tool {
+      border: 1px solid rgba(255,255,255,0.06); margin-bottom: -1px; overflow: hidden;
+    }
+    .co-training-tool__head {
+      padding: 20px 24px; cursor: pointer; display: flex;
+      align-items: center; gap: 18px; transition: background 0.25s;
+    }
+    .co-training-tool__head:hover { background: rgba(255,255,255,0.02); }
+    .co-training-tool.is-open .co-training-tool__head { background: rgba(14,58,132,0.06); }
+    .co-training-tool__num {
+      font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700;
+      color: var(--club); flex-shrink: 0; width: 28px; line-height: 1;
+    }
+    .co-training-tool__name {
+      font-family: var(--font-heading); font-size: 0.88rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); flex: 1;
+    }
+    .co-training-tool__skill {
+      font-family: var(--font-heading); font-size: 0.58rem; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--club);
+      padding: 3px 8px; border: 1px solid rgba(14,58,132,0.3); flex-shrink: 0;
+    }
+    .co-training-tool__body {
+      max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+    }
+    .co-training-tool.is-open .co-training-tool__body { max-height: 500px; }
+    .co-training-tool__content {
+      padding: 0 24px 24px; border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .co-training-tool__content p { font-size: 0.88rem; color: var(--gray-300); line-height: 1.75; margin-top: 14px; }
+    .co-training-tool__content strong { color: var(--white); }
+
+    /* Reflection fields */
+    .co-reflect-grid { display: flex; flex-direction: column; gap: 20px; margin: 24px 0; }
+    .co-reflect-item { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.07); padding: 24px 24px 20px; }
+    .co-reflect-item__label {
+      font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--club);
+      margin-bottom: 10px; display: block;
+    }
+    .co-reflect-item__q { font-size: 0.92rem; color: var(--white); line-height: 1.6; margin-bottom: 14px; }
+    .co-reflect-textarea {
+      width: 100%; min-height: 72px; padding: 12px 16px;
+      background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.08);
+      color: var(--white); font-family: var(--font-body); font-size: 0.88rem;
+      line-height: 1.6; outline: none; resize: vertical; box-sizing: border-box;
+      transition: border-color 0.3s;
+    }
+    .co-reflect-textarea:focus { border-color: var(--club); }
+    .co-reflect-textarea::placeholder { color: var(--gray-700); }
+
+    /* Anchor visual */
+    .co-anchor-visual {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px 0;
+    }
+    @media (max-width: 600px) { .co-anchor-visual { grid-template-columns: 1fr; } }
+    .co-anchor-part {
+      padding: 28px 22px; background: rgba(14,58,132,0.07);
+      border: 1px solid rgba(14,58,132,0.2); text-align: center;
+    }
+    .co-anchor-part__icon { font-size: 2rem; margin-bottom: 12px; }
+    .co-anchor-part__name {
+      font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--club); margin-bottom: 6px;
+    }
+    .co-anchor-part__label { font-family: var(--font-heading); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 12px; display: block; }
+    .co-anchor-part p { font-size: 0.82rem; color: var(--gray-300); line-height: 1.6; }
+
+    /* Escape moves */
+    .co-escape-grid { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+    .co-escape-tag {
+      font-family: var(--font-heading); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500);
+      padding: 10px 18px; background: rgba(230,59,46,0.05);
+      border: 1px solid rgba(230,59,46,0.15);
+    }
+
+    /* Video section in coach */
+    .co-video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 24px 0; }
+    .co-video-card { background: var(--gray-900); border: 1px solid rgba(255,255,255,0.06); overflow: hidden; }
+    .co-video-embed { position: relative; padding-bottom: 56.25%; height: 0; }
+    .co-video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    .co-video-info { padding: 18px 20px; }
+    .co-video-badge {
+      font-family: var(--font-heading); font-size: 0.58rem; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--club); display: block; margin-bottom: 6px;
+    }
+    .co-video-title { font-family: var(--font-heading); font-size: 0.88rem; font-weight: 700; color: var(--white); text-transform: uppercase; margin-bottom: 6px; }
+    .co-video-desc { font-size: 0.8rem; color: var(--gray-500); line-height: 1.55; }
+
+    /* Quick ref card */
+    .co-quick-ref {
+      background: var(--black); border: 2px solid var(--club);
+      padding: 40px 36px; margin: 32px 0;
+    }
+    .co-quick-ref__title {
+      font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.25em; text-transform: uppercase; color: var(--club); margin-bottom: 28px;
+      padding-bottom: 12px; border-bottom: 1px solid rgba(14,58,132,0.25);
+    }
+    .co-quick-ref__block { margin-bottom: 24px; }
+    .co-quick-ref__block-title {
+      font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray-500);
+      margin-bottom: 10px;
+    }
+    .co-quick-ref__row {
+      display: flex; gap: 12px; margin-bottom: 6px; align-items: baseline;
+    }
+    .co-quick-ref__key {
+      font-family: var(--font-heading); font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.1em; color: var(--white); flex-shrink: 0; width: 100px;
+    }
+    .co-quick-ref__val { font-size: 0.82rem; color: var(--gray-400); line-height: 1.55; font-style: italic; }
+
+    @keyframes coFadeIn { from{opacity:0} to{opacity:1} }
+
+    /* ---------- ATHLETE TABBED INTERFACE ---------- */
+    .gw-tabs-bar {
+      display: flex; border-bottom: 2px solid rgba(255,255,255,0.07);
+      margin-bottom: 0; background: var(--gray-900);
+      position: sticky; top: var(--header-height); z-index: 80;
+    }
+    .gw-tab-btn {
+      font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      padding: 20px 32px; color: var(--gray-700); background: transparent;
+      border: none; border-bottom: 3px solid transparent; cursor: pointer;
+      transition: all 0.3s ease; margin-bottom: -2px; white-space: nowrap;
+    }
+    .gw-tab-btn:hover { color: var(--white); }
+    .gw-tab-btn.is-active { color: var(--club); border-bottom-color: var(--club); }
+    .gw-tab-panel { display: none; }
+    .gw-tab-panel.is-active { display: block; }
+
+    /* Session cards */
+    .gw-session-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px; margin-top: 12px;
+    }
+    .gw-session-card {
+      background: var(--black); border: 1px solid rgba(255,255,255,0.07);
+      border-top: 4px solid var(--club); padding: 40px 36px;
+      text-decoration: none; transition: border-color 0.3s, transform 0.3s;
+      display: block;
+    }
+    .gw-session-card:hover { border-color: rgba(14,58,132,0.4); transform: translateY(-2px); border-top-color: var(--club); }
+    .gw-session-card__label {
+      font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600;
+      letter-spacing: 0.25em; text-transform: uppercase; color: var(--club);
+      margin-bottom: 14px; display: block;
+    }
+    .gw-session-card__title {
+      font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700;
+      color: var(--white); text-transform: uppercase; line-height: 1.05; margin-bottom: 16px;
+    }
+    .gw-session-card__desc {
+      font-size: 0.9rem; color: var(--gray-500); line-height: 1.7; margin-bottom: 28px;
+    }
+    .gw-session-card__tags {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px;
+    }
+    .gw-session-card__tag {
+      font-family: var(--font-heading); font-size: 0.58rem; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      padding: 5px 10px; border: 1px solid rgba(255,255,255,0.1); color: var(--gray-500);
+    }
+    .gw-session-card__cta {
+      font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--club);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .gw-session-card__cta::after { content: '→'; transition: transform 0.3s; }
+    .gw-session-card:hover .gw-session-card__cta::after { transform: translateX(4px); }
+
+    /* Mind Gym station cards */
+    .gw-station-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px; margin-top: 12px;
+    }
+    .gw-station-card {
+      background: var(--black); border: 1px solid rgba(255,255,255,0.07);
+      padding: 28px 24px; text-decoration: none; transition: all 0.3s;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .gw-station-card:hover { border-color: rgba(14,58,132,0.35); background: rgba(14,58,132,0.03); }
+    .gw-station-card__num {
+      font-family: var(--font-heading); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.2em; color: var(--club); text-transform: uppercase;
+    }
+    .gw-station-card__title {
+      font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700;
+      color: var(--white); text-transform: uppercase; line-height: 1.2;
+    }
+    .gw-station-card__desc { font-size: 0.85rem; color: var(--gray-500); line-height: 1.65; flex: 1; }
+    .gw-station-card__link {
+      font-family: var(--font-heading); font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--club);
+      margin-top: 4px;
+    }
+    @media (max-width: 640px) {
+      .gw-tab-btn { padding: 16px 20px; font-size: 0.68rem; }
+      .gw-session-card { padding: 28px 24px; }
+    }
+
+    /* ── COACH'S COMPASS FEATURED CARD ─────────────── */
+    .ch-featured-card {
+      display: block; text-decoration: none; position: relative; overflow: hidden;
+      background: linear-gradient(135deg, #060d1f 0%, #0c1e4a 60%, #1a0a12 100%);
+      border: 1px solid rgba(14,58,132,0.35);
+      margin-bottom: 32px;
+      transition: border-color 0.25s, transform 0.2s;
+    }
+    .ch-featured-card:hover { border-color: rgba(200,16,46,0.5); transform: translateY(-2px); }
+    .ch-featured-card__stripe {
+      height: 4px;
+      background: linear-gradient(90deg, var(--club) 0%, var(--club-accent) 100%);
+    }
+    .ch-featured-card__inner {
+      padding: 36px 32px 40px;
+      display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center;
+    }
+    @media (max-width: 640px) {
+      .ch-featured-card__inner { grid-template-columns: 1fr; gap: 20px; }
+    }
+    .ch-featured-card__badge {
+      font-family: var(--font-heading); font-size: 0.58rem; font-weight: 700;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--club-accent); margin-bottom: 14px; display: block;
+    }
+    .ch-featured-card__title {
+      font-family: var(--font-heading); font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 800; color: #fff; text-transform: uppercase;
+      line-height: 1.0; margin-bottom: 14px;
+    }
+    .ch-featured-card__title span { color: var(--club-accent); }
+    .ch-featured-card__desc {
+      font-size: 0.87rem; color: rgba(255,255,255,0.55); line-height: 1.72;
+      max-width: 560px; margin-bottom: 24px;
+    }
+    .ch-featured-card__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+    .ch-featured-card__tag {
+      font-family: var(--font-heading); font-size: 0.56rem; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(255,255,255,0.4); border: 1px solid rgba(255,255,255,0.1);
+      padding: 5px 10px;
+    }
+    .ch-featured-card__cta {
+      display: flex; align-items: center; gap: 8px;
+      font-family: var(--font-heading); font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase; color: var(--club-accent);
+    }
+    .ch-featured-card__cta svg { transition: transform 0.2s; }
+    .ch-featured-card:hover .ch-featured-card__cta svg { transform: translateX(4px); }
+    .ch-featured-card__new {
+      background: var(--club-accent); color: #fff;
+      font-family: var(--font-heading); font-size: 0.56rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      padding: 10px 20px; white-space: nowrap; align-self: flex-start;
+    }
+    .ch-sub-label {
+      font-family: var(--font-heading); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: rgba(255,255,255,0.25); margin-bottom: 16px; display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="images/logo-horizontal.png" alt="The Performance Act" class="logo-img logo-img--header">
+      </a>
+      <nav class="header__nav" id="mainNav">
+        <a href="index.html" class="nav-link">HOME</a>
+        <a href="index.html#about" class="nav-link">ABOUT</a>
+        <a href="approach.html" class="nav-link">APPROACH</a>
+        <a href="index.html#pillars" class="nav-link">OUR PACT</a>
+        <a href="programs.html" class="nav-link">SUPPORT</a>
+        <a href="team.html" class="nav-link">TEAM</a>
+        <a href="blog.html" class="nav-link">INSIGHTS</a>
+        <a href="contact.html" class="nav-link">CONTACT</a>
+      </nav>
+      <div class="header__actions">
+        <a href="programs.html" class="btn btn--primary btn--sm">EXPLORE SUPPORT</a>
+        <a href="contact.html" class="btn btn--outline btn--sm">GET IN TOUCH</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <nav class="mobile-nav__links">
+      <a href="index.html" class="mobile-nav__link">HOME</a>
+      <a href="index.html#about" class="mobile-nav__link">ABOUT</a>
+      <a href="approach.html" class="mobile-nav__link">APPROACH</a>
+      <a href="index.html#pillars" class="mobile-nav__link">OUR PACT</a>
+      <a href="programs.html" class="mobile-nav__link">SUPPORT</a>
+      <a href="team.html" class="mobile-nav__link">TEAM</a>
+      <a href="blog.html" class="mobile-nav__link">INSIGHTS</a>
+      <a href="contact.html" class="mobile-nav__link">CONTACT</a>
+      <div class="mobile-nav__actions">
+        <a href="programs.html" class="btn btn--primary">EXPLORE SUPPORT</a>
+        <a href="contact.html" class="btn btn--outline">GET IN TOUCH</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- ===================================================================
+       GROW APP ROOT
+       All three screens live here. JS toggles .is-active to show one.
+  =================================================================== -->
+  <div id="growApp" class="gw-root">
+
+    <!-- ==================== SCREEN 1: GATEWAY ==================== -->
+    <div id="gw-gateway" class="gw-screen gw-gateway">
+      <div class="gw-card">
+
+        <!-- Club logo — place nomads-logo.png inside /images/ -->
+        <div class="gw-card__logo-wrap">
+          <img
+            src="images/nomads-logo.png"
+            alt="Nomads United AFC"
+            class="gw-card__logo-img"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          >
+          <div class="gw-card__logo-fallback" style="display:none;">PACT</div>
+        </div>
+
+        <p class="gw-card__eyebrow">The Performance Act</p>
+        <h1 class="gw-card__title">GROW<br><span>PLATFORM</span></h1>
+        <p class="gw-card__sub">Your club's exclusive sport psychology resource hub</p>
+
+        <form id="gwForm" novalidate>
+          <div class="gw-form-group">
+            <label class="gw-label" for="clubSelect">Select Club</label>
+            <div class="gw-select-wrap">
+              <select class="gw-select" id="clubSelect">
+                <option value="">— Select your club —</option>
+                <option value="nomads">Nomads United AFC</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="gw-form-group">
+            <label class="gw-label" for="pwInput">Club Password</label>
+            <input
+              class="gw-input"
+              id="pwInput"
+              type="password"
+              placeholder="Enter your club password"
+              autocomplete="current-password"
+            >
+            <p class="gw-error" id="gwError">Incorrect password. Please check with your club administrator.</p>
+          </div>
+
+          <button type="submit" class="gw-submit">ACCESS GROW &rarr;</button>
+        </form>
+
+        <p class="gw-card__footer-note">
+          GROW is a private resource area. Your club password is provided by The Performance Act.
+          No personal data is collected or stored.
+        </p>
+      </div>
+    </div><!-- /gateway -->
+
+
+    <!-- ==================== SCREEN 2: ROLE SELECTION ==================== -->
+    <div id="gw-roles" class="gw-screen gw-roles">
+
+      <div class="gw-club-banner">
+        <div class="container">
+          <div class="gw-club-banner__inner">
+            <div class="gw-club-banner__left">
+              <img
+                src="images/nomads-logo.png"
+                alt="Nomads United AFC"
+                class="gw-club-banner__logo"
+                onerror="this.style.display='none';"
+              >
+              <div>
+                <div class="gw-club-banner__name" id="bannerName">Nomads United AFC</div>
+                <div class="gw-club-banner__platform">GROW Platform &nbsp;·&nbsp; Powered by The Performance Act</div>
+              </div>
+            </div>
+            <button class="gw-logout-btn" id="logoutBtnRoles">Log Out</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="gw-roles__body">
+        <div class="container">
+          <div class="gw-roles__heading">
+            <h2 class="gw-roles__title">Who Are You Today?</h2>
+          </div>
+          <p class="gw-roles__sub">Select your role to access your personalised resources.</p>
+
+          <div class="gw-roles__grid">
+
+            <!-- Coach Card -->
+            <div class="gw-role-card" data-role="coach" tabindex="0" role="button" aria-label="Enter as Coach">
+              <div class="gw-role-card__icon">
+                <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="30" cy="18" r="9"/>
+                  <path d="M12 52c0-10 8-18 18-18s18 8 18 18"/>
+                  <path d="M44 28l6 6-6 6"/>
+                  <path d="M50 34h-8"/>
+                </svg>
+              </div>
+              <h3 class="gw-role-card__title">Coach</h3>
+              <p class="gw-role-card__desc">Session workbooks, module frameworks, coaching videos, and reflection tools for bringing GROW to life on the training pitch.</p>
+              <span class="gw-role-card__cta">Access Coach Resources &rarr;</span>
+            </div>
+
+            <!-- Athlete Card -->
+            <div class="gw-role-card" data-role="athlete" tabindex="0" role="button" aria-label="Enter as Athlete">
+              <div class="gw-role-card__icon">
+                <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="30" cy="14" r="7"/>
+                  <path d="M30 21v16"/>
+                  <path d="M20 30l10 4 10-4"/>
+                  <path d="M22 37l-4 12"/>
+                  <path d="M38 37l4 12"/>
+                  <circle cx="30" cy="30" r="22" stroke-dasharray="4 4" stroke-width="0.8"/>
+                </svg>
+              </div>
+              <h3 class="gw-role-card__title">Athlete</h3>
+              <p class="gw-role-card__desc">Your personal resources — mental skills guides, brain health tools, videos, and reflection challenges to sharpen how you perform.</p>
+              <span class="gw-role-card__cta">Access Athlete Resources &rarr;</span>
+            </div>
+
+            <!-- Parent Card -->
+            <div class="gw-role-card" data-role="parent" tabindex="0" role="button" aria-label="Enter as Parent">
+              <div class="gw-role-card__icon">
+                <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="22" cy="14" r="7"/>
+                  <circle cx="40" cy="18" r="5"/>
+                  <path d="M10 50c0-9 5-16 12-16s12 7 12 16"/>
+                  <path d="M34 50c0-7 3-12 6-12s6 5 6 12"/>
+                  <path d="M30 34c2-1 4-2 6-2"/>
+                </svg>
+              </div>
+              <h3 class="gw-role-card__title">Parent</h3>
+              <p class="gw-role-card__desc">Understand what your child is learning, how to support their mental skills at home, and the research behind the programme.</p>
+              <span class="gw-role-card__cta">Access Parent Resources &rarr;</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div><!-- /roles -->
+
+
+    <!-- ==================== SCREEN 3: CONTENT ==================== -->
+    <div id="gw-content" class="gw-screen gw-content">
+
+      <div class="gw-club-banner">
+        <div class="container">
+          <div class="gw-club-banner__inner">
+            <div class="gw-club-banner__left">
+              <img
+                src="images/nomads-logo.png"
+                alt="Nomads United AFC"
+                class="gw-club-banner__logo"
+                onerror="this.style.display='none';"
+              >
+              <div>
+                <div class="gw-club-banner__name">Nomads United AFC</div>
+                <div class="gw-club-banner__platform">GROW Platform &nbsp;·&nbsp; Powered by The Performance Act</div>
+              </div>
+            </div>
+            <button class="gw-logout-btn" id="logoutBtnContent">Log Out</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Role indicator strip -->
+      <div class="gw-content__nav">
+        <div class="container">
+          <div class="gw-content__nav-inner">
+            <span class="gw-role-indicator" id="roleIndicator">COACH</span>
+            <button class="gw-change-role-btn" id="changeRoleBtn">&#8592; Change role</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- COACH RESOURCES ---- -->
+      <div id="content-coach" class="role-content" hidden>
+
+        <!-- HERO -->
+        <div class="ch-hero">
+          <div class="container">
+            <span class="ch-hero__eyebrow">Coach Resource Hub · Nomads United AFC</span>
+            <h2 class="ch-hero__title">Your coaching<br>resource hub.<br><em>Growing with you all season.</em></h2>
+            <p class="ch-hero__sub">You don't need a sport psychology background to use this — everything here is written for community coaches who want to give their players the best chance of performing and thriving. Below you'll find your session guides, background reading from the research, and a library that keeps growing throughout the year.</p>
+          </div>
+        </div>
+
+        <!-- SECTION A: YOUR SESSIONS -->
+        <section class="ch-section">
+          <div class="container">
+            <span class="ch-section__label">Your Resources</span>
+            <h2 class="ch-section__heading">Everything from<br>the room — and beyond</h2>
+            <p class="ch-section__sub">Your full library of session guides and coach development resources. Start with the most recent and work your way through the season.</p>
+
+            <!-- Coach's Compass — featured at the top -->
+            <a href="grow-nomads-coach-compass.html" class="ch-featured-card">
+              <div class="ch-featured-card__stripe"></div>
+              <div class="ch-featured-card__inner">
+                <div>
+                  <span class="ch-featured-card__badge">Coach Development Evening · Latest</span>
+                  <div class="ch-featured-card__title">The Coach's<br><span>Compass</span></div>
+                  <p class="ch-featured-card__desc">Everything from Thursday evening — the research behind the session, the frameworks you practised (AOA, Sideline ACE, Pressure by Design), six constraints-led finishing activities, and your personal reflection space. This is your reference point all season.</p>
+                  <div class="ch-featured-card__tags">
+                    <span class="ch-featured-card__tag">Ask · Offer · Ask</span>
+                    <span class="ch-featured-card__tag">Sideline ACE</span>
+                    <span class="ch-featured-card__tag">Pressure by Design</span>
+                    <span class="ch-featured-card__tag">Finishing Under Pressure</span>
+                    <span class="ch-featured-card__tag">Constraints-Led Approach</span>
+                  </div>
+                  <div class="ch-featured-card__cta">Open the Full Recap
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </div>
+                </div>
+                <div class="ch-featured-card__new">New</div>
+              </div>
+            </a>
+
+            <!-- Player session guides below -->
+            <span class="ch-sub-label">Player Session Guides</span>
+            <div class="ch-sessions-grid">
+              <a href="grow-nomads-coach-session-1.html" class="ch-session-card">
+                <div class="ch-session-card__stripe"></div>
+                <div class="ch-session-card__body">
+                  <span class="ch-session-card__num">Session 01 · U13 &amp; U14</span>
+                  <div class="ch-session-card__title">Meeting Your Mind</div>
+                  <p class="ch-session-card__desc">Your U13s and U14s met their Saboteur, learned ACE, and left knowing that mental noise is universal — not a weakness. Here's everything you need to keep the work alive on the training pitch.</p>
+                  <div class="ch-session-card__tags">
+                    <span class="ch-session-card__tag">ACE Tool</span>
+                    <span class="ch-session-card__tag">Emotion Coaching</span>
+                    <span class="ch-session-card__tag">Training Drills</span>
+                    <span class="ch-session-card__tag">Reflection</span>
+                  </div>
+                  <div class="ch-session-card__cta">Open Session Guide
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </div>
+                </div>
+              </a>
+              <a href="grow-nomads-coach-session-2.html" class="ch-session-card">
+                <div class="ch-session-card__stripe"></div>
+                <div class="ch-session-card__body">
+                  <span class="ch-session-card__num">Session 02 · U15 &amp; U17</span>
+                  <div class="ch-session-card__title">Play Brave</div>
+                  <p class="ch-session-card__desc">Your U15s and U17s built their Anchor — a personal value paired with a physical gesture — named their escape move, and learned the Halftime Recipe. Here's how to keep all of it alive on the training pitch and on matchday.</p>
+                  <div class="ch-session-card__tags">
+                    <span class="ch-session-card__tag">Anchor Metaphor</span>
+                    <span class="ch-session-card__tag">Halftime Recipe</span>
+                    <span class="ch-session-card__tag">Sideline Coaching</span>
+                    <span class="ch-session-card__tag">Training Drills</span>
+                  </div>
+                  <div class="ch-session-card__cta">Open Session Guide
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION B: EXPAND YOUR PRACTICE -->
+        <section class="ch-section ch-section--alt">
+          <div class="container">
+            <span class="ch-section__label">Build Your Practice</span>
+            <h2 class="ch-section__heading">Three resources to go<br>deeper as a coach</h2>
+            <p class="ch-section__sub">Drawn from research in ACT coaching conversations, team cohesion science, and motivational interviewing — all filtered through the PACT lens.</p>
+
+            <div class="ch-resources-stack">
+
+              <!-- Resource 1: ACT Coaching Conversations -->
+              <div class="ch-resource">
+                <div class="ch-resource__inner">
+                  <div class="ch-resource__content">
+                    <span class="ch-resource__badge">From the Literature · ACT in Sport</span>
+                    <h3 class="ch-resource__title">Coaching Conversations That Actually Help</h3>
+                    <p class="ch-resource__intro">ACT stands for Acceptance and Commitment Therapy — but in sport, it's better thought of as a framework for helping people notice what their mind is doing and choose their actions based on their values rather than their fears. ACE is the player's three-step tool. This section is about the parallel moves for you as a coach — because the quality of a coaching conversation is measured not by what you say, but by what the player walks away thinking about themselves.</p>
+                    <div class="ch-resource__insight">
+                      <span class="ch-resource__insight-label">The Core Shift</span>
+                      <p>Most coaches try to put better thoughts into a player's head. ACT-informed coaching does the opposite — it helps the player notice the thoughts already there, take them less literally, and act on what matters to them. Your job isn't to fix the thinking. It's to create the space where the player can do that themselves.</p>
+                    </div>
+                    <div class="ch-resource__principles">
+                      <div class="ch-resource__principle">
+                        <div class="ch-resource__principle-icon">1</div>
+                        <div class="ch-resource__principle-text"><strong>Create space first</strong>When a player comes to you after a mistake or tough moment, lead with silence and presence — not advice. Their nervous system needs 60 seconds to settle before they can think clearly. Wait. Let the emotional state arrive before you speak.</div>
+                      </div>
+                      <div class="ch-resource__principle">
+                        <div class="ch-resource__principle-icon">2</div>
+                        <div class="ch-resource__principle-text"><strong>Use distancing language</strong>"What's your mind telling you right now?" This phrasing might feel unusual at first, but it's deliberate — treating the thought as something the mind produces (rather than the truth) helps the player observe it rather than be consumed by it. This is what psychologists call defusion: creating a small gap between the person and the thought.</div>
+                      </div>
+                      <div class="ch-resource__principle">
+                        <div class="ch-resource__principle-icon">3</div>
+                        <div class="ch-resource__principle-text"><strong>Bring it back to values</strong>"What kind of player do you want to be in this moment?" This is the conversational version of the ACE Engage step — it redirects from the noise to what actually matters to them. Every good coaching conversation can end here.</div>
+                      </div>
+                      <div class="ch-resource__principle">
+                        <div class="ch-resource__principle-icon">4</div>
+                        <div class="ch-resource__principle-text"><strong>One question, then listen</strong>Studies of coaching interactions in youth sport consistently find that coaches do the large majority of the talking. The most effective conversations in coaching research are weighted the other way — more player voice, less coach voice. Ask one good question, then stop. The player's own words about their own experience are the most powerful tool you have.</div>
+                      </div>
+                    </div>
+                    <div class="ch-resource__prompts">
+                      <span class="ch-resource__prompts-label">Try these in your next one-to-one</span>
+                      <div class="ch-resource__prompt">"What's your mind telling you right now?"</div>
+                      <div class="ch-resource__prompt">"What kind of player do you want to be in this moment?"</div>
+                      <div class="ch-resource__prompt">"I noticed something — do you want to hear it?"</div>
+                      <div class="ch-resource__prompt">"What's the one thing that matters most to you about this?"</div>
+                    </div>
+                  </div>
+                  <div class="ch-resource__img-panel">
+                    <img src="images/jason-discussion.jpg" alt="Coach in conversation with player">
+                    <div class="ch-resource__img-overlay"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Resource 2: Building Team Culture -->
+              <div class="ch-resource">
+                <div class="ch-resource__inner">
+                  <div class="ch-resource__img-panel">
+                    <img src="images/youth-huddle.png" alt="Youth players huddling together">
+                    <div class="ch-resource__img-overlay"></div>
+                  </div>
+                  <div class="ch-resource__content">
+                    <span class="ch-resource__badge">Team Culture · Togetherness Research</span>
+                    <h3 class="ch-resource__title">Building a Brave Team Culture</h3>
+                    <p class="ch-resource__intro">In Session 2, players built their own personal anchor — a value and a gesture they can come back to under pressure. But individual tools only work fully inside a team environment where it feels safe to use them. Research on togetherness in sport (from social identity theory) and Amy Edmondson's work on psychological safety (she's a professor at Harvard Business School, not a sport scientist — but the principles transfer directly) shows that players who genuinely feel part of something — who think of the group as "us" — demonstrate significantly higher effort, take more risks, and recover faster from mistakes. For 13–17 year olds, this matters even more: belonging to the group is a primary psychological need at this developmental stage, and the fear of social exclusion is a major driver of escape moves.</p>
+                    <div class="ch-resource__insight">
+                      <span class="ch-resource__insight-label">The Key Insight</span>
+                      <p>Team culture isn't built in pre-match team talks. It's built in the five seconds after a mistake — in whether you shout or pause. In whether you say "get it together" or "that's done, what's next?" Those micro-moments accumulate into the environment your players perform in.</p>
+                    </div>
+                    <div class="ch-resource__principles">
+                      <div class="ch-resource__principle">
+                        <div class="ch-resource__principle-icon">1</div>
+                        <div class="ch-resource__principle-text"><strong>Belonging drives effort</strong>Players who strongly identify as part of a group show higher commitment under pressure — this is Social Identity Theory in practice. The coaching question isn't "how do I motivate them?" It's "how do I help them feel like this squad is genuinely theirs?"</div>
+                      </div>
+                      <div class="ch-resource__principle">
+                        <div class="ch-resource__principle-icon">2</div>
+                        <div class="ch-resource__principle-text"><strong>Psychological safety is the foundation</strong>Psychological safety means players feel they can take a risk — try the difficult pass, own the mistake — without being embarrassed or punished. Every time you react to a mistake, you either build or erode that safety. Google's Project Aristotle found this, not talent or tactics, is the single strongest predictor of team performance.</div>
+                      </div>
+                      <div class="ch-resource__principle">
+                        <div class="ch-resource__principle-icon">3</div>
+                        <div class="ch-resource__principle-text"><strong>Connection before correction</strong>Culture is built in non-crisis moments — the joke in training, the arm round the shoulder after a bad session. These accumulate into trust. And trust is what makes brave play possible under pressure.</div>
+                      </div>
+                      <div class="ch-resource__principle">
+                        <div class="ch-resource__principle-icon">4</div>
+                        <div class="ch-resource__principle-text"><strong>A shared team anchor</strong>Individual anchors work. A shared team anchor — one word everyone owns — creates a collective reference point under pressure. You could ask the group: "If we had one word for how we want to play, what would it be?" Name it together. Come back to it together.</div>
+                      </div>
+                    </div>
+                    <div class="ch-resource__prompts">
+                      <span class="ch-resource__prompts-label">Questions to build team culture</span>
+                      <div class="ch-resource__prompt">"What do we stand for as a team when it gets hard?"</div>
+                      <div class="ch-resource__prompt">"Who's leading today — not on the ball, but in their energy?"</div>
+                      <div class="ch-resource__prompt">"What's one thing you can do today to lift someone who's struggling?"</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Resource 3: Motivational Interviewing -->
+              <div class="ch-resource">
+                <div class="ch-resource__inner">
+                  <div class="ch-resource__content">
+                    <span class="ch-resource__badge">Coaching Conversations · MI in Sport</span>
+                    <h3 class="ch-resource__title">How to Talk So Players Actually Listen</h3>
+                    <p class="ch-resource__intro">Motivational Interviewing (MI) is a research-backed approach to coaching conversations that shares the same core belief as ACT: the coach is not the source of motivation — the player is. Most of us grew up in coaching cultures where the coach provided all the answers. MI gently challenges this. It gives you a set of concrete conversational moves designed to draw out the player's own thinking, rather than installing yours. MI has now been tested in hundreds of randomised controlled trials — the research consensus is clear: a player's own words about their own development are more powerful than any instruction you can give. This effect is especially strong with teenagers, which is exactly the age group you're working with.</p>
+                    <div class="ch-resource__insight">
+                      <span class="ch-resource__insight-label">The Righting Reflex</span>
+                      <p>MI researchers describe the "righting reflex" — the automatic urge coaches feel to fix things, give answers, and tell players what to do. It's well-intentioned, but it typically produces resistance, not change. When you feel the urge to jump in with the solution, pause. Ask a question instead. The player's answer to "what do you think you need to work on?" is worth ten times your correct assessment.</p>
+                    </div>
+                    <div class="ch-resource__principles">
+                      <div class="ch-resource__principle">
+                        <div class="ch-resource__principle-icon">O</div>
+                        <div class="ch-resource__principle-text"><strong>Open questions</strong>Questions that can't be answered with yes or no — they invite the player to think rather than just confirm. "What's going well for you at the moment?" opens far more than "are you enjoying it?" Give the player room to surprise you.</div>
+                      </div>
+                      <div class="ch-resource__principle">
+                        <div class="ch-resource__principle-icon">A</div>
+                        <div class="ch-resource__principle-text"><strong>Affirmations</strong>Specific, genuine recognition of effort or character — not just performance. "I saw you keep working even when it wasn't clicking for you" is more powerful than "well done." Affirmations land differently because they reinforce who the player is, not just what they did.</div>
+                      </div>
+                      <div class="ch-resource__principle">
+                        <div class="ch-resource__principle-icon">R</div>
+                        <div class="ch-resource__principle-text"><strong>Reflections</strong>Repeat back what the player said, slightly rephrased. "So it sounds like you're not sure whether to push through or take a step back." When a player hears their own words reflected back, they engage with their thinking differently — it's defusion happening in a conversation.</div>
+                      </div>
+                      <div class="ch-resource__principle">
+                        <div class="ch-resource__principle-icon">S</div>
+                        <div class="ch-resource__principle-text"><strong>Summaries</strong>Collect the key themes from what the player has said and hand them back. "So what I'm hearing is…" Summaries demonstrate that you've listened, and they help the player see the shape of their own thinking — which is often the most useful thing a conversation can do.</div>
+                      </div>
+                    </div>
+                    <div class="ch-resource__prompts">
+                      <span class="ch-resource__prompts-label">OARS in practice — try these this week</span>
+                      <div class="ch-resource__prompt">"What's going well for you at the moment?"</div>
+                      <div class="ch-resource__prompt">"What would make the biggest difference to your game right now?"</div>
+                      <div class="ch-resource__prompt">"On a scale of 1–10, how committed do you feel to this? What would move it one point higher?"</div>
+                      <div class="ch-resource__prompt">"What's getting in the way, in your own words?"</div>
+                    </div>
+                  </div>
+                  <div class="ch-resource__img-panel">
+                    <img src="images/sideline-coaching.png" alt="Coach having a sideline conversation with a player">
+                    <div class="ch-resource__img-overlay"></div>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /ch-resources-stack -->
+          </div>
+        </section>
+
+        <!-- SECTION C: COACHING LIBRARY -->
+        <section class="ch-library">
+          <div class="container">
+            <span class="ch-section__label">Coaching Library</span>
+            <h2 class="ch-section__heading">Keep building<br>your practice</h2>
+            <p class="ch-section__sub">Quick references, videos, research context and reading — all in one place, building throughout the year. Tap any item to expand it.</p>
+
+            <div class="ch-library__grid" id="coachLibrary">
+
+              <!-- 1: WHAT IS THIS APPROACH? -->
+              <div class="ch-lib-item">
+                <div class="ch-lib-item__hdr">
+                  <div class="ch-lib-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+                  <div class="ch-lib-item__meta">
+                    <span class="ch-lib-item__cat">Start Here</span>
+                    <div class="ch-lib-item__name">What Is This Approach?</div>
+                  </div>
+                  <span class="ch-lib-item__arrow">&#9660;</span>
+                </div>
+                <div class="ch-lib-item__body">
+                  <div class="ch-lib-item__content">
+                    <p><strong>Where this comes from.</strong> The PACT programme is built on ACT — Acceptance and Commitment Therapy — adapted for youth sport. ACT emerged in the mid-1980s, developed by psychologist Steven Hayes and colleagues at the University of Nevada, and is now one of the most thoroughly researched psychological frameworks in existence. The first major textbook was published in 1999; since then the evidence base across sport, health, and clinical settings has grown substantially. The core idea is simple: psychological suffering comes not from having difficult thoughts and feelings, but from fighting them. The goal isn't to feel better — it's to act better, even when feeling difficult things.</p>
+                    <p><strong>What "mental noise" means.</strong> Mental noise is our shorthand for all the thoughts, worries, self-doubts and internal chatter that show up when the pressure is on — "I'm going to mess this up", "everyone's watching", "I always do this." Every player experiences this. The difference between those who perform well under pressure and those who don't isn't that successful athletes have no mental noise. It's that they've learned not to be controlled by it. ACT teaches exactly this skill.</p>
+                    <p><strong>Why we don't try to stop the noise — and why this matters especially at 13–17.</strong> Trying to suppress a thought ("don't think about missing") typically makes it louder — this is well-established in psychology research. The American psychologist Daniel Wegner demonstrated this in experiments: ask someone not to think about a white bear, and the white bear is all they can think of. ACT takes a different approach: acknowledge the noise, don't argue with it, and choose your action anyway. This is both more effective and more honest — your players already know the noise is there, and telling them to "just believe in yourself" or "don't be nervous" can feel dismissive. At 13–17, the adolescent brain is still developing the prefrontal cortex (the part responsible for managing emotions and impulse control), which means emotional reactions are genuinely more intense at this age — not weakness, not poor attitude, biology. This is why the acceptance-based approach works so well with this age group: it validates what's actually happening rather than trying to pretend it isn't.</p>
+                    <p><strong>The six processes of ACT, simply explained.</strong> ACT works across six interconnected areas: (1) <strong>Defusion</strong> — noticing thoughts without being fused to them, so a thought is just a thought rather than a command. (2) <strong>Acceptance</strong> — allowing difficult feelings to be present rather than fighting them. (3) <strong>Present moment awareness</strong> — coming back to what's actually happening right now. (4) <strong>Values</strong> — connecting to who you want to be and what matters to you. (5) <strong>Committed action</strong> — taking steps aligned with those values even when the noise says otherwise. (6) <strong>Self-as-context</strong> — the stable sense of who you are that exists beyond any single performance or result (a particularly important concept for teenagers, whose sense of self is still forming). The ACE tool your players learned compresses defusion, present moment awareness, and committed action into one repeatable five-second step.</p>
+                    <div class="ch-lib-item__pills">
+                      <span class="ch-lib-item__pill">ACT</span>
+                      <span class="ch-lib-item__pill">Background Reading</span>
+                      <span class="ch-lib-item__pill">Foundation</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 2: SESSION 1 REFERENCE -->
+              <div class="ch-lib-item">
+                <div class="ch-lib-item__hdr">
+                  <div class="ch-lib-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg></div>
+                  <div class="ch-lib-item__meta">
+                    <span class="ch-lib-item__cat">Session 1 · U13 &amp; U14 · Quick Reference</span>
+                    <div class="ch-lib-item__name">Meeting Your Mind — Key Tools</div>
+                  </div>
+                  <span class="ch-lib-item__arrow">&#9660;</span>
+                </div>
+                <div class="ch-lib-item__body">
+                  <div class="ch-lib-item__content">
+                    <p>Your U13s and U14s learned that mental noise is universal — every player gets it, even the best in the world. They met their Saboteur (the externalised inner critic — drawn as a cartoon character to give it form and name so it loses some power) and learned the three-step ACE tool. Here are the key coach reference points.</p>
+                    <div class="ch-lib-qr">
+                      <div class="ch-lib-qr__row">
+                        <span class="ch-lib-qr__key">A — Acknowledge</span>
+                        <span class="ch-lib-qr__val">Notice the thought without believing it. "Thanks, mind — I hear you." Prompt: "What's your Saboteur saying right now?" The goal is awareness, not argument.</span>
+                      </div>
+                      <div class="ch-lib-qr__row">
+                        <span class="ch-lib-qr__key">C — Come Back</span>
+                        <span class="ch-lib-qr__val">Return to the present moment — not the last mistake, not the next five minutes. Physical anchors work best: feet on the floor, one breath out slowly. "The last five minutes are done."</span>
+                      </div>
+                      <div class="ch-lib-qr__row">
+                        <span class="ch-lib-qr__key">E — Engage</span>
+                        <span class="ch-lib-qr__val">One values-based action. Eyes up. "What's your Engage right now?" This is the move that matters — it's where the choice lives. Everything before this is preparation.</span>
+                      </div>
+                      <div class="ch-lib-qr__row">
+                        <span class="ch-lib-qr__key">Emotion Coaching — Step 1</span>
+                        <span class="ch-lib-qr__val">Validate first, always. "That makes sense" or "I'd feel that too." Never fix before acknowledging. Validation reduces the emotional intensity so the brain can think again.</span>
+                      </div>
+                      <div class="ch-lib-qr__row">
+                        <span class="ch-lib-qr__key">Emotion Coaching — Step 2</span>
+                        <span class="ch-lib-qr__val">Name the emotion precisely. "Is that frustration, or more embarrassment?" Naming an emotion activates the thinking brain and reduces the felt intensity — this is peer-reviewed neuroscience, not just good practice.</span>
+                      </div>
+                      <div class="ch-lib-qr__row">
+                        <span class="ch-lib-qr__key">Language to use at training</span>
+                        <span class="ch-lib-qr__val">"What's your Saboteur saying?" · "Run your ACE." · "Come back to your feet — where are they right now?" · "What's one thing you can Engage with?"</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 3: SESSION 2 REFERENCE -->
+              <div class="ch-lib-item">
+                <div class="ch-lib-item__hdr">
+                  <div class="ch-lib-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg></div>
+                  <div class="ch-lib-item__meta">
+                    <span class="ch-lib-item__cat">Session 2 · U15 &amp; U17 · Quick Reference</span>
+                    <div class="ch-lib-item__name">Play Brave — Key Tools</div>
+                  </div>
+                  <span class="ch-lib-item__arrow">&#9660;</span>
+                </div>
+                <div class="ch-lib-item__body">
+                  <div class="ch-lib-item__content">
+                    <p>Your U15s and U17s explored what it means to play brave — not as a feeling, but as a choice. They built a personal Anchor (a value that matters to them, paired with a physical gesture) and learned the Halftime Recipe. Here are the key coach reference points.</p>
+                    <div class="ch-lib-qr">
+                      <div class="ch-lib-qr__row">
+                        <span class="ch-lib-qr__key">The Anchor</span>
+                        <span class="ch-lib-qr__val">Each player chose a value (their "anchor word") and a physical gesture. When pressure hits and the mind is noisy (the "weather"), the anchor is what they come back to. Ask: "What's your anchor right now?" Don't explain it — just cue it.</span>
+                      </div>
+                      <div class="ch-lib-qr__row">
+                        <span class="ch-lib-qr__key">Escape Moves</span>
+                        <span class="ch-lib-qr__val">Behaviours players use to manage discomfort under pressure: go quiet, rush, hide, play safe, blame, get angry, laugh it off, switch off. These are signals, not character flaws. Recognising them is step one — then ask "what's the brave move here?"</span>
+                      </div>
+                      <div class="ch-lib-qr__row">
+                        <span class="ch-lib-qr__key">Halftime: Settle</span>
+                        <span class="ch-lib-qr__val">60 seconds. Water. Silence. Let them arrive before you speak. Do not start the debrief immediately — the nervous system needs time to settle before the thinking brain comes back online.</span>
+                      </div>
+                      <div class="ch-lib-qr__row">
+                        <span class="ch-lib-qr__key">Halftime: Acknowledge</span>
+                        <span class="ch-lib-qr__val">Name what just happened honestly. "That was tough. Frustration is fair." Validate before you analyse. If players feel unheard, the second half debrief won't land.</span>
+                      </div>
+                      <div class="ch-lib-qr__row">
+                        <span class="ch-lib-qr__key">Halftime: Come Back</span>
+                        <span class="ch-lib-qr__val">Bring the group to the present. Feet on the floor, breath out, hand on a teammate's shoulder. Drop the storyline of the first half. "That half is done. This one starts now."</span>
+                      </div>
+                      <div class="ch-lib-qr__row">
+                        <span class="ch-lib-qr__key">Halftime: Engage</span>
+                        <span class="ch-lib-qr__val">Two or three team actions maximum. Clear, values-based, controllable. On the walk out: one personal cue per player — their anchor word, their gesture. This is their Engage step for the second half.</span>
+                      </div>
+                      <div class="ch-lib-qr__row">
+                        <span class="ch-lib-qr__key">Sideline language</span>
+                        <span class="ch-lib-qr__val">"What's your anchor?" · "Brave move — what is it?" · "Come back to your feet." · "That's done — what's next?" Avoid outcome cues during play. Focus on process and presence.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 4: WATCH & LEARN -->
+              <div class="ch-lib-item">
+                <div class="ch-lib-item__hdr">
+                  <div class="ch-lib-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+                  <div class="ch-lib-item__meta">
+                    <span class="ch-lib-item__cat">Watch &amp; Learn</span>
+                    <div class="ch-lib-item__name">Recommended Videos for Coaches</div>
+                  </div>
+                  <span class="ch-lib-item__arrow">&#9660;</span>
+                </div>
+                <div class="ch-lib-item__body">
+                  <div class="ch-lib-item__content">
+                    <p><strong>Motivational Interviewing for Coaches — Life and Game-Changing Conversations</strong><br>A practical webinar on applying Motivational Interviewing in coaching conversations — the OARS framework in action. Covers how to ask better questions, avoid the righting reflex (the urge to give the answer), and evoke motivation from inside the player rather than imposing it from outside. Directly relevant to the MI resource above.</p>
+                    <div class="ch-lib-video"><iframe src="https://www.youtube.com/embed/vM1RPAL77BA?rel=0&modestbranding=1" title="Motivational Interviewing for Coaches" allowfullscreen loading="lazy"></iframe></div>
+                    <p style="margin-top:24px;"><strong>Togetherness: Building Team Identity in Sport</strong><br>Matt Slater's research on what actually creates high-performing team cultures — not team talks or team bonding events, but the micro-moments that build or erode belonging. Directly relevant to the team culture resource above and the team anchor work in Session 2.</p>
+                    <div class="ch-lib-video"><iframe src="https://www.youtube.com/embed/cVad2Ctv0bU?rel=0&modestbranding=1" title="Togetherness and Team Culture" allowfullscreen loading="lazy"></iframe></div>
+                    <p style="margin-top:24px;"><strong>ACT in Sport — How Acceptance and Values Drive Performance</strong><br>An introduction to the ACT framework as applied in sport psychology — why trying to eliminate mental noise makes it worse, and how training athletes to notice thoughts without being controlled by them leads to better performance under pressure. The research foundation behind both PACT sessions.</p>
+                    <div class="ch-lib-video"><iframe src="https://www.youtube.com/embed/aQ9zeQTyXaI?rel=0&modestbranding=1" title="ACT in Sport" allowfullscreen loading="lazy"></iframe></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 5: THE SCIENCE -->
+              <div class="ch-lib-item">
+                <div class="ch-lib-item__hdr">
+                  <div class="ch-lib-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.527a2 2 0 01-.211.9L4.72 19.5A1 1 0 005.596 21h12.808a1 1 0 00.876-1.5l-5.068-9.073A2 2 0 0114 9.527V2"/><line x1="8.5" y1="2" x2="15.5" y2="2"/></svg></div>
+                  <div class="ch-lib-item__meta">
+                    <span class="ch-lib-item__cat">Research Context</span>
+                    <div class="ch-lib-item__name">The Science Behind It</div>
+                  </div>
+                  <span class="ch-lib-item__arrow">&#9660;</span>
+                </div>
+                <div class="ch-lib-item__body">
+                  <div class="ch-lib-item__content">
+                    <p><strong>Why the adolescent brain makes this approach essential.</strong> The prefrontal cortex — the part of the brain responsible for impulse control, decision-making, and emotional regulation — is not fully developed until the mid-20s. This is well-established neuroscience. It means that at 13–17, the emotional reactions your players experience are genuinely more intense and harder to regulate than they would be in adults. Mistakes feel more catastrophic. Social comparison is more overwhelming. The fear of looking foolish in front of peers is more powerful. This isn't immaturity or poor attitude — it's developmental biology. An approach that tries to eliminate those feelings will always fight an uphill battle. An approach that teaches players to acknowledge them and act anyway (ACT) is working with the biology, not against it.</p>
+                    <p><strong>Why ACT works in sport.</strong> Reviews of ACT-based interventions in sport consistently show improvements in performance-related outcomes — specifically in reducing experiential avoidance (the tendency to escape discomfort, which is what escape moves are) and increasing psychological flexibility (the ability to act on values even when mental noise is present). The ACE tool is a simplified, field-ready version of these processes. The evidence base for ACT in sport has grown substantially since the early 2000s and now covers both elite and youth contexts.</p>
+                    <p><strong>Why naming emotions reduces them.</strong> Psychologist Matthew Lieberman and colleagues at UCLA published research in 2007 showing that labelling an emotion — not just feeling it, but putting a precise word on it — activates the prefrontal cortex and measurably reduces amygdala (threat-response) activity. In plain English: naming what you're feeling turns the thinking brain back on and turns down the alarm. This is why the emotion coaching two-step (validate first, then help name it) works. The effect is stronger with a precise label ("embarrassment" rather than just "upset"), which is why it matters to offer options rather than generic comfort.</p>
+                    <p><strong>Why psychological safety drives performance.</strong> Amy Edmondson, a professor at Harvard Business School, has spent decades researching what separates high-performing teams from average ones. Her central finding: psychological safety — the shared belief that it's safe to take a risk, admit a mistake, or ask a question without being punished or embarrassed — predicts team performance more reliably than talent or incentives. Google's internal research project (Project Aristotle, 2016) studied 180 of their own teams and reached the same conclusion. For youth sport specifically, where the fear of looking foolish in front of peers is already heightened by adolescent brain development, psychological safety is not a nice-to-have — it is the foundation on which everything else sits.</p>
+                    <p><strong>Why MI outperforms advice-giving with teenagers.</strong> Motivational Interviewing has been tested in hundreds of randomised controlled trials across health, education, and behaviour change settings. The consistent finding: conversations that draw out the person's own thinking produce more durable change than conversations where the expert gives the answer. The effect is particularly pronounced with adolescents — because autonomy (the sense that my choices are mine) is developmentally central at 13–17. When a teenager feels told what to think or feel, resistance is the natural response. When they feel heard and asked, commitment follows. This is why the OARS framework matters practically: it's not just a communication style, it's a developmental fit.</p>
+                    <div class="ch-lib-item__pills">
+                      <span class="ch-lib-item__pill">Peer Reviewed</span>
+                      <span class="ch-lib-item__pill">Sport Psychology</span>
+                      <span class="ch-lib-item__pill">Neuroscience</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 6: READING LIST -->
+              <div class="ch-lib-item">
+                <div class="ch-lib-item__hdr">
+                  <div class="ch-lib-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+                  <div class="ch-lib-item__meta">
+                    <span class="ch-lib-item__cat">Going Further</span>
+                    <div class="ch-lib-item__name">Recommended Reading</div>
+                  </div>
+                  <span class="ch-lib-item__arrow">&#9660;</span>
+                </div>
+                <div class="ch-lib-item__body">
+                  <div class="ch-lib-item__content">
+                    <p>For coaches who want to go deeper — these books are all readable, practical, and directly relevant to the work you're doing with Nomads.</p>
+                    <ul class="ch-lib-reads">
+                      <li><div class="ch-lib-reads__bullet"></div><div class="ch-lib-reads__text"><strong>The Happiness Trap</strong> — Russ Harris. The most accessible introduction to ACT in plain English. Written for general audiences, not clinicians. If you want to understand what your players experienced at a deeper level — and why ACE works the way it does — start here. Short chapters, practical exercises throughout.</div></li>
+                      <li><div class="ch-lib-reads__bullet"></div><div class="ch-lib-reads__text"><strong>Togetherness: How to Build a Winning Team</strong> — Matt Slater. The definitive research-based account of what actually creates high-performing team culture in sport. Reframes "team spirit" as something measurable and buildable. Essential for any coach who wants to understand the team culture side of this programme.</div></li>
+                      <li><div class="ch-lib-reads__bullet"></div><div class="ch-lib-reads__text"><strong>Motivational Interviewing: Helping People Change</strong> — Miller &amp; Rollnick. The source text for everything in the MI section above. Dense, but Part III (MI in Practice) is the most relevant for coaches. The chapter on the righting reflex alone is worth the read — it will change how you approach every one-to-one conversation.</div></li>
+                      <li><div class="ch-lib-reads__bullet"></div><div class="ch-lib-reads__text"><strong>Mindset</strong> — Carol Dweck. The growth vs fixed mindset research that underpins how language around ability shapes what young athletes believe is possible for them. Directly relevant to the values work in Session 2 — bravery requires a growth mindset context to be sustainable.</div></li>
+                      <li><div class="ch-lib-reads__bullet"></div><div class="ch-lib-reads__text"><strong>The Art of Brilliance</strong> — Andy Cope. A practical, warm guide to wellbeing and positive psychology aimed at coaches and educators. Fast read, high impact, written for practitioners rather than academics.</div></li>
+                    </ul>
+                    <div class="ch-lib-item__pills">
+                      <span class="ch-lib-item__pill">ACT</span>
+                      <span class="ch-lib-item__pill">Team Culture</span>
+                      <span class="ch-lib-item__pill">MI</span>
+                      <span class="ch-lib-item__pill">Psychology</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /ch-library__grid -->
+          </div>
+        </section>
+
+      </div><!-- /content-coach -->
+
+
+
+
+      <!-- ---- ATHLETE RESOURCES ---- -->
+      <div id="content-athlete" class="role-content" hidden>
+
+        <!-- Tab Bar -->
+        <div class="gw-tabs-bar">
+          <button class="gw-tab-btn is-active" id="tab-sessions" aria-controls="panel-sessions" aria-selected="true">Your Sessions</button>
+          <button class="gw-tab-btn" id="tab-mindgym" aria-controls="panel-mindgym" aria-selected="false">Mind Gym</button>
+        </div>
+
+        <!-- Tab: YOUR SESSIONS -->
+        <div class="gw-tab-panel is-active" id="panel-sessions" role="tabpanel">
+          <section class="gw-sec" style="padding-bottom:100px;">
+            <div class="container">
+              <div class="gw-sec-header">
+                <span class="gw-sec-num">01</span>
+                <h2 class="gw-sec-title">YOUR<br><em>SESSIONS</em></h2>
+              </div>
+              <p class="gw-sec-intro">The sessions you did with the squad — all the key ideas, interactive exercises, and 6 knowledge checks each. Return to them anytime.</p>
+              <div class="gw-session-grid">
+                <a href="grow-nomads-meet-your-mind.html" class="gw-session-card">
+                  <span class="gw-session-card__label">Session 1 · U13 &amp; U14</span>
+                  <div class="gw-session-card__title">Meet Your<br>Mind</div>
+                  <p class="gw-session-card__desc">Your mind is like a noisy passenger. Learn what it is, why it shows up, and how to use the ACE skill to keep playing your game — regardless of the mental noise.</p>
+                  <div class="gw-session-card__tags">
+                    <span class="gw-session-card__tag">ACT-Based</span>
+                    <span class="gw-session-card__tag">6 Knowledge Checks</span>
+                    <span class="gw-session-card__tag">Interactive</span>
+                  </div>
+                  <span class="gw-session-card__cta">Enter Session</span>
+                </a>
+                <a href="grow-nomads-play-brave.html" class="gw-session-card">
+                  <span class="gw-session-card__label">Session 2 · U15 &amp; U17</span>
+                  <div class="gw-session-card__title">Play<br>Brave</div>
+                  <p class="gw-session-card__desc">Brave isn't a feeling — it's a doing word. Connect your values to your actions, build your personal anchor, and learn to show up the way you want to when it gets hard.</p>
+                  <div class="gw-session-card__tags">
+                    <span class="gw-session-card__tag">Values &amp; ACT</span>
+                    <span class="gw-session-card__tag">6 Knowledge Checks</span>
+                    <span class="gw-session-card__tag">Interactive</span>
+                  </div>
+                  <span class="gw-session-card__cta">Enter Session</span>
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Tab: MIND GYM -->
+        <div class="gw-tab-panel" id="panel-mindgym" role="tabpanel">
+          <section class="gw-sec" style="padding-bottom:100px;">
+            <div class="container">
+              <div class="gw-sec-header">
+                <span class="gw-sec-num">02</span>
+                <h2 class="gw-sec-title">THE MIND<br><em>GYM</em></h2>
+              </div>
+              <p class="gw-sec-intro">Six short skill stations — each one builds a specific psychological skill from ACT and Mindfulness. Use these between sessions, before games, or whenever you want to train your mental game.</p>
+              <div class="gw-station-grid">
+                <a href="grow-nomads-mind-gym.html#sec-01" class="gw-station-card">
+                  <span class="gw-station-card__num">Station 01</span>
+                  <div class="gw-station-card__title">The Defusion Lab</div>
+                  <p class="gw-station-card__desc">Type any unhelpful thought and defuse it in real time. Learn to create distance between you and the noise.</p>
+                  <span class="gw-station-card__link">Enter Station →</span>
+                </a>
+                <a href="grow-nomads-mind-gym.html#sec-02" class="gw-station-card">
+                  <span class="gw-station-card__num">Station 02</span>
+                  <div class="gw-station-card__title">The Anchor Builder</div>
+                  <p class="gw-station-card__desc">Understand the Nomads Compass — anchor word, weather check, physical cue — and train your personal routine.</p>
+                  <span class="gw-station-card__link">Enter Station →</span>
+                </a>
+                <a href="grow-nomads-mind-gym.html#sec-03" class="gw-station-card">
+                  <span class="gw-station-card__num">Station 03</span>
+                  <div class="gw-station-card__title">Present Moment</div>
+                  <p class="gw-station-card__desc">Interactive box breathing and the science of why your body is the fastest route back to now.</p>
+                  <span class="gw-station-card__link">Enter Station →</span>
+                </a>
+                <a href="grow-nomads-mind-gym.html#sec-04" class="gw-station-card">
+                  <span class="gw-station-card__num">Station 04</span>
+                  <div class="gw-station-card__title">The Observer</div>
+                  <p class="gw-station-card__desc">You are not your thoughts — you are the one noticing them. Explore self-as-context through four reflective questions.</p>
+                  <span class="gw-station-card__link">Enter Station →</span>
+                </a>
+                <a href="grow-nomads-mind-gym.html#sec-05" class="gw-station-card">
+                  <span class="gw-station-card__num">Station 05</span>
+                  <div class="gw-station-card__title">Making Room</div>
+                  <p class="gw-station-card__desc">Acceptance isn't giving up. Rate three real scenarios and discover what it means to carry a feeling and act anyway.</p>
+                  <span class="gw-station-card__link">Enter Station →</span>
+                </a>
+                <a href="grow-nomads-mind-gym.html#sec-06" class="gw-station-card">
+                  <span class="gw-station-card__num">Station 06</span>
+                  <div class="gw-station-card__title">ACE Master</div>
+                  <p class="gw-station-card__desc">Three high-intensity Nomads scenarios. Apply ACE to each one and see exactly how Acknowledge · Come Back · Engage works under real pressure.</p>
+                  <span class="gw-station-card__link">Enter Station →</span>
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
+
+      </div><!-- /content-athlete -->
+
+
+      <!-- ---- PARENT RESOURCES ---- -->
+      <div id="content-parent" class="role-content" hidden>
+
+        <section class="gw-sec">
+          <div class="container">
+            <div class="gw-sec-header">
+              <span class="gw-sec-num">01</span>
+              <h2 class="gw-sec-title">WATCH &amp;<br><em>LEARN</em></h2>
+            </div>
+            <p class="gw-sec-intro">These talks explain the core ideas your child is learning — and give you language and insight to support them at home.</p>
+            <div class="gw-video-grid" id="video-parent"></div>
+          </div>
+        </section>
+
+        <section class="gw-sec">
+          <div class="container">
+            <div class="gw-sec-header">
+              <span class="gw-sec-num">02</span>
+              <h2 class="gw-sec-title">PARENT<br><em>READING</em></h2>
+            </div>
+            <p class="gw-sec-intro">The guides your child is working from — so you understand exactly what they're learning and how to reinforce it.</p>
+            <div class="gw-pdf-grid" id="pdf-parent"></div>
+          </div>
+        </section>
+
+        <section class="gw-sec">
+          <div class="container">
+            <div class="gw-sec-header">
+              <span class="gw-sec-num">03</span>
+              <h2 class="gw-sec-title">SIDELINE<br><em>REFLECTIONS</em></h2>
+            </div>
+            <p class="gw-sec-intro">Questions designed to make you think about your role in your child's sport environment. Honest, evidence-based — click to reveal the insight.</p>
+            <div class="gw-reflections" id="reflect-parent"></div>
+          </div>
+        </section>
+
+        <section class="gw-sec">
+          <div class="container">
+            <div class="gw-sec-header">
+              <span class="gw-sec-num">04</span>
+              <h2 class="gw-sec-title">WHAT DO YOU<br><em>KNOW?</em></h2>
+            </div>
+            <p class="gw-sec-intro">A research-based scenario. Choose your answer and get instant feedback from the evidence.</p>
+            <div id="quiz-parent"></div>
+          </div>
+        </section>
+
+        <section class="gw-sec" style="padding-bottom: 100px;">
+          <div class="container">
+            <div class="gw-sec-header">
+              <span class="gw-sec-num">05</span>
+              <h2 class="gw-sec-title">RECOMMENDED<br><em>READING</em></h2>
+            </div>
+            <p class="gw-sec-intro">Books and resources curated for parents in the GROW community.</p>
+            <div class="gw-reading-grid">
+              <div class="gw-reading-card">
+                <span class="gw-reading-tag">Podcast</span>
+                <div class="gw-reading-title">Cath Bishop — Winning</div>
+              </div>
+              <div class="gw-reading-card">
+                <span class="gw-reading-tag">Book</span>
+                <div class="gw-reading-title">The Happiness Trap</div>
+              </div>
+              <div class="gw-reading-card">
+                <span class="gw-reading-tag">Book</span>
+                <div class="gw-reading-title">The Long Win</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div><!-- /content-parent -->
+
+    </div><!-- /gw-content -->
+
+  </div><!-- /growApp -->
+
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="siteFooter">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-grid__brand">
+          <img src="images/logo-vertical.png" alt="The Performance Act" class="logo-img logo-img--footer">
+          <p class="footer__tagline">Helping People Grow</p>
+          <p class="footer__email">
+            <a href="mailto:info@performance-act.com">info@performance-act.com</a>
+          </p>
+        </div>
+        <div class="footer-grid__links">
+          <h4 class="footer__heading">QUICK LINKS</h4>
+          <a href="index.html#about" class="footer__link">About Us</a>
+          <a href="approach.html" class="footer__link">Our Approach</a>
+          <a href="index.html#pillars" class="footer__link">Our PACT</a>
+          <a href="programs.html" class="footer__link">Programs</a>
+          <a href="team.html" class="footer__link">Our Wh&#257;nau</a>
+        </div>
+        <div class="footer-grid__links">
+          <h4 class="footer__heading">SUPPORT</h4>
+          <a href="support-individual.html" class="footer__link">Individual Support</a>
+          <a href="support-teams.html" class="footer__link">Team &amp; Organisational</a>
+          <a href="grow.html" class="footer__link">GROW Platform</a>
+        </div>
+        <div class="footer-grid__social">
+          <h4 class="footer__heading">FOLLOW US</h4>
+          <div class="social-links">
+            <a href="https://www.instagram.com/performance__act/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <circle cx="12" cy="12" r="5"/>
+                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/ThePerformanceAct" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/company/performance-act-ltd/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+          </div>
+          <div class="footer__cta">
+            <a href="mailto:info@performance-act.com" class="btn btn--primary btn--sm">GET IN TOUCH</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 The Performance Act. All rights reserved. Aotearoa, New Zealand.</p>
+        <div class="footer__bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <!-- NZ Support Lines Modal (carried over from main site) -->
+  <button class="support-line-btn" id="supportLineBtn" aria-label="NZ support lines">
+    <span class="support-line-btn__dot" aria-hidden="true"></span>
+    Immediate Support
+  </button>
+  <div class="support-line-modal" id="supportLineModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="support-line-modal__backdrop"></div>
+    <div class="support-line-modal__panel">
+      <button class="support-line-modal__close" id="supportLineClose" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+      <p class="support-line-modal__eyebrow">Aotearoa, New Zealand</p>
+      <h2 class="support-line-modal__title">Need immediate support?</h2>
+      <p class="support-line-modal__note">The Performance Act is a sport psychology practice, not a crisis or emergency service. If you or someone you care about needs immediate support, please reach out below.</p>
+      <ul class="support-line-modal__list">
+        <li class="sln-resource">
+          <div class="sln-resource__info">
+            <p class="sln-resource__name">1737 &mdash; Need to Talk?</p>
+            <p class="sln-resource__desc">Free call or text, any time. Trained counsellors, 24&#47;7.</p>
+          </div>
+          <a href="tel:1737" class="sln-resource__number">Call or text 1737</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info">
+            <p class="sln-resource__name">Lifeline NZ</p>
+            <p class="sln-resource__desc">Crisis support and suicide prevention, 24&#47;7.</p>
+          </div>
+          <a href="tel:0800543354" class="sln-resource__number">0800 543 354</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info">
+            <p class="sln-resource__name">Youthline</p>
+            <p class="sln-resource__desc">For young people. Free call or text 234, 24&#47;7.</p>
+          </div>
+          <a href="tel:0800376633" class="sln-resource__number">0800 376 633</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js?v=3"></script>
+
+  <script>
+    /* ==============================================================
+       GROW PLATFORM — NOMADS UNITED AFC
+       ============================================================== */
+
+    /* ---------------------------------------------------------------
+       CLUB CONFIG
+       To add a new club, add an entry here and add it to the
+       <select> in the gateway HTML above.
+    --------------------------------------------------------------- */
+    const CLUB_CONFIG = {
+      nomads: {
+        name:      'Nomads United AFC',
+        shortName: 'Nomads',
+        password:  'Nomads2026',
+        logoSrc:   'images/nomads-logo.png',
+        colors: {
+          primary: '#0E3A84',
+          dark:    '#092970',
+          accent:  '#C8102E'
+        }
+      }
+      /* future clubs:
+      tigers: { name: 'Tigers FC', password: 'Tigers2026', colors: {...} }
+      */
+    };
+
+    /* ---------------------------------------------------------------
+       GROW_RESOURCES
+       Update YouTube IDs and PDF paths here.
+       PDF files should live in: performance-act/resources/nomads/
+    --------------------------------------------------------------- */
+    const GROW_RESOURCES = {
+
+      coach: {
+        videos: [
+          {
+            id:    'RcGyVTAoXEU', /* TED: Kelly McGonigal — Make Stress Your Friend */
+            title: 'Make Stress Your Friend',
+            desc:  'Kelly McGonigal on reframing pressure — a foundational lens for how we talk to athletes about nerves and intensity.',
+            badge: 'SESSION RESOURCE'
+          },
+          {
+            id:    'iCvmsMzlF7o', /* TED: Brené Brown — The Power of Vulnerability */
+            title: 'The Power of Vulnerability',
+            desc:  'Brené Brown on courage and connection — the psychological engine behind Play Brave and the GROW framework.',
+            badge: 'COACHING INSIGHT'
+          }
+        ],
+        pdfs: [
+          {
+            file:  'resources/nomads/Play_Brave_15s_17s.pdf',
+            title: 'Play Brave',
+            badge: '15s & 17s — Session Workbook',
+            desc:  'The complete Play Brave programme workbook for your 15s and 17s squads. All session activities, reflection tasks, and key frameworks in one place.'
+          },
+          {
+            file:  'resources/nomads/Meeting_Your_Mind_13s_14s.pdf',
+            title: 'Meeting Your Mind',
+            badge: '13s & 14s — Session Workbook',
+            desc:  'The full session workbook for your 13s and 14s. Age-appropriate activities and frameworks designed to introduce mental skills in a way that sticks.'
+          }
+        ],
+        modules: [
+          'Understanding How Mental Noise Works',
+          'Managing Uncertainty',
+          'Your Brain Health Behaviours',
+          'Problem Solving',
+          'Building Your Self-Awareness',
+          'Self-Identity + Confidence',
+          'Motivation + Values',
+          'Setting Your Goals',
+          'This Thing Called Mindfulness',
+          'Building Your Resilience',
+          'Training Your Focus',
+          'Routines to Help You Focus',
+          'Developing Your Acceptance Skills',
+          'Finding Your Flow'
+        ],
+        reflections: [
+          {
+            question: 'Think about a recent session where a player played "brave." What did that look like — and what role did the environment you built play in making it possible?',
+            insight:  '<p><strong>Brave play rarely happens by accident.</strong> Research in positive youth development consistently shows that psychological safety — the belief that it is safe to take risks and make mistakes — is the primary predictor of bold performance. As a coach, your language, body language, and responses to errors either build or erode that safety. The question isn\'t just "do my players play brave?" but "have I created conditions where they can?"</p>'
+          },
+          {
+            question: 'When a player is dealing with mental noise — unhelpful thoughts, anxiety, a sudden dip in confidence — what\'s your current default response?',
+            insight:  '<p><strong>Most coaches were trained to solve technical problems, not emotional ones.</strong> The most effective response to mental noise isn\'t to dismiss it ("don\'t think about it") or over-amplify it ("you need to sort your head out"). The GROW approach uses a three-step model: <em>acknowledge, normalise, redirect.</em> Validate the experience, name it as normal, then bring focus back to what is controllable right now. That shift — from advice to presence — is what separates good coaches from great ones.</p>'
+          }
+        ],
+        quiz: {
+          question: 'In the GROW framework, "mental noise" refers to which of the following?',
+          options: [
+            'Physical fatigue that clouds decision-making during games',
+            'Unhelpful internal thoughts and feelings that compete with present-moment focus',
+            'Crowd noise and external distractions at a match',
+            'Communication breakdowns between coaching staff'
+          ],
+          correct:         1,
+          correctFeedback: '<strong>Correct.</strong> Mental noise is the internal chatter — self-doubt, what-ifs, replaying mistakes — that competes with attention. The key insight: it\'s a normal feature of the human brain under pressure. Your job as a coach isn\'t to stop it, but to help athletes build the skills to function alongside it.',
+          wrongFeedback:   '<strong>Not quite.</strong> Mental noise refers to the <em>internal</em> experience — unhelpful thoughts, self-doubt, and emotional static that pull an athlete\'s focus away from the task. It has nothing to do with external noise or physical state. Option B is correct.'
+        }
+      },
+
+      athlete: {
+        videos: [
+          {
+            id:    '_X0mgOOSpLU', /* TED: Carol Dweck — The Power of Believing You Can Improve */
+            title: 'The Power of Believing You Can Improve',
+            desc:  'Carol Dweck on growth mindset — why what you believe about your own ability directly shapes how you develop as a player.',
+            badge: 'MINDSET'
+          },
+          {
+            id:    'RcGyVTAoXEU', /* TED: Kelly McGonigal — Make Stress Your Friend */
+            title: 'Make Stress Your Friend',
+            desc:  'How changing the way you think about pressure can literally change how your body responds to it. Game-changing for nerves before big matches.',
+            badge: 'PERFORMANCE'
+          }
+        ],
+        pdfs: [
+          {
+            file:  'resources/nomads/Understanding_How_Mental_Noise_Works.pdf',
+            title: 'Understanding How Mental Noise Works',
+            badge: 'Core Resource',
+            desc:  'What is mental noise, where does it come from, and what can you do about it? This guide breaks down how your brain creates distracting thoughts — and how to keep performing anyway.'
+          },
+          {
+            file:  'resources/nomads/Your_Brain_Health_Behaviours.pdf',
+            title: 'Your Brain Health Behaviours',
+            badge: 'Wellbeing Guide',
+            desc:  'Sleep, movement, nutrition, and connection — the daily behaviours that directly influence how your brain (and your performance) functions. Small things. Big difference.'
+          }
+        ],
+        modules: null,
+        reflections: [
+          {
+            question: 'Rate your last match out of 10 for focus — not for result. What was competing for your attention during the game?',
+            insight:  '<p><strong>Elite athletes don\'t have fewer distractions — they\'ve learned what to do with them.</strong> Mental noise is a normal feature of a brain under pressure. Your brain isn\'t broken. It\'s doing exactly what it was built to do. The skill isn\'t silencing the noise — it\'s learning to direct your attention anyway. That\'s what we call <em>training your focus</em> — and it\'s exactly as trainable as a free kick.</p>'
+          },
+          {
+            question: 'Think of your best ever performance. What was different about how you were thinking and feeling — compared to an average week?',
+            insight:  '<p><strong>Most athletes describe their best performances as "automatic" or "in the zone."</strong> Psychologists call this <em>Flow</em> — when attention is fully absorbed in the task and the mental chatter quiets without effort. Flow doesn\'t happen by accident. It\'s created by the right challenge-to-skill balance, clear process goals, and the ability to let go of outcome thinking. All of these are trainable skills. That\'s what GROW is building.</p>'
+          }
+        ],
+        quiz: {
+          question: 'Which of the following has the BIGGEST evidence-based impact on your performance the following day?',
+          options: [
+            'Watching game footage in the hour before sleep',
+            'Protein intake in the two hours after training',
+            'Consistent sleep of 8–10 hours per night',
+            'Pre-match visualisation the morning of a game'
+          ],
+          correct:         2,
+          correctFeedback: '<strong>You got it.</strong> Sleep is the single biggest performance lever most athletes ignore. During deep sleep, your brain consolidates motor skills, clears waste products, regulates emotion, and restores focus. No supplement, no technique, and no training volume comes close to the evidence base for sleep quality and duration.',
+          wrongFeedback:   '<strong>Sleep is the answer.</strong> Research consistently shows that sleep quality and duration is the number one recovery and performance variable — above nutrition timing, above mental skills training. The evidence-based target for developing athletes is 8–10 hours. That\'s not a preference. It\'s physiology.'
+        }
+      },
+
+      parent: {
+        videos: [
+          {
+            id:    'iCvmsMzlF7o', /* TED: Brené Brown — The Power of Vulnerability */
+            title: 'The Power of Vulnerability',
+            desc:  'Brené Brown on courage, shame, and the conditions that allow young people to take brave risks. Essential watching for anyone supporting a young athlete.',
+            badge: 'RECOMMENDED WATCH'
+          },
+          {
+            id:    '_X0mgOOSpLU', /* TED: Carol Dweck — Growth Mindset */
+            title: 'The Power of Believing You Can Improve',
+            desc:  'How the language parents and coaches use shapes whether children see their ability as fixed — or developable. This one will change how you give feedback.',
+            badge: 'FOR PARENTS'
+          }
+        ],
+        pdfs: [
+          {
+            file:  'resources/nomads/Your_Brain_Health_Behaviours.pdf',
+            title: 'Your Brain Health Behaviours',
+            badge: 'Home Environment Guide',
+            desc:  'Sleep, nutrition, movement, and connection — the brain health habits your child is learning about in GROW. This guide helps you understand the evidence and support them at home.'
+          },
+          {
+            file:  'resources/nomads/Understanding_How_Mental_Noise_Works.pdf',
+            title: 'Understanding How Mental Noise Works',
+            badge: 'Parent Briefing',
+            desc:  'What your child is learning about the inner voice, self-doubt, and performance anxiety — and how you can support (not rescue) them through it.'
+          }
+        ],
+        modules: null,
+        reflections: [
+          {
+            question: 'Think about the last car ride home after a match. What was the first thing you said — or asked — about the game?',
+            insight:  '<p><strong>The "car ride home" conversation is one of the most studied moments in youth sport psychology.</strong> Athletes consistently report the post-game car ride as a source of significant stress — particularly when it starts with performance analysis. The research is clear: the phrase that most reliably builds confidence and psychological safety is: <em>"I loved watching you play."</em> Full stop. Then silence. Let them lead. They will tell you what they need — if they feel safe enough to.</p>'
+          },
+          {
+            question: 'Does your child talk openly to you about the mental side of sport — nerves, self-doubt, pressure? If not, why do you think that might be?',
+            insight:  '<p><strong>Young athletes stop sharing mental struggles when they sense it will trigger advice, worry, or performance pressure from the adults around them.</strong> The goal isn\'t to get them to open up on demand. It\'s to build an environment where they know they can — whenever they\'re ready. That means listening without immediately problem-solving, normalising your own struggles out loud ("I get nervous too"), and making sure your relationship with them is clearly separate from how you feel about their results.</p>'
+          }
+        ],
+        quiz: {
+          question: 'After a tough match where your child made mistakes and looks deflated, what does the research suggest is most helpful?',
+          options: [
+            'Discuss specific mistakes right away while they\'re fresh — so they can learn and improve faster',
+            'Reassure them they played well, even if they didn\'t — protect their confidence in the moment',
+            'Give space, show warmth, and let them lead any conversation about the game',
+            'Set a new short-term training goal to give them direction and something positive to focus on'
+          ],
+          correct:         2,
+          correctFeedback: '<strong>Exactly right.</strong> After emotional difficulty, the brain needs safety and connection before it is ready for learning. Leading with presence — not analysis, not reassurance, not new goals — builds the kind of relationship where real reflection can happen later. On their terms. In their time.',
+          wrongFeedback:   '<strong>Option C is the answer.</strong> After a setback, athletes need to feel safe and connected before the brain is ready to process or learn. Immediate analysis, false reassurance, or new goal-setting can all feel invalidating or pressurising in that moment. The most powerful thing you can offer is often just being present and warm — and letting them come to you.'
+        }
+      }
+
+    }; /* end GROW_RESOURCES */
+
+
+    /* ---------------------------------------------------------------
+       APP STATE + localStorage
+    --------------------------------------------------------------- */
+    const LS_CLUB = 'grow_nomads_club';
+    const LS_ROLE = 'grow_nomads_role';
+
+    let activeClub = null;
+    let activeRole = null;
+
+    /* ---------------------------------------------------------------
+       SCREEN MANAGEMENT
+    --------------------------------------------------------------- */
+    function showScreen(name) {
+      document.getElementById('gw-gateway').classList.toggle('is-active', name === 'gateway');
+      document.getElementById('gw-roles').classList.toggle('is-active',   name === 'roles');
+      document.getElementById('gw-content').classList.toggle('is-active', name === 'content');
+
+      /* Hide footer inside gateway, show it always otherwise */
+      document.getElementById('siteFooter').style.display = name === 'gateway' ? 'none' : '';
+
+      window.scrollTo(0, 0);
+    }
+
+    /* ---------------------------------------------------------------
+       AUTH + GATEWAY
+    --------------------------------------------------------------- */
+    document.getElementById('gwForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const clubKey = document.getElementById('clubSelect').value;
+      const pw      = document.getElementById('pwInput').value.trim();
+      const errEl   = document.getElementById('gwError');
+
+      errEl.classList.remove('is-visible');
+
+      if (!clubKey) {
+        errEl.textContent = 'Please select your club first.';
+        errEl.classList.add('is-visible');
+        return;
+      }
+
+      const club = CLUB_CONFIG[clubKey];
+      if (!club || pw !== club.password) {
+        errEl.textContent = 'Incorrect password. Please check with your club administrator.';
+        errEl.classList.add('is-visible');
+        document.getElementById('pwInput').value = '';
+        return;
+      }
+
+      /* Save to localStorage */
+      localStorage.setItem(LS_CLUB, clubKey);
+      localStorage.removeItem(LS_ROLE);
+
+      activeClub = clubKey;
+      showScreen('roles');
+    });
+
+    /* ---------------------------------------------------------------
+       ROLE SELECTION
+    --------------------------------------------------------------- */
+    document.querySelectorAll('.gw-role-card').forEach(card => {
+      function activate() {
+        const role = card.dataset.role;
+        selectRole(role);
+      }
+      card.addEventListener('click', activate);
+      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') activate(); });
+    });
+
+    function selectRole(role) {
+      activeRole = role;
+      localStorage.setItem(LS_ROLE, role);
+
+      /* Update role indicator text */
+      document.getElementById('roleIndicator').textContent = role.toUpperCase();
+
+      /* Show correct role content panel */
+      document.querySelectorAll('.role-content').forEach(el => el.hidden = true);
+      const panel = document.getElementById('content-' + role);
+      if (panel) panel.hidden = false;
+
+      /* Render dynamic content into the panel (idempotent) */
+      renderRoleContent(role);
+
+      showScreen('content');
+    }
+
+    /* ---------------------------------------------------------------
+       LOGOUT
+    --------------------------------------------------------------- */
+    function logout() {
+      localStorage.removeItem(LS_CLUB);
+      localStorage.removeItem(LS_ROLE);
+      activeClub = null;
+      activeRole = null;
+      document.getElementById('pwInput').value = '';
+      document.getElementById('clubSelect').value = '';
+      showScreen('gateway');
+    }
+
+    document.getElementById('logoutBtnRoles').addEventListener('click', logout);
+    document.getElementById('logoutBtnContent').addEventListener('click', logout);
+    document.getElementById('changeRoleBtn').addEventListener('click', () => {
+      localStorage.removeItem(LS_ROLE);
+      showScreen('roles');
+    });
+
+    /* ---------------------------------------------------------------
+       ATHLETE TAB SWITCHING
+    --------------------------------------------------------------- */
+    document.querySelectorAll('.gw-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.gw-tab-btn').forEach(b => {
+          b.classList.remove('is-active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        document.querySelectorAll('.gw-tab-panel').forEach(p => p.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-selected', 'true');
+        const panel = document.getElementById(btn.getAttribute('aria-controls'));
+        if (panel) panel.classList.add('is-active');
+      });
+    });
+
+    /* ---------------------------------------------------------------
+       COACH SECTION INTERACTIVITY
+    --------------------------------------------------------------- */
+
+    /* Coaching Library accordion */
+    document.querySelectorAll('#coachLibrary .ch-lib-item').forEach(item => {
+      const hdr = item.querySelector('.ch-lib-item__hdr');
+      if (!hdr) return;
+      hdr.addEventListener('click', () => {
+        item.classList.toggle('is-open');
+      });
+    });
+
+    /* ---------------------------------------------------------------
+       CONTENT RENDERING
+       All rendering is done once per role (tracked via rendered set).
+       Athlete and Coach roles use pre-rendered HTML — skipped here.
+    --------------------------------------------------------------- */
+    const rendered = new Set();
+
+    function renderRoleContent(role) {
+      if (role === 'athlete') return; /* pre-rendered tabbed interface */
+      if (role === 'coach') return;   /* pre-rendered coach hub */
+      if (rendered.has(role)) return;
+      rendered.add(role);
+
+      const data = GROW_RESOURCES[role];
+
+      /* Videos */
+      const videoEl = document.getElementById('video-' + role);
+      if (videoEl && data.videos) {
+        videoEl.innerHTML = data.videos.map(v => `
+          <div class="gw-video-card">
+            <div class="gw-video-embed">
+              <iframe
+                src="https://www.youtube.com/embed/${v.id}?rel=0&modestbranding=1"
+                title="${escHtml(v.title)}"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
+            <div class="gw-video-info">
+              <span class="gw-video-badge">${escHtml(v.badge)}</span>
+              <div class="gw-video-title">${escHtml(v.title)}</div>
+              <p class="gw-video-desc">${escHtml(v.desc)}</p>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      /* PDFs */
+      const pdfEl = document.getElementById('pdf-' + role);
+      if (pdfEl && data.pdfs) {
+        pdfEl.innerHTML = data.pdfs.map(p => `
+          <div class="gw-pdf-card">
+            <div class="gw-pdf-icon">
+              <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 4h14l6 6v22H8V4z"/>
+                <path d="M22 4v6h6"/>
+                <line x1="13" y1="16" x2="23" y2="16"/>
+                <line x1="13" y1="21" x2="23" y2="21"/>
+                <line x1="13" y1="26" x2="19" y2="26"/>
+              </svg>
+            </div>
+            <span class="gw-pdf-badge">${escHtml(p.badge)}</span>
+            <div class="gw-pdf-title">${escHtml(p.title)}</div>
+            <p class="gw-pdf-desc">${escHtml(p.desc)}</p>
+            <a href="${escHtml(p.file)}" download class="gw-pdf-btn">
+              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M7 1v8M4 6l3 3 3-3"/>
+                <path d="M1 10v1a2 2 0 002 2h8a2 2 0 002-2v-1"/>
+              </svg>
+              Download PDF
+            </a>
+          </div>
+        `).join('');
+      }
+
+      /* Module list (coaches only) */
+      const modulesEl = document.getElementById('modules-' + role);
+      if (modulesEl && data.modules) {
+        modulesEl.innerHTML = data.modules.map(m => `
+          <div class="gw-module-item">
+            <div class="gw-module-dot"></div>
+            <span class="gw-module-name">${escHtml(m)}</span>
+          </div>
+        `).join('');
+      }
+
+      /* Reflections */
+      const reflectEl = document.getElementById('reflect-' + role);
+      if (reflectEl && data.reflections) {
+        reflectEl.innerHTML = data.reflections.map((r, i) => `
+          <div class="gw-reflect" id="reflect-${role}-${i}">
+            <div class="gw-reflect__q" role="button" tabindex="0" aria-expanded="false" aria-controls="insight-${role}-${i}">
+              <div class="gw-reflect__qbody">
+                <span class="gw-reflect__label">Reflection Point ${i + 1}</span>
+                <p class="gw-reflect__text">${escHtml(r.question)}</p>
+              </div>
+              <div class="gw-reflect__toggle" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <polyline points="4 6 8 10 12 6"/>
+                </svg>
+              </div>
+            </div>
+            <div class="gw-reflect__insight" id="insight-${role}-${i}" role="region">
+              <div class="gw-reflect__insight-inner">
+                ${r.insight}
+              </div>
+            </div>
+          </div>
+        `).join('');
+
+        /* Attach toggle listeners */
+        data.reflections.forEach((_, i) => {
+          const card   = document.getElementById(`reflect-${role}-${i}`);
+          const trigger = card.querySelector('.gw-reflect__q');
+          trigger.addEventListener('click', () => toggleReflect(card, trigger));
+          trigger.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleReflect(card, trigger); }
+          });
+        });
+      }
+
+      /* Quiz */
+      const quizEl = document.getElementById('quiz-' + role);
+      if (quizEl && data.quiz) {
+        const q = data.quiz;
+        const letters = ['A', 'B', 'C', 'D'];
+        quizEl.innerHTML = `
+          <div class="gw-quiz">
+            <span class="gw-quiz__label">Quick Knowledge Check</span>
+            <p class="gw-quiz__q">${escHtml(q.question)}</p>
+            <div class="gw-quiz__options" id="quiz-opts-${role}">
+              ${q.options.map((opt, i) => `
+                <button class="gw-quiz__opt" data-index="${i}" type="button">
+                  <span class="gw-quiz__opt-letter">${letters[i]}</span>
+                  <span>${escHtml(opt)}</span>
+                </button>
+              `).join('')}
+            </div>
+            <div class="gw-quiz__feedback" id="quiz-fb-${role}"></div>
+            <button class="gw-quiz__reset" id="quiz-reset-${role}" type="button">Try Again</button>
+          </div>
+        `;
+
+        /* Attach quiz listeners */
+        const optsContainer = document.getElementById(`quiz-opts-${role}`);
+        const feedback      = document.getElementById(`quiz-fb-${role}`);
+        const resetBtn      = document.getElementById(`quiz-reset-${role}`);
+
+        optsContainer.querySelectorAll('.gw-quiz__opt').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const chosen  = parseInt(btn.dataset.index, 10);
+            const correct = q.correct;
+            const isRight = chosen === correct;
+
+            /* Disable all options */
+            optsContainer.querySelectorAll('.gw-quiz__opt').forEach(b => {
+              b.disabled = true;
+              const idx  = parseInt(b.dataset.index, 10);
+              if (idx === correct) b.classList.add('is-highlight');
+              if (idx === chosen && !isRight) b.classList.add('is-wrong');
+              if (idx === chosen && isRight)  b.classList.add('is-correct');
+            });
+
+            /* Show feedback */
+            feedback.innerHTML = isRight ? q.correctFeedback : q.wrongFeedback;
+            feedback.className = `gw-quiz__feedback is-visible ${isRight ? 'is-correct' : 'is-wrong'}`;
+            resetBtn.classList.add('is-visible');
+          });
+        });
+
+        resetBtn.addEventListener('click', () => {
+          optsContainer.querySelectorAll('.gw-quiz__opt').forEach(b => {
+            b.disabled = false;
+            b.classList.remove('is-correct', 'is-wrong', 'is-highlight');
+          });
+          feedback.className = 'gw-quiz__feedback';
+          feedback.innerHTML = '';
+          resetBtn.classList.remove('is-visible');
+        });
+      }
+    }
+
+    /* ---------------------------------------------------------------
+       REFLECTION TOGGLE
+    --------------------------------------------------------------- */
+    function toggleReflect(card, trigger) {
+      const isOpen = card.classList.contains('is-open');
+      card.classList.toggle('is-open', !isOpen);
+      trigger.setAttribute('aria-expanded', String(!isOpen));
+    }
+
+    /* ---------------------------------------------------------------
+       HTML ESCAPE HELPER
+    --------------------------------------------------------------- */
+    function escHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    /* ---------------------------------------------------------------
+       INIT — check localStorage on page load
+    --------------------------------------------------------------- */
+    (function init() {
+      const savedClub = localStorage.getItem(LS_CLUB);
+      const savedRole = localStorage.getItem(LS_ROLE);
+
+      if (savedClub && CLUB_CONFIG[savedClub]) {
+        activeClub = savedClub;
+
+        if (savedRole && GROW_RESOURCES[savedRole]) {
+          /* Skip straight to content */
+          activeRole = savedRole;
+          document.getElementById('roleIndicator').textContent = savedRole.toUpperCase();
+          document.querySelectorAll('.role-content').forEach(el => el.hidden = true);
+          const panel = document.getElementById('content-' + savedRole);
+          if (panel) panel.hidden = false;
+          renderRoleContent(savedRole);
+          showScreen('content');
+        } else {
+          showScreen('roles');
+        }
+      } else {
+        showScreen('gateway');
+      }
+    })();
+
+    /* ---------------------------------------------------------------
+       SCROLL-TRIGGERED REVEAL ANIMATIONS
+    --------------------------------------------------------------- */
+    (function revealInit() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -60px 0px', threshold: 0.08 });
+
+      /* Re-observe whenever content panels become visible */
+      const mutObs = new MutationObserver(() => {
+        document.querySelectorAll('.gw-sec, .gw-sec-header, .gw-video-card, .gw-pdf-card, .gw-reflect, .gw-quiz').forEach(el => {
+          if (!el.classList.contains('reveal')) {
+            el.classList.add('reveal');
+            observer.observe(el);
+          }
+        });
+      });
+      mutObs.observe(document.getElementById('growApp'), { childList: true, subtree: true });
+    })();
+
+  </script>
+</body>
+</html>

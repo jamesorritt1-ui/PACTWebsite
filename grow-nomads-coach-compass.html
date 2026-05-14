@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Coach's Compass — Nomads Session Recap | The Performance Act</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=15">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+
+  <style>
+    :root {
+      --club:        #0E3A84;
+      --club-dark:   #092970;
+      --club-light:  #1A52B0;
+      --club-accent: #C8102E;
+      --gold:        #D4A017;
+      /* Fill in the gaps between style.css gray scale */
+      --gray-400:    #AAAAAA;
+      --gray-600:    #666666;
+    }
+
+    body { padding-top: var(--header-height); }
+
+    /* ── PROGRESS BAR ─────────────────────────────── */
+    .cs-progress {
+      position: fixed; top: var(--header-height); left: 0; right: 0;
+      height: 3px; background: rgba(255,255,255,0.05); z-index: 999;
+    }
+    .cs-progress-fill {
+      height: 100%; width: 0%;
+      background: linear-gradient(90deg, var(--club) 0%, var(--club-accent) 100%);
+      transition: width 0.2s ease;
+    }
+
+    /* ── BACK LINK ────────────────────────────────── */
+    .cs-back {
+      display: flex; align-items: center; gap: 8px; padding: 16px 0;
+      font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gray-600); text-decoration: none; transition: color 0.2s;
+    }
+    .cs-back:hover { color: var(--club); }
+    .cs-back svg { width: 14px; height: 14px; stroke: currentColor; }
+
+    /* ── HERO ─────────────────────────────────────── */
+    .cs-hero {
+      background: linear-gradient(150deg, #060d1f 0%, #0c1e4a 50%, #1a0a12 100%);
+      border-bottom: 3px solid var(--club-accent);
+      padding: 64px 0 56px; position: relative; overflow: hidden;
+    }
+    .cs-hero::before {
+      content: ''; position: absolute; top: -80px; right: -80px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(14,58,132,0.22) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .cs-hero::after {
+      content: ''; position: absolute; bottom: -60px; left: 10%;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(200,16,46,0.1) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .cs-hero__session {
+      font-family: var(--font-heading); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.3em; text-transform: uppercase; color: var(--club-accent);
+      margin-bottom: 14px; display: block;
+    }
+    .cs-hero__title {
+      font-family: var(--font-heading); font-size: clamp(2.6rem, 7vw, 4.2rem);
+      font-weight: 800; color: #fff; text-transform: uppercase; line-height: 0.92;
+      margin-bottom: 20px;
+    }
+    .cs-hero__title span { color: var(--club-accent); }
+    .cs-hero__sub {
+      font-size: 0.95rem; color: rgba(255,255,255,0.6); line-height: 1.8;
+      max-width: 560px; margin-bottom: 36px;
+    }
+    .cs-hero__pills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .cs-hero__pill {
+      font-family: var(--font-heading); font-size: 0.58rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      padding: 7px 14px; border: 1px solid rgba(255,255,255,0.14);
+      color: rgba(255,255,255,0.55); background: rgba(255,255,255,0.04);
+      transition: all 0.2s;
+    }
+    .cs-hero__pill:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+
+    /* ── SECTION NAV ──────────────────────────────── */
+    .cs-nav {
+      position: sticky; top: calc(var(--header-height) + 3px); z-index: 90;
+      background: var(--gray-900); border-bottom: 1px solid rgba(255,255,255,0.06);
+      overflow-x: auto; -webkit-overflow-scrolling: touch;
+    }
+    .cs-nav__inner { display: flex; gap: 0; min-width: max-content; padding: 0 16px; }
+    .cs-nav__btn {
+      font-family: var(--font-heading); font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      padding: 16px 20px; color: var(--gray-600); background: transparent;
+      border: none; border-bottom: 2px solid transparent;
+      cursor: pointer; white-space: nowrap; transition: all 0.2s;
+    }
+    .cs-nav__btn:hover { color: var(--white); }
+    .cs-nav__btn.is-active { color: var(--club); border-bottom-color: var(--club); }
+
+    /* ── SECTION STRUCTURE ────────────────────────── */
+    .cs-section { padding: 64px 0 72px; }
+    .cs-section--alt { background: rgba(255,255,255,0.015); }
+    .cs-section--dark { background: rgba(14,58,132,0.05); }
+    .cs-section__eyebrow {
+      font-family: var(--font-heading); font-size: 0.58rem; font-weight: 700;
+      letter-spacing: 0.28em; text-transform: uppercase; color: var(--club-accent);
+      margin-bottom: 10px; display: block;
+    }
+    .cs-section__title {
+      font-family: var(--font-heading); font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800; color: var(--white); text-transform: uppercase;
+      line-height: 1.02; margin-bottom: 14px;
+    }
+    .cs-section__intro {
+      font-size: 0.9rem; color: var(--gray-400); line-height: 1.85;
+      max-width: 600px; margin-bottom: 40px;
+    }
+
+    /* ── TIMELINE (What Happened) ─────────────────── */
+    .cs-timeline { display: flex; flex-direction: column; gap: 0; }
+    .cs-timeline-item {
+      display: flex; gap: 24px; padding: 28px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .cs-timeline-item:last-child { border-bottom: none; }
+    .cs-timeline-num {
+      font-family: var(--font-heading); font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.1em; color: var(--club-accent);
+      min-width: 64px; padding-top: 3px; flex-shrink: 0;
+    }
+    .cs-timeline-content { flex: 1; }
+    .cs-timeline-label {
+      font-family: var(--font-heading); font-size: 0.78rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em; color: var(--white);
+      margin-bottom: 8px;
+    }
+    .cs-timeline-text {
+      font-size: 0.87rem; color: var(--gray-400); line-height: 1.8;
+    }
+    .cs-timeline-text strong { color: var(--white); }
+    .cs-timeline-text em { color: var(--club-accent); font-style: normal; }
+
+    /* ── QUOTE BLOCK ──────────────────────────────── */
+    .cs-quote {
+      border-left: 3px solid var(--club-accent);
+      padding: 20px 24px; margin: 32px 0;
+      background: rgba(200,16,46,0.05);
+    }
+    .cs-quote p {
+      font-size: 1.05rem; color: var(--white); line-height: 1.7;
+      font-style: italic; margin-bottom: 8px;
+    }
+    .cs-quote cite {
+      font-family: var(--font-heading); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-600);
+      font-style: normal;
+    }
+
+    /* ── ACCORDION (AOA / ACE) ────────────────────── */
+    .cs-accordion { display: flex; flex-direction: column; gap: 0; margin: 4px 0; }
+    .cs-accordion-card {
+      border: 1px solid rgba(255,255,255,0.07);
+      border-top: none; cursor: pointer;
+    }
+    .cs-accordion-card:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
+    .cs-accordion-card__head {
+      display: flex; align-items: center; gap: 20px; padding: 24px 26px;
+      transition: background 0.2s;
+    }
+    .cs-accordion-card__head:hover { background: rgba(255,255,255,0.025); }
+    .cs-accordion-card.is-open .cs-accordion-card__head { background: rgba(14,58,132,0.08); }
+    .cs-accordion-card__letter {
+      font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800;
+      color: var(--club); width: 44px; flex-shrink: 0; line-height: 1;
+    }
+    .cs-accordion-card.is-open .cs-accordion-card__letter { color: var(--club-accent); }
+    .cs-accordion-card__meta { flex: 1; }
+    .cs-accordion-card__word {
+      font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em; color: var(--white);
+      margin-bottom: 4px;
+    }
+    .cs-accordion-card__cue { font-size: 0.78rem; color: var(--gray-600); font-style: italic; }
+    .cs-accordion-card__toggle { color: var(--gray-700); transition: transform 0.25s; font-size: 0.8rem; }
+    .cs-accordion-card.is-open .cs-accordion-card__toggle { transform: rotate(180deg); color: var(--club); }
+    .cs-accordion-card__body { max-height: 0; overflow: hidden; transition: max-height 0.42s ease; }
+    .cs-accordion-card.is-open .cs-accordion-card__body { max-height: 800px; }
+    .cs-accordion-card__content { padding: 0 26px 30px 90px; }
+    @media (max-width: 560px) { .cs-accordion-card__content { padding-left: 26px; } }
+    .cs-accordion-card__desc { font-size: 0.88rem; color: var(--gray-300); line-height: 1.85; margin-bottom: 16px; }
+    .cs-accordion-card__coach {
+      background: rgba(14,58,132,0.1); border-left: 3px solid var(--club);
+      padding: 16px 20px; margin-top: 4px;
+    }
+    .cs-accordion-card__coach-label {
+      font-family: var(--font-heading); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--club);
+      margin-bottom: 9px; display: block;
+    }
+    .cs-accordion-card__coach p { font-size: 0.85rem; color: var(--gray-300); line-height: 1.75; }
+    .cs-accordion-card__coach p em { color: var(--white); font-style: italic; }
+    .cs-accordion-card__example {
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
+      padding: 16px 20px; margin-top: 12px;
+    }
+    .cs-accordion-card__example-label {
+      font-family: var(--font-heading); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-600);
+      margin-bottom: 10px; display: block;
+    }
+    .cs-accordion-card__example p { font-size: 0.83rem; color: var(--gray-400); line-height: 1.75; margin-bottom: 6px; }
+    .cs-accordion-card__example p:last-child { margin-bottom: 0; }
+    .cs-accordion-card__example strong { color: var(--club-accent); }
+
+    /* ── SCENARIO COMPARE ─────────────────────────── */
+    .cs-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin: 24px 0; }
+    @media (max-width: 620px) { .cs-compare { grid-template-columns: 1fr; } }
+    .cs-compare__col { padding: 26px; border: 1px solid rgba(255,255,255,0.06); }
+    .cs-compare__col--before { border-color: rgba(200,16,46,0.15); background: rgba(200,16,46,0.03); border-right: none; }
+    @media (max-width: 620px) { .cs-compare__col--before { border-right: 1px solid rgba(200,16,46,0.15); border-bottom: none; } }
+    .cs-compare__col--after { border-color: rgba(14,58,132,0.25); background: rgba(14,58,132,0.05); }
+    .cs-compare__head {
+      font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px; display: block;
+    }
+    .cs-compare__col--before .cs-compare__head { color: var(--club-accent); }
+    .cs-compare__col--after .cs-compare__head { color: #4a90d9; }
+    .cs-compare__col ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .cs-compare__col ul li {
+      display: flex; gap: 10px; align-items: flex-start;
+      font-size: 0.85rem; color: var(--gray-300); line-height: 1.65;
+    }
+    .cs-compare__col ul li::before { flex-shrink: 0; margin-top: 3px; font-size: 0.72rem; font-weight: 700; }
+    .cs-compare__col--before ul li::before { content: '✕'; color: var(--club-accent); }
+    .cs-compare__col--after ul li::before { content: '→'; color: #4a90d9; }
+
+    /* ── 3 LEVERS GRID ────────────────────────────── */
+    .cs-levers { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(255,255,255,0.06); margin: 24px 0; }
+    @media (max-width: 700px) { .cs-levers { grid-template-columns: 1fr; } }
+    .cs-lever {
+      padding: 30px 26px;
+      background: var(--black);
+      position: relative;
+    }
+    .cs-lever--1 { background: rgba(14,58,132,0.08); }
+    .cs-lever--2 { background: rgba(200,16,46,0.06); }
+    .cs-lever--3 { background: rgba(212,160,23,0.05); }
+    .cs-lever__icon {
+      font-family: var(--font-heading); font-size: 2.4rem; font-weight: 800;
+      line-height: 1; margin-bottom: 16px;
+    }
+    .cs-lever--1 .cs-lever__icon { color: var(--club); }
+    .cs-lever--2 .cs-lever__icon { color: var(--club-accent); }
+    .cs-lever--3 .cs-lever__icon { color: var(--gold); }
+    .cs-lever__title {
+      font-family: var(--font-heading); font-size: 0.82rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em; color: var(--white);
+      margin-bottom: 10px;
+    }
+    .cs-lever__desc { font-size: 0.84rem; color: var(--gray-400); line-height: 1.75; margin-bottom: 14px; }
+    .cs-lever__examples { font-size: 0.78rem; color: var(--gray-600); font-style: italic; line-height: 1.6; }
+
+    /* ── RONDO GRID ───────────────────────────────── */
+    .cs-rondo { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin: 24px 0; }
+    @media (max-width: 640px) { .cs-rondo { grid-template-columns: 1fr; } }
+    .cs-rondo-card {
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 24px;
+      position: relative;
+    }
+    .cs-rondo-card--1 { border-color: rgba(255,255,255,0.08); }
+    .cs-rondo-card--2 { border-color: rgba(200,16,46,0.2); background: rgba(200,16,46,0.03); }
+    .cs-rondo-card--3 { border-color: rgba(212,160,23,0.2); background: rgba(212,160,23,0.03); }
+    .cs-rondo-card--4 { border-color: rgba(14,58,132,0.4); background: rgba(14,58,132,0.08); }
+    .cs-rondo-card__badge {
+      font-family: var(--font-heading); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      display: inline-block; padding: 4px 10px; margin-bottom: 14px;
+    }
+    .cs-rondo-card--1 .cs-rondo-card__badge { background: rgba(255,255,255,0.08); color: var(--gray-500); }
+    .cs-rondo-card--2 .cs-rondo-card__badge { background: rgba(200,16,46,0.15); color: var(--club-accent); }
+    .cs-rondo-card--3 .cs-rondo-card__badge { background: rgba(212,160,23,0.15); color: var(--gold); }
+    .cs-rondo-card--4 .cs-rondo-card__badge { background: rgba(14,58,132,0.3); color: #7aa7e0; }
+    .cs-rondo-card__title {
+      font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em; color: var(--white);
+      margin-bottom: 10px;
+    }
+    .cs-rondo-card__desc { font-size: 0.84rem; color: var(--gray-400); line-height: 1.75; }
+    .cs-rondo-card__warning {
+      margin-top: 14px; padding: 10px 14px;
+      background: rgba(200,16,46,0.1); border-left: 2px solid var(--club-accent);
+      font-size: 0.76rem; color: var(--gray-400); line-height: 1.6;
+    }
+
+    /* ── HALFTIME STRUCTURE ───────────────────────── */
+    .cs-halftime { display: flex; flex-direction: column; gap: 0; margin: 24px 0; }
+    .cs-ht-row {
+      display: grid; grid-template-columns: 80px 1fr; gap: 24px;
+      padding: 24px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+      align-items: start;
+    }
+    .cs-ht-row:last-child { border-bottom: none; }
+    .cs-ht-phase {
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center; gap: 6px;
+    }
+    .cs-ht-letter {
+      font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800;
+      color: var(--club); line-height: 1;
+    }
+    .cs-ht-time {
+      font-family: var(--font-heading); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.1em; color: var(--gray-700); text-transform: uppercase;
+    }
+    .cs-ht-content { padding-top: 2px; }
+    .cs-ht-title {
+      font-family: var(--font-heading); font-size: 0.78rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em; color: var(--white);
+      margin-bottom: 8px;
+    }
+    .cs-ht-text { font-size: 0.86rem; color: var(--gray-400); line-height: 1.78; }
+    .cs-ht-text strong { color: var(--white); }
+    .cs-ht-not {
+      margin-top: 8px; font-size: 0.78rem;
+      color: var(--club-accent); font-style: italic;
+    }
+
+    /* ── MEDIA EMBEDS ─────────────────────────────── */
+    .cs-media-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+    @media (max-width: 680px) { .cs-media-grid { grid-template-columns: 1fr; } }
+    .cs-media-card {
+      border: 1px solid rgba(255,255,255,0.08);
+      overflow: hidden;
+    }
+    .cs-media-card__label {
+      font-family: var(--font-heading); font-size: 0.58rem; font-weight: 700;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      display: flex; align-items: center; gap: 10px;
+      padding: 14px 16px; background: rgba(255,255,255,0.03);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .cs-media-card__label-dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+    .cs-media-card__label-dot--yt { background: #FF0000; }
+    .cs-media-card__label-dot--sp { background: #1DB954; }
+    .cs-media-card__label-text { color: var(--gray-500); }
+    .cs-media-card__label-title { color: var(--white); margin-left: auto; font-size: 0.52rem; letter-spacing: 0.16em; }
+    .cs-video-wrap {
+      position: relative; width: 100%; padding-bottom: 56.25%;
+      background: #000;
+    }
+    .cs-video-wrap iframe {
+      position: absolute; inset: 0; width: 100%; height: 100%; border: none;
+    }
+    .cs-spotify-wrap {
+      padding: 16px;
+    }
+    .cs-spotify-wrap iframe {
+      width: 100%; height: 232px; border: none; border-radius: 4px;
+    }
+    .cs-spotify-desc {
+      font-size: 0.8rem; color: var(--gray-600); line-height: 1.6; padding: 12px 16px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .cs-media-full {
+      border: 1px solid rgba(255,255,255,0.08); overflow: hidden; margin-top: 24px;
+    }
+    .cs-media-full .cs-video-wrap { padding-bottom: 42.85%; }
+
+    /* ── KEY SCIENCE STAT STRIP ───────────────────── */
+    .cs-stat-strip { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(255,255,255,0.06); margin: 32px 0; }
+    @media (max-width: 640px) { .cs-stat-strip { grid-template-columns: 1fr; } }
+    .cs-stat {
+      padding: 28px 24px; background: var(--black); text-align: center;
+    }
+    .cs-stat__number {
+      font-family: var(--font-heading); font-size: 2.8rem; font-weight: 800;
+      color: var(--club-accent); line-height: 1; margin-bottom: 8px;
+    }
+    .cs-stat__label { font-size: 0.8rem; color: var(--gray-500); line-height: 1.55; }
+    .cs-stat__label strong { color: var(--white); display: block; margin-bottom: 3px; }
+
+    /* ── DEBRIEF Q-CARDS ──────────────────────────── */
+    .cs-q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+    @media (max-width: 580px) { .cs-q-grid { grid-template-columns: 1fr; } }
+    .cs-q-card {
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 20px; position: relative;
+    }
+    .cs-q-card__num {
+      font-family: var(--font-heading); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.2em; color: var(--club); margin-bottom: 10px; display: block;
+    }
+    .cs-q-card__q { font-size: 0.85rem; color: var(--gray-300); line-height: 1.7; font-style: italic; }
+
+    /* ── AWARENESS PLAN ───────────────────────────── */
+    .cs-plan { background: rgba(14,58,132,0.08); border: 1px solid rgba(14,58,132,0.2); padding: 32px; margin-bottom: 32px; }
+    .cs-plan__label {
+      font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--club);
+      margin-bottom: 24px; display: block;
+    }
+    .cs-plan__row { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
+    .cs-plan__row:last-child { margin-bottom: 0; }
+    .cs-plan__bullet {
+      font-family: var(--font-heading); font-size: 0.7rem; font-weight: 700;
+      color: var(--club); width: 22px; flex-shrink: 0; padding-top: 2px;
+    }
+    .cs-plan__content { flex: 1; }
+    .cs-plan__content strong { display: block; font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white); margin-bottom: 4px; }
+    .cs-plan__content p { font-size: 0.85rem; color: var(--gray-400); line-height: 1.7; }
+
+    /* ── REFLECT SECTION ──────────────────────────── */
+    .cs-reflect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 580px) { .cs-reflect-grid { grid-template-columns: 1fr; } }
+    .cs-reflect-item { display: flex; flex-direction: column; gap: 10px; }
+    .cs-reflect-label {
+      font-family: var(--font-heading); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--club);
+    }
+    .cs-reflect-q { font-size: 0.84rem; color: var(--gray-500); line-height: 1.7; }
+    .cs-reflect-textarea {
+      width: 100%; min-height: 100px; resize: vertical;
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+      color: var(--white); font-family: var(--font-body); font-size: 0.86rem;
+      line-height: 1.6; padding: 14px 16px; outline: none; transition: border-color 0.2s;
+    }
+    .cs-reflect-textarea:focus { border-color: rgba(14,58,132,0.5); }
+    .cs-reflect-textarea::placeholder { color: var(--gray-700); }
+
+    /* ── FOOTER NAV ───────────────────────────────── */
+    .cs-footer-nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 40px 0 64px; border-top: 1px solid rgba(255,255,255,0.07);
+      gap: 16px; flex-wrap: wrap;
+    }
+    .cs-footer-link {
+      display: flex; align-items: center; gap: 8px; text-decoration: none;
+      font-family: var(--font-heading); font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-500);
+      transition: color 0.2s;
+    }
+    .cs-footer-link:hover { color: var(--club); }
+    .cs-footer-link svg { width: 14px; height: 14px; stroke: currentColor; flex-shrink: 0; }
+
+    /* ── ANIMATIONS ───────────────────────────────── */
+    @keyframes ccFadeUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
+    .cs-section { animation: ccFadeUp 0.5s ease both; }
+
+    /* ── SECTION BODY / H3 ───────────────────────── */
+    .cs-section__h3 {
+      font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700;
+      text-transform: uppercase; color: var(--white); margin: 36px 0 12px;
+    }
+    .cs-section__body {
+      font-size: 0.88rem; color: var(--gray-400); line-height: 1.78; margin-bottom: 4px;
+    }
+    .cs-section__body strong { color: var(--white); }
+
+    /* ── FINISHING / CLA SECTION ─────────────────── */
+    .cs-constraint-types {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; background: rgba(255,255,255,0.06); margin: 28px 0;
+    }
+    @media (max-width: 640px) { .cs-constraint-types { grid-template-columns: 1fr; } }
+    .cs-constraint-type { padding: 28px 20px; background: var(--black); }
+    .cs-constraint-type__name {
+      font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--club-accent);
+      margin-bottom: 12px;
+    }
+    .cs-constraint-type__list { list-style: none; padding: 0; margin: 0; }
+    .cs-constraint-type__list li {
+      font-size: 0.82rem; color: var(--gray-400); line-height: 1.6;
+      padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .cs-constraint-type__list li:last-child { border-bottom: none; }
+
+    .cs-drill-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 28px 0; }
+    @media (max-width: 700px) { .cs-drill-grid { grid-template-columns: 1fr; } }
+    .cs-drill {
+      border: 1px solid rgba(255,255,255,0.08); padding: 24px;
+      position: relative; overflow: hidden;
+    }
+    .cs-drill::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: var(--club);
+    }
+    .cs-drill__num {
+      font-family: var(--font-heading); font-size: 0.52rem; font-weight: 700;
+      letter-spacing: 0.2em; color: var(--club); margin-bottom: 10px; display: block;
+    }
+    .cs-drill__name {
+      font-family: var(--font-heading); font-size: 0.98rem; font-weight: 700;
+      color: var(--white); text-transform: uppercase; margin-bottom: 10px;
+    }
+    .cs-drill__setup {
+      font-size: 0.8rem; color: var(--gray-500); line-height: 1.65;
+      margin-bottom: 10px; font-style: italic;
+    }
+    .cs-drill__desc { font-size: 0.84rem; color: var(--gray-400); line-height: 1.72; margin-bottom: 14px; }
+    .cs-drill__why {
+      font-size: 0.8rem; color: var(--gray-500); line-height: 1.6;
+      border-left: 2px solid var(--club); padding-left: 10px; margin-bottom: 14px;
+    }
+    .cs-drill__why strong { color: var(--white); }
+    .cs-drill__tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .cs-drill__tag {
+      font-family: var(--font-heading); font-size: 0.5rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 4px 10px; background: rgba(14,58,132,0.18); color: var(--club-light);
+      border: 1px solid rgba(14,58,132,0.3);
+    }
+    .cs-drill__tag--red { background: rgba(200,16,46,0.12); color: var(--club-accent); border-color: rgba(200,16,46,0.25); }
+    .cs-drill__tag--gold { background: rgba(212,160,23,0.12); color: var(--gold); border-color: rgba(212,160,23,0.25); }
+
+    .cs-psych-link {
+      background: linear-gradient(135deg, rgba(14,58,132,0.12) 0%, rgba(200,16,46,0.06) 100%);
+      border: 1px solid rgba(14,58,132,0.22); padding: 32px; margin: 32px 0;
+    }
+    .cs-psych-link__title {
+      font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700;
+      text-transform: uppercase; color: var(--white); margin-bottom: 14px;
+    }
+    .cs-psych-link__body { font-size: 0.86rem; color: var(--gray-400); line-height: 1.78; }
+    .cs-psych-link__body strong { color: var(--white); }
+
+    /* ── AOA IN PRACTICE BLOCK ────────────────────── */
+    .cs-aoa-practice {
+      background: rgba(14,58,132,0.07); border: 1px solid rgba(14,58,132,0.2);
+      padding: 32px; margin-top: 36px;
+    }
+    .cs-aoa-practice__label {
+      font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--club);
+      margin-bottom: 8px; display: block;
+    }
+    .cs-aoa-practice__sub {
+      font-size: 0.83rem; color: var(--gray-500); margin-bottom: 28px; line-height: 1.6;
+    }
+    .cs-aoa-step { display: grid; grid-template-columns: 52px 1fr; gap: 20px; margin-bottom: 28px; align-items: start; }
+    .cs-aoa-step:last-child { margin-bottom: 0; }
+    .cs-aoa-step__letter {
+      font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800;
+      color: var(--club); line-height: 1; text-align: center; padding-top: 2px;
+    }
+    .cs-aoa-step__rule {
+      font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em; color: var(--white);
+      margin-bottom: 6px;
+    }
+    .cs-aoa-step__why { font-size: 0.82rem; color: var(--gray-500); line-height: 1.65; margin-bottom: 10px; }
+    .cs-aoa-step__say {
+      font-size: 0.83rem; color: var(--gray-300); font-style: italic;
+      border-left: 2px solid var(--club); padding-left: 12px; margin-bottom: 8px; line-height: 1.65;
+    }
+    .cs-aoa-step__avoid {
+      font-size: 0.78rem; color: var(--club-accent); line-height: 1.6;
+    }
+    .cs-aoa-step__avoid strong { font-style: normal; }
+
+    /* ── SITE HEADER COMPAT ───────────────────────── */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; height: var(--header-height); z-index: 1000; background: rgba(0,0,0,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .site-footer-bar { background: var(--black); border-top: 1px solid rgba(255,255,255,0.06); padding: 28px 0; }
+    .site-footer-bar p { font-size: 0.82rem; color: var(--gray-700); }
+  </style>
+</head>
+<body>
+
+  <!-- Auth guard -->
+  <script>
+    if (!localStorage.getItem('grow_nomads_club')) window.location.href = 'grow-nomads.html';
+  </script>
+
+  <!-- Progress bar -->
+  <div class="cs-progress"><div class="cs-progress-fill" id="progressFill"></div></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner container">
+      <a href="index.html" class="logo">
+        <img src="images/pa-logo.png" alt="The Performance Act" style="height:48px;">
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Back nav -->
+    <div class="container">
+      <a href="grow-nomads.html" class="cs-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to Coach Hub
+      </a>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════ -->
+    <div class="cs-hero">
+      <div class="container">
+        <span class="cs-hero__session">Coach Development · Nomads United AFC · Session Recap</span>
+        <h1 class="cs-hero__title">The Coach's<br><span>Compass</span></h1>
+        <p class="cs-hero__sub">Everything from the room — the ideas behind the session, the tools you practised, and what to do with them on Monday. Navigate pressure, player behaviour, and your own coaching instincts with more clarity than you had when you walked in.</p>
+        <div class="cs-hero__pills">
+          <span class="cs-hero__pill">Ask · Offer · Ask</span>
+          <span class="cs-hero__pill">Sideline ACE</span>
+          <span class="cs-hero__pill">The Righting Reflex</span>
+          <span class="cs-hero__pill">Pressure by Design</span>
+          <span class="cs-hero__pill">Ecological Dynamics</span>
+          <span class="cs-hero__pill">The Psychological Rondo</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         SECTION NAV
+    ═══════════════════════════════════════ -->
+    <nav class="cs-nav" aria-label="Page sections">
+      <div class="cs-nav__inner">
+        <button class="cs-nav__btn is-active" data-target="cc-overview">Session Overview</button>
+        <button class="cs-nav__btn" data-target="cc-aoa">Ask · Offer · Ask</button>
+        <button class="cs-nav__btn" data-target="cc-sideline">Sideline ACE</button>
+        <button class="cs-nav__btn" data-target="cc-pressure">Pressure by Design</button>
+        <button class="cs-nav__btn" data-target="cc-finishing">Finishing Under Pressure</button>
+        <button class="cs-nav__btn" data-target="cc-media">Watch &amp; Listen</button>
+        <button class="cs-nav__btn" data-target="cc-reflect">Your Compass</button>
+      </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════
+    01  SESSION OVERVIEW
+    ═══════════════════════════════════════ -->
+    <section class="cs-section" id="cc-overview">
+      <div class="container">
+        <span class="cs-section__eyebrow">What Happened</span>
+        <h2 class="cs-section__title">Four blocks.<br>One shift.</h2>
+        <p class="cs-section__intro">The session was built around one central idea: how a player performs is shaped by their coach, their teammates, and their environment — not just what's going on inside their own head. When that lands, you stop asking <em>"how do I fix the player's mindset?"</em> and start asking <em>"what am I doing, and what is the environment doing, that shapes how this player shows up?"</em> That's a different question. It leads to different actions. And it gives you a lot more to work with.</p>
+
+        <div class="cs-timeline">
+
+          <div class="cs-timeline-item">
+            <span class="cs-timeline-num">BLOCK 01</span>
+            <div class="cs-timeline-content">
+              <div class="cs-timeline-label">The Audit — Your Beliefs &amp; Your First Instinct</div>
+              <div class="cs-timeline-text">We started with six myth statements — not to lecture, but to surface the gap between what coaches tend to believe and what the research actually shows. The headline: traditional mental skills training (visualisation routines, positive self-talk programmes, generic confidence work) doesn't have the strong evidence behind it that the industry claims. A 2024 review of reviews found the evidence too thin to confidently recommend it for improving performance. A better approach — <strong>designing your practice environment so that mental toughness develops through the session itself</strong> — has a stronger foundation and more practical leverage. The Opening Reflection surfaced your real coaching challenges before any framework landed. That order matters: <em>content sticks when the learner already has a problem it can solve.</em></div>
+            </div>
+          </div>
+
+          <div class="cs-timeline-item">
+            <span class="cs-timeline-num">BLOCK 02</span>
+            <div class="cs-timeline-content">
+              <div class="cs-timeline-label">The Noise Behind the Behaviour — Ask, Offer, Ask</div>
+              <div class="cs-timeline-text">We watched the <strong>Nail video</strong> — a 104-second demonstration of the two coaching traps: the Righting Reflex (jumping to fix before you've understood) and the Listening Loop (listening without ever moving). Then we practised <strong>Ask — Offer — Ask</strong> in real-play, not role-play. You brought a genuine situation from your own coaching. Round 1 was your natural instinct. Observers timed how long before advice arrived. Most groups: under 20 seconds. Round 2 used AOA. The shift in the room between Round 1 and Round 2 is the data. <em>When advice arrives before understanding, players close down.</em> The 'yeah but' isn't resistance — it's feedback that the sequence was wrong.</div>
+            </div>
+          </div>
+
+          <div class="cs-timeline-item">
+            <span class="cs-timeline-num">BLOCK 03</span>
+            <div class="cs-timeline-content">
+              <div class="cs-timeline-label">The Sideline ACE — Your Noise. Your Reset. One Clear Message.</div>
+              <div class="cs-timeline-text">Before the ACE framework, we established the baseline: <strong>your emotional state is contagious.</strong> A 2025 review of 101 studies confirmed that stressed coaches spread negative emotion through squads via posture, tone, and facial expression — before a single word is spoken. You can't out-coach a dysregulated nervous system. Then came the <strong>Minefield</strong>: one coach blindfolded, navigating a mousetrap course using only voice guidance, while everyone else took the active sideline role. Round 1: natural response. Round 2: apply ACE before every instruction. The voice changed. The blindfolded player noticed before they heard a word. <em>Regulated coach. Regulated player. That's the transfer.</em></div>
+            </div>
+          </div>
+
+          <div class="cs-timeline-item">
+            <span class="cs-timeline-num">BLOCK 04</span>
+            <div class="cs-timeline-content">
+              <div class="cs-timeline-label">Pressure by Design — The Coach as Environment Architect</div>
+              <div class="cs-timeline-text">The session closed with the most important shift: from trying to change how a player thinks and feels, to <strong>designing training that produces the right response automatically.</strong> You have three levers — Social Presence (who's watching), Consequence (what's at stake), and Novelty &amp; Uncertainty (how familiar the task is) — and adjusting any one of them changes the psychological demand of any drill you already run. We walked through the <strong>Psychological Rondo</strong> — four versions of the same drill with wildly different pressure profiles — and you designed a training tweak for your own team's specific pressure problem. <em>Pressure isn't something to avoid in training. It's the thing you're actually training for.</em></div>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+    02  ASK · OFFER · ASK
+    ═══════════════════════════════════════ -->
+    <section class="cs-section cs-section--alt" id="cc-aoa">
+      <div class="container">
+        <span class="cs-section__eyebrow">Motivational Interviewing in Coaching</span>
+        <h2 class="cs-section__title">Ask · Offer · Ask —<br>Threads the Needle</h2>
+        <p class="cs-section__intro">AOA is the fix for both coaching traps: the Righting Reflex (you fix before you understand) and the Listening Loop (you listen but nothing changes). The framework is drawn from Rollnick, Fader, Breckon &amp; Moyers — <em>Coaching Athletes to Be Their Best</em> (2020). It doesn't take your expertise away — it changes the order of delivery so your expertise actually reaches the player. Tap each step to see how it works.</p>
+
+        <div class="cs-accordion" id="aoaAccordion">
+
+          <div class="cs-accordion-card">
+            <div class="cs-accordion-card__head">
+              <span class="cs-accordion-card__letter">A</span>
+              <div class="cs-accordion-card__meta">
+                <div class="cs-accordion-card__word">Ask First</div>
+                <div class="cs-accordion-card__cue">Find out where they are BEFORE you offer anything — the Ask is the work, not the preamble</div>
+              </div>
+              <span class="cs-accordion-card__toggle">&#9660;</span>
+            </div>
+            <div class="cs-accordion-card__body">
+              <div class="cs-accordion-card__content">
+                <p class="cs-accordion-card__desc">The opening question is the most important move in the conversation. Most coaches use a question as a bridge to get to the advice they've already prepared. A genuine Ask is curious before it is helpful — it discovers where the player actually is, rather than where the coach assumes they are.</p>
+                <p class="cs-accordion-card__desc">The first Ask is not preamble. It is the primary therapeutic move. When a player answers a genuine question honestly, they are already doing the psychological work of understanding their own state. Your job is to create the conditions for that, not to skip past it.</p>
+                <div class="cs-accordion-card__coach">
+                  <span class="cs-accordion-card__coach-label">Opening Questions to Use</span>
+                  <p>"What's going on for you right now?" &middot; "What have you already tried?" &middot; "What do you make of how things have been going?" &middot; "When does it feel most manageable — what's different then?" &middot; "What's the thing underneath this you haven't said yet?"</p>
+                </div>
+                <div class="cs-accordion-card__example">
+                  <span class="cs-accordion-card__example-label">Real-Play Example — Striker losing confidence after misses</span>
+                  <p><strong>Righting Reflex:</strong> "I always remind her of her stats. Look at the numbers — she always plays well."</p>
+                  <p><strong>AOA Ask:</strong> <em>"When she says she'll play awful — what do you think she's really asking for?"</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-accordion-card">
+            <div class="cs-accordion-card__head">
+              <span class="cs-accordion-card__letter">O</span>
+              <div class="cs-accordion-card__meta">
+                <div class="cs-accordion-card__word">Offer with Permission</div>
+                <div class="cs-accordion-card__cue">One thing only, briefly — check before you offer. If they say 'not yet', stay in the Ask.</div>
+              </div>
+              <span class="cs-accordion-card__toggle">&#9660;</span>
+            </div>
+            <div class="cs-accordion-card__body">
+              <div class="cs-accordion-card__content">
+                <p class="cs-accordion-card__desc">The word <em>permission</em> before the Offer is the pivot point. Most coaches give advice freely because that is their professional identity. Checking permission changes the player from a passive recipient into an active participant. When a player agrees to hear something, they are physiologically more likely to actually hear it.</p>
+                <p class="cs-accordion-card__desc">The Offer must be: <strong>one thing</strong> (not five), <strong>brief</strong> (not a lecture), and <strong>plainly stated</strong> (not dressed up as a question). The expertise is real — the change is in the timing and the sequence. One well-timed observation lands harder than five that arrive before the player felt understood.</p>
+                <div class="cs-accordion-card__coach">
+                  <span class="cs-accordion-card__coach-label">Permission Pivots</span>
+                  <p>"Can I share something I noticed?" &middot; "I have a thought — do you want to hear it?" &middot; "There's something worth exploring — is now a good time?" → Then stop after one point.</p>
+                </div>
+                <div class="cs-accordion-card__example">
+                  <span class="cs-accordion-card__example-label">Real-Play Example — Player avoiding the ball under pressure</span>
+                  <p><strong>Righting Reflex:</strong> "Tell her to just back herself. Call for it and go. The more she hides, the worse it gets."</p>
+                  <p><strong>AOA Offer:</strong> <em>"Can I share when it tends to happen?"</em> → then one observation, plainly stated. Not a speech.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-accordion-card">
+            <div class="cs-accordion-card__head">
+              <span class="cs-accordion-card__letter">A</span>
+              <div class="cs-accordion-card__meta">
+                <div class="cs-accordion-card__word">Ask Again</div>
+                <div class="cs-accordion-card__cue">Check what landed — return ownership. Don't conclude for them.</div>
+              </div>
+              <span class="cs-accordion-card__toggle">&#9660;</span>
+            </div>
+            <div class="cs-accordion-card__body">
+              <div class="cs-accordion-card__content">
+                <p class="cs-accordion-card__desc">The Ask Again is the move most coaches skip. After offering something, coaches tend to either stop or add more. The Ask Again — <em>"what do you make of that?"</em> — returns ownership of the insight to the player. They become the authority on their own experience, not a passive receiver of your assessment.</p>
+                <p class="cs-accordion-card__desc">The Ask Again also gives you crucial diagnostic data: if the player says <em>"that doesn't really fit,"</em> you know the Offer missed the mark. You stay in the Ask rather than doubling down on advice that isn't landing. This is how the conversation stays honest.</p>
+                <div class="cs-accordion-card__coach">
+                  <span class="cs-accordion-card__coach-label">Ask Again Moves</span>
+                  <p>"What do you make of that?" &middot; "Does that fit what you're feeling?" &middot; "What's useful about that?" &middot; "How does that sit with what you've been seeing?"</p>
+                </div>
+                <div class="cs-accordion-card__example">
+                  <span class="cs-accordion-card__example-label">Real-Play Example — Player kicking off after every mistake</span>
+                  <p><strong>Righting Reflex:</strong> "He needs to know it's not acceptable. A quiet word, then he sits out if it continues."</p>
+                  <p><strong>Full AOA:</strong> [Ask] <em>"What do you think is underneath the frustration?"</em> → [Offer] <em>"I've noticed a pattern around a specific error type — can I share that?"</em> → [Ask Again] <em>"How does that sit with what you've been seeing?"</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="cs-quote" style="margin-top:40px;">
+          <p>"The righting reflex is not a character flaw. It is the product of expertise and genuine care. A coach who has done this for fifteen years has seen a lot of fixable problems. The problem is the sequence: when advice arrives before understanding, players close down."</p>
+          <cite>James Orritt · The Coach's Compass · Nomads United AFC</cite>
+        </div>
+
+        <p style="font-family:var(--font-heading);font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray-600);margin-bottom:16px;">The sequence change, not a personality change</p>
+        <div class="cs-compare">
+          <div class="cs-compare__col cs-compare__col--before">
+            <span class="cs-compare__head">Righting Reflex</span>
+            <ul>
+              <li>Advice arrives before the problem is understood</li>
+              <li>The player gets the solution before they feel heard</li>
+              <li>Result: 'yeah but', folded arms, disengagement</li>
+              <li>Players stop bringing you real problems over time</li>
+              <li>Your expertise is real but arrives in the wrong order</li>
+            </ul>
+          </div>
+          <div class="cs-compare__col cs-compare__col--after">
+            <span class="cs-compare__head">Ask · Offer · Ask</span>
+            <ul>
+              <li>Understanding arrives before the solution — always</li>
+              <li>Permission sought before the Offer: one thing, briefly</li>
+              <li>Ownership returned to the player in the Ask Again</li>
+              <li>Players open up because they feel genuinely heard</li>
+              <li>Same expertise — different sequence, different landing</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top:40px;">
+          <p style="font-family:var(--font-heading);font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray-600);margin-bottom:16px;">The world they're navigating — why this matters now</p>
+          <div style="display:flex;flex-direction:column;gap:0;">
+            <div style="display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.05);align-items:flex-start;">
+              <span style="font-family:var(--font-heading);font-size:0.65rem;font-weight:700;color:var(--club-accent);min-width:24px;">01</span>
+              <p style="font-size:0.86rem;color:var(--gray-400);line-height:1.75;">Constant social comparison — performance visible in ways it never was before</p>
+            </div>
+            <div style="display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.05);align-items:flex-start;">
+              <span style="font-family:var(--font-heading);font-size:0.65rem;font-weight:700;color:var(--club-accent);min-width:24px;">02</span>
+              <p style="font-size:0.86rem;color:var(--gray-400);line-height:1.75;">Every match potentially filmed, clipped, and shared — exposure is permanent</p>
+            </div>
+            <div style="display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.05);align-items:flex-start;">
+              <span style="font-family:var(--font-heading);font-size:0.65rem;font-weight:700;color:var(--club-accent);min-width:24px;">03</span>
+              <p style="font-size:0.86rem;color:var(--gray-400);line-height:1.75;">Parents more involved and more informed than any previous generation</p>
+            </div>
+            <div style="display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.05);align-items:flex-start;">
+              <span style="font-family:var(--font-heading);font-size:0.65rem;font-weight:700;color:var(--club-accent);min-width:24px;">04</span>
+              <p style="font-size:0.86rem;color:var(--gray-400);line-height:1.75;">Less unstructured play and far fewer uncoached touches on the ball</p>
+            </div>
+            <div style="display:flex;gap:16px;padding:16px 0;align-items:flex-start;">
+              <span style="font-family:var(--font-heading);font-size:0.65rem;font-weight:700;color:var(--club-accent);min-width:24px;">05</span>
+              <p style="font-size:0.86rem;color:var(--gray-400);line-height:1.75;"><strong style="color:var(--white);">Not mentally softer.</strong> Carrying a different load. A coach who actually asks first is rarer than it should be — and it lands harder than you think.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- AOA IN PRACTICE -->
+        <div class="cs-aoa-practice">
+          <span class="cs-aoa-practice__label">How to Apply AOA — Your Step-by-Step Guide</span>
+          <p class="cs-aoa-practice__sub">AOA is not a conversation technique. It is a coaching philosophy applied in real time, on the touchline, in the debrief, and in 1-to-1 moments. Here is exactly how to run it — with the words to use, the logic behind each move, and what to avoid.</p>
+
+          <div class="cs-aoa-step">
+            <div class="cs-aoa-step__letter">A</div>
+            <div>
+              <div class="cs-aoa-step__rule">Ask First — Before You Know What You'll Offer</div>
+              <p class="cs-aoa-step__why">The first Ask is not a warm-up for your advice. It is the primary move. Your goal is to discover where the player actually is — not where you think they are. Most coaches ask a question while already composing the answer. Notice that impulse and resist it.</p>
+              <div class="cs-aoa-step__say">
+                "What's going on for you out there right now?"<br>
+                "When you missed that — what did it feel like in your body just before?"<br>
+                "What are you reading when the ball comes in — are you seeing the keeper or the goal?"<br>
+                "What have you already tried to change it?"<br>
+                "What's the thing you think is missing right now?"
+              </div>
+              <p class="cs-aoa-step__why">Wait for the full answer. The most valuable information usually comes after a pause. If they say "I don't know" — ask them to guess. Their guess is the data.</p>
+              <p class="cs-aoa-step__avoid">&#10007; Avoid: "So what you're saying is..." followed by your own interpretation. Avoid filling silence. Avoid nodding and then immediately starting your sentence with "Right, so what I'd say is..."</p>
+            </div>
+          </div>
+
+          <div class="cs-aoa-step">
+            <div class="cs-aoa-step__letter">O</div>
+            <div>
+              <div class="cs-aoa-step__rule">Offer — Permission-Based, Brief, and Specific</div>
+              <p class="cs-aoa-step__why">Your Offer is not a lecture. It is one observation or one idea, offered with permission. The permission step sounds soft — it is not. It signals to the player that you are not imposing; you are sharing. That difference changes how they receive it.</p>
+              <div class="cs-aoa-step__say">
+                "Can I share what I noticed from where I was standing?"<br>
+                "There's one thing that might be relevant — would it help to hear it?"<br>
+                "I saw something in your body shape just before the ball arrived — want me to describe it?"<br>
+                "Would it be useful if I told you what the keeper was doing in those moments?"
+              </div>
+              <p class="cs-aoa-step__why">After they say yes — keep the Offer to one point. One observation. One idea. Not a list. The player can only work with one thing at a time and a list creates confusion, not direction. Make it specific and grounded in what you actually saw.</p>
+              <p class="cs-aoa-step__avoid">&#10007; Avoid: offering more than one thing. Avoid starting with "You need to..." or "The problem is...". Avoid offering something the player already told you in the Ask — that signals you weren't listening.</p>
+            </div>
+          </div>
+
+          <div class="cs-aoa-step">
+            <div class="cs-aoa-step__letter">A</div>
+            <div>
+              <div class="cs-aoa-step__rule">Ask — Check In on How It Landed</div>
+              <p class="cs-aoa-step__why">The final Ask isn't about action-planning — it's a check-in. You've shared one observation; now you find out whether it actually connected with what the player was experiencing. This is what converts your Offer from information into something they can use.</p>
+              <div class="cs-aoa-step__say">
+                "How does that sit with you — does it connect with what you were feeling?"<br>
+                "Does that match what was going on for you out there?"<br>
+                "What do you make of that?"<br>
+                "Does that resonate, or does it feel different from your end?"<br>
+                "How does that land?"
+              </div>
+              <p class="cs-aoa-step__why">If they say yes and add something — the Offer landed and they've processed it. If they reframe it in their own words — even better. If they push back — that's not failure, that's the conversation working. Their lived experience of the moment is more accurate than your external observation. The check-in respects that.</p>
+              <p class="cs-aoa-step__avoid">&#10007; Avoid: "Does that make sense?" — it invites a reflexive yes and tells you nothing. Avoid immediately following with action instructions. Avoid summarising your Offer again. The final Ask is a question, not a second Offer.</p>
+            </div>
+          </div>
+
+          <div style="margin-top:28px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.06);">
+            <span class="cs-aoa-practice__label" style="margin-bottom:12px;">AOA for Finishing Practice — A Real Example</span>
+            <p class="cs-aoa-practice__sub" style="margin-bottom:16px;">A 16-year-old striker has missed three finishing opportunities. You walk over between reps.</p>
+            <div class="cs-accordion-card__example" style="margin-bottom:12px;">
+              <span class="cs-accordion-card__example-label">Ask — Understand where they are first</span>
+              <p><em>"What are you seeing when the ball gets played in — are you reading the keeper or just going for it?"</em><br>Player: <em>"I think I'm just going for it. I haven't really looked."</em></p>
+            </div>
+            <div class="cs-accordion-card__example" style="margin-bottom:12px;">
+              <span class="cs-accordion-card__example-label">Offer — Ask permission, then share one thing</span>
+              <p>Coach: <em>"Can I share something I noticed from out here?"</em><br>Player: <em>"Yeah, go on."</em><br>Coach: <em>"The keeper is leaving their near post open every time. That's the gap. That's it — just one thing to look for as the ball travels."</em></p>
+            </div>
+            <div class="cs-accordion-card__example">
+              <span class="cs-accordion-card__example-label">Ask — Check in on how it landed</span>
+              <p>Coach: <em>"How does that sit with you — does that connect with what you were feeling?"</em><br>Player: <em>"Yeah, actually — I think I was already committing before the ball arrived."</em><br>Coach: <em>"Good. Take that into the next one."</em></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+    03  SIDELINE ACE
+    ═══════════════════════════════════════ -->
+    <section class="cs-section" id="cc-sideline">
+      <div class="container">
+        <span class="cs-section__eyebrow">Your Own Reset</span>
+        <h2 class="cs-section__title">The Sideline ACE —<br>Your State is the Message</h2>
+        <p class="cs-section__intro">Before the framework, the evidence: a 2025 review of 101 studies confirmed that stressed coaches communicate more aggressively and spread their emotional state through squads via posture, tone, and facial expression — before a single word has been spoken. Naming what you're feeling (the A in ACE) has been shown to calm the body's stress response and restore clear thinking (Lieberman et al., 2007). A regulated coach doesn't just communicate more clearly. They change the emotional temperature of the whole group.</p>
+
+        <div class="cs-accordion" id="aceAccordion">
+
+          <div class="cs-accordion-card">
+            <div class="cs-accordion-card__head">
+              <span class="cs-accordion-card__letter">A</span>
+              <div class="cs-accordion-card__meta">
+                <div class="cs-accordion-card__word">Acknowledge — Name the Noise</div>
+                <div class="cs-accordion-card__cue">Silently. You're not getting rid of it. You're labelling it. The label buys you a half-second of room.</div>
+              </div>
+              <span class="cs-accordion-card__toggle">&#9660;</span>
+            </div>
+            <div class="cs-accordion-card__body">
+              <div class="cs-accordion-card__content">
+                <p class="cs-accordion-card__desc">The A step is not a mindfulness technique. It is a neurological interrupt. Putting a feeling into words — affect labelling — measurably reduces amygdala activation and restores prefrontal control (Lieberman et al., 2007, Psychological Science). The effect happens in milliseconds. It does not require meditation. It requires one honest internal sentence.</p>
+                <p class="cs-accordion-card__desc">You are not eliminating the noise — you never will. You are creating a half-second gap between stimulus and response. That gap is where coaching lives.</p>
+                <div class="cs-accordion-card__coach">
+                  <span class="cs-accordion-card__coach-label">Internal Label — say it to yourself</span>
+                  <p><em>"My chest is tight."</em> &middot; <em>"I am about to overcoach."</em> &middot; <em>"I am reacting to the score."</em> &middot; <em>"I already know what I want to say."</em> &middot; <em>"I want to rescue this."</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-accordion-card">
+            <div class="cs-accordion-card__head">
+              <span class="cs-accordion-card__letter">C</span>
+              <div class="cs-accordion-card__meta">
+                <div class="cs-accordion-card__word">Come Back — External Attention Reset</div>
+                <div class="cs-accordion-card__cue">Two feet on the ground. One breath out — slightly longer than in. Look at ONE external thing.</div>
+              </div>
+              <span class="cs-accordion-card__toggle">&#9660;</span>
+            </div>
+            <div class="cs-accordion-card__body">
+              <div class="cs-accordion-card__content">
+                <p class="cs-accordion-card__desc">Not a meditation — a grounding. Ten seconds. The player does not need to know it is happening. The Come Back moves attention from inside your head to outside it: the ball, the space, one player's actual face. This is the same Come Back your players use — and the same research underpins it (Magness, 2022; interoceptive awareness predicts both decision quality and longevity under pressure).</p>
+                <p class="cs-accordion-card__desc">In the Minefield, guides' voices changed in Round 2 — dropping slightly in pitch and pace — before any instruction was given. That drop communicated something to the blindfolded player before any words arrived. The player relaxed incrementally. Emotional contagion in the opposite direction.</p>
+                <div class="cs-accordion-card__coach">
+                  <span class="cs-accordion-card__coach-label">Your Come Back Anchors</span>
+                  <p>Both feet planted. One breath out — slightly longer than the in. Look at one specific external point: the ball, the space in play, one player's face. Move attention from inside your head to outside it.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-accordion-card">
+            <div class="cs-accordion-card__head">
+              <span class="cs-accordion-card__letter">E</span>
+              <div class="cs-accordion-card__meta">
+                <div class="cs-accordion-card__word">Express One Thing</div>
+                <div class="cs-accordion-card__cue">Seven words or fewer. One instruction. The one thing this player can act on in the next 30 seconds.</div>
+              </div>
+              <span class="cs-accordion-card__toggle">&#9660;</span>
+            </div>
+            <div class="cs-accordion-card__body">
+              <div class="cs-accordion-card__content">
+                <p class="cs-accordion-card__desc">When you give five instructions, you're regulating yourself — not coaching them. If you can't say it in seven words, give yourself another second and simplify. The constraint is not laziness. It is clarity. A player under pressure cannot process five things. They can act on one.</p>
+                <p class="cs-accordion-card__desc">The Express step also applies to your AOA conversations: one observation, plainly stated. Not a speech. The principle is the same — the sequence is what produces the outcome, not the volume of content.</p>
+                <div class="cs-accordion-card__coach">
+                  <span class="cs-accordion-card__coach-label">Express Examples — seven words or fewer</span>
+                  <p><em>"Drive into space when you receive."</em> &middot; <em>"Stay on your feet there."</em> &middot; <em>"Next ball — show for it."</em> &middot; <em>"Keep shape — next ball is ours."</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ACE Applied contexts -->
+        <div style="margin-top:40px;">
+          <p style="font-family:var(--font-heading);font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray-600);margin-bottom:20px;">ACE in four high-pressure coaching moments</p>
+          <div class="cs-plan">
+            <div class="cs-plan__row">
+              <div class="cs-plan__bullet">01</div>
+              <div class="cs-plan__content">
+                <strong>Pre-Match Team Talk</strong>
+                <p>You feel the pressure to say something inspiring. You're aware of your own nerves or over-investment. A: <em>"I am carrying the result already."</em> C: Breath. Look at the pitch. E: One sentence. One thing to hold.</p>
+              </div>
+            </div>
+            <div class="cs-plan__row">
+              <div class="cs-plan__bullet">02</div>
+              <div class="cs-plan__content">
+                <strong>After a Goal Conceded</strong>
+                <p>The highest-risk window for emotional overcoaching. Frustration, analysis, and instruction all arrive at once — usually in a voice the player cannot use. A: <em>"I want to fix this right now."</em> C: Feet. Breath. Find one player's face. E: <em>"Keep shape — next ball is ours."</em></p>
+              </div>
+            </div>
+            <div class="cs-plan__row">
+              <div class="cs-plan__bullet">03</div>
+              <div class="cs-plan__content">
+                <strong>Difficult 1-to-1 Conversation</strong>
+                <p>A player is upset, angry, or shut down. You can feel yourself preparing a response before they've finished speaking. The righting reflex is activating. A: <em>"I already know what I want to say."</em> C: Pause. Slow breath. Look at the player. E: One open question — not a solution.</p>
+              </div>
+            </div>
+            <div class="cs-plan__row">
+              <div class="cs-plan__bullet">04</div>
+              <div class="cs-plan__content">
+                <strong>Training Session Going Wrong</strong>
+                <p>The drill isn't working, energy is low. You can feel the temptation to over-explain or over-intervene. A: <em>"I need to rescue this."</em> C: Step back. Observe for 20 seconds before speaking. E: One constraint change. Not an explanation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Half time structure -->
+        <div style="margin-top:40px;">
+          <span class="cs-section__eyebrow">ACE at Half-Time</span>
+          <h3 style="font-family:var(--font-heading);font-size:clamp(1.2rem,3vw,1.7rem);font-weight:800;color:var(--white);text-transform:uppercase;margin-bottom:12px;">10 Minutes Redesigned</h3>
+          <p style="font-size:0.88rem;color:var(--gray-400);line-height:1.8;max-width:580px;margin-bottom:28px;">Research from Raya-Castellano et al. (2023, SAGE) found instruction and feedback dominated half-time talks at the expense of psychological management. Devlin et al. (2026) found elite players describe most half-time talks as <em>"mundane, repetitive, and forgettable."</em> This structure inverts the typical half-time.</p>
+          <div class="cs-halftime">
+            <div class="cs-ht-row">
+              <div class="cs-ht-phase">
+                <div class="cs-ht-letter">A</div>
+                <div class="cs-ht-time">0–2 MIN</div>
+              </div>
+              <div class="cs-ht-content">
+                <div class="cs-ht-title">Acknowledge</div>
+                <div class="cs-ht-text">Enter quietly. Say nothing. Let them sit. Players refuel and breathe. <strong>Your energy sets the room's thermostat.</strong> This silence is active coaching — not absence.</div>
+                <div class="cs-ht-not">Not: immediate analysis, blame, or tactical talk before anyone has recovered.</div>
+              </div>
+            </div>
+            <div class="cs-ht-row">
+              <div class="cs-ht-phase">
+                <div class="cs-ht-letter">C</div>
+                <div class="cs-ht-time">2–6 MIN</div>
+              </div>
+              <div class="cs-ht-content">
+                <div class="cs-ht-title">Come Back</div>
+                <div class="cs-ht-text">Ask <strong>ONE collective question.</strong> Let 2–3 players answer. You listen. <em>"What's one thing we need to do differently as a group?"</em> Do not fill the silence. If nobody answers — the silence is an answer. It means they need more time in the A phase.</div>
+                <div class="cs-ht-not">Not: five tactical points, or filling the space because silence is uncomfortable. Players speak first.</div>
+              </div>
+            </div>
+            <div class="cs-ht-row">
+              <div class="cs-ht-phase">
+                <div class="cs-ht-letter">E</div>
+                <div class="cs-ht-time">6–9 MIN</div>
+              </div>
+              <div class="cs-ht-content">
+                <div class="cs-ht-title">Express</div>
+                <div class="cs-ht-text"><strong>ONE message.</strong> The single most important thing that changes the second half. Brief. Direct. Actionable. Then stop. Players retain 1–3 minutes of information at best (Devlin et al., 2026). If you cannot say it in one sentence — simplify.</div>
+                <div class="cs-ht-not">Not: five things. ONE. Extra points dilute the message you just gave.</div>
+              </div>
+            </div>
+            <div class="cs-ht-row">
+              <div class="cs-ht-phase">
+                <div class="cs-ht-letter">→</div>
+                <div class="cs-ht-time">9–10 MIN</div>
+              </div>
+              <div class="cs-ht-content">
+                <div class="cs-ht-title">Out</div>
+                <div class="cs-ht-text"><em>"That's it. Go and do it."</em> Walk out together. <strong>The silence after the message is part of the message.</strong> Resist the urge to add one more thing. The work is done.</div>
+                <div class="cs-ht-not">Not: an inspiring speech. Extra words undo the message you just landed.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+    04  PRESSURE BY DESIGN
+    ═══════════════════════════════════════ -->
+    <section class="cs-section cs-section--alt" id="cc-pressure">
+      <div class="container">
+        <span class="cs-section__eyebrow">Ecological Dynamics · Constraints-Led Approach</span>
+        <h2 class="cs-section__title">Pressure by Design —<br>The Coach as Architect</h2>
+        <p class="cs-section__intro">The key question isn't <em>"how do I train the player's mind?"</em> It's <em>"how do I design the session so the right response happens naturally?"</em> That question gives you more to work with — because you can change what training looks like far more reliably than you can change what's going on inside a player's head. The science behind this is called Ecological Dynamics. The practical method is the Constraints-Led Approach. Here's what both look like on a training pitch.</p>
+
+        <div class="cs-quote">
+          <p>"Skill is not a thing that lives in the brain and gets deployed when called upon. Skill is what happens between the player and the context they are in. Change the context — and a different skill is available."</p>
+          <cite>Renshaw, Davids &amp; Araújo et al. (2019) · Ecological Dynamics as a Theoretical Framework for Sport Coaching</cite>
+        </div>
+
+        <!-- 3 Levers -->
+        <div style="margin-bottom:12px;">
+          <p style="font-family:var(--font-heading);font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray-600);">The Three Levers — turn one or more UP and you engineer pressure that transfers</p>
+        </div>
+        <div class="cs-levers">
+          <div class="cs-lever cs-lever--1">
+            <div class="cs-lever__icon">👁</div>
+            <div class="cs-lever__title">Social Presence</div>
+            <div class="cs-lever__desc">Who is watching. How many. How visible the stakes are. Social evaluation is one of the strongest activators of the stress response in competitive sport. Directly mirrors penalty shootout and high-status match contexts where choking most commonly occurs (Jordet et al., 2009).</div>
+            <div class="cs-lever__examples">Examples: whole squad watching a pair perform · filming in real time · scouts or coaches from other clubs present</div>
+          </div>
+          <div class="cs-lever cs-lever--2">
+            <div class="cs-lever__icon">⚡</div>
+            <div class="cs-lever__title">Consequence</div>
+            <div class="cs-lever__desc">What is actually at stake — individual or collective, real or symbolic. Consequence creates the arousal that representative learning requires. Without it, skills are not tested at their performance edge. Start with collective consequence — it distributes pressure and removes individual ego-threat.</div>
+            <div class="cs-lever__examples">Examples: losing pair runs the next rondo · squad forfeit if target missed · earn or lose a training privilege</div>
+          </div>
+          <div class="cs-lever cs-lever--3">
+            <div class="cs-lever__icon">⬡</div>
+            <div class="cs-lever__title">Novelty &amp; Uncertainty</div>
+            <div class="cs-lever__desc">How familiar the task is. How late information is revealed. How much the rules shift. Uncertainty eliminates explicit planning and forces real-time adaptive decision-making. The most effective anti-reinvestment mechanism — if a player cannot consciously plan their movement, they cannot consciously interfere with it (Masters, 1992).</div>
+            <div class="cs-lever__examples">Examples: rule revealed 15 sec before · task changes mid-drill without warning · unfamiliar role assignment</div>
+          </div>
+        </div>
+
+        <!-- Psychological Rondo -->
+        <div style="margin-top:48px;">
+          <span class="cs-section__eyebrow">Four Variants · Same Drill · Different Psychological Demands</span>
+          <h3 style="font-family:var(--font-heading);font-size:clamp(1.2rem,3vw,1.7rem);font-weight:800;color:var(--white);text-transform:uppercase;line-height:1.05;margin-bottom:12px;">The Psychological Rondo</h3>
+          <p style="font-size:0.88rem;color:var(--gray-400);line-height:1.8;max-width:580px;margin-bottom:24px;">The same familiar 5v2 rondo. Four different psychological experiences. Progress through them as players develop familiarity with each. Most coaches spend the vast majority of rondo time in Standard — and then wonder why the training-performance gap exists.</p>
+          <div class="cs-rondo">
+            <div class="cs-rondo-card cs-rondo-card--1">
+              <span class="cs-rondo-card__badge">LOW LOAD</span>
+              <div class="cs-rondo-card__title">Standard Rondo</div>
+              <div class="cs-rondo-card__desc">5v2 · Equal touches · No stakes. Technical habituation. Build fluency and perception-action coupling in a low-threat environment. The foundation — not the destination. If most of your rondo time is here, this is where the training-performance gap begins.</div>
+            </div>
+            <div class="cs-rondo-card cs-rondo-card--2">
+              <span class="cs-rondo-card__badge">CONSEQUENCE ↑</span>
+              <div class="cs-rondo-card__title">Consequence Rondo</div>
+              <div class="cs-rondo-card__desc">5v2 · Losing pair runs next rondo · Group forfeit if target missed. Real stakes without embarrassment. Collective consequence distributes pressure — individuals are not singled out, but everyone feels it. Mirrors match states with low ego-threat. Start here before Status.</div>
+            </div>
+            <div class="cs-rondo-card cs-rondo-card--3">
+              <span class="cs-rondo-card__badge">UNCERTAINTY ↑</span>
+              <div class="cs-rondo-card__title">Novelty Rondo</div>
+              <div class="cs-rondo-card__desc">Task revealed 15 sec before · one-touch / weak foot / play backwards · rule shifts mid-drill. Eliminates explicit planning. Forces adaptive decision-making. Reduces reinvestment risk — no time to consciously control movement. The players are problem-solving, not executing.</div>
+            </div>
+            <div class="cs-rondo-card cs-rondo-card--4">
+              <span class="cs-rondo-card__badge">SOCIAL PRESENCE ↑↑</span>
+              <div class="cs-rondo-card__title">Status Rondo</div>
+              <div class="cs-rondo-card__desc">Individual ball-loss tracking displayed publicly · scout/coach observing · cumulative consequence visible. Highest psychological load. Mirrors penalty-shootout context. The state this produces in the session is the state that transfers to match performance.</div>
+              <div class="cs-rondo-card__warning">Use with older, established players only. Never with under-14s. Introduce only after collective variants are normalised and psychological safety is solid.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Choking neuroscience -->
+        <div style="margin-top:48px;">
+          <span class="cs-section__eyebrow">Why Design Prevents Choking</span>
+          <h3 style="font-family:var(--font-heading);font-size:clamp(1.2rem,3vw,1.7rem);font-weight:800;color:var(--white);text-transform:uppercase;line-height:1.05;margin-bottom:12px;">The Neuroscience</h3>
+          <p style="font-size:0.88rem;color:var(--gray-400);line-height:1.8;max-width:640px;margin-bottom:24px;">Cortisol under pressure selectively impairs declarative (explicit, instruction-learned) memory while sparing procedural (implicit, practice-learned) memory (Kirschbaum et al., 1996; Schwabe &amp; Wolf, 2013). This is not just interesting neuroscience — it is a direct argument against explicit technical coaching under pressure. When a player is in the critical moment, the explicit instructions you drilled in are the ones least available. What survives is what was learned implicitly, through doing, through problem-solving in representative conditions.</p>
+          <div class="cs-compare">
+            <div class="cs-compare__col cs-compare__col--before">
+              <span class="cs-compare__head">Explicit Coaching Builds Risk</span>
+              <ul>
+                <li>Teaching HOW to move loads the declarative system — the one cortisol attacks</li>
+                <li>Technical drills in isolation break the perceptual-motor coupling needed in games</li>
+                <li>Players execute perfectly in training and revert in matches — reinvestment</li>
+                <li>Choking is not a personality trait — it is an emergent property of poor design</li>
+              </ul>
+            </div>
+            <div class="cs-compare__col cs-compare__col--after">
+              <span class="cs-compare__head">Environmental Design Prevents It</span>
+              <ul>
+                <li>Implicit learning: skills without declarative knowledge survive pressure (Masters, 1992)</li>
+                <li>External focus: g=0.26 advantage in 70+ studies — direct attention to the effect, not the movement</li>
+                <li>Pressure acclimatisation: practise under gradually increasing anxiety (Oudejans &amp; Pijpers, 2009/2010)</li>
+                <li>Change the context — and a different, more robust skill is available</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tripping points debrief Qs -->
+        <div style="margin-top:48px;">
+          <span class="cs-section__eyebrow">Tripping Points Design Brief</span>
+          <h3 style="font-family:var(--font-heading);font-size:clamp(1.2rem,3vw,1.7rem);font-weight:800;color:var(--white);text-transform:uppercase;margin-bottom:12px;">Your Debrief Questions</h3>
+          <p style="font-size:0.88rem;color:var(--gray-400);line-height:1.8;max-width:580px;margin-bottom:20px;">After you run any pressure-by-design drill, these are the questions that produce the learning — not a teaching point you deliver, but a genuine open question that lets players discover what worked for them.</p>
+          <div class="cs-q-grid">
+            <div class="cs-q-card">
+              <span class="cs-q-card__num">DEBRIEF 01</span>
+              <p class="cs-q-card__q">"What was your Saboteur saying when we went 0–3 down? And what did you choose to do anyway?"</p>
+            </div>
+            <div class="cs-q-card">
+              <span class="cs-q-card__num">DEBRIEF 02</span>
+              <p class="cs-q-card__q">"When the rule changed mid-drill — what did you have to do differently? How did you work it out?"</p>
+            </div>
+            <div class="cs-q-card">
+              <span class="cs-q-card__num">DEBRIEF 03</span>
+              <p class="cs-q-card__q">"What does a good response to a miss look like? What does it look like in your body, not just in your head?"</p>
+            </div>
+            <div class="cs-q-card">
+              <span class="cs-q-card__num">DEBRIEF 04</span>
+              <p class="cs-q-card__q">"If you ran a Status Rondo with this group tomorrow — what do you think would happen to the two players whose confidence is lowest right now?"</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+    05  WATCH & LISTEN
+    ═══════════════════════════════════════ -->
+    <!-- ══════════════════════════════════════════
+         FINISHING UNDER PRESSURE
+    ═════════════════════════════════════════ -->
+    <section class="cs-section" id="cc-finishing">
+      <div class="container">
+        <span class="cs-section__eyebrow">Constraints-Led Approach · Ecological Dynamics</span>
+        <h2 class="cs-section__title">Training Finishing —<br>The Constraints Way</h2>
+        <p class="cs-section__intro">The research is clear on this: <strong>you can't train a skill in a controlled, risk-free environment and expect it to hold up when the pressure is real.</strong> Shooting at an empty net from a stationary position trains a movement — not a decision. The Constraints-Led Approach (CLA) builds finishing that actually transfers to games, because it trains seeing, deciding, and executing all at once — in conditions that resemble the real thing. Skills discovered through solving real problems get stored automatically. Skills learned through being told exactly what to do stay conscious — and conscious technique is precisely what breaks down when the stakes are high.</p>
+
+        <!-- Why isolated drills fail -->
+        <div class="cs-psych-link">
+          <div class="cs-psych-link__title">Why Isolated Finishing Drills Can Work Against You</div>
+          <p class="cs-psych-link__body">When a young player repeatedly practises shooting with no defender, no time pressure, and a coach-fed ball, they get very good at shooting in those conditions. The technique becomes something they consciously control. Then pressure arrives — a crowd, a consequence, a defender closing — and they start thinking about their technique rather than the shot. That's choking. It's not a mental weakness; it's a training problem. <strong>The CLA approach sidesteps this entirely.</strong> When players learn by solving real problems in representative conditions — rather than repeating a coached movement pattern — the skill becomes automatic. It doesn't need conscious management because it was never consciously installed. Explicit coaching has a place. But it should add to what a player has already discovered for themselves, not replace it. <strong>The goal isn't a perfect technique in training. It's the right outcome in a game.</strong></p>
+        </div>
+
+        <!-- Three Constraint Types -->
+        <h3 class="cs-section__h3">Three Things You Can Change — Applied to Finishing</h3>
+        <p class="cs-section__body">Every CLA session manipulates one or more of three types of constraint. Your job as a coach is to decide deliberately which one to adjust and why. You're not telling the player what to do — you're changing the environment so they have to find a better solution themselves.</p>
+
+        <div class="cs-constraint-types">
+          <div class="cs-constraint-type">
+            <div class="cs-constraint-type__name">Task Constraints</div>
+            <ul class="cs-constraint-type__list">
+              <li>Must finish in one touch</li>
+              <li>Score only in specific zone (left/right half, corner)</li>
+              <li>Weak foot only for 10 minutes</li>
+              <li>Must shoot within 3 seconds of receiving</li>
+              <li>Ball must be moving at point of contact</li>
+              <li>Score with the third touch only</li>
+              <li>Cannot use dominant foot inside the box</li>
+            </ul>
+          </div>
+          <div class="cs-constraint-type">
+            <div class="cs-constraint-type__name">Environment Constraints</div>
+            <ul class="cs-constraint-type__list">
+              <li>Reduced goal size (forces accuracy over power)</li>
+              <li>Keeper starts off their line / at the near post</li>
+              <li>Shooting zones marked with cones (only shoot from there)</li>
+              <li>Coloured targets in goal corners</li>
+              <li>Narrow pitch — forces quick decision</li>
+              <li>Keeper can only move laterally (informs angle decision)</li>
+              <li>Multiple small goals instead of one full-size goal</li>
+            </ul>
+          </div>
+          <div class="cs-constraint-type">
+            <div class="cs-constraint-type__name">Individual Constraints</div>
+            <ul class="cs-constraint-type__list">
+              <li>Finish after a 20m sprint (replicates real arrival state)</li>
+              <li>Player must call out "shot" before pulling trigger</li>
+              <li>Eyes closed for the final step (forces proprioceptive awareness)</li>
+              <li>Player rates their own execution from 1–10 before coach feedback</li>
+              <li>Player describes keeper position before receiving ball</li>
+              <li>Player practises with non-dominant eye patched</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Six Drills -->
+        <h3 class="cs-section__h3">Six Practical Activities for Your Next Session</h3>
+        <p class="cs-section__body">These activities came directly out of tonight's session. Each one adjusts a specific constraint so the player has to find their own solution — rather than copy a technique you've shown them. None of them require perfect form. They require the right outcome.</p>
+
+        <div class="cs-drill-grid">
+
+          <div class="cs-drill">
+            <span class="cs-drill__num">DRILL 01</span>
+            <div class="cs-drill__name">The Late-Information Finish</div>
+            <p class="cs-drill__setup">Setup: Ball played into striker. At the moment of delivery, coach raises a coloured bib to signal which half of the goal to target.</p>
+            <p class="cs-drill__desc">The player cannot pre-plan the shot. They must read the ball, set their body, AND process the late information before executing. This directly trains the perception-action coupling that the game demands — the decision is made on real-time information, not pre-programming.</p>
+            <div class="cs-drill__why"><strong>Why it works:</strong> Eliminates the habit of locking in a destination before reading the keeper. Builds the "read late, commit fast" skill that separates elite finishers from good ones. Renshaw et al. (2019) show that skills trained with real information present transfer; skills trained in isolation do not.</div>
+            <div class="cs-drill__tags">
+              <span class="cs-drill__tag">Task Constraint</span>
+              <span class="cs-drill__tag--red">Novelty &amp; Uncertainty</span>
+            </div>
+          </div>
+
+          <div class="cs-drill">
+            <span class="cs-drill__num">DRILL 02</span>
+            <div class="cs-drill__name">The Half-Goal Game</div>
+            <p class="cs-drill__setup">Setup: Full-size goal split by a tall cone in the centre. Each attacker is assigned a half. They can only score in their half.</p>
+            <p class="cs-drill__desc">Eliminates the "hit and hope" strategy. The player must read the keeper, read the angle, and place the ball. Power becomes irrelevant — precision is the only solution. Works equally well as a 1v1 or a small-sided game with a rule applied to all finishes.</p>
+            <div class="cs-drill__why"><strong>Why it works:</strong> Immediately increases the cognitive and technical demand without adding defenders. Players self-organise accuracy. The constraint changes the affordance landscape — the only available shot is a good one.</div>
+            <div class="cs-drill__tags">
+              <span class="cs-drill__tag">Environment Constraint</span>
+              <span class="cs-drill__tag--gold">Accuracy Under Pressure</span>
+            </div>
+          </div>
+
+          <div class="cs-drill">
+            <span class="cs-drill__num">DRILL 03</span>
+            <div class="cs-drill__name">The Pressured Rondo Finish</div>
+            <p class="cs-drill__setup">Setup: Standard rondo (5v2 or 6v2). When a player is dispossessed, they immediately become the defender in a 1v1 finishing opportunity against the nearest attacker.</p>
+            <p class="cs-drill__desc">The transition from losing possession to defending a finish engages all three pressure levers simultaneously: the audience is the rondo group (Social Presence), there is a real consequence (dispossession becomes a defending moment), and the task shifts without warning (Novelty &amp; Uncertainty). The finish happens under maximum psychological load.</p>
+            <div class="cs-drill__why"><strong>Why it works:</strong> Replicates the emotional and cognitive state of a real game-transition moment. Finishing skill trained here is pressure-proof because it was built in pressure.</div>
+            <div class="cs-drill__tags">
+              <span class="cs-drill__tag">Task Constraint</span>
+              <span class="cs-drill__tag--red">All Three Levers</span>
+            </div>
+          </div>
+
+          <div class="cs-drill">
+            <span class="cs-drill__num">DRILL 04</span>
+            <div class="cs-drill__name">The Gauntlet</div>
+            <p class="cs-drill__setup">Setup: 5 balls in sequence, each from a different angle and distance. A passive defender starts 8m away and walks toward the player after the ball is played — arriving approximately 2–3 seconds later.</p>
+            <p class="cs-drill__desc">Nothing is the same twice. Different angle, different delivery, different approach speed. The player must rapidly recalibrate between each repetition — which is exactly the variability that builds robust skill. Repetition without repetition (Bernstein, 1967), the cornerstone of CLA.</p>
+            <div class="cs-drill__why"><strong>Why it works:</strong> Destroys groove-dependent shooting. The player cannot find a rhythm because there is no rhythm to find — just like a game. Each ball demands a fresh perceptual read.</div>
+            <div class="cs-drill__tags">
+              <span class="cs-drill__tag">Task + Individual</span>
+              <span class="cs-drill__tag--red">Consequence</span>
+            </div>
+          </div>
+
+          <div class="cs-drill">
+            <span class="cs-drill__num">DRILL 05</span>
+            <div class="cs-drill__name">Fatigue Finishing</div>
+            <p class="cs-drill__setup">Setup: Sprint to a cone 20–25m away and back. Ball is played to player as they return. One-touch or two-touch finish required.</p>
+            <p class="cs-drill__desc">Not primarily a fitness drill — a technical accuracy drill under physiological load. In a match, a striker arriving at the far post or breaking into the box is rarely fresh. Their finishing technique must survive the cardiovascular and muscular state of actual arrival. Training it fresh is training a different skill entirely.</p>
+            <div class="cs-drill__why"><strong>Why it works:</strong> Forces the player to develop a finish that is economical — minimal unnecessary movement, clean contact, and decision already made before the ball arrives. The fatigue removes the option of "setting up" the shot.</div>
+            <div class="cs-drill__tags">
+              <span class="cs-drill__tag">Individual Constraint</span>
+              <span class="cs-drill__tag--gold">Transfer of Training</span>
+            </div>
+          </div>
+
+          <div class="cs-drill">
+            <span class="cs-drill__num">DRILL 06</span>
+            <div class="cs-drill__name">The Game-State Scenario</div>
+            <p class="cs-drill__setup">Setup: Before any finishing activity, tell the group: "You're 1-0 down. Five minutes left. This is the chance." Consequence lever only — no physical changes to the drill.</p>
+            <p class="cs-drill__desc">The highest-leverage intervention is often the simplest. The emotional and cognitive context of the task changes the physiological state of the player before the ball is even played. The consequence lever from Pressure by Design costs nothing to add and creates the mental environment that most finishing practice ignores entirely. Track who performs differently. That data is your coaching.</p>
+            <div class="cs-drill__why"><strong>Why it works:</strong> Social and consequence pressure activates the stress response that normally causes choking. Training finishing in this state builds familiarity — and familiarity is the primary anti-reinvestment mechanism.</div>
+            <div class="cs-drill__tags">
+              <span class="cs-drill__tag--red">Consequence Lever</span>
+              <span class="cs-drill__tag--red">Social Presence</span>
+            </div>
+          </div>
+
+        </div><!-- /cs-drill-grid -->
+
+        <!-- Psychology + skill development link -->
+        <div class="cs-psych-link">
+          <div class="cs-psych-link__title">Psychology and Skill Development Are the Same Conversation</div>
+          <p class="cs-psych-link__body">The CLA isn't a technical coaching method that happens to have psychological benefits. <strong>The psychology is baked into the method.</strong> When you use constraints to add uncertainty, consequence, and social pressure to a drill, you're building the skill and building the mental resilience to perform it under pressure — at exactly the same time. They can't be separated. Trying to do technical work first and "mental skills work" later is the approach the research identifies as the main problem.<br><br>
+          A player who has only ever finished in safe, controlled conditions has a skill that belongs in safe, controlled conditions. Skills are stored with the context they were learned in. <strong>That's why a player can look technically excellent in a drill and fall apart in a shootout.</strong> The shootout wasn't the problem — the training environment was.<br><br>
+          Your job is to close that gap. Not by making training harder for the sake of it — but by making it more like the real thing. The pressure, the audience, the uncertainty: those belong in the session, because they belong in the game. <em>Renshaw, Davids &amp; Araújo (2019) · Frontiers in Psychology</em></p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="cs-section cs-section--dark" id="cc-media">
+      <div class="container">
+        <span class="cs-section__eyebrow">Reference Materials</span>
+        <h2 class="cs-section__title">Watch &amp; Listen —<br>Go Deeper</h2>
+        <p class="cs-section__intro">Four pieces of media that sit underneath everything we covered — two videos that bring the ideas to life, two podcast episodes that go deeper. Revisit any of these when you want a reminder before a session, a longer listen on the commute, or to share something with a fellow coach.</p>
+
+        <!-- Video grid -->
+        <div class="cs-media-grid">
+
+          <!-- Video 1 - It's Not About the Nail -->
+          <div class="cs-media-card">
+            <div class="cs-media-card__label">
+              <span class="cs-media-card__label-dot cs-media-card__label-dot--yt"></span>
+              <span class="cs-media-card__label-text">YouTube</span>
+              <span class="cs-media-card__label-title">THE NAIL VIDEO</span>
+            </div>
+            <div class="cs-video-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/-4EDhdAHrOg"
+                title="It's Not About the Nail"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            </div>
+            <div class="cs-spotify-desc">The video we watched at the start of Block 02. 1 minute 44 seconds. Watch it again now you know the two traps — the Righting Reflex and the Listening Loop — and notice which character you find hardest to watch. That answer is your data.</div>
+          </div>
+
+          <!-- Video 2 -->
+          <div class="cs-media-card">
+            <div class="cs-media-card__label">
+              <span class="cs-media-card__label-dot cs-media-card__label-dot--yt"></span>
+              <span class="cs-media-card__label-text">YouTube</span>
+              <span class="cs-media-card__label-title">FURTHER VIEWING</span>
+            </div>
+            <div class="cs-video-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/KZBTYViDPlQ?start=32"
+                title="Performance ACT — Reference Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            </div>
+            <div class="cs-spotify-desc">Additional viewing to deepen your understanding of the frameworks covered in tonight's session — ecological dynamics, constraints-led coaching, and the neuroscience of choking under pressure.</div>
+          </div>
+
+        </div>
+
+        <!-- Spotify embed - full width -->
+        <div class="cs-media-full">
+          <div class="cs-media-card__label">
+            <span class="cs-media-card__label-dot cs-media-card__label-dot--sp"></span>
+            <span class="cs-media-card__label-text">Spotify Podcast</span>
+            <span class="cs-media-card__label-title">GO DEEPER — AUDIO</span>
+          </div>
+          <div class="cs-spotify-wrap" style="padding:20px;">
+            <iframe
+              src="https://open.spotify.com/embed/episode/1dx3n0eKNBsBwTHOn372WI"
+              width="100%"
+              height="232"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              style="border-radius:4px;">
+            </iframe>
+          </div>
+          <div class="cs-spotify-desc" style="padding:16px 20px;">The podcast episode that sits directly behind the AOA framework. Worth listening to in full — the conversation gives you the nuance that a session can only introduce. Best on a commute or before you run a 1-to-1 conversation with one of your players.</div>
+        </div>
+
+        <!-- Spotify embed 2 - full width -->
+        <div class="cs-media-full" style="margin-top:16px;">
+          <div class="cs-media-card__label">
+            <span class="cs-media-card__label-dot cs-media-card__label-dot--sp"></span>
+            <span class="cs-media-card__label-text">Spotify Podcast</span>
+            <span class="cs-media-card__label-title">FURTHER LISTENING</span>
+          </div>
+          <div class="cs-spotify-wrap" style="padding:20px;">
+            <iframe
+              src="https://open.spotify.com/embed/episode/7vwhEMrsuA7QZRnJDROsCk"
+              width="100%"
+              height="232"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              style="border-radius:4px;">
+            </iframe>
+          </div>
+          <div class="cs-spotify-desc" style="padding:16px 20px;">Additional listening that picks up where tonight's session left off — particularly useful if you want to go deeper on the Pressure by Design ideas and how constraints-led thinking applies to your squad's specific environment. A good one to come back to after you've tried one of the finishing drills and want to understand why it worked.</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+    06  YOUR COMPASS (Reflection)
+    ═══════════════════════════════════════ -->
+    <section class="cs-section" id="cc-reflect">
+      <div class="container">
+        <span class="cs-section__eyebrow">Your Reflection</span>
+        <h2 class="cs-section__title">What Stays<br>With You</h2>
+        <p class="cs-section__intro">We didn't do a formal reflection in the room tonight — so this is your space to do it now, at your own pace. There's no right answer and no one's checking. The notes you leave here are just for you. Take five minutes now or come back to this page later in the week.</p>
+
+        <!-- Open reflection prompts -->
+        <div class="cs-reflect-grid" style="margin-bottom:40px;">
+
+          <div class="cs-reflect-item">
+            <span class="cs-reflect-label">What landed for you?</span>
+            <p class="cs-reflect-q">Which idea, moment, or conversation from tonight is still sitting with you? It doesn't need to be the "most important" one — just the one that's still there.</p>
+            <textarea class="cs-reflect-textarea" placeholder="The thing that's still with me is…"></textarea>
+          </div>
+
+          <div class="cs-reflect-item">
+            <span class="cs-reflect-label">Where do you see yourself?</span>
+            <p class="cs-reflect-q">Which of the coaching traps do you recognise most in yourself — the Righting Reflex, the Listening Loop, or the dysregulated sideline? Be honest. That's the starting point.</p>
+            <textarea class="cs-reflect-textarea" placeholder="If I'm being honest, the one I recognise most is…"></textarea>
+          </div>
+
+          <div class="cs-reflect-item">
+            <span class="cs-reflect-label">One thing to try this week</span>
+            <p class="cs-reflect-q">Not three things. One. What's the smallest, most specific change you could make in your next session or conversation that would put one idea from tonight into practice?</p>
+            <textarea class="cs-reflect-textarea" placeholder="The one thing I'm going to try is…"></textarea>
+          </div>
+
+          <div class="cs-reflect-item">
+            <span class="cs-reflect-label">What would help you go further?</span>
+            <p class="cs-reflect-q">What would make it easier to apply this? More examples? A conversation with someone? A chance to practice? Knowing this helps you plan the next step.</p>
+            <textarea class="cs-reflect-textarea" placeholder="What would help me most is…"></textarea>
+          </div>
+
+        </div>
+
+        <!-- Where to start -->
+        <h3 class="cs-section__h3" style="margin-top:0;">Where to Start — Four Practical First Steps</h3>
+        <p class="cs-section__body" style="margin-bottom:24px;">You don't need to change everything at once. Pick the one below that feels most relevant to where you are right now.</p>
+
+        <div class="cs-halftime">
+
+          <div class="cs-ht-row">
+            <div class="cs-ht-phase">
+              <div class="cs-ht-letter">01</div>
+              <div class="cs-ht-time">This week</div>
+            </div>
+            <div class="cs-ht-content">
+              <div class="cs-ht-title">Have one AOA conversation</div>
+              <p class="cs-ht-text">Pick one player you've been meaning to speak to. Before the conversation, write down your opening Ask — the actual words. Not "I'll ask how they're doing" but the specific question. Stick to the sequence: Ask first, Offer one thing with permission, Ask again. That's it. You don't need to do the whole framework — just stay in the Ask longer than feels comfortable.</p>
+              <p class="cs-ht-not">Righting Reflex check: if you've already planned what you're going to tell them, start again with the Ask.</p>
+            </div>
+          </div>
+
+          <div class="cs-ht-row">
+            <div class="cs-ht-phase">
+              <div class="cs-ht-letter">02</div>
+              <div class="cs-ht-time">Next session</div>
+            </div>
+            <div class="cs-ht-content">
+              <div class="cs-ht-title">Change one thing about a drill you already run</div>
+              <p class="cs-ht-text">You don't need a new session plan. Take something you're already doing and turn up one lever — add an audience (Social Presence), make something at stake (Consequence), or change a rule with no warning (Novelty &amp; Uncertainty). Observe what changes in your players. That observation is your coaching data. You're not adding pressure for the sake of it — you're making the environment more like a game.</p>
+              <p class="cs-ht-not">Start simple: "whole squad watching this pair" is enough to activate the social pressure lever.</p>
+            </div>
+          </div>
+
+          <div class="cs-ht-row">
+            <div class="cs-ht-phase">
+              <div class="cs-ht-letter">03</div>
+              <div class="cs-ht-time">Before matchday</div>
+            </div>
+            <div class="cs-ht-content">
+              <div class="cs-ht-title">Try the ACE reset before you coach</div>
+              <p class="cs-ht-text">Before your next session or match starts — in the car, in the changing room, wherever you get a moment — try the ACE sequence on yourself. Acknowledge what you're carrying (name it silently, even just "I'm stressed about selection"). Come Back to something external — your feet, one breath out, one thing you can see. Then Express one thing you want to bring to this session. It takes about 45 seconds. It changes what your players pick up before you've said a word.</p>
+              <p class="cs-ht-not">You don't have to believe it will work to try it. Try it and see what you notice.</p>
+            </div>
+          </div>
+
+          <div class="cs-ht-row">
+            <div class="cs-ht-phase">
+              <div class="cs-ht-letter">04</div>
+              <div class="cs-ht-time">This month</div>
+            </div>
+            <div class="cs-ht-content">
+              <div class="cs-ht-title">Come back to this page</div>
+              <p class="cs-ht-text">The ideas here land differently the second time — once you've tried something and seen what happened. The videos, the podcast episodes, and the drill guides are all here whenever you need them. Share the page with another coach. Use the Watch &amp; Listen section before a session when you need a reminder. The frameworks only become tools when they're used more than once.</p>
+              <p class="cs-ht-not">The goal isn't to remember everything from tonight. It's to change one thing, see what happens, and build from there.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="cs-quote" style="margin-top:40px;">
+          <p>"The point of tonight wasn't to give you more to think about. It was to give you something worth trying. Pick one thing, try it this week, and notice what changes. That's the whole job."</p>
+          <cite>James Orritt · The Coach's Compass · Nomads United AFC</cite>
+        </div>
+
+        <!-- Reference list -->
+        <div style="margin-top:40px;border-top:1px solid rgba(255,255,255,0.06);padding-top:32px;">
+          <p style="font-family:var(--font-heading);font-size:0.6rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gray-700);margin-bottom:16px;">Key References</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 32px;">
+            <p style="font-size:0.75rem;color:var(--gray-700);line-height:1.6;">Rollnick, Fader, Breckon &amp; Moyers (2020) — Coaching Athletes to Be Their Best</p>
+            <p style="font-size:0.75rem;color:var(--gray-700);line-height:1.6;">Renshaw, Davids &amp; Araújo et al. (2019) — Ecological Dynamics, Frontiers in Psychology</p>
+            <p style="font-size:0.75rem;color:var(--gray-700);line-height:1.6;">Lieberman et al. (2007) — Affect Labelling &amp; Amygdala Activation, Psychological Science</p>
+            <p style="font-size:0.75rem;color:var(--gray-700);line-height:1.6;">Wulf et al. (2021) — Attentional Focus &amp; Motor Learning, Psychological Bulletin</p>
+            <p style="font-size:0.75rem;color:var(--gray-700);line-height:1.6;">Masters (1992) — Implicit Learning &amp; Reinvestment, British Journal of Psychology</p>
+            <p style="font-size:0.75rem;color:var(--gray-700);line-height:1.6;">Oudejans &amp; Pijpers (2009/2010) — Anxiety Acclimatisation, British Journal of Sport Medicine</p>
+            <p style="font-size:0.75rem;color:var(--gray-700);line-height:1.6;">Lange-Smith et al. (2024) — PST Review of Reviews</p>
+            <p style="font-size:0.75rem;color:var(--gray-700);line-height:1.6;">Frontiers in Psychology (2025) — Systematic review, 101 coach emotional contagion studies</p>
+            <p style="font-size:0.75rem;color:var(--gray-700);line-height:1.6;">Raya-Castellano et al. (2023) — Half-Time Talks in La Liga Academy Football, SAGE</p>
+            <p style="font-size:0.75rem;color:var(--gray-700);line-height:1.6;">Magness (2022) — Do Hard Things · Interoception &amp; Performance</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer nav -->
+    <div class="container">
+      <div class="cs-footer-nav">
+        <a href="grow-nomads.html" class="cs-footer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Coach Hub
+        </a>
+        <a href="grow-nomads-coach-session-1.html" class="cs-footer-link" style="color:var(--club);">
+          Session 1: Meeting Your Mind
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer-bar">
+    <div class="container">
+      <p>&copy; 2025 The Performance Act. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js?v=3"></script>
+  <script>
+    /* ── Progress bar ── */
+    const progressFill = document.getElementById('progressFill');
+    function updateProgress() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      progressFill.style.width = Math.min(100, (scrollTop / docHeight) * 100) + '%';
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+
+    /* ── Section nav active state ── */
+    const navBtns = document.querySelectorAll('.cs-nav__btn');
+    const sections = document.querySelectorAll('section[id]');
+    navBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.target);
+        if (target) {
+          const headerOffset = 104;
+          const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+    function updateNav() {
+      let current = '';
+      sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 130) current = sec.id;
+      });
+      navBtns.forEach(btn => {
+        btn.classList.toggle('is-active', btn.dataset.target === current);
+      });
+    }
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+
+    /* ── AOA Accordion ── */
+    document.querySelectorAll('#aoaAccordion .cs-accordion-card').forEach(card => {
+      card.querySelector('.cs-accordion-card__head').addEventListener('click', () => {
+        const isOpen = card.classList.contains('is-open');
+        document.querySelectorAll('#aoaAccordion .cs-accordion-card').forEach(c => c.classList.remove('is-open'));
+        if (!isOpen) card.classList.add('is-open');
+      });
+    });
+
+    /* ── ACE Accordion ── */
+    document.querySelectorAll('#aceAccordion .cs-accordion-card').forEach(card => {
+      card.querySelector('.cs-accordion-card__head').addEventListener('click', () => {
+        const isOpen = card.classList.contains('is-open');
+        document.querySelectorAll('#aceAccordion .cs-accordion-card').forEach(c => c.classList.remove('is-open'));
+        if (!isOpen) card.classList.add('is-open');
+      });
+    });
+  </script>
+</body>
+</html>

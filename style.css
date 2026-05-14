@@ -290,6 +290,21 @@ img {
   color: var(--yellow);
 }
 
+.nav-link--grow {
+  color: var(--yellow);
+  border: 1px solid rgba(255,229,0,0.35);
+  padding: 4px 14px !important;
+  letter-spacing: 0.14em;
+}
+
+.nav-link--grow::after { display: none; }
+
+.nav-link--grow:hover {
+  background: var(--yellow);
+  color: #000;
+  border-color: var(--yellow);
+}
+
 .header__actions {
   display: flex;
   gap: 12px;

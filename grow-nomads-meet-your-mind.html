@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meet Your Mind | Nomads GROW | The Performance Act</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=15">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+
+  <style>
+    /* ============================================================
+       MEET YOUR MIND — Interactive Session Page
+       Nomads United AFC · The Performance Act
+    ============================================================ */
+    :root {
+      --club:        #0E3A84;
+      --club-dark:   #092970;
+      --club-light:  #1A52B0;
+      --club-accent: #C8102E;
+      --correct:     #22c55e;
+      --wrong:       #e63b2e;
+    }
+
+    /* ---------- PROGRESS BAR ---------- */
+    .at-progress-bar {
+      position: fixed;
+      top: var(--header-height);
+      left: 0; right: 0;
+      height: 3px;
+      background: rgba(255,255,255,0.06);
+      z-index: 999;
+    }
+    .at-progress-fill {
+      height: 100%;
+      background: var(--club);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    /* ---------- CLUB BANNER ---------- */
+    .at-club-banner {
+      background: linear-gradient(135deg, var(--club-dark) 0%, var(--club) 100%);
+      border-bottom: 3px solid var(--club-accent);
+      padding: 16px 0;
+    }
+    .at-club-banner__inner {
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 16px;
+    }
+    .at-club-banner__left { display: flex; align-items: center; gap: 12px; }
+    .at-club-logo { height: 40px; width: auto; }
+    .at-club-name {
+      font-family: var(--font-heading); font-size: 0.95rem;
+      font-weight: 700; letter-spacing: 0.1em; color: #fff; text-transform: uppercase;
+    }
+    .at-club-sub {
+      font-family: var(--font-heading); font-size: 0.6rem;
+      letter-spacing: 0.2em; color: rgba(255,255,255,0.55); text-transform: uppercase;
+    }
+    .at-back-btn {
+      font-family: var(--font-heading); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.65); background: transparent;
+      border: 1px solid rgba(255,255,255,0.2); padding: 8px 16px;
+      text-decoration: none; transition: all 0.3s ease; flex-shrink: 0;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .at-back-btn:hover { color: #fff; border-color: rgba(255,255,255,0.5); }
+
+    /* ---------- PAGE HERO ---------- */
+    .at-hero {
+      background: var(--black);
+      padding: calc(var(--header-height) + 80px) 0 80px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .at-hero__eyebrow {
+      font-family: var(--font-heading); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--club); margin-bottom: 16px; display: block;
+    }
+    .at-hero__title {
+      font-family: var(--font-heading); font-size: clamp(3.5rem, 10vw, 8rem);
+      font-weight: 700; line-height: 0.9; color: var(--white);
+      text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 24px;
+    }
+    .at-hero__title em { color: var(--club); font-style: normal; display: block; }
+    .at-hero__sub {
+      font-size: 1.05rem; color: var(--gray-500); line-height: 1.7;
+      max-width: 560px; border-left: 2px solid var(--club); padding-left: 20px;
+    }
+    .at-hero__meta {
+      display: flex; align-items: center; gap: 24px; margin-top: 40px; flex-wrap: wrap;
+    }
+    .at-hero__tag {
+      font-family: var(--font-heading); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 6px 14px; border: 1px solid rgba(255,255,255,0.12); color: var(--gray-500);
+    }
+    .at-hero__tag--blue {
+      border-color: var(--club); color: var(--club); background: rgba(14,58,132,0.1);
+    }
+
+    /* ---------- SECTIONS ---------- */
+    .at-sec {
+      padding: 100px 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .at-sec--alt { background: var(--gray-900); }
+
+    .at-sec-header { margin-bottom: 48px; }
+    .at-sec-num {
+      font-family: var(--font-heading); font-size: clamp(5rem, 10vw, 8rem);
+      font-weight: 700; color: transparent;
+      -webkit-text-stroke: 1px rgba(255,255,255,0.06);
+      line-height: 0.85; display: block; margin-bottom: -12px; user-select: none;
+    }
+    .at-sec-title {
+      font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700; color: var(--white); text-transform: uppercase; line-height: 1.05;
+    }
+    .at-sec-title em { color: var(--club); font-style: normal; }
+
+    .at-lead {
+      font-family: var(--font-heading); font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 500; color: var(--white); line-height: 1.35; margin-bottom: 20px;
+    }
+    .at-body {
+      font-size: 1rem; color: var(--gray-300); line-height: 1.8; margin-bottom: 16px;
+      max-width: 680px;
+    }
+    .at-body strong { color: var(--white); }
+    .at-body em { color: var(--club); font-style: normal; }
+
+    /* ---------- VIDEO EMBED ---------- */
+    .at-video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+      margin: 40px 0; background: var(--gray-900);
+    }
+    .at-video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;
+    }
+    .at-video-label {
+      font-family: var(--font-heading); font-size: 0.65rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--club); margin-bottom: 10px; display: block;
+    }
+
+    /* ---------- PINK ELEPHANT CHALLENGE ---------- */
+    .at-elephant {
+      background: var(--gray-900); border: 1px solid rgba(255,255,255,0.06);
+      padding: 48px 40px; text-align: center; margin: 40px 0;
+    }
+    .at-elephant__prompt p {
+      font-size: 1rem; color: var(--gray-300); line-height: 1.7; margin-bottom: 8px;
+    }
+    .at-elephant__prompt strong { color: var(--white); }
+    .at-elephant__prompt em { color: var(--club); font-style: normal; }
+    .at-elephant__detail {
+      font-size: 0.88rem; color: var(--gray-500); margin-bottom: 32px; font-style: italic;
+    }
+    .at-elephant-start {
+      font-family: var(--font-heading); font-size: 1rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 18px 40px; background: var(--club); color: #fff;
+      border: 2px solid var(--club); cursor: pointer; transition: all 0.3s ease;
+    }
+    .at-elephant-start:hover { background: var(--club-dark); }
+    .at-countdown {
+      display: none;
+    }
+    .at-countdown.is-active { display: block; }
+    .at-countdown__num {
+      font-family: var(--font-heading); font-size: 6rem; font-weight: 700;
+      color: var(--club); line-height: 1; margin-bottom: 8px;
+      animation: at-pulse 1s ease-in-out infinite;
+    }
+    @keyframes at-pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+    .at-countdown__hint { font-size: 0.9rem; color: var(--gray-500); font-style: italic; }
+    .at-elephant-result { display: none; }
+    .at-elephant-result.is-active { display: block; animation: fadeIn 0.5s ease; }
+    .at-elephant-emoji { font-size: 5rem; margin-bottom: 16px; }
+    .at-elephant-reveal { font-size: 1.1rem; color: var(--white); font-weight: 600; margin-bottom: 8px; }
+
+    /* ---------- NOISE MAP ---------- */
+    .at-noise-intro {
+      font-size: 0.95rem; color: var(--gray-500); margin-bottom: 24px; line-height: 1.6;
+    }
+    .at-noise-grid {
+      display: flex; flex-wrap: wrap; gap: 10px; margin: 32px 0;
+    }
+    .at-noise-tag {
+      font-family: var(--font-body); font-size: 0.88rem; color: var(--gray-300);
+      padding: 10px 18px; background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1); cursor: pointer;
+      transition: all 0.25s ease; text-align: left;
+    }
+    .at-noise-tag:hover { border-color: rgba(14,58,132,0.4); }
+    .at-noise-tag.is-selected {
+      background: rgba(14,58,132,0.15); border-color: var(--club);
+      color: var(--white);
+    }
+    .at-noise-count {
+      font-family: var(--font-heading); font-size: 0.85rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gray-500); margin-top: 8px; margin-bottom: 20px;
+    }
+    .at-noise-count span { color: var(--club); }
+    .at-noise-reveal {
+      display: none; padding: 20px 24px;
+      border-left: 3px solid var(--club); background: rgba(14,58,132,0.06);
+      font-size: 0.92rem; color: var(--gray-300); line-height: 1.7;
+    }
+    .at-noise-reveal.is-visible { display: block; animation: fadeIn 0.4s ease; }
+    .at-noise-reveal strong { color: var(--white); }
+
+    /* ---------- ACE STEPPER ---------- */
+    .at-ace {
+      background: var(--gray-900); border: 1px solid rgba(255,255,255,0.06); margin: 40px 0;
+    }
+    .at-ace-step {
+      padding: 48px 44px; display: none;
+      animation: fadeIn 0.4s ease;
+    }
+    .at-ace-step.is-active { display: block; }
+    .at-ace-letter {
+      font-family: var(--font-heading); font-size: 5rem; font-weight: 700;
+      color: var(--club); line-height: 1; margin-bottom: 8px;
+    }
+    .at-ace-word {
+      font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700;
+      color: var(--white); text-transform: uppercase; letter-spacing: 0.08em;
+      margin-bottom: 20px;
+    }
+    .at-ace-desc { font-size: 1rem; color: var(--gray-300); line-height: 1.75; margin-bottom: 16px; }
+    .at-ace-example {
+      font-style: italic; color: var(--gray-500); font-size: 0.92rem;
+      padding: 16px 20px; border-left: 2px solid rgba(14,58,132,0.4);
+      margin: 16px 0; line-height: 1.65;
+    }
+    .at-ace-key {
+      font-size: 0.92rem; color: var(--gray-300); line-height: 1.65;
+      padding: 16px 20px; background: rgba(14,58,132,0.07);
+    }
+    .at-ace-key strong { color: var(--white); }
+    .at-ace-nav {
+      padding: 20px 44px; border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .at-ace-btn {
+      font-family: var(--font-heading); font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 10px 24px; background: transparent;
+      border: 1px solid rgba(255,255,255,0.12); color: var(--gray-500);
+      cursor: pointer; transition: all 0.3s ease;
+    }
+    .at-ace-btn:hover:not(:disabled) { border-color: var(--club); color: var(--white); }
+    .at-ace-btn:disabled { opacity: 0.3; cursor: default; }
+    .at-ace-btn.is-primary {
+      background: var(--club); color: #fff; border-color: var(--club);
+    }
+    .at-ace-btn.is-primary:hover { background: var(--club-dark); }
+    .at-ace-dots { display: flex; gap: 8px; }
+    .at-ace-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,0.15); transition: background 0.3s;
+    }
+    .at-ace-dot.is-active { background: var(--club); }
+
+    /* ---------- SCENARIO CARD ---------- */
+    .at-scenario-card {
+      background: var(--gray-900); border: 1px solid rgba(255,255,255,0.06);
+      padding: 36px; margin-bottom: 24px;
+    }
+    .at-scenario-badge {
+      font-family: var(--font-heading); font-size: 0.62rem; font-weight: 600;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--club-accent); margin-bottom: 16px; display: block;
+    }
+    .at-scenario-text {
+      font-size: 1rem; color: var(--white); line-height: 1.7;
+      font-style: italic; margin-bottom: 16px;
+    }
+    .at-scenario-q {
+      font-family: var(--font-heading); font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500);
+    }
+
+    /* ---------- QUIZ SYSTEM ---------- */
+    .at-quiz-wrap { margin-top: 48px; }
+    .at-quiz-label {
+      display: flex; align-items: center; gap: 16px; margin-bottom: 16px;
+    }
+    .at-quiz-badge {
+      font-family: var(--font-heading); font-size: 0.62rem; font-weight: 600;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      padding: 5px 12px; background: var(--club); color: #fff;
+    }
+    .at-quiz-progress {
+      font-family: var(--font-heading); font-size: 0.62rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gray-500);
+    }
+    .at-quiz {
+      background: var(--gray-900); border: 1px solid rgba(255,255,255,0.06);
+      padding: 40px;
+    }
+    .at-quiz__q {
+      font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600;
+      color: var(--white); text-transform: uppercase; letter-spacing: 0.04em;
+      line-height: 1.3; margin-bottom: 28px;
+    }
+    .at-quiz__opts { display: flex; flex-direction: column; gap: 10px; }
+    .at-quiz__opt {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 16px 20px; background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.07);
+      cursor: pointer; transition: all 0.25s ease;
+      font-family: var(--font-body); font-size: 0.9rem;
+      color: var(--gray-300); line-height: 1.45; text-align: left; width: 100%;
+    }
+    .at-quiz__opt:hover:not([disabled]) {
+      border-color: rgba(14,58,132,0.4); background: rgba(14,58,132,0.06);
+    }
+    .at-quiz__opt[disabled] { cursor: default; }
+    .at-quiz__opt.is-correct { border-color: var(--correct); background: rgba(34,197,94,0.07); color: var(--white); }
+    .at-quiz__opt.is-wrong { border-color: var(--wrong); background: rgba(230,59,46,0.07); color: var(--gray-700); }
+    .at-quiz__opt.is-highlight { border-color: var(--correct); background: rgba(34,197,94,0.07); color: var(--white); }
+    .at-opt-letter {
+      font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.1em; color: var(--gray-700); flex-shrink: 0; width: 22px; margin-top: 1px;
+    }
+    .at-quiz__opt.is-correct .at-opt-letter,
+    .at-quiz__opt.is-highlight .at-opt-letter { color: var(--correct); }
+    .at-quiz__opt.is-wrong .at-opt-letter { color: var(--wrong); }
+
+    .at-feedback {
+      display: none; margin-top: 20px; padding: 18px 22px;
+      border-left: 3px solid transparent;
+      font-size: 0.9rem; line-height: 1.7; color: var(--gray-300);
+    }
+    .at-feedback.is-visible { display: block; animation: fadeIn 0.3s ease; }
+    .at-feedback.is-correct { border-color: var(--correct); background: rgba(34,197,94,0.05); }
+    .at-feedback.is-wrong { border-color: var(--wrong); background: rgba(230,59,46,0.05); }
+    .at-feedback strong { color: var(--white); }
+
+    .at-quiz-reset {
+      display: none; margin-top: 14px;
+      font-family: var(--font-heading); font-size: 0.68rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--gray-500);
+      background: none; border: none; cursor: pointer; text-decoration: underline;
+      text-underline-offset: 3px; transition: color 0.3s;
+    }
+    .at-quiz-reset.is-visible { display: inline-block; }
+    .at-quiz-reset:hover { color: var(--white); }
+
+    /* ---------- INSIGHT CALLOUT ---------- */
+    .at-insight {
+      margin-top: 32px; padding: 28px 32px;
+      border: 1px solid rgba(14,58,132,0.3);
+      background: rgba(14,58,132,0.05);
+      display: none;
+    }
+    .at-insight.is-visible { display: block; animation: fadeIn 0.4s ease; }
+    .at-insight__label {
+      font-family: var(--font-heading); font-size: 0.62rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--club); margin-bottom: 10px; display: block;
+    }
+    .at-insight p { font-size: 0.92rem; color: var(--gray-300); line-height: 1.8; }
+    .at-insight strong { color: var(--white); }
+
+    /* ---------- SECTION CLOSER (next section teaser) ---------- */
+    .at-next {
+      text-align: center; padding: 48px 0 0; margin-top: 48px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .at-next__label {
+      font-family: var(--font-heading); font-size: 0.62rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gray-700); margin-bottom: 8px; display: block;
+    }
+    .at-next__text { font-size: 0.88rem; color: var(--gray-500); margin-bottom: 20px; }
+
+    /* ---------- PAGE END CTA ---------- */
+    .at-page-end {
+      background: var(--gray-900); padding: 100px 0;
+      border-top: 3px solid var(--club); text-align: center;
+    }
+    .at-page-end__badge {
+      font-family: var(--font-heading); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.25em; text-transform: uppercase; color: var(--club);
+      margin-bottom: 16px; display: block;
+    }
+    .at-page-end__title {
+      font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700; color: var(--white); text-transform: uppercase;
+      line-height: 1.1; margin-bottom: 20px;
+    }
+    .at-page-end__text {
+      font-size: 1rem; color: var(--gray-500); line-height: 1.7; max-width: 500px;
+      margin: 0 auto 40px;
+    }
+    .at-page-end__actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      .at-ace-step { padding: 32px 24px; }
+      .at-ace-nav { padding: 16px 24px; }
+      .at-elephant { padding: 32px 24px; }
+      .at-quiz { padding: 28px 20px; }
+      .at-hero { padding: calc(var(--header-height) + 56px) 0 56px; }
+    }
+
+    @keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER (same as main site) -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="images/logo-horizontal.png" alt="The Performance Act" class="logo-img logo-img--header">
+      </a>
+      <nav class="header__nav" id="mainNav">
+        <a href="index.html" class="nav-link">HOME</a>
+        <a href="approach.html" class="nav-link">APPROACH</a>
+        <a href="programs.html" class="nav-link">SUPPORT</a>
+        <a href="blog.html" class="nav-link">INSIGHTS</a>
+        <a href="contact.html" class="nav-link">CONTACT</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <nav class="mobile-nav__links">
+      <a href="index.html" class="mobile-nav__link">HOME</a>
+      <a href="approach.html" class="mobile-nav__link">APPROACH</a>
+      <a href="programs.html" class="mobile-nav__link">SUPPORT</a>
+      <a href="blog.html" class="mobile-nav__link">INSIGHTS</a>
+      <a href="contact.html" class="mobile-nav__link">CONTACT</a>
+    </nav>
+  </div>
+
+  <!-- Progress Bar -->
+  <div class="at-progress-bar"><div class="at-progress-fill" id="progressFill"></div></div>
+
+  <!-- Club Banner -->
+  <div class="at-club-banner">
+    <div class="container">
+      <div class="at-club-banner__inner">
+        <div class="at-club-banner__left">
+          <img src="images/nomads-logo.png" alt="Nomads United AFC" class="at-club-logo" onerror="this.style.display='none'">
+          <div>
+            <div class="at-club-name">Nomads United AFC</div>
+            <div class="at-club-sub">GROW Platform · Powered by The Performance Act</div>
+          </div>
+        </div>
+        <a href="grow-nomads.html" class="at-back-btn">&#8592; Back to Resources</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="at-hero">
+    <div class="container">
+      <span class="at-hero__eyebrow">Session 1 · U13 &amp; U14</span>
+      <h1 class="at-hero__title">MEET YOUR<br><em>MIND</em></h1>
+      <p class="at-hero__sub">Your mind is like a noisy passenger who shows up whenever things get hard. It's not your enemy — it's trying to protect you — but it's a terrible football coach. Today we learn how to notice it, unhook from it, and keep playing our game.</p>
+      <div class="at-hero__meta">
+        <span class="at-hero__tag at-hero__tag--blue">Session 1 of 2</span>
+        <span class="at-hero__tag">6 Knowledge Checks</span>
+        <span class="at-hero__tag">ACT-Based</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 01 ==================== -->
+  <section class="at-sec" id="sec-01">
+    <div class="container">
+      <div class="at-sec-header">
+        <span class="at-sec-num">01</span>
+        <h2 class="at-sec-title">THE NOISY<br><em>PASSENGER</em></h2>
+      </div>
+
+      <p class="at-lead">Your mind is always talking. That's not a problem — that's a brain doing its job.</p>
+      <p class="at-body">Imagine you're driving a car. You're focused on the road. But in the backseat there's a passenger — loud, opinionated, always convinced something's about to go wrong. <strong>"You're going to mess this up." "Everyone's watching." "What if you lose the ball again?"</strong></p>
+      <p class="at-body">That passenger is your mind. It shows up in every game, every pressure moment, every big performance. And it shows up for <em>everyone</em> — Richie McCaw had it, Messi has it, every elite athlete you've ever admired has it too.</p>
+      <p class="at-body">The session you just did — Meet Your Mind — was built on one foundational idea from ACT (Acceptance and Commitment Therapy): <strong>you can't make the passenger disappear, but you don't have to let it drive.</strong></p>
+
+      <div class="at-quiz-wrap">
+        <div class="at-quiz-label">
+          <span class="at-quiz-badge">CHECK 1 of 6</span>
+          <span class="at-quiz-progress">The Noisy Passenger</span>
+        </div>
+        <div class="at-quiz" id="q1">
+          <p class="at-quiz__q">According to the GROW framework, what should you do when unhelpful thoughts show up during a match?</p>
+          <div class="at-quiz__opts" id="q1-opts">
+            <button class="at-quiz__opt" data-i="0"><span class="at-opt-letter">A</span><span>Fight them as hard as you can — strong players control their minds completely</span></button>
+            <button class="at-quiz__opt" data-i="1"><span class="at-opt-letter">B</span><span>Replace them with positive thoughts immediately so they don't affect you</span></button>
+            <button class="at-quiz__opt" data-i="2"><span class="at-opt-letter">C</span><span>Notice them, name them, and keep playing your game anyway</span></button>
+            <button class="at-quiz__opt" data-i="3"><span class="at-opt-letter">D</span><span>Prove them wrong by performing perfectly on the next touch</span></button>
+          </div>
+          <div class="at-feedback" id="q1-fb"></div>
+          <button class="at-quiz-reset" id="q1-reset">Try Again</button>
+        </div>
+        <div class="at-insight" id="q1-insight">
+          <span class="at-insight__label">The Insight</span>
+          <p>Fighting thoughts makes them louder — that's the irony of mental control. The ACT approach is different: <strong>you notice the passenger, you might even name it ("there's the 'I'm going to mess up' thought"), and then you keep your hands on the wheel.</strong> You're not trying to silence the mind. You're learning not to hand over control.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 02 ==================== -->
+  <section class="at-sec at-sec--alt" id="sec-02">
+    <div class="container">
+      <div class="at-sec-header">
+        <span class="at-sec-num">02</span>
+        <h2 class="at-sec-title">THE PINK<br><em>ELEPHANT TEST</em></h2>
+      </div>
+
+      <p class="at-lead">Ready for the most important test of the session? Here are the rules.</p>
+      <p class="at-body">For the next 10 seconds, you must <strong>not</strong> think about a pink elephant. A big, round, rosy elephant — with little wings and a polka-dot hat. It might be bouncing on a trampoline. It might be making a trumpet sound. Whatever you do — <em>do not picture it.</em></p>
+
+      <!-- Interactive Pink Elephant Challenge -->
+      <div class="at-elephant" id="elephantWrap">
+        <div class="at-elephant__prompt" id="elephantPrompt">
+          <p>Your challenge: for <strong>10 seconds</strong>, do <em>not</em> think about a pink elephant.</p>
+          <p class="at-elephant__detail">Don't picture the big pink elephant with little wings and a polka-dot hat. Definitely don't hear the trumpet sound it makes.</p>
+          <button class="at-elephant-start" id="elephantStart">START THE CHALLENGE</button>
+        </div>
+        <div class="at-countdown" id="elephantCountdown">
+          <div class="at-countdown__num" id="countdownNum">10</div>
+          <p class="at-countdown__hint">Don't think about it...</p>
+        </div>
+        <div class="at-elephant-result" id="elephantResult">
+          <div class="at-elephant-emoji">🐘</div>
+          <p class="at-elephant-reveal"><strong>You thought about it, didn't you.</strong></p>
+          <p style="font-size:0.92rem;color:var(--gray-400);margin-top:8px;">That's not a flaw. That's your brain working exactly as designed.</p>
+        </div>
+      </div>
+
+      <p class="at-body">What you just experienced is called the <strong>ironic process of mental control</strong>. Psychologist Daniel Wegner first showed this in the 1980s: the harder you try NOT to think something, the more that thought bounces back. This is why "just don't think about it" is the worst advice in sport.</p>
+
+      <div class="at-quiz-wrap">
+        <div class="at-quiz-label">
+          <span class="at-quiz-badge">CHECK 2 of 6</span>
+          <span class="at-quiz-progress">The Pink Elephant Test</span>
+        </div>
+        <div class="at-quiz" id="q2">
+          <p class="at-quiz__q">What does the Pink Elephant challenge prove about trying to control your thoughts?</p>
+          <div class="at-quiz__opts" id="q2-opts">
+            <button class="at-quiz__opt" data-i="0"><span class="at-opt-letter">A</span><span>With enough mental training, you can eliminate unwanted thoughts completely</span></button>
+            <button class="at-quiz__opt" data-i="1"><span class="at-opt-letter">B</span><span>Trying to suppress a thought tends to make it come back more frequently</span></button>
+            <button class="at-quiz__opt" data-i="2"><span class="at-opt-letter">C</span><span>Positive thinking is a reliable alternative that blocks negative thoughts</span></button>
+            <button class="at-quiz__opt" data-i="3"><span class="at-opt-letter">D</span><span>Elite athletes are immune to this because of their training</span></button>
+          </div>
+          <div class="at-feedback" id="q2-fb"></div>
+          <button class="at-quiz-reset" id="q2-reset">Try Again</button>
+        </div>
+        <div class="at-insight" id="q2-insight">
+          <span class="at-insight__label">The Insight</span>
+          <p>This is why GROW doesn't teach you to fight thoughts or replace them. <strong>The more you wrestle with mental noise, the louder it gets.</strong> The skill is learning to notice it without handing it the steering wheel. That's what ACE is built for.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 03 ==================== -->
+  <section class="at-sec" id="sec-03">
+    <div class="container">
+      <div class="at-sec-header">
+        <span class="at-sec-num">03</span>
+        <h2 class="at-sec-title">NAME IT,<br><em>DON'T FIGHT IT</em></h2>
+      </div>
+
+      <p class="at-lead">There's a phrase in neuroscience: "Name it to tame it." It works.</p>
+      <p class="at-body">When you label a thought or feeling, you activate the part of your brain that observes — and you quiet the part that reacts. In ACT this is called <strong>cognitive defusion</strong>: creating a little space between you and the thought, so it doesn't automatically drive your behaviour.</p>
+      <p class="at-body">The simplest defusion technique? Add <em>"I'm noticing the thought that..."</em> before whatever the mind says.</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:40px 0;">
+        <div style="background:rgba(230,59,46,0.06);border:1px solid rgba(230,59,46,0.2);padding:28px 24px;">
+          <span style="font-family:var(--font-heading);font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--wrong);display:block;margin-bottom:12px;">FUSED — you ARE the thought</span>
+          <p style="font-size:1rem;color:var(--gray-300);line-height:1.6;font-style:italic;">"I'm going to mess this up."</p>
+          <p style="font-size:0.82rem;color:var(--gray-500);margin-top:8px;">The thought is driving.</p>
+        </div>
+        <div style="background:rgba(14,58,132,0.06);border:1px solid rgba(14,58,132,0.25);padding:28px 24px;">
+          <span style="font-family:var(--font-heading);font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--club);display:block;margin-bottom:12px;">DEFUSED — you HAVE the thought</span>
+          <p style="font-size:1rem;color:var(--white);line-height:1.6;font-style:italic;">"I'm noticing the thought that I'm going to mess this up."</p>
+          <p style="font-size:0.82rem;color:var(--gray-500);margin-top:8px;">You're still in the driver's seat.</p>
+        </div>
+      </div>
+
+      <p class="at-body">It feels small. It isn't. That gap between "I am" and "I'm noticing I'm having the thought that..." is where your performance lives.</p>
+
+      <div class="at-quiz-wrap">
+        <div class="at-quiz-label">
+          <span class="at-quiz-badge">CHECK 3 of 6</span>
+          <span class="at-quiz-progress">Name It, Don't Fight It</span>
+        </div>
+        <div class="at-quiz" id="q3">
+          <p class="at-quiz__q">Which of these is an example of cognitive defusion — creating healthy distance from an unhelpful thought?</p>
+          <div class="at-quiz__opts" id="q3-opts">
+            <button class="at-quiz__opt" data-i="0"><span class="at-opt-letter">A</span><span>"I'm terrible at this" — said to yourself after a bad touch</span></button>
+            <button class="at-quiz__opt" data-i="1"><span class="at-opt-letter">B</span><span>"Stop thinking that — think something positive instead"</span></button>
+            <button class="at-quiz__opt" data-i="2"><span class="at-opt-letter">C</span><span>"I'm noticing the thought that I'm terrible at this"</span></button>
+            <button class="at-quiz__opt" data-i="3"><span class="at-opt-letter">D</span><span>"That thought is wrong and I should ignore it"</span></button>
+          </div>
+          <div class="at-feedback" id="q3-fb"></div>
+          <button class="at-quiz-reset" id="q3-reset">Try Again</button>
+        </div>
+        <div class="at-insight" id="q3-insight">
+          <span class="at-insight__label">The Insight</span>
+          <p>"I'm noticing the thought that..." is defusion. You still have the thought — you're not pretending it isn't there. But you've stepped back from it. <strong>The thought is now something you observe, not something you are.</strong> A and D are fused — both treat the thought as the truth. B is suppression — we just proved that doesn't work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 04 ==================== -->
+  <section class="at-sec at-sec--alt" id="sec-04">
+    <div class="container">
+      <div class="at-sec-header">
+        <span class="at-sec-num">04</span>
+        <h2 class="at-sec-title">YOUR MENTAL<br><em>NOISE MAP</em></h2>
+      </div>
+
+      <p class="at-lead">These are the phrases real Nomads players hear in hard moments. Tap the ones that show up for you.</p>
+      <p class="at-body">Mental noise is personal — but it's also surprisingly universal. These phrases come from the actual session. Which of these have visited your head during a tough match or training block?</p>
+
+      <div class="at-noise-intro">Tap all that apply. No one sees your answers.</div>
+      <div class="at-noise-grid" id="noiseGrid">
+        <button class="at-noise-tag">Don't mess this up</button>
+        <button class="at-noise-tag">Everyone is watching me</button>
+        <button class="at-noise-tag">I should have scored that</button>
+        <button class="at-noise-tag">I'm playing badly today</button>
+        <button class="at-noise-tag">Don't ask for the ball</button>
+        <button class="at-noise-tag">I'm letting the team down</button>
+        <button class="at-noise-tag">What if I lose my spot?</button>
+        <button class="at-noise-tag">I always do this</button>
+        <button class="at-noise-tag">I hate feeling nervous</button>
+        <button class="at-noise-tag">What if coach sees that?</button>
+        <button class="at-noise-tag">I need to prove myself</button>
+        <button class="at-noise-tag">Why did they pass to me?</button>
+        <button class="at-noise-tag">I can't miss another one</button>
+        <button class="at-noise-tag">This game decides everything</button>
+        <button class="at-noise-tag">They're better than us</button>
+        <button class="at-noise-tag">Please don't come to me</button>
+      </div>
+      <p class="at-noise-count">You've tapped <span id="noiseCount">0</span> phrases</p>
+      <div class="at-noise-reveal" id="noiseReveal">
+        <strong>You're not alone.</strong> Every one of these phrases was written by or for athletes just like you. The most commonly selected ones at Nomads? "Don't mess this up," "Everyone is watching me," and "I'm letting the team down." Mental noise is universal — what differs is what you do with it.
+      </div>
+
+      <div class="at-quiz-wrap">
+        <div class="at-quiz-label">
+          <span class="at-quiz-badge">CHECK 4 of 6</span>
+          <span class="at-quiz-progress">Mental Noise Map</span>
+        </div>
+        <div class="at-quiz" id="q4">
+          <p class="at-quiz__q">According to the GROW framework, mental noise is...</p>
+          <div class="at-quiz__opts" id="q4-opts">
+            <button class="at-quiz__opt" data-i="0"><span class="at-opt-letter">A</span><span>A sign of weak mental health that needs to be addressed with help</span></button>
+            <button class="at-quiz__opt" data-i="1"><span class="at-opt-letter">B</span><span>Something only less experienced players experience — it fades with more games</span></button>
+            <button class="at-quiz__opt" data-i="2"><span class="at-opt-letter">C</span><span>A normal feature of any brain under pressure — experienced by athletes at every level</span></button>
+            <button class="at-quiz__opt" data-i="3"><span class="at-opt-letter">D</span><span>A problem that can be permanently solved with enough positive self-talk</span></button>
+          </div>
+          <div class="at-feedback" id="q4-fb"></div>
+          <button class="at-quiz-reset" id="q4-reset">Try Again</button>
+        </div>
+        <div class="at-insight" id="q4-insight">
+          <span class="at-insight__label">The Insight</span>
+          <p>Richie McCaw had it before every All Blacks test. Eliud Kipchoge has it during marathons. Simone Biles has talked about it openly. <strong>The noise doesn't go away when you become elite. You just get better at what you do with it.</strong> That's the entire point of GROW — training the skill, not eliminating the experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 05 ==================== -->
+  <section class="at-sec" id="sec-05">
+    <div class="container">
+      <div class="at-sec-header">
+        <span class="at-sec-num">05</span>
+        <h2 class="at-sec-title">THE ACE<br><em>SKILL</em></h2>
+      </div>
+
+      <p class="at-lead">Ten seconds. Three steps. This is the most important skill in the GROW programme.</p>
+      <p class="at-body">ACE is the tool you run when mental noise shows up during a game. It's short enough to use between plays. It's simple enough to remember under pressure. It's deep enough that professional athletes use it too. Work through each step below.</p>
+
+      <!-- ACE Stepper -->
+      <div class="at-ace" id="aceStepper">
+        <div class="at-ace-step is-active" data-step="0">
+          <div class="at-ace-letter">A</div>
+          <div class="at-ace-word">Acknowledge</div>
+          <p class="at-ace-desc">Notice what's here. Name the thought or feeling — out loud or silently. Don't fight it, don't hide from it. Just name it.</p>
+          <div class="at-ace-example">"I'm noticing nerves right now." "I'm noticing the 'I'm going to stuff this up' thought." "There's frustration here after that miss."</div>
+          <p class="at-ace-key">The critical word is <strong>"noticing."</strong> It creates distance between you and the thought. The thought is now something you <strong>have</strong> — not something you <strong>are</strong>. You can't unhook from a thought you haven't noticed.</p>
+        </div>
+        <div class="at-ace-step" data-step="1">
+          <div class="at-ace-letter">C</div>
+          <div class="at-ace-word">Come Back</div>
+          <p class="at-ace-desc">Anchor in your body. Use your senses to return to the present moment — right here, right now. This is how you get out of your head and into the game.</p>
+          <div class="at-ace-example">Feet flat on the ground. One long, slow out-breath. Feel the studs, grip the ball, feel the cold air. Look at the pitch — what's actually in front of you right now?</div>
+          <p class="at-ace-key">This isn't relaxation — it's a <strong>physical anchor</strong>. The body brings the brain home to now. You can't control the past touch or the next minute — but you can feel your feet on the ground, and that's enough.</p>
+        </div>
+        <div class="at-ace-step" data-step="2">
+          <div class="at-ace-letter">E</div>
+          <div class="at-ace-word">Engage</div>
+          <p class="at-ace-desc">Eyes up. Find the next action that matters. Commit to it — not when you feel ready, but now. Do the Nomads thing: move toward the difficulty, not away from it.</p>
+          <div class="at-ace-example">What's the next job? Show for the ball. Track your runner. Set your angle. Call to a teammate. Pick the next action and go.</div>
+          <p class="at-ace-key">This is values-driven action, not emotion-driven. You don't engage because you feel confident. <strong>You engage because it's what matters — regardless of what the passenger is saying.</strong></p>
+        </div>
+        <div class="at-ace-nav">
+          <button class="at-ace-btn" id="acePrev" disabled>&#8592; Back</button>
+          <div class="at-ace-dots">
+            <span class="at-ace-dot is-active" id="dot0"></span>
+            <span class="at-ace-dot" id="dot1"></span>
+            <span class="at-ace-dot" id="dot2"></span>
+          </div>
+          <button class="at-ace-btn is-primary" id="aceNext">Next Step &#8594;</button>
+        </div>
+      </div>
+
+      <div class="at-quiz-wrap">
+        <div class="at-quiz-label">
+          <span class="at-quiz-badge">CHECK 5 of 6</span>
+          <span class="at-quiz-progress">The ACE Skill</span>
+        </div>
+        <div class="at-quiz" id="q5">
+          <p class="at-quiz__q">In ACE, 'Come Back' means coming back to the present moment. What's the most effective way to do this in the middle of a game?</p>
+          <div class="at-quiz__opts" id="q5-opts">
+            <button class="at-quiz__opt" data-i="0"><span class="at-opt-letter">A</span><span>Return to the position you were in before the mistake happened</span></button>
+            <button class="at-quiz__opt" data-i="1"><span class="at-opt-letter">B</span><span>Think back to a time when you performed really well to restore confidence</span></button>
+            <button class="at-quiz__opt" data-i="2"><span class="at-opt-letter">C</span><span>Anchor through the body — feel the ground, take a breath, use your senses to return to now</span></button>
+            <button class="at-quiz__opt" data-i="3"><span class="at-opt-letter">D</span><span>Come back stronger in the next training session or match</span></button>
+          </div>
+          <div class="at-feedback" id="q5-fb"></div>
+          <button class="at-quiz-reset" id="q5-reset">Try Again</button>
+        </div>
+        <div class="at-insight" id="q5-insight">
+          <span class="at-insight__label">The Insight</span>
+          <p>'Come Back' is a <strong>physical anchor</strong> — feet on the ground, breath, senses. The body is always in the present. Your mind travels to the past (that mistake) and the future (what if I do it again) — but your body is always right here. That's why the physical anchor works: <strong>it uses the body to pull the mind back to now</strong>, which is the only place you can actually play.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 06 ==================== -->
+  <section class="at-sec at-sec--alt" id="sec-06">
+    <div class="container">
+      <div class="at-sec-header">
+        <span class="at-sec-num">06</span>
+        <h2 class="at-sec-title">RUN YOUR<br><em>FIRST ACE</em></h2>
+      </div>
+
+      <p class="at-lead">You've got the skill. Now put it under pressure.</p>
+      <p class="at-body">Every time you used ACE in the session, you were building a habit. The more you run it in training and in matches, the more automatic it becomes — until it happens in the space between a mistake and the next action, without thinking.</p>
+      <p class="at-body">But first, let's test it on paper.</p>
+
+      <div class="at-scenario-card">
+        <span class="at-scenario-badge">Scenario — Cup Shootout</span>
+        <p class="at-scenario-text">"You're stepping up for a penalty in a cup shootout. The keeper is bouncing on the line. The crowd is loud. Your mind says: 'What if I miss? Everyone will see it. I'm going to bottle this.'"</p>
+        <p class="at-scenario-q">Which is the best ACE response?</p>
+      </div>
+
+      <div class="at-quiz-wrap">
+        <div class="at-quiz-label">
+          <span class="at-quiz-badge">CHECK 6 of 6</span>
+          <span class="at-quiz-progress">Run Your First ACE</span>
+        </div>
+        <div class="at-quiz" id="q6">
+          <p class="at-quiz__q">You're stepping up for the penalty. Your mind is loud. Which response uses ACE correctly?</p>
+          <div class="at-quiz__opts" id="q6-opts">
+            <button class="at-quiz__opt" data-i="0"><span class="at-opt-letter">A</span><span>Tell yourself "I'm going to score this" — positive self-talk to override the doubt</span></button>
+            <button class="at-quiz__opt" data-i="1"><span class="at-opt-letter">B</span><span>Run up as fast as you can before the thought gets louder — don't give it time to grow</span></button>
+            <button class="at-quiz__opt" data-i="2"><span class="at-opt-letter">C</span><span>Acknowledge the thought ("I'm noticing the 'I'll bottle this' thought"), one breath, feel the ball in your hands, pick your spot and commit</span></button>
+            <button class="at-quiz__opt" data-i="3"><span class="at-opt-letter">D</span><span>Think about your best ever penalty to restore your confidence before you run up</span></button>
+          </div>
+          <div class="at-feedback" id="q6-fb"></div>
+          <button class="at-quiz-reset" id="q6-reset">Try Again</button>
+        </div>
+        <div class="at-insight" id="q6-insight">
+          <span class="at-insight__label">The Insight</span>
+          <p>A = you're fighting the thought (pink elephant problem — it'll get louder). B = avoidance (rushing because of the noise, not despite it). D = you've left the present moment. <strong>C is ACE: acknowledge what's there, come back to now through the body, engage with your routine.</strong> The noise might still be there when you run up. That's OK — you're driving, not the passenger.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE END CTA -->
+  <section class="at-page-end">
+    <div class="container">
+      <span class="at-page-end__badge">Session 1 Complete</span>
+      <h2 class="at-page-end__title">You've met your mind.<br>Now Play Brave.</h2>
+      <p class="at-page-end__text">Session 2 takes what you learned here and connects it to your values — the kind of player you want to be when it gets hard.</p>
+      <div class="at-page-end__actions">
+        <a href="grow-nomads-play-brave.html" class="btn btn--primary btn--lg">GO TO PLAY BRAVE &rarr;</a>
+        <a href="grow-nomads-mind-gym.html" class="btn btn--outline btn--lg">EXPLORE THE MIND GYM</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom" style="border-top:none;padding-top:0;">
+        <p>&copy; 2026 The Performance Act. All rights reserved. Aotearoa, New Zealand.</p>
+        <div class="footer__bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="grow-nomads.html">Back to GROW</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Support button -->
+  <button class="support-line-btn" id="supportLineBtn"><span class="support-line-btn__dot"></span>Immediate Support</button>
+
+  <script src="script.js?v=3"></script>
+  <script>
+    /* Auth guard */
+    if (!localStorage.getItem('grow_nomads_club')) {
+      window.location.href = 'grow-nomads.html';
+    }
+
+    /* ---- QUIZ DATA ---- */
+    const QUIZZES = {
+      q1: { correct: 2,
+        correctFb: '<strong>Exactly right.</strong> Notice, name, keep playing. The GROW approach isn\'t about silencing the mind — it\'s about learning not to hand it the wheel.',
+        wrongFb: '<strong>Not quite.</strong> Fighting or replacing thoughts tends to make them louder. The ACT approach: notice them, name them, keep playing — Option C.' },
+      q2: { correct: 1,
+        correctFb: '<strong>Correct.</strong> Psychologists call this the ironic process of mental control. Suppression backfires — which is exactly why GROW doesn\'t try to eliminate thoughts.',
+        wrongFb: '<strong>Not quite — it\'s B.</strong> Trying to suppress thoughts makes them return more frequently. This is why "just don\'t think about it" is the worst advice in sport.' },
+      q3: { correct: 2,
+        correctFb: '<strong>Yes — that\'s defusion.</strong> "I\'m noticing the thought that..." creates a gap between you and the thought. You have it — you\'re not it.',
+        wrongFb: '<strong>That\'s C.</strong> Adding "I\'m noticing the thought that..." is defusion. A and D both treat the thought as true. B is suppression — we know how that ends.' },
+      q4: { correct: 2,
+        correctFb: '<strong>Correct.</strong> Mental noise is universal. Richie McCaw, Messi, Simone Biles — all have it. The skill is what you do with it, not eliminating it.',
+        wrongFb: '<strong>It\'s C.</strong> Mental noise is a completely normal feature of any brain under pressure. It doesn\'t indicate weakness, inexperience, or anything that needs fixing.' },
+      q5: { correct: 2,
+        correctFb: '<strong>Yes — C is correct.</strong> The body is always in the present. Feet, breath, senses — the physical anchor pulls the mind back to now. That\'s where the game is.',
+        wrongFb: '<strong>C is correct.</strong> "Come Back" is a physical anchor — feet, breath, senses. A and D leave the present moment. B goes backwards, not here.' },
+      q6: { correct: 2,
+        correctFb: '<strong>That\'s ACE.</strong> Acknowledge the thought (don\'t fight it), come back through the body (breath, feel the ball), engage with your routine. The noise might still be there. You\'re still driving.',
+        wrongFb: '<strong>C is correct.</strong> A = fighting the thought (ironic rebound). B = avoidance. D = leaving the present. C runs ACE properly: acknowledge, come back to now, engage with your spot.' }
+    };
+
+    /* ---- QUIZ SETUP ---- */
+    Object.keys(QUIZZES).forEach(id => {
+      const data = QUIZZES[id];
+      const opts = document.querySelectorAll(`#${id}-opts .at-quiz__opt`);
+      const fb   = document.getElementById(`${id}-fb`);
+      const rst  = document.getElementById(`${id}-reset`);
+      const ins  = document.getElementById(`${id}-insight`);
+
+      opts.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const chosen = parseInt(btn.dataset.i, 10);
+          const right  = chosen === data.correct;
+          opts.forEach(b => {
+            b.disabled = true;
+            const i = parseInt(b.dataset.i, 10);
+            if (i === data.correct) b.classList.add('is-highlight');
+            if (i === chosen && !right) b.classList.add('is-wrong');
+            if (i === chosen && right)  b.classList.add('is-correct');
+          });
+          fb.innerHTML  = right ? data.correctFb : data.wrongFb;
+          fb.className  = `at-feedback is-visible ${right ? 'is-correct' : 'is-wrong'}`;
+          rst.classList.add('is-visible');
+          if (ins) ins.classList.add('is-visible');
+        });
+      });
+
+      rst.addEventListener('click', () => {
+        opts.forEach(b => { b.disabled = false; b.classList.remove('is-correct','is-wrong','is-highlight'); });
+        fb.className = 'at-feedback';
+        fb.innerHTML = '';
+        rst.classList.remove('is-visible');
+        if (ins) ins.classList.remove('is-visible');
+      });
+    });
+
+    /* ---- PINK ELEPHANT ---- */
+    document.getElementById('elephantStart').addEventListener('click', () => {
+      document.getElementById('elephantPrompt').style.display = 'none';
+      const cd  = document.getElementById('elephantCountdown');
+      const num = document.getElementById('countdownNum');
+      cd.classList.add('is-active');
+      let t = 10;
+      const hints = ["Don't think about it...", "Absolutely don't picture it...", "Keep it out of your head...", "Don't hear the trumpet..."];
+      const iv = setInterval(() => {
+        t--;
+        num.textContent = t;
+        document.querySelector('.at-countdown__hint').textContent = hints[Math.floor(Math.random() * hints.length)];
+        if (t <= 0) {
+          clearInterval(iv);
+          cd.classList.remove('is-active');
+          document.getElementById('elephantResult').classList.add('is-active');
+        }
+      }, 1000);
+    });
+
+    /* ---- NOISE MAP ---- */
+    let noiseCount = 0;
+    document.querySelectorAll('.at-noise-tag').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('is-selected');
+        noiseCount = document.querySelectorAll('.at-noise-tag.is-selected').length;
+        document.getElementById('noiseCount').textContent = noiseCount;
+        if (noiseCount >= 3) {
+          document.getElementById('noiseReveal').classList.add('is-visible');
+        }
+      });
+    });
+
+    /* ---- ACE STEPPER ---- */
+    let aceStep = 0;
+    const steps = document.querySelectorAll('.at-ace-step');
+    const dots  = document.querySelectorAll('.at-ace-dot');
+    const prev  = document.getElementById('acePrev');
+    const next  = document.getElementById('aceNext');
+
+    function updateAce() {
+      steps.forEach((s, i) => s.classList.toggle('is-active', i === aceStep));
+      dots.forEach((d, i)  => d.classList.toggle('is-active', i === aceStep));
+      prev.disabled = aceStep === 0;
+      if (aceStep === steps.length - 1) {
+        next.textContent = 'Done ✓';
+        next.classList.add('is-primary');
+        next.disabled = true;
+      } else {
+        next.textContent = 'Next Step →';
+        next.disabled = false;
+      }
+    }
+
+    prev.addEventListener('click', () => { if (aceStep > 0) { aceStep--; updateAce(); } });
+    next.addEventListener('click', () => { if (aceStep < steps.length - 1) { aceStep++; updateAce(); } });
+
+    /* ---- PROGRESS BAR ---- */
+    const sections = document.querySelectorAll('.at-sec');
+    const fill = document.getElementById('progressFill');
+    const observer = new IntersectionObserver(entries => {
+      let maxVisible = 0;
+      sections.forEach((sec, i) => {
+        if (sec.getBoundingClientRect().top < window.innerHeight * 0.6) maxVisible = i + 1;
+      });
+      fill.style.width = `${(maxVisible / sections.length) * 100}%`;
+    }, { threshold: 0.1 });
+    sections.forEach(s => observer.observe(s));
+
+    /* ---- SCROLL REVEAL ---- */
+    const revObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revObs.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -60px 0px', threshold: 0.08 });
+    document.querySelectorAll('.at-sec, .at-quiz, .at-ace, .at-elephant').forEach(el => {
+      el.classList.add('reveal'); revObs.observe(el);
+    });
+  </script>
+</body>
+</html>
