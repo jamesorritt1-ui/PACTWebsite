@@ -17,7 +17,7 @@
 .page-hero__bg {
   position: absolute;
   inset: 0;
-  background-image: url('images/hero-field.jpg');
+  background-image: url('images/hero-field.webp');
   background-size: cover;
   background-position: center 30%;
 }
