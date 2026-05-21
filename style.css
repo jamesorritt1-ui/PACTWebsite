@@ -1306,6 +1306,14 @@ img {
   line-height: 1.5;
 }
 
+.footer__reach {
+  margin-top: 14px;
+  font-size: 0.78rem;
+  color: var(--gray-700);
+  line-height: 1.55;
+  max-width: 260px;
+}
+
 .footer__heading {
   font-family: var(--font-heading);
   font-size: 0.9rem;
