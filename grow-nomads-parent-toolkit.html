@@ -531,6 +531,17 @@
     }
     .pt-cv-restart:hover { background: rgba(255,255,255,0.06); color: #fff; border-color: rgba(255,255,255,0.4); }
 
+    /* Embedded video */
+    .pt-video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+      background: #000; border: 1px solid rgba(255,255,255,0.08);
+    }
+    .pt-video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .pt-video-cap {
+      font-size: 0.78rem; color: var(--gray-600); line-height: 1.6; margin-top: 12px;
+    }
+    .pt-video-cap strong { color: var(--gray-400); }
+
     /* Extra resources */
     .pt-res-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
     @media (max-width: 760px) { .pt-res-grid { grid-template-columns: 1fr; } }
@@ -848,6 +859,31 @@
               <div class="pt-cv-thread" id="cvThread" aria-live="polite"></div>
               <div class="pt-cv-options" id="cvOptions"></div>
             </div>
+          </div>
+        </div>
+
+        <!-- WATCH: MI DEMONSTRATION -->
+        <div class="pt-tool" style="margin-top:24px;">
+          <div class="pt-tool__head">
+            <div class="pt-tool__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <div class="pt-tool__titles">
+              <h3>Watch: the same skills, done for real</h3>
+              <p>A short Motivational Interviewing demonstration — see the moves in action</p>
+            </div>
+          </div>
+          <div class="pt-tool__body">
+            <p class="pt-cv-intro">You've just tried the two-paths simulator — here's the real thing. One quick heads-up: this demonstration is led by an <strong style="color:#fff;">athletic director</strong> talking with a young person, not a parent. Watch it through a parent's eyes, though, and you'll see your toolkit in motion — the open questions, the reflections that go straight to the feeling (no "it sounds like"), and the way the choice is kept with the young person rather than taken over. Picture the car ride home, and the same moves carry straight across.</p>
+            <div class="pt-video-wrap">
+              <iframe src="https://www.youtube.com/embed/GCoCq2o6Ye8?rel=0&amp;modestbranding=1"
+                title="Motivational Interviewing demonstration with a lower-risk teen"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+            </div>
+            <p class="pt-video-cap"><strong>Demonstration · Motivational Interviewing with a lower-risk teen.</strong> Featuring an athletic director — shared here for educational purposes; the same conversation skills apply just as well at home.</p>
           </div>
         </div>
       </div>
@@ -1484,7 +1520,7 @@
           { mi: true,  tag: 'Reflect the feeling', text: 'You’re gutted about how that went.',
             note: 'A direct reflection — straight to the feeling, no "it sounds like." Named cleanly, it lands, and they keep talking.' },
           { mi: false, tag: 'Reassure & command', text: 'Don’t be daft, you were fine — and you’re not quitting.',
-            note: 'Reassuring then commanding dismisses the feeling and sparks resistance — the "righting reflex."' }
+            note: 'This is the most natural reply in the world — we just want them to feel better. It can skip past the feeling though, so they don’t quite feel heard. Naming what’s there first tends to land better.' }
         ]
       },
       {
@@ -1493,7 +1529,7 @@
           { mi: true,  tag: 'Affirm + open question', text: 'That pass really matters to you. What do you reckon gets in the way?',
             note: 'An open question hands them the wheel — they start working it out themselves.' },
           { mi: false, tag: 'Unasked-for advice', text: 'You just need to practise more and stop overthinking it.',
-            note: 'Jumping to advice skips their experience. Most teens tune it out — or push back.' }
+            note: 'So understandable — you can see the fix and you want to help. Advice we didn’t ask for is easy to tune out, though. An open question lets them find their own way there.' }
         ]
       },
       {
@@ -1502,7 +1538,7 @@
           { mi: true,  tag: 'Collaborate + offer choice', text: 'Makes sense — pressure does that. Want to find one small thing to try, or leave it for tonight?',
             note: 'You offer a next step AND a way out. Keeping the choice with them protects their autonomy.' },
           { mi: false, tag: 'Take over', text: 'Right — tomorrow we’re doing an hour of passing drills.',
-            note: 'Taking control removes their choice. It can land as punishment, not support.' }
+            note: 'This comes from a good place — you want to help them get better. Taking the decision over can feel like pressure, though. Offering a choice keeps them on board.' }
         ]
       }
     ];
@@ -1512,7 +1548,7 @@
     };
     const cvSummary = {
       good: '<strong>Notice what happened.</strong> Reflecting, affirming and offering choices kept your child in the conversation — and they reached their own next step. That’s the whole point: connection before correction.',
-      bad:  '<strong>Notice what happened.</strong> Each roadblock — reassuring, advising, taking over — quietly closed the door. It isn’t bad parenting; it’s the natural "righting reflex." Hit restart and try the top reply each time.'
+      bad:  '<strong>No judgement here.</strong> These are the most natural replies in the world, and every parent reaches for them — they come from love. They just tend to close things down before they open up; that’s the "righting reflex." The good news: it’s an easy swap. Have another go with the top reply each time.'
     };
 
     const cvThread  = document.getElementById('cvThread');
@@ -1549,7 +1585,7 @@
       cvOptions.innerHTML = '';
       const cls = opt.mi ? 'pt-cv-msg--mi' : 'pt-cv-msg--road';
       cvAddMsg('parent', cls, '<span class="pt-cv-msg__tag">' + opt.tag + '</span>' + opt.text);
-      cvAddNote(opt.mi ? 'mi' : 'road', (opt.mi ? '✓ ' : '✕ ') + opt.note);
+      cvAddNote(opt.mi ? 'mi' : 'road', (opt.mi ? '✓ ' : '') + opt.note);
       cvLastMI = opt.mi;
       if (opt.mi) cvMiCount++;
       cvIdx++;
