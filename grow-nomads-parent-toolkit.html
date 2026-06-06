@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://www.performance-act.com/grow-nomads-parent-toolkit">
+  <meta name="robots" content="noindex, follow">
+  <title>Moments Create Mindsets — Parent Toolkit | The Performance Act</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="style.css?v=15">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
+
+  <style>
+    :root {
+      --club:        #0E3A84;
+      --club-dark:   #092970;
+      --club-light:  #1A52B0;
+      --club-accent: #C8102E;
+    }
+
+    /* Progress bar */
+    .cs-progress {
+      position: fixed; top: var(--header-height); left: 0; right: 0;
+      height: 3px; background: rgba(255,255,255,0.06); z-index: 999;
+    }
+    .cs-progress-fill {
+      height: 100%; width: 0%;
+      background: linear-gradient(90deg, var(--club) 0%, var(--club-accent) 100%);
+      transition: width 0.25s ease;
+    }
+
+    /* Back nav */
+    .cs-back {
+      display: flex; align-items: center; gap: 8px; padding: 16px 0;
+      font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gray-600); text-decoration: none; transition: color 0.2s;
+    }
+    .cs-back:hover { color: var(--club); }
+    .cs-back svg { width: 14px; height: 14px; stroke: currentColor; }
+
+    /* Hero */
+    .cs-hero {
+      background: linear-gradient(150deg, var(--club-dark) 0%, #0c1e4a 65%, #080f28 100%);
+      border-bottom: 3px solid var(--club-accent);
+      padding: 56px 0 52px; position: relative; overflow: hidden;
+    }
+    .cs-hero::before {
+      content: ''; position: absolute; top: -60px; right: -60px;
+      width: 350px; height: 350px;
+      background: radial-gradient(circle, rgba(14,58,132,0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cs-hero__session {
+      font-family: var(--font-heading); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.3em; text-transform: uppercase; color: var(--club-accent);
+      margin-bottom: 12px; display: block;
+    }
+    .cs-hero__title {
+      font-family: var(--font-heading); font-size: clamp(2.2rem, 6vw, 3.4rem);
+      font-weight: 800; color: #fff; text-transform: uppercase; line-height: 0.95;
+      margin-bottom: 24px;
+    }
+    .cs-hero__sub {
+      font-size: 0.95rem; color: rgba(255,255,255,0.6); line-height: 1.75; max-width: 560px;
+      margin-bottom: 28px;
+    }
+    /* Whakataukī strip in hero */
+    .pt-hero-maori {
+      border-left: 3px solid var(--club-accent); padding: 4px 0 4px 18px;
+      margin-bottom: 28px; max-width: 560px;
+    }
+    .pt-hero-maori__te {
+      font-family: var(--font-heading); font-size: 1rem; font-weight: 600;
+      color: #fff; font-style: italic; letter-spacing: 0.02em; margin-bottom: 2px;
+    }
+    .pt-hero-maori__en { font-size: 0.82rem; color: rgba(255,255,255,0.55); }
+    .cs-hero__pills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .cs-hero__pill {
+      font-family: var(--font-heading); font-size: 0.58rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      padding: 7px 14px; border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.04);
+    }
+
+    /* Section nav */
+    .cs-nav {
+      position: sticky; top: calc(var(--header-height) + 3px); z-index: 90;
+      background: var(--gray-900); border-bottom: 1px solid rgba(255,255,255,0.06);
+      overflow-x: auto; -webkit-overflow-scrolling: touch;
+    }
+    .cs-nav__inner { display: flex; gap: 0; min-width: max-content; padding: 0 16px; }
+    .cs-nav__btn {
+      font-family: var(--font-heading); font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      padding: 16px 20px; color: var(--gray-600); background: transparent;
+      border: none; border-bottom: 2px solid transparent;
+      cursor: pointer; white-space: nowrap; transition: all 0.2s;
+    }
+    .cs-nav__btn:hover { color: var(--white); }
+    .cs-nav__btn.is-active { color: var(--club); border-bottom-color: var(--club); }
+
+    /* Sections */
+    .cs-section { padding: 64px 0 72px; }
+    .cs-section--alt { background: rgba(255,255,255,0.015); }
+    .cs-section__eyebrow {
+      font-family: var(--font-heading); font-size: 0.58rem; font-weight: 700;
+      letter-spacing: 0.28em; text-transform: uppercase; color: var(--club-accent);
+      margin-bottom: 10px; display: block;
+    }
+    .cs-section__title {
+      font-family: var(--font-heading); font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 800; color: var(--white); text-transform: uppercase;
+      line-height: 1.05; margin-bottom: 14px;
+    }
+    .cs-section__title em { color: var(--club); font-style: normal; }
+    .cs-section__intro {
+      font-size: 0.9rem; color: var(--gray-400); line-height: 1.8; max-width: 620px;
+      margin-bottom: 36px;
+    }
+
+    /* Big-idea band */
+    .pt-bigidea {
+      background: rgba(14,58,132,0.1); border: 1px solid rgba(14,58,132,0.22);
+      border-left: 3px solid var(--club-accent);
+      padding: 26px 30px; margin-bottom: 8px;
+    }
+    .pt-bigidea p { font-size: 0.95rem; color: var(--gray-300); line-height: 1.85; }
+    .pt-bigidea strong { color: #fff; }
+    .pt-bigidea em { color: var(--club-accent); font-style: italic; }
+
+    /* Stat cards (the research) */
+    .pt-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 32px; }
+    @media (max-width: 760px) { .pt-stats { grid-template-columns: 1fr; } }
+    .pt-stat {
+      background: var(--gray-900); border: 1px solid rgba(255,255,255,0.06);
+      border-top: 3px solid var(--club); padding: 28px 26px;
+    }
+    .pt-stat__kicker {
+      font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800;
+      color: #fff; line-height: 1; margin-bottom: 14px;
+    }
+    .pt-stat__kicker span { color: var(--club-accent); }
+    .pt-stat__title {
+      font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.05em; color: #fff; margin-bottom: 10px;
+    }
+    .pt-stat__desc { font-size: 0.85rem; color: var(--gray-400); line-height: 1.7; }
+    .pt-stat__src {
+      font-size: 0.7rem; color: var(--club-light); margin-top: 12px;
+      font-family: var(--font-heading); letter-spacing: 0.08em;
+    }
+
+    /* Three needs band */
+    .pt-needs {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    @media (max-width: 620px) { .pt-needs { grid-template-columns: 1fr; } }
+    .pt-need { padding: 24px 26px; border-right: 1px solid rgba(255,255,255,0.08); }
+    .pt-need:last-child { border-right: none; }
+    @media (max-width: 620px) { .pt-need { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); } .pt-need:last-child { border-bottom: none; } }
+    .pt-need__word {
+      font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em; color: var(--club-light); margin-bottom: 6px;
+    }
+    .pt-need__desc { font-size: 0.82rem; color: var(--gray-400); line-height: 1.65; }
+
+    /* Framework two-column (PAC / OARS) */
+    .pt-fw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 36px; }
+    @media (max-width: 760px) { .pt-fw-grid { grid-template-columns: 1fr; } }
+    .pt-fw {
+      background: var(--gray-900); border: 1px solid rgba(255,255,255,0.06); overflow: hidden;
+    }
+    .pt-fw__head {
+      display: flex; align-items: center; gap: 14px; padding: 20px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .pt-fw__badge {
+      font-family: var(--font-heading); font-weight: 800; font-size: 0.95rem;
+      letter-spacing: 0.04em; color: #fff; background: var(--club);
+      padding: 8px 12px; flex-shrink: 0;
+    }
+    .pt-fw__badge--accent { background: var(--club-accent); }
+    .pt-fw__title {
+      font-family: var(--font-heading); font-size: 1rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.04em; color: #fff; line-height: 1.1;
+    }
+    .pt-fw__title span { display: block; font-size: 0.68rem; color: var(--gray-600); font-weight: 500; letter-spacing: 0.06em; margin-top: 3px; }
+    .pt-fw__body { padding: 12px 24px 22px; }
+    .pt-fw-step { padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; gap: 14px; }
+    .pt-fw-step:last-child { border-bottom: none; }
+    .pt-fw-step__l {
+      font-family: var(--font-heading); font-size: 1.1rem; font-weight: 800;
+      width: 26px; flex-shrink: 0; line-height: 1.2;
+      color: var(--club-light);
+    }
+    .pt-fw-step__c strong { display: block; font-size: 0.85rem; color: #fff; font-family: var(--font-heading); letter-spacing: 0.03em; text-transform: uppercase; margin-bottom: 3px; }
+    .pt-fw-step__c p { font-size: 0.82rem; color: var(--gray-400); line-height: 1.6; margin-bottom: 6px; }
+    .pt-fw-step__eg {
+      font-size: 0.82rem; color: var(--club-light); font-style: italic;
+      background: rgba(14,58,132,0.1); padding: 6px 12px; border-left: 2px solid var(--club);
+      display: block;
+    }
+
+    /* PAC Builder tool */
+    .pt-tool {
+      background: var(--gray-900); border: 1px solid rgba(255,255,255,0.08); overflow: hidden;
+    }
+    .pt-tool__head {
+      display: flex; align-items: center; gap: 14px;
+      padding: 22px 28px; background: linear-gradient(120deg, var(--club-dark), var(--club));
+    }
+    .pt-tool__icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center;
+    }
+    .pt-tool__icon svg { width: 20px; height: 20px; stroke: #fff; }
+    .pt-tool__titles h3 {
+      font-family: var(--font-heading); font-size: 1rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.04em; color: #fff;
+    }
+    .pt-tool__titles p { font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-top: 2px; }
+    .pt-tool__body { padding: 28px; }
+
+    .pt-select {
+      width: 100%; font-family: var(--font-body); font-size: 0.9rem;
+      padding: 14px 16px; background: rgba(255,255,255,0.04);
+      color: #fff; border: 1px solid rgba(255,255,255,0.12); outline: none;
+      appearance: none; -webkit-appearance: none; cursor: pointer;
+      transition: border-color 0.2s; margin-bottom: 22px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%238a93a6' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 16px center; padding-right: 44px;
+    }
+    .pt-select:focus { border-color: var(--club-light); }
+    .pt-select option { background: #14181f; color: #fff; }
+
+    .pt-pac-steps { display: flex; flex-direction: column; gap: 12px; }
+    .pt-pac-step {
+      display: flex; gap: 16px; padding: 18px 20px;
+      background: rgba(255,255,255,0.02); border-left: 3px solid var(--club);
+    }
+    .pt-pac-step--A { border-left-color: var(--club-light); }
+    .pt-pac-step--C { border-left-color: var(--club-accent); }
+    .pt-pac-step__badge {
+      font-family: var(--font-heading); font-size: 1.3rem; font-weight: 800;
+      color: var(--club-light); width: 24px; flex-shrink: 0; line-height: 1.1;
+    }
+    .pt-pac-step--C .pt-pac-step__badge { color: var(--club-accent); }
+    .pt-pac-step__label {
+      font-family: var(--font-heading); font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray-600); margin-bottom: 6px;
+    }
+    .pt-pac-step__line { font-size: 0.95rem; color: #fff; font-style: italic; line-height: 1.5; margin-bottom: 7px; }
+    .pt-pac-step__why { font-size: 0.78rem; color: var(--gray-500); line-height: 1.6; }
+    .pt-pac-empty { text-align: center; color: var(--gray-600); font-size: 0.85rem; padding: 24px 0; }
+
+    /* ACE interactive reset */
+    .pt-ace-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 28px; }
+    @media (max-width: 620px) { .pt-ace-grid { grid-template-columns: 1fr; } }
+    .pt-ace-card {
+      padding: 22px 22px; border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.015); transition: all 0.3s;
+    }
+    .pt-ace-card.is-active {
+      border-color: var(--club-light); background: rgba(14,58,132,0.12);
+      box-shadow: 0 0 0 3px rgba(26,82,176,0.18);
+    }
+    .pt-ace-card__l {
+      font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800;
+      color: var(--club-light); line-height: 1; margin-bottom: 8px;
+    }
+    .pt-ace-card h4 { font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #fff; margin-bottom: 6px; }
+    .pt-ace-card p { font-size: 0.8rem; color: var(--gray-400); line-height: 1.6; }
+    .pt-ace-card p em { color: #fff; font-style: italic; }
+
+    .pt-ace-player {
+      display: flex; align-items: center; gap: 28px;
+      background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08);
+      padding: 28px 32px;
+    }
+    @media (max-width: 560px) { .pt-ace-player { flex-direction: column; gap: 20px; text-align: center; } }
+    .pt-ace-dial { position: relative; width: 132px; height: 132px; flex-shrink: 0; }
+    .pt-ace-dial svg { transform: rotate(-90deg); width: 100%; height: 100%; }
+    .pt-ace-dial__bg { fill: none; stroke: rgba(255,255,255,0.08); stroke-width: 6; }
+    .pt-ace-dial__fg { fill: none; stroke: var(--club-light); stroke-width: 6; stroke-linecap: round; transition: stroke-dashoffset 0.95s linear; }
+    .pt-ace-dial__num {
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+    }
+    .pt-ace-dial__n { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; color: #fff; line-height: 1; }
+    .pt-ace-dial__lbl { font-size: 0.6rem; color: var(--gray-600); letter-spacing: 0.18em; text-transform: uppercase; margin-top: 2px; }
+    .pt-ace-ctl { flex: 1; }
+    .pt-ace-ctl__phase { font-family: var(--font-heading); font-size: 1.05rem; font-weight: 600; color: var(--club-light); min-height: 28px; margin-bottom: 16px; line-height: 1.4; }
+    .pt-ace-btns { display: flex; gap: 10px; }
+    @media (max-width: 560px) { .pt-ace-btns { justify-content: center; } }
+    .pt-btn {
+      font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; padding: 13px 24px;
+      cursor: pointer; border: 2px solid var(--club); background: var(--club); color: #fff;
+      transition: all 0.2s;
+    }
+    .pt-btn:hover { background: var(--club-light); border-color: var(--club-light); }
+    .pt-btn--ghost { background: transparent; color: var(--gray-400); border-color: rgba(255,255,255,0.15); }
+    .pt-btn--ghost:hover { background: rgba(255,255,255,0.05); color: #fff; border-color: rgba(255,255,255,0.3); }
+
+    /* Question generator */
+    .pt-qcats { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+    .pt-qcat {
+      font-family: var(--font-heading); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; padding: 9px 16px;
+      border: 1px solid rgba(255,255,255,0.12); background: transparent;
+      color: var(--gray-500); cursor: pointer; transition: all 0.2s;
+    }
+    .pt-qcat:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+    .pt-qcat.is-active { background: var(--club); border-color: var(--club); color: #fff; }
+    .pt-qout {
+      min-height: 96px; display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 26px 30px; margin-bottom: 16px;
+      background: rgba(14,58,132,0.1); border: 1px solid rgba(14,58,132,0.25);
+      font-family: var(--font-heading); font-size: 1.25rem; font-weight: 600;
+      color: #fff; line-height: 1.4;
+    }
+    .pt-qout.is-empty { color: var(--gray-600); font-family: var(--font-body); font-size: 0.9rem; font-weight: 400; }
+    .pt-qbtn {
+      width: 100%; font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; padding: 15px;
+      background: var(--club-accent); color: #fff; border: none; cursor: pointer;
+      transition: background 0.2s;
+    }
+    .pt-qbtn:hover { background: #a50d26; }
+    .pt-powerline {
+      margin-top: 22px; padding: 18px 22px; background: rgba(200,16,46,0.07);
+      border-left: 3px solid var(--club-accent);
+    }
+    .pt-powerline__lbl { font-family: var(--font-heading); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--club-accent); margin-bottom: 8px; display: block; }
+    .pt-powerline p { font-size: 0.85rem; color: var(--gray-300); line-height: 1.7; }
+    .pt-powerline em { color: #fff; font-style: italic; font-size: 1.05rem; }
+
+    /* Affirmation vs praise */
+    .pt-flip { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+    @media (max-width: 620px) { .pt-flip { grid-template-columns: 1fr; } }
+    .pt-flip-col { border: 1px solid rgba(255,255,255,0.08); }
+    .pt-flip-col__head {
+      padding: 14px 18px; font-family: var(--font-heading); font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .pt-flip-col--praise .pt-flip-col__head { background: rgba(200,16,46,0.1); color: var(--club-accent); border-bottom: 1px solid rgba(200,16,46,0.2); }
+    .pt-flip-col--affirm .pt-flip-col__head { background: rgba(34,197,94,0.1); color: #22c55e; border-bottom: 1px solid rgba(34,197,94,0.2); }
+    .pt-flip-col__body { padding: 16px 18px; }
+    .pt-flip-line { font-size: 0.85rem; font-style: italic; line-height: 1.5; padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.04); color: var(--gray-300); }
+    .pt-flip-line:last-child { border-bottom: none; }
+    .pt-flip-col__note { padding: 0 18px 16px; font-size: 0.76rem; color: var(--gray-600); line-height: 1.6; }
+
+    /* Sticky moments tabs */
+    .pt-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 0; }
+    .pt-tab {
+      font-family: var(--font-heading); font-size: 0.66rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase; padding: 14px 20px;
+      background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-bottom: none;
+      color: var(--gray-500); cursor: pointer; transition: all 0.2s;
+    }
+    .pt-tab.is-active { background: rgba(14,58,132,0.12); color: #fff; border-color: rgba(14,58,132,0.4); }
+    .pt-panels { border: 1px solid rgba(14,58,132,0.4); padding: 32px; background: rgba(255,255,255,0.012); }
+    .pt-panel { display: none; }
+    .pt-panel.is-active { display: block; animation: csFadeUp 0.4s ease both; }
+    .pt-panel__q { font-size: 0.85rem; color: var(--gray-500); font-style: italic; margin-bottom: 16px; }
+    .pt-golden {
+      background: rgba(200,16,46,0.07); border-left: 3px solid var(--club-accent);
+      padding: 14px 18px; margin-bottom: 24px; font-size: 0.88rem; color: #fff; line-height: 1.6;
+    }
+    .pt-golden strong { color: var(--club-accent); }
+    .pt-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 8px; }
+    @media (max-width: 640px) { .pt-2col { grid-template-columns: 1fr; gap: 24px; } }
+    .pt-minihdr {
+      font-family: var(--font-heading); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--club-light); margin-bottom: 12px;
+    }
+    .pt-list { list-style: none; }
+    .pt-list li {
+      position: relative; padding: 9px 0 9px 22px; font-size: 0.85rem; color: var(--gray-300);
+      line-height: 1.6; border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .pt-list li::before { content: '→'; position: absolute; left: 0; color: var(--club-light); font-weight: 700; }
+    .pt-list strong { color: #fff; }
+    .pt-list em { color: var(--club-light); font-style: italic; }
+    .pt-script {
+      background: linear-gradient(120deg, var(--club-dark), #0c1e4a);
+      padding: 22px 26px; margin-top: 22px;
+    }
+    .pt-script__lbl { font-family: var(--font-heading); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--club-accent); margin-bottom: 10px; display: block; }
+    .pt-script p { font-size: 0.95rem; color: #fff; font-style: italic; line-height: 1.6; }
+    .pt-except {
+      margin-top: 20px; background: rgba(200,16,46,0.06); border: 1px solid rgba(200,16,46,0.2);
+      padding: 16px 20px;
+    }
+    .pt-except strong { color: var(--club-accent); font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 6px; }
+    .pt-except p { font-size: 0.82rem; color: var(--gray-400); line-height: 1.65; }
+
+    /* Rough patch — five ways */
+    .pt-ways { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 36px; }
+    @media (max-width: 900px) { .pt-ways { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .pt-ways { grid-template-columns: 1fr; } }
+    .pt-way { background: var(--gray-900); border: 1px solid rgba(255,255,255,0.06); border-top: 3px solid var(--club); padding: 22px 20px; }
+    .pt-way__n {
+      font-family: var(--font-heading); font-size: 0.9rem; font-weight: 800; color: #fff;
+      width: 32px; height: 32px; background: var(--club); display: flex; align-items: center; justify-content: center;
+      margin-bottom: 14px;
+    }
+    .pt-way h4 { font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; color: #fff; margin-bottom: 8px; line-height: 1.2; }
+    .pt-way p { font-size: 0.8rem; color: var(--gray-400); line-height: 1.6; }
+
+    /* Watch-for + support */
+    .pt-warn {
+      background: rgba(200,16,46,0.05); border: 1px solid rgba(200,16,46,0.2); padding: 26px 28px;
+    }
+    .pt-warn h4 { font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--club-accent); margin-bottom: 16px; }
+    .pt-warn ul { list-style: none; }
+    .pt-warn li { position: relative; padding: 9px 0 9px 24px; font-size: 0.84rem; color: var(--gray-300); line-height: 1.6; border-bottom: 1px solid rgba(200,16,46,0.1); }
+    .pt-warn li:last-child { border-bottom: none; }
+    .pt-warn li::before { content: '!'; position: absolute; left: 0; width: 16px; height: 16px; background: rgba(200,16,46,0.2); color: var(--club-accent); font-family: var(--font-heading); font-weight: 800; font-size: 0.7rem; display: flex; align-items: center; justify-content: center; top: 10px; }
+    .pt-support { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .pt-sup { background: var(--gray-900); border: 1px solid rgba(255,255,255,0.06); padding: 18px 18px; }
+    .pt-sup h5 { font-family: var(--font-heading); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--club-light); margin-bottom: 6px; }
+    .pt-sup p { font-size: 0.78rem; color: var(--gray-400); line-height: 1.55; }
+
+    /* Reflection */
+    .cs-reflect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 580px) { .cs-reflect-grid { grid-template-columns: 1fr; } }
+    .cs-reflect-item { display: flex; flex-direction: column; gap: 10px; }
+    .cs-reflect-label { font-family: var(--font-heading); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--club); }
+    .cs-reflect-q { font-size: 0.84rem; color: var(--gray-400); line-height: 1.7; }
+    .cs-reflect-textarea {
+      width: 100%; min-height: 96px; resize: vertical;
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+      color: var(--white); font-family: var(--font-body); font-size: 0.86rem;
+      line-height: 1.6; padding: 14px 16px; outline: none; transition: border-color 0.2s;
+    }
+    .cs-reflect-textarea:focus { border-color: rgba(14,58,132,0.5); }
+    .cs-reflect-textarea::placeholder { color: var(--gray-700); }
+
+    /* One small thing */
+    .pt-onething {
+      margin-top: 36px; background: linear-gradient(120deg, var(--club-dark), var(--club));
+      padding: 30px 32px; text-align: center;
+    }
+    .pt-onething h3 { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #fff; margin-bottom: 12px; }
+    .pt-onething p { font-size: 0.88rem; color: rgba(255,255,255,0.8); line-height: 1.8; max-width: 600px; margin: 0 auto; }
+    .pt-onething strong { color: #fff; }
+
+    /* Conversation simulator */
+    .pt-cv-intro { font-size: 0.85rem; color: var(--gray-400); line-height: 1.65; margin-bottom: 16px; }
+    .pt-cv-legend { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 20px; }
+    .pt-cv-legend span { display: inline-flex; align-items: center; gap: 8px; font-size: 0.72rem; color: var(--gray-400); }
+    .pt-cv-dot { width: 11px; height: 11px; border-radius: 3px; flex-shrink: 0; }
+    .pt-cv-dot--mi { background: #22c55e; }
+    .pt-cv-dot--road { background: var(--club-accent); }
+    .pt-cv-phone {
+      max-width: 460px; margin: 0 auto; background: #0b0e14;
+      border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; overflow: hidden;
+    }
+    .pt-cv-bar {
+      display: flex; align-items: center; gap: 11px; padding: 14px 18px;
+      background: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .pt-cv-bar__avatar {
+      width: 32px; height: 32px; border-radius: 50%; background: var(--club); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-heading); font-weight: 700; font-size: 0.7rem; color: #fff;
+    }
+    .pt-cv-bar__name { font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; color: #fff; letter-spacing: 0.03em; }
+    .pt-cv-bar__status { font-size: 0.66rem; color: #4caf6a; }
+    .pt-cv-thread {
+      display: flex; flex-direction: column; gap: 12px; padding: 18px;
+      max-height: 430px; overflow-y: auto; scroll-behavior: smooth;
+    }
+    .pt-cv-msg {
+      max-width: 84%; padding: 11px 15px; font-size: 0.87rem; line-height: 1.5;
+      border-radius: 16px; animation: csFadeUp 0.35s ease both;
+    }
+    .pt-cv-msg--athlete { align-self: flex-start; background: var(--gray-800); color: var(--gray-200); border-bottom-left-radius: 5px; }
+    .pt-cv-msg--parent { align-self: flex-end; color: #fff; border-bottom-right-radius: 5px; }
+    .pt-cv-msg--mi { background: var(--club); }
+    .pt-cv-msg--road { background: rgba(200,16,46,0.85); }
+    .pt-cv-msg__tag {
+      display: block; font-family: var(--font-heading); font-size: 0.54rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.8; margin-bottom: 4px;
+    }
+    .pt-cv-note {
+      align-self: flex-end; max-width: 88%; font-size: 0.77rem; line-height: 1.55;
+      padding: 9px 13px; border-radius: 8px; animation: csFadeUp 0.35s ease both;
+    }
+    .pt-cv-note--mi { color: #c0f0d0; background: rgba(34,197,94,0.1); border-left: 2px solid #22c55e; }
+    .pt-cv-note--road { color: #f4bcc4; background: rgba(200,16,46,0.1); border-left: 2px solid var(--club-accent); }
+    .pt-cv-options {
+      padding: 14px; border-top: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.015); display: flex; flex-direction: column; gap: 10px;
+    }
+    .pt-cv-prompt {
+      font-family: var(--font-heading); font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-600);
+      text-align: center; margin-bottom: 2px;
+    }
+    .pt-cv-opt {
+      position: relative; width: 100%; text-align: left; cursor: pointer;
+      padding: 13px 16px 13px 46px; border-radius: 12px;
+      font-family: var(--font-body); font-size: 0.85rem; line-height: 1.45; color: var(--gray-200);
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); transition: all 0.18s;
+    }
+    .pt-cv-opt:hover { border-color: rgba(255,255,255,0.32); background: rgba(255,255,255,0.06); color: #fff; }
+    .pt-cv-opt:focus-visible { outline: 2px solid var(--club-light); outline-offset: 2px; }
+    .pt-cv-opt::before {
+      content: attr(data-num); position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+      width: 22px; height: 22px; border-radius: 50%; background: rgba(255,255,255,0.1);
+      color: var(--gray-400); font-family: var(--font-heading); font-size: 0.7rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .pt-cv-summary { padding: 18px; background: rgba(14,58,132,0.12); border-top: 1px solid rgba(255,255,255,0.06); }
+    .pt-cv-summary p { font-size: 0.85rem; color: var(--gray-300); line-height: 1.7; margin-bottom: 14px; }
+    .pt-cv-summary strong { color: #fff; }
+    .pt-cv-restart {
+      font-family: var(--font-heading); font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; padding: 11px 22px; cursor: pointer;
+      background: transparent; color: var(--gray-300); border: 1px solid rgba(255,255,255,0.2); transition: all 0.2s;
+    }
+    .pt-cv-restart:hover { background: rgba(255,255,255,0.06); color: #fff; border-color: rgba(255,255,255,0.4); }
+
+    /* Extra resources */
+    .pt-res-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    @media (max-width: 760px) { .pt-res-grid { grid-template-columns: 1fr; } }
+    .pt-res-card {
+      display: flex; gap: 18px; padding: 26px 28px; text-decoration: none;
+      background: var(--gray-900); border: 1px solid rgba(255,255,255,0.06);
+      transition: border-color 0.25s, transform 0.2s;
+    }
+    .pt-res-card:hover { border-color: rgba(14,58,132,0.5); transform: translateY(-2px); }
+    .pt-res-card__icon {
+      width: 46px; height: 46px; flex-shrink: 0; background: rgba(14,58,132,0.15);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .pt-res-card__icon svg { width: 22px; height: 22px; stroke: var(--club-light); fill: none; }
+    .pt-res-card--read .pt-res-card__icon { background: rgba(200,16,46,0.12); }
+    .pt-res-card--read .pt-res-card__icon svg { stroke: var(--club-accent); }
+    .pt-res-card__body { flex: 1; min-width: 0; }
+    .pt-res-card__cat {
+      font-family: var(--font-heading); font-size: 0.56rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--club-light);
+      margin-bottom: 8px; display: block;
+    }
+    .pt-res-card--read .pt-res-card__cat { color: var(--club-accent); }
+    .pt-res-card__title {
+      font-family: var(--font-heading); font-size: 0.98rem; font-weight: 700;
+      color: #fff; line-height: 1.25; margin-bottom: 6px;
+    }
+    .pt-res-card__src { font-size: 0.76rem; color: var(--gray-600); margin-bottom: 10px; }
+    .pt-res-card__desc { font-size: 0.83rem; color: var(--gray-400); line-height: 1.65; margin-bottom: 14px; }
+    .pt-res-card__cta {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-family: var(--font-heading); font-size: 0.64rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--club-light);
+    }
+    .pt-res-card--read .pt-res-card__cta { color: var(--club-accent); }
+    .pt-res-card__cta svg { width: 13px; height: 13px; stroke: currentColor; fill: none; transition: transform 0.2s; }
+    .pt-res-card:hover .pt-res-card__cta svg { transform: translate(2px, -2px); }
+    .pt-res-note {
+      font-size: 0.78rem; color: var(--gray-600); line-height: 1.7; margin-top: 24px;
+      padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* Footer nav */
+    .cs-footer-nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 40px 0 60px; border-top: 1px solid rgba(255,255,255,0.07); gap: 16px; flex-wrap: wrap;
+    }
+    .cs-footer-link {
+      display: flex; align-items: center; gap: 8px; text-decoration: none;
+      font-family: var(--font-heading); font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-500); transition: color 0.2s;
+    }
+    .cs-footer-link:hover { color: var(--club); }
+    .cs-footer-link svg { width: 14px; height: 14px; stroke: currentColor; flex-shrink: 0; }
+    .cs-footer-link--next { color: var(--club); }
+    .cs-footer-link--next:hover { color: var(--white); }
+
+    @keyframes csFadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+    .cs-section { animation: csFadeUp 0.5s ease both; }
+  </style>
+</head>
+<body>
+
+  <!-- Auth guard -->
+  <script>
+    if (!localStorage.getItem('grow_nomads_club')) window.location.href = 'grow-nomads.html';
+  </script>
+
+  <!-- Progress bar -->
+  <div class="cs-progress"><div class="cs-progress-fill" id="progressFill"></div></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner container">
+      <a href="index.html" class="logo">
+        <img src="images/logo-horizontal.png" alt="The Performance Act" width="306" height="134" style="height:48px;width:auto;" loading="lazy">
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Back nav -->
+    <div class="container">
+      <a href="grow-nomads.html" class="cs-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to Parent Hub
+      </a>
+    </div>
+
+    <!-- Hero -->
+    <div class="cs-hero">
+      <div class="container">
+        <span class="cs-hero__session">Parent Toolkit · Nomads United AFC</span>
+        <h1 class="cs-hero__title">Moments<br>Create Mindsets</h1>
+        <p class="cs-hero__sub">Navigating behaviour &amp; pressure when it matters most. The small moments — the car ride home, the thirty seconds before kick-off, the silence after a loss — are where your child's relationship with sport, and with you, is quietly built.</p>
+        <div class="pt-hero-maori">
+          <div class="pt-hero-maori__te">Ahakoa he iti, he pounamu</div>
+          <div class="pt-hero-maori__en">Although small, it is precious.</div>
+        </div>
+        <div class="cs-hero__pills">
+          <span class="cs-hero__pill">PAC</span>
+          <span class="cs-hero__pill">OARS</span>
+          <span class="cs-hero__pill">ACE Reset</span>
+          <span class="cs-hero__pill">The Car Ride</span>
+          <span class="cs-hero__pill">Sticky Moments</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sticky section nav -->
+    <nav class="cs-nav" aria-label="Page sections">
+      <div class="cs-nav__inner">
+        <button class="cs-nav__btn is-active" data-target="pt-why">Why You Matter</button>
+        <button class="cs-nav__btn" data-target="pt-tools">PAC &amp; OARS</button>
+        <button class="cs-nav__btn" data-target="pt-ace">Stay Calm (ACE)</button>
+        <button class="cs-nav__btn" data-target="pt-carride">The Car Ride</button>
+        <button class="cs-nav__btn" data-target="pt-sticky">Sticky Moments</button>
+        <button class="cs-nav__btn" data-target="pt-rough">Rough Patches</button>
+        <button class="cs-nav__btn" data-target="pt-resources">Go Deeper</button>
+        <button class="cs-nav__btn" data-target="pt-reflect">Your Reflection</button>
+      </div>
+    </nav>
+
+    <!-- 01 WHY YOU MATTER -->
+    <section class="cs-section" id="pt-why">
+      <div class="container">
+        <span class="cs-section__eyebrow">The Power of Parents</span>
+        <h2 class="cs-section__title">Why you matter<br>more than <em>you think</em></h2>
+        <p class="cs-section__intro">You are the most powerful — and most underused — influence on whether your child stays in sport and thrives. The research is clear, and it points to one thing: it's not how much you're involved, it's the flavour of it — choice and effort over control and outcome.</p>
+
+        <div class="pt-stats">
+          <div class="pt-stat">
+            <div class="pt-stat__kicker">Long<span>·</span>term</div>
+            <div class="pt-stat__title">Support keeps them in the game</div>
+            <p class="pt-stat__desc">Parental support in adolescence independently predicts continued sport participation into early adulthood — and the effect is even stronger for girls.</p>
+            <div class="pt-stat__src">Lee et al., 2016</div>
+          </div>
+          <div class="pt-stat">
+            <div class="pt-stat__kicker">Fun<span>·</span>first</div>
+            <div class="pt-stat__title">Protect the fun, prevent dropout</div>
+            <p class="pt-stat__desc">Involvement lowers dropout a year later by strengthening how much teens value sport — the fun, the importance, the usefulness. Push too hard and the effect reverses.</p>
+            <div class="pt-stat__src">Jaf et al., 2023</div>
+          </div>
+          <div class="pt-stat">
+            <div class="pt-stat__kicker">The<span>·</span>flavour</div>
+            <div class="pt-stat__title">How you parent beats how much</div>
+            <p class="pt-stat__desc">Autonomy-supportive, effort-focused parenting builds self-determined motivation — the fuel for sticking with sport.</p>
+            <div class="pt-stat__src">Gao et al., 2024</div>
+          </div>
+        </div>
+
+        <p class="pt-minihdr">Children stay in sport when three needs are met — and you shape all three</p>
+        <div class="pt-needs">
+          <div class="pt-need">
+            <div class="pt-need__word">Autonomy</div>
+            <div class="pt-need__desc">A sense of choice. Keep decisions with them wherever you can.</div>
+          </div>
+          <div class="pt-need">
+            <div class="pt-need__word">Competence</div>
+            <div class="pt-need__desc">A sense of getting better. Affirm effort and progress, not just results.</div>
+          </div>
+          <div class="pt-need">
+            <div class="pt-need__word">Relatedness</div>
+            <div class="pt-need__desc">A sense of belonging and connection. Belonging carries kids through the hard patches.</div>
+          </div>
+        </div>
+
+        <div class="pt-bigidea" style="margin-top:32px;">
+          <p><strong>The single most useful habit you can build:</strong> <em>connection before correction.</em> Almost everything in this toolkit is one way or another of protecting those three needs — and putting the relationship first, every time.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 PAC & OARS -->
+    <section class="cs-section cs-section--alt" id="pt-tools">
+      <div class="container">
+        <span class="cs-section__eyebrow">Creating the Moments</span>
+        <h2 class="cs-section__title">PAC &amp; OARS —<br>your conversation tools</h2>
+        <p class="cs-section__intro">Two simple frameworks sit underneath every conversation in this toolkit. PAC is the three-step structure for any hard conversation. OARS is the four listening moves that live inside it — drawn from Motivational Interviewing.</p>
+
+        <div class="pt-fw-grid">
+          <!-- PAC -->
+          <div class="pt-fw">
+            <div class="pt-fw__head">
+              <span class="pt-fw__badge">PAC</span>
+              <div class="pt-fw__title">Coming alongside<span>Three steps, always in this order</span></div>
+            </div>
+            <div class="pt-fw__body">
+              <div class="pt-fw-step">
+                <div class="pt-fw-step__l">P</div>
+                <div class="pt-fw-step__c">
+                  <strong>Permission</strong>
+                  <p>Honour their choice, lower the threat. Ask before diving in.</p>
+                  <span class="pt-fw-step__eg">"Quick check-in or quiet ride home?"</span>
+                </div>
+              </div>
+              <div class="pt-fw-step">
+                <div class="pt-fw-step__l">A</div>
+                <div class="pt-fw-step__c">
+                  <strong>Acknowledge</strong>
+                  <p>Empathy first, advice second. Name it and normalise it.</p>
+                  <span class="pt-fw-step__eg">"Big game today — nerves make sense."</span>
+                </div>
+              </div>
+              <div class="pt-fw-step">
+                <div class="pt-fw-step__l">C</div>
+                <div class="pt-fw-step__c">
+                  <strong>Collaborate</strong>
+                  <p>Invite their wisdom; offer choices. Keep the choice with them.</p>
+                  <span class="pt-fw-step__eg">"What do you think will work for you?"</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- OARS -->
+          <div class="pt-fw">
+            <div class="pt-fw__head">
+              <span class="pt-fw__badge pt-fw__badge--accent">OARS</span>
+              <div class="pt-fw__title">Listen so they keep talking<span>The four moves inside PAC</span></div>
+            </div>
+            <div class="pt-fw__body">
+              <div class="pt-fw-step">
+                <div class="pt-fw-step__l">O</div>
+                <div class="pt-fw-step__c">
+                  <strong>Open questions</strong>
+                  <p>Start with <em>what</em> or <em>how</em>. Invite more than a yes/no.</p>
+                  <span class="pt-fw-step__eg">"What felt hardest out there today?"</span>
+                </div>
+              </div>
+              <div class="pt-fw-step">
+                <div class="pt-fw-step__l">A</div>
+                <div class="pt-fw-step__c">
+                  <strong>Affirmations</strong>
+                  <p>Spot effort, not just outcome. A strength they can own.</p>
+                  <span class="pt-fw-step__eg">"You kept working after the mistake."</span>
+                </div>
+              </div>
+              <div class="pt-fw-step">
+                <div class="pt-fw-step__l">R</div>
+                <div class="pt-fw-step__c">
+                  <strong>Reflections</strong>
+                  <p>Say the gist back as a statement, not a question.</p>
+                  <span class="pt-fw-step__eg">"You're gutted and want a do-over."</span>
+                </div>
+              </div>
+              <div class="pt-fw-step">
+                <div class="pt-fw-step__l">S</div>
+                <div class="pt-fw-step__c">
+                  <strong>Summaries</strong>
+                  <p>Gather it up, then hand the next step back to them.</p>
+                  <span class="pt-fw-step__eg">"So you're frustrated, but you want to keep going."</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAC BUILDER TOOL -->
+        <div class="pt-tool">
+          <div class="pt-tool__head">
+            <div class="pt-tool__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div class="pt-tool__titles">
+              <h3>PAC Builder — try it now</h3>
+              <p>Pick a real situation and get a worked PAC script you can adapt</p>
+            </div>
+          </div>
+          <div class="pt-tool__body">
+            <select class="pt-select" id="pacSelect">
+              <option value="">— Choose a scenario —</option>
+              <option value="loss">After a tough loss or bad performance</option>
+              <option value="nerves">Pre-game nerves</option>
+              <option value="coach">A disagreement with the coach</option>
+              <option value="quit">They're talking about quitting</option>
+              <option value="bench">They got dropped or benched</option>
+              <option value="error">They made a big mistake in the game</option>
+            </select>
+            <div class="pt-pac-steps" id="pacSteps">
+              <div class="pt-pac-empty">Choose a scenario above to generate a PAC script.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONVERSATION SIMULATOR -->
+        <div class="pt-tool" style="margin-top:24px;">
+          <div class="pt-tool__head">
+            <div class="pt-tool__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </div>
+            <div class="pt-tool__titles">
+              <h3>The same conversation, two ways</h3>
+              <p>Tap a reply and watch the chat unfold — option 1 is the MI move, option 2 isn't</p>
+            </div>
+          </div>
+          <div class="pt-tool__body">
+            <p class="pt-cv-intro">Your child comes off the pitch deflated. At each turn you get two replies: the <strong style="color:#fff;">top</strong> is Motivational-Interviewing consistent (curious, alongside); the <strong style="color:#fff;">bottom</strong> is a common "roadblock." Choose either and see how they respond — the conversation really does diverge.</p>
+            <div class="pt-cv-legend">
+              <span><span class="pt-cv-dot pt-cv-dot--mi"></span>MI-consistent — keeps them talking</span>
+              <span><span class="pt-cv-dot pt-cv-dot--road"></span>Roadblock — shuts it down</span>
+            </div>
+            <div class="pt-cv-phone">
+              <div class="pt-cv-bar">
+                <div class="pt-cv-bar__avatar">10</div>
+                <div>
+                  <div class="pt-cv-bar__name">Your athlete</div>
+                  <div class="pt-cv-bar__status">● just finished the game</div>
+                </div>
+              </div>
+              <div class="pt-cv-thread" id="cvThread" aria-live="polite"></div>
+              <div class="pt-cv-options" id="cvOptions"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 ACE -->
+    <section class="cs-section" id="pt-ace">
+      <div class="container">
+        <span class="cs-section__eyebrow">For Your Own Sideline Nerves</span>
+        <h2 class="cs-section__title">ACE —<br>your trackside <em>reset</em></h2>
+        <p class="cs-section__intro">You can't parent your child's feelings until you can hold your own. ACE is a three-step reset you can run trackside, in your head, in about thirty seconds. The mindset: we don't control our feelings — we control how we show up. Especially on game week. <em style="color:var(--club-light);font-style:italic;">(Acceptance &amp; Commitment Training; Harris)</em></p>
+
+        <div class="pt-ace-grid">
+          <div class="pt-ace-card" id="aceCard0">
+            <div class="pt-ace-card__l">A</div>
+            <h4>Acknowledge</h4>
+            <p>Notice and name it. <em>"There's my anxiety."</em> Naming a feeling takes the heat out of it.</p>
+          </div>
+          <div class="pt-ace-card" id="aceCard1">
+            <div class="pt-ace-card__l">C</div>
+            <h4>Connect</h4>
+            <p>Feet on the ground, one slow breath, back to the present moment.</p>
+          </div>
+          <div class="pt-ace-card" id="aceCard2">
+            <div class="pt-ace-card__l">E</div>
+            <h4>Engage</h4>
+            <p>Re-engage with what matters — watch, clap the effort, be the calm one.</p>
+          </div>
+        </div>
+
+        <div class="pt-ace-player">
+          <div class="pt-ace-dial">
+            <svg viewBox="0 0 132 132">
+              <circle class="pt-ace-dial__bg" cx="66" cy="66" r="58"/>
+              <circle class="pt-ace-dial__fg" id="aceDial" cx="66" cy="66" r="58" stroke-dasharray="364" stroke-dashoffset="364"/>
+            </svg>
+            <div class="pt-ace-dial__num">
+              <span class="pt-ace-dial__n" id="aceNum">30</span>
+              <span class="pt-ace-dial__lbl">seconds</span>
+            </div>
+          </div>
+          <div class="pt-ace-ctl">
+            <div class="pt-ace-ctl__phase" id="acePhase">Press start when you're ready — a guided 30-second reset.</div>
+            <div class="pt-ace-btns">
+              <button class="pt-btn" id="aceStart">▶ Start Reset</button>
+              <button class="pt-btn pt-btn--ghost" id="aceReset">↺ Reset</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 CAR RIDE -->
+    <section class="cs-section cs-section--alt" id="pt-carride">
+      <div class="container">
+        <span class="cs-section__eyebrow">After the Game</span>
+        <h2 class="cs-section__title">The car-ride<br>toolkit</h2>
+        <p class="cs-section__intro">The ride home is the most important ten minutes of the week. What you ask — and how you respond — quietly teaches your child what you value. Two simple shifts make a big difference: ask open, curious questions, and affirm what you notice rather than judging what you saw.</p>
+
+        <!-- Question generator -->
+        <div class="pt-tool" style="margin-bottom:32px;">
+          <div class="pt-tool__head">
+            <div class="pt-tool__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <div class="pt-tool__titles">
+              <h3>Question Generator</h3>
+              <p>Pick a category, hit generate — then use just one on the ride home</p>
+            </div>
+          </div>
+          <div class="pt-tool__body">
+            <div class="pt-qcats">
+              <button class="pt-qcat is-active" data-cat="all">All</button>
+              <button class="pt-qcat" data-cat="connection">Connection &amp; Enjoyment</button>
+              <button class="pt-qcat" data-cat="effort">Effort &amp; Growth</button>
+              <button class="pt-qcat" data-cat="team">Team &amp; Perspective</button>
+            </div>
+            <div class="pt-qout is-empty" id="qOut">Hit generate for a question to ask.</div>
+            <button class="pt-qbtn" id="qBtn">Generate a question</button>
+            <div class="pt-powerline">
+              <span class="pt-powerline__lbl">The most powerful line in youth sport — no question needed</span>
+              <p><em>"I love watching you play."</em><br>Say it, and stop. No pressure, no scoreboard. <span style="color:var(--gray-500);">(Bruce Brown &amp; Rob Miller — research on what kids want to hear.) And avoid the relentless "Did you win?" / "How many did you score?" — it teaches that the result is what you care about most.</span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Affirmation vs praise -->
+        <div class="pt-bigidea">
+          <p><strong>Affirmation vs praise — the difference that matters.</strong> <strong>Praise</strong> is a judgment you pass down (it often starts with "I"). <strong>Affirmation</strong> is something you notice in them (it starts with "You") — a strength they can own, that can't be taken away. Affirmation builds lasting confidence; praise can quietly become something they chase. <em>(Prof. Stephen Rollnick, co-founder of Motivational Interviewing, via Sport NZ's Balance is Better.)</em></p>
+        </div>
+        <div class="pt-flip">
+          <div class="pt-flip-col pt-flip-col--praise">
+            <div class="pt-flip-col__head">Praise — a verdict from you</div>
+            <div class="pt-flip-col__body">
+              <div class="pt-flip-line">"Well done, that was a brilliant pass."</div>
+              <div class="pt-flip-line">"I'm so impressed with you today."</div>
+              <div class="pt-flip-line">"Good game — you played really well."</div>
+            </div>
+            <div class="pt-flip-col__note">Fine now and then — but as a habit it can make approval feel conditional on the result.</div>
+          </div>
+          <div class="pt-flip-col pt-flip-col--affirm">
+            <div class="pt-flip-col__head">Affirmation — a strength you noticed</div>
+            <div class="pt-flip-col__body">
+              <div class="pt-flip-line">"You paused, saw the gap, and trusted yourself to go for it."</div>
+              <div class="pt-flip-line">"There's that determination again."</div>
+              <div class="pt-flip-line">"You kept your head when it got tense."</div>
+            </div>
+            <div class="pt-flip-col__note">Names a quality they can take ownership of — and works even after a loss.</div>
+          </div>
+        </div>
+        <div class="pt-bigidea" style="margin-top:16px;">
+          <p><strong>It works in the hard moments too.</strong> When your child says <em>"I let the team down,"</em> an affirmation might be: <strong>"You don't like that — because you're a loyal team player."</strong> You're shining a light on the value underneath the disappointment.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 STICKY MOMENTS -->
+    <section class="cs-section" id="pt-sticky">
+      <div class="container">
+        <span class="cs-section__eyebrow">When It Gets Hard</span>
+        <h2 class="cs-section__title">The sticky<br>moments</h2>
+        <p class="cs-section__intro">Three real moments, worked through with the same tools. The golden thread is always the same: connection before correction, and keep the choice with your child.</p>
+
+        <div class="pt-tabs">
+          <button class="pt-tab is-active" data-panel="m1">1 · Disagreeing with the coach</button>
+          <button class="pt-tab" data-panel="m2">2 · Wanting to quit mid-season</button>
+          <button class="pt-tab" data-panel="m3">3 · The post-loss spiral</button>
+        </div>
+        <div class="pt-panels">
+
+          <!-- M1 -->
+          <div class="pt-panel is-active" id="m1">
+            <p class="pt-panel__q">"How do I raise it without hurting my kid's minutes?"</p>
+            <div class="pt-golden"><strong>Golden rule — athlete first.</strong> The most common mistake is going to the coach before going to your own child.</div>
+            <div class="pt-2col">
+              <div>
+                <div class="pt-minihdr">Do this</div>
+                <ul class="pt-list">
+                  <li><strong>Start with PAC at home.</strong> Let your child lead: "What would help — asking for feedback, trying a new role, or giving it two weeks?"</li>
+                  <li><strong>Coach the self-advocacy.</strong> Help your teen practise a 30-second ask: <em>"Coach, could I get one thing to work on before Saturday?"</em></li>
+                  <li><strong>Use the 24-hour rule.</strong> If you do step in, wait a day, then ask for a brief private chat — never a sideline confrontation or text thread.</li>
+                  <li><strong>Lead with their view.</strong> Ask the coach's perspective first, reflect it back, then make one concrete request.</li>
+                </ul>
+              </div>
+              <div>
+                <div class="pt-minihdr">Keep lanes clear</div>
+                <ul class="pt-list">
+                  <li>Coaches coach. Parents handle the <strong>climate</strong> — sleep, food, transport, empathy, affirmation.</li>
+                  <li>Kids prefer parents who emphasise effort and support over selection politics.</li>
+                </ul>
+                <div class="pt-except">
+                  <strong>The exception</strong>
+                  <p>If there's suspected bullying, abuse or a boundary violation, skip private negotiation — use the club's formal safeguarding channel.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- M2 -->
+          <div class="pt-panel" id="m2">
+            <p class="pt-panel__q">"How do I tell avoidance from a healthy, values-based choice?"</p>
+            <div class="pt-golden"><strong>Golden rule — don't argue them out of it, and don't cave instantly.</strong> Run a calm check-in, then propose an experiment.</div>
+            <div class="pt-2col">
+              <div>
+                <div class="pt-minihdr">Three questions (after PAC)</div>
+                <ul class="pt-list">
+                  <li><em>"What's hard right now?"</em> — name it.</li>
+                  <li><em>"What have you already tried?"</em> — competence.</li>
+                  <li><em>"What would a good next two weeks look like?"</em> — the experiment.</li>
+                </ul>
+              </div>
+              <div>
+                <div class="pt-minihdr">Then</div>
+                <ul class="pt-list">
+                  <li><strong>Try a two-week experiment</strong> — tweak the role, volume or position; revisit together. Kids stay when sport feels fun, masterable and connected.</li>
+                  <li><strong>Know when exit is healthy.</strong> Chronic injury risk, real exhaustion or a toxic climate are good reasons to de-load or stop.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="pt-script">
+              <span class="pt-script__lbl">A line you can use</span>
+              <p>"Let's finish the next two weeks intentionally — one tiny change to try, then we'll decide together."</p>
+            </div>
+          </div>
+
+          <!-- M3 -->
+          <div class="pt-panel" id="m3">
+            <p class="pt-panel__q">"They get really down, shut me out, and ruminate for hours. How do I help without making it worse?"</p>
+            <div class="pt-golden"><strong>Golden rule — post-game brains are hot.</strong> Connection now, coaching later. You can't remove the feeling — you can sit alongside it.</div>
+            <div class="pt-2col">
+              <div>
+                <div class="pt-minihdr">0–60 min · the ride home</div>
+                <ul class="pt-list">
+                  <li><strong>PAC-Quiet:</strong> "Quick check-in or quiet ride?"</li>
+                  <li><strong>Two lines, then silence:</strong> "I love watching you play," + one specific affirmation. Then stop talking.</li>
+                  <li><strong>Spiral breakers:</strong> one slow breath together; movement and fuel — a walk, a snack, a shower.</li>
+                </ul>
+              </div>
+              <div>
+                <div class="pt-minihdr">Next day · 10-min debrief</div>
+                <ul class="pt-list">
+                  <li>Use OARS. Open: "What felt hardest?" Affirm the effort. Reflect the feeling.</li>
+                  <li><strong>Shift judge → describe:</strong> "two missed touches," not "I'm useless."</li>
+                  <li>Land on one cue for the week, and a 24–48h pause on social-media game takes.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="pt-script">
+              <span class="pt-script__lbl">Word repetition — a defusion trick (ACT)</span>
+              <p>Take the stickiest self-critical word — "useless," "mistake" — and repeat it silently, faster and faster, until it loses its grip and becomes just a sound.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 ROUGH PATCH -->
+    <section class="cs-section cs-section--alt" id="pt-rough">
+      <div class="container">
+        <span class="cs-section__eyebrow">The Long Game</span>
+        <h2 class="cs-section__title">Through a<br>rough patch</h2>
+        <p class="cs-section__intro">A run of poor games, a form slump, being dropped, or just not enjoying it lately. These patches are normal — and they're where your child learns the most, if the environment around them stays safe. Your job isn't to fix the form. It's to be the steady, low-pressure base they can come back to.</p>
+
+        <div class="pt-ways">
+          <div class="pt-way"><div class="pt-way__n">1</div><h4>Separate performance from person</h4><p>A bad game is something they did, not who they are. Keep your warmth the same whether they played a blinder or a shocker.</p></div>
+          <div class="pt-way"><div class="pt-way__n">2</div><h4>Protect the relationship over results</h4><p>If every interaction becomes about improvement, sport starts to cost them your approval. Sometimes talk about anything but the game.</p></div>
+          <div class="pt-way"><div class="pt-way__n">3</div><h4>Normalise the dip</h4><p>"Every player who's ever been good has gone through patches like this." It's true, and it takes the shame out.</p></div>
+          <div class="pt-way"><div class="pt-way__n">4</div><h4>Shift focus to what they control</h4><p>Effort, attitude, preparation, how they treat teammates — always available, even when form and selection aren't. Affirm those.</p></div>
+          <div class="pt-way"><div class="pt-way__n">5</div><h4>Keep them connected</h4><p>Belonging carries kids through slumps. Lifts to training, time with teammates, staying part of the group.</p></div>
+        </div>
+
+        <!-- Script for rough patch (PAC) -->
+        <div class="pt-tool" style="margin-bottom:32px;">
+          <div class="pt-tool__head">
+            <div class="pt-tool__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <div class="pt-tool__titles">
+              <h3>A simple script for a rough patch</h3>
+              <p>PAC, word for word if it helps</p>
+            </div>
+          </div>
+          <div class="pt-tool__body">
+            <div class="pt-pac-steps">
+              <div class="pt-pac-step">
+                <div class="pt-pac-step__badge">P</div>
+                <div>
+                  <div class="pt-pac-step__label">Permission + Acknowledge</div>
+                  <div class="pt-pac-step__line">"I've noticed footy's felt a bit heavy lately. Want to talk about it, or just have me in your corner?"</div>
+                </div>
+              </div>
+              <div class="pt-pac-step pt-pac-step--A">
+                <div class="pt-pac-step__badge">A</div>
+                <div>
+                  <div class="pt-pac-step__label">Normalise + Affirm</div>
+                  <div class="pt-pac-step__line">"Every good player hits patches like this. What I keep seeing is you still turning up and still trying — that's the bit that matters."</div>
+                </div>
+              </div>
+              <div class="pt-pac-step pt-pac-step--C">
+                <div class="pt-pac-step__badge">C</div>
+                <div>
+                  <div class="pt-pac-step__label">Collaborate</div>
+                  <div class="pt-pac-step__line">"Is there anything that would make it more fun again right now — or anything you'd like my help with?"</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-2col">
+          <div class="pt-warn">
+            <h4>Watch for when it's more than a dip</h4>
+            <ul>
+              <li>Dread or tears before training, not just disappointment after games</li>
+              <li>Sleep, appetite or mood changes that spill beyond sport</li>
+              <li>Harsh self-talk — "I'm useless," "everyone hates me"</li>
+              <li>Pulling away from friends and teammates</li>
+            </ul>
+          </div>
+          <div>
+            <div class="pt-minihdr">Where to turn for support</div>
+            <div class="pt-support">
+              <div class="pt-sup"><h5>The Coach</h5><p>For role, minutes or development questions. Use the 24-hour rule.</p></div>
+              <div class="pt-sup"><h5>GP / Counsellor</h5><p>If low mood or anxiety is spilling beyond sport.</p></div>
+              <div class="pt-sup"><h5>1737 (NZ)</h5><p>Free call or text, any time, to talk with a trained counsellor.</p></div>
+              <div class="pt-sup"><h5>The Performance Act</h5><p>Tailored psychology support — performance, pressure &amp; wellbeing.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 EXTRA RESOURCES -->
+    <section class="cs-section" id="pt-resources">
+      <div class="container">
+        <span class="cs-section__eyebrow">Go Deeper</span>
+        <h2 class="cs-section__title">Further watching<br>&amp; reading</h2>
+        <p class="cs-section__intro">A short, carefully chosen selection of talks and reading from trusted voices in youth sport — to explore the ideas in this toolkit further, in your own time.</p>
+
+        <div class="pt-res-grid">
+
+          <a class="pt-res-card" href="https://www.youtube.com/watch?v=pRP7b50SX7Y" target="_blank" rel="noopener">
+            <div class="pt-res-card__icon">
+              <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <div class="pt-res-card__body">
+              <span class="pt-res-card__cat">Video · Research</span>
+              <div class="pt-res-card__title">Mastering the Art of Sports Parenting</div>
+              <div class="pt-res-card__src">Prof. Camilla Knight</div>
+              <p class="pt-res-card__desc">One of the world's leading sports-parenting researchers on how to support your child's journey without adding pressure — the evidence behind much of this toolkit.</p>
+              <span class="pt-res-card__cta">Watch on YouTube
+                <svg viewBox="0 0 24 24" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <a class="pt-res-card" href="https://www.youtube.com/watch?v=Z5UfNkzSS_w" target="_blank" rel="noopener">
+            <div class="pt-res-card__icon">
+              <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <div class="pt-res-card__body">
+              <span class="pt-res-card__cat">Video · Framework</span>
+              <div class="pt-res-card__title">The 5Cs for Parents in Sport</div>
+              <div class="pt-res-card__src">Prof. Chris Harwood</div>
+              <p class="pt-res-card__desc">A practical framework for the five qualities parents can nurture in a young athlete — commitment, communication, concentration, control and confidence.</p>
+              <span class="pt-res-card__cta">Watch on YouTube
+                <svg viewBox="0 0 24 24" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <a class="pt-res-card" href="https://www.youtube.com/watch?v=uXtK_k6HTmI" target="_blank" rel="noopener">
+            <div class="pt-res-card__icon">
+              <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <div class="pt-res-card__body">
+              <span class="pt-res-card__cat">Video · Research</span>
+              <div class="pt-res-card__title">Promoting Continued Interest for Kids</div>
+              <div class="pt-res-card__src">Dr Jean Côté</div>
+              <p class="pt-res-card__desc">A world-renowned coaching researcher on how to keep young people engaged, enjoying their sport, and playing for the long term.</p>
+              <span class="pt-res-card__cta">Watch on YouTube
+                <svg viewBox="0 0 24 24" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <a class="pt-res-card" href="https://www.youtube.com/watch?v=CLgKtco3mbo" target="_blank" rel="noopener">
+            <div class="pt-res-card__icon">
+              <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <div class="pt-res-card__body">
+              <span class="pt-res-card__cat">Video · Aotearoa NZ</span>
+              <div class="pt-res-card__title">Getting Your Kids Through Sports Trials</div>
+              <div class="pt-res-card__src">RNZ · It Takes A Village</div>
+              <p class="pt-res-card__desc">A New Zealand perspective on supporting children through the emotional ups and downs of team selection and trials — our sticky moments, on screen.</p>
+              <span class="pt-res-card__cta">Watch on YouTube
+                <svg viewBox="0 0 24 24" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <a class="pt-res-card pt-res-card--read" href="https://balanceisbetter.org.nz/praise-vs-affirmation/" target="_blank" rel="noopener" style="grid-column: 1 / -1;">
+            <div class="pt-res-card__icon">
+              <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </div>
+            <div class="pt-res-card__body">
+              <span class="pt-res-card__cat">Article · Recommended Reading</span>
+              <div class="pt-res-card__title">Praise vs. Affirmation</div>
+              <div class="pt-res-card__src">Sport NZ · Balance is Better — Prof. Stephen Rollnick</div>
+              <p class="pt-res-card__desc">The short article behind our car-ride toolkit. Rollnick — co-founder of Motivational Interviewing — sets out exactly why affirmation builds lasting confidence where praise can quietly become something kids chase.</p>
+              <span class="pt-res-card__cta">Read the article
+                <svg viewBox="0 0 24 24" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </span>
+            </div>
+          </a>
+
+        </div>
+
+        <p class="pt-res-note">These resources are independent works by their respective creators and are shared here for educational purposes. They open in a new tab and are not affiliated with The Performance Act or Nomads United AFC.</p>
+      </div>
+    </section>
+
+    <!-- 08 REFLECTION -->
+    <section class="cs-section cs-section--alt" id="pt-reflect">
+      <div class="container">
+        <span class="cs-section__eyebrow">For You</span>
+        <h2 class="cs-section__title">Your own<br>reflection</h2>
+        <p class="cs-section__intro">The tools work best when you've turned them on yourself first. These notes stay here, on your screen — nobody else sees them.</p>
+        <div class="cs-reflect-grid">
+          <div class="cs-reflect-item">
+            <span class="cs-reflect-label">How they'd like your support</span>
+            <p class="cs-reflect-q">Most parents have never actually asked. What do you think your child would say if you asked them: "How would you like my support on game day?"</p>
+            <textarea class="cs-reflect-textarea" placeholder="I think they'd say… (and I'll actually ask them this week)"></textarea>
+          </div>
+          <div class="cs-reflect-item">
+            <span class="cs-reflect-label">Your own sideline dial</span>
+            <p class="cs-reflect-q">When does your frustration or anxiety spike watching them play? What's your ACE — your Acknowledge, your Connect, your Engage?</p>
+            <textarea class="cs-reflect-textarea" placeholder="It spikes when… My Connect is… My Engage is…"></textarea>
+          </div>
+          <div class="cs-reflect-item">
+            <span class="cs-reflect-label">From praise to affirmation</span>
+            <p class="cs-reflect-q">Think of something you said after a recent game. Could you rewrite it as an affirmation — starting with "You…" and naming a quality?</p>
+            <textarea class="cs-reflect-textarea" placeholder="Instead of 'I was so impressed…', I could say 'You…'"></textarea>
+          </div>
+          <div class="cs-reflect-item">
+            <span class="cs-reflect-label">This week's one small thing</span>
+            <p class="cs-reflect-q">Small enough you can't talk yourself out of it. Something you could actually do on Saturday.</p>
+            <textarea class="cs-reflect-textarea" placeholder="This week I will… (e.g. 'try the quiet ride home', 'one breath before I speak after the game')"></textarea>
+          </div>
+        </div>
+
+        <div class="pt-onething">
+          <h3>Remember the whole point</h3>
+          <p><strong>Connection before correction</strong> · Affirm what you notice · Keep the choice with them · Be the calm, steady base they come back to. This week, try just one thing.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer nav -->
+    <div class="container">
+      <div class="cs-footer-nav">
+        <a href="grow-nomads.html" class="cs-footer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Parent Hub
+        </a>
+        <a href="mailto:info@performance-act.com" class="cs-footer-link cs-footer-link--next">
+          Get tailored support
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer-bar">
+    <div class="container">
+      <p>&copy; 2026 The Performance Act. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js?v=3"></script>
+  <script>
+    /* Progress bar */
+    const progressFill = document.getElementById('progressFill');
+    function updateProgress() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      progressFill.style.width = (scrollTop / docHeight * 100) + '%';
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+
+    /* Section nav */
+    const navBtns = document.querySelectorAll('.cs-nav__btn');
+    const sections = document.querySelectorAll('section[id]');
+    navBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.target);
+        if (target) {
+          const headerOffset = 100;
+          const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+    function updateNav() {
+      let current = '';
+      sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
+      });
+      navBtns.forEach(btn => btn.classList.toggle('is-active', btn.dataset.target === current));
+    }
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+
+    /* ---- PAC BUILDER ---- */
+    const pacScenarios = {
+      loss: {
+        P: { label: 'Permission', line: '"Quick check-in, or would you rather have a quiet ride home?"', why: 'Lowering the threat — they choose the temperature of the conversation.' },
+        A: { label: 'Acknowledge', line: '"That was a tough one. It makes total sense that you’re gutted right now."', why: 'Empathy before advice. Name the feeling and normalise it.' },
+        C: { label: 'Collaborate', line: '"Is there anything that would help right now, or do you just need a bit of space first?"', why: 'Keep the choice with them. You’re alongside, not steering.' }
+      },
+      nerves: {
+        P: { label: 'Permission', line: '"You seem a bit wound up — want to talk, or shall I just be here quietly?"', why: 'Honour their state; don’t force a conversation.' },
+        A: { label: 'Acknowledge', line: '"Big game today — nerves make complete sense. Even the best players feel this."', why: 'Normalise the feeling so it isn’t something to be ashamed of.' },
+        C: { label: 'Collaborate', line: '"What’s worked for you before when you’ve felt like this? What do you reckon will help?"', why: 'Invite their wisdom — they know themselves.' }
+      },
+      coach: {
+        P: { label: 'Permission', line: '"I want to hear your take on this — is now a good time, or after dinner?"', why: 'Signal respect and give them control over the timing.' },
+        A: { label: 'Acknowledge', line: '"Sounds like you’re frustrated about your role at the moment. That makes sense — it matters to you."', why: 'Validate the feeling before any problem-solving.' },
+        C: { label: 'Collaborate', line: '"What would feel most helpful — practising asking the coach yourself, trying a new role, or giving it another week?"', why: 'Keep the athlete in the driver’s seat (athlete first).' }
+      },
+      quit: {
+        P: { label: 'Permission', line: '"I want to hear what’s going on for you — is now okay?"', why: 'Don’t react instantly. Create a calm space first.' },
+        A: { label: 'Acknowledge', line: '"Sounds like something’s making it feel really heavy right now. I hear that."', why: 'Resist the urge to argue or fix. Empathy first.' },
+        C: { label: 'Collaborate', line: '"What would a good next two weeks look like? Is there one small thing we could try or change?"', why: 'The two-week experiment — neither caving nor forcing.' }
+      },
+      bench: {
+        P: { label: 'Permission', line: '"That’s hard. Want to talk it through, or just have tonight to sit with it?"', why: 'Post-game brains are hot. Let them choose the pace.' },
+        A: { label: 'Acknowledge', line: '"Being dropped stings, especially when you’ve been working hard. That’s a tough one to sit with."', why: 'Separate performance from person — the feeling is valid.' },
+        C: { label: 'Collaborate', line: '"When the time feels right, what do you think the best next step is — a chat with the coach, focus on training, or something else?"', why: 'Return agency to them.' }
+      },
+      error: {
+        P: { label: 'Permission', line: '"I’m here. Want to talk, or quiet for now?"', why: 'Don’t rush in. The first move is always permission.' },
+        A: { label: 'Acknowledge', line: '"You’re hard on yourself because you care. That’s actually a really good quality — even when it hurts."', why: 'Affirm the value underneath the self-criticism.' },
+        C: { label: 'Collaborate', line: '"What do you want to take from today — one thing to work on, or just let it go and go again Saturday?"', why: 'Let them decide how to process it.' }
+      }
+    };
+    const pacSelect = document.getElementById('pacSelect');
+    const pacSteps  = document.getElementById('pacSteps');
+    pacSelect.addEventListener('change', () => {
+      const v = pacSelect.value;
+      if (!v) { pacSteps.innerHTML = '<div class="pt-pac-empty">Choose a scenario above to generate a PAC script.</div>'; return; }
+      const s = pacScenarios[v];
+      const cls = { P: '', A: ' pt-pac-step--A', C: ' pt-pac-step--C' };
+      pacSteps.innerHTML = ['P','A','C'].map(k => `
+        <div class="pt-pac-step${cls[k]}">
+          <div class="pt-pac-step__badge">${k}</div>
+          <div>
+            <div class="pt-pac-step__label">${s[k].label}</div>
+            <div class="pt-pac-step__line">${s[k].line}</div>
+            <div class="pt-pac-step__why">${s[k].why}</div>
+          </div>
+        </div>`).join('');
+    });
+
+    /* ---- ACE TIMER ---- */
+    const aceDial  = document.getElementById('aceDial');
+    const aceNum   = document.getElementById('aceNum');
+    const acePhase = document.getElementById('acePhase');
+    const aceStart = document.getElementById('aceStart');
+    const aceReset = document.getElementById('aceReset');
+    const aceCards = [0,1,2].map(i => document.getElementById('aceCard' + i));
+    const aceMsgs  = [
+      'A — Acknowledge: notice what’s here. Name the feeling silently.',
+      'C — Connect: feet on the ground. One slow breath out.',
+      'E — Engage: re-engage with what matters. Watch. Clap. Be the calm one.'
+    ];
+    const CIRC = 364;
+    let aceSec = 30, aceTimer = null, aceRunning = false;
+
+    function aceRender() {
+      aceNum.textContent = aceSec;
+      aceDial.style.strokeDashoffset = CIRC - CIRC * (aceSec / 30);
+      let phase = 0;
+      const elapsed = 30 - aceSec;
+      if (elapsed >= 20) phase = 2; else if (elapsed >= 10) phase = 1;
+      aceCards.forEach((c, i) => c.classList.toggle('is-active', i === phase && aceSec > 0));
+      if (aceSec > 0) acePhase.textContent = aceMsgs[phase];
+    }
+    function aceTick() {
+      aceSec--;
+      aceRender();
+      if (aceSec <= 0) {
+        clearInterval(aceTimer); aceRunning = false;
+        aceStart.textContent = '▶ Start Reset';
+        acePhase.textContent = '✓ Reset complete. Now — re-engage with the game.';
+        aceCards.forEach(c => c.classList.remove('is-active'));
+      }
+    }
+    aceStart.addEventListener('click', () => {
+      if (aceRunning) {
+        clearInterval(aceTimer); aceRunning = false; aceStart.textContent = '▶ Resume';
+      } else {
+        if (aceSec <= 0) { aceSec = 30; aceRender(); }
+        aceRunning = true; aceStart.textContent = '⏸ Pause';
+        aceTimer = setInterval(aceTick, 1000);
+      }
+    });
+    aceReset.addEventListener('click', () => {
+      clearInterval(aceTimer); aceRunning = false; aceSec = 30;
+      aceStart.textContent = '▶ Start Reset';
+      acePhase.textContent = 'Press start when you’re ready — a guided 30-second reset.';
+      aceRender();
+      aceCards.forEach(c => c.classList.remove('is-active'));
+    });
+    aceRender();
+
+    /* ---- QUESTION GENERATOR ---- */
+    const questions = {
+      connection: [
+        '"What was the most fun part out there today?"',
+        '"When did you feel most in the game?"',
+        '"What’s something you tried that you were proud of?"',
+        '"If you could replay one moment from today, what would it be?"',
+        '"What made you smile out there today — even a small thing?"'
+      ],
+      effort: [
+        '"What was the hardest moment, and how did you handle it?"',
+        '"What’s one thing you’d like to work on this week?"',
+        '"What did you learn out there today?"',
+        '"What did you do today that you hadn’t quite managed before?"',
+        '"What would you tell yourself at half-time if you could go back?"'
+      ],
+      team: [
+        '"Who did something great that nobody noticed?"',
+        '"How do you reckon the team worked together today?"',
+        '"Who helped you out there today?"',
+        '"What did someone do that made a difference for the group?"'
+      ]
+    };
+    let qCat = 'all';
+    document.querySelectorAll('.pt-qcat').forEach(b => {
+      b.addEventListener('click', () => {
+        document.querySelectorAll('.pt-qcat').forEach(x => x.classList.remove('is-active'));
+        b.classList.add('is-active'); qCat = b.dataset.cat;
+      });
+    });
+    const qOut = document.getElementById('qOut');
+    document.getElementById('qBtn').addEventListener('click', () => {
+      const pool = qCat === 'all'
+        ? [...questions.connection, ...questions.effort, ...questions.team]
+        : questions[qCat];
+      qOut.textContent = pool[Math.floor(Math.random() * pool.length)];
+      qOut.classList.remove('is-empty');
+      qOut.style.animation = 'none'; void qOut.offsetWidth; qOut.style.animation = 'csFadeUp 0.3s ease';
+    });
+
+    /* ---- STICKY MOMENT TABS ---- */
+    document.querySelectorAll('.pt-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.pt-tab').forEach(t => t.classList.remove('is-active'));
+        document.querySelectorAll('.pt-panel').forEach(p => p.classList.remove('is-active'));
+        tab.classList.add('is-active');
+        document.getElementById(tab.dataset.panel).classList.add('is-active');
+      });
+    });
+
+    /* ---- CONVERSATION SIMULATOR ---- */
+    const cvSteps = [
+      {
+        athlete: { open: 'I played so badly today. I should just quit.', shut: 'I played so badly today. I should just quit.' },
+        options: [
+          { mi: true,  tag: 'Reflect the feeling', text: 'Sounds like you’re really disappointed with how that went.',
+            note: 'You named the feeling instead of rushing to fix it — so they feel heard, and keep talking.' },
+          { mi: false, tag: 'Reassure & command', text: 'Don’t be daft, you were fine — and you’re not quitting.',
+            note: 'Reassuring then commanding dismisses the feeling and sparks resistance — the "righting reflex."' }
+        ]
+      },
+      {
+        athlete: { open: 'Yeah… I keep botching the same pass. It’s embarrassing.', shut: 'You always say that. You don’t even get it.' },
+        options: [
+          { mi: true,  tag: 'Affirm + open question', text: 'That pass really matters to you. What do you reckon gets in the way?',
+            note: 'An open question hands them the wheel — they start working it out themselves.' },
+          { mi: false, tag: 'Unasked-for advice', text: 'You just need to practise more and stop overthinking it.',
+            note: 'Jumping to advice skips their experience. Most teens tune it out — or push back.' }
+        ]
+      },
+      {
+        athlete: { open: 'Maybe I rush it when everyone’s watching.', shut: 'Forget it. I don’t want to talk about this.' },
+        options: [
+          { mi: true,  tag: 'Collaborate + offer choice', text: 'Makes sense — pressure does that. Want to find one small thing to try, or leave it for tonight?',
+            note: 'You offer a next step AND a way out. Keeping the choice with them protects their autonomy.' },
+          { mi: false, tag: 'Take over', text: 'Right — tomorrow we’re doing an hour of passing drills.',
+            note: 'Taking control removes their choice. It can land as punishment, not support.' }
+        ]
+      }
+    ];
+    const cvEnd = {
+      open: '…Yeah. I could try slowing down before I pass. Thanks, Dad.',
+      shut: 'Whatever. (puts headphones in)'
+    };
+    const cvSummary = {
+      good: '<strong>Notice what happened.</strong> Reflecting, affirming and offering choices kept your child in the conversation — and they reached their own next step. That’s the whole point: connection before correction.',
+      bad:  '<strong>Notice what happened.</strong> Each roadblock — reassuring, advising, taking over — quietly closed the door. It isn’t bad parenting; it’s the natural "righting reflex." Hit restart and try the top reply each time.'
+    };
+
+    const cvThread  = document.getElementById('cvThread');
+    const cvOptions = document.getElementById('cvOptions');
+    let cvIdx = 0, cvLastMI = true, cvMiCount = 0;
+
+    function cvScroll() { cvThread.scrollTop = cvThread.scrollHeight; }
+    function cvAddMsg(side, extraCls, html) {
+      const el = document.createElement('div');
+      el.className = 'pt-cv-msg pt-cv-msg--' + side + (extraCls ? ' ' + extraCls : '');
+      el.innerHTML = html;
+      cvThread.appendChild(el); cvScroll();
+    }
+    function cvAddNote(cls, html) {
+      const el = document.createElement('div');
+      el.className = 'pt-cv-note pt-cv-note--' + cls;
+      el.innerHTML = html;
+      cvThread.appendChild(el); cvScroll();
+    }
+    function cvRenderStep() {
+      const step = cvSteps[cvIdx];
+      cvAddMsg('athlete', '', step.athlete[cvLastMI ? 'open' : 'shut']);
+      cvOptions.innerHTML = '<div class="pt-cv-prompt">Your turn — tap a reply</div>';
+      step.options.forEach((opt, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'pt-cv-opt';
+        btn.setAttribute('data-num', i + 1);
+        btn.textContent = opt.text;
+        btn.addEventListener('click', () => cvPick(opt));
+        cvOptions.appendChild(btn);
+      });
+    }
+    function cvPick(opt) {
+      cvOptions.innerHTML = '';
+      const cls = opt.mi ? 'pt-cv-msg--mi' : 'pt-cv-msg--road';
+      cvAddMsg('parent', cls, '<span class="pt-cv-msg__tag">' + opt.tag + '</span>' + opt.text);
+      cvAddNote(opt.mi ? 'mi' : 'road', (opt.mi ? '✓ ' : '✕ ') + opt.note);
+      cvLastMI = opt.mi;
+      if (opt.mi) cvMiCount++;
+      cvIdx++;
+      setTimeout(() => {
+        if (cvIdx < cvSteps.length) {
+          cvRenderStep();
+        } else {
+          cvAddMsg('athlete', '', cvEnd[cvLastMI ? 'open' : 'shut']);
+          const sum = document.createElement('div');
+          sum.className = 'pt-cv-summary';
+          sum.innerHTML = '<p>' + (cvMiCount >= 2 ? cvSummary.good : cvSummary.bad) + '</p>' +
+            '<button class="pt-cv-restart" id="cvRestart">↺ Start over</button>';
+          cvOptions.parentNode.insertBefore(sum, cvOptions);
+          document.getElementById('cvRestart').addEventListener('click', cvReset);
+          cvScroll();
+        }
+      }, 480);
+    }
+    function cvReset() {
+      cvIdx = 0; cvLastMI = true; cvMiCount = 0;
+      cvThread.innerHTML = '';
+      const sum = cvThread.parentNode.querySelector('.pt-cv-summary');
+      if (sum) sum.remove();
+      cvRenderStep();
+    }
+    if (cvThread) cvRenderStep();
+  </script>
+</body>
+</html>

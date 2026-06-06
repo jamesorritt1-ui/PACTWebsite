@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://www.performance-act.com/grow-nomads">
   <title>GROW | Nomads United AFC | The Performance Act</title>
   <meta name="description" content="GROW — the exclusive online resource hub for Nomads United AFC players, coaches, and parents.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="style.css?v=15">
   <link rel="stylesheet" href="grow.css?v=1">
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
@@ -1554,7 +1556,7 @@
   <header class="header" id="header">
     <div class="header__inner">
       <a href="index.html" class="header__logo">
-        <img src="images/logo-horizontal.png" alt="The Performance Act" class="logo-img logo-img--header">
+        <img src="images/logo-horizontal.png" alt="The Performance Act" class="logo-img logo-img--header" width="306" height="134" fetchpriority="high">
       </a>
       <nav class="header__nav" id="mainNav">
         <a href="index.html" class="nav-link">HOME</a>
@@ -1607,11 +1609,10 @@
         <!-- Club logo — place nomads-logo.png inside /images/ -->
         <div class="gw-card__logo-wrap">
           <img
-            src="images/nomads-logo.png"
+            src="images/nomads-logo.webp"
             alt="Nomads United AFC"
             class="gw-card__logo-img"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-          >
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy">
           <div class="gw-card__logo-fallback" style="display:none;">PACT</div>
         </div>
 
@@ -1661,11 +1662,10 @@
           <div class="gw-club-banner__inner">
             <div class="gw-club-banner__left">
               <img
-                src="images/nomads-logo.png"
+                src="images/nomads-logo.webp"
                 alt="Nomads United AFC"
                 class="gw-club-banner__logo"
-                onerror="this.style.display='none';"
-              >
+                onerror="this.style.display='none';" loading="lazy">
               <div>
                 <div class="gw-club-banner__name" id="bannerName">Nomads United AFC</div>
                 <div class="gw-club-banner__platform">GROW Platform &nbsp;·&nbsp; Powered by The Performance Act</div>
@@ -1747,11 +1747,10 @@
           <div class="gw-club-banner__inner">
             <div class="gw-club-banner__left">
               <img
-                src="images/nomads-logo.png"
+                src="images/nomads-logo.webp"
                 alt="Nomads United AFC"
                 class="gw-club-banner__logo"
-                onerror="this.style.display='none';"
-              >
+                onerror="this.style.display='none';" loading="lazy">
               <div>
                 <div class="gw-club-banner__name">Nomads United AFC</div>
                 <div class="gw-club-banner__platform">GROW Platform &nbsp;·&nbsp; Powered by The Performance Act</div>
@@ -1902,7 +1901,7 @@
                     </div>
                   </div>
                   <div class="ch-resource__img-panel">
-                    <img src="images/jason-discussion.jpg" alt="Coach in conversation with player">
+                    <img src="images/jason-discussion.jpg" alt="Coach in conversation with player" width="1920" height="1280" loading="lazy">
                     <div class="ch-resource__img-overlay"></div>
                   </div>
                 </div>
@@ -1912,7 +1911,7 @@
               <div class="ch-resource">
                 <div class="ch-resource__inner">
                   <div class="ch-resource__img-panel">
-                    <img src="images/youth-huddle.png" alt="Youth players huddling together">
+                    <img src="images/youth-huddle.png" alt="Youth players huddling together" width="1600" height="1067" loading="lazy">
                     <div class="ch-resource__img-overlay"></div>
                   </div>
                   <div class="ch-resource__content">
@@ -1989,7 +1988,7 @@
                     </div>
                   </div>
                   <div class="ch-resource__img-panel">
-                    <img src="images/sideline-coaching.png" alt="Coach having a sideline conversation with a player">
+                    <img src="images/sideline-coaching.png" alt="Coach having a sideline conversation with a player" width="1010" height="938" loading="lazy">
                     <div class="ch-resource__img-overlay"></div>
                   </div>
                 </div>
@@ -2313,6 +2312,33 @@
       <!-- ---- PARENT RESOURCES ---- -->
       <div id="content-parent" class="role-content" hidden>
 
+        <!-- Featured: Moments Create Mindsets toolkit -->
+        <section class="gw-sec" style="padding-bottom: 0;">
+          <div class="container">
+            <a href="grow-nomads-parent-toolkit.html" class="ch-featured-card">
+              <div class="ch-featured-card__stripe"></div>
+              <div class="ch-featured-card__inner">
+                <div>
+                  <span class="ch-featured-card__badge">Parent Toolkit · Start Here</span>
+                  <div class="ch-featured-card__title">Moments Create<br><span>Mindsets</span></div>
+                  <p class="ch-featured-card__desc">Your complete, practical guide to navigating behaviour and pressure when it matters most — the research on why you matter, the PAC and OARS conversation tools, a guided ACE reset for your own sideline nerves, the car-ride toolkit, and three sticky real-life moments worked through step by step. Built to be tried, not just read.</p>
+                  <div class="ch-featured-card__tags">
+                    <span class="ch-featured-card__tag">PAC &amp; OARS</span>
+                    <span class="ch-featured-card__tag">ACE Reset</span>
+                    <span class="ch-featured-card__tag">The Car Ride</span>
+                    <span class="ch-featured-card__tag">Sticky Moments</span>
+                    <span class="ch-featured-card__tag">Rough Patches</span>
+                  </div>
+                  <div class="ch-featured-card__cta">Open the Toolkit
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </div>
+                </div>
+                <div class="ch-featured-card__new">New</div>
+              </div>
+            </a>
+          </div>
+        </section>
+
         <section class="gw-sec">
           <div class="container">
             <div class="gw-sec-header">
@@ -2393,14 +2419,15 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-grid__brand">
-          <img src="images/logo-vertical.png" alt="The Performance Act" class="logo-img logo-img--footer">
+          <img src="images/logo-vertical.png" alt="The Performance Act" class="logo-img logo-img--footer" width="234" height="212">
           <p class="footer__tagline">Helping People Grow</p>
           <p class="footer__email">
             <a href="mailto:info@performance-act.com">info@performance-act.com</a>
           </p>
+          <p class="footer__reach">Based in Christchurch &mdash; providing evidence-based Sport Psychology and Performance Coaching to athletes and teams across Aotearoa, New Zealand.</p>
         </div>
         <div class="footer-grid__links">
-          <h4 class="footer__heading">QUICK LINKS</h4>
+          <h3 class="footer__heading">QUICK LINKS</h3>
           <a href="index.html#about" class="footer__link">About Us</a>
           <a href="approach.html" class="footer__link">Our Approach</a>
           <a href="index.html#pillars" class="footer__link">Our PACT</a>
@@ -2408,13 +2435,13 @@
           <a href="team.html" class="footer__link">Our Wh&#257;nau</a>
         </div>
         <div class="footer-grid__links">
-          <h4 class="footer__heading">SUPPORT</h4>
+          <h3 class="footer__heading">SUPPORT</h3>
           <a href="support-individual.html" class="footer__link">Individual Support</a>
           <a href="support-teams.html" class="footer__link">Team &amp; Organisational</a>
           <a href="grow.html" class="footer__link">GROW Platform</a>
         </div>
         <div class="footer-grid__social">
-          <h4 class="footer__heading">FOLLOW US</h4>
+          <h3 class="footer__heading">FOLLOW US</h3>
           <div class="social-links">
             <a href="https://www.instagram.com/performance__act/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
