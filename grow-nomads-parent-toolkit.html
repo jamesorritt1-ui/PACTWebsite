@@ -14,6 +14,9 @@
   <link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
 
   <style>
+    /* Larger, more readable base type for this page */
+    html { font-size: 17.5px; }
+
     :root {
       --club:        #0E3A84;
       --club-dark:   #092970;
@@ -23,7 +26,7 @@
 
     /* Progress bar */
     .cs-progress {
-      position: fixed; top: var(--header-height); left: 0; right: 0;
+      position: fixed; top: 0; left: 0; right: 0;
       height: 3px; background: rgba(255,255,255,0.06); z-index: 999;
     }
     .cs-progress-fill {
@@ -88,7 +91,7 @@
 
     /* Section nav */
     .cs-nav {
-      position: sticky; top: calc(var(--header-height) + 3px); z-index: 90;
+      position: sticky; top: 0; z-index: 90;
       background: var(--gray-900); border-bottom: 1px solid rgba(255,255,255,0.06);
       overflow-x: auto; -webkit-overflow-scrolling: touch;
     }
@@ -626,7 +629,7 @@
       <div class="container">
         <span class="cs-hero__session">Parent Toolkit · Nomads United AFC</span>
         <h1 class="cs-hero__title">Moments<br>Create Mindsets</h1>
-        <p class="cs-hero__sub">Navigating behaviour &amp; pressure when it matters most. The small moments — the car ride home, the thirty seconds before kick-off, the silence after a loss — are where your child's relationship with sport, and with you, is quietly built.</p>
+        <p class="cs-hero__sub">Navigating behaviour &amp; pressure when it matters most. The small moments — the car ride home, the thirty seconds before kick-off, the silence after a loss — are where your child's relationship with sport, and with you, is quietly built.<br><br>This is your take-home from the <strong style="color:#fff;">Moments Create Mindsets</strong> parent evening we ran at the club — every tool we practised together, in one place to revisit any time.</p>
         <div class="pt-hero-maori">
           <div class="pt-hero-maori__te">Ahakoa he iti, he pounamu</div>
           <div class="pt-hero-maori__en">Although small, it is precious.</div>
@@ -660,7 +663,7 @@
       <div class="container">
         <span class="cs-section__eyebrow">The Power of Parents</span>
         <h2 class="cs-section__title">Why you matter<br>more than <em>you think</em></h2>
-        <p class="cs-section__intro">You are the most powerful — and most underused — influence on whether your child stays in sport and thrives. The research is clear, and it points to one thing: it's not how much you're involved, it's the flavour of it — choice and effort over control and outcome.</p>
+        <p class="cs-section__intro">We opened the evening with this idea: you are the most powerful — and most underused — influence on whether your child stays in sport and thrives. The research is clear, and it points to one thing: it's not how much you're involved, it's the flavour of it — choice and effort over control and outcome.</p>
 
         <div class="pt-stats">
           <div class="pt-stat">
@@ -774,7 +777,7 @@
                 <div class="pt-fw-step__l">R</div>
                 <div class="pt-fw-step__c">
                   <strong>Reflections</strong>
-                  <p>Say the gist back as a statement, not a question.</p>
+                  <p>Say it straight back as a statement — skip the "it sounds like…" and just name the feeling. Direct reflections land harder and show you really get it.</p>
                   <span class="pt-fw-step__eg">"You're gutted and want a do-over."</span>
                 </div>
               </div>
@@ -838,7 +841,7 @@
               <div class="pt-cv-bar">
                 <div class="pt-cv-bar__avatar">10</div>
                 <div>
-                  <div class="pt-cv-bar__name">Your athlete</div>
+                  <div class="pt-cv-bar__name">My child</div>
                   <div class="pt-cv-bar__status">● just finished the game</div>
                 </div>
               </div>
@@ -1304,7 +1307,7 @@
       btn.addEventListener('click', () => {
         const target = document.getElementById(btn.dataset.target);
         if (target) {
-          const headerOffset = 100;
+          const headerOffset = 58;
           const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
           window.scrollTo({ top, behavior: 'smooth' });
         }
@@ -1334,12 +1337,12 @@
       },
       coach: {
         P: { label: 'Permission', line: '"I want to hear your take on this — is now a good time, or after dinner?"', why: 'Signal respect and give them control over the timing.' },
-        A: { label: 'Acknowledge', line: '"Sounds like you’re frustrated about your role at the moment. That makes sense — it matters to you."', why: 'Validate the feeling before any problem-solving.' },
+        A: { label: 'Acknowledge', line: '"You’re frustrated about your role right now — and it matters to you."', why: 'Reflect the feeling straight back as a statement — no "it sounds like." Naming it lands harder, and they feel got.' },
         C: { label: 'Collaborate', line: '"What would feel most helpful — practising asking the coach yourself, trying a new role, or giving it another week?"', why: 'Keep the athlete in the driver’s seat (athlete first).' }
       },
       quit: {
         P: { label: 'Permission', line: '"I want to hear what’s going on for you — is now okay?"', why: 'Don’t react instantly. Create a calm space first.' },
-        A: { label: 'Acknowledge', line: '"Sounds like something’s making it feel really heavy right now. I hear that."', why: 'Resist the urge to argue or fix. Empathy first.' },
+        A: { label: 'Acknowledge', line: '"Something’s making this feel really heavy for you right now."', why: 'Resist the urge to argue or fix. Name it directly — empathy first.' },
         C: { label: 'Collaborate', line: '"What would a good next two weeks look like? Is there one small thing we could try or change?"', why: 'The two-week experiment — neither caving nor forcing.' }
       },
       bench: {
@@ -1478,8 +1481,8 @@
       {
         athlete: { open: 'I played so badly today. I should just quit.', shut: 'I played so badly today. I should just quit.' },
         options: [
-          { mi: true,  tag: 'Reflect the feeling', text: 'Sounds like you’re really disappointed with how that went.',
-            note: 'You named the feeling instead of rushing to fix it — so they feel heard, and keep talking.' },
+          { mi: true,  tag: 'Reflect the feeling', text: 'You’re gutted about how that went.',
+            note: 'A direct reflection — straight to the feeling, no "it sounds like." Named cleanly, it lands, and they keep talking.' },
           { mi: false, tag: 'Reassure & command', text: 'Don’t be daft, you were fine — and you’re not quitting.',
             note: 'Reassuring then commanding dismisses the feeling and sparks resistance — the "righting reflex."' }
         ]
