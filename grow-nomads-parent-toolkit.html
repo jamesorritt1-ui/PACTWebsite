@@ -531,6 +531,65 @@
     }
     .pt-cv-restart:hover { background: rgba(255,255,255,0.06); color: #fff; border-color: rgba(255,255,255,0.4); }
 
+    /* ACE science map */
+    .pt-sci-map { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 8px 0 30px; }
+    @media (max-width: 720px) { .pt-sci-map { grid-template-columns: 1fr; } }
+    .pt-sci-card { background: var(--gray-900); border: 1px solid rgba(255,255,255,0.07); border-top: 3px solid var(--club); padding: 20px 22px; }
+    .pt-sci-card__l { font-family: var(--font-heading); font-size: 1.9rem; font-weight: 800; color: var(--club-light); line-height: 1; }
+    .pt-sci-card__step { font-family: var(--font-heading); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; margin: 8px 0 3px; }
+    .pt-sci-card__proc { font-size: 0.74rem; color: var(--club-accent); font-style: italic; margin-bottom: 10px; }
+    .pt-sci-card p { font-size: 0.83rem; color: var(--gray-400); line-height: 1.65; }
+
+    /* Dropping Anchor interactive */
+    .pt-anchor { background: #0a1020; border: 1px solid rgba(255,255,255,0.08); overflow: hidden; }
+    .pt-anchor__scene { width: 100%; height: auto; display: block; }
+    .pt-anchor__caption { padding: 14px 20px; font-size: 0.82rem; color: var(--gray-300); line-height: 1.6; background: rgba(200,16,46,0.07); border-top: 1px solid rgba(200,16,46,0.2); }
+    .pt-anchor__caption strong { color: #fff; }
+    .pt-anchor__controls { display: flex; gap: 10px; padding: 16px; flex-wrap: wrap; border-top: 1px solid rgba(255,255,255,0.06); }
+    .pt-anchor__btn { flex: 1 1 0; min-width: 120px; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 14px; cursor: pointer; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.12); color: var(--gray-300); font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.2s; }
+    .pt-anchor__btn:hover { border-color: rgba(255,255,255,0.32); color: #fff; }
+    .pt-anchor__btn.is-on { background: var(--club); border-color: var(--club); color: #fff; }
+    .pt-anchor__btn b { font-size: 1.15rem; line-height: 1; }
+    .pt-anchor__reset { flex: 0 0 auto; min-width: 0; padding: 13px 18px; background: transparent; border: 1px solid rgba(255,255,255,0.15); color: var(--gray-500); font-size: 1rem; cursor: pointer; transition: all 0.2s; }
+    .pt-anchor__reset:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
+    .pt-anchor__panel { padding: 4px 20px 22px; }
+    .pt-anchor__panel-step { font-family: var(--font-heading); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--club-light); margin-bottom: 7px; }
+    .pt-anchor__panel-text { font-size: 0.9rem; color: var(--gray-300); line-height: 1.7; }
+    .pt-anchor__panel-text strong { color: #fff; }
+    .pt-anchor__panel-text em { color: var(--club-light); font-style: italic; }
+
+    /* SVG scene animation */
+    #pt-boat { transform-box: fill-box; transform-origin: 50% 92%; animation: ptRock 3.2s ease-in-out infinite; }
+    .pt-anchor.is-anchored #pt-boat { animation: ptRockCalm 5.5s ease-in-out infinite; }
+    .pt-rain line { stroke: #9fb4d8; stroke-width: 2.4; stroke-linecap: round; opacity: 0.5; animation: ptRain 0.95s linear infinite; }
+    .pt-bolt { opacity: 0; animation: ptFlash 5s linear infinite; }
+    .pt-thoughts { opacity: 0; transition: opacity 0.7s ease; }
+    .pt-anchor.is-ack .pt-thoughts { opacity: 1; }
+    .pt-anchor-drop { opacity: 0; transform: translateY(-72px); }
+    .pt-anchor.is-anchored .pt-anchor-drop { opacity: 1; transform: translateY(0); transition: transform 1.1s cubic-bezier(.5,.08,.2,1), opacity 0.4s ease; }
+    .pt-beam { opacity: 0; transition: opacity 0.8s ease; }
+    .pt-anchor.is-engaged .pt-beam { opacity: 0.85; animation: ptGlow 2.6s ease-in-out infinite; }
+    .pt-wave { animation: ptWave 6s ease-in-out infinite; }
+    .pt-anchor.is-anchored .pt-wave { animation-duration: 12s; }
+    @keyframes ptRock { 0%,100% { transform: rotate(-7deg); } 50% { transform: rotate(7deg); } }
+    @keyframes ptRockCalm { 0%,100% { transform: rotate(-1.8deg); } 50% { transform: rotate(1.8deg); } }
+    @keyframes ptRain { 0% { transform: translateY(0); opacity: 0.5; } 100% { transform: translateY(26px); opacity: 0; } }
+    @keyframes ptFlash { 0%,6%,9%,100% { opacity: 0; } 7% { opacity: 0.9; } 8% { opacity: 0.25; } }
+    @keyframes ptGlow { 0%,100% { opacity: 0.5; } 50% { opacity: 0.9; } }
+    @keyframes ptWave { 0%,100% { transform: translateX(0); } 50% { transform: translateX(-16px); } }
+    @media (prefers-reduced-motion: reduce) {
+      #pt-boat, .pt-rain line, .pt-bolt, .pt-wave, .pt-anchor.is-engaged .pt-beam { animation: none !important; }
+    }
+
+    /* References */
+    .pt-refs { margin-top: 26px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 18px; }
+    .pt-refs__lbl { font-family: var(--font-heading); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-600); display: block; margin-bottom: 12px; }
+    .pt-refs ol { list-style: none; counter-reset: ptref; }
+    .pt-refs li { counter-increment: ptref; position: relative; padding: 7px 0 7px 28px; font-size: 0.77rem; color: var(--gray-500); line-height: 1.6; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .pt-refs li:last-child { border-bottom: none; }
+    .pt-refs li::before { content: counter(ptref); position: absolute; left: 0; top: 7px; width: 18px; height: 18px; border-radius: 50%; background: rgba(14,58,132,0.25); color: var(--club-light); font-family: var(--font-heading); font-size: 0.62rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .pt-refs em { color: var(--gray-400); font-style: italic; }
+
     /* Embedded video */
     .pt-video-wrap {
       position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
@@ -931,6 +990,121 @@
               <button class="pt-btn" id="aceStart">▶ Start Reset</button>
               <button class="pt-btn pt-btn--ghost" id="aceReset">↺ Reset</button>
             </div>
+          </div>
+        </div>
+
+        <!-- THE SCIENCE + DROPPING ANCHOR -->
+        <div style="margin-top:44px; padding-top:36px; border-top:1px solid rgba(255,255,255,0.08);">
+          <span class="cs-section__eyebrow">The Science · Dropping Anchor</span>
+          <h3 style="font-family:var(--font-heading); font-weight:800; color:#fff; text-transform:uppercase; line-height:1.1; font-size:clamp(1.3rem,3vw,1.8rem); margin-bottom:14px;">Changing your relationship<br>with the feeling</h3>
+          <div class="pt-bigidea" style="margin-bottom:28px;">
+            <p>Here&#8217;s the shift at the heart of ACE — and of <strong>Acceptance &amp; Commitment Training (ACT)</strong>, the model it comes from. We&#8217;re not trying to delete the feeling, force calm, or think positive. Decades of research show that fighting or suppressing emotions tends to <strong>amplify</strong> them and crank up the body&#8217;s stress response. ACE does the opposite: it changes your <em>relationship</em> with the feeling so it loses its grip — you let it be there, unhook from it, and keep doing what matters. Russ Harris calls this <strong>&#8220;dropping anchor.&#8221;</strong></p>
+          </div>
+
+          <div class="pt-sci-map">
+            <div class="pt-sci-card">
+              <div class="pt-sci-card__l">A</div>
+              <div class="pt-sci-card__step">Acknowledge</div>
+              <div class="pt-sci-card__proc">Acceptance &amp; defusion</div>
+              <p>Naming a feeling in words calms the brain&#8217;s alarm (the amygdala) and brings the thinking brain online — &#8220;name it to tame it.&#8221;</p>
+            </div>
+            <div class="pt-sci-card">
+              <div class="pt-sci-card__l">C</div>
+              <div class="pt-sci-card__step">Come back</div>
+              <div class="pt-sci-card__proc">Present-moment awareness</div>
+              <p>Grounding in your body and senses breaks the pull of rumination and worry, so you&#8217;re steady rather than swept away.</p>
+            </div>
+            <div class="pt-sci-card">
+              <div class="pt-sci-card__l">E</div>
+              <div class="pt-sci-card__step">Engage</div>
+              <div class="pt-sci-card__proc">Values-based action</div>
+              <p>Doing what matters while the feeling is still present builds <em>psychological flexibility</em> — ACT&#8217;s core, evidence-linked mechanism.</p>
+            </div>
+          </div>
+
+          <div class="pt-anchor" id="ptAnchor">
+            <svg class="pt-anchor__scene" viewBox="0 0 800 380" role="img" aria-label="An animated boat in a storm; dropping an anchor steadies the boat while the storm keeps going.">
+              <defs>
+                <linearGradient id="ptSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a2740"/><stop offset="1" stop-color="#2c3a57"/></linearGradient>
+                <linearGradient id="ptSea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#17263f"/><stop offset="1" stop-color="#0a1020"/></linearGradient>
+                <linearGradient id="ptBeam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffe08a" stop-opacity="0"/><stop offset="1" stop-color="#ffe08a" stop-opacity="0.55"/></linearGradient>
+              </defs>
+              <rect width="800" height="250" fill="url(#ptSky)"/>
+              <rect y="246" width="800" height="134" fill="url(#ptSea)"/>
+              <!-- clouds -->
+              <g fill="#39435a">
+                <ellipse cx="150" cy="66" rx="92" ry="34"/><ellipse cx="235" cy="52" rx="64" ry="26"/><ellipse cx="95" cy="52" rx="54" ry="22"/>
+                <ellipse cx="600" cy="60" rx="88" ry="32"/><ellipse cx="668" cy="48" rx="58" ry="24"/><ellipse cx="540" cy="48" rx="50" ry="20"/>
+              </g>
+              <polyline class="pt-bolt" points="300,92 288,128 306,126 292,168" fill="none" stroke="#ffd23f" stroke-width="4" stroke-linejoin="round"/>
+              <!-- rain -->
+              <g class="pt-rain">
+                <line x1="120" y1="96" x2="116" y2="116" style="animation-delay:0s"/>
+                <line x1="165" y1="92" x2="161" y2="112" style="animation-delay:.2s"/>
+                <line x1="210" y1="98" x2="206" y2="118" style="animation-delay:.5s"/>
+                <line x1="85" y1="92" x2="81" y2="112" style="animation-delay:.45s"/>
+                <line x1="255" y1="92" x2="251" y2="112" style="animation-delay:.7s"/>
+                <line x1="560" y1="92" x2="556" y2="112" style="animation-delay:.1s"/>
+                <line x1="605" y1="98" x2="601" y2="118" style="animation-delay:.35s"/>
+                <line x1="650" y1="92" x2="646" y2="112" style="animation-delay:.6s"/>
+              </g>
+              <!-- named thoughts (appear at A) -->
+              <g class="pt-thoughts" font-family="Inter, sans-serif" font-size="13">
+                <g transform="translate(70,150)"><rect x="-6" y="-15" width="112" height="24" rx="12" fill="#10182b" stroke="#3a4760"/><text x="50" y="2" text-anchor="middle" fill="#cdd6e6">&#8220;I&#8217;ll mess up&#8221;</text></g>
+                <g transform="translate(298,118)"><rect x="-6" y="-15" width="166" height="24" rx="12" fill="#10182b" stroke="#3a4760"/><text x="77" y="2" text-anchor="middle" fill="#cdd6e6">&#8220;everyone&#8217;s watching&#8221;</text></g>
+                <g transform="translate(560,150)"><rect x="-6" y="-15" width="120" height="24" rx="12" fill="#10182b" stroke="#3a4760"/><text x="54" y="2" text-anchor="middle" fill="#cdd6e6">&#8220;I&#8217;m useless&#8221;</text></g>
+              </g>
+              <!-- sea surface wave -->
+              <path class="pt-wave" d="M-40,250 q40,-10 80,0 t80,0 t80,0 t80,0 t80,0 t80,0 t80,0 t80,0 t80,0 t80,0 t80,0" fill="none" stroke="#2a3b5c" stroke-width="3" opacity="0.7"/>
+              <!-- lighthouse -->
+              <path d="M690,256 Q735,238 786,256 L800,300 L676,300 Z" fill="#1d2a44"/>
+              <path d="M724,250 L746,250 L741,150 L729,150 Z" fill="#eef1f6"/>
+              <rect x="730" y="178" width="11" height="13" fill="#c8463a"/>
+              <rect x="731" y="212" width="9" height="13" fill="#c8463a"/>
+              <path d="M725,136 L745,136 L740,128 L730,128 Z" fill="#7b8398"/>
+              <rect x="727" y="136" width="16" height="16" rx="2" fill="#ffd23f"/>
+              <polygon class="pt-beam" points="735,144 470,196 470,238 735,156" fill="url(#ptBeam)"/>
+              <!-- boat -->
+              <g id="pt-boat">
+                <line x1="405" y1="246" x2="405" y2="176" stroke="#d8dde6" stroke-width="4" stroke-linecap="round"/>
+                <path d="M405,182 L405,242 L358,242 Z" fill="#eef1f6"/>
+                <path d="M405,182 L405,242 L452,242 Z" fill="#c2ccdb"/>
+                <path d="M338,244 L472,244 L452,270 L358,270 Z" fill="#b23b2e"/>
+                <rect x="338" y="240" width="134" height="6" fill="#8c2e24"/>
+              </g>
+              <!-- anchor (drops at C) -->
+              <g class="pt-anchor-drop" stroke="#c9d2e3" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="405" y1="268" x2="405" y2="316" stroke="#8090ad" stroke-dasharray="2 5"/>
+                <circle cx="405" cy="320" r="5"/>
+                <line x1="405" y1="325" x2="405" y2="352"/>
+                <line x1="390" y1="332" x2="420" y2="332"/>
+                <path d="M386,346 Q405,366 424,346"/>
+                <line x1="386" y1="346" x2="383" y2="339"/>
+                <line x1="424" y1="346" x2="427" y2="339"/>
+              </g>
+            </svg>
+            <div class="pt-anchor__caption"><strong>Notice: the storm never disappears.</strong> Dropping anchor doesn&#8217;t calm the weather — it steadies the boat until the storm passes. We change our relationship with the feeling, not the feeling itself.</div>
+            <div class="pt-anchor__controls">
+              <button class="pt-anchor__btn" id="ptBtnA"><b>A</b> Acknowledge</button>
+              <button class="pt-anchor__btn" id="ptBtnC"><b>C</b> Come back</button>
+              <button class="pt-anchor__btn" id="ptBtnE"><b>E</b> Engage</button>
+              <button class="pt-anchor__reset" id="ptBtnReset" aria-label="Reset the animation">&#8634;</button>
+            </div>
+            <div class="pt-anchor__panel">
+              <div class="pt-anchor__panel-step" id="ptAnchorStep">Three steps to steady yourself</div>
+              <div class="pt-anchor__panel-text" id="ptAnchorText">Tap <strong>A</strong>, then <strong>C</strong>, then <strong>E</strong> — and watch what happens to the boat, and to the storm.</div>
+            </div>
+          </div>
+
+          <div class="pt-refs">
+            <span class="pt-refs__lbl">The evidence — peer-reviewed</span>
+            <ol>
+              <li>Harris, R. (2019). <em>ACT Made Simple</em> (2nd ed.). New Harbinger. — the ACE / &#8220;dropping anchor&#8221; exercise.</li>
+              <li>Hayes, S. C., Luoma, J. B., Bond, F. W., Masuda, A., &amp; Lillis, J. (2006). Acceptance and Commitment Therapy: Model, processes and outcomes. <em>Behaviour Research and Therapy, 44</em>(1), 1&#8211;25.</li>
+              <li>A-Tjak, J. G. L., et al. (2015). A meta-analysis of the efficacy of Acceptance and Commitment Therapy for clinically relevant mental and physical health problems. <em>Psychotherapy and Psychosomatics, 84</em>(1), 30&#8211;36.</li>
+              <li>Campbell-Sills, L., Barlow, D. H., Brown, T. A., &amp; Hofmann, S. G. (2006). Effects of suppression and acceptance on emotional responses of individuals with anxiety and mood disorders. <em>Behaviour Research and Therapy, 44</em>(9), 1251&#8211;1263.</li>
+              <li>Lieberman, M. D., et al. (2007). Putting feelings into words: Affect labeling disrupts amygdala activity in response to affective stimuli. <em>Psychological Science, 18</em>(5), 421&#8211;428.</li>
+            </ol>
           </div>
         </div>
       </div>
@@ -1612,6 +1786,41 @@
       cvRenderStep();
     }
     if (cvThread) cvRenderStep();
+
+    /* ---- DROPPING ANCHOR VISUAL ---- */
+    (function () {
+      const scene = document.getElementById('ptAnchor');
+      if (!scene) return;
+      const stepEl = document.getElementById('ptAnchorStep');
+      const textEl = document.getElementById('ptAnchorText');
+      const bA = document.getElementById('ptBtnA');
+      const bC = document.getElementById('ptBtnC');
+      const bE = document.getElementById('ptBtnE');
+      const content = {
+        a: { s: 'A — Acknowledge', t: '<strong>Name it to tame it.</strong> You notice and label what’s showing up — the nerves, the thought, the urge — without fighting it. Putting a feeling into words measurably calms the brain’s alarm (the amygdala) and brings the thinking brain back online (Lieberman et al., 2007). Allowing a feeling rather than suppressing it also lowers your body’s stress response (Campbell-Sills et al., 2006).' },
+        c: { s: 'C — Come back & connect', t: '<strong>Drop the anchor.</strong> You bring attention back into your body and your surroundings — feet on the ground, one slow breath, the cold air. This present-moment focus doesn’t stop the storm, but it stops it tossing you around: you’re grounded, out of the rumination “time machine,” and steady enough to choose what you do next.' },
+        e: { s: 'E — Engage', t: '<strong>Sail your course.</strong> With the feeling still aboard, you re-engage with what matters — watch your kid, clap the effort, be the calm one. Acting on your values while difficult feelings ride along is the heart of <em>psychological flexibility</em>, the mechanism ACT research links to better wellbeing (Hayes et al., 2006; A-Tjak et al., 2015).' }
+      };
+      function apply(stage) {
+        if (stage === 'a') scene.classList.add('is-ack');
+        if (stage === 'c') scene.classList.add('is-ack', 'is-anchored');
+        if (stage === 'e') scene.classList.add('is-ack', 'is-anchored', 'is-engaged');
+        bA.classList.toggle('is-on', scene.classList.contains('is-ack'));
+        bC.classList.toggle('is-on', scene.classList.contains('is-anchored'));
+        bE.classList.toggle('is-on', scene.classList.contains('is-engaged'));
+        stepEl.textContent = content[stage].s;
+        textEl.innerHTML = content[stage].t;
+      }
+      bA.addEventListener('click', () => apply('a'));
+      bC.addEventListener('click', () => apply('c'));
+      bE.addEventListener('click', () => apply('e'));
+      document.getElementById('ptBtnReset').addEventListener('click', () => {
+        scene.classList.remove('is-ack', 'is-anchored', 'is-engaged');
+        [bA, bC, bE].forEach(b => b.classList.remove('is-on'));
+        stepEl.textContent = 'Three steps to steady yourself';
+        textEl.innerHTML = 'Tap <strong>A</strong>, then <strong>C</strong>, then <strong>E</strong> — and watch what happens to the boat, and to the storm.';
+      });
+    })();
   </script>
 </body>
 </html>
