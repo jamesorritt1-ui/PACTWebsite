@@ -41,7 +41,7 @@
     /* ---------- CLUB BANNER ---------- */
     .mg-banner {
       background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 100%);
-      padding: 18px 0;
+      padding: calc(var(--header-height) + 18px) 0 18px;
       border-bottom: 3px solid var(--green-light);
     }
     .mg-banner__inner {
@@ -647,7 +647,7 @@
         <!-- Radar + scores -->
         <div class="mg-results__panel">
           <div class="mg-radar-wrap">
-            <svg class="mg-radar" id="mgRadar" viewBox="0 0 300 300" role="img" aria-label="Your scores across Open, Aware and Engaged"></svg>
+            <svg class="mg-radar" id="mgRadar" viewBox="-48 -16 396 332" role="img" aria-label="Your scores across Open, Aware and Engaged"></svg>
           </div>
           <div class="mg-scores" id="mgScores"></div>
         </div>

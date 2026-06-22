@@ -112,13 +112,15 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- SCROLL TO TOP BUTTON ---------- */
   const scrollTopBtn = document.getElementById('scrollTop');
 
-  window.addEventListener('scroll', () => {
-    scrollTopBtn.classList.toggle('visible', window.scrollY > 600);
-  }, { passive: true });
+  if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.classList.toggle('visible', window.scrollY > 600);
+    }, { passive: true });
 
-  scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
   /* ---------- SMOOTH SCROLL FOR ANCHOR LINKS ---------- */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
