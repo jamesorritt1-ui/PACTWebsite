@@ -1378,8 +1378,16 @@
       window.scrollTo({ top: y, behavior: smooth ? 'smooth' : 'auto' });
     }
     function goCheckin() {
-      showScreen('home');                 /* showScreen resets scroll to top */
-      setTimeout(function () { scrollToCheckin(true); }, 120);
+      var home = document.getElementById('mg-home');
+      if (home.classList.contains('is-active')) {
+        /* Already on the home screen — just glide to the section,
+           no jump-to-top reset. */
+        scrollToCheckin(true);
+      } else {
+        /* Coming from the quiz/results screen — switch first, then land. */
+        showScreen('home');
+        setTimeout(function () { scrollToCheckin(false); }, 60);
+      }
     }
     document.querySelectorAll('[data-resnav-checkin]').forEach(function (a) {
       a.addEventListener('click', function (e) { e.preventDefault(); goCheckin(); });
