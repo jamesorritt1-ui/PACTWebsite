@@ -273,6 +273,7 @@
     .mg-progress__bar { height: 6px; background: rgba(255,255,255,0.08); overflow: hidden; }
     .mg-progress__fill { height: 100%; width: 0; background: var(--green-light); transition: width .4s ease; }
     .mg-progress__label { font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mg-muted); margin-top: 12px; display: flex; justify-content: space-between; }
+    .mg-quiz__privacy { text-align: center; font-size: 0.78rem; color: var(--mg-muted); margin: 16px 0 30px; letter-spacing: 0.01em; }
 
     .mg-q { text-align: center; }
     .mg-q__domain { font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--green-light); margin-bottom: 18px; }
@@ -742,6 +743,7 @@
               <span id="mgProgressPct">0%</span>
             </div>
           </div>
+          <p class="mg-quiz__privacy">15 questions &middot; about 3 minutes &middot; your answers stay on your device &mdash; nothing is saved.</p>
 
           <!-- Question card (rendered by JS) -->
           <div class="mg-q" id="mgQuestionCard">
@@ -1369,37 +1371,16 @@
       return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
     }
 
-    /* ---- RESOURCE NAV: jump to the check-in from any screen ---- */
-    function scrollToCheckin(smooth) {
-      var el = document.getElementById('checkin');
-      if (!el) return;
-      var headerH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 80;
-      var y = el.getBoundingClientRect().top + window.pageYOffset - headerH - 70;
-      window.scrollTo({ top: y, behavior: smooth ? 'smooth' : 'auto' });
-    }
-    function goCheckin() {
-      var home = document.getElementById('mg-home');
-      if (home.classList.contains('is-active')) {
-        /* Already on the home screen — just glide to the section,
-           no jump-to-top reset. */
-        scrollToCheckin(true);
-      } else {
-        /* Coming from the quiz/results screen — switch first, then land. */
-        showScreen('home');
-        setTimeout(function () { scrollToCheckin(false); }, 60);
-      }
-    }
+    /* ---- RESOURCE NAV: the Check-In tab opens the questionnaire directly ---- */
     document.querySelectorAll('[data-resnav-checkin]').forEach(function (a) {
-      a.addEventListener('click', function (e) { e.preventDefault(); goCheckin(); });
+      a.addEventListener('click', function (e) { e.preventDefault(); startQuiz(); });
     });
-    /* Deep-link from another page (e.g. the Values page) lands with #checkin —
-       wait for full load so images don't shift the target. */
-    if (location.hash === '#checkin') {
-      window.addEventListener('load', function () { setTimeout(function () { scrollToCheckin(false); }, 150); });
-    }
 
-    /* init */
-    renderQuestion();
+    /* init — a deep-link (#checkin, e.g. tapping 'The Check-In' from the
+       Values page) opens the questionnaire straight away with no flash;
+       otherwise just prime the first question on the home screen. */
+    if (location.hash === '#checkin') { startQuiz(); }
+    else { renderQuestion(); }
   })();
   </script>
 
