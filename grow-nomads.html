@@ -1627,6 +1627,7 @@
               <select class="gw-select" id="clubSelect">
                 <option value="">— Select your club —</option>
                 <option value="nomads">Nomads United AFC</option>
+                <option value="marist">Marist Albion Rugby Academy</option>
               </select>
             </div>
           </div>
@@ -2550,6 +2551,19 @@
           dark:    '#092970',
           accent:  '#C8102E'
         }
+      },
+      marist: {
+        name:      'Marist Albion Rugby Academy',
+        shortName: 'Marist',
+        password:  'Marist2026',
+        /* Athlete-only academy experience — lives on its own themed page.
+           Selecting this club skips role selection and goes straight there. */
+        redirect:  'grow-marist.html',
+        colors: {
+          primary: '#1B7A3D',
+          dark:    '#0E5226',
+          accent:  '#1B7A3D'
+        }
       }
       /* future clubs:
       tigers: { name: 'Tigers FC', password: 'Tigers2026', colors: {...} }
@@ -2796,6 +2810,15 @@
       localStorage.removeItem(LS_ROLE);
 
       activeClub = clubKey;
+
+      /* Some clubs have a dedicated experience on their own page
+         (e.g. the Marist athlete academy). Skip role selection and
+         send them straight there. */
+      if (club.redirect) {
+        window.location.href = club.redirect;
+        return;
+      }
+
       showScreen('roles');
     });
 
@@ -3082,6 +3105,12 @@
 
       if (savedClub && CLUB_CONFIG[savedClub]) {
         activeClub = savedClub;
+
+        /* Clubs with a dedicated page (e.g. Marist) go straight there. */
+        if (CLUB_CONFIG[savedClub].redirect) {
+          window.location.href = CLUB_CONFIG[savedClub].redirect;
+          return;
+        }
 
         if (savedRole && GROW_RESOURCES[savedRole]) {
           /* Skip straight to content */
