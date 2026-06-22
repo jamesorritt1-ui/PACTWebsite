@@ -219,8 +219,8 @@ img {
 /* ========== LOGO IMAGES ========== */
 .logo-img {
   display: block;
-  filter: hue-rotate(-120deg) saturate(2.5) brightness(1.1);
-  mix-blend-mode: screen;
+  /* New brand assets are already correctly coloured transparent PNGs,
+     so no recolour filter / blend is needed. */
 }
 
 .logo-img--header {
@@ -246,9 +246,7 @@ img {
 .logo-img--watermark {
   height: 360px;
   width: auto;
-  filter: hue-rotate(-120deg) saturate(2.5) brightness(1.1);
-  mix-blend-mode: screen;
-  opacity: 0.14;
+  opacity: 0.10;
 }
 
 @media (max-width: 1100px) {
