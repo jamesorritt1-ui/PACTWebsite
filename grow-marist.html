@@ -185,6 +185,7 @@
       text-align: center; padding: 24px; margin-top: 28px; gap: 10px;
     }
     .mg-video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .mg-video-embed--filled { border: 1px solid rgba(255,255,255,0.08); padding: 0; }
     .mg-video-embed__icon { width: 54px; height: 54px; color: var(--green-light); opacity: 0.8; }
     .mg-video-embed__label { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.12em; color: var(--green-light); font-size: 0.8rem; }
     .mg-video-embed__note { font-size: 0.82rem; color: var(--mg-muted); max-width: 380px; line-height: 1.5; }
@@ -411,7 +412,7 @@
         <div class="container">
           <p class="mg-hero__eyebrow">The Mind Gym · Marist Albion Rugby Academy</p>
           <h1 class="mg-hero__title">TRAIN<br><em>YOUR MIND</em></h1>
-          <p class="mg-hero__lead"><strong>Your skills get you to the moment. Your mind decides what you do in it.</strong> Here's how you train it — the same ACE toolkit from your session, now in your pocket for the whole season.</p>
+          <p class="mg-hero__lead"><strong>Your skills get you to the moment. Your mind decides what you do in it.</strong> This is a space to keep working on that side of your game — the same ACE tools from your session, here whenever you want them.</p>
           <div class="mg-hero__actions">
             <a href="#" class="mg-btn mg-btn--primary mg-btn--lg" id="mgStartTop">Start the Check-In &rarr;</a>
             <span class="mg-hero__meta">15 questions · about 3 minutes · stays on your device</span>
@@ -424,17 +425,8 @@
         <div class="container">
           <span class="mg-sec__num">01 · The basics</span>
           <h2 class="mg-sec__title">What are<br><em>mental skills?</em></h2>
-          <p class="mg-sec__lead">Your skills and fitness get you to the moment. Mental skills decide what you do in it — the difference between knowing what to do at training and being able to do it when the game is on the line, the crowd is loud, and your head is full.</p>
-          <p class="mg-sec__lead">The good news: like any skill, they're trainable. That's what this space is for.</p>
-
-          <!-- VIDEO PLACEHOLDER — replace the data-embed comment with your YouTube iframe -->
-          <!-- TODO(James): paste embed here →
-               <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="..." allowfullscreen></iframe> -->
-          <div class="mg-video-embed" data-video-slot="intro">
-            <svg class="mg-video-embed__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
-            <span class="mg-video-embed__label">Video coming soon</span>
-            <span class="mg-video-embed__note">A short intro video will live here. (Space reserved — your YouTube link drops straight in.)</span>
-          </div>
+          <p class="mg-sec__lead">Your skills and fitness get you to the moment. Mental skills decide what you do in it — the gap between knowing what to do at training and doing it when the game is on the line, the crowd is loud, and your head is full.</p>
+          <p class="mg-sec__lead">Like any skill, they can be practised. This space holds a few of the tools from your session, for you to use in your own way.</p>
         </div>
       </section>
 
@@ -496,10 +488,26 @@
         </div>
       </section>
 
-      <!-- 04 · DOTS -->
+      <!-- 04 · WATCH & SPOT (Connect / anchors) -->
       <section class="mg-sec mg-sec--darker">
         <div class="container">
-          <span class="mg-sec__num">04 · The away moves</span>
+          <span class="mg-sec__num">04 · Watch &amp; spot</span>
+          <h2 class="mg-sec__title">How the best<br><em>get ready</em></h2>
+          <p class="mg-sec__lead">Connect is the reset — coming back to the next useful thing when pressure pulls your attention away. One of the clearest ways to learn it is to watch an athlete who has built it into a routine. As you watch, notice the <strong>anchors</strong> they use: a breath, a cue word, a set movement, a point they fix their eyes on. These are the same anchors you can build for yourself.</p>
+
+          <!-- Embedded: athlete pre-performance routine (anchors) -->
+          <div class="mg-video-embed mg-video-embed--filled">
+            <iframe src="https://www.youtube.com/embed/fDmRwjBryu0" title="An athlete's pre-performance routine — spot the anchors" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+
+          <p class="mg-sec__lead" style="margin-top:24px;"><strong>While you watch:</strong> what does the athlete put their attention on to get ready and reset? See how many anchors you can spot — then have a think about which ones might work for you.</p>
+        </div>
+      </section>
+
+      <!-- 05 · DOTS -->
+      <section class="mg-sec">
+        <div class="container">
+          <span class="mg-sec__num">05 · The away moves</span>
           <h2 class="mg-sec__title">DOTS — how we<br><em>duck out of the noise</em></h2>
           <p class="mg-sec__lead">When the noise gets loud, we all reach for quick ways to escape it. They feel like relief — but they pull you AWAY from the game. Spot yours, and you've found your choice point.</p>
           <div class="mg-dots">
@@ -511,12 +519,12 @@
         </div>
       </section>
 
-      <!-- 05 · YOUR CHECK-IN / JOURNEY -->
-      <section class="mg-sec">
+      <!-- 06 · YOUR CHECK-IN / JOURNEY -->
+      <section class="mg-sec mg-sec--darker">
         <div class="container">
-          <span class="mg-sec__num">05 · Your check-in</span>
+          <span class="mg-sec__num">06 · Your check-in</span>
           <h2 class="mg-sec__title">Find your<br><em>starting line</em></h2>
-          <p class="mg-sec__lead">A short self-check shows how you're tracking across the three parts of ACE — <strong>Open</strong>, <strong>Aware</strong> and <strong>Engaged</strong> — then hands you a personalised training plan built from the exact tools you met in the session. Here's how it works:</p>
+          <p class="mg-sec__lead">A short self-check gives you a read on how you're tracking across the three parts of ACE — <strong>Open</strong>, <strong>Aware</strong> and <strong>Engaged</strong> — and points you toward the tools that fit where you're at right now. You're the expert on your own game; this is just here to help you aim your practice. Here's how it works:</p>
           <div class="mg-journey">
             <div class="mg-step"><div class="mg-step__num">01</div><div class="mg-step__title">Landing</div><p class="mg-step__desc">You're here. Train the mind like you train the body.</p></div>
             <div class="mg-step"><div class="mg-step__num">02</div><div class="mg-step__title">The Check-In</div><p class="mg-step__desc">15 quick questions, about 3–4 minutes.</p></div>
@@ -532,6 +540,18 @@
 
           <div class="mg-hero__actions" style="margin-top:32px;">
             <a href="#" class="mg-btn mg-btn--primary mg-btn--lg" id="mgStartBottom">Start the Check-In &rarr;</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 07 · MORE TO EXPLORE -->
+      <section class="mg-sec">
+        <div class="container">
+          <span class="mg-sec__num">07 · More to explore</span>
+          <h2 class="mg-sec__title">Your <em>values</em></h2>
+          <p class="mg-sec__lead">The Engage part of ACE is about acting on what matters to you. If you'd like to get clearer on what that is — the player and person you want to be, and how rugby fits into the bigger picture of who you are — there's a short values exploration here whenever you're ready. It's separate from the check-in, so you can do it any time.</p>
+          <div class="mg-hero__actions" style="margin-top:28px;">
+            <a href="grow-marist-values.html" class="mg-btn mg-btn--ghost mg-btn--lg">Explore your values &rarr;</a>
           </div>
         </div>
       </section>
@@ -638,6 +658,13 @@
           <h3 class="mg-comeback__title">Come back in 4–6 weeks</h3>
           <p class="mg-comeback__copy">Train your drills, then re-take the check-in and watch your radar move. That's the gains moment — and it's how the mental game gets built.</p>
           <span class="mg-hero__meta" id="mgStreak">Sessions banked: 1</span>
+        </div>
+
+        <!-- Values exploration cross-link -->
+        <div class="mg-comeback" style="border-left:4px solid var(--green-light);">
+          <h3 class="mg-comeback__title">Want to go deeper?</h3>
+          <p class="mg-comeback__copy">Your Engaged score is about acting on what matters. If you'd like to get clearer on what that <em>is</em> for you — the player and person you want to be — there's a short values exploration you can work through whenever you're ready.</p>
+          <a href="grow-marist-values.html" class="mg-btn mg-btn--primary">Explore your values &rarr;</a>
         </div>
 
         <!-- Disclaimer & support -->
@@ -806,6 +833,7 @@
     var answers = new Array(ITEMS.length).fill(null);
     var current = 0;
     var playerName = '';
+    var lastSummary = '';   /* plain-text plan for the email option */
 
     /* ---- SCREEN MGMT ---- */
     function showScreen(name) {
@@ -965,16 +993,38 @@
 
       renderDrills(focusAreas);
       drawRadar(scores);
+
+      /* Build a plain-text version of the plan for the email option */
+      var lines = [];
+      lines.push('THE MIND GYM — your starting line' + (playerName ? ' (' + playerName + ')' : ''));
+      lines.push('Marist Albion Rugby Academy · The Performance Act');
+      lines.push('');
+      lines.push('YOUR SCORES');
+      order.forEach(function (a) {
+        lines.push('  ' + AREA_LABEL[a] + ': ' + scores[a] + '% (' + bandFor(scores[a]).name + ')');
+      });
+      lines.push('');
+      lines.push('FOCUS AREA: ' + focusAreas.map(function (a) { return AREA_LABEL[a]; }).join(' & '));
+      lines.push('');
+      lines.push('FIRST DRILLS TO TRAIN');
+      DRILLS.filter(function (d) { return focusAreas.indexOf(d.area) !== -1; })
+        .forEach(function (d) { lines.push('  • ' + d.name + ' — ' + d.rep); });
+      lines.push('');
+      lines.push('Re-take in 4–6 weeks and watch your radar move.');
+      lines.push('Kia kaha — this is a starting line, not a verdict.');
+      lastSummary = lines.join('\n');
     }
 
     /* ---- DRILLS ---- */
     function drillCardHtml(d, idx) {
-      var videoBlock = d.videoSlot
-        ? '<div class="mg-video-embed" data-video-slot="' + d.videoSlot + '" style="margin-top:16px;">' +
-            '<svg class="mg-video-embed__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>' +
-            '<span class="mg-video-embed__label">Video coming soon</span>' +
-            '<span class="mg-video-embed__note">Watch-and-spot video drops in here.</span></div>'
-        : '';
+      var VIDEO_EMBEDS = {
+        'spot-anchors': 'https://www.youtube.com/embed/fDmRwjBryu0'
+      };
+      var videoBlock = '';
+      if (d.videoSlot && VIDEO_EMBEDS[d.videoSlot]) {
+        videoBlock = '<div class="mg-video-embed mg-video-embed--filled" style="margin-top:16px;">' +
+            '<iframe src="' + VIDEO_EMBEDS[d.videoSlot] + '" title="An athlete\'s pre-performance routine — spot the anchors" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>';
+      }
       return '' +
         '<div class="mg-drill" data-drill="' + idx + '">' +
           '<div class="mg-drill__head">' +
@@ -1127,7 +1177,7 @@
     });
     document.getElementById('mgEmailPlan').addEventListener('click', function () {
       var subject = encodeURIComponent('My Mind Gym plan — Marist Albion Rugby Academy');
-      var body = encodeURIComponent('I completed my Mind Gym check-in. (Tip: take a screenshot of your radar and plan to keep it.)');
+      var body = encodeURIComponent(lastSummary || 'I completed my Mind Gym check-in.');
       window.location.href = 'mailto:?subject=' + subject + '&body=' + body;
     });
 

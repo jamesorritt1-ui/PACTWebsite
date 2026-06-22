@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Your Values | The Mind Gym | Marist Albion Rugby Academy</title>
+  <meta name="description" content="A short values exploration for Marist Albion Rugby Academy athletes — find the player and person you want to be, and how rugby helps you live it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="style.css?v=15">
+  <link rel="stylesheet" href="grow.css?v=1">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+  <style>
+    /* ============================================================
+       YOUR VALUES — MARIST ALBION RUGBY ACADEMY
+       ACT values exploration. Black + Marist green. Scoped to .vl-root.
+    ============================================================ */
+    .vl-root {
+      --green:#1B7A3D; --green-dark:#0E5226; --green-light:#2E9E54;
+      --green-glow:rgba(46,158,84,0.16); --vl-ink:#EDEDED; --vl-muted:#9AA39C;
+      opacity:0; transition:opacity .25s ease;
+    }
+    .vl-root.is-ready { opacity:1; }
+
+    .vl-screen { display:none; }
+    .vl-screen.is-active { display:block; }
+
+    /* banner */
+    .vl-banner { background:linear-gradient(135deg,var(--green-dark) 0%,var(--green) 100%); padding:18px 0; border-bottom:3px solid var(--green-light); }
+    .vl-banner__inner { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .vl-banner__left { display:flex; align-items:center; gap:14px; }
+    .vl-banner__logo { height:42px; width:auto; }
+    .vl-banner__name { font-family:var(--font-heading); font-size:1rem; font-weight:700; letter-spacing:.08em; color:#fff; text-transform:uppercase; line-height:1.1; }
+    .vl-banner__platform { font-family:var(--font-heading); font-size:.6rem; letter-spacing:.22em; color:rgba(255,255,255,.6); text-transform:uppercase; }
+    .vl-back { font-family:var(--font-heading); font-size:.66rem; font-weight:600; letter-spacing:.12em; color:rgba(255,255,255,.7); background:transparent; border:1px solid rgba(255,255,255,.25); padding:8px 16px; cursor:pointer; text-transform:uppercase; transition:all .3s ease; flex-shrink:0; text-decoration:none; }
+    .vl-back:hover { color:#fff; border-color:rgba(255,255,255,.6); }
+
+    /* hero */
+    .vl-hero { position:relative; overflow:hidden; background:#050805; padding:clamp(60px,10vw,110px) 0 clamp(50px,8vw,90px); }
+    .vl-hero__bg { position:absolute; inset:0; background:url('images/rugby-lineout.png') center 35% / cover no-repeat; opacity:.20; filter:grayscale(.3); }
+    .vl-hero::after { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 75% 80%,var(--green-glow) 0%,transparent 55%),linear-gradient(180deg,rgba(5,8,5,.55) 0%,rgba(5,8,5,.85) 100%); }
+    .vl-hero .container { position:relative; z-index:2; }
+    .vl-hero__eyebrow { font-family:var(--font-heading); font-size:.72rem; letter-spacing:.28em; text-transform:uppercase; color:var(--green-light); margin-bottom:18px; }
+    .vl-hero__title { font-family:var(--font-heading); font-weight:700; text-transform:uppercase; font-size:clamp(2.2rem,6.5vw,4.6rem); line-height:.98; color:#fff; margin-bottom:22px; }
+    .vl-hero__title em { color:var(--green-light); font-style:normal; }
+    .vl-hero__lead { font-size:clamp(1.02rem,2.3vw,1.3rem); color:var(--vl-ink); max-width:640px; line-height:1.55; margin-bottom:30px; font-weight:300; }
+    .vl-hero__lead strong { color:#fff; font-weight:600; }
+
+    .vl-btn { display:inline-flex; align-items:center; gap:10px; font-family:var(--font-heading); font-size:.95rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; padding:16px 30px; cursor:pointer; border:2px solid var(--green); transition:all .3s ease; text-decoration:none; }
+    .vl-btn--primary { background:var(--green); color:#fff; }
+    .vl-btn--primary:hover { background:var(--green-light); border-color:var(--green-light); }
+    .vl-btn--ghost { background:transparent; color:#fff; border-color:rgba(255,255,255,.3); }
+    .vl-btn--ghost:hover { border-color:#fff; }
+    .vl-btn--lg { padding:18px 38px; font-size:1rem; }
+    .vl-btn[disabled] { opacity:.4; pointer-events:none; }
+    .vl-meta { font-size:.82rem; color:var(--vl-muted); letter-spacing:.04em; }
+
+    /* note / explainer blocks */
+    .vl-note { background:#0d110d; border:1px solid rgba(255,255,255,.08); border-left:4px solid var(--green-light); padding:20px 24px; margin-top:28px; max-width:680px; }
+    .vl-note p { font-size:.95rem; color:var(--vl-ink); line-height:1.6; margin:0; font-weight:300; }
+    .vl-note p + p { margin-top:12px; }
+    .vl-note strong { color:#fff; font-weight:600; }
+
+    /* stepper */
+    .vl-step { background:#050805; min-height:70vh; padding:clamp(40px,7vw,80px) 0 90px; }
+    .vl-step__wrap { max-width:780px; margin:0 auto; }
+    .vl-progress { display:flex; gap:8px; margin-bottom:30px; }
+    .vl-progress__dot { flex:1; height:5px; background:rgba(255,255,255,.1); }
+    .vl-progress__dot.is-active { background:var(--green-light); }
+    .vl-kicker { font-family:var(--font-heading); font-size:.72rem; letter-spacing:.24em; text-transform:uppercase; color:var(--green-light); margin-bottom:14px; }
+    .vl-h2 { font-family:var(--font-heading); font-weight:700; text-transform:uppercase; font-size:clamp(1.7rem,4vw,2.6rem); line-height:1.04; color:#fff; margin-bottom:18px; }
+    .vl-h2 em { color:var(--green-light); font-style:normal; }
+    .vl-p { font-size:1.02rem; color:var(--vl-ink); line-height:1.6; font-weight:300; max-width:680px; }
+    .vl-p strong { color:#fff; font-weight:600; }
+
+    /* values chips */
+    .vl-values { display:flex; flex-wrap:wrap; gap:12px; margin:32px 0 16px; }
+    .vl-chip { font-family:var(--font-heading); font-size:.92rem; letter-spacing:.04em; text-transform:uppercase; color:var(--vl-ink); background:#0d110d; border:1.5px solid rgba(255,255,255,.14); padding:12px 18px; cursor:pointer; transition:all .2s ease; user-select:none; }
+    .vl-chip:hover { border-color:var(--green-light); }
+    .vl-chip.is-selected { background:var(--green); border-color:var(--green); color:#fff; }
+    .vl-chip__check { display:none; margin-right:6px; }
+    .vl-chip.is-selected .vl-chip__check { display:inline; }
+    .vl-count { font-size:.85rem; color:var(--vl-muted); margin-bottom:24px; }
+    .vl-count strong { color:var(--green-light); }
+
+    /* reflections */
+    .vl-reflect { margin:28px 0; }
+    .vl-reflect__label { display:block; font-family:var(--font-body); font-size:1rem; color:#fff; line-height:1.5; margin-bottom:12px; font-weight:500; }
+    .vl-reflect__hint { color:var(--vl-muted); font-size:.86rem; font-weight:300; display:block; margin-top:4px; }
+    .vl-textarea { width:100%; min-height:96px; font-family:var(--font-body); font-size:1rem; padding:14px 16px; background:var(--gray-800); color:#fff; border:1px solid rgba(255,255,255,.12); outline:none; resize:vertical; line-height:1.5; }
+    .vl-textarea:focus { border-color:var(--green-light); }
+
+    .vl-nav { display:flex; justify-content:space-between; align-items:center; gap:16px; margin-top:36px; }
+    .vl-prev { background:transparent; border:none; color:var(--vl-muted); font-family:var(--font-heading); font-size:.82rem; letter-spacing:.1em; text-transform:uppercase; cursor:pointer; padding:10px; }
+    .vl-prev:hover { color:#fff; }
+    .vl-prev[hidden] { visibility:hidden; }
+
+    /* self-as-context highlight panel */
+    .vl-self { background:linear-gradient(135deg,var(--green-dark),var(--green)); padding:clamp(28px,5vw,44px); margin:32px 0; }
+    .vl-self__label { font-family:var(--font-heading); font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,.78); margin-bottom:10px; }
+    .vl-self__title { font-family:var(--font-heading); font-weight:700; text-transform:uppercase; font-size:clamp(1.5rem,3.5vw,2.1rem); color:#fff; margin-bottom:16px; line-height:1.05; }
+    .vl-self__copy { color:rgba(255,255,255,.94); line-height:1.65; font-size:1.02rem; font-weight:300; }
+    .vl-self__copy + .vl-self__copy { margin-top:14px; }
+    .vl-self__copy strong { color:#fff; font-weight:600; }
+
+    /* summary */
+    .vl-summary { background:#0a0d0a; border:1px solid rgba(255,255,255,.08); padding:32px; margin-top:28px; }
+    .vl-summary__h { font-family:var(--font-heading); text-transform:uppercase; letter-spacing:.05em; color:#fff; font-size:1.2rem; margin-bottom:8px; }
+    .vl-summary__sub { color:var(--vl-muted); font-size:.9rem; margin-bottom:20px; }
+    .vl-summary__values { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:22px; }
+    .vl-summary__value { font-family:var(--font-heading); text-transform:uppercase; letter-spacing:.04em; font-size:.9rem; color:#fff; background:var(--green-dark); border:1px solid var(--green); padding:8px 14px; }
+    .vl-summary__reflect { border-top:1px solid rgba(255,255,255,.08); padding-top:18px; margin-top:18px; }
+    .vl-summary__q { font-family:var(--font-heading); font-size:.74rem; letter-spacing:.1em; text-transform:uppercase; color:var(--green-light); margin-bottom:6px; }
+    .vl-summary__a { color:var(--vl-ink); line-height:1.55; font-size:.96rem; font-weight:300; white-space:pre-wrap; }
+    .vl-summary__a.is-empty { color:var(--vl-muted); font-style:italic; }
+
+    .vl-actions { display:flex; flex-wrap:wrap; gap:14px; margin-top:28px; }
+
+    .vl-disclaimer { max-width:760px; margin:44px auto 0; text-align:center; }
+    .vl-disclaimer p { font-size:.84rem; color:var(--vl-muted); line-height:1.6; }
+    .vl-disclaimer a { color:var(--green-light); }
+
+    @media (prefers-reduced-motion: reduce){ .vl-root { transition:none; } }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="images/logo-horizontal.png" alt="The Performance Act" class="logo-img logo-img--header">
+      </a>
+      <nav class="header__nav" id="mainNav">
+        <a href="index.html" class="nav-link">HOME</a>
+        <a href="approach.html" class="nav-link">APPROACH</a>
+        <a href="programs.html" class="nav-link">SUPPORT</a>
+        <a href="team.html" class="nav-link">TEAM</a>
+        <a href="blog.html" class="nav-link">INSIGHTS</a>
+        <a href="contact.html" class="nav-link">CONTACT</a>
+        <a href="grow-nomads.html" class="nav-link nav-link--grow">GROW</a>
+      </nav>
+      <div class="header__actions">
+        <a href="contact.html" class="btn btn--outline btn--sm">GET IN TOUCH</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mobile-nav" id="mobileNav">
+    <nav class="mobile-nav__links">
+      <a href="index.html" class="mobile-nav__link">HOME</a>
+      <a href="approach.html" class="mobile-nav__link">APPROACH</a>
+      <a href="programs.html" class="mobile-nav__link">SUPPORT</a>
+      <a href="team.html" class="mobile-nav__link">TEAM</a>
+      <a href="blog.html" class="mobile-nav__link">INSIGHTS</a>
+      <a href="contact.html" class="mobile-nav__link">CONTACT</a>
+      <a href="grow-nomads.html" class="mobile-nav__link" style="color:var(--yellow)">GROW</a>
+    </nav>
+  </div>
+
+  <!-- APP ROOT -->
+  <div id="vlApp" class="vl-root">
+
+    <!-- Banner -->
+    <div class="vl-banner">
+      <div class="container">
+        <div class="vl-banner__inner">
+          <div class="vl-banner__left">
+            <img src="images/logo-horizontal.png" alt="The Performance Act" class="vl-banner__logo">
+            <div>
+              <div class="vl-banner__name">Marist Albion Rugby Academy</div>
+              <div class="vl-banner__platform">The Mind Gym · Your Values</div>
+            </div>
+          </div>
+          <a href="grow-marist.html" class="vl-back">&larr; Mind Gym</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ SCREEN: INTRO ============ -->
+    <div id="vl-intro" class="vl-screen is-active">
+      <section class="vl-hero">
+        <div class="vl-hero__bg"></div>
+        <div class="container">
+          <p class="vl-hero__eyebrow">The Mind Gym · Extra session</p>
+          <h1 class="vl-hero__title">YOUR<br><em>VALUES</em></h1>
+          <p class="vl-hero__lead"><strong>When the game gets hard and confidence is mixed, the question stops being "do I feel good?" and becomes "who do I want to be right now?"</strong> That's where your values come in — and they're worth getting clear on.</p>
+          <p class="vl-hero__lead">This is a short, three-part exploration: name the values that matter to you, reflect on the player and person you want to be, and see how rugby fits into the bigger picture of who you are.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:14px; align-items:center;">
+            <a href="#" class="vl-btn vl-btn--primary vl-btn--lg" id="vlStart">Start &rarr;</a>
+            <span class="vl-meta">3 parts · about 5 minutes · stays on your device</span>
+          </div>
+
+          <div class="vl-note">
+            <p><strong>A value isn't a goal you tick off.</strong> "Win the final" is a goal — you either reach it or you don't. "Compete with everything I've got" is a value — you can live it in every single game, win or lose. Goals can be reached; values are a direction you keep walking.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============ SCREEN: STEP 1 — CHOOSE VALUES ============ -->
+    <div id="vl-step1" class="vl-screen vl-step">
+      <div class="container">
+        <div class="vl-step__wrap">
+          <div class="vl-progress"><div class="vl-progress__dot is-active"></div><div class="vl-progress__dot"></div><div class="vl-progress__dot"></div></div>
+          <p class="vl-kicker">Part 1 of 3</p>
+          <h2 class="vl-h2">What do you<br><em>stand for?</em></h2>
+          <p class="vl-p">Below are some of the qualities people bring to their sport and their life. There are no right answers — read through and tap the ones that genuinely <strong>ring true for you</strong>. Aim for around five or six: the ones you'd want to be true even on a hard day.</p>
+
+          <div class="vl-values" id="vlValues"></div>
+          <p class="vl-count"><strong id="vlCount">0</strong> selected</p>
+
+          <div class="vl-nav">
+            <button class="vl-prev" id="vlBack1" hidden>&larr; Back</button>
+            <a href="#" class="vl-btn vl-btn--primary" id="vlNext1">Next &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ SCREEN: STEP 2 — REFLECT ============ -->
+    <div id="vl-step2" class="vl-screen vl-step">
+      <div class="container">
+        <div class="vl-step__wrap">
+          <div class="vl-progress"><div class="vl-progress__dot is-active"></div><div class="vl-progress__dot is-active"></div><div class="vl-progress__dot"></div></div>
+          <p class="vl-kicker">Part 2 of 3</p>
+          <h2 class="vl-h2">The player<br><em>you want to be</em></h2>
+          <p class="vl-p">Take your time with these. There's no one watching and nothing is saved anywhere — this is just for you to think honestly. Write as much or as little as you like.</p>
+
+          <div class="vl-reflect">
+            <label class="vl-reflect__label" for="vlR1">When your playing days are behind you, how would you want your teammates to talk about the kind of player — and person — you were?
+              <span class="vl-reflect__hint">This is the heart of it. Not your stats — how you made people feel and what you stood for.</span>
+            </label>
+            <textarea class="vl-textarea" id="vlR1"></textarea>
+          </div>
+
+          <div class="vl-reflect">
+            <label class="vl-reflect__label" for="vlR2">Think of a player you really respect — they don't have to be a pro. What is it about <em>how they carry themselves</em> that you admire?
+              <span class="vl-reflect__hint">What you admire in others is often a clue to what you value yourself.</span>
+            </label>
+            <textarea class="vl-textarea" id="vlR2"></textarea>
+          </div>
+
+          <div class="vl-reflect">
+            <label class="vl-reflect__label" for="vlR3">When the game gets hard and your confidence is mixed, who do you want to be in that moment?
+              <span class="vl-reflect__hint">Your values don't depend on the scoreline or how you feel — they're a direction you can choose either way.</span>
+            </label>
+            <textarea class="vl-textarea" id="vlR3"></textarea>
+          </div>
+
+          <div class="vl-reflect">
+            <label class="vl-reflect__label" for="vlR4">Name one thing you could do at training this week that would be a small step toward living one of your values.
+              <span class="vl-reflect__hint">This one's your commitment — keep it small and specific enough that you'd actually do it.</span>
+            </label>
+            <textarea class="vl-textarea" id="vlR4"></textarea>
+          </div>
+
+          <div class="vl-nav">
+            <button class="vl-prev" id="vlBack2">&larr; Back</button>
+            <a href="#" class="vl-btn vl-btn--primary" id="vlNext2">See it together &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ SCREEN: STEP 3 — SELF-AS-CONTEXT + SUMMARY ============ -->
+    <div id="vl-step3" class="vl-screen vl-step">
+      <div class="container">
+        <div class="vl-step__wrap">
+          <div class="vl-progress"><div class="vl-progress__dot is-active"></div><div class="vl-progress__dot is-active"></div><div class="vl-progress__dot is-active"></div></div>
+          <p class="vl-kicker">Part 3 of 3</p>
+          <h2 class="vl-h2">More than a<br><em>rugby player</em></h2>
+
+          <div class="vl-self">
+            <p class="vl-self__label">The part of you that notices</p>
+            <p class="vl-self__title">You are not just an athlete</p>
+            <p class="vl-self__copy">There's a part of you that has been there for all of it — your first game, your best game, the one you'd rather forget, every position, every team. The thoughts, the nerves, the form and the slumps all came and went. That part of you noticing it all has stayed the same. That's <strong>you</strong> — bigger than any single game, label, or result.</p>
+            <p class="vl-self__copy">Here's why it matters: "rugby player" is something you <strong>do</strong>, and clearly something you care about deeply. But it isn't the whole of who you are. When your entire identity rests on being a rugby player, a bad game, an injury, or a tough selection can feel like a threat to <em>you</em>. When you hold it a little more lightly — "I'm someone who values courage and connection, and rugby is one of the biggest places I get to live that out" — you can throw yourself completely into the game without it being the only thing holding you up.</p>
+            <p class="vl-self__copy">Your values travel with you. The courage you show in a tackle is the same courage you can bring to a hard conversation. Sport is one of the biggest arenas where you live your values — but it isn't the only one, and it isn't the source of them. <strong>You are.</strong></p>
+          </div>
+
+          <div class="vl-summary">
+            <h3 class="vl-summary__h">What you came back with</h3>
+            <p class="vl-summary__sub">Yours to keep. Take a screenshot if you'd like to come back to it — nothing here is stored.</p>
+            <div class="vl-summary__values" id="vlSumValues"></div>
+            <div id="vlSumReflections"></div>
+          </div>
+
+          <div class="vl-actions">
+            <button class="vl-btn vl-btn--ghost" id="vlEmail">Email this to myself</button>
+            <a href="grow-marist.html" class="vl-btn vl-btn--ghost">Back to the Mind Gym</a>
+          </div>
+
+          <div class="vl-nav">
+            <button class="vl-prev" id="vlBack3">&larr; Back</button>
+            <span></span>
+          </div>
+
+          <div class="vl-disclaimer">
+            <p>This is a reflection tool to help you think about what matters to you — not a test or a clinical assessment. If anything you're carrying feels heavy or you'd like to talk to someone: free call or text <strong>1737</strong> any time, phone <strong>111</strong> in an emergency, or talk to your coach, a trusted adult, or reach us at <a href="mailto:info@performance-act.com">info@performance-act.com</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /vlApp -->
+
+  <!-- FOOTER -->
+  <footer class="footer" id="siteFooter">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-grid__brand">
+          <img src="images/logo-vertical.png" alt="The Performance Act" class="logo-img logo-img--footer">
+          <p class="footer__tagline">Helping People Grow</p>
+          <p class="footer__email"><a href="mailto:info@performance-act.com">info@performance-act.com</a></p>
+        </div>
+        <div class="footer-grid__links">
+          <h4 class="footer__heading">QUICK LINKS</h4>
+          <a href="index.html#about" class="footer__link">About Us</a>
+          <a href="approach.html" class="footer__link">Our Approach</a>
+          <a href="programs.html" class="footer__link">Programs</a>
+          <a href="team.html" class="footer__link">Our Wh&#257;nau</a>
+        </div>
+        <div class="footer-grid__links">
+          <h4 class="footer__heading">GROW</h4>
+          <a href="grow.html" class="footer__link">About GROW</a>
+          <a href="grow-marist.html" class="footer__link">The Mind Gym</a>
+        </div>
+        <div class="footer-grid__social">
+          <h4 class="footer__heading">FOLLOW US</h4>
+          <div class="social-links">
+            <a href="https://www.instagram.com/performance__act/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+            <a href="https://www.facebook.com/ThePerformanceAct" target="_blank" rel="noopener" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a href="https://www.linkedin.com/company/performance-act-ltd/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 The Performance Act. All rights reserved. Aotearoa, New Zealand.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- NZ SUPPORT LINES -->
+  <button class="support-line-btn" id="supportLineBtn" aria-label="NZ support lines">
+    <span class="support-line-btn__dot" aria-hidden="true"></span>
+    Immediate Support
+  </button>
+  <div class="support-line-modal" id="supportLineModal" role="dialog" aria-modal="true" aria-labelledby="supportLineTitle" aria-hidden="true">
+    <div class="support-line-modal__backdrop"></div>
+    <div class="support-line-modal__panel">
+      <button class="support-line-modal__close" id="supportLineClose" aria-label="Close support lines"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      <p class="support-line-modal__eyebrow">Aotearoa, New Zealand</p>
+      <h2 class="support-line-modal__title" id="supportLineTitle">Need immediate support?</h2>
+      <p class="support-line-modal__note">The Performance Act is a sport psychology practice, not a crisis or emergency service. If you or someone you care about needs immediate support, please reach out to one of these trusted services below. They are free, confidential, and available 24&#8202;/&#8202;7.</p>
+      <ul class="support-line-modal__list" role="list">
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">1737 &mdash; Need to Talk?</p><p class="sln-resource__desc">Free call or text, any time. Trained counsellors, 24&#47;7.</p></div><a href="tel:1737" class="sln-resource__number">Call or text 1737</a></li>
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">Youthline</p><p class="sln-resource__desc">For young people. Free call or text 234, 24&#47;7.</p></div><a href="tel:0800376633" class="sln-resource__number">0800 376 633</a></li>
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">Lifeline NZ</p><p class="sln-resource__desc">Crisis support and suicide prevention, 24&#47;7.</p></div><a href="tel:0800543354" class="sln-resource__number">0800 543 354</a></li>
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">Healthline</p><p class="sln-resource__desc">Free health advice from trained staff, 24&#47;7.</p></div><a href="tel:0800611116" class="sln-resource__number">0800 611 116</a></li>
+      </ul>
+      <p class="support-line-modal__footer">More resources at <a href="https://www.mentalhealth.org.nz/get-help/in-crisis" target="_blank" rel="noopener">Mental Health Foundation NZ</a> and <a href="https://www.depression.org.nz" target="_blank" rel="noopener">depression.org.nz</a>.</p>
+    </div>
+  </div>
+
+  <script src="script.js?v=3"></script>
+  <script>
+  /* ==================================================================
+     YOUR VALUES — MARIST ALBION RUGBY ACADEMY
+     ACT values exploration. 100% client-side; nothing is stored.
+  ================================================================== */
+  (function () {
+    'use strict';
+
+    /* AUTH GUARD — shared with the Mind Gym (login on grow-nomads.html) */
+    var app = document.getElementById('vlApp');
+    if (localStorage.getItem('grow_nomads_club') !== 'marist') {
+      window.location.replace('grow-nomads.html');
+      return;
+    }
+    app.classList.add('is-ready');
+
+    /* Values list — qualities of action, not goals/outcomes */
+    var VALUES = [
+      'Courage','Commitment','Connection','Honesty','Discipline','Humility',
+      'Leadership','Resilience','Respect','Selflessness','Loyalty','Composure',
+      'Work-rate','Accountability','Curiosity','Toughness','Enjoyment','Growth',
+      'Integrity','Gratitude','Presence','Generosity','Fairness','Determination'
+    ];
+
+    var selected = [];
+
+    /* Build chips */
+    var valuesEl = document.getElementById('vlValues');
+    var countEl  = document.getElementById('vlCount');
+    VALUES.forEach(function (v) {
+      var chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'vl-chip';
+      chip.innerHTML = '<span class="vl-chip__check">✓ </span>' + v;
+      chip.addEventListener('click', function () {
+        var i = selected.indexOf(v);
+        if (i === -1) { selected.push(v); chip.classList.add('is-selected'); }
+        else { selected.splice(i, 1); chip.classList.remove('is-selected'); }
+        countEl.textContent = selected.length;
+      });
+      valuesEl.appendChild(chip);
+    });
+
+    /* Screen management */
+    function show(name) {
+      ['intro','step1','step2','step3'].forEach(function (s) {
+        document.getElementById('vl-' + s).classList.toggle('is-active', s === name);
+      });
+      window.scrollTo(0, 0);
+    }
+
+    document.getElementById('vlStart').addEventListener('click', function (e) { e.preventDefault(); show('step1'); });
+    document.getElementById('vlNext1').addEventListener('click', function (e) { e.preventDefault(); show('step2'); });
+    document.getElementById('vlBack2').addEventListener('click', function () { show('step1'); });
+    document.getElementById('vlNext2').addEventListener('click', function (e) { e.preventDefault(); buildSummary(); show('step3'); });
+    document.getElementById('vlBack3').addEventListener('click', function () { show('step2'); });
+
+    /* Reflections */
+    var R = ['vlR1','vlR2','vlR3','vlR4'];
+    var R_LABELS = [
+      'How I want to be remembered',
+      'What I admire in a player I respect',
+      'Who I want to be when it gets hard',
+      'My one commitment this week'
+    ];
+
+    function buildSummary() {
+      /* Values */
+      var sv = document.getElementById('vlSumValues');
+      sv.innerHTML = '';
+      if (selected.length === 0) {
+        sv.innerHTML = '<span class="vl-summary__a is-empty">No values selected yet — that\'s okay, you can go back and choose some.</span>';
+      } else {
+        selected.forEach(function (v) {
+          var span = document.createElement('span');
+          span.className = 'vl-summary__value';
+          span.textContent = v;
+          sv.appendChild(span);
+        });
+      }
+      /* Reflections */
+      var sr = document.getElementById('vlSumReflections');
+      sr.innerHTML = '';
+      R.forEach(function (id, i) {
+        var val = (document.getElementById(id).value || '').trim();
+        var block = document.createElement('div');
+        block.className = 'vl-summary__reflect';
+        block.innerHTML = '<p class="vl-summary__q">' + R_LABELS[i] + '</p>' +
+          '<p class="vl-summary__a' + (val ? '' : ' is-empty') + '">' +
+          (val ? escapeHtml(val) : 'You left this one blank.') + '</p>';
+        sr.appendChild(block);
+      });
+    }
+
+    /* Email to self */
+    document.getElementById('vlEmail').addEventListener('click', function () {
+      var lines = [];
+      lines.push('MY VALUES — Marist Albion Rugby Academy');
+      lines.push('The Performance Act · The Mind Gym');
+      lines.push('');
+      lines.push('VALUES THAT RING TRUE FOR ME:');
+      lines.push('  ' + (selected.length ? selected.join(', ') : '(none selected)'));
+      lines.push('');
+      R.forEach(function (id, i) {
+        var val = (document.getElementById(id).value || '').trim();
+        lines.push(R_LABELS[i].toUpperCase() + ':');
+        lines.push('  ' + (val || '(left blank)'));
+        lines.push('');
+      });
+      lines.push('Remember: a value is a direction you keep walking, not a box you tick.');
+      var subject = encodeURIComponent('My values — Marist Albion Rugby Academy');
+      var body = encodeURIComponent(lines.join('\n'));
+      window.location.href = 'mailto:?subject=' + subject + '&body=' + body;
+    });
+
+    function escapeHtml(s) {
+      return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
+    }
+  })();
+  </script>
+
+</body>
+</html>
