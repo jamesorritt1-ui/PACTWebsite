@@ -177,6 +177,46 @@
     .mg-step__title { font-family: var(--font-heading); text-transform: uppercase; font-size: 0.92rem; letter-spacing: 0.05em; color: #fff; margin-bottom: 6px; }
     .mg-step__desc { font-size: 0.82rem; color: var(--mg-muted); line-height: 1.5; }
 
+    /* Intro / background lead-in */
+    .mg-lead-in { background: rgba(46,158,84,0.06); border: 1px solid rgba(46,158,84,0.18); padding: 22px 26px; margin: 0 0 36px; max-width: 760px; }
+    .mg-lead-in p { color: var(--mg-ink); font-size: 0.98rem; line-height: 1.6; margin: 0; font-weight: 300; }
+    .mg-lead-in strong { color: #fff; font-weight: 600; }
+
+    /* ACE practical examples */
+    .mg-examples { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; }
+    .mg-example { background: #0d110d; border: 1px solid rgba(255,255,255,0.08); padding: 26px 24px; }
+    .mg-example__scenario { font-family: var(--font-heading); font-size: 1.08rem; color: #fff; letter-spacing: 0.02em; margin-bottom: 4px; }
+    .mg-example__moment { font-size: 0.84rem; color: var(--mg-muted); margin-bottom: 16px; line-height: 1.45; font-style: italic; }
+    .mg-example__step { padding: 11px 0; border-top: 1px solid rgba(255,255,255,0.06); display: flex; gap: 12px; }
+    .mg-example__letter { font-family: var(--font-heading); font-weight: 700; color: var(--green-light); font-size: 1.05rem; flex-shrink: 0; width: 16px; }
+    .mg-example__text { color: var(--mg-ink); font-size: 0.9rem; line-height: 1.5; font-weight: 300; }
+    .mg-example__text strong { color: #fff; font-weight: 600; }
+    .mg-examples__note { margin-top: 26px; color: var(--mg-ink); font-size: 1rem; font-weight: 300; }
+    .mg-examples__note strong { color: #fff; font-weight: 600; }
+
+    /* Choice point */
+    .mg-choice { margin-top: 40px; max-width: 720px; }
+    .mg-choice__flow { display: flex; flex-direction: column; align-items: center; }
+    .mg-choice__node { text-align: center; background: #0d110d; border: 1px solid rgba(255,255,255,0.1); padding: 14px 28px; font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.08em; color: #fff; font-size: 0.95rem; }
+    .mg-choice__node--pressure { border-top: 4px solid #555; }
+    .mg-choice__node--point { border-top: 4px solid var(--green-light); color: var(--green-light); font-size: 1.1rem; }
+    .mg-choice__arrow { width: 2px; height: 26px; background: rgba(255,255,255,0.2); }
+    .mg-choice__paths { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; width: 100%; margin-top: 22px; }
+    .mg-choice__path { padding: 22px; border: 1px solid rgba(255,255,255,0.08); }
+    .mg-choice__path--toward { border-left: 4px solid var(--green-light); background: rgba(46,158,84,0.07); }
+    .mg-choice__path--away { border-left: 4px solid #555; }
+    .mg-choice__path-label { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.92rem; margin-bottom: 8px; }
+    .mg-choice__path--toward .mg-choice__path-label { color: var(--green-light); }
+    .mg-choice__path--away .mg-choice__path-label { color: #888; }
+    .mg-choice__path p { color: var(--mg-ink); font-size: 0.92rem; line-height: 1.5; margin: 0; font-weight: 300; }
+
+    /* Context callout box */
+    .mg-callout-box { background: #0d110d; border: 1px solid rgba(255,255,255,0.08); border-left: 4px solid var(--green-light); padding: 28px 30px; margin-top: 36px; }
+    .mg-callout-box h4 { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.05em; color: #fff; font-size: 1.1rem; margin: 0 0 14px; }
+    .mg-callout-box p { color: var(--mg-ink); line-height: 1.6; font-size: 0.95rem; margin: 0 0 12px; font-weight: 300; }
+    .mg-callout-box p:last-child { margin-bottom: 0; }
+    .mg-callout-box strong { color: #fff; font-weight: 600; }
+
     /* Video embed placeholder — James will drop YouTube links in later */
     .mg-video-embed {
       position: relative; aspect-ratio: 16 / 9; width: 100%;
@@ -344,9 +384,10 @@
     /* ---------- RESPONSIVE ---------- */
     @media (max-width: 860px) {
       .mg-sn, .mg-results__panel { grid-template-columns: 1fr; }
-      .mg-ace-grid, .mg-grow__grid { grid-template-columns: 1fr; }
+      .mg-ace-grid, .mg-grow__grid, .mg-examples { grid-template-columns: 1fr; }
       .mg-dots { grid-template-columns: repeat(2, 1fr); }
       .mg-journey { grid-template-columns: 1fr 1fr; }
+      .mg-choice__paths { grid-template-columns: 1fr; }
     }
     @media (max-width: 480px) {
       .mg-dots, .mg-journey { grid-template-columns: 1fr; }
@@ -425,7 +466,7 @@
         <div class="container">
           <p class="mg-hero__eyebrow">The Mind Gym · Marist Albion Rugby Academy</p>
           <h1 class="mg-hero__title">TRAIN<br><em>YOUR MIND</em></h1>
-          <p class="mg-hero__lead"><strong>Your skills get you to the moment. Your mind decides what you do in it.</strong> This is a space to keep working on that side of your game — the same ACE tools from your session, here whenever you want them.</p>
+          <p class="mg-hero__lead"><strong>Your skills get you to the moment. Your mind decides what you do in it.</strong> This is the mental side of your game — a few simple tools you can use before, during and after you play. If you were in the live session, this carries it on. If you're finding it for the first time, you're in the right place — everything is explained as you go.</p>
           <div class="mg-hero__actions">
             <a href="#" class="mg-btn mg-btn--primary mg-btn--lg" id="mgStartTop">Start the Check-In &rarr;</a>
             <span class="mg-hero__meta">15 questions · about 3 minutes · stays on your device</span>
@@ -436,10 +477,15 @@
       <!-- 01 · WHAT ARE MENTAL SKILLS -->
       <section class="mg-sec">
         <div class="container">
-          <span class="mg-sec__num">01 · The basics</span>
-          <h2 class="mg-sec__title">What are<br><em>mental skills?</em></h2>
-          <p class="mg-sec__lead">Your skills and fitness get you to the moment. Mental skills decide what you do in it — the gap between knowing what to do at training and doing it when the game is on the line, the crowd is loud, and your head is full.</p>
-          <p class="mg-sec__lead">Like any skill, they can be practised. This space holds a few of the tools from your session, for you to use in your own way.</p>
+          <span class="mg-sec__num">01 · Start here</span>
+          <h2 class="mg-sec__title">What this is, and<br><em>who it's for</em></h2>
+
+          <div class="mg-lead-in">
+            <p><strong>Welcome to The Mind Gym.</strong> This is a self-guided space built for Marist Albion Rugby Academy by The Performance Act. It follows a live session called <em>Meeting Your Mind</em> — but you don't need to have been there to use it. If you missed the session, or just want a refresher, read on: each idea is explained from the ground up, and you can move through it at your own pace.</p>
+          </div>
+
+          <p class="mg-sec__lead">So, what are mental skills? Your skills and fitness get you to the moment. <strong>Mental skills decide what you do in it</strong> — the gap between knowing what to do at training and doing it when the game is on the line, the crowd is loud, and your head is full of noise.</p>
+          <p class="mg-sec__lead">The good news is that, like a pass or a tackle, these are skills — which means they can be practised. None of this is about being tougher or thinking positively. It's about a few simple, practical moves you can actually run when it matters. Over the next sections we'll build up the picture: how the mind creates "noise," a simple process called <strong>ACE</strong> for handling it, the split-second <strong>choice point</strong> where it all happens, and the habits that quietly pull us off our game.</p>
         </div>
       </section>
 
@@ -498,15 +544,98 @@
               <p class="mg-ace-card__desc">Act in a way that reflects your role, your values, and the team's standards — even when it's uncomfortable. Do the next thing that matters.</p>
             </div>
           </div>
+
+          <h3 class="mg-drills__heading" style="margin-top:48px;">ACE in real moments</h3>
+          <p class="mg-sec__lead" style="margin-top:8px;">It's easier to see ACE when it's tied to moments you actually know. Here are three — notice it's the same three moves every time.</p>
+          <div class="mg-examples">
+
+            <div class="mg-example">
+              <div class="mg-example__scenario">You knock the ball on early</div>
+              <div class="mg-example__moment">The crowd groans and the doubt spikes.</div>
+              <div class="mg-example__step"><span class="mg-example__letter">A</span><span class="mg-example__text"><strong>Acknowledge:</strong> notice the heat in your chest and the "here we go again" thought. Name it — "that's the doubt" — so it's a thought, not an order.</span></div>
+              <div class="mg-example__step"><span class="mg-example__letter">C</span><span class="mg-example__text"><strong>Connect:</strong> feet on the grass, one breath out, eyes up to the next breakdown.</span></div>
+              <div class="mg-example__step"><span class="mg-example__letter">E</span><span class="mg-example__text"><strong>Engage:</strong> get to the next ruck and do your job. The next contest is the only one that matters now.</span></div>
+            </div>
+
+            <div class="mg-example">
+              <div class="mg-example__scenario">You've been named on the bench</div>
+              <div class="mg-example__moment">Disappointment, and comparing yourself to others.</div>
+              <div class="mg-example__step"><span class="mg-example__letter">A</span><span class="mg-example__text"><strong>Acknowledge:</strong> let the disappointment be there. It makes sense — it's there because you care.</span></div>
+              <div class="mg-example__step"><span class="mg-example__letter">C</span><span class="mg-example__text"><strong>Connect:</strong> bring your attention back to what's actually in front of you — today's training.</span></div>
+              <div class="mg-example__step"><span class="mg-example__letter">E</span><span class="mg-example__text"><strong>Engage:</strong> train like the player you want to be, so you're ready the moment your number's called.</span></div>
+            </div>
+
+            <div class="mg-example">
+              <div class="mg-example__scenario">A bad call goes against you</div>
+              <div class="mg-example__moment">Anger, and the urge to argue or switch off.</div>
+              <div class="mg-example__step"><span class="mg-example__letter">A</span><span class="mg-example__text"><strong>Acknowledge:</strong> notice the anger rising and name it — before it grabs the wheel.</span></div>
+              <div class="mg-example__step"><span class="mg-example__letter">C</span><span class="mg-example__text"><strong>Connect:</strong> a cue word — "next" — and a breath to reset your attention.</span></div>
+              <div class="mg-example__step"><span class="mg-example__letter">E</span><span class="mg-example__text"><strong>Engage:</strong> reset the line, talk to a teammate, do the next useful thing for the team.</span></div>
+            </div>
+
+          </div>
+          <p class="mg-examples__note"><strong>Same three moves, any moment:</strong> notice what's here, come back to now, do what matters. You don't have to feel calm or confident first — ACE is something you <em>do</em>, not something you wait to feel.</p>
         </div>
       </section>
 
-      <!-- 04 · WATCH & SPOT (Connect / anchors) -->
+      <!-- 04 · THE CHOICE POINT -->
       <section class="mg-sec mg-sec--darker">
         <div class="container">
-          <span class="mg-sec__num">04 · Watch &amp; spot</span>
+          <span class="mg-sec__num">04 · Where the skill lives</span>
+          <h2 class="mg-sec__title">The <em>choice point</em></h2>
+          <p class="mg-sec__lead">Pressure and noise will always show up — they're not the problem, and they're not a sign that anything's wrong with you. Even the best players in the world feel them. The difference is what they do next.</p>
+          <p class="mg-sec__lead">The <strong>choice point</strong> is that split-second between what shows up (the nerves, the doubt, the bad call) and what you actually do. It's a tiny gap, but it's where everything happens — because in that gap, you can go one of two ways:</p>
+
+          <div class="mg-choice">
+            <div class="mg-choice__flow">
+              <div class="mg-choice__node mg-choice__node--pressure">Pressure &amp; noise show up</div>
+              <div class="mg-choice__arrow"></div>
+              <div class="mg-choice__node mg-choice__node--point">The choice point</div>
+            </div>
+            <div class="mg-choice__paths">
+              <div class="mg-choice__path mg-choice__path--toward">
+                <p class="mg-choice__path-label">&uarr; Toward</p>
+                <p>Run ACE. Do the next useful thing — even with the nerves still there. This is a move toward the player and teammate you want to be.</p>
+              </div>
+              <div class="mg-choice__path mg-choice__path--away">
+                <p class="mg-choice__path-label">&darr; Away</p>
+                <p>React, force it, shrink, or check out. These "away" moves have a name — the DOTS — and they're next.</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="mg-sec__lead" style="margin-top:28px;">You won't always pick "toward," and that's completely human — nobody does. The skill isn't being perfect; it's simply <strong>noticing the choice point more often</strong>. Once you can see the gap, you get to choose what happens in it. That's the whole game.</p>
+        </div>
+      </section>
+
+      <!-- 05 · DOTS -->
+      <section class="mg-sec">
+        <div class="container">
+          <span class="mg-sec__num">05 · The away moves</span>
+          <h2 class="mg-sec__title">DOTS — how we<br><em>duck out of the noise</em></h2>
+          <p class="mg-sec__lead">When the noise gets loud, we all reach for quick ways to escape it. They feel like relief in the moment — but they tend to pull you <em>away</em> from the game. There are four common ones, and they spell DOTS. Spotting yours is how you find your choice point.</p>
+          <div class="mg-dots">
+            <div class="mg-dot"><div class="mg-dot__letter">D</div><div class="mg-dot__name">Distract</div><p class="mg-dot__desc">Scroll, joke it off, focus on anything but the next job.</p></div>
+            <div class="mg-dot"><div class="mg-dot__letter">O</div><div class="mg-dot__name">Opt out</div><p class="mg-dot__desc">Hide, stop calling for the ball, pull out of the contact.</p></div>
+            <div class="mg-dot"><div class="mg-dot__letter">T</div><div class="mg-dot__name">Time travel</div><p class="mg-dot__desc">Stuck replaying the last mistake — or jumping to the result.</p></div>
+            <div class="mg-dot"><div class="mg-dot__letter">S</div><div class="mg-dot__name">Self-sabotage</div><p class="mg-dot__desc">Turn on yourself, lash out, or numb it instead of facing it.</p></div>
+          </div>
+
+          <div class="mg-callout-box">
+            <h4>It always depends on the context</h4>
+            <p>Here's the part that's easy to miss: <strong>the DOTS aren't "bad," and the goal isn't to never do them.</strong> Whether a move helps or hurts depends entirely on the <strong>context</strong> — the situation it's happening in, and whether it moves you toward or away from what matters <em>right then</em>.</p>
+            <p>The exact same action can be either. Scrolling your phone to switch off and relax the night before a game might be just what you need. Scrolling instead of warming up pulls you away from it. Replaying a clip to learn from a mistake is useful; replaying that mistake on a loop in the middle of the next game is "time travel" that drags you off the very next job. Same behaviour — different context, different result.</p>
+            <p>So the question is never "is this good or bad?" It's: <strong>"right here, right now, is this moving me toward the player I want to be, or away from them?"</strong> Same move, different moment, different answer. Getting good at asking that question — in the context you're actually in — is the skill.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 · WATCH & SPOT (Connect / anchors) -->
+      <section class="mg-sec mg-sec--darker">
+        <div class="container">
+          <span class="mg-sec__num">06 · Watch &amp; spot</span>
           <h2 class="mg-sec__title">How the best<br><em>get ready</em></h2>
-          <p class="mg-sec__lead">One of the clearest ways to learn this stuff is to watch athletes who've built it into a routine. In this clip, Olympic luge athletes <strong>Matt Mortensen and Jayson Terdiman</strong> talk through how they get ready in the moments before a run — when the pressure is at its highest and there's no second chance.</p>
+          <p class="mg-sec__lead">One of the clearest ways to learn this is to watch athletes who've built it into a routine. In this clip, Olympic luge athletes <strong>Matt Mortensen and Jayson Terdiman</strong> talk through how they get ready in the moments before a run — when the pressure is at its highest and there's no second chance.</p>
           <p class="mg-sec__lead"><strong>While you watch, see what you can spot:</strong> what do they put their attention on to get ready and reset? What do they do with their nerves? There's no need to take notes — just watch like you're studying another player's game.</p>
 
           <!-- Embedded: Mortensen & Terdiman pre-performance routine (anchors) -->
@@ -517,7 +646,7 @@
           <details class="mg-reveal">
             <summary>What you might have spotted</summary>
             <div class="mg-reveal__body">
-              <p class="mg-reveal__intro">Have a think first, then open this up. Notice how what they do lines up with ACE — the same framework from your session.</p>
+              <p class="mg-reveal__intro">Have a think first, then open this up. Notice how what they do lines up with ACE — the same framework we've been building.</p>
               <div class="mg-reveal__item">
                 <span class="mg-reveal__tag">A · Acknowledge — making room for the nerves</span>
                 <p>Rather than fighting the nerves, Mortensen pictures <strong>water flowing</strong> — fluid and unstoppable. He's not pretending he isn't nervous; he's making room for it and letting it move through, instead of getting tangled in an "I'm nervous" story. That's being open.</p>
@@ -537,25 +666,10 @@
         </div>
       </section>
 
-      <!-- 05 · DOTS -->
+      <!-- 07 · YOUR CHECK-IN / JOURNEY -->
       <section class="mg-sec">
         <div class="container">
-          <span class="mg-sec__num">05 · The away moves</span>
-          <h2 class="mg-sec__title">DOTS — how we<br><em>duck out of the noise</em></h2>
-          <p class="mg-sec__lead">When the noise gets loud, we all reach for quick ways to escape it. They feel like relief — but they pull you AWAY from the game. Spot yours, and you've found your choice point.</p>
-          <div class="mg-dots">
-            <div class="mg-dot"><div class="mg-dot__letter">D</div><div class="mg-dot__name">Distract</div><p class="mg-dot__desc">Scroll, joke it off, focus on anything but the next job.</p></div>
-            <div class="mg-dot"><div class="mg-dot__letter">O</div><div class="mg-dot__name">Opt out</div><p class="mg-dot__desc">Hide, stop calling for the ball, pull out of the contact.</p></div>
-            <div class="mg-dot"><div class="mg-dot__letter">T</div><div class="mg-dot__name">Time travel</div><p class="mg-dot__desc">Stuck replaying the last mistake — or jumping to the result.</p></div>
-            <div class="mg-dot"><div class="mg-dot__letter">S</div><div class="mg-dot__name">Self-sabotage</div><p class="mg-dot__desc">Turn on yourself, lash out, or numb it instead of facing it.</p></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 06 · YOUR CHECK-IN / JOURNEY -->
-      <section class="mg-sec mg-sec--darker">
-        <div class="container">
-          <span class="mg-sec__num">06 · Your check-in</span>
+          <span class="mg-sec__num">07 · Your check-in</span>
           <h2 class="mg-sec__title">Find your<br><em>starting line</em></h2>
           <p class="mg-sec__lead">A short self-check gives you a read on how you're tracking across the three parts of ACE — <strong>Open</strong>, <strong>Aware</strong> and <strong>Engaged</strong> — and points you toward the tools that fit where you're at right now. You're the expert on your own game; this is just here to help you aim your practice. Here's how it works:</p>
           <div class="mg-journey">
@@ -577,10 +691,10 @@
         </div>
       </section>
 
-      <!-- 07 · MORE TO EXPLORE -->
-      <section class="mg-sec">
+      <!-- 08 · MORE TO EXPLORE -->
+      <section class="mg-sec mg-sec--darker">
         <div class="container">
-          <span class="mg-sec__num">07 · More to explore</span>
+          <span class="mg-sec__num">08 · More to explore</span>
           <h2 class="mg-sec__title">Your <em>values</em></h2>
           <p class="mg-sec__lead">The Engage part of ACE is about acting on what matters to you. If you'd like to get clearer on what that is — the player and person you want to be, and how rugby fits into the bigger picture of who you are — there's a short values exploration here whenever you're ready. It's separate from the check-in, so you can do it any time.</p>
           <div class="mg-hero__actions" style="margin-top:28px;">
