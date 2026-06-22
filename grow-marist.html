@@ -186,6 +186,19 @@
     }
     .mg-video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
     .mg-video-embed--filled { border: 1px solid rgba(255,255,255,0.08); padding: 0; }
+
+    /* Collapsible "what you might have spotted" reveal */
+    .mg-reveal { margin-top: 24px; background: #0d110d; border: 1px solid rgba(255,255,255,0.08); border-left: 4px solid var(--green-light); }
+    .mg-reveal > summary { cursor: pointer; padding: 18px 22px; font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.06em; color: #fff; font-size: 0.95rem; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    .mg-reveal > summary::-webkit-details-marker { display: none; }
+    .mg-reveal > summary::after { content: '+'; color: var(--green-light); font-size: 1.5rem; line-height: 1; }
+    .mg-reveal[open] > summary::after { content: '\2013'; }
+    .mg-reveal__body { padding: 0 22px 8px; }
+    .mg-reveal__intro { color: var(--mg-muted); font-size: 0.9rem; line-height: 1.55; margin: 0 0 6px; }
+    .mg-reveal__item { padding: 16px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+    .mg-reveal__tag { font-family: var(--font-heading); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green-light); }
+    .mg-reveal__item strong { color: #fff; font-weight: 600; }
+    .mg-reveal__item p { color: var(--mg-ink); line-height: 1.55; font-size: 0.95rem; margin: 5px 0 0; font-weight: 300; }
     .mg-video-embed__icon { width: 54px; height: 54px; color: var(--green-light); opacity: 0.8; }
     .mg-video-embed__label { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.12em; color: var(--green-light); font-size: 0.8rem; }
     .mg-video-embed__note { font-size: 0.82rem; color: var(--mg-muted); max-width: 380px; line-height: 1.5; }
@@ -493,14 +506,34 @@
         <div class="container">
           <span class="mg-sec__num">04 · Watch &amp; spot</span>
           <h2 class="mg-sec__title">How the best<br><em>get ready</em></h2>
-          <p class="mg-sec__lead">Connect is the reset — coming back to the next useful thing when pressure pulls your attention away. One of the clearest ways to learn it is to watch an athlete who has built it into a routine. As you watch, notice the <strong>anchors</strong> they use: a breath, a cue word, a set movement, a point they fix their eyes on. These are the same anchors you can build for yourself.</p>
+          <p class="mg-sec__lead">One of the clearest ways to learn this stuff is to watch athletes who've built it into a routine. In this clip, Olympic luge athletes <strong>Matt Mortensen and Jayson Terdiman</strong> talk through how they get ready in the moments before a run — when the pressure is at its highest and there's no second chance.</p>
+          <p class="mg-sec__lead"><strong>While you watch, see what you can spot:</strong> what do they put their attention on to get ready and reset? What do they do with their nerves? There's no need to take notes — just watch like you're studying another player's game.</p>
 
-          <!-- Embedded: athlete pre-performance routine (anchors) -->
+          <!-- Embedded: Mortensen & Terdiman pre-performance routine (anchors) -->
           <div class="mg-video-embed mg-video-embed--filled">
-            <iframe src="https://www.youtube.com/embed/fDmRwjBryu0" title="An athlete's pre-performance routine — spot the anchors" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <iframe src="https://www.youtube.com/embed/fDmRwjBryu0" title="Matt Mortensen and Jayson Terdiman — pre-performance routine" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
           </div>
 
-          <p class="mg-sec__lead" style="margin-top:24px;"><strong>While you watch:</strong> what does the athlete put their attention on to get ready and reset? See how many anchors you can spot — then have a think about which ones might work for you.</p>
+          <details class="mg-reveal">
+            <summary>What you might have spotted</summary>
+            <div class="mg-reveal__body">
+              <p class="mg-reveal__intro">Have a think first, then open this up. Notice how what they do lines up with ACE — the same framework from your session.</p>
+              <div class="mg-reveal__item">
+                <span class="mg-reveal__tag">A · Acknowledge — making room for the nerves</span>
+                <p>Rather than fighting the nerves, Mortensen pictures <strong>water flowing</strong> — fluid and unstoppable. He's not pretending he isn't nervous; he's making room for it and letting it move through, instead of getting tangled in an "I'm nervous" story. That's being open.</p>
+              </div>
+              <div class="mg-reveal__item">
+                <span class="mg-reveal__tag">C · Connect — anchoring attention on the now</span>
+                <p>They <strong>look at the track and the start ramp</strong> to run the next moment in their mind, and use a song — J. Cole's "Crunch Time" — as a trigger to drop into focus. Their eyes, the track, the music: these are all <strong>anchors</strong> that bring their attention back to the present.</p>
+              </div>
+              <div class="mg-reveal__item">
+                <span class="mg-reveal__tag">E · Engage — trusting the routine</span>
+                <p>They make the point that they don't need an <strong>exceptional</strong> day — just to execute what they've practised and trust their preparation. That's committed action: doing the job you know how to do, whether or not the nerves have settled.</p>
+              </div>
+            </div>
+          </details>
+
+          <p class="mg-sec__lead" style="margin-top:24px;">Their anchors won't all be yours — water imagery and a particular song are personal. The skill to borrow is the <em>idea</em>: a few reliable things you can put your attention on to get ready and reset. You'll build your own in the drills.</p>
         </div>
       </section>
 
