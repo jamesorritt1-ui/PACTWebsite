@@ -42,6 +42,16 @@
     .vl-back { font-family:var(--font-heading); font-size:.66rem; font-weight:600; letter-spacing:.12em; color:rgba(255,255,255,.7); background:transparent; border:1px solid rgba(255,255,255,.25); padding:8px 16px; cursor:pointer; text-transform:uppercase; transition:all .3s ease; flex-shrink:0; text-decoration:none; }
     .vl-back:hover { color:#fff; border-color:rgba(255,255,255,.6); }
 
+    /* resource nav — easy nav across Marist GROW resources */
+    .res-nav { background:#0b0f0b; border-bottom:1px solid rgba(255,255,255,0.08); position:sticky; top:var(--header-height); z-index:50; }
+    .res-nav__inner { display:flex; align-items:center; gap:2px; overflow-x:auto; scrollbar-width:none; }
+    .res-nav__inner::-webkit-scrollbar { display:none; }
+    .res-nav__label { font-family:var(--font-heading); font-size:.64rem; letter-spacing:.2em; text-transform:uppercase; color:#7d877f; padding-right:16px; flex-shrink:0; }
+    .res-nav__link { display:inline-flex; align-items:center; gap:8px; font-family:var(--font-heading); font-size:.82rem; letter-spacing:.05em; text-transform:uppercase; color:#cfd6d0; text-decoration:none; padding:15px 16px; white-space:nowrap; border-bottom:3px solid transparent; transition:all .2s ease; flex-shrink:0; }
+    .res-nav__link:hover { color:#fff; background:rgba(255,255,255,0.03); }
+    .res-nav__link.is-active { color:var(--green-light); border-bottom-color:var(--green-light); }
+    .res-nav__link svg { width:15px; height:15px; flex-shrink:0; }
+
     /* hero */
     .vl-hero { position:relative; overflow:hidden; background:#050805; padding:clamp(60px,10vw,110px) 0 clamp(40px,6vw,70px); }
     .vl-hero__bg { position:absolute; inset:0; background:url('images/rugby-lineout.png') center 35% / cover no-repeat; opacity:.20; filter:grayscale(.3); }
@@ -232,6 +242,21 @@
         </div>
       </div>
     </div>
+
+    <!-- ==================== RESOURCE NAV ==================== -->
+    <nav class="res-nav" aria-label="Marist GROW resources">
+      <div class="container">
+        <div class="res-nav__inner">
+          <span class="res-nav__label">Explore</span>
+          <a href="grow-marist.html" class="res-nav__link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>The Mind Gym</a>
+          <a href="grow-marist.html#checkin" class="res-nav__link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>The Check-In</a>
+          <a href="grow-marist-values.html" class="res-nav__link is-active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/></svg>Your Values</a>
+        </div>
+      </div>
+    </nav>
 
     <!-- ============ SCREEN: INTRO ============ -->
     <div id="vl-intro" class="vl-screen is-active">
