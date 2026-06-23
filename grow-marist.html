@@ -427,6 +427,8 @@
 
     /* Results actions + comeback */
     .mg-actions-bar { max-width: 980px; margin: 36px auto 0; display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+    .mg-save-hint { max-width: 980px; margin: 14px auto 0; text-align: center; font-size: 0.84rem; color: var(--mg-muted); line-height: 1.5; }
+    .mg-save-hint strong { color: var(--green-light); font-weight: 600; }
     .mg-comeback { max-width: 980px; margin: 44px auto 0; text-align: center; background: #0a0d0a; border: 1px solid rgba(255,255,255,0.08); padding: 36px; }
     .mg-comeback__title { font-family: var(--font-heading); text-transform: uppercase; color: #fff; font-size: 1.3rem; margin-bottom: 10px; }
     .mg-comeback__copy { color: var(--mg-muted); max-width: 540px; margin: 0 auto 22px; line-height: 1.55; font-size: 0.95rem; }
@@ -963,9 +965,12 @@
 
         <!-- Actions -->
         <div class="mg-actions-bar">
+          <button class="mg-btn mg-btn--primary" id="mgDownloadPlan">Save to my phone</button>
+          <button class="mg-btn mg-btn--ghost" id="mgCopyPlan">Copy plan</button>
           <button class="mg-btn mg-btn--ghost" id="mgEmailPlan">Email me my plan</button>
           <button class="mg-btn mg-btn--ghost" id="mgRetake">Re-take the check-in</button>
         </div>
+        <p class="mg-save-hint" id="mgSaveHint">Tip: tap <strong>Save to my phone</strong>, then choose <strong>Notes</strong> or <strong>Save to Files</strong> to keep your plan in your pocket.</p>
 
         <!-- Comeback -->
         <div class="mg-comeback">
@@ -1684,6 +1689,65 @@
       var body = encodeURIComponent(lastSummary || 'I completed my Mind Gym check-in.');
       window.location.href = 'mailto:?subject=' + subject + '&body=' + body;
     });
+
+    /* ---- SAVE TO PHONE (share / download) + COPY ---- */
+    function planText() { return lastSummary || 'I completed my Mind Gym check-in.'; }
+
+    document.getElementById('mgDownloadPlan').addEventListener('click', function () {
+      var text = planText();
+      var fname = 'My-Mind-Gym-Plan.txt';
+      /* On phones, the native share sheet lets them save straight to Notes /
+         Files / Messages. Fall back to a .txt download on desktop. */
+      if (navigator.share) {
+        var shared = false;
+        try {
+          if (navigator.canShare && navigator.canShare({ files: [new File([text], fname, { type: 'text/plain' })] })) {
+            navigator.share({ files: [new File([text], fname, { type: 'text/plain' })], title: 'My Mind Gym Plan' });
+            shared = true;
+          } else {
+            navigator.share({ title: 'My Mind Gym Plan', text: text });
+            shared = true;
+          }
+        } catch (e) { shared = false; }
+        if (shared) return;
+      }
+      downloadTxt(fname, text);
+    });
+
+    document.getElementById('mgCopyPlan').addEventListener('click', function () {
+      copyToClipboard(planText(), this);
+    });
+
+    function downloadTxt(filename, text) {
+      var blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url; a.download = filename;
+      document.body.appendChild(a); a.click();
+      setTimeout(function () { document.body.removeChild(a); URL.revokeObjectURL(url); }, 120);
+    }
+
+    function copyToClipboard(text, btn) {
+      function ok() { flashBtn(btn, 'Copied ✓'); }
+      function fallback() {
+        var ta = document.createElement('textarea');
+        ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.focus(); ta.select();
+        try { document.execCommand('copy'); ok(); } catch (e) { flashBtn(btn, 'Select &amp; copy'); }
+        document.body.removeChild(ta);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(ok, fallback);
+      } else { fallback(); }
+    }
+
+    function flashBtn(btn, msg) {
+      if (!btn) return;
+      var orig = btn.textContent;
+      btn.textContent = msg;
+      btn.disabled = true;
+      setTimeout(function () { btn.textContent = orig; btn.disabled = false; }, 1600);
+    }
 
     /* ---- START BUTTONS ---- */
     function startQuiz(e) {

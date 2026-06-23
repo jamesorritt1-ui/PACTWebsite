@@ -541,9 +541,12 @@
           </div>
 
           <div class="vl-actions">
+            <button class="vl-btn vl-btn--primary" id="vlDownload">Save to my phone</button>
+            <button class="vl-btn vl-btn--ghost" id="vlCopy">Copy plan</button>
             <button class="vl-btn vl-btn--ghost" id="vlEmail">Email this to myself</button>
             <a href="grow-marist.html" class="vl-btn vl-btn--ghost">Back to the Mind Gym</a>
           </div>
+          <p class="vl-meta" style="margin-top:14px;">Tip: tap <strong style="color:var(--green-light)">Save to my phone</strong>, then choose <strong style="color:var(--green-light)">Notes</strong> or <strong style="color:var(--green-light)">Save to Files</strong> to keep your plan with you.</p>
 
           <div class="vl-nav">
             <button class="vl-prev" id="vlBack5">&larr; Back</button>
@@ -806,8 +809,8 @@
       }
     }
 
-    /* --- email to self --- */
-    on('vlEmail', function () {
+    /* --- build the plain-text plan (shared by email / download / copy) --- */
+    function buildPlanText() {
       var L = [];
       L.push('MY VALUES PLAN — Marist Albion Rugby Academy');
       L.push('The Performance Act · The Mind Gym');
@@ -831,8 +834,47 @@
       L.push('');
       L.push('Remember: a value is a direction you keep walking, not a box you tick.');
       L.push('Do one small action a day, notice how it feels, then go again.');
+      return L.join('\n');
+    }
+
+    /* --- email to self --- */
+    on('vlEmail', function () {
       var subject = encodeURIComponent('My values plan — Marist Albion Rugby Academy');
-      window.location.href = 'mailto:?subject=' + subject + '&body=' + encodeURIComponent(L.join('\n'));
+      window.location.href = 'mailto:?subject=' + subject + '&body=' + encodeURIComponent(buildPlanText());
+    });
+
+    /* --- save to phone (share / download) + copy --- */
+    on('vlDownload', function () {
+      var text = buildPlanText();
+      var fname = 'My-Values-Plan.txt';
+      if (navigator.share) {
+        try {
+          if (navigator.canShare && navigator.canShare({ files: [new File([text], fname, { type: 'text/plain' })] })) {
+            navigator.share({ files: [new File([text], fname, { type: 'text/plain' })], title: 'My Values Plan' });
+          } else {
+            navigator.share({ title: 'My Values Plan', text: text });
+          }
+          return;
+        } catch (e) { /* fall through to download */ }
+      }
+      var blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url; a.download = fname;
+      document.body.appendChild(a); a.click();
+      setTimeout(function () { document.body.removeChild(a); URL.revokeObjectURL(url); }, 120);
+    });
+
+    on('vlCopy', function () {
+      var text = buildPlanText(); var btn = document.getElementById('vlCopy');
+      function ok() { var o = btn.textContent; btn.textContent = 'Copied ✓'; btn.disabled = true; setTimeout(function () { btn.textContent = o; btn.disabled = false; }, 1600); }
+      function fallback() {
+        var ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.focus(); ta.select();
+        try { document.execCommand('copy'); ok(); } catch (e) {}
+        document.body.removeChild(ta);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
     });
 
     function escapeHtml(s) {
