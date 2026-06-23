@@ -368,13 +368,19 @@
     .mg-drill__reps { font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; background: var(--green-dark); padding: 6px 12px; flex-shrink: 0; }
     .mg-drill__toggle { color: var(--mg-muted); flex-shrink: 0; transition: transform .3s ease; }
     .mg-drill.is-open .mg-drill__toggle { transform: rotate(180deg); }
-    .mg-drill__body { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
-    .mg-drill.is-open .mg-drill__body { max-height: 600px; }
+    .mg-drill__body { max-height: 0; overflow: hidden; transition: max-height .5s ease; }
+    .mg-drill.is-open .mg-drill__body { max-height: 2200px; }
     .mg-drill__inner { padding: 0 22px 24px 62px; }
     .mg-drill__what { color: var(--mg-ink); line-height: 1.6; font-size: 0.95rem; font-weight: 300; }
-    .mg-drill__rep, .mg-drill__reflect { margin-top: 16px; }
-    .mg-drill__tag { font-family: var(--font-heading); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green-light); display: block; margin-bottom: 5px; }
+    .mg-drill__how, .mg-drill__why, .mg-drill__rep, .mg-drill__reflect { margin-top: 18px; }
+    .mg-drill__tag { font-family: var(--font-heading); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green-light); display: block; margin-bottom: 7px; }
     .mg-drill__rep p, .mg-drill__reflect p { color: var(--mg-ink); font-size: 0.92rem; line-height: 1.55; margin: 0; font-weight: 300; }
+    .mg-drill__steps { margin: 4px 0 0; padding: 0; list-style: none; counter-reset: step; }
+    .mg-drill__steps li { position: relative; counter-increment: step; padding: 9px 0 9px 36px; color: var(--mg-ink); font-size: 0.92rem; line-height: 1.5; font-weight: 300; border-top: 1px solid rgba(255,255,255,0.05); }
+    .mg-drill__steps li:first-child { border-top: none; }
+    .mg-drill__steps li::before { content: counter(step); position: absolute; left: 0; top: 8px; width: 23px; height: 23px; border-radius: 50%; background: var(--green-dark); color: #fff; font-family: var(--font-heading); font-size: 0.74rem; display: flex; align-items: center; justify-content: center; }
+    .mg-drill__steps strong { color: #fff; font-weight: 600; }
+    .mg-drill__why p { color: var(--mg-ink); font-size: 0.9rem; line-height: 1.55; margin: 0; font-weight: 300; font-style: italic; opacity: 0.92; }
     .mg-drill__card-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; font-family: var(--font-heading); font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mg-muted); border: 1px solid rgba(255,255,255,0.15); padding: 8px 14px; cursor: not-allowed; }
     .mg-drill__card-link svg { width: 14px; height: 14px; }
 
@@ -816,7 +822,7 @@
         <!-- Drills -->
         <div class="mg-drills">
           <h3 class="mg-drills__heading" style="margin-top:36px;">This week's training</h3>
-          <p class="mg-drills__sub">Start with your focus-area drills. Each is a quick read, a rep to do at training, and a reflection. Tick them off as you go.</p>
+          <p class="mg-drills__sub">Tap any drill to open it. Each one gives you a short <strong>how-to</strong> you can actually run, <strong>why it works</strong>, a <strong>rep</strong> to take to training, and a <strong>reflection</strong>. Start with your focus-area drills and tick them off as you go.</p>
           <div id="mg-focus-drills"></div>
           <button class="mg-explore-btn" id="mgExploreBtn">Explore all drills &darr;</button>
           <div id="mg-rest-drills" hidden></div>
@@ -983,17 +989,139 @@
 
     /* ---- DRILL LIBRARY ---- */
     var DRILLS = [
-      { area:'open', name:'Signal & Noise', what:'Sort what actually helps you play from the chatter that pulls you off it. The signal is the next job, your technique, the player you want to be. The noise is doubt, the scoreboard, comparison.', rep:'Before your next training, name one signal you\'ll hold onto and one piece of noise you expect to show up.', reflect:'When the noise got loud last game, what was the signal you needed to come back to?' },
-      { area:'open', name:'Notice · Name · Make room', what:'The three-move reset for a loud head: see it early, put simple words on it, and let it be there without letting it drive. A quiet "thanks, mind" and carry on.', rep:'Next time you feel the grip tighten, run all three moves once: notice it, name it ("that\'s the doubt thought"), make room.', reflect:'What\'s one early sign — tight chest, racing thoughts, gripping too hard — that you can learn to catch sooner?' },
-      { area:'open', name:'Name your saboteur', what:'Everyone has an inner voice that shows up under pressure and tries to protect you by talking you down. It sounds like the truth. It isn\'t — it\'s just a voice. Naming it creates distance, and that\'s where your choice lives.', rep:'Give your saboteur a name and a character — the more ridiculous, the better. Write down your comeback line.', reflect:'What does your saboteur say to you, and what\'s your answer back?' },
-      { area:'open', name:'Spot your DOTS', what:'When the noise gets loud we all reach for quick escapes: Distract, Opt out, Time travel, Self-sabotage. They feel like relief but pull you AWAY from the game. Spot yours, and you\'ve found your choice point.', rep:'At your next session, catch your go-to DOTS move once. Just notice it — no judgement.', reflect:'Which of the four is your most common go-to, and what tends to trigger it?' },
-      { area:'aware', name:'The 10-second reset', what:'A refocus you can run mid-game: Feet — press both into the ground. Breath — one slow breath out. Eyes — lift them, find one clear point. Next thing — name the very next action: "now, this."', rep:'Run it slowly once today, then again in three seconds — because that\'s how fast you\'ll need it in a game.', reflect:'Where in a game would a 10-second reset have helped you most recently?' },
-      { area:'aware', name:'Build your anchors', what:'An anchor is something real and present you can put your attention on to reset — breath, feet, eyes, a task cue ("set", "chase", "work"), or a word to a teammate. You build a few and use them on repeat.', rep:'Pick 2–3 anchors and rehearse them at training until they\'re automatic.', reflect:'Which anchor steadies you fastest under pressure?' },
-      { area:'aware', name:'Spot the anchors', what:'Watch how elite athletes get ready and reset. Their routines are full of anchors — a breath, a cue word, a set movement. Learning to spot them trains your eye for your own.', rep:'Watch a pre-performance routine and write down every anchor you can spot.', reflect:'Which of the anchors you spotted could you borrow for your own routine?', videoSlot:'spot-anchors' },
-      { area:'engaged', name:'Your Standard', what:'When the game gets hard, the question stops being "Do I feel good?" and becomes "Who do I want to be right now?" Your standard is the kind of player and teammate you choose to be — on your best days and your worst.', rep:'Finish these: "The teammate my team can count on is…" and "When the game gets hard, I want to be the kind of player who…"', reflect:'What\'s one thing you can DO this week that moves you toward that standard?' },
-      { area:'engaged', name:'Process goals', what:'Forget the scoreboard for a second. A process goal is the next controllable job — win the ruck, make the tackle, talk. You can\'t always control the result, but you can always control the next action.', rep:'Set one controllable focus for your next session — not the scoreline.', reflect:'Did focusing on the process change how you played, even a little?' },
-      { area:'engaged', name:'Cue words', what:'One or two words that snap you into action: "work", "chase", "next". Simple enough to use mid-game, strong enough to point you back at what matters.', rep:'Choose one cue word and use it every time your attention drifts at training this week.', reflect:'Which cue word fits the player you want to be?' },
-      { area:'engaged', name:'If-then plans', what:'Decide the move before the moment. "If I miss a tackle, then I sprint to the next breakdown." Committed action means doing the useful thing even when the doubt is still there.', rep:'Write one if-then plan for a moment that usually rattles you.', reflect:'What\'s the moment that most often knocks you off — and what\'s your if-then for it?' }
+      { area:'open', name:'Signal & Noise',
+        what:'Sort what actually helps you play from the chatter that pulls you off it. The signal is the next job, your technique, the player you want to be. The noise is doubt, the scoreboard, comparison.',
+        how:[
+          'Grab a pen (or do it in your head). Split a page in two: <strong>SIGNAL</strong> on one side, <strong>NOISE</strong> on the other.',
+          'On the SIGNAL side, list what actually helps you play: the next job, your role, your trained technique, a teammate\'s call, the player you want to be.',
+          'On the NOISE side, list the chatter that pulls you off it: "not good enough", the scoreboard, what the crowd or coach thinks, comparing yourself to others.',
+          'Read both. Notice you can\'t delete the noise — and you don\'t need to. The job is to hear the signal clearly <em>through</em> it.',
+          'Pick the ONE signal you\'ll come back to when it gets loud. That\'s your home base for the next game.'
+        ],
+        why:'You can\'t control what your mind throws at you, only what you give your attention to. Naming the noise ahead of time means it surprises you less — and grips you less — in the moment.',
+        rep:'Before your next training, name one signal you\'ll hold onto and one piece of noise you expect to show up.',
+        reflect:'When the noise got loud last game, what was the signal you needed to come back to?' },
+
+      { area:'open', name:'Notice · Name · Make room',
+        what:'The three-move reset for a loud head: see it early, put simple words on it, and let it be there without letting it drive.',
+        how:[
+          '<strong>Notice</strong> — catch it early. A tight chest, racing thoughts, gripping the ball too hard, a clenched jaw: these are the first signs the noise is rising.',
+          '<strong>Name it</strong>, plainly: "that\'s the doubt thought", "I\'m frustrated". Try the longer version — "I\'m having the thought that I\'ll mess this up." That little gap between you and the thought is the whole point.',
+          '<strong>Make room</strong> — don\'t fight it or argue with it. Let it sit there like background noise while you keep playing. A quiet "thanks, mind" and carry on.',
+          'Drop your attention back onto the next job. The thought can come along for the ride — it just doesn\'t get to drive.'
+        ],
+        why:'Pushing a thought away usually makes it louder and burns energy you need for the game. Naming a thought as a thought — "defusion" — loosens its grip so you can act anyway. It\'s one of the most evidence-backed skills in sport psychology.',
+        rep:'Next time you feel the grip tighten, run all three moves once: notice it, name it, make room.',
+        reflect:'What\'s one early sign — tight chest, racing thoughts, gripping too hard — that you can learn to catch sooner?' },
+
+      { area:'open', name:'Name your saboteur',
+        what:'Everyone has an inner voice that shows up under pressure and tries to "protect" you by talking you down. It sounds like the truth. It isn\'t — it\'s just a voice.',
+        how:[
+          'Think of the voice that shows up under pressure: "you\'re not good enough", "don\'t drop it", "everyone\'s watching".',
+          'Give it a <strong>name and a character</strong> — the more ridiculous the better (a grumpy old coach, a cartoon gremlin, "Dave"). Picture it; hear its silly voice.',
+          'Next time it pipes up, greet it: "Oh, there\'s Dave again." Now you\'re not <em>in</em> the thought — you\'re the player <em>noticing</em> it.',
+          'Write a one-line comeback that points you back at the game: "Cheers Dave — I\'ve got a job to do."'
+        ],
+        why:'When a thought has a name and a face, it stops sounding like the truth and starts sounding like just a voice. That distance is where your choice lives — you can hear it and still do the useful thing.',
+        rep:'Give your saboteur a name and a character, and write down your comeback line.',
+        reflect:'What does your saboteur say to you, and what\'s your answer back?' },
+
+      { area:'open', name:'Spot your DOTS',
+        what:'When the noise gets loud we all reach for quick escapes: Distract, Opt out, Time travel, Self-sabotage. They feel like relief but pull you AWAY from the game.',
+        how:[
+          'Remember the four away-moves: <strong>D</strong>istract, <strong>O</strong>pt out, <strong>T</strong>ime travel, <strong>S</strong>elf-sabotage.',
+          'Think back to your last tough moment in a game. Which one did you reach for? Be honest — everyone has a go-to.',
+          'Notice the <strong>trigger</strong> that set it off (a mistake, a big moment, a bad call) and the <strong>cost</strong> (what it pulled you away from).',
+          'No beating yourself up — just catch it. Spotting your DOTS move <em>is</em> finding your choice point.'
+        ],
+        why:'DOTS feel like relief, so we do them on autopilot. The same move can help or hurt depending on the moment — the skill is simply seeing it happen, because you can\'t choose something you can\'t see.',
+        rep:'At your next session, catch your go-to DOTS move once. Just notice it — no judgement.',
+        reflect:'Which of the four is your most common go-to, and what tends to trigger it?' },
+
+      { area:'aware', name:'The 10-second reset',
+        what:'A refocus you can run mid-game when your attention gets yanked off the moment.',
+        how:[
+          '<strong>Feet</strong> — press both feet into the ground. Feel it take your weight.',
+          '<strong>Breath</strong> — one slow breath out, longer than the breath in. Let your shoulders drop.',
+          '<strong>Eyes</strong> — lift your eyes and find one clear point in front of you.',
+          '<strong>Next thing</strong> — name the very next action in your head: "now, this".',
+          'Run it slowly once, then speed it up. In a game you\'ll need the whole thing in about three seconds.'
+        ],
+        why:'Under pressure your attention gets dragged into the past (the last mistake) or the future (the result). Anchoring on something physical and present — feet, breath, eyes — pulls it back to the only place you can actually play: now.',
+        rep:'Run it slowly once today, then again in three seconds — because that\'s how fast you\'ll need it.',
+        reflect:'Where in a game would a 10-second reset have helped you most recently?' },
+
+      { area:'aware', name:'Build your anchors',
+        what:'An anchor is something real and present you can put your attention on to reset. You build a few and use them on repeat.',
+        how:[
+          'An anchor can be your <strong>breath</strong>, your <strong>feet</strong> on the grass, a <strong>point</strong> you fix your eyes on, a <strong>task cue</strong> ("set", "chase", "work"), or a <strong>word to a teammate</strong>.',
+          'Pick 2–3 that genuinely work for you. Personal is good — it\'s whatever truly brings you back.',
+          'Rehearse them at <em>training</em>, not just in games, until they\'re automatic. Tie each one to a trigger (every scrum reset, every restart).',
+          'Stack them in a set order if you like — feet → breath → cue word — so it becomes one smooth routine.'
+        ],
+        why:'Anchors are present-moment contact. Like any skill, they only fire under pressure if you\'ve grooved them in practice — which is exactly why elite athletes drill their routines, not just their skills.',
+        rep:'Pick 2–3 anchors and rehearse them at training until they\'re automatic.',
+        reflect:'Which anchor steadies you fastest under pressure?' },
+
+      { area:'aware', name:'Spot the anchors',
+        what:'Watch how elite athletes get ready and reset. Their routines are full of anchors — learning to spot them trains your eye for your own.',
+        how:[
+          'Watch the clip of an athlete\'s pre-performance routine (back on the home page).',
+          'Look for what they put their <strong>attention</strong> on to get ready: a breath, a set movement, a point they look at, a cue word, a piece of music.',
+          'Jot down every anchor you can spot.',
+          'Pick one you could borrow, and test it at your next training.'
+        ],
+        why:'Spotting anchors in others trains your eye for your own. You\'re not copying their exact routine — you\'re borrowing the idea of having a few reliable things to come back to.',
+        rep:'Watch a pre-performance routine and write down every anchor you can spot.',
+        reflect:'Which of the anchors you spotted could you borrow for your own routine?', videoSlot:'spot-anchors' },
+
+      { area:'engaged', name:'Your Standard',
+        what:'When the game gets hard, the question stops being "do I feel good?" and becomes "who do I want to be right now?" Your standard is the answer.',
+        how:[
+          'Finish these — out loud or on paper: "The teammate my team can count on is…" and "When the game gets hard, I want to be the kind of player who…"',
+          'Boil it down to <strong>2–3 words</strong> that capture it — your standard (e.g. "relentless and honest").',
+          'Remember this is a <em>direction</em>, not a result — something you can live in any game, win or lose.',
+          'When it gets hard and confidence is mixed, swap "do I feel good?" for "who do I want to be right now?" Your standard is the answer.'
+        ],
+        why:'Values give you something steady to act from when your emotions and the scoreline are all over the place. They\'re the "why" the whole framework serves: Acknowledge the noise, Connect back, Engage in line with your standard.',
+        rep:'Lock in your 2–3 word standard, and name one thing this week that moves you toward it.',
+        reflect:'What\'s one thing you can DO this week that moves you toward that standard?' },
+
+      { area:'engaged', name:'Process goals',
+        what:'A process goal is the next controllable job — not the scoreline. You can\'t always control the result, but you can always control the next action.',
+        how:[
+          'Park the scoreboard. Ask: what\'s the next <strong>controllable</strong> job? Win the ruck, make the tackle, talk in defence, chase hard.',
+          'Set <strong>one</strong> process focus for your next session or game — something 100% in your control.',
+          'Judge yourself on whether you did <em>that</em> — not on the result.',
+          'Stack a few across a game, so there\'s always a next controllable action to aim at.'
+        ],
+        why:'You don\'t fully control outcomes — the ref, the bounce, the opposition — so hanging your head on them is shaky. Process goals put your attention where you actually have power, and the outcomes tend to follow more often.',
+        rep:'Set one controllable focus for your next session — not the scoreline.',
+        reflect:'Did focusing on the process change how you played, even a little?' },
+
+      { area:'engaged', name:'Cue words',
+        what:'One or two words that snap you into action: "work", "chase", "next". Simple enough to use mid-game, strong enough to point you back at what matters.',
+        how:[
+          'Pick one or two words that snap you into action: "work", "chase", "next", "set".',
+          'Keep them <strong>short and punchy</strong> enough to use mid-game, and tie them to your standard.',
+          'Use the word as a trigger — say it (out loud or in your head) every time your attention drifts at training this week.',
+          'Pair it with an anchor for a quick one-two reset: breath + "next".'
+        ],
+        why:'A cue word is committed action in a single word — it cuts through the noise and points you straight at the next useful thing, without a big internal debate.',
+        rep:'Choose one cue word and use it every time your attention drifts at training this week.',
+        reflect:'Which cue word fits the player you want to be?' },
+
+      { area:'engaged', name:'If-then plans',
+        what:'Decide the move before the moment. "If I miss a tackle, then I sprint to the next breakdown." Doing the useful thing even when the doubt is still there.',
+        how:[
+          'Pick a moment that usually rattles you — you miss a tackle, concede a try, get a bad call.',
+          'Decide the move <em>before</em> it happens: <strong>"If X happens, then I do Y."</strong> e.g. "If I miss a tackle, then I sprint to the next breakdown."',
+          'Make Y a small, <strong>controllable</strong> action that fits your standard.',
+          'Rehearse it in your head a few times so it\'s ready to fire automatically.'
+        ],
+        why:'Deciding the response in advance means you don\'t have to think it up while flooded with adrenaline. Research on "if-then" plans (implementation intentions) shows they make you far more likely to actually do the thing when the moment comes.',
+        rep:'Write one if-then plan for a moment that usually rattles you.',
+        reflect:'What\'s the moment that most often knocks you off — and what\'s your if-then for it?' }
     ];
 
     var BANDS = [
@@ -1213,9 +1341,12 @@
           '</div>' +
           '<div class="mg-drill__body"><div class="mg-drill__inner">' +
             '<p class="mg-drill__what">' + d.what + '</p>' +
-            '<div class="mg-drill__rep"><span class="mg-drill__tag">Your rep</span><p>' + d.rep + '</p></div>' +
-            '<div class="mg-drill__reflect"><span class="mg-drill__tag">Reflect</span><p>' + d.reflect + '</p></div>' +
+            (d.how ? '<div class="mg-drill__how"><span class="mg-drill__tag">How to do it</span><ol class="mg-drill__steps">' +
+              d.how.map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ol></div>' : '') +
+            (d.why ? '<div class="mg-drill__why"><span class="mg-drill__tag">Why it works</span><p>' + d.why + '</p></div>' : '') +
             videoBlock +
+            '<div class="mg-drill__rep"><span class="mg-drill__tag">Your rep at training</span><p>' + d.rep + '</p></div>' +
+            '<div class="mg-drill__reflect"><span class="mg-drill__tag">Reflect</span><p>' + d.reflect + '</p></div>' +
             '<span class="mg-drill__card-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>ACE card — coming soon</span>' +
           '</div></div>' +
         '</div>';
