@@ -470,7 +470,7 @@
         <a href="team.html" class="nav-link">TEAM</a>
         <a href="blog.html" class="nav-link">INSIGHTS</a>
         <a href="contact.html" class="nav-link">CONTACT</a>
-        <a href="grow-nomads.html" class="nav-link nav-link--grow">GROW</a>
+        <a href="grow-login.html" class="nav-link nav-link--grow">GROW</a>
       </nav>
       <div class="header__actions">
         <a href="contact.html" class="btn btn--outline btn--sm">GET IN TOUCH</a>
@@ -489,7 +489,7 @@
       <a href="team.html" class="mobile-nav__link">TEAM</a>
       <a href="blog.html" class="mobile-nav__link">INSIGHTS</a>
       <a href="contact.html" class="mobile-nav__link">CONTACT</a>
-      <a href="grow-nomads.html" class="mobile-nav__link" style="color:var(--yellow)">GROW</a>
+      <a href="grow-login.html" class="mobile-nav__link" style="color:var(--yellow)">GROW</a>
     </nav>
   </div>
 
@@ -1016,7 +1016,7 @@
         <div class="footer-grid__links">
           <h4 class="footer__heading">GROW</h4>
           <a href="grow.html" class="footer__link">About GROW</a>
-          <a href="grow-nomads.html" class="footer__link">Platform Login</a>
+          <a href="grow-login.html" class="footer__link">Platform Login</a>
         </div>
         <div class="footer-grid__social">
           <h4 class="footer__heading">FOLLOW US</h4>
@@ -1074,13 +1074,13 @@
     'use strict';
 
     /* ---- AUTH GUARD ----
-       Login lives on grow-nomads.html.  It sets these localStorage keys
+       Login lives on grow-login.html.  It sets these localStorage keys
        and redirects here.  If a visitor lands here without a valid
        Marist session, send them back to the login. */
     var LS_CLUB = 'grow_nomads_club';
     var app = document.getElementById('mgApp');
     if (localStorage.getItem(LS_CLUB) !== 'marist') {
-      window.location.replace('grow-nomads.html');
+      window.location.replace('grow-login.html');
       return;
     }
     app.classList.add('is-ready');
@@ -1088,7 +1088,7 @@
     document.getElementById('mgLogout').addEventListener('click', function () {
       localStorage.removeItem('grow_nomads_club');
       localStorage.removeItem('grow_nomads_role');
-      window.location.href = 'grow-nomads.html';
+      window.location.href = 'grow-login.html';
     });
 
     /* ---- DATA: the 15 items ----

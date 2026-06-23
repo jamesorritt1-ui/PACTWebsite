@@ -1,3 +1,7 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/grow-nomads", "destination": "/grow-login", "permanent": true },
+    { "source": "/grow-nomads.html", "destination": "/grow-login", "permanent": true }
+  ]
 }
