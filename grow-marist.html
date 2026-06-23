@@ -244,6 +244,22 @@
     .mg-callout-box p:last-child { margin-bottom: 0; }
     .mg-callout-box strong { color: #fff; font-weight: 600; }
 
+    /* Transfer table — same skill on the pitch and off it */
+    .mg-transfer { margin-top: 40px; }
+    .mg-transfer__head { display: grid; grid-template-columns: 140px 1fr 1fr; gap: 22px; padding: 0 0 10px; border-bottom: 2px solid var(--green-light); }
+    .mg-transfer__head span { font-family: var(--font-heading); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green-light); }
+    .mg-transfer__row { display: grid; grid-template-columns: 140px 1fr 1fr; gap: 22px; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .mg-transfer__skill { font-family: var(--font-heading); text-transform: uppercase; color: #fff; letter-spacing: 0.04em; font-size: 1.02rem; }
+    .mg-transfer__skill span { display: block; color: var(--green-light); font-size: 0.64rem; letter-spacing: 0.12em; margin-top: 4px; }
+    .mg-transfer__row p { color: var(--mg-ink); font-size: 0.93rem; line-height: 1.55; margin: 0; font-weight: 300; }
+    .mg-transfer__rowlabel { display: none; }
+    @media (max-width: 700px) {
+      .mg-transfer__head { display: none; }
+      .mg-transfer__row { grid-template-columns: 1fr; gap: 6px; padding: 18px 0; }
+      .mg-transfer__skill { margin-bottom: 6px; }
+      .mg-transfer__rowlabel { display: block; font-family: var(--font-heading); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mg-muted); margin: 8px 0 2px; }
+    }
+
     /* Video embed placeholder — James will drop YouTube links in later */
     .mg-video-embed {
       position: relative; aspect-ratio: 16 / 9; width: 100%;
@@ -539,7 +555,7 @@
           </div>
 
           <p class="mg-sec__lead">So, what are mental skills? Your skills and fitness get you to the moment. <strong>Mental skills decide what you do in it</strong> — the gap between knowing what to do at training and doing it when the game is on the line, the crowd is loud, and your head is full of noise.</p>
-          <p class="mg-sec__lead">The good news is that, like a pass or a tackle, these are skills — which means they can be practised. None of this is about being tougher or thinking positively. It's about a few simple, practical moves you can actually run when it matters. Over the next few sections we'll build the picture one piece at a time.</p>
+          <p class="mg-sec__lead">The good news is that, like a pass or a tackle, these are skills — which means they can be practised. None of this is about being tougher or thinking positively. It's about a few simple, practical moves you can actually run when it matters. And because they're <em>mind</em> skills, they work anywhere your mind goes — in a game, in an exam, in a tough moment at home. (More on that soon.) Over the next few sections we'll build the picture one piece at a time.</p>
           <div class="mg-bridge">
             <span class="mg-bridge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M19 12l-7 7-7-7"/></svg></span>
             <p><strong>Let's start where the trouble starts</strong> — with the chatter in your head, and why trying to silence it is the wrong goal in the first place.</p>
@@ -739,17 +755,56 @@
           <p class="mg-sec__lead" style="margin-top:24px;">Their anchors won't all be yours — water imagery and a particular song are personal. The skill to borrow is the <em>idea</em>: a few reliable things you can put your attention on to get ready and reset. You'll build your own in the drills.</p>
           <div class="mg-bridge">
             <span class="mg-bridge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M19 12l-7 7-7-7"/></svg></span>
-            <p><strong>So which of these tools should you start with?</strong> Rather than guess, take a couple of minutes to find out — the check-in points you straight at the drills that fit you right now.</p>
+            <p><strong>You've now met the whole toolkit.</strong> Before you train it, here's the thing that makes all of it far more powerful — and far easier to practise: <em>none of it is just for the pitch.</em></p>
           </div>
         </div>
       </section>
 
-      <!-- 07 · YOUR CHECK-IN / JOURNEY -->
-      <section class="mg-sec" id="checkin">
+      <!-- 07 · ON THE PITCH AND OFF IT -->
+      <section class="mg-sec">
         <div class="container">
-          <span class="mg-sec__num">07 · Your check-in</span>
+          <span class="mg-sec__num">07 · On the pitch and off it</span>
+          <h2 class="mg-sec__title">Same mind,<br><em>everywhere you go</em></h2>
+          <p class="mg-sec__lead">Here's the part that changes everything: <strong>your mind doesn't know the difference</strong> between a rugby game and a maths exam, a big tackle and a hard conversation at home. The same noise, the same choice point, the same DOTS show up wherever you do. Which makes every tool you've just met a <strong>life skill</strong> — not only a rugby one.</p>
+
+          <div class="mg-transfer">
+            <div class="mg-transfer__head"><span>The skill</span><span>On the pitch</span><span>Off the pitch</span></div>
+            <div class="mg-transfer__row">
+              <div class="mg-transfer__skill">Acknowledge<span>Be open</span></div>
+              <div><span class="mg-transfer__rowlabel">On the pitch</span><p>Name the "I'm going to miss this" thought before a kick — then take it anyway.</p></div>
+              <div><span class="mg-transfer__rowlabel">Off the pitch</span><p>Name "that's the exam nerves" before you walk in — then start the first question.</p></div>
+            </div>
+            <div class="mg-transfer__row">
+              <div class="mg-transfer__skill">Connect<span>Be present</span></div>
+              <div><span class="mg-transfer__rowlabel">On the pitch</span><p>Feet, breath, eyes up to reset between phases when your head is spinning.</p></div>
+              <div><span class="mg-transfer__rowlabel">Off the pitch</span><p>The exact same 10-second reset before a presentation, or when an argument at home starts to boil over.</p></div>
+            </div>
+            <div class="mg-transfer__row">
+              <div class="mg-transfer__skill">Engage<span>Do what matters</span></div>
+              <div><span class="mg-transfer__rowlabel">On the pitch</span><p>Sprint to the next breakdown after a knock-on, because that's the player you want to be.</p></div>
+              <div><span class="mg-transfer__rowlabel">Off the pitch</span><p>Send the message you've been avoiding, or front up to study — because that's the person you want to be.</p></div>
+            </div>
+          </div>
+
+          <div class="mg-callout-box" style="margin-top:34px;">
+            <h4>Why this is the smartest way to train</h4>
+            <p><strong>The best place to practise these skills is in low-stakes everyday moments</strong> — where there's nothing on the line. A cold shower. A long queue. A tough bit of homework. A moment you'd normally snap at someone. Run a tool there, and you're doing reps with no pressure.</p>
+            <p>Then, when the game <em>is</em> on the line and there's no time to think, the skill is already wired in and ready. That's exactly why the drills in your plan mix everyday activities with on-field ones — so you can <strong>train your mind like you train your body: little and often, wherever you are.</strong></p>
+          </div>
+
+          <div class="mg-bridge">
+            <span class="mg-bridge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M19 12l-7 7-7-7"/></svg></span>
+            <p><strong>So where do you start?</strong> Rather than guess, take two minutes to find out — the check-in shows you which of these to train first.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 08 · YOUR CHECK-IN / JOURNEY -->
+      <section class="mg-sec mg-sec--darker" id="checkin">
+        <div class="container">
+          <span class="mg-sec__num">08 · Your check-in</span>
           <h2 class="mg-sec__title">Find your<br><em>starting line</em></h2>
-          <p class="mg-sec__lead">A short self-check gives you a read on how you're tracking across the three parts of ACE — <strong>Open</strong>, <strong>Aware</strong> and <strong>Engaged</strong> — and points you toward the tools that fit where you're at right now. You're the expert on your own game; this is just here to help you aim your practice. Here's how it works:</p>
+          <p class="mg-sec__lead">A short self-check gives you a read on how you're tracking across the three pillars behind ACE — being <strong>Open</strong>, <strong>Aware</strong> and <strong>Engaged</strong> — and points you toward the tools that fit where you're at right now. You're the expert on your own game; this is just here to help you aim your practice. Here's how it works:</p>
           <div class="mg-journey">
             <div class="mg-step"><div class="mg-step__num">01</div><div class="mg-step__title">Landing</div><p class="mg-step__desc">You're here. Train the mind like you train the body.</p></div>
             <div class="mg-step"><div class="mg-step__num">02</div><div class="mg-step__title">The Check-In</div><p class="mg-step__desc">15 quick questions, about 3–4 minutes.</p></div>
@@ -769,10 +824,10 @@
         </div>
       </section>
 
-      <!-- 08 · MORE TO EXPLORE -->
-      <section class="mg-sec mg-sec--darker">
+      <!-- 09 · MORE TO EXPLORE -->
+      <section class="mg-sec">
         <div class="container">
-          <span class="mg-sec__num">08 · More to explore</span>
+          <span class="mg-sec__num">09 · More to explore</span>
           <h2 class="mg-sec__title">Your <em>values</em></h2>
           <p class="mg-sec__lead">The Engage part of ACE is about acting on what matters to you. If you'd like to get clearer on what that is — the player and person you want to be, and how rugby fits into the bigger picture of who you are — there's a short values exploration here whenever you're ready. It's separate from the check-in, so you can do it any time.</p>
           <div class="mg-hero__actions" style="margin-top:28px;">
@@ -900,7 +955,7 @@
         <!-- Drills -->
         <div class="mg-drills">
           <h3 class="mg-drills__heading" style="margin-top:36px;">This week's training</h3>
-          <p class="mg-drills__sub">Tap any drill to open it. Each one gives you a short <strong>how-to</strong>, <strong>why it works</strong>, and a few <strong>practical things to try this week</strong> — a mix of quick mindfulness, diary and on-pitch activities you can actually do. Start with your focus-area drills and tick them off as you go.</p>
+          <p class="mg-drills__sub">Tap any drill to open it. Each one gives you a short <strong>how-to</strong>, <strong>why it works</strong>, and a few <strong>practical things to try this week</strong> — a mix of mindfulness, diary, everyday and on-pitch activities, designed to be practised <strong>on and off the field</strong>. Start with your focus-area drills and tick them off as you go.</p>
           <div id="mg-focus-drills"></div>
           <button class="mg-explore-btn" id="mgExploreBtn">Explore all drills &darr;</button>
           <div id="mg-rest-drills" hidden></div>
