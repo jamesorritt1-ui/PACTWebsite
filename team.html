@@ -96,7 +96,15 @@
           </div>
         </div>
         <a href="programs.html" class="nav-link">SUPPORT &amp; SERVICES</a>
-        <a href="grow.html" class="nav-link">GROW PLATFORM</a>
+        <div class="nav-item nav-item--has-dropdown">
+          <a href="grow.html" class="nav-link nav-link--has-dropdown" aria-haspopup="true" aria-expanded="false">GROW PLATFORM
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown" role="menu">
+            <a href="grow.html" class="nav-dropdown__link" role="menuitem">About GROW</a>
+            <a href="grow-login.html" class="nav-dropdown__link" role="menuitem">Member Login</a>
+          </div>
+        </div>
         <a href="blog.html" class="nav-link">RESOURCES</a>
         <a href="contact.html" class="nav-link">CONTACT</a>
       </nav>
@@ -116,7 +124,7 @@
   <!-- Mobile Nav Overlay -->
   <div class="mobile-nav" id="mobileNav">
     <nav class="mobile-nav__links" aria-label="Mobile">
-      <div class="mobile-nav__group" id="mobileAboutGroup">
+      <div class="mobile-nav__group">
         <button class="mobile-nav__group-toggle" aria-expanded="false" aria-controls="mobileAboutSub">ABOUT US
           <svg class="mobile-nav__group-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
@@ -127,7 +135,15 @@
         </div>
       </div>
       <a href="programs.html" class="mobile-nav__link">SUPPORT &amp; SERVICES</a>
-      <a href="grow.html" class="mobile-nav__link">GROW PLATFORM</a>
+      <div class="mobile-nav__group">
+        <button class="mobile-nav__group-toggle" aria-expanded="false" aria-controls="mobileGrowSub">GROW PLATFORM
+          <svg class="mobile-nav__group-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="mobile-nav__sub" id="mobileGrowSub">
+          <a href="grow.html" class="mobile-nav__sublink">About GROW</a>
+          <a href="grow-login.html" class="mobile-nav__sublink">Member Login</a>
+        </div>
+      </div>
       <a href="blog.html" class="mobile-nav__link">RESOURCES</a>
       <a href="contact.html" class="mobile-nav__link">CONTACT</a>
       <div class="mobile-nav__actions">
@@ -309,7 +325,7 @@
     </svg>
   </button>
 
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=5"></script>
   <script>
     (function () {
       // ---- Scroll progress bar ----

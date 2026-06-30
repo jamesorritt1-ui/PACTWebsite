@@ -265,15 +265,14 @@ document.addEventListener('DOMContentLoaded', () => {
     item.addEventListener('keydown', (e) => { if (e.key === 'Escape') { setOpen(false); if (document.activeElement) document.activeElement.blur(); } });
   });
 
-  /* ---- Mobile About Us expandable group ---- */
-  const mGroup = document.getElementById('mobileAboutGroup');
-  if (mGroup) {
-    const toggle = mGroup.querySelector('.mobile-nav__group-toggle');
+  /* ---- Mobile expandable nav groups (About Us, GROW Platform) ---- */
+  document.querySelectorAll('.mobile-nav__group').forEach(group => {
+    const toggle = group.querySelector('.mobile-nav__group-toggle');
     if (toggle) toggle.addEventListener('click', () => {
-      const open = mGroup.classList.toggle('is-open');
+      const open = group.classList.toggle('is-open');
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
-  }
+  });
 
   /* ---- Accordion (What We Offer) ---- */
   document.querySelectorAll('.accordion__trigger').forEach(trigger => {
