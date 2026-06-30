@@ -206,7 +206,7 @@
     /* ---------- CLUB BANNER ---------- */
     .gw-club-banner {
       background: linear-gradient(135deg, var(--club-dark) 0%, var(--club) 100%);
-      padding: 20px 0;
+      padding: calc(var(--header-height) + 20px) 0 20px;
       border-bottom: 3px solid var(--club-accent);
     }
 
@@ -1607,11 +1607,11 @@
     <div id="gw-gateway" class="gw-screen gw-gateway">
       <div class="gw-card">
 
-        <!-- Club logo — place nomads-logo.png inside /images/ -->
+        <!-- Shared GROW login uses the Performance Act logo (team-neutral) -->
         <div class="gw-card__logo-wrap">
           <img
-            src="images/nomads-logo.webp"
-            alt="Nomads United AFC"
+            src="images/logo-horizontal.png?v=2"
+            alt="The Performance Act"
             class="gw-card__logo-img"
             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy">
           <div class="gw-card__logo-fallback" style="display:none;">PACT</div>
@@ -1664,7 +1664,7 @@
           <div class="gw-club-banner__inner">
             <div class="gw-club-banner__left">
               <img
-                src="images/nomads-logo.webp"
+                src="images/logo-horizontal.png?v=2"
                 alt="Nomads United AFC"
                 class="gw-club-banner__logo"
                 onerror="this.style.display='none';" loading="lazy">
@@ -1749,7 +1749,7 @@
           <div class="gw-club-banner__inner">
             <div class="gw-club-banner__left">
               <img
-                src="images/nomads-logo.webp"
+                src="images/logo-horizontal.png?v=2"
                 alt="Nomads United AFC"
                 class="gw-club-banner__logo"
                 onerror="this.style.display='none';" loading="lazy">
@@ -2546,7 +2546,7 @@
         name:      'Nomads United AFC',
         shortName: 'Nomads',
         password:  'Nomads2026',
-        logoSrc:   'images/nomads-logo.png',
+        logoSrc:   'images/logo-horizontal.png?v=2',
         colors: {
           primary: '#0E3A84',
           dark:    '#092970',
