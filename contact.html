@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
-  <link rel="stylesheet" href="style.css?v=16">
+  <link rel="stylesheet" href="style.css?v=17">
   <link rel="stylesheet" href="approach.css?v=1">
   <link rel="stylesheet" href="contact.css?v=2">
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
@@ -37,21 +37,25 @@
         <img src="images/logo-horizontal.png?v=2" alt="The Performance Act" class="logo-img logo-img--header" width="306" height="134" fetchpriority="high">
       </a>
 
-      <nav class="header__nav" id="mainNav">
-        <a href="index.html" class="nav-link">HOME</a>
-        <a href="index.html#about" class="nav-link">ABOUT</a>
-        <a href="approach.html" class="nav-link">APPROACH</a>
-        <a href="index.html#pillars" class="nav-link">OUR PACT</a>
-        <a href="programs.html" class="nav-link">SUPPORT</a>
-        <a href="team.html" class="nav-link">TEAM</a>
-        <a href="blog.html" class="nav-link">INSIGHTS</a>
+      <nav class="header__nav" id="mainNav" aria-label="Primary">
+        <div class="nav-item nav-item--has-dropdown">
+          <a href="index.html#about" class="nav-link nav-link--has-dropdown" aria-haspopup="true" aria-expanded="false">ABOUT US
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown" role="menu">
+            <a href="approach.html" class="nav-dropdown__link" role="menuitem">Approach</a>
+            <a href="index.html#pillars" class="nav-dropdown__link" role="menuitem">Our Pact</a>
+            <a href="team.html" class="nav-dropdown__link" role="menuitem">Team</a>
+          </div>
+        </div>
+        <a href="programs.html" class="nav-link">SUPPORT &amp; SERVICES</a>
+        <a href="grow.html" class="nav-link">GROW PLATFORM</a>
+        <a href="blog.html" class="nav-link">RESOURCES</a>
         <a href="contact.html" class="nav-link active">CONTACT</a>
-        <a href="grow-login.html" class="nav-link nav-link--grow">GROW</a>
       </nav>
 
       <div class="header__actions">
-        <a href="programs.html" class="btn btn--primary btn--sm">EXPLORE SUPPORT</a>
-        <a href="#ct-form" class="btn btn--outline btn--sm">GET IN TOUCH</a>
+        <a href="contact.html" class="btn btn--primary btn--sm">Let&#8217;s Have a K&#333;rero</a>
       </div>
 
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -64,19 +68,23 @@
 
   <!-- Mobile Nav Overlay -->
   <div class="mobile-nav" id="mobileNav">
-    <nav class="mobile-nav__links">
-      <a href="index.html" class="mobile-nav__link">HOME</a>
-      <a href="index.html#about" class="mobile-nav__link">ABOUT</a>
-      <a href="approach.html" class="mobile-nav__link">APPROACH</a>
-      <a href="index.html#pillars" class="mobile-nav__link">OUR PACT</a>
-      <a href="programs.html" class="mobile-nav__link">SUPPORT</a>
-      <a href="team.html" class="mobile-nav__link">TEAM</a>
-      <a href="blog.html" class="mobile-nav__link">INSIGHTS</a>
+    <nav class="mobile-nav__links" aria-label="Mobile">
+      <div class="mobile-nav__group" id="mobileAboutGroup">
+        <button class="mobile-nav__group-toggle" aria-expanded="false" aria-controls="mobileAboutSub">ABOUT US
+          <svg class="mobile-nav__group-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="mobile-nav__sub" id="mobileAboutSub">
+          <a href="approach.html" class="mobile-nav__sublink">Approach</a>
+          <a href="index.html#pillars" class="mobile-nav__sublink">Our Pact</a>
+          <a href="team.html" class="mobile-nav__sublink">Team</a>
+        </div>
+      </div>
+      <a href="programs.html" class="mobile-nav__link">SUPPORT &amp; SERVICES</a>
+      <a href="grow.html" class="mobile-nav__link">GROW PLATFORM</a>
+      <a href="blog.html" class="mobile-nav__link">RESOURCES</a>
       <a href="contact.html" class="mobile-nav__link">CONTACT</a>
-      <a href="grow-login.html" class="mobile-nav__link" style="color:var(--yellow)">GROW</a>
       <div class="mobile-nav__actions">
-        <a href="programs.html" class="btn btn--primary">EXPLORE SUPPORT</a>
-        <a href="#ct-form" class="btn btn--outline">GET IN TOUCH</a>
+        <a href="contact.html" class="btn btn--primary">Let&#8217;s Have a K&#333;rero</a>
       </div>
     </nav>
   </div>
@@ -395,7 +403,7 @@
     </div>
   </div>
 
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=4"></script>
   <script>
     // Open the immediate-support modal from the left-panel callout button
     document.querySelectorAll('[data-open-support]').forEach(function(btn){

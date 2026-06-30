@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- MOBILE NAV TOGGLE ---------- */
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
-  const mobileLinks = mobileNav.querySelectorAll('.mobile-nav__link, .mobile-nav__actions .btn');
+  const mobileLinks = mobileNav.querySelectorAll('.mobile-nav__link, .mobile-nav__sublink, .mobile-nav__actions .btn');
 
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- SCROLL REVEAL ANIMATION ---------- */
   const revealElements = document.querySelectorAll(
-    '.about-grid, .manifesto__row, .program-tile, .team-card, .community-card, .cta-banner__content, .stats-grid .stat, .grow-grid, .tabs, .bespoke-intro, .photo-band__item'
+    '.about-grid, .manifesto__row, .program-tile, .team-card, .community-card, .cta-banner__content, .stats-grid .stat, .grow-grid, .tabs, .bespoke-intro, .photo-band__item, .journey-card, .pillar-card, .accordion__item'
   );
 
   revealElements.forEach(el => el.classList.add('reveal'));
@@ -242,6 +242,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && slnModal && slnModal.classList.contains('is-open')) closeSln();
+  });
+
+});
+
+/* ============================================================
+   UX REFRESH (2026) — About Us dropdown, mobile sub-nav,
+   What We Offer accordion, audience journey cards.
+   Self-contained + guarded so it is safe on every page.
+   ============================================================ */
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ---- About Us dropdown (desktop): manage aria + Escape ---- */
+  document.querySelectorAll('.nav-item--has-dropdown').forEach(item => {
+    const trigger = item.querySelector('.nav-link--has-dropdown');
+    if (!trigger) return;
+    const setOpen = (open) => trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    item.addEventListener('mouseenter', () => setOpen(true));
+    item.addEventListener('mouseleave', () => setOpen(false));
+    item.addEventListener('focusin', () => setOpen(true));
+    item.addEventListener('focusout', (e) => { if (!item.contains(e.relatedTarget)) setOpen(false); });
+    item.addEventListener('keydown', (e) => { if (e.key === 'Escape') { setOpen(false); if (document.activeElement) document.activeElement.blur(); } });
+  });
+
+  /* ---- Mobile About Us expandable group ---- */
+  const mGroup = document.getElementById('mobileAboutGroup');
+  if (mGroup) {
+    const toggle = mGroup.querySelector('.mobile-nav__group-toggle');
+    if (toggle) toggle.addEventListener('click', () => {
+      const open = mGroup.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  /* ---- Accordion (What We Offer) ---- */
+  document.querySelectorAll('.accordion__trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const panel = document.getElementById(trigger.getAttribute('aria-controls'));
+      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+      trigger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      if (panel) { if (isOpen) panel.setAttribute('hidden', ''); else panel.removeAttribute('hidden'); }
+    });
+  });
+
+  /* ---- Audience journey cards -> activate matching "Who We Support" tab ---- */
+  document.querySelectorAll('.journey-card[data-journey]').forEach(card => {
+    card.addEventListener('click', () => {
+      const btn = document.querySelector('.tabs__btn[data-tab="' + card.dataset.journey + '"]');
+      if (btn) btn.click();
+    });
   });
 
 });
