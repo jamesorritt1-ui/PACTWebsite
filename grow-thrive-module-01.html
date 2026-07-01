@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Hidden / unlisted: not indexed and not linked from anywhere on the public site -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>THRIVE · Module 01 — The Mind, Mental Noise &amp; Why Struggle Backfires | The Performance Act</title>
+  <meta name="description" content="THRIVE Module 01 — why the mind makes noise, why fighting it backfires, and workability over control. With reflection and a Struggle Switch self-check.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="style.css?v=17">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=2">
+
+  <style>
+    /* ============================================================
+       THRIVE MODULE PAGE — scoped to .th / .thm-. Black + yellow.
+       ============================================================ */
+    .th { --ink:#ECECEC; --muted:#9A9A9A; --line:rgba(255,255,255,0.1); background:#050505; }
+    .th-sec { padding: clamp(52px, 8vw, 92px) 0; }
+    .th-sec--alt { background:#0b0b0b; }
+    .th-wrap { max-width: 820px; margin: 0 auto; }
+    .th-eyebrow { font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--yellow); margin-bottom:14px; }
+    .th-h2 { font-family:var(--font-heading); font-weight:700; text-transform:uppercase; font-size:clamp(1.7rem,4vw,2.7rem); line-height:1.05; color:#fff; margin-bottom:18px; }
+    .th-h2 em { color:var(--yellow); font-style:normal; }
+    .th-lead { font-size:clamp(1rem,2vw,1.14rem); color:var(--ink); line-height:1.68; font-weight:300; }
+    .th-p { color:var(--ink); line-height:1.7; font-weight:300; margin:0 0 16px; }
+    .th-p strong { color:#fff; font-weight:600; }
+    .th-p em { color:#fff; font-style:italic; }
+
+    /* MODULE HERO */
+    .thm-hero { position:relative; overflow:hidden; background:#050505; padding:clamp(120px,16vw,180px) 0 clamp(44px,7vw,72px); border-bottom:1px solid var(--line); }
+    .thm-hero__bg { position:absolute; inset:0; background:url('images/athletics-track.png') center 30% / cover no-repeat; opacity:0.20; filter:grayscale(0.4) contrast(1.05); }
+    .thm-hero::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(5,5,5,0.55) 0%, rgba(5,5,5,0.92) 100%); }
+    .thm-hero .container { position:relative; z-index:2; }
+    .thm-back { display:inline-flex; align-items:center; gap:8px; font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--yellow); margin-bottom:26px; }
+    .thm-back svg { width:16px; height:16px; }
+    .thm-hero__num { font-family:var(--font-heading); font-weight:700; font-size:clamp(3rem,10vw,5.5rem); line-height:0.9; color:var(--yellow); }
+    .thm-hero__kicker { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+    .thm-hero__title { font-family:var(--font-heading); font-weight:700; text-transform:uppercase; font-size:clamp(1.9rem,5.4vw,3.3rem); line-height:1.02; color:#fff; margin:6px 0 18px; }
+    .thm-hero__meta { display:flex; flex-wrap:wrap; gap:8px 22px; font-size:0.86rem; color:var(--muted); letter-spacing:0.08em; text-transform:uppercase; font-family:var(--font-heading); }
+    .thm-hero__meta span { display:inline-flex; align-items:center; gap:7px; }
+    .thm-hero__meta svg { width:15px; height:15px; color:var(--yellow); }
+
+    .thm-obj { background:#111; border:1px solid var(--line); border-left:4px solid var(--yellow); padding:26px 28px; margin-top:34px; }
+    .thm-obj h3 { font-family:var(--font-heading); font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--yellow); margin-bottom:14px; }
+    .thm-obj ul { margin:0; padding:0; list-style:none; }
+    .thm-obj li { color:var(--ink); font-size:0.98rem; line-height:1.5; font-weight:300; padding:7px 0 7px 26px; position:relative; }
+    .thm-obj li::before { content:''; position:absolute; left:0; top:13px; width:12px; height:2px; background:var(--yellow); }
+
+    .thm-toc { display:flex; flex-wrap:wrap; gap:10px; margin-top:30px; }
+    .thm-toc a { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink); border:1px solid var(--line); padding:9px 15px; transition:.2s; }
+    .thm-toc a:hover { border-color:var(--yellow); color:var(--yellow); }
+
+    .th-block__label { display:flex; align-items:center; gap:10px; font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--yellow); margin-bottom:12px; }
+    .th-block__label::before { content:''; width:26px; height:2px; background:var(--yellow); }
+
+    .th-quote { border-left:3px solid var(--yellow); padding:6px 0 6px 22px; margin:26px 0; }
+    .th-quote p { font-family:var(--font-heading); font-weight:500; font-size:clamp(1.2rem,2.8vw,1.7rem); line-height:1.3; color:#fff; margin:0; }
+    .th-quote cite { display:block; margin-top:12px; font-style:normal; font-size:0.86rem; color:var(--muted); letter-spacing:0.04em; }
+
+    .th-list { list-style:none; margin:6px 0 20px; padding:0; }
+    .th-list li { color:var(--ink); font-size:0.98rem; line-height:1.6; font-weight:300; padding:7px 0 7px 22px; position:relative; }
+    .th-list li::before { content:''; position:absolute; left:0; top:15px; width:7px; height:7px; background:var(--yellow); }
+    .th-list li strong { color:#fff; font-weight:600; }
+
+    /* EXPERIENTIAL exercise card */
+    .thm-ex { background:#111; border:1px solid var(--line); border-top:3px solid var(--yellow); padding:26px 28px; margin:24px 0; }
+    .thm-ex__tag { display:inline-block; font-family:var(--font-heading); font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:#000; background:var(--yellow); padding:4px 10px; margin-bottom:14px; }
+    .thm-ex h4 { font-family:var(--font-heading); font-size:1.15rem; text-transform:uppercase; color:#fff; letter-spacing:0.02em; margin-bottom:10px; }
+    .thm-ex p { color:var(--ink); font-size:0.96rem; line-height:1.65; font-weight:300; margin:0 0 12px; }
+    .thm-ex p:last-child { margin-bottom:0; }
+    .thm-ex ol { margin:10px 0 0; padding-left:20px; color:var(--ink); }
+    .thm-ex ol li { font-size:0.96rem; line-height:1.6; font-weight:300; padding:5px 0; }
+
+    /* Interactive suppression timer */
+    .thm-demo { background:#0a0a0a; border:1px dashed rgba(255,229,0,0.4); padding:22px 24px; margin-top:16px; text-align:center; }
+    .thm-demo__word { font-family:var(--font-heading); font-size:1.4rem; text-transform:uppercase; color:#fff; letter-spacing:0.04em; margin-bottom:6px; }
+    .thm-demo__timer { font-family:var(--font-heading); font-size:3rem; font-weight:700; color:var(--yellow); line-height:1; margin:8px 0; }
+    .thm-demo__hint { color:var(--muted); font-size:0.86rem; line-height:1.5; margin:0 auto 16px; max-width:360px; }
+    .thm-demo__result { color:var(--ink); font-size:0.95rem; line-height:1.6; font-weight:300; margin:14px auto 0; max-width:420px; display:none; }
+    .thm-demo__result.is-shown { display:block; }
+
+    /* REFLECTION */
+    .th-reflect { background:#111; border:1px solid var(--line); border-radius:4px; padding:24px 26px; margin:24px 0; }
+    .th-reflect__q { color:#fff; font-size:1.02rem; line-height:1.5; font-weight:400; margin:0 0 4px; }
+    .th-reflect__hint { color:var(--muted); font-size:0.86rem; line-height:1.5; font-weight:300; margin:0 0 14px; }
+    .th-reflect textarea { width:100%; min-height:110px; background:#0a0a0a; border:1px solid var(--line); color:#fff; font-family:var(--font-body); font-size:0.98rem; line-height:1.6; font-weight:300; padding:14px 16px; resize:vertical; }
+    .th-reflect textarea:focus { outline:none; border-color:var(--yellow); }
+    .th-reflect__foot { display:flex; align-items:center; justify-content:flex-end; gap:12px; margin-top:10px; }
+    .th-reflect__saved { font-size:0.78rem; color:var(--muted); letter-spacing:0.04em; display:inline-flex; align-items:center; gap:6px; }
+    .th-reflect__saved svg { width:13px; height:13px; color:var(--yellow); }
+
+    /* APPLIED grid */
+    .th-applied { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:24px 0; }
+    .th-applied__col { background:#141414; border:1px solid var(--line); padding:20px 22px; }
+    .th-applied__col--sport { border-top:3px solid var(--yellow); }
+    .th-applied__col--life { border-top:3px solid #fff; }
+    .th-applied__col h5 { font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:8px; }
+    .th-applied__col--sport h5 { color:var(--yellow); }
+    .th-applied__col--life h5 { color:#fff; }
+    .th-applied__col p { color:var(--ink); font-size:0.92rem; line-height:1.6; font-weight:300; margin:0; }
+
+    .th-lock { background:rgba(255,229,0,0.07); border:1px solid rgba(255,229,0,0.22); padding:18px 22px; display:flex; gap:14px; align-items:flex-start; margin-top:8px; }
+    .th-lock svg { width:22px; height:22px; color:var(--yellow); flex-shrink:0; margin-top:2px; }
+    .th-lock p { color:var(--ink); font-size:0.96rem; line-height:1.6; font-weight:300; margin:0; }
+    .th-lock strong { color:#fff; font-weight:600; }
+
+    /* ============ QUIZ / SELF-CHECK (adapted from the Mind Gym) ============ */
+    .thq { max-width:640px; margin:34px auto 0; }
+    .thq-screen { display:none; }
+    .thq-screen.is-active { display:block; }
+    .thq-intro { background:#111; border:1px solid var(--line); border-top:4px solid var(--yellow); padding:34px 30px; text-align:center; }
+    .thq-intro h3 { font-family:var(--font-heading); font-size:clamp(1.3rem,3.2vw,1.8rem); text-transform:uppercase; color:#fff; margin-bottom:12px; }
+    .thq-intro p { color:var(--ink); font-size:0.98rem; line-height:1.6; font-weight:300; margin:0 auto 22px; max-width:470px; }
+    .thq-intro__meta { font-size:0.8rem; color:var(--muted); letter-spacing:0.04em; margin-top:16px; }
+    .thq-progress { margin-bottom:22px; }
+    .thq-progress__bar { height:6px; background:rgba(255,255,255,0.1); overflow:hidden; }
+    .thq-progress__fill { height:100%; width:0; background:var(--yellow); transition:width .3s ease; }
+    .thq-progress__label { display:flex; justify-content:space-between; font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin-top:10px; }
+    .thq-privacy { text-align:center; font-size:0.78rem; color:var(--muted); margin:0 0 26px; }
+    .thq-q { text-align:center; }
+    .thq-q__domain { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--yellow); margin-bottom:16px; }
+    .thq-q__text { font-family:var(--font-heading); font-weight:500; font-size:clamp(1.25rem,3.4vw,1.7rem); line-height:1.3; color:#fff; margin-bottom:34px; }
+    .thq-scale { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-bottom:14px; }
+    .thq-scale__btn { width:46px; height:46px; border:1px solid var(--line); background:#141414; color:var(--ink); font-family:var(--font-heading); font-size:1.05rem; cursor:pointer; transition:.15s; }
+    .thq-scale__btn:hover { border-color:var(--yellow); }
+    .thq-scale__btn.is-selected { background:var(--yellow); border-color:var(--yellow); color:#000; transform:scale(1.08); }
+    .thq-scale__ends { display:flex; justify-content:space-between; max-width:440px; margin:0 auto 34px; font-size:0.78rem; color:var(--muted); }
+    .thq-q__nav { display:flex; justify-content:space-between; align-items:center; gap:16px; }
+    .thq-q__prev { background:none; border:none; color:var(--muted); font-family:var(--font-heading); font-size:0.82rem; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; }
+    .thq-q__prev:hover { color:#fff; }
+    .thq-q__prev[disabled] { opacity:0; pointer-events:none; }
+    .thq-q__hint { font-size:0.78rem; color:var(--muted); }
+
+    /* single-dimension result: the struggle meter */
+    .thq-results__kicker { font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--yellow); text-align:center; margin-bottom:12px; }
+    .thq-meter { max-width:520px; margin:0 auto 26px; }
+    .thq-meter__scale { position:relative; height:16px; border-radius:100px; background:linear-gradient(90deg, #2f7d47 0%, #b9a227 50%, #c0562e 100%); }
+    .thq-meter__marker { position:absolute; top:-8px; width:4px; height:32px; background:#fff; border-radius:2px; box-shadow:0 0 0 3px rgba(0,0,0,0.5); transition:left 1s cubic-bezier(.2,.8,.2,1); left:0; }
+    .thq-meter__ends { display:flex; justify-content:space-between; font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); margin-top:12px; }
+    .thq-band { text-align:center; margin-bottom:24px; }
+    .thq-band__score { font-family:var(--font-heading); font-size:3.4rem; font-weight:700; color:var(--yellow); line-height:1; }
+    .thq-band__name { font-family:var(--font-heading); font-size:1.3rem; text-transform:uppercase; color:#fff; letter-spacing:0.03em; margin-top:6px; }
+    .thq-band__copy { color:var(--ink); font-size:1rem; line-height:1.65; font-weight:300; max-width:520px; margin:16px auto 0; }
+    .thq-band__copy strong { color:#fff; font-weight:600; }
+    .thq-takeaway { background:rgba(255,229,0,0.07); border:1px solid rgba(255,229,0,0.22); padding:22px 24px; margin-top:8px; }
+    .thq-takeaway__label { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--yellow); margin-bottom:8px; }
+    .thq-takeaway p { color:var(--ink); font-size:0.95rem; line-height:1.65; font-weight:300; margin:0; }
+    .thq-takeaway strong { color:#fff; font-weight:600; }
+    .thq-results__actions { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:28px; }
+
+    .thm-nextnav { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:20px; }
+    .thm-nextnav a { display:block; background:#111; border:1px solid var(--line); padding:22px 24px; transition:.2s; }
+    .thm-nextnav a:hover { border-color:var(--yellow); }
+    .thm-nextnav__dir { font-family:var(--font-heading); font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+    .thm-nextnav__title { font-family:var(--font-heading); font-size:1.05rem; color:#fff; text-transform:uppercase; letter-spacing:0.02em; }
+    .thm-nextnav a:hover .thm-nextnav__title { color:var(--yellow); }
+    .thm-nextnav--end { text-align:right; }
+
+    @media (max-width:720px) {
+      .th-applied, .thm-nextnav { grid-template-columns:1fr; }
+      .thq-scale__btn { width:40px; height:40px; font-size:0.95rem; }
+      .thm-nextnav--end { text-align:left; }
+    }
+  </style>
+</head>
+<body class="th">
+
+  <!-- ========== HEADER / NAV (standard — no THRIVE link anywhere) ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="images/logo-horizontal.png?v=2" alt="The Performance Act" class="logo-img logo-img--header">
+      </a>
+      <nav class="header__nav" id="mainNav" aria-label="Primary">
+        <div class="nav-item nav-item--has-dropdown">
+          <a href="index.html#about" class="nav-link nav-link--has-dropdown" aria-haspopup="true" aria-expanded="false">ABOUT US
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown" role="menu">
+            <a href="approach.html" class="nav-dropdown__link" role="menuitem">Approach</a>
+            <a href="index.html#pillars" class="nav-dropdown__link" role="menuitem">Our Pact</a>
+            <a href="team.html" class="nav-dropdown__link" role="menuitem">Team</a>
+          </div>
+        </div>
+        <a href="programs.html" class="nav-link">SUPPORT &amp; SERVICES</a>
+        <div class="nav-item nav-item--has-dropdown">
+          <a href="grow.html" class="nav-link nav-link--has-dropdown" aria-haspopup="true" aria-expanded="false">GROW PLATFORM
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown" role="menu">
+            <a href="grow.html" class="nav-dropdown__link" role="menuitem">About GROW</a>
+            <a href="grow-login.html" class="nav-dropdown__link" role="menuitem">Member Login</a>
+          </div>
+        </div>
+        <a href="blog.html" class="nav-link">RESOURCES</a>
+        <a href="contact.html" class="nav-link">CONTACT</a>
+      </nav>
+      <div class="header__actions">
+        <a href="contact.html" class="btn btn--primary btn--sm">Let&#8217;s Have a K&#333;rero</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <nav class="mobile-nav__links" aria-label="Mobile">
+      <div class="mobile-nav__group">
+        <button class="mobile-nav__group-toggle" aria-expanded="false" aria-controls="mobileAboutSub">ABOUT US
+          <svg class="mobile-nav__group-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="mobile-nav__sub" id="mobileAboutSub">
+          <a href="approach.html" class="mobile-nav__sublink">Approach</a>
+          <a href="index.html#pillars" class="mobile-nav__sublink">Our Pact</a>
+          <a href="team.html" class="mobile-nav__sublink">Team</a>
+        </div>
+      </div>
+      <a href="programs.html" class="mobile-nav__link">SUPPORT &amp; SERVICES</a>
+      <div class="mobile-nav__group">
+        <button class="mobile-nav__group-toggle" aria-expanded="false" aria-controls="mobileGrowSub">GROW PLATFORM
+          <svg class="mobile-nav__group-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="mobile-nav__sub" id="mobileGrowSub">
+          <a href="grow.html" class="mobile-nav__sublink">About GROW</a>
+          <a href="grow-login.html" class="mobile-nav__sublink">Member Login</a>
+        </div>
+      </div>
+      <a href="blog.html" class="mobile-nav__link">RESOURCES</a>
+      <a href="contact.html" class="mobile-nav__link">CONTACT</a>
+      <div class="mobile-nav__actions">
+        <a href="contact.html" class="btn btn--primary">Let&#8217;s Have a K&#333;rero</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- ========== MODULE HERO ========== -->
+  <section class="thm-hero">
+    <div class="thm-hero__bg"></div>
+    <div class="container">
+      <a href="grow-thrive.html#program" class="thm-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> THRIVE program</a>
+      <div class="th-wrap">
+        <div class="thm-hero__num">01</div>
+        <p class="thm-hero__kicker">Foundations · Before the ACE moves</p>
+        <h1 class="thm-hero__title">The Mind, Mental Noise &amp; Why Struggle Backfires</h1>
+        <div class="thm-hero__meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> ~18 minutes</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v14H4z"/><path d="M4 9h16"/></svg> Read · try · reflect · self-check</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg> Private to you</span>
+        </div>
+
+        <div class="thm-obj">
+          <h3>By the end of this module you can</h3>
+          <ul>
+            <li>Explain why the mind naturally generates "mental noise" — and why that's normal.</li>
+            <li>Describe <strong>experiential avoidance</strong> and why suppression backfires.</li>
+            <li>Articulate the ACT alternative in one line: <strong>workability over control</strong>.</li>
+            <li>Spot your own "struggle switch" and what flipping it on costs you.</li>
+          </ul>
+        </div>
+
+        <nav class="thm-toc" aria-label="On this page">
+          <a href="#noise">The noisy mind</a>
+          <a href="#demo">Try it: suppression</a>
+          <a href="#switch">The struggle switch</a>
+          <a href="#workability">Workability</a>
+          <a href="#reflect">Reflect</a>
+          <a href="#selfcheck">Self-check</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 1 · THE NOISY MIND ========== -->
+  <section class="th-sec" id="noise">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">01 · The noisy mind</p>
+        <h2 class="th-h2">Your mind won't shut up —<br>and that's <em>normal</em></h2>
+        <p class="th-p">Here's a relief and a challenge in one sentence: <strong>there is nothing wrong with you.</strong> The human mind evolved over hundreds of thousands of years to keep you alive — and the way it does that is by never switching off. It scans for threats, replays mistakes so you don't repeat them, compares you to others, and runs worst-case scenarios on a loop. In a world of sabre-tooth tigers, a mind that shouted <em>"danger!"</em> ten times too often kept you alive. Today, that same machinery fires before a penalty, an exam, or when you open your phone.</p>
+        <p class="th-p">Athletes call it <strong>mental noise</strong>: the chatter, the criticism, the catastrophising, the "you're going to mess this up" that arrives uninvited at the worst possible moment. It's easy to assume the top performers have somehow switched it off. They haven't. <strong>The noise is not the problem.</strong></p>
+        <div class="th-quote">
+          <p>"The problem was never the noise. It's the struggle with it."</p>
+          <cite>— The core idea of Module 01</cite>
+        </div>
+        <p class="th-p">So if you can't delete the noise — and you can't — the real question becomes: <em>what do you do when it shows up?</em> That single shift, from trying to control what's in your head to changing your relationship with it, is the doorway to everything else in THRIVE.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 2 · TRY IT: SUPPRESSION ========== -->
+  <section class="th-sec th-sec--alt" id="demo">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">02 · A 30-second experiment</p>
+        <h2 class="th-h2">Try <em>not</em> to think about it</h2>
+        <p class="th-p">Reading about suppression won't convince you. Feeling it will. This is the classic thought-suppression task — do it properly and honestly, and it'll teach you more than any lecture.</p>
+
+        <div class="thm-ex">
+          <span class="thm-ex__tag">Experiential exercise</span>
+          <h4>The white-bear task</h4>
+          <p>For the next 30 seconds, your one job is simple: <strong>do not think about a white bear.</strong> Not its fur, not its eyes, not the word. Push it out of your mind completely. Start the timer and try as hard as you can.</p>
+
+          <div class="thm-demo">
+            <div class="thm-demo__word">Do NOT think about a white bear</div>
+            <div class="thm-demo__timer" id="demoTimer">0:30</div>
+            <p class="thm-demo__hint">Push the thought away. Try hard. We'll talk on the other side.</p>
+            <button class="btn btn--primary" id="demoStart">Start the 30 seconds</button>
+            <p class="thm-demo__result" id="demoResult">So — how did that go? If you're like almost everyone, the harder you pushed, the more the bear showed up. <strong>That's the point.</strong> Trying not to think about something is itself a reminder to think about it. Now swap "white bear" for "don't be nervous," "don't choke," "don't think about the score." The mind works the same way. <strong>Suppression doesn't just fail — it often amplifies.</strong></p>
+          </div>
+        </div>
+        <p class="th-p">Psychologists have run this experiment for decades (Wegner's work on "ironic processes"). The finding is remarkably consistent: deliberately suppressing a thought tends to make it <em>more</em> frequent and more sticky — especially under stress, which is exactly when athletes reach for it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 3 · THE STRUGGLE SWITCH ========== -->
+  <section class="th-sec" id="switch">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">03 · The struggle switch</p>
+        <h2 class="th-h2">The one move that<br>turns pain into <em>suffering</em></h2>
+        <p class="th-p">Russ Harris uses a simple, powerful image: imagine you have a <strong>"struggle switch"</strong> at the back of your mind. When it's <strong>ON</strong>, any uncomfortable feeling that shows up becomes a problem to be fought. Anxiety shows up → you get anxious about being anxious → then frustrated that you're anxious about being anxious. The original feeling snowballs. You now have a whole layer of <em>secondary</em> suffering piled on top.</p>
+        <p class="th-p">When the switch is <strong>OFF</strong>, the same anxiety can show up — but you're not at war with it. It rises, it's unpleasant, and&hellip; it's allowed to be there. No snowball. The feeling runs its course. You still feel it; you just don't add the second arrow.</p>
+
+        <ul class="th-list">
+          <li><strong>Switch ON:</strong> pain + struggle = <em>suffering</em> that grows and pulls your attention off the job.</li>
+          <li><strong>Switch OFF:</strong> pain, felt cleanly, that you can carry <em>while</em> you do what matters.</li>
+        </ul>
+
+        <p class="th-p">Notice what this means: the goal was never to feel calm. Elite performers feel nerves, doubt and pressure just like you — sometimes more. The difference is they've learned to leave the struggle switch off and act anyway. That's <strong>emotional flexibility, not emotional suppression</strong> — and it's the exact opposite of "harden up."</p>
+
+        <div class="th-quote">
+          <p>"You can't always control the wave. You can learn to stop fighting the water."</p>
+          <cite>— On the struggle switch</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 4 · WORKABILITY ========== -->
+  <section class="th-sec th-sec--alt" id="workability">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">04 · The ACT alternative</p>
+        <h2 class="th-h2">Ask "does it <em>work</em>?"<br>not "is it true?"</h2>
+        <p class="th-p">If controlling the noise is a losing game, what replaces it? ACT's answer is a single, practical yardstick: <strong>workability</strong>. Instead of asking <em>"is this thought true?"</em> or <em>"is this feeling good or bad?"</em>, you ask:</p>
+        <div class="th-quote">
+          <p>"Right here, right now — is what I'm doing moving me toward the person and player I want to be, or away?"</p>
+          <cite>— The workability question</cite>
+        </div>
+        <p class="th-p">This is a genuine shift. Fighting your nerves before a game <em>might</em> feel like the responsible thing to do — but if it drains your focus and tightens your body, it isn't <strong>working</strong>. Avoiding the training session because you feel flat might bring relief for an hour — but if it moves you away from the athlete you want to be, it isn't <strong>working</strong>. Workability cuts through the endless debate about whether a thought is right and asks the only question that changes anything: <em>where is this taking me?</em></p>
+        <p class="th-p">Everything from here — the three ACE moves — is built to help you answer that question well: <strong>Acknowledge</strong> the noise, <strong>Connect</strong> to the present, and <strong>Engage</strong> with what matters. Module 01's job was just to show you why the old strategy of control keeps failing. That's the ground the whole program stands on.</p>
+
+        <div class="th-applied">
+          <div class="th-applied__col th-applied__col--sport"><h5>Apply in Sport</h5><p>Name a recent moment when <em>fighting</em> your nerves made things worse — a rushed warm-up, a tight kick, a snappy word to a teammate. Notice: the struggle, not the nerves, did the damage.</p></div>
+          <div class="th-applied__col th-applied__col--life"><h5>Apply in Life</h5><p>Where else do you flip the switch? Replaying an awkward text? Forcing yourself to sleep? Avoiding an assignment because it feels heavy? Same move, same cost — off the field too.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 5 · REFLECT ========== -->
+  <section class="th-sec" id="reflect">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">05 · Reflect</p>
+        <h2 class="th-h2">Make it <em>yours</em></h2>
+        <p class="th-p">This is where the idea lands. Be specific and be honest — no one sees this but you. Everything you type is saved <strong>only on this device</strong>.</p>
+
+        <div class="th-reflect">
+          <p class="th-reflect__q">Name a recent moment when fighting your nerves (or a thought) made things worse.</p>
+          <p class="th-reflect__hint">What was the situation, what did you try to push away, and what did it cost you?</p>
+          <textarea data-reflect="m1-fight" placeholder="The moment was…"></textarea>
+          <div class="th-reflect__foot"><span class="th-reflect__saved" data-saved-for="m1-fight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device</span></div>
+        </div>
+
+        <div class="th-reflect">
+          <p class="th-reflect__q">Where else — outside sport — do you flip the struggle switch on?</p>
+          <p class="th-reflect__hint">Log one non-sport example. Naming it is where the transfer habit starts.</p>
+          <textarea data-reflect="m1-life" placeholder="Outside sport, I do this when…"></textarea>
+          <div class="th-reflect__foot"><span class="th-reflect__saved" data-saved-for="m1-life"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device</span></div>
+        </div>
+
+        <div class="th-reflect">
+          <p class="th-reflect__q">In your own words — what's the cost of the struggle switch being on?</p>
+          <p class="th-reflect__hint">This is your retrieval question. Say it how you'd explain it to a younger teammate.</p>
+          <textarea data-reflect="m1-cost" placeholder="When the struggle switch is on, it costs me…"></textarea>
+          <div class="th-reflect__foot"><span class="th-reflect__saved" data-saved-for="m1-cost"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 6 · SELF-CHECK (QUIZ) ========== -->
+  <section class="th-sec th-sec--alt" id="selfcheck">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">06 · Your self-check</p>
+        <h2 class="th-h2">How often is your<br><em>switch</em> flipped on?</h2>
+        <p class="th-p">Same style of check-in as your Module 00 baseline — but this one zooms in on today's idea. Eight statements measure how much you tend to <strong>struggle with, suppress or avoid</strong> your inner experience. Remember: a higher score isn't a flaw or a diagnosis — it just shows how much energy is currently going into a strategy this module has shown doesn't work. That's an opportunity, and every ACE move ahead trains the alternative.</p>
+
+        <div class="thq" id="thQuiz">
+          <!-- INTRO -->
+          <div class="thq-screen is-active" id="thq-intro">
+            <div class="thq-intro">
+              <h3>The struggle switch check</h3>
+              <p>8 statements. Rate how true each feels for you lately, 0–6. Go with your gut — honesty here is the whole point.</p>
+              <button class="btn btn--primary btn--lg" id="thqStart">Start the self-check &rarr;</button>
+              <p class="thq-intro__meta">8 questions · about 2 minutes · stays on your device — nothing is saved to us</p>
+            </div>
+          </div>
+          <!-- QUIZ -->
+          <div class="thq-screen" id="thq-quiz">
+            <div class="thq-progress">
+              <div class="thq-progress__bar"><div class="thq-progress__fill" id="thqFill"></div></div>
+              <div class="thq-progress__label"><span id="thqStep">Question 1 of 8</span><span id="thqPct">0%</span></div>
+            </div>
+            <p class="thq-privacy">Your answers stay on your device — nothing is sent anywhere.</p>
+            <div class="thq-q" id="thqCard">
+              <div class="thq-q__domain">The struggle switch</div>
+              <p class="thq-q__text" id="thqText"></p>
+              <div class="thq-scale" id="thqScale"></div>
+              <div class="thq-scale__ends"><span>Not true</span><span>Sometimes</span><span>Very true</span></div>
+              <div class="thq-q__nav"><button class="thq-q__prev" id="thqPrev">&larr; Previous</button><span class="thq-q__hint">Tap a number to continue</span></div>
+            </div>
+          </div>
+          <!-- RESULTS -->
+          <div class="thq-screen" id="thq-results">
+            <p class="thq-results__kicker">Your struggle switch, right now</p>
+            <div class="thq-band">
+              <div class="thq-band__score" id="thqScore">0%</div>
+              <div class="thq-band__name" id="thqBandName"></div>
+            </div>
+            <div class="thq-meter">
+              <div class="thq-meter__scale"><div class="thq-meter__marker" id="thqMarker"></div></div>
+              <div class="thq-meter__ends"><span>Switch mostly off</span><span>Switch often on</span></div>
+            </div>
+            <p class="thq-band__copy" id="thqBandCopy"></p>
+            <div class="thq-takeaway">
+              <p class="thq-takeaway__label">What to do with this</p>
+              <p id="thqTakeaway"></p>
+            </div>
+            <div class="thq-results__actions">
+              <a href="grow-thrive-module-00.html#checkin" class="btn btn--ghost btn--lg">&larr; Back to baseline</a>
+              <a href="grow-thrive.html#program" class="btn btn--primary btn--lg">Next: the ACE moves &rarr;</a>
+              <button class="btn btn--ghost btn--lg" id="thqRetake">Re-take</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LOCK IT IN + NEXT ========== -->
+  <section class="th-sec">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">Lock it in</p>
+        <div class="th-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg><p><strong>One card to carry:</strong> the noise is normal, the struggle is the cost, and the question that matters is "is this working?" — not "is this true?" That's the whole foundation. From here, THRIVE teaches the three moves that let you act well <em>with</em> the noise: <strong>Acknowledge, Connect, Engage.</strong> First up — Acknowledge: making room for what shows up.</p></div>
+
+        <div class="thm-nextnav">
+          <a href="grow-thrive-module-00.html">
+            <div class="thm-nextnav__dir">&larr; Previous</div>
+            <div class="thm-nextnav__title">00 · Welcome &amp; Your Map</div>
+          </a>
+          <a href="grow-thrive.html#program" class="thm-nextnav--end">
+            <div class="thm-nextnav__dir">Next module &rarr;</div>
+            <div class="thm-nextnav__title">02 · Acknowledge: Acceptance</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="siteFooter">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-grid__brand">
+          <img src="images/logo-vertical.png?v=2" alt="The Performance Act" class="logo-img logo-img--footer">
+          <p class="footer__tagline">Helping People Grow</p>
+          <p class="footer__email"><a href="mailto:info@performance-act.com">info@performance-act.com</a></p>
+        </div>
+        <div class="footer-grid__links">
+          <h4 class="footer__heading">QUICK LINKS</h4>
+          <a href="index.html#about" class="footer__link">About Us</a>
+          <a href="approach.html" class="footer__link">Our Approach</a>
+          <a href="programs.html" class="footer__link">Programs</a>
+          <a href="team.html" class="footer__link">Our Wh&#257;nau</a>
+        </div>
+        <div class="footer-grid__links">
+          <h4 class="footer__heading">GROW</h4>
+          <a href="grow.html" class="footer__link">About GROW</a>
+          <a href="grow-login.html" class="footer__link">Member Login</a>
+        </div>
+        <div class="footer-grid__social">
+          <h4 class="footer__heading">FOLLOW US</h4>
+          <div class="social-links">
+            <a href="https://www.instagram.com/performance__act/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+            <a href="https://www.facebook.com/ThePerformanceAct" target="_blank" rel="noopener" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a href="https://www.linkedin.com/company/performance-act-ltd/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 The Performance Act. All rights reserved. Aotearoa, New Zealand.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- NZ SUPPORT LINES -->
+  <button class="support-line-btn" id="supportLineBtn" aria-label="NZ support lines">
+    <span class="support-line-btn__dot" aria-hidden="true"></span>
+    Immediate Support
+  </button>
+  <div class="support-line-modal" id="supportLineModal" role="dialog" aria-modal="true" aria-labelledby="supportLineTitle" aria-hidden="true">
+    <div class="support-line-modal__backdrop"></div>
+    <div class="support-line-modal__panel">
+      <button class="support-line-modal__close" id="supportLineClose" aria-label="Close support lines"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      <p class="support-line-modal__eyebrow">Aotearoa, New Zealand</p>
+      <h2 class="support-line-modal__title" id="supportLineTitle">Need immediate support?</h2>
+      <p class="support-line-modal__note">The Performance Act is a sport psychology practice, not a crisis or emergency service. If you or someone you care about needs immediate support, please reach out to one of these trusted services below. They are free, confidential, and available 24&#8202;/&#8202;7.</p>
+      <ul class="support-line-modal__list" role="list">
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">1737 &mdash; Need to Talk?</p><p class="sln-resource__desc">Free call or text, any time. Trained counsellors, 24&#47;7.</p></div><a href="tel:1737" class="sln-resource__number">Call or text 1737</a></li>
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">Youthline</p><p class="sln-resource__desc">For young people. Free call or text 234, 24&#47;7.</p></div><a href="tel:0800376633" class="sln-resource__number">0800 376 633</a></li>
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">Lifeline NZ</p><p class="sln-resource__desc">Crisis support and suicide prevention, 24&#47;7.</p></div><a href="tel:0800543354" class="sln-resource__number">0800 543 354</a></li>
+      </ul>
+      <p class="support-line-modal__footer">More resources at <a href="https://www.mentalhealth.org.nz/get-help/in-crisis" target="_blank" rel="noopener">Mental Health Foundation NZ</a>.</p>
+    </div>
+  </div>
+
+  <script src="script.js?v=5"></script>
+  <script>
+  /* =========================================================
+     THRIVE Module 01 — reflection autosave, suppression timer,
+     struggle-switch self-check. All state stays on this device.
+     ========================================================= */
+  (function () {
+    var LS = 'thrive_m1_';
+
+    /* ---- Reflection journaling (autosave) ---- */
+    document.querySelectorAll('textarea[data-reflect]').forEach(function (ta) {
+      var key = LS + 'reflect_' + ta.getAttribute('data-reflect');
+      var saved = document.querySelector('[data-saved-for="' + ta.getAttribute('data-reflect') + '"]');
+      try { if (localStorage.getItem(key)) ta.value = localStorage.getItem(key); } catch (e) {}
+      if (saved) saved.style.opacity = ta.value ? '1' : '0';
+      var t;
+      ta.addEventListener('input', function () {
+        if (saved) saved.style.opacity = '0.4';
+        clearTimeout(t);
+        t = setTimeout(function () {
+          try { localStorage.setItem(key, ta.value); } catch (e) {}
+          if (saved) saved.style.opacity = ta.value ? '1' : '0';
+        }, 400);
+      });
+    });
+
+    /* ---- Suppression timer demo ---- */
+    var demoBtn = document.getElementById('demoStart');
+    var demoTimer = document.getElementById('demoTimer');
+    var demoResult = document.getElementById('demoResult');
+    if (demoBtn) {
+      demoBtn.addEventListener('click', function () {
+        var left = 30; demoBtn.disabled = true; demoResult.classList.remove('is-shown');
+        demoTimer.textContent = '0:' + (left < 10 ? '0' : '') + left;
+        var iv = setInterval(function () {
+          left--;
+          demoTimer.textContent = '0:' + (left < 10 ? '0' : '') + left;
+          if (left <= 0) {
+            clearInterval(iv);
+            demoTimer.textContent = 'Done';
+            demoResult.classList.add('is-shown');
+            demoBtn.disabled = false; demoBtn.textContent = 'Run it again';
+          }
+        }, 1000);
+      });
+    }
+
+    /* ================= STRUGGLE-SWITCH SELF-CHECK ================= */
+    /* Higher = more struggle / experiential avoidance. */
+    var ITEMS = [
+      'When uncomfortable feelings show up, my first instinct is to get rid of them as fast as possible.',
+      'I spend a lot of energy trying not to feel nervous, angry or down.',
+      'I avoid situations that might stir up difficult thoughts or feelings.',
+      'When a worry shows up, I get tangled in it and it\'s hard to just let it be there.',
+      'I tell myself I shouldn\'t feel the way I feel.',
+      'A bad feeling seems like a sign something is wrong that I have to fix before I can act.',
+      'I replay mistakes or awkward moments over and over, trying to think my way out.',
+      'I put things off — training, study, messages — when they bring up discomfort.'
+    ];
+    var current = 0, answers = ITEMS.map(function () { return null; });
+
+    var elText  = document.getElementById('thqText');
+    var elScale = document.getElementById('thqScale');
+    var elFill  = document.getElementById('thqFill');
+    var elStep  = document.getElementById('thqStep');
+    var elPct   = document.getElementById('thqPct');
+    var elPrev  = document.getElementById('thqPrev');
+
+    function showScreen(name) {
+      ['intro', 'quiz', 'results'].forEach(function (s) {
+        document.getElementById('thq-' + s).classList.toggle('is-active', s === name);
+      });
+    }
+
+    function renderQuestion() {
+      elText.textContent = ITEMS[current];
+      elScale.innerHTML = '';
+      for (var v = 0; v <= 6; v++) {
+        (function (val) {
+          var b = document.createElement('button');
+          b.className = 'thq-scale__btn' + (answers[current] === val ? ' is-selected' : '');
+          b.type = 'button'; b.textContent = val;
+          b.setAttribute('aria-label', 'Rate ' + val + ' out of 6');
+          b.addEventListener('click', function () { selectAnswer(val); });
+          elScale.appendChild(b);
+        })(v);
+      }
+      var pct = Math.round(current / ITEMS.length * 100);
+      elFill.style.width = pct + '%';
+      elStep.textContent = 'Question ' + (current + 1) + ' of ' + ITEMS.length;
+      elPct.textContent = pct + '%';
+      elPrev.disabled = (current === 0);
+    }
+
+    function selectAnswer(val) {
+      answers[current] = val;
+      elScale.querySelectorAll('.thq-scale__btn').forEach(function (b, i) { b.classList.toggle('is-selected', i === val); });
+      setTimeout(function () {
+        if (current < ITEMS.length - 1) { current++; renderQuestion(); }
+        else { finish(); }
+      }, 220);
+    }
+
+    elPrev.addEventListener('click', function () { if (current > 0) { current--; renderQuestion(); } });
+
+    function finish() {
+      var sum = 0;
+      answers.forEach(function (a) { sum += (a === null ? 3 : a); });
+      var pct = Math.round(sum / (ITEMS.length * 6) * 100);
+      try { localStorage.setItem(LS + 'struggle', String(pct)); } catch (e) {}
+      renderResults(pct);
+      showScreen('results');
+      document.getElementById('selfcheck').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function bandFor(pct) {
+      if (pct <= 33) return {
+        name: 'Switch mostly off',
+        copy: 'Right now you tend to <strong>make room</strong> for difficult thoughts and feelings more than you fight them. That\'s a real head start — the ACE moves ahead will sharpen a skill you already lean on, and give you language for it under pressure.',
+        take: 'Keep noticing the moments you <strong>don\'t</strong> struggle, and what becomes possible when you don\'t. Then use the ACE modules to make that your default even when the stakes are high.'
+      };
+      if (pct <= 66) return {
+        name: 'Switch flickers on',
+        copy: 'Like most people, you make room sometimes and struggle other times — often right when pressure spikes. There\'s nothing wrong here; it just shows there\'s <strong>real room to grow</strong>, and a clear payoff for training the alternative.',
+        take: 'Over the next week, just <strong>catch the switch flipping on</strong> — no need to fix it yet. Awareness is the first rep. The Acknowledge modules (2 & 3) train exactly what to do next.'
+      };
+      return {
+        name: 'Switch often on',
+        copy: 'A lot of your energy is currently going into fighting, suppressing or avoiding what you feel. That\'s exhausting — and, as this module showed, it tends to <strong>amplify</strong> the very stuff you\'re trying to shift. This is not a flaw or a diagnosis; it\'s the single biggest opportunity in front of you.',
+        take: 'Go gently, and lean into the <strong>Acknowledge</strong> modules next — acceptance and defusion are the direct antidote. If the struggle feels heavy or constant, that\'s worth talking through with someone: the support line button is always on this page.'
+      };
+    }
+
+    function renderResults(pct) {
+      document.getElementById('thqScore').textContent = pct + '%';
+      var band = bandFor(pct);
+      document.getElementById('thqBandName').textContent = band.name;
+      document.getElementById('thqBandCopy').innerHTML = band.copy;
+      document.getElementById('thqTakeaway').innerHTML = band.take;
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var marker = document.getElementById('thqMarker');
+      if (reduce) { marker.style.left = pct + '%'; }
+      else { marker.style.left = '0%'; setTimeout(function () { marker.style.left = pct + '%'; }, 120); }
+    }
+
+    document.getElementById('thqStart').addEventListener('click', function () { current = 0; showScreen('quiz'); renderQuestion(); });
+    document.getElementById('thqRetake').addEventListener('click', function () {
+      current = 0; answers = ITEMS.map(function () { return null; }); showScreen('intro');
+      document.getElementById('selfcheck').scrollIntoView({ behavior: 'smooth' });
+    });
+  })();
+  </script>
+
+</body>
+</html>
