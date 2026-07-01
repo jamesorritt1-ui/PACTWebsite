@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Hidden / unlisted: not indexed and not linked from anywhere on the public site -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>THRIVE · Module 02 — Acknowledge I · Be Open: Acceptance | The Performance Act</title>
+  <meta name="description" content="THRIVE Module 02 — acceptance: making room for difficult feelings instead of fighting them. With the Drop the Rope practice, a sensation-naming activity and a 7-day Make Room journal.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="style.css?v=17">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=2">
+
+  <style>
+    /* ============================================================
+       THRIVE MODULE PAGE — scoped to .th / .thm-. Black + yellow.
+       ============================================================ */
+    .th { --ink:#ECECEC; --muted:#9A9A9A; --line:rgba(255,255,255,0.1); background:#050505; }
+    .th-sec { padding: clamp(52px, 8vw, 92px) 0; }
+    .th-sec--alt { background:#0b0b0b; }
+    .th-wrap { max-width: 820px; margin: 0 auto; }
+    .th-eyebrow { font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--yellow); margin-bottom:14px; }
+    .th-h2 { font-family:var(--font-heading); font-weight:700; text-transform:uppercase; font-size:clamp(1.7rem,4vw,2.7rem); line-height:1.05; color:#fff; margin-bottom:18px; }
+    .th-h2 em { color:var(--yellow); font-style:normal; }
+    .th-lead { font-size:clamp(1rem,2vw,1.14rem); color:var(--ink); line-height:1.68; font-weight:300; }
+    .th-p { color:var(--ink); line-height:1.7; font-weight:300; margin:0 0 16px; }
+    .th-p strong { color:#fff; font-weight:600; }
+    .th-p em { color:#fff; font-style:italic; }
+
+    /* MODULE HERO */
+    .thm-hero { position:relative; overflow:hidden; background:#050505; padding:clamp(120px,16vw,180px) 0 clamp(44px,7vw,72px); border-bottom:1px solid var(--line); }
+    .thm-hero__bg { position:absolute; inset:0; background:url('images/athletics-track.png') center 30% / cover no-repeat; opacity:0.20; filter:grayscale(0.4) contrast(1.05); }
+    .thm-hero::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(5,5,5,0.55) 0%, rgba(5,5,5,0.92) 100%); }
+    .thm-hero .container { position:relative; z-index:2; }
+    .thm-back { display:inline-flex; align-items:center; gap:8px; font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--yellow); margin-bottom:26px; }
+    .thm-back svg { width:16px; height:16px; }
+    .thm-hero__num { font-family:var(--font-heading); font-weight:700; font-size:clamp(3rem,10vw,5.5rem); line-height:0.9; color:var(--yellow); }
+    .thm-hero__pill { display:inline-block; font-family:var(--font-heading); font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:#000; background:var(--yellow); padding:4px 11px; margin-left:14px; vertical-align:middle; }
+    .thm-hero__kicker { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+    .thm-hero__title { font-family:var(--font-heading); font-weight:700; text-transform:uppercase; font-size:clamp(1.9rem,5.4vw,3.3rem); line-height:1.02; color:#fff; margin:6px 0 18px; }
+    .thm-hero__meta { display:flex; flex-wrap:wrap; gap:8px 22px; font-size:0.86rem; color:var(--muted); letter-spacing:0.08em; text-transform:uppercase; font-family:var(--font-heading); }
+    .thm-hero__meta span { display:inline-flex; align-items:center; gap:7px; }
+    .thm-hero__meta svg { width:15px; height:15px; color:var(--yellow); }
+
+    .thm-obj { background:#111; border:1px solid var(--line); border-left:4px solid var(--yellow); padding:26px 28px; margin-top:34px; }
+    .thm-obj h3 { font-family:var(--font-heading); font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--yellow); margin-bottom:14px; }
+    .thm-obj ul { margin:0; padding:0; list-style:none; }
+    .thm-obj li { color:var(--ink); font-size:0.98rem; line-height:1.5; font-weight:300; padding:7px 0 7px 26px; position:relative; }
+    .thm-obj li::before { content:''; position:absolute; left:0; top:13px; width:12px; height:2px; background:var(--yellow); }
+
+    .thm-toc { display:flex; flex-wrap:wrap; gap:10px; margin-top:30px; }
+    .thm-toc a { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink); border:1px solid var(--line); padding:9px 15px; transition:.2s; }
+    .thm-toc a:hover { border-color:var(--yellow); color:var(--yellow); }
+
+    .th-block__label { display:flex; align-items:center; gap:10px; font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--yellow); margin-bottom:12px; }
+    .th-block__label::before { content:''; width:26px; height:2px; background:var(--yellow); }
+
+    .th-quote { border-left:3px solid var(--yellow); padding:6px 0 6px 22px; margin:26px 0; }
+    .th-quote p { font-family:var(--font-heading); font-weight:500; font-size:clamp(1.2rem,2.8vw,1.7rem); line-height:1.3; color:#fff; margin:0; }
+    .th-quote cite { display:block; margin-top:12px; font-style:normal; font-size:0.86rem; color:var(--muted); letter-spacing:0.04em; }
+
+    /* acceptance vs resignation two-up */
+    .thm-vs { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:26px 0; }
+    .thm-vs__col { background:#141414; border:1px solid var(--line); padding:22px 24px; }
+    .thm-vs__col--yes { border-top:3px solid var(--yellow); }
+    .thm-vs__col--no { border-top:3px solid #6a6a6a; }
+    .thm-vs__tag { font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:10px; }
+    .thm-vs__col--yes .thm-vs__tag { color:var(--yellow); }
+    .thm-vs__col--no .thm-vs__tag { color:#9a9a9a; }
+    .thm-vs__col ul { list-style:none; margin:0; padding:0; }
+    .thm-vs__col li { color:var(--ink); font-size:0.94rem; line-height:1.5; font-weight:300; padding:6px 0 6px 20px; position:relative; }
+    .thm-vs__col li::before { content:''; position:absolute; left:0; top:12px; width:6px; height:6px; background:currentColor; opacity:0.6; }
+    .thm-vs__col--yes li::before { background:var(--yellow); opacity:1; }
+
+    /* ===== GREAT ACTIVITY: guided practice stepper ===== */
+    .thm-activity { background:#111; border:1px solid rgba(255,229,0,0.28); border-radius:6px; overflow:hidden; margin:28px 0; }
+    .thm-activity__head { background:rgba(255,229,0,0.08); padding:18px 26px; border-bottom:1px solid rgba(255,229,0,0.2); }
+    .thm-activity__eyebrow { font-family:var(--font-heading); font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--yellow); margin-bottom:4px; }
+    .thm-activity__name { font-family:var(--font-heading); font-size:1.35rem; text-transform:uppercase; color:#fff; letter-spacing:0.02em; }
+    .thm-activity__body { padding:30px 26px 28px; }
+    .thm-practice { text-align:center; min-height:300px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+    .thm-practice__count { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-bottom:16px; }
+    .thm-practice__title { font-family:var(--font-heading); font-size:clamp(1.3rem,3.2vw,1.7rem); text-transform:uppercase; color:var(--yellow); margin-bottom:14px; }
+    .thm-practice__text { color:var(--ink); font-size:1.02rem; line-height:1.7; font-weight:300; max-width:460px; margin:0 auto 8px; }
+    .thm-practice__text strong { color:#fff; font-weight:600; }
+    .thm-breath { width:130px; height:130px; margin:22px auto; position:relative; display:none; }
+    .thm-breath.is-on { display:block; }
+    .thm-breath__circle { position:absolute; inset:0; border-radius:50%; background:radial-gradient(circle, rgba(255,229,0,0.35), rgba(255,229,0,0.05)); border:2px solid var(--yellow); animation:thBreathe 8s ease-in-out infinite; }
+    .thm-breath__label { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-family:var(--font-heading); font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:#fff; }
+    @keyframes thBreathe { 0%,100% { transform:scale(0.62); } 50% { transform:scale(1); } }
+    @media (prefers-reduced-motion: reduce) { .thm-breath__circle { animation:none; transform:scale(0.85); } }
+    .thm-practice__nav { display:flex; gap:12px; justify-content:center; margin-top:26px; flex-wrap:wrap; }
+    .thm-practice__prev { background:none; border:1px solid var(--line); color:var(--ink); font-family:var(--font-heading); font-size:0.8rem; letter-spacing:0.06em; text-transform:uppercase; padding:11px 20px; cursor:pointer; transition:.2s; }
+    .thm-practice__prev:hover { border-color:#fff; color:#fff; }
+    .thm-practice__prev[disabled] { opacity:0.35; pointer-events:none; }
+    .thm-dots { display:flex; gap:7px; justify-content:center; margin-top:20px; }
+    .thm-dots span { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.18); transition:.2s; }
+    .thm-dots span.is-on { background:var(--yellow); transform:scale(1.2); }
+
+    /* ===== NAME IT labeler ===== */
+    .thm-labeler { background:#111; border:1px solid var(--line); padding:26px 28px; margin:26px 0; }
+    .thm-labeler__group { margin-bottom:18px; }
+    .thm-labeler__glabel { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:10px; }
+    .thm-chipset { display:flex; flex-wrap:wrap; gap:9px; }
+    .thm-chip { font-family:var(--font-body); font-size:0.9rem; color:var(--ink); background:#191919; border:1px solid var(--line); padding:9px 15px; border-radius:100px; cursor:pointer; transition:.15s; }
+    .thm-chip:hover { border-color:rgba(255,229,0,0.5); }
+    .thm-chip[aria-pressed="true"] { background:var(--yellow); border-color:var(--yellow); color:#000; font-weight:500; }
+    .thm-labeler__out { margin-top:22px; background:#0a0a0a; border:1px dashed rgba(255,229,0,0.35); padding:20px 22px; text-align:center; }
+    .thm-labeler__sentence { font-family:var(--font-heading); font-size:clamp(1.05rem,2.6vw,1.4rem); color:#fff; line-height:1.4; }
+    .thm-labeler__sentence b { color:var(--yellow); }
+    .thm-labeler__note { color:var(--muted); font-size:0.86rem; margin-top:12px; font-weight:300; }
+
+    /* REFLECTION */
+    .th-reflect { background:#111; border:1px solid var(--line); border-radius:4px; padding:24px 26px; margin:24px 0; }
+    .th-reflect__q { color:#fff; font-size:1.02rem; line-height:1.5; font-weight:400; margin:0 0 4px; }
+    .th-reflect__hint { color:var(--muted); font-size:0.86rem; line-height:1.5; font-weight:300; margin:0 0 14px; }
+    .th-reflect textarea { width:100%; min-height:100px; background:#0a0a0a; border:1px solid var(--line); color:#fff; font-family:var(--font-body); font-size:0.98rem; line-height:1.6; font-weight:300; padding:14px 16px; resize:vertical; }
+    .th-reflect textarea:focus { outline:none; border-color:var(--yellow); }
+    .th-reflect__foot { display:flex; align-items:center; justify-content:flex-end; gap:12px; margin-top:10px; }
+    .th-reflect__saved { font-size:0.78rem; color:var(--muted); letter-spacing:0.04em; display:inline-flex; align-items:center; gap:6px; }
+    .th-reflect__saved svg { width:13px; height:13px; color:var(--yellow); }
+
+    /* APPLIED grid */
+    .th-applied { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:24px 0; }
+    .th-applied__col { background:#141414; border:1px solid var(--line); padding:20px 22px; }
+    .th-applied__col--sport { border-top:3px solid var(--yellow); }
+    .th-applied__col--life { border-top:3px solid #fff; }
+    .th-applied__col h5 { font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:8px; }
+    .th-applied__col--sport h5 { color:var(--yellow); }
+    .th-applied__col--life h5 { color:#fff; }
+    .th-applied__col p { color:var(--ink); font-size:0.92rem; line-height:1.6; font-weight:300; margin:0; }
+
+    /* ===== WEEKLY MIND GYM JOURNAL ===== */
+    .thm-week__intro { background:#111; border:1px solid var(--line); border-left:4px solid var(--yellow); padding:22px 26px; margin-bottom:8px; }
+    .thm-week__intro p { color:var(--ink); font-size:0.98rem; line-height:1.65; font-weight:300; margin:0; }
+    .thm-week__intro strong { color:#fff; font-weight:600; }
+    .thm-week__progress { display:flex; align-items:center; gap:16px; margin:22px 0 18px; }
+    .thm-week__track { flex:1; height:10px; background:rgba(255,255,255,0.08); border-radius:100px; overflow:hidden; }
+    .thm-week__fill { height:100%; width:0; background:var(--yellow); transition:width .5s ease; }
+    .thm-week__count { font-family:var(--font-heading); font-size:0.82rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--yellow); white-space:nowrap; }
+    .thm-day { border:1px solid var(--line); border-bottom:none; background:#0f0f0f; }
+    .thm-day:last-child { border-bottom:1px solid var(--line); }
+    .thm-day__trigger { width:100%; display:flex; align-items:center; gap:16px; padding:16px 20px; background:none; border:none; cursor:pointer; text-align:left; }
+    .thm-day__trigger:hover { background:rgba(255,255,255,0.03); }
+    .thm-day__dot { flex-shrink:0; width:26px; height:26px; border-radius:50%; border:2px solid var(--muted); display:flex; align-items:center; justify-content:center; }
+    .thm-day__dot svg { width:15px; height:15px; color:#000; opacity:0; }
+    .thm-day.is-done .thm-day__dot { background:var(--yellow); border-color:var(--yellow); }
+    .thm-day.is-done .thm-day__dot svg { opacity:1; }
+    .thm-day__label { flex:1; font-family:var(--font-heading); font-size:1rem; text-transform:uppercase; letter-spacing:0.03em; color:#fff; }
+    .thm-day__state { font-size:0.78rem; color:var(--muted); font-family:var(--font-heading); letter-spacing:0.05em; text-transform:uppercase; }
+    .thm-day__caret { width:18px; height:18px; color:var(--yellow); transition:transform .3s ease; }
+    .thm-day.is-open .thm-day__caret { transform:rotate(180deg); }
+    .thm-day__panel[hidden] { display:none; }
+    .thm-day__body { padding:4px 20px 22px; }
+    .thm-day__field { margin-bottom:14px; }
+    .thm-day__q { color:#fff; font-size:0.92rem; font-weight:400; margin:0 0 6px; }
+    .thm-day__body textarea { width:100%; min-height:60px; background:#0a0a0a; border:1px solid var(--line); color:#fff; font-family:var(--font-body); font-size:0.94rem; line-height:1.55; font-weight:300; padding:11px 13px; resize:vertical; }
+    .thm-day__body textarea:focus { outline:none; border-color:var(--yellow); }
+    .thm-toggle { display:flex; gap:10px; }
+    .thm-toggle button { flex:1; background:#191919; border:1px solid var(--line); color:var(--ink); font-family:var(--font-body); font-size:0.9rem; padding:10px 12px; cursor:pointer; transition:.15s; }
+    .thm-toggle button[aria-pressed="true"] { background:var(--yellow); border-color:var(--yellow); color:#000; font-weight:500; }
+    .thm-day__save { display:inline-flex; align-items:center; gap:7px; margin-top:6px; font-size:0.78rem; color:var(--muted); }
+    .thm-day__save svg { width:13px; height:13px; color:var(--yellow); }
+    .thm-week__reset { margin-top:16px; background:none; border:none; color:var(--muted); font-size:0.82rem; text-decoration:underline; cursor:pointer; }
+    .thm-week__reset:hover { color:#fff; }
+
+    /* reference card */
+    .thm-refcard { background:linear-gradient(160deg,#161616,#0d0d0d); border:1px solid rgba(255,229,0,0.3); padding:28px 30px; margin:26px 0; }
+    .thm-refcard h4 { font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--yellow); margin-bottom:14px; }
+    .thm-refcard ol { margin:0; padding-left:22px; color:var(--ink); }
+    .thm-refcard li { font-size:0.96rem; line-height:1.6; font-weight:300; padding:4px 0; }
+    .thm-refcard li strong { color:#fff; font-weight:600; }
+
+    .th-lock { background:rgba(255,229,0,0.07); border:1px solid rgba(255,229,0,0.22); padding:18px 22px; display:flex; gap:14px; align-items:flex-start; margin-top:8px; }
+    .th-lock svg { width:22px; height:22px; color:var(--yellow); flex-shrink:0; margin-top:2px; }
+    .th-lock p { color:var(--ink); font-size:0.96rem; line-height:1.6; font-weight:300; margin:0; }
+    .th-lock strong { color:#fff; font-weight:600; }
+
+    .thm-nextnav { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:20px; }
+    .thm-nextnav a { display:block; background:#111; border:1px solid var(--line); padding:22px 24px; transition:.2s; }
+    .thm-nextnav a:hover { border-color:var(--yellow); }
+    .thm-nextnav__dir { font-family:var(--font-heading); font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+    .thm-nextnav__title { font-family:var(--font-heading); font-size:1.05rem; color:#fff; text-transform:uppercase; letter-spacing:0.02em; }
+    .thm-nextnav a:hover .thm-nextnav__title { color:var(--yellow); }
+    .thm-nextnav--end { text-align:right; }
+
+    @media (max-width:720px) {
+      .thm-vs, .th-applied, .thm-nextnav { grid-template-columns:1fr; }
+      .thm-nextnav--end { text-align:left; }
+    }
+  </style>
+</head>
+<body class="th">
+
+  <!-- ========== HEADER / NAV (standard — no THRIVE link anywhere) ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="images/logo-horizontal.png?v=2" alt="The Performance Act" class="logo-img logo-img--header">
+      </a>
+      <nav class="header__nav" id="mainNav" aria-label="Primary">
+        <div class="nav-item nav-item--has-dropdown">
+          <a href="index.html#about" class="nav-link nav-link--has-dropdown" aria-haspopup="true" aria-expanded="false">ABOUT US
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown" role="menu">
+            <a href="approach.html" class="nav-dropdown__link" role="menuitem">Approach</a>
+            <a href="index.html#pillars" class="nav-dropdown__link" role="menuitem">Our Pact</a>
+            <a href="team.html" class="nav-dropdown__link" role="menuitem">Team</a>
+          </div>
+        </div>
+        <a href="programs.html" class="nav-link">SUPPORT &amp; SERVICES</a>
+        <div class="nav-item nav-item--has-dropdown">
+          <a href="grow.html" class="nav-link nav-link--has-dropdown" aria-haspopup="true" aria-expanded="false">GROW PLATFORM
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown" role="menu">
+            <a href="grow.html" class="nav-dropdown__link" role="menuitem">About GROW</a>
+            <a href="grow-login.html" class="nav-dropdown__link" role="menuitem">Member Login</a>
+          </div>
+        </div>
+        <a href="blog.html" class="nav-link">RESOURCES</a>
+        <a href="contact.html" class="nav-link">CONTACT</a>
+      </nav>
+      <div class="header__actions">
+        <a href="contact.html" class="btn btn--primary btn--sm">Let&#8217;s Have a K&#333;rero</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <nav class="mobile-nav__links" aria-label="Mobile">
+      <div class="mobile-nav__group">
+        <button class="mobile-nav__group-toggle" aria-expanded="false" aria-controls="mobileAboutSub">ABOUT US
+          <svg class="mobile-nav__group-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="mobile-nav__sub" id="mobileAboutSub">
+          <a href="approach.html" class="mobile-nav__sublink">Approach</a>
+          <a href="index.html#pillars" class="mobile-nav__sublink">Our Pact</a>
+          <a href="team.html" class="mobile-nav__sublink">Team</a>
+        </div>
+      </div>
+      <a href="programs.html" class="mobile-nav__link">SUPPORT &amp; SERVICES</a>
+      <div class="mobile-nav__group">
+        <button class="mobile-nav__group-toggle" aria-expanded="false" aria-controls="mobileGrowSub">GROW PLATFORM
+          <svg class="mobile-nav__group-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="mobile-nav__sub" id="mobileGrowSub">
+          <a href="grow.html" class="mobile-nav__sublink">About GROW</a>
+          <a href="grow-login.html" class="mobile-nav__sublink">Member Login</a>
+        </div>
+      </div>
+      <a href="blog.html" class="mobile-nav__link">RESOURCES</a>
+      <a href="contact.html" class="mobile-nav__link">CONTACT</a>
+      <div class="mobile-nav__actions">
+        <a href="contact.html" class="btn btn--primary">Let&#8217;s Have a K&#333;rero</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- ========== MODULE HERO ========== -->
+  <section class="thm-hero">
+    <div class="thm-hero__bg"></div>
+    <div class="container">
+      <a href="grow-thrive.html#program" class="thm-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> THRIVE program</a>
+      <div class="th-wrap">
+        <div class="thm-hero__num">02<span class="thm-hero__pill">A · Be Open</span></div>
+        <p class="thm-hero__kicker">Acknowledge I · The first ACE move</p>
+        <h1 class="thm-hero__title">Be Open: Acceptance</h1>
+        <div class="thm-hero__meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> ~20 minutes</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v14H4z"/><path d="M4 9h16"/></svg> Read · practise · journal</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg> Private to you</span>
+        </div>
+
+        <div class="thm-obj">
+          <h3>By the end of this module you can</h3>
+          <ul>
+            <li>Define <strong>acceptance</strong> (making room) and tell it apart from resignation or "just putting up with it".</li>
+            <li>Run the <strong>Drop the Rope</strong> practice to stop fighting an uncomfortable feeling.</li>
+            <li>Name a sensation in your body instead of being run by it.</li>
+            <li>Connect acceptance to the <strong>A of ACE</strong> and the <strong>Be Open</strong> corner of your map — and train it all week.</li>
+          </ul>
+        </div>
+
+        <nav class="thm-toc" aria-label="On this page">
+          <a href="#move">The move</a>
+          <a href="#vs">Not giving up</a>
+          <a href="#rope">Activity: Drop the Rope</a>
+          <a href="#name">Activity: Name it</a>
+          <a href="#reflect">Reflect</a>
+          <a href="#week">This week's Mind Gym</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 1 · THE MOVE ========== -->
+  <section class="th-sec" id="move">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">01 · The first move</p>
+        <h2 class="th-h2">Stop wrestling.<br><em>Make room.</em></h2>
+        <p class="th-p">In Module 01 you saw the trap: the mind makes noise, and fighting the noise makes it louder and pulls you off the job. So if control is a losing game, what's the alternative? It's the first move of ACE — <strong>Acknowledge</strong> — and it starts with a skill called <strong>acceptance</strong>.</p>
+        <p class="th-p">Acceptance is <strong>willingly making room for a difficult feeling instead of fighting it</strong>. When the nerves, the doubt or the frustration show up, you stop trying to shove them down or wish them away. You let them be there — and you get on with what matters anyway. This is the "A" in ACE, and the <strong>Be Open</strong> corner of your map.</p>
+        <div class="th-quote">
+          <p>"You don't have to like the feeling. You don't have to want it. You just have to be willing to have it — so it stops running the show."</p>
+          <cite>— The heart of acceptance</cite>
+        </div>
+        <p class="th-p">Here's the counter-intuitive part: making room for a feeling is what <em>drains its power</em>. Not because you've defeated it, but because you've stopped feeding it energy. The feeling can be there, and you can still throw the pass, sit the exam, or have the hard conversation. That's the whole skill.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 2 · NOT GIVING UP ========== -->
+  <section class="th-sec th-sec--alt" id="vs">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">02 · A crucial distinction</p>
+        <h2 class="th-h2">Acceptance is <em>not</em><br>giving up</h2>
+        <p class="th-p">This is the misunderstanding that trips everyone up, so let's kill it now. Acceptance is <strong>not</strong> resignation, giving in, or gritting your teeth and suffering. It's not saying "I feel terrible and there's nothing I can do." It's an <em>active, deliberate choice</em> to lean in to discomfort so you can take thoughtful action — the exact opposite of collapse.</p>
+        <div class="thm-vs">
+          <div class="thm-vs__col thm-vs__col--yes">
+            <div class="thm-vs__tag">Acceptance is…</div>
+            <ul>
+              <li>Actively making room for a feeling</li>
+              <li>A choice: "I'm willing to have this"</li>
+              <li>Aimed at freeing you to act on what matters</li>
+              <li>Curious and kind toward what shows up</li>
+              <li>Something you do <em>while</em> moving forward</li>
+            </ul>
+          </div>
+          <div class="thm-vs__col thm-vs__col--no">
+            <div class="thm-vs__tag">Acceptance is not…</div>
+            <ul>
+              <li>Resignation or "putting up with it"</li>
+              <li>Liking, wanting or approving of the feeling</li>
+              <li>Giving up on the goal or the effort</li>
+              <li>Suppressing, numbing or gritting teeth</li>
+              <li>Passive — it's the opposite of collapse</li>
+            </ul>
+          </div>
+        </div>
+        <p class="th-p">Think of a surfer. They can't stop the waves — but they don't fight the ocean, and they don't give up and drown either. They stop struggling against the water so they can do the thing that matters: ride. Acceptance is you, stopping the fight with the water, so you can play.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 3 · ACTIVITY: DROP THE ROPE ========== -->
+  <section class="th-sec" id="rope">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">03 · Your practice</p>
+        <h2 class="th-h2">Activity: <em>Drop the Rope</em></h2>
+        <p class="th-p">Time for the real thing. Imagine a tug-of-war with a huge anxiety-monster. As long as you pull, you're locked in a struggle you can't win. But there's a third option that isn't winning <em>or</em> losing: <strong>drop the rope.</strong> This short guided practice walks you through it. Find a quiet-ish minute, bring to mind a feeling you usually try to get rid of, and step through it.</p>
+
+        <div class="thm-activity">
+          <div class="thm-activity__head">
+            <div class="thm-activity__eyebrow">Guided practice · ~3 minutes</div>
+            <div class="thm-activity__name">Drop the Rope</div>
+          </div>
+          <div class="thm-activity__body">
+            <div class="thm-practice" id="ropePractice">
+              <div class="thm-practice__count" id="ropeCount">Step 1 of 6</div>
+              <h3 class="thm-practice__title" id="ropeTitle">Settle</h3>
+              <div class="thm-breath" id="ropeBreath"><div class="thm-breath__circle"></div><div class="thm-breath__label">Breathe</div></div>
+              <p class="thm-practice__text" id="ropeText">Sit or stand tall. Feet flat on the floor. Let your eyes soften or gently close. Take one slow breath — and make the out-breath longer than the in-breath.</p>
+              <div class="thm-dots" id="ropeDots"></div>
+              <div class="thm-practice__nav">
+                <button class="thm-practice__prev" id="ropePrev" disabled>&larr; Back</button>
+                <button class="btn btn--primary" id="ropeNext">Next step &rarr;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="th-p">However that felt is fine — there's no "doing it right". If the feeling was still there at the end, <strong>that's success, not failure.</strong> The goal was never to get rid of it. The goal was to stop fighting it and still choose your next move.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 4 · ACTIVITY: NAME IT ========== -->
+  <section class="th-sec th-sec--alt" id="name">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">04 · A 20-second skill</p>
+        <h2 class="th-h2">Activity: <em>Name it</em> to tame it</h2>
+        <p class="th-p">Feelings live in the body — a tight chest, a fluttery stomach, a buzzing in the hands. One of the simplest acceptance skills is just to <strong>notice where it is and give it a name</strong>. Research on "affect labelling" shows that quietly naming a feeling actually turns down its intensity. Build the sentence below — it's the exact move you'll run in real time.</p>
+
+        <div class="thm-labeler">
+          <div class="thm-labeler__group">
+            <div class="thm-labeler__glabel">1 · Where do you feel it?</div>
+            <div class="thm-chipset" id="locChips">
+              <button type="button" class="thm-chip" aria-pressed="false" data-val="chest">chest</button>
+              <button type="button" class="thm-chip" aria-pressed="false" data-val="stomach">stomach</button>
+              <button type="button" class="thm-chip" aria-pressed="false" data-val="throat">throat</button>
+              <button type="button" class="thm-chip" aria-pressed="false" data-val="shoulders">shoulders</button>
+              <button type="button" class="thm-chip" aria-pressed="false" data-val="jaw">jaw</button>
+              <button type="button" class="thm-chip" aria-pressed="false" data-val="hands">hands</button>
+              <button type="button" class="thm-chip" aria-pressed="false" data-val="legs">legs</button>
+              <button type="button" class="thm-chip" aria-pressed="false" data-val="head">head</button>
+            </div>
+          </div>
+          <div class="thm-labeler__group">
+            <div class="thm-labeler__glabel">2 · What does it feel like?</div>
+            <div class="thm-chipset" id="sensChips">
+              <button type="button" class="thm-chip" aria-pressed="false" data-val="tight">tight</button>
+              <button type="button" class="thm-chip" aria-pressed="false" data-val="fluttery">fluttery</button>
+              <button type="button" class="thm-chip" aria-pressed="false" data-val="heavy">heavy</button>
+              <button type="button" class="thm-chip" aria-pressed="false" data-val="buzzing">buzzing</button>
+              <button type="button" class="thm-chip" aria-pressed="false" data-val="hot">hot</button>
+              <button type="button" class="thm-chip" aria-pressed="false" data-val="shaky">shaky</button>
+              <button type="button" class="thm-chip" aria-pressed="false" data-val="knotted">knotted</button>
+              <button type="button" class="thm-chip" aria-pressed="false" data-val="restless">restless</button>
+            </div>
+          </div>
+          <div class="thm-labeler__out">
+            <p class="thm-labeler__sentence" id="labelOut">Right now, I notice something <b>&hellip;</b> in my <b>&hellip;</b></p>
+            <p class="thm-labeler__note">That's the whole move. You're not fixing it or fighting it — you're making room for it by naming it. "Here's tension." "Here's anxiety." Then you carry on.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 5 · REFLECT ========== -->
+  <section class="th-sec" id="reflect">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">05 · Reflect</p>
+        <h2 class="th-h2">Make it <em>yours</em></h2>
+        <p class="th-p">A couple of honest lines. Everything you type is saved <strong>only on this device</strong> and will be here when you come back.</p>
+
+        <div class="th-reflect">
+          <p class="th-reflect__q">Which feeling do you most often try to get rid of before you perform?</p>
+          <p class="th-reflect__hint">Nerves, doubt, anger, flatness, pressure in the chest — name the specific one.</p>
+          <textarea data-reflect="m2-feeling" placeholder="The feeling I usually try to get rid of is…"></textarea>
+          <div class="th-reflect__foot"><span class="th-reflect__saved" data-saved-for="m2-feeling"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device</span></div>
+        </div>
+
+        <div class="th-reflect">
+          <p class="th-reflect__q">After Drop the Rope — what changed, and what didn't?</p>
+          <p class="th-reflect__hint">Often the feeling stays similar, but the <em>struggle</em> with it drops. What did you notice?</p>
+          <textarea data-reflect="m2-rope" placeholder="After the practice, I noticed…"></textarea>
+          <div class="th-reflect__foot"><span class="th-reflect__saved" data-saved-for="m2-rope"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device</span></div>
+        </div>
+
+        <div class="th-reflect">
+          <p class="th-reflect__q">In your own words — what's the difference between acceptance and giving up?</p>
+          <p class="th-reflect__hint">This is your retrieval question. Say it how you'd explain it to a teammate.</p>
+          <textarea data-reflect="m2-vs" placeholder="Acceptance is different from giving up because…"></textarea>
+          <div class="th-reflect__foot"><span class="th-reflect__saved" data-saved-for="m2-vs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device</span></div>
+        </div>
+
+        <div class="th-applied">
+          <div class="th-applied__col th-applied__col--sport"><h5>Apply in Sport</h5><p>Before your next session, name the feeling you usually try to get rid of — then practise making room for it for 60 seconds instead. Notice you can hold it <em>and</em> warm up well.</p></div>
+          <div class="th-applied__col th-applied__col--life"><h5>Apply in Life</h5><p>Homesickness, social anxiety, exam dread, the sting of being dropped or injured — pick one uncomfortable feeling outside sport this week and practise dropping the rope. The same willingness that lets you compete also lets you live.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 6 · WEEKLY MIND GYM JOURNAL ========== -->
+  <section class="th-sec th-sec--alt" id="week">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">06 · This week's Mind Gym</p>
+        <h2 class="th-h2">The <em>Make Room</em><br>7-day journal</h2>
+        <p class="th-p">Reading about acceptance changes nothing — reps do. This is your training for the week: <strong>one entry a day for seven days.</strong> Each day, once, when a difficult feeling shows up, run the move — name it, make room, drop the rope — then log it here in under a minute. Watch what happens to the <em>struggle</em> across the week.</p>
+
+        <div class="thm-week__intro">
+          <p><strong>How to use it:</strong> tap a day to open it. Jot what showed up, where you felt it, and whether you <em>made room</em> or <em>fought it</em> — no judgement either way, honesty is the training. Tick the day off when you've logged it. Everything saves on this device only, so you can build the streak over the week.</p>
+        </div>
+
+        <div class="thm-week__progress">
+          <div class="thm-week__track"><div class="thm-week__fill" id="weekFill"></div></div>
+          <span class="thm-week__count" id="weekCount">0 / 7 days</span>
+        </div>
+
+        <div class="thm-week" id="weekJournal"><!-- days injected by JS --></div>
+        <button class="thm-week__reset" id="weekReset">Clear this week and start over</button>
+
+        <div class="thm-refcard">
+          <h4>Your "Be Open" pocket card</h4>
+          <ol>
+            <li><strong>Notice</strong> the feeling you'd normally push away.</li>
+            <li><strong>Name it</strong> — "Here's tension," "Here's anxiety." Where is it in your body?</li>
+            <li><strong>Make room</strong> — breathe around it; let it be there.</li>
+            <li><strong>Drop the rope</strong> — stop the tug-of-war.</li>
+            <li><strong>Choose</strong> the one useful thing to do next — and do it.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LOCK IT IN + NEXT ========== -->
+  <section class="th-sec">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">Lock it in</p>
+        <div class="th-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg><p><strong>The rep for this week:</strong> once a day, make room for a feeling you'd normally fight, and log it. Acceptance is half of Being Open — it handles the <em>feelings</em>. Next module tackles the other half: <strong>defusion</strong> — unhooking from the sticky <em>thoughts</em> that try to grab the wheel.</p></div>
+
+        <div class="thm-nextnav">
+          <a href="grow-thrive-module-01.html">
+            <div class="thm-nextnav__dir">&larr; Previous</div>
+            <div class="thm-nextnav__title">01 · Mental Noise</div>
+          </a>
+          <a href="grow-thrive.html#program" class="thm-nextnav--end">
+            <div class="thm-nextnav__dir">Next module &rarr;</div>
+            <div class="thm-nextnav__title">03 · Be Open: Defusion</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="siteFooter">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-grid__brand">
+          <img src="images/logo-vertical.png?v=2" alt="The Performance Act" class="logo-img logo-img--footer">
+          <p class="footer__tagline">Helping People Grow</p>
+          <p class="footer__email"><a href="mailto:info@performance-act.com">info@performance-act.com</a></p>
+        </div>
+        <div class="footer-grid__links">
+          <h4 class="footer__heading">QUICK LINKS</h4>
+          <a href="index.html#about" class="footer__link">About Us</a>
+          <a href="approach.html" class="footer__link">Our Approach</a>
+          <a href="programs.html" class="footer__link">Programs</a>
+          <a href="team.html" class="footer__link">Our Wh&#257;nau</a>
+        </div>
+        <div class="footer-grid__links">
+          <h4 class="footer__heading">GROW</h4>
+          <a href="grow.html" class="footer__link">About GROW</a>
+          <a href="grow-login.html" class="footer__link">Member Login</a>
+        </div>
+        <div class="footer-grid__social">
+          <h4 class="footer__heading">FOLLOW US</h4>
+          <div class="social-links">
+            <a href="https://www.instagram.com/performance__act/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+            <a href="https://www.facebook.com/ThePerformanceAct" target="_blank" rel="noopener" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a href="https://www.linkedin.com/company/performance-act-ltd/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 The Performance Act. All rights reserved. Aotearoa, New Zealand.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- NZ SUPPORT LINES -->
+  <button class="support-line-btn" id="supportLineBtn" aria-label="NZ support lines">
+    <span class="support-line-btn__dot" aria-hidden="true"></span>
+    Immediate Support
+  </button>
+  <div class="support-line-modal" id="supportLineModal" role="dialog" aria-modal="true" aria-labelledby="supportLineTitle" aria-hidden="true">
+    <div class="support-line-modal__backdrop"></div>
+    <div class="support-line-modal__panel">
+      <button class="support-line-modal__close" id="supportLineClose" aria-label="Close support lines"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      <p class="support-line-modal__eyebrow">Aotearoa, New Zealand</p>
+      <h2 class="support-line-modal__title" id="supportLineTitle">Need immediate support?</h2>
+      <p class="support-line-modal__note">The Performance Act is a sport psychology practice, not a crisis or emergency service. If you or someone you care about needs immediate support, please reach out to one of these trusted services below. They are free, confidential, and available 24&#8202;/&#8202;7.</p>
+      <ul class="support-line-modal__list" role="list">
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">1737 &mdash; Need to Talk?</p><p class="sln-resource__desc">Free call or text, any time. Trained counsellors, 24&#47;7.</p></div><a href="tel:1737" class="sln-resource__number">Call or text 1737</a></li>
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">Youthline</p><p class="sln-resource__desc">For young people. Free call or text 234, 24&#47;7.</p></div><a href="tel:0800376633" class="sln-resource__number">0800 376 633</a></li>
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">Lifeline NZ</p><p class="sln-resource__desc">Crisis support and suicide prevention, 24&#47;7.</p></div><a href="tel:0800543354" class="sln-resource__number">0800 543 354</a></li>
+      </ul>
+      <p class="support-line-modal__footer">More resources at <a href="https://www.mentalhealth.org.nz/get-help/in-crisis" target="_blank" rel="noopener">Mental Health Foundation NZ</a>.</p>
+    </div>
+  </div>
+
+  <script src="script.js?v=5"></script>
+  <script>
+  /* =========================================================
+     THRIVE Module 02 — Drop the Rope practice, Name-it labeler,
+     reflection autosave, and the 7-day Make Room journal.
+     All state stays in localStorage on this device.
+     ========================================================= */
+  (function () {
+    var LS = 'thrive_m2_';
+
+    /* ---- Reflection journaling (autosave) ---- */
+    document.querySelectorAll('textarea[data-reflect]').forEach(function (ta) {
+      var key = LS + 'reflect_' + ta.getAttribute('data-reflect');
+      var saved = document.querySelector('[data-saved-for="' + ta.getAttribute('data-reflect') + '"]');
+      try { if (localStorage.getItem(key)) ta.value = localStorage.getItem(key); } catch (e) {}
+      if (saved) saved.style.opacity = ta.value ? '1' : '0';
+      var t;
+      ta.addEventListener('input', function () {
+        if (saved) saved.style.opacity = '0.4';
+        clearTimeout(t);
+        t = setTimeout(function () {
+          try { localStorage.setItem(key, ta.value); } catch (e) {}
+          if (saved) saved.style.opacity = ta.value ? '1' : '0';
+        }, 400);
+      });
+    });
+
+    /* ================= DROP THE ROPE (stepper) ================= */
+    var STEPS = [
+      { title: 'Settle', breath: false, text: 'Sit or stand tall. Feet flat on the floor. Let your eyes soften or gently close. Take one slow breath — and make the out-breath longer than the in-breath.' },
+      { title: 'Notice', breath: false, text: 'Bring to mind a feeling you usually try to get rid of — nerves, doubt, restlessness. Let it show up. Scan your body and find where it lives.' },
+      { title: 'Name it', breath: false, text: 'Silently label it, kindly: "Here\'s tension." "Here\'s anxiety." Naming isn\'t fixing — it\'s just noticing what\'s here, with a bit of curiosity.' },
+      { title: 'Breathe around it', breath: true, text: 'Follow the circle. Imagine your breath flowing into and around the sensation. You\'re not getting rid of it — you\'re making space for it to be there.' },
+      { title: 'Drop the rope', breath: true, text: 'Picture a tug-of-war with the feeling. As long as you pull, you\'re stuck. Now… let go of the rope. Let the feeling be there without fighting it. Notice: you\'re still here, still okay.' },
+      { title: 'Come back & choose', breath: false, text: 'Open your eyes. The feeling may still be here — that\'s completely fine. Ask yourself: what\'s the one useful thing I can do next? Then go and do it.' }
+    ];
+    var rIdx = 0;
+    var rCount = document.getElementById('ropeCount');
+    var rTitle = document.getElementById('ropeTitle');
+    var rText  = document.getElementById('ropeText');
+    var rBreath= document.getElementById('ropeBreath');
+    var rPrev  = document.getElementById('ropePrev');
+    var rNext  = document.getElementById('ropeNext');
+    var rDots  = document.getElementById('ropeDots');
+    STEPS.forEach(function () { var s = document.createElement('span'); rDots.appendChild(s); });
+    function renderRope() {
+      var s = STEPS[rIdx];
+      rCount.textContent = 'Step ' + (rIdx + 1) + ' of ' + STEPS.length;
+      rTitle.textContent = s.title;
+      rText.textContent = s.text;
+      rBreath.classList.toggle('is-on', !!s.breath);
+      rPrev.disabled = (rIdx === 0);
+      rNext.textContent = (rIdx === STEPS.length - 1) ? 'Finish' : 'Next step →';
+      rDots.querySelectorAll('span').forEach(function (d, i) { d.classList.toggle('is-on', i === rIdx); });
+    }
+    rNext.addEventListener('click', function () {
+      if (rIdx < STEPS.length - 1) { rIdx++; renderRope(); }
+      else { rIdx = 0; renderRope(); rNext.blur(); }
+    });
+    rPrev.addEventListener('click', function () { if (rIdx > 0) { rIdx--; renderRope(); } });
+    renderRope();
+
+    /* ================= NAME-IT LABELER ================= */
+    var loc = null, sens = null;
+    function singleSelect(containerId, onPick) {
+      document.querySelectorAll('#' + containerId + ' .thm-chip').forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          var already = chip.getAttribute('aria-pressed') === 'true';
+          document.querySelectorAll('#' + containerId + ' .thm-chip').forEach(function (c) { c.setAttribute('aria-pressed', 'false'); });
+          if (!already) { chip.setAttribute('aria-pressed', 'true'); onPick(chip.getAttribute('data-val')); }
+          else { onPick(null); }
+        });
+      });
+    }
+    var out = document.getElementById('labelOut');
+    function renderLabel() {
+      out.innerHTML = 'Right now, I notice something <b>' + (sens || '&hellip;') + '</b> in my <b>' + (loc || '&hellip;') + '</b>';
+    }
+    singleSelect('locChips', function (v) { loc = v; renderLabel(); });
+    singleSelect('sensChips', function (v) { sens = v; renderLabel(); });
+
+    /* ================= 7-DAY MAKE ROOM JOURNAL ================= */
+    var DAYS = ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'];
+    var journal = document.getElementById('weekJournal');
+    var weekFill = document.getElementById('weekFill');
+    var weekCount = document.getElementById('weekCount');
+
+    function dKey(i, f) { return LS + 'day' + i + '_' + f; }
+
+    function buildDay(i) {
+      var wrap = document.createElement('div');
+      wrap.className = 'thm-day';
+      wrap.innerHTML =
+        '<button class="thm-day__trigger" aria-expanded="false" aria-controls="dayp-' + i + '">' +
+          '<span class="thm-day__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>' +
+          '<span class="thm-day__label">' + DAYS[i] + '</span>' +
+          '<span class="thm-day__state" data-state></span>' +
+          '<svg class="thm-day__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>' +
+        '</button>' +
+        '<div class="thm-day__panel" id="dayp-' + i + '" hidden><div class="thm-day__body">' +
+          '<div class="thm-day__field"><p class="thm-day__q">What difficult feeling showed up today?</p><textarea data-day="' + i + '" data-f="feeling" placeholder="Today, what showed up was…"></textarea></div>' +
+          '<div class="thm-day__field"><p class="thm-day__q">Where did you feel it, and what did you name it?</p><textarea data-day="' + i + '" data-f="where" placeholder="I felt it in my… I named it…"></textarea></div>' +
+          '<div class="thm-day__field"><p class="thm-day__q">In that moment, did you make room or fight it?</p>' +
+            '<div class="thm-toggle" data-day="' + i + '">' +
+              '<button type="button" data-choice="room" aria-pressed="false">I made room</button>' +
+              '<button type="button" data-choice="fought" aria-pressed="false">I fought it</button>' +
+            '</div></div>' +
+          '<div class="thm-day__field"><p class="thm-day__q">One line — what happened next?</p><textarea data-day="' + i + '" data-f="next" placeholder="What I did next…"></textarea></div>' +
+          '<span class="thm-day__save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device as you type</span>' +
+        '</div></div>';
+      journal.appendChild(wrap);
+
+      var trigger = wrap.querySelector('.thm-day__trigger');
+      var panel = wrap.querySelector('.thm-day__panel');
+      trigger.addEventListener('click', function () {
+        var open = trigger.getAttribute('aria-expanded') === 'true';
+        trigger.setAttribute('aria-expanded', open ? 'false' : 'true');
+        wrap.classList.toggle('is-open', !open);
+        if (open) panel.setAttribute('hidden', ''); else panel.removeAttribute('hidden');
+      });
+
+      // textareas
+      wrap.querySelectorAll('textarea').forEach(function (ta) {
+        var key = dKey(i, ta.getAttribute('data-f'));
+        try { if (localStorage.getItem(key)) ta.value = localStorage.getItem(key); } catch (e) {}
+        var t;
+        ta.addEventListener('input', function () {
+          clearTimeout(t);
+          t = setTimeout(function () { try { localStorage.setItem(key, ta.value); } catch (e) {} refreshDay(i); }, 350);
+        });
+      });
+      // toggle
+      var savedChoice = null; try { savedChoice = localStorage.getItem(dKey(i, 'choice')); } catch (e) {}
+      wrap.querySelectorAll('.thm-toggle button').forEach(function (btn) {
+        if (savedChoice === btn.getAttribute('data-choice')) btn.setAttribute('aria-pressed', 'true');
+        btn.addEventListener('click', function () {
+          var choice = btn.getAttribute('data-choice');
+          var isOn = btn.getAttribute('aria-pressed') === 'true';
+          wrap.querySelectorAll('.thm-toggle button').forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+          if (!isOn) { btn.setAttribute('aria-pressed', 'true'); try { localStorage.setItem(dKey(i, 'choice'), choice); } catch (e) {} }
+          else { try { localStorage.removeItem(dKey(i, 'choice')); } catch (e) {} }
+          refreshDay(i);
+        });
+      });
+
+      refreshDay(i);
+    }
+
+    function dayLogged(i) {
+      try {
+        return !!(localStorage.getItem(dKey(i, 'feeling')) || localStorage.getItem(dKey(i, 'where')) ||
+                  localStorage.getItem(dKey(i, 'next')) || localStorage.getItem(dKey(i, 'choice')));
+      } catch (e) { return false; }
+    }
+
+    function refreshDay(i) {
+      var wrap = journal.children[i];
+      var logged = dayLogged(i);
+      wrap.classList.toggle('is-done', logged);
+      var state = wrap.querySelector('[data-state]');
+      var choice = null; try { choice = localStorage.getItem(dKey(i, 'choice')); } catch (e) {}
+      state.textContent = logged ? (choice === 'room' ? 'Made room' : (choice === 'fought' ? 'Fought it' : 'Logged')) : 'Not yet';
+      updateProgress();
+    }
+
+    function updateProgress() {
+      var done = 0;
+      for (var i = 0; i < DAYS.length; i++) { if (dayLogged(i)) done++; }
+      weekFill.style.width = Math.round(done / DAYS.length * 100) + '%';
+      weekCount.textContent = done + ' / 7 days';
+    }
+
+    DAYS.forEach(function (_, i) { buildDay(i); });
+    updateProgress();
+
+    document.getElementById('weekReset').addEventListener('click', function () {
+      if (!window.confirm('Clear all 7 days of this week\'s journal on this device? This cannot be undone.')) return;
+      DAYS.forEach(function (_, i) {
+        ['feeling', 'where', 'next', 'choice'].forEach(function (f) { try { localStorage.removeItem(dKey(i, f)); } catch (e) {} });
+      });
+      journal.innerHTML = '';
+      DAYS.forEach(function (_, i) { buildDay(i); });
+      updateProgress();
+    });
+  })();
+  </script>
+
+</body>
+</html>
