@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Hidden / unlisted: not indexed and not linked from anywhere on the public site -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>THRIVE · Module 05 — Engage · Do What Matters: Values | The Performance Act</title>
+  <meta name="description" content="THRIVE Module 05 — values: your chosen directions in life and sport. With an interactive Value-or-Goal game, a values card-sort, a values-across-your-life grid, and deep journaling.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="style.css?v=17">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=2">
+
+  <style>
+    /* ============================================================
+       THRIVE MODULE PAGE — scoped to .th / .thm-. Black + yellow.
+       ============================================================ */
+    .th { --ink:#ECECEC; --muted:#9A9A9A; --line:rgba(255,255,255,0.1); background:#050505; }
+    .th-sec { padding: clamp(52px, 8vw, 92px) 0; }
+    .th-sec--alt { background:#0b0b0b; }
+    .th-wrap { max-width: 820px; margin: 0 auto; }
+    .th-eyebrow { font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--yellow); margin-bottom:14px; }
+    .th-h2 { font-family:var(--font-heading); font-weight:700; text-transform:uppercase; font-size:clamp(1.7rem,4vw,2.7rem); line-height:1.05; color:#fff; margin-bottom:18px; }
+    .th-h2 em { color:var(--yellow); font-style:normal; }
+    .th-p { color:var(--ink); line-height:1.7; font-weight:300; margin:0 0 16px; }
+    .th-p strong { color:#fff; font-weight:600; }
+    .th-p em { color:#fff; font-style:italic; }
+
+    /* MODULE HERO */
+    .thm-hero { position:relative; overflow:hidden; background:#050505; padding:clamp(120px,16vw,180px) 0 clamp(44px,7vw,72px); border-bottom:1px solid var(--line); }
+    .thm-hero__bg { position:absolute; inset:0; background:url('images/athletics-track.png') center 30% / cover no-repeat; opacity:0.20; filter:grayscale(0.4) contrast(1.05); }
+    .thm-hero::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(5,5,5,0.55) 0%, rgba(5,5,5,0.92) 100%); }
+    .thm-hero .container { position:relative; z-index:2; }
+    .thm-back { display:inline-flex; align-items:center; gap:8px; font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--yellow); margin-bottom:26px; }
+    .thm-back svg { width:16px; height:16px; }
+    .thm-hero__num { font-family:var(--font-heading); font-weight:700; font-size:clamp(3rem,10vw,5.5rem); line-height:0.9; color:var(--yellow); }
+    .thm-hero__pill { display:inline-block; font-family:var(--font-heading); font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:#000; background:var(--yellow); padding:4px 11px; margin-left:14px; vertical-align:middle; }
+    .thm-hero__kicker { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+    .thm-hero__title { font-family:var(--font-heading); font-weight:700; text-transform:uppercase; font-size:clamp(1.9rem,5.4vw,3.3rem); line-height:1.02; color:#fff; margin:6px 0 18px; }
+    .thm-hero__meta { display:flex; flex-wrap:wrap; gap:8px 22px; font-size:0.86rem; color:var(--muted); letter-spacing:0.08em; text-transform:uppercase; font-family:var(--font-heading); }
+    .thm-hero__meta span { display:inline-flex; align-items:center; gap:7px; }
+    .thm-hero__meta svg { width:15px; height:15px; color:var(--yellow); }
+
+    .thm-obj { background:#111; border:1px solid var(--line); border-left:4px solid var(--yellow); padding:26px 28px; margin-top:34px; }
+    .thm-obj h3 { font-family:var(--font-heading); font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--yellow); margin-bottom:14px; }
+    .thm-obj ul { margin:0; padding:0; list-style:none; }
+    .thm-obj li { color:var(--ink); font-size:0.98rem; line-height:1.5; font-weight:300; padding:7px 0 7px 26px; position:relative; }
+    .thm-obj li::before { content:''; position:absolute; left:0; top:13px; width:12px; height:2px; background:var(--yellow); }
+
+    .thm-toc { display:flex; flex-wrap:wrap; gap:10px; margin-top:30px; }
+    .thm-toc a { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink); border:1px solid var(--line); padding:9px 15px; transition:.2s; }
+    .thm-toc a:hover { border-color:var(--yellow); color:var(--yellow); }
+
+    .th-block__label { display:flex; align-items:center; gap:10px; font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--yellow); margin-bottom:12px; }
+    .th-block__label::before { content:''; width:26px; height:2px; background:var(--yellow); }
+
+    .th-quote { border-left:3px solid var(--yellow); padding:6px 0 6px 22px; margin:26px 0; }
+    .th-quote p { font-family:var(--font-heading); font-weight:500; font-size:clamp(1.2rem,2.8vw,1.7rem); line-height:1.3; color:#fff; margin:0; }
+    .th-quote cite { display:block; margin-top:12px; font-style:normal; font-size:0.86rem; color:var(--muted); letter-spacing:0.04em; }
+
+    /* value vs goal two-up */
+    .thm-vs { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:26px 0; }
+    .thm-vs__col { background:#141414; border:1px solid var(--line); padding:22px 24px; }
+    .thm-vs__col--goal { border-top:3px solid #6a6a6a; }
+    .thm-vs__col--value { border-top:3px solid var(--yellow); }
+    .thm-vs__tag { font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:10px; }
+    .thm-vs__col--goal .thm-vs__tag { color:#9a9a9a; }
+    .thm-vs__col--value .thm-vs__tag { color:var(--yellow); }
+    .thm-vs__col ul { list-style:none; margin:0; padding:0; }
+    .thm-vs__col li { color:var(--ink); font-size:0.94rem; line-height:1.5; font-weight:300; padding:6px 0 6px 20px; position:relative; }
+    .thm-vs__col li::before { content:''; position:absolute; left:0; top:12px; width:6px; height:6px; background:currentColor; opacity:0.6; }
+    .thm-vs__col--value li::before { background:var(--yellow); opacity:1; }
+
+    /* generic exercise shell */
+    .thm-ex { background:#0d0d0d; border:1px solid rgba(255,229,0,0.22); border-radius:6px; overflow:hidden; margin:28px 0; }
+    .thm-ex__head { background:rgba(255,229,0,0.08); padding:18px 26px; border-bottom:1px solid rgba(255,229,0,0.2); }
+    .thm-ex__eyebrow { font-family:var(--font-heading); font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--yellow); margin-bottom:4px; }
+    .thm-ex__name { font-family:var(--font-heading); font-size:1.35rem; text-transform:uppercase; color:#fff; letter-spacing:0.02em; }
+    .thm-ex__body { padding:28px 26px; }
+
+    /* VALUE OR GOAL classifier */
+    .thm-vg { text-align:center; }
+    .thm-vg__count { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-bottom:14px; }
+    .thm-vg__statement { font-family:var(--font-heading); font-weight:500; font-size:clamp(1.3rem,3.4vw,1.9rem); line-height:1.25; color:#fff; min-height:2.4em; display:flex; align-items:center; justify-content:center; margin-bottom:20px; }
+    .thm-vg__statement span { }
+    .thm-vg__btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+    .thm-vg__btns .btn { min-width:140px; }
+    .thm-vg__fb { margin-top:20px; min-height:4.5em; }
+    .thm-vg__verdict { font-family:var(--font-heading); font-size:1.05rem; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:6px; }
+    .thm-vg__verdict.ok { color:var(--yellow); }
+    .thm-vg__verdict.no { color:#c0562e; }
+    .thm-vg__why { color:var(--ink); font-size:0.95rem; line-height:1.6; font-weight:300; max-width:480px; margin:0 auto 16px; }
+    .thm-vg__score { font-family:var(--font-heading); font-size:0.8rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); margin-top:8px; }
+    .thm-vg__score b { color:var(--yellow); }
+
+    /* VALUES CARD-SORT */
+    .thm-sort__screen { display:none; }
+    .thm-sort__screen.is-active { display:block; }
+    .thm-sort__intro { text-align:center; }
+    .thm-sort__intro p { color:var(--ink); font-size:1rem; line-height:1.65; font-weight:300; max-width:480px; margin:0 auto 22px; }
+    .thm-sort__progress { height:6px; background:rgba(255,255,255,0.1); overflow:hidden; margin-bottom:8px; }
+    .thm-sort__fill { height:100%; width:0; background:var(--yellow); transition:width .3s ease; }
+    .thm-sort__meta { display:flex; justify-content:space-between; font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); margin-bottom:24px; }
+    .thm-sort__meta b { color:var(--yellow); }
+    .thm-card { background:linear-gradient(160deg,#1b1b1b,#111); border:1px solid var(--line); border-top:4px solid var(--yellow); padding:38px 28px; text-align:center; margin-bottom:22px; min-height:190px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+    .thm-card__name { font-family:var(--font-heading); font-weight:700; text-transform:uppercase; font-size:clamp(2rem,6vw,3rem); color:#fff; line-height:1; letter-spacing:0.01em; }
+    .thm-card__desc { color:var(--ink); font-size:1rem; line-height:1.55; font-weight:300; margin-top:14px; max-width:360px; }
+    .thm-sort__btns { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+    .thm-sort__btns button { font-family:var(--font-heading); text-transform:uppercase; letter-spacing:0.03em; font-size:0.82rem; padding:15px 10px; border:1px solid var(--line); background:#141414; color:var(--ink); cursor:pointer; transition:.15s; }
+    .thm-sort__btns button:hover { border-color:var(--yellow); }
+    .thm-sort__btns .sort-core { border-color:rgba(255,229,0,0.5); color:var(--yellow); }
+    .thm-sort__btns .sort-core:hover { background:var(--yellow); color:#000; }
+    .thm-sort__back { display:block; margin:16px auto 0; background:none; border:none; color:var(--muted); font-size:0.82rem; text-decoration:underline; cursor:pointer; }
+    .thm-sort__back:hover { color:#fff; }
+    .thm-sort__back[disabled] { opacity:0; pointer-events:none; }
+
+    .thm-narrow__head { text-align:center; margin-bottom:22px; }
+    .thm-narrow__head h3 { font-family:var(--font-heading); font-size:clamp(1.3rem,3.4vw,1.8rem); text-transform:uppercase; color:#fff; margin-bottom:8px; }
+    .thm-narrow__counter { font-family:var(--font-heading); letter-spacing:0.06em; text-transform:uppercase; color:var(--yellow); font-size:0.9rem; }
+    .thm-narrow__group-label { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin:6px 0 12px; }
+    .thm-narrow__chips { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:22px; }
+    .thm-vchip { font-family:var(--font-heading); text-transform:uppercase; letter-spacing:0.03em; font-size:0.9rem; color:var(--ink); background:#191919; border:1px solid var(--line); padding:11px 16px; cursor:pointer; transition:.15s; }
+    .thm-vchip:hover { border-color:rgba(255,229,0,0.5); }
+    .thm-vchip[aria-pressed="true"] { background:var(--yellow); border-color:var(--yellow); color:#000; }
+    .thm-vchip[disabled] { opacity:0.4; cursor:not-allowed; }
+
+    .thm-result__grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; margin:22px 0; }
+    .thm-vfinal { background:#141414; border:1px solid var(--line); border-left:4px solid var(--yellow); padding:18px 18px; }
+    .thm-vfinal__name { font-family:var(--font-heading); font-weight:600; text-transform:uppercase; color:var(--yellow); font-size:1.15rem; letter-spacing:0.02em; }
+    .thm-vfinal__desc { color:var(--ink); font-size:0.86rem; line-height:1.5; font-weight:300; margin-top:6px; }
+    .thm-sort__saved { text-align:center; color:var(--muted); font-size:0.82rem; margin-top:6px; }
+
+    /* VALUES ACROSS DOMAINS */
+    .thm-yourvals { background:#111; border:1px solid var(--line); border-left:4px solid var(--yellow); padding:16px 20px; margin:0 0 22px; }
+    .thm-yourvals__label { font-family:var(--font-heading); font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:10px; }
+    .thm-yourvals__chips { display:flex; flex-wrap:wrap; gap:8px; }
+    .thm-yourvals__chips span { font-family:var(--font-heading); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.03em; color:#000; background:var(--yellow); padding:5px 11px; }
+    .thm-yourvals__empty { color:var(--muted); font-size:0.9rem; font-style:italic; }
+    .thm-domains { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .thm-domain { background:#141414; border:1px solid var(--line); padding:20px 22px; }
+    .thm-domain h4 { font-family:var(--font-heading); font-size:1rem; text-transform:uppercase; color:#fff; letter-spacing:0.02em; margin-bottom:4px; }
+    .thm-domain__sub { color:var(--muted); font-size:0.82rem; margin-bottom:12px; font-weight:300; }
+    .thm-domain textarea { width:100%; min-height:80px; background:#0a0a0a; border:1px solid var(--line); color:#fff; font-family:var(--font-body); font-size:0.94rem; line-height:1.55; font-weight:300; padding:11px 13px; resize:vertical; }
+    .thm-domain textarea:focus { outline:none; border-color:var(--yellow); }
+
+    /* REFLECTION */
+    .th-reflect { background:#111; border:1px solid var(--line); border-radius:4px; padding:24px 26px; margin:24px 0; }
+    .th-reflect__q { color:#fff; font-size:1.02rem; line-height:1.5; font-weight:400; margin:0 0 4px; }
+    .th-reflect__hint { color:var(--muted); font-size:0.86rem; line-height:1.5; font-weight:300; margin:0 0 14px; }
+    .th-reflect textarea { width:100%; min-height:96px; background:#0a0a0a; border:1px solid var(--line); color:#fff; font-family:var(--font-body); font-size:0.98rem; line-height:1.6; font-weight:300; padding:14px 16px; resize:vertical; }
+    .th-reflect textarea:focus { outline:none; border-color:var(--yellow); }
+    .th-reflect__foot { display:flex; align-items:center; justify-content:flex-end; gap:12px; margin-top:10px; }
+    .th-reflect__saved { font-size:0.78rem; color:var(--muted); letter-spacing:0.04em; display:inline-flex; align-items:center; gap:6px; }
+    .th-reflect__saved svg { width:13px; height:13px; color:var(--yellow); }
+
+    /* APPLIED grid */
+    .th-applied { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:24px 0; }
+    .th-applied__col { background:#141414; border:1px solid var(--line); padding:20px 22px; }
+    .th-applied__col--sport { border-top:3px solid var(--yellow); }
+    .th-applied__col--life { border-top:3px solid #fff; }
+    .th-applied__col h5 { font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:8px; }
+    .th-applied__col--sport h5 { color:var(--yellow); }
+    .th-applied__col--life h5 { color:#fff; }
+    .th-applied__col p { color:var(--ink); font-size:0.92rem; line-height:1.6; font-weight:300; margin:0; }
+
+    /* PRACTICAL IDEAS */
+    .thm-ideas { list-style:none; margin:18px 0 0; padding:0; }
+    .thm-ideas li { display:flex; gap:14px; align-items:flex-start; background:#141414; border:1px solid var(--line); padding:16px 18px; margin-bottom:10px; }
+    .thm-ideas__tag { flex-shrink:0; font-family:var(--font-heading); font-size:0.64rem; letter-spacing:0.08em; text-transform:uppercase; color:#000; background:var(--yellow); padding:4px 9px; margin-top:2px; }
+    .thm-ideas p { color:var(--ink); font-size:0.95rem; line-height:1.6; font-weight:300; margin:0; }
+    .thm-ideas strong { color:#fff; font-weight:600; }
+
+    /* 7-DAY LOG */
+    .thm-week__intro { background:#111; border:1px solid var(--line); border-left:4px solid var(--yellow); padding:22px 26px; margin:24px 0 8px; }
+    .thm-week__intro p { color:var(--ink); font-size:0.98rem; line-height:1.65; font-weight:300; margin:0; }
+    .thm-week__intro strong { color:#fff; font-weight:600; }
+    .thm-week__progress { display:flex; align-items:center; gap:16px; margin:20px 0 18px; }
+    .thm-week__track { flex:1; height:10px; background:rgba(255,255,255,0.08); border-radius:100px; overflow:hidden; }
+    .thm-week__fill { height:100%; width:0; background:var(--yellow); transition:width .5s ease; }
+    .thm-week__count { font-family:var(--font-heading); font-size:0.82rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--yellow); white-space:nowrap; }
+    .thm-day { border:1px solid var(--line); border-bottom:none; background:#0f0f0f; }
+    .thm-day:last-child { border-bottom:1px solid var(--line); }
+    .thm-day__trigger { width:100%; display:flex; align-items:center; gap:16px; padding:16px 20px; background:none; border:none; cursor:pointer; text-align:left; }
+    .thm-day__trigger:hover { background:rgba(255,255,255,0.03); }
+    .thm-day__dot { flex-shrink:0; width:26px; height:26px; border-radius:50%; border:2px solid var(--muted); display:flex; align-items:center; justify-content:center; }
+    .thm-day__dot svg { width:15px; height:15px; color:#000; opacity:0; }
+    .thm-day.is-done .thm-day__dot { background:var(--yellow); border-color:var(--yellow); }
+    .thm-day.is-done .thm-day__dot svg { opacity:1; }
+    .thm-day__label { flex:1; font-family:var(--font-heading); font-size:1rem; text-transform:uppercase; letter-spacing:0.03em; color:#fff; }
+    .thm-day__state { font-size:0.78rem; color:var(--muted); font-family:var(--font-heading); letter-spacing:0.05em; text-transform:uppercase; }
+    .thm-day__caret { width:18px; height:18px; color:var(--yellow); transition:transform .3s ease; }
+    .thm-day.is-open .thm-day__caret { transform:rotate(180deg); }
+    .thm-day__panel[hidden] { display:none; }
+    .thm-day__body { padding:4px 20px 22px; }
+    .thm-day__field { margin-bottom:14px; }
+    .thm-day__q { color:#fff; font-size:0.92rem; font-weight:400; margin:0 0 6px; }
+    .thm-day__body textarea { width:100%; min-height:56px; background:#0a0a0a; border:1px solid var(--line); color:#fff; font-family:var(--font-body); font-size:0.94rem; line-height:1.55; font-weight:300; padding:11px 13px; resize:vertical; }
+    .thm-day__body textarea:focus { outline:none; border-color:var(--yellow); }
+    .thm-toggle { display:flex; gap:8px; flex-wrap:wrap; }
+    .thm-toggle button { flex:1 1 90px; background:#191919; border:1px solid var(--line); color:var(--ink); font-family:var(--font-body); font-size:0.88rem; padding:10px 10px; cursor:pointer; transition:.15s; }
+    .thm-toggle button[aria-pressed="true"] { background:var(--yellow); border-color:var(--yellow); color:#000; font-weight:500; }
+    .thm-day__save { display:inline-flex; align-items:center; gap:7px; margin-top:6px; font-size:0.78rem; color:var(--muted); }
+    .thm-day__save svg { width:13px; height:13px; color:var(--yellow); }
+    .thm-week__reset { margin-top:16px; background:none; border:none; color:var(--muted); font-size:0.82rem; text-decoration:underline; cursor:pointer; }
+    .thm-week__reset:hover { color:#fff; }
+
+    .thm-refcard { background:#111; border:1px solid rgba(255,229,0,0.3); padding:26px 30px; margin:26px 0; }
+    .thm-refcard h4 { font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--yellow); margin-bottom:14px; }
+    .thm-refcard ol { margin:0; padding-left:22px; color:var(--ink); }
+    .thm-refcard li { font-size:0.96rem; line-height:1.6; font-weight:300; padding:4px 0; }
+    .thm-refcard li strong { color:#fff; font-weight:600; }
+
+    .th-lock { background:rgba(255,229,0,0.07); border:1px solid rgba(255,229,0,0.22); padding:18px 22px; display:flex; gap:14px; align-items:flex-start; margin-top:8px; }
+    .th-lock svg { width:22px; height:22px; color:var(--yellow); flex-shrink:0; margin-top:2px; }
+    .th-lock p { color:var(--ink); font-size:0.96rem; line-height:1.6; font-weight:300; margin:0; }
+    .th-lock strong { color:#fff; font-weight:600; }
+
+    .thm-nextnav { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:20px; }
+    .thm-nextnav a { display:block; background:#111; border:1px solid var(--line); padding:22px 24px; transition:.2s; }
+    .thm-nextnav a:hover { border-color:var(--yellow); }
+    .thm-nextnav__dir { font-family:var(--font-heading); font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+    .thm-nextnav__title { font-family:var(--font-heading); font-size:1.05rem; color:#fff; text-transform:uppercase; letter-spacing:0.02em; }
+    .thm-nextnav a:hover .thm-nextnav__title { color:var(--yellow); }
+    .thm-nextnav--end { text-align:right; }
+
+    @media (max-width:720px) {
+      .thm-vs, .th-applied, .thm-nextnav, .thm-domains { grid-template-columns:1fr; }
+      .thm-nextnav--end { text-align:left; }
+      .thm-sort__btns { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body class="th">
+
+  <!-- ========== HEADER / NAV (standard — no THRIVE link anywhere) ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="images/logo-horizontal.png?v=2" alt="The Performance Act" class="logo-img logo-img--header">
+      </a>
+      <nav class="header__nav" id="mainNav" aria-label="Primary">
+        <div class="nav-item nav-item--has-dropdown">
+          <a href="index.html#about" class="nav-link nav-link--has-dropdown" aria-haspopup="true" aria-expanded="false">ABOUT US
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown" role="menu">
+            <a href="approach.html" class="nav-dropdown__link" role="menuitem">Approach</a>
+            <a href="index.html#pillars" class="nav-dropdown__link" role="menuitem">Our Pact</a>
+            <a href="team.html" class="nav-dropdown__link" role="menuitem">Team</a>
+          </div>
+        </div>
+        <a href="programs.html" class="nav-link">SUPPORT &amp; SERVICES</a>
+        <div class="nav-item nav-item--has-dropdown">
+          <a href="grow.html" class="nav-link nav-link--has-dropdown" aria-haspopup="true" aria-expanded="false">GROW PLATFORM
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown" role="menu">
+            <a href="grow.html" class="nav-dropdown__link" role="menuitem">About GROW</a>
+            <a href="grow-login.html" class="nav-dropdown__link" role="menuitem">Member Login</a>
+          </div>
+        </div>
+        <a href="blog.html" class="nav-link">RESOURCES</a>
+        <a href="contact.html" class="nav-link">CONTACT</a>
+      </nav>
+      <div class="header__actions">
+        <a href="contact.html" class="btn btn--primary btn--sm">Let&#8217;s Have a K&#333;rero</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <nav class="mobile-nav__links" aria-label="Mobile">
+      <div class="mobile-nav__group">
+        <button class="mobile-nav__group-toggle" aria-expanded="false" aria-controls="mobileAboutSub">ABOUT US
+          <svg class="mobile-nav__group-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="mobile-nav__sub" id="mobileAboutSub">
+          <a href="approach.html" class="mobile-nav__sublink">Approach</a>
+          <a href="index.html#pillars" class="mobile-nav__sublink">Our Pact</a>
+          <a href="team.html" class="mobile-nav__sublink">Team</a>
+        </div>
+      </div>
+      <a href="programs.html" class="mobile-nav__link">SUPPORT &amp; SERVICES</a>
+      <div class="mobile-nav__group">
+        <button class="mobile-nav__group-toggle" aria-expanded="false" aria-controls="mobileGrowSub">GROW PLATFORM
+          <svg class="mobile-nav__group-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="mobile-nav__sub" id="mobileGrowSub">
+          <a href="grow.html" class="mobile-nav__sublink">About GROW</a>
+          <a href="grow-login.html" class="mobile-nav__sublink">Member Login</a>
+        </div>
+      </div>
+      <a href="blog.html" class="mobile-nav__link">RESOURCES</a>
+      <a href="contact.html" class="mobile-nav__link">CONTACT</a>
+      <div class="mobile-nav__actions">
+        <a href="contact.html" class="btn btn--primary">Let&#8217;s Have a K&#333;rero</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- ========== MODULE HERO ========== -->
+  <section class="thm-hero">
+    <div class="thm-hero__bg"></div>
+    <div class="container">
+      <a href="grow-thrive.html#program" class="thm-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> THRIVE program</a>
+      <div class="th-wrap">
+        <div class="thm-hero__num">05<span class="thm-hero__pill">E · Do What Matters</span></div>
+        <p class="thm-hero__kicker">Engage I · The third move of ACE</p>
+        <h1 class="thm-hero__title">Do What Matters: Values</h1>
+        <div class="thm-hero__meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> ~24 minutes</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v14H4z"/><path d="M4 9h16"/></svg> Play · sort · reflect</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg> Private to you</span>
+        </div>
+
+        <div class="thm-obj">
+          <h3>By the end of this module you can</h3>
+          <ul>
+            <li>Tell the difference between a <strong>value</strong> and a <strong>goal</strong> — and why it matters.</li>
+            <li>Name your <strong>top five core values</strong> using an interactive card-sort.</li>
+            <li>See how those values give you direction across sport, study, relationships and self.</li>
+            <li>Start living one value on purpose &mdash; the <strong>E of ACE</strong>.</li>
+          </ul>
+        </div>
+
+        <nav class="thm-toc" aria-label="On this page">
+          <a href="#move">The move</a>
+          <a href="#vsgoals">Values vs goals</a>
+          <a href="#game">Value or goal?</a>
+          <a href="#sort">Sort your values</a>
+          <a href="#domains">Across your life</a>
+          <a href="#reflect">The 80th birthday</a>
+          <a href="#week">This week</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 1 · THE MOVE ========== -->
+  <section class="th-sec" id="move">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">01 · The move</p>
+        <h2 class="th-h2">Now &mdash; what do you<br>point yourself <em>toward?</em></h2>
+        <p class="th-p">You can now <strong>Acknowledge</strong> (open up to thoughts and feelings) and <strong>Connect</strong> (come back to the present). But being open and present isn&rsquo;t the point on its own &mdash; it&rsquo;s what lets you do the thing that actually matters. That&rsquo;s <strong>Engage</strong>, the E of ACE, and it starts with the most important question in the whole program: <em>what do you want to stand for?</em></p>
+        <p class="th-p">The answer is your <strong>values</strong> &mdash; your chosen directions in life. They&rsquo;re how you want to <em>behave</em> and what you want to <em>stand for</em>, moment to moment. Not rules imposed on you. Not other people&rsquo;s expectations. Yours.</p>
+        <div class="th-quote">
+          <p>"Goals are the mountains you climb. Values are the compass in your hand &mdash; they point the same way whether you&rsquo;re at the summit or flat on your back at the bottom."</p>
+          <cite>— Values as direction</cite>
+        </div>
+        <p class="th-p">Here&rsquo;s why this matters so much for you, right now. Your teens and twenties are the years you figure out <em>who you are</em>. Chasing goal after goal while ignoring your values is one of the fastest routes to burnout &mdash; you can win and still feel empty. But knowing your values gives you a direction that never runs out, in sport <em>and</em> in the much bigger life around it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 2 · VALUES VS GOALS ========== -->
+  <section class="th-sec th-sec--alt" id="vsgoals">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">02 · The key distinction</p>
+        <h2 class="th-h2">A value is not<br><em>a goal</em></h2>
+        <p class="th-p">This distinction changes everything, so let&rsquo;s make it crisp. A <strong>goal</strong> is something you can complete and tick off &mdash; win the final, make the team, pass the exam. A <strong>value</strong> is a direction you can always keep moving in &mdash; compete with courage, be a great teammate, keep learning. You never &ldquo;finish&rdquo; a value.</p>
+        <div class="thm-vs">
+          <div class="thm-vs__col thm-vs__col--goal">
+            <div class="thm-vs__tag">A goal&hellip;</div>
+            <ul>
+              <li>Can be achieved and crossed off</li>
+              <li>Is in the future</li>
+              <li>Is often outside your full control</li>
+              <li>Can leave you empty once you hit it</li>
+              <li>&ldquo;Win the championship.&rdquo;</li>
+            </ul>
+          </div>
+          <div class="thm-vs__col thm-vs__col--value">
+            <div class="thm-vs__tag">A value&hellip;</div>
+            <ul>
+              <li>Is a direction, never &ldquo;done&rdquo;</li>
+              <li>Is available right now, in this moment</li>
+              <li>Is always within your control</li>
+              <li>Gives meaning whatever the result</li>
+              <li>&ldquo;Compete with courage and heart.&rdquo;</li>
+            </ul>
+          </div>
+        </div>
+        <p class="th-p">Goals still matter &mdash; they&rsquo;re useful mountains to aim at. But when a goal is snatched away (injury, deselection, a bad draw), your <em>values</em> are still completely available. You can play with courage in a final you lose. You can be a great teammate from the bench. That&rsquo;s why values are the engine of a life that doesn&rsquo;t collapse when results don&rsquo;t go your way.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 3 · VALUE OR GOAL? (GAME) ========== -->
+  <section class="th-sec" id="game">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">03 · Quick game &middot; do it now</p>
+        <h2 class="th-h2">Value <em>or</em> goal?</h2>
+        <p class="th-p">Train your eye. For each statement, decide: is it a <strong>value</strong> (a direction) or a <strong>goal</strong> (a finish line)? Tap your answer &mdash; you&rsquo;ll get the reason either way.</p>
+
+        <div class="thm-ex">
+          <div class="thm-ex__head">
+            <div class="thm-ex__eyebrow">Tap to sort</div>
+            <div class="thm-ex__name">Value or Goal?</div>
+          </div>
+          <div class="thm-ex__body">
+            <div class="thm-vg" id="vg">
+              <div class="thm-vg__count" id="vgCount">1 of 7</div>
+              <div class="thm-vg__statement"><span id="vgText"></span></div>
+              <div class="thm-vg__btns">
+                <button class="btn btn--primary" id="vgValue">It&rsquo;s a value</button>
+                <button class="btn btn--ghost" id="vgGoal">It&rsquo;s a goal</button>
+              </div>
+              <div class="thm-vg__fb" id="vgFb" hidden>
+                <div class="thm-vg__verdict" id="vgVerdict"></div>
+                <p class="thm-vg__why" id="vgWhy"></p>
+                <button class="btn btn--ghost btn--sm" id="vgNext">Next &rarr;</button>
+              </div>
+              <div class="thm-vg__score" id="vgScore">Score: <b>0</b> / 7</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 4 · SORT YOUR VALUES ========== -->
+  <section class="th-sec th-sec--alt" id="sort">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">04 · The main event &middot; do it now</p>
+        <h2 class="th-h2">Sort your <em>values</em></h2>
+        <p class="th-p">Time to find yours. You&rsquo;ll see a deck of value cards, one at a time. For each, go with your gut: is it <strong>core to you</strong>, does it <strong>matter a bit</strong>, or is it <strong>not really you</strong>? Then you&rsquo;ll narrow it down to the <strong>five</strong> that matter most. They save to your device and carry into the rest of the program.</p>
+
+        <div class="thm-ex">
+          <div class="thm-ex__head">
+            <div class="thm-ex__eyebrow">Interactive card-sort &middot; ~4 minutes</div>
+            <div class="thm-ex__name">Values Card-Sort</div>
+          </div>
+          <div class="thm-ex__body">
+            <div class="thm-sort" id="sortWidget">
+
+              <div class="thm-sort__screen is-active" id="sortIntro">
+                <div class="thm-sort__intro">
+                  <p>28 values, one card at a time. There are no right answers &mdash; only what&rsquo;s true for you. Ready?</p>
+                  <button class="btn btn--primary btn--lg" id="sortStart">Start the sort &rarr;</button>
+                </div>
+              </div>
+
+              <div class="thm-sort__screen" id="sortDeck">
+                <div class="thm-sort__progress"><div class="thm-sort__fill" id="sortFill"></div></div>
+                <div class="thm-sort__meta"><span id="sortStep">Card 1 of 28</span><span>Core so far: <b id="sortCoreN">0</b></span></div>
+                <div class="thm-card">
+                  <div class="thm-card__name" id="cardName">Courage</div>
+                  <div class="thm-card__desc" id="cardDesc">Facing fear and doing what matters anyway.</div>
+                </div>
+                <div class="thm-sort__btns">
+                  <button class="sort-core" data-pile="core">Core to me</button>
+                  <button data-pile="matters">Matters a bit</button>
+                  <button data-pile="no">Not really me</button>
+                </div>
+                <button class="thm-sort__back" id="sortBack" disabled>&larr; Back one card</button>
+              </div>
+
+              <div class="thm-sort__screen" id="sortNarrow">
+                <div class="thm-narrow__head">
+                  <h3>Now &mdash; your top five</h3>
+                  <span class="thm-narrow__counter"><b id="narrowN">0</b> / 5 chosen</span>
+                </div>
+                <div id="narrowGroups"></div>
+                <div style="text-align:center;">
+                  <button class="btn btn--primary btn--lg" id="narrowDone">Lock in my values &rarr;</button>
+                </div>
+              </div>
+
+              <div class="thm-sort__screen" id="sortResult">
+                <div class="thm-narrow__head">
+                  <h3>Your core five</h3>
+                  <span class="thm-narrow__counter">Saved to this device</span>
+                </div>
+                <div class="thm-result__grid" id="resultGrid"></div>
+                <p class="thm-sort__saved">These now carry into the grid below, next week&rsquo;s practice, and Module 06.</p>
+                <div style="text-align:center;margin-top:16px;">
+                  <button class="btn btn--ghost" id="sortRedo">Sort again</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <p class="th-p">However that landed, sit with your five for a second. That&rsquo;s not a personality test result &mdash; it&rsquo;s a compass. When you&rsquo;re not sure what to do, in sport or out of it, these are the directions to steer by.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 5 · ACROSS YOUR LIFE ========== -->
+  <section class="th-sec" id="domains">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">05 · Make it life-wide</p>
+        <h2 class="th-h2">Your values,<br><em>across your life</em></h2>
+        <p class="th-p">Here&rsquo;s the move that makes THRIVE a <em>life</em> program, not just a sport one. Your values don&rsquo;t only belong on the pitch &mdash; they show up everywhere. For each area, write one line: <strong>how do you want to show up here?</strong> Lean on your five values. It all saves on this device.</p>
+
+        <div class="thm-yourvals" id="yourVals">
+          <div class="thm-yourvals__label">Your five values</div>
+          <div class="thm-yourvals__chips" id="yourValsChips"></div>
+          <p class="thm-yourvals__empty" id="yourValsEmpty">Do the card-sort above and your five will appear here to guide you.</p>
+        </div>
+
+        <div class="thm-domains">
+          <div class="thm-domain">
+            <h4>Sport</h4>
+            <p class="thm-domain__sub">The athlete you want to be &mdash; independent of results.</p>
+            <textarea data-reflect="m5-dom-sport" placeholder="On the pitch, I want to show up as…"></textarea>
+          </div>
+          <div class="thm-domain">
+            <h4>Study / Work</h4>
+            <p class="thm-domain__sub">How you want to approach learning or your job.</p>
+            <textarea data-reflect="m5-dom-work" placeholder="In study or work, I want to…"></textarea>
+          </div>
+          <div class="thm-domain">
+            <h4>Relationships &amp; wh&#257;nau</h4>
+            <p class="thm-domain__sub">The friend, partner, teammate, family member you want to be.</p>
+            <textarea data-reflect="m5-dom-rel" placeholder="With the people I care about, I want to…"></textarea>
+          </div>
+          <div class="thm-domain">
+            <h4>You (health &amp; self)</h4>
+            <p class="thm-domain__sub">How you want to treat your body, mind and time.</p>
+            <textarea data-reflect="m5-dom-self" placeholder="For myself, I want to…"></textarea>
+          </div>
+        </div>
+
+        <div class="th-applied">
+          <div class="th-applied__col th-applied__col--sport"><h5>Apply in Sport</h5><p>Name the two or three values you most want to bring to training this week &mdash; whatever the scoreboard says. Judge your session on those, not just the result.</p></div>
+          <div class="th-applied__col th-applied__col--life"><h5>Apply in Life</h5><p>This grid <em>is</em> the transfer: you just defined who you want to be in four areas of your life at once. Pick one value and one tiny way to live it outside sport this week.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 6 · THE 80TH BIRTHDAY (JOURNAL) ========== -->
+  <section class="th-sec th-sec--alt" id="reflect">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">06 · Journal it</p>
+        <h2 class="th-h2">The 80th<br><em>birthday speech</em></h2>
+        <p class="th-p">One of the most powerful ways to find your values is to fast-forward to the end. Picture your 80th birthday (or your retirement from sport). The people who matter most are there, and one of them stands up to say what you stood for and how you showed up. Write slowly &mdash; this saves <strong>only on this device</strong>.</p>
+
+        <div class="th-reflect">
+          <p class="th-reflect__q">1 · What would you <em>want</em> them to say about the kind of person and competitor you were?</p>
+          <p class="th-reflect__hint">Not your trophies &mdash; how you treated people, how you played, what you stood for.</p>
+          <textarea data-reflect="m5-speech" placeholder="I'd want them to say that I…"></textarea>
+          <div class="th-reflect__foot"><span class="th-reflect__saved" data-saved-for="m5-speech"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device</span></div>
+        </div>
+
+        <div class="th-reflect">
+          <p class="th-reflect__q">2 · Where is there a gap between that person and how you&rsquo;re living right now?</p>
+          <p class="th-reflect__hint">No guilt &mdash; just honesty. A gap is simply a direction to walk in.</p>
+          <textarea data-reflect="m5-gap" placeholder="Right now, the gap I notice is…"></textarea>
+          <div class="th-reflect__foot"><span class="th-reflect__saved" data-saved-for="m5-gap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device</span></div>
+        </div>
+
+        <div class="th-reflect">
+          <p class="th-reflect__q">3 · Think of someone you admire. What is it <em>really</em> that you admire about them?</p>
+          <p class="th-reflect__hint">Look past what they&rsquo;ve won &mdash; the thing you admire is usually one of your own values talking.</p>
+          <textarea data-reflect="m5-admire" placeholder="I admire them because…"></textarea>
+          <div class="th-reflect__foot"><span class="th-reflect__saved" data-saved-for="m5-admire"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device</span></div>
+        </div>
+
+        <div class="th-reflect">
+          <p class="th-reflect__q">4 · Pick one of your five values. What is one tiny way you could live it in the next 24 hours?</p>
+          <p class="th-reflect__hint">Small and specific beats big and vague. This is the bridge into Module 06.</p>
+          <textarea data-reflect="m5-tiny" placeholder="In the next 24 hours, I'll live [value] by…"></textarea>
+          <div class="th-reflect__foot"><span class="th-reflect__saved" data-saved-for="m5-tiny"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 7 · THIS WEEK ========== -->
+  <section class="th-sec" id="week">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">07 · This week&rsquo;s Mind Gym</p>
+        <h2 class="th-h2">Live a value<br><em>on purpose</em></h2>
+        <p class="th-p">Values only mean anything when you act on them. Values without action are just nice words. Here&rsquo;s your week: a few ways to bring them to life, and a daily log to keep you honest.</p>
+
+        <div class="th-block" style="margin-top:8px;"><span class="th-block__label">Experiments to try this week</span></div>
+        <p class="th-p" style="margin-bottom:0;">Pick two or three that fit your week and actually run them.</p>
+        <ul class="thm-ideas">
+          <li><span class="thm-ideas__tag">On the pitch</span><p>Before each session, choose <strong>one value</strong> to lead with (e.g. courage, or being a great teammate). Judge the session on <em>that</em>, not the result.</p></li>
+          <li><span class="thm-ideas__tag">Everyday</span><p>Each morning, name the <strong>one value</strong> you want to bring to the day. Each night, notice one moment you lived it &mdash; however small.</p></li>
+          <li><span class="thm-ideas__tag">Decisions</span><p>Facing a tough call? Ask: <em>&ldquo;which choice moves me toward the person I want to be?&rdquo;</em> Let the value break the tie.</p></li>
+          <li><span class="thm-ideas__tag">Phone</span><p>Set your top value as your lock-screen or a daily reminder, so it catches your eye when you need it.</p></li>
+          <li><span class="thm-ideas__tag">Relationships</span><p>Pick one person and one value (kindness, honesty, presence) and live it toward them this week &mdash; a message, a conversation, showing up.</p></li>
+          <li><span class="thm-ideas__tag">Diary</span><p>Fill in the values log below &mdash; one line a day. Watch how often you can act on what matters, even on ordinary days.</p></li>
+        </ul>
+
+        <div class="th-block" style="margin-top:36px;"><span class="th-block__label">The 7-day values log</span></div>
+        <div class="thm-week__intro">
+          <p><strong>One entry a day for seven days.</strong> Each day, name the <em>value</em> you led with, <em>one action</em> you took to live it, and how it felt. No judgement &mdash; some days it&rsquo;ll be tiny. Everything saves on this device only.</p>
+        </div>
+        <div class="thm-week__progress">
+          <div class="thm-week__track"><div class="thm-week__fill" id="weekFill"></div></div>
+          <span class="thm-week__count" id="weekCount">0 / 7 days</span>
+        </div>
+        <div class="thm-week" id="weekJournal"></div>
+        <button class="thm-week__reset" id="weekReset">Clear this week and start over</button>
+
+        <div class="thm-refcard">
+          <h4>Your values pocket card</h4>
+          <ol>
+            <li><strong>Goals</strong> are the destinations; <strong>values</strong> are the direction you travel.</li>
+            <li>Your five values are a <strong>compass</strong>, always available &mdash; win or lose.</li>
+            <li>Ask: <strong>&ldquo;does this move me toward who I want to be?&rdquo;</strong></li>
+            <li>A value you never act on is just a word &mdash; live one small piece today.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LOCK IT IN + NEXT ========== -->
+  <section class="th-sec th-sec--alt">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">Lock it in</p>
+        <div class="th-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg><p><strong>You&rsquo;ve found your compass.</strong> You know your five values and how you want to show up across your life. But a compass only helps if you actually start walking. That&rsquo;s the second half of Engage &mdash; <strong>Committed Action</strong>: turning these values into real, repeatable behaviour, even when it&rsquo;s uncomfortable. That&rsquo;s Module 06.</p></div>
+
+        <div class="thm-nextnav">
+          <a href="grow-thrive-module-04.html">
+            <div class="thm-nextnav__dir">&larr; Previous</div>
+            <div class="thm-nextnav__title">04 · Connect: Be Present</div>
+          </a>
+          <a href="grow-thrive.html#program" class="thm-nextnav--end">
+            <div class="thm-nextnav__dir">Next module &rarr;</div>
+            <div class="thm-nextnav__title">06 · Committed Action</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="siteFooter">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-grid__brand">
+          <img src="images/logo-vertical.png?v=2" alt="The Performance Act" class="logo-img logo-img--footer">
+          <p class="footer__tagline">Helping People Grow</p>
+          <p class="footer__email"><a href="mailto:info@performance-act.com">info@performance-act.com</a></p>
+        </div>
+        <div class="footer-grid__links">
+          <h4 class="footer__heading">QUICK LINKS</h4>
+          <a href="index.html#about" class="footer__link">About Us</a>
+          <a href="approach.html" class="footer__link">Our Approach</a>
+          <a href="programs.html" class="footer__link">Programs</a>
+          <a href="team.html" class="footer__link">Our Wh&#257;nau</a>
+        </div>
+        <div class="footer-grid__links">
+          <h4 class="footer__heading">GROW</h4>
+          <a href="grow.html" class="footer__link">About GROW</a>
+          <a href="grow-login.html" class="footer__link">Member Login</a>
+        </div>
+        <div class="footer-grid__social">
+          <h4 class="footer__heading">FOLLOW US</h4>
+          <div class="social-links">
+            <a href="https://www.instagram.com/performance__act/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+            <a href="https://www.facebook.com/ThePerformanceAct" target="_blank" rel="noopener" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a href="https://www.linkedin.com/company/performance-act-ltd/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 The Performance Act. All rights reserved. Aotearoa, New Zealand.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- NZ SUPPORT LINES -->
+  <button class="support-line-btn" id="supportLineBtn" aria-label="NZ support lines">
+    <span class="support-line-btn__dot" aria-hidden="true"></span>
+    Immediate Support
+  </button>
+  <div class="support-line-modal" id="supportLineModal" role="dialog" aria-modal="true" aria-labelledby="supportLineTitle" aria-hidden="true">
+    <div class="support-line-modal__backdrop"></div>
+    <div class="support-line-modal__panel">
+      <button class="support-line-modal__close" id="supportLineClose" aria-label="Close support lines"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      <p class="support-line-modal__eyebrow">Aotearoa, New Zealand</p>
+      <h2 class="support-line-modal__title" id="supportLineTitle">Need immediate support?</h2>
+      <p class="support-line-modal__note">The Performance Act is a sport psychology practice, not a crisis or emergency service. If you or someone you care about needs immediate support, please reach out to one of these trusted services below. They are free, confidential, and available 24&#8202;/&#8202;7.</p>
+      <ul class="support-line-modal__list" role="list">
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">1737 &mdash; Need to Talk?</p><p class="sln-resource__desc">Free call or text, any time. Trained counsellors, 24&#47;7.</p></div><a href="tel:1737" class="sln-resource__number">Call or text 1737</a></li>
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">Youthline</p><p class="sln-resource__desc">For young people. Free call or text 234, 24&#47;7.</p></div><a href="tel:0800376633" class="sln-resource__number">0800 376 633</a></li>
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">Lifeline NZ</p><p class="sln-resource__desc">Crisis support and suicide prevention, 24&#47;7.</p></div><a href="tel:0800543354" class="sln-resource__number">0800 543 354</a></li>
+      </ul>
+      <p class="support-line-modal__footer">More resources at <a href="https://www.mentalhealth.org.nz/get-help/in-crisis" target="_blank" rel="noopener">Mental Health Foundation NZ</a>.</p>
+    </div>
+  </div>
+
+  <script src="script.js?v=5"></script>
+  <script>
+  /* =========================================================
+     THRIVE Module 05 — Value-or-Goal game, Values card-sort,
+     values-across-domains, reflection autosave, 7-day log.
+     All state stays in localStorage on this device.
+     ========================================================= */
+  (function () {
+    var LS = 'thrive_m5_';
+    function esc(s) { return (s || '').replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+    /* ---- Reflection + domain autosave ---- */
+    document.querySelectorAll('textarea[data-reflect]').forEach(function (ta) {
+      var key = LS + 'reflect_' + ta.getAttribute('data-reflect');
+      var saved = document.querySelector('[data-saved-for="' + ta.getAttribute('data-reflect') + '"]');
+      try { if (localStorage.getItem(key)) ta.value = localStorage.getItem(key); } catch (e) {}
+      if (saved) saved.style.opacity = ta.value ? '1' : '0';
+      var t;
+      ta.addEventListener('input', function () {
+        if (saved) saved.style.opacity = '0.4';
+        clearTimeout(t);
+        t = setTimeout(function () {
+          try { localStorage.setItem(key, ta.value); } catch (e) {}
+          if (saved) saved.style.opacity = ta.value ? '1' : '0';
+        }, 400);
+      });
+    });
+
+    /* ================= VALUE OR GOAL GAME ================= */
+    var VG = [
+      { t: 'Win the grand final.', value: false, why: 'A result you either hit or miss &mdash; and what happens the day after you win it?' },
+      { t: 'Compete with courage, whatever the score.', value: true, why: 'A way of playing you can bring to every single game, win or lose.' },
+      { t: 'Make the representative team.', value: false, why: 'Largely outside your control, and a finish line &mdash; not a direction to live by.' },
+      { t: 'Be a teammate people can count on.', value: true, why: 'Always available to live &mdash; starter or sub, good day or bad.' },
+      { t: 'Deadlift 140kg.', value: false, why: 'A number to tick off. Useful, but not a direction; the day you hit it, then what?' },
+      { t: 'Keep giving my best and improving.', value: true, why: 'A direction with no finish line &mdash; you can always take one more step.' },
+      { t: 'Be honest, even when it costs me.', value: true, why: 'How you want to show up, regardless of the outcome. That&rsquo;s a value.' }
+    ];
+    var vgIdx = 0, vgScore = 0, vgAnswered = false;
+    var vgText = document.getElementById('vgText'), vgCount = document.getElementById('vgCount'),
+        vgFb = document.getElementById('vgFb'), vgVerdict = document.getElementById('vgVerdict'),
+        vgWhy = document.getElementById('vgWhy'), vgScoreEl = document.getElementById('vgScore'),
+        vgValue = document.getElementById('vgValue'), vgGoal = document.getElementById('vgGoal'),
+        vgNext = document.getElementById('vgNext');
+    function vgRender() {
+      vgAnswered = false;
+      vgCount.textContent = (vgIdx + 1) + ' of ' + VG.length;
+      vgText.textContent = VG[vgIdx].t;
+      vgFb.hidden = true;
+      vgValue.disabled = false; vgGoal.disabled = false;
+    }
+    function vgAnswer(saidValue) {
+      if (vgAnswered) return; vgAnswered = true;
+      var correct = (saidValue === VG[vgIdx].value);
+      if (correct) vgScore++;
+      vgVerdict.textContent = correct ? 'Nailed it' : 'Not quite';
+      vgVerdict.className = 'thm-vg__verdict ' + (correct ? 'ok' : 'no');
+      vgWhy.innerHTML = '<strong style="color:#fff">' + (VG[vgIdx].value ? 'That&rsquo;s a value.' : 'That&rsquo;s a goal.') + '</strong> ' + VG[vgIdx].why;
+      vgScoreEl.innerHTML = 'Score: <b>' + vgScore + '</b> / ' + VG.length;
+      vgFb.hidden = false;
+      vgValue.disabled = true; vgGoal.disabled = true;
+      vgNext.textContent = (vgIdx < VG.length - 1) ? 'Next →' : 'See what it means →';
+    }
+    vgValue.addEventListener('click', function () { vgAnswer(true); });
+    vgGoal.addEventListener('click', function () { vgAnswer(false); });
+    vgNext.addEventListener('click', function () {
+      if (vgIdx < VG.length - 1) { vgIdx++; vgRender(); }
+      else {
+        document.getElementById('vg').innerHTML =
+          '<div class="thm-vg__count">Done</div>' +
+          '<div class="thm-vg__statement" style="min-height:auto"><span>You scored <b style="color:var(--yellow)">' + vgScore + ' / ' + VG.length + '</b></span></div>' +
+          '<p class="thm-vg__why" style="max-width:520px;margin:0 auto">Goals are the destinations you can tick off. <strong style="color:#fff">Values are the direction you travel</strong> &mdash; always available, whatever the result. Now let&rsquo;s find yours.</p>';
+      }
+    });
+    vgRender();
+
+    /* ================= VALUES CARD-SORT ================= */
+    var VALUES = [
+      ['Courage','Facing fear and doing what matters anyway.'],
+      ['Connection','Closeness and belonging with others.'],
+      ['Growth','Always learning and getting better.'],
+      ['Discipline','Showing up and doing the work.'],
+      ['Honesty','Being truthful and real.'],
+      ['Excellence','Giving your best; high standards.'],
+      ['Curiosity','Exploring, asking, wondering.'],
+      ['Resilience','Bouncing back from setbacks.'],
+      ['Kindness','Being caring and generous.'],
+      ['Fairness','Treating people justly.'],
+      ['Fun','Playfulness, humour, enjoyment.'],
+      ['Freedom','Independence and room to choose.'],
+      ['Loyalty','Standing by your people.'],
+      ['Gratitude','Appreciating what you have.'],
+      ['Creativity','Making and imagining new things.'],
+      ['Leadership','Guiding and lifting others.'],
+      ['Humility','Staying grounded and open.'],
+      ['Determination','Persisting toward what matters.'],
+      ['Respect','Regard for yourself and others.'],
+      ['Adventure','Seeking new experiences.'],
+      ['Health','Caring for your body and mind.'],
+      ['Contribution','Making a difference beyond yourself.'],
+      ['Teamwork','Working well with others.'],
+      ['Authenticity','Being true to yourself.'],
+      ['Ambition','Striving for more.'],
+      ['Compassion','Kindness to yourself and others in pain.'],
+      ['Balance','Harmony across life areas.'],
+      ['Purpose','A sense of meaning and direction.']
+    ];
+    var sIdx = 0, sInto = [], piles = { core: [], matters: [], no: [] }, chosen = [];
+    var scr = { intro:'sortIntro', deck:'sortDeck', narrow:'sortNarrow', result:'sortResult' };
+    function sShow(name) { for (var k in scr) document.getElementById(scr[k]).classList.toggle('is-active', k === name); }
+    var cardName = document.getElementById('cardName'), cardDesc = document.getElementById('cardDesc'),
+        sFill = document.getElementById('sortFill'), sStep = document.getElementById('sortStep'),
+        sCoreN = document.getElementById('sortCoreN'), sBack = document.getElementById('sortBack');
+    function sRenderCard() {
+      var v = VALUES[sIdx];
+      cardName.textContent = v[0]; cardDesc.textContent = v[1];
+      sFill.style.width = Math.round(sIdx / VALUES.length * 100) + '%';
+      sStep.textContent = 'Card ' + (sIdx + 1) + ' of ' + VALUES.length;
+      sCoreN.textContent = piles.core.length;
+      sBack.disabled = (sIdx === 0);
+    }
+    document.querySelectorAll('#sortDeck .thm-sort__btns button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var pile = btn.getAttribute('data-pile');
+        piles[pile].push(VALUES[sIdx]); sInto.push(pile);
+        sIdx++;
+        if (sIdx >= VALUES.length) buildNarrow(); else sRenderCard();
+      });
+    });
+    sBack.addEventListener('click', function () {
+      if (sIdx === 0) return;
+      sIdx--; var lastPile = sInto.pop(); piles[lastPile].pop(); sRenderCard();
+    });
+    document.getElementById('sortStart').addEventListener('click', function () {
+      sIdx = 0; sInto = []; piles = { core: [], matters: [], no: [] }; sShow('deck'); sRenderCard();
+    });
+
+    var narrowGroups = document.getElementById('narrowGroups'), narrowN = document.getElementById('narrowN');
+    function buildNarrow() {
+      chosen = [];
+      narrowGroups.innerHTML = '';
+      function group(label, list) {
+        if (!list.length) return;
+        var lab = document.createElement('div'); lab.className = 'thm-narrow__group-label'; lab.textContent = label;
+        var wrap = document.createElement('div'); wrap.className = 'thm-narrow__chips';
+        list.forEach(function (v) {
+          var b = document.createElement('button');
+          b.className = 'thm-vchip'; b.type = 'button'; b.setAttribute('aria-pressed', 'false');
+          b.textContent = v[0]; b.setAttribute('data-desc', v[1]);
+          b.addEventListener('click', function () { toggleChoose(b, v); });
+          wrap.appendChild(b);
+        });
+        narrowGroups.appendChild(lab); narrowGroups.appendChild(wrap);
+      }
+      group('Your core values', piles.core);
+      group('Also mattered', piles.matters);
+      if (!piles.core.length && !piles.matters.length) group('Everything you saw', piles.no);
+      narrowN.textContent = '0';
+      sShow('narrow');
+    }
+    function toggleChoose(btn, v) {
+      var on = btn.getAttribute('aria-pressed') === 'true';
+      if (on) { btn.setAttribute('aria-pressed', 'false'); chosen = chosen.filter(function (x) { return x[0] !== v[0]; }); }
+      else {
+        if (chosen.length >= 5) return;
+        btn.setAttribute('aria-pressed', 'true'); chosen.push(v);
+      }
+      narrowN.textContent = chosen.length;
+      // disable unpicked chips at max
+      var atMax = chosen.length >= 5;
+      document.querySelectorAll('#narrowGroups .thm-vchip').forEach(function (c) {
+        if (c.getAttribute('aria-pressed') !== 'true') c.disabled = atMax;
+      });
+    }
+    document.getElementById('narrowDone').addEventListener('click', function () {
+      if (!chosen.length) return;
+      try { localStorage.setItem(LS + 'values', JSON.stringify(chosen)); } catch (e) {}
+      renderResult(); renderYourVals(); sShow('result');
+    });
+    function renderResult() {
+      var grid = document.getElementById('resultGrid'); grid.innerHTML = '';
+      chosen.forEach(function (v) {
+        var d = document.createElement('div'); d.className = 'thm-vfinal';
+        d.innerHTML = '<div class="thm-vfinal__name">' + esc(v[0]) + '</div><div class="thm-vfinal__desc">' + esc(v[1]) + '</div>';
+        grid.appendChild(d);
+      });
+    }
+    document.getElementById('sortRedo').addEventListener('click', function () {
+      sIdx = 0; sInto = []; piles = { core: [], matters: [], no: [] }; chosen = []; sShow('intro');
+    });
+
+    /* ---- Your values chips (from saved) ---- */
+    function getSavedValues() { try { return JSON.parse(localStorage.getItem(LS + 'values') || '[]'); } catch (e) { return []; } }
+    function renderYourVals() {
+      var vals = getSavedValues();
+      var chips = document.getElementById('yourValsChips'), empty = document.getElementById('yourValsEmpty');
+      chips.innerHTML = '';
+      if (!vals.length) { empty.style.display = 'block'; return; }
+      empty.style.display = 'none';
+      vals.forEach(function (v) { var s = document.createElement('span'); s.textContent = v[0]; chips.appendChild(s); });
+    }
+    // preload saved values into result + chips on page load
+    (function () {
+      var vals = getSavedValues();
+      if (vals.length) { chosen = vals; renderResult(); sShow('result'); }
+      renderYourVals();
+    })();
+
+    /* ================= 7-DAY VALUES LOG ================= */
+    var DAYS = ['Day 1','Day 2','Day 3','Day 4','Day 5','Day 6','Day 7'];
+    var journal = document.getElementById('weekJournal');
+    var weekFill = document.getElementById('weekFill'), weekCount = document.getElementById('weekCount');
+    function dKey(i, f) { return LS + 'day' + i + '_' + f; }
+    function buildDay(i) {
+      var wrap = document.createElement('div'); wrap.className = 'thm-day';
+      wrap.innerHTML =
+        '<button class="thm-day__trigger" aria-expanded="false" aria-controls="dayp-' + i + '">' +
+          '<span class="thm-day__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>' +
+          '<span class="thm-day__label">' + DAYS[i] + '</span>' +
+          '<span class="thm-day__state" data-state></span>' +
+          '<svg class="thm-day__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>' +
+        '</button>' +
+        '<div class="thm-day__panel" id="dayp-' + i + '" hidden><div class="thm-day__body">' +
+          '<div class="thm-day__field"><p class="thm-day__q">Which value did you lead with today?</p><textarea data-day="' + i + '" data-f="value" placeholder="e.g. Courage / Kindness / Growth…"></textarea></div>' +
+          '<div class="thm-day__field"><p class="thm-day__q">One thing you did to live it?</p><textarea data-day="' + i + '" data-f="action" placeholder="The action I took…"></textarea></div>' +
+          '<div class="thm-day__field"><p class="thm-day__q">How did living it feel?</p>' +
+            '<div class="thm-toggle" data-day="' + i + '">' +
+              '<button type="button" data-choice="right" aria-pressed="false">Felt right</button>' +
+              '<button type="button" data-choice="hard" aria-pressed="false">Hard but worth it</button>' +
+              '<button type="button" data-choice="missed" aria-pressed="false">Missed it today</button>' +
+            '</div></div>' +
+          '<span class="thm-day__save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device as you type</span>' +
+        '</div></div>';
+      journal.appendChild(wrap);
+      var trigger = wrap.querySelector('.thm-day__trigger'), panel = wrap.querySelector('.thm-day__panel');
+      trigger.addEventListener('click', function () {
+        var open = trigger.getAttribute('aria-expanded') === 'true';
+        trigger.setAttribute('aria-expanded', open ? 'false' : 'true');
+        wrap.classList.toggle('is-open', !open);
+        if (open) panel.setAttribute('hidden', ''); else panel.removeAttribute('hidden');
+      });
+      wrap.querySelectorAll('textarea').forEach(function (ta) {
+        var key = dKey(i, ta.getAttribute('data-f'));
+        try { if (localStorage.getItem(key)) ta.value = localStorage.getItem(key); } catch (e) {}
+        var t;
+        ta.addEventListener('input', function () { clearTimeout(t); t = setTimeout(function () { try { localStorage.setItem(key, ta.value); } catch (e) {} refreshDay(i); }, 350); });
+      });
+      var savedChoice = null; try { savedChoice = localStorage.getItem(dKey(i, 'choice')); } catch (e) {}
+      wrap.querySelectorAll('.thm-toggle button').forEach(function (btn) {
+        if (savedChoice === btn.getAttribute('data-choice')) btn.setAttribute('aria-pressed', 'true');
+        btn.addEventListener('click', function () {
+          var choice = btn.getAttribute('data-choice'), isOn = btn.getAttribute('aria-pressed') === 'true';
+          wrap.querySelectorAll('.thm-toggle button').forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+          if (!isOn) { btn.setAttribute('aria-pressed', 'true'); try { localStorage.setItem(dKey(i, 'choice'), choice); } catch (e) {} }
+          else { try { localStorage.removeItem(dKey(i, 'choice')); } catch (e) {} }
+          refreshDay(i);
+        });
+      });
+      refreshDay(i);
+    }
+    function dayLogged(i) { try { return !!(localStorage.getItem(dKey(i, 'value')) || localStorage.getItem(dKey(i, 'action')) || localStorage.getItem(dKey(i, 'choice'))); } catch (e) { return false; } }
+    function refreshDay(i) {
+      var wrap = journal.children[i], logged = dayLogged(i);
+      wrap.classList.toggle('is-done', logged);
+      var choice = null; try { choice = localStorage.getItem(dKey(i, 'choice')); } catch (e) {}
+      var map = { right: 'Felt right', hard: 'Hard but worth it', missed: 'Missed it' };
+      wrap.querySelector('[data-state]').textContent = logged ? (choice ? map[choice] : 'Logged') : 'Not yet';
+      updateProgress();
+    }
+    function updateProgress() {
+      var done = 0; for (var i = 0; i < DAYS.length; i++) { if (dayLogged(i)) done++; }
+      weekFill.style.width = Math.round(done / DAYS.length * 100) + '%';
+      weekCount.textContent = done + ' / 7 days';
+    }
+    DAYS.forEach(function (_, i) { buildDay(i); });
+    updateProgress();
+    document.getElementById('weekReset').addEventListener('click', function () {
+      if (!window.confirm('Clear all 7 days of this week\'s log on this device? This cannot be undone.')) return;
+      DAYS.forEach(function (_, i) { ['value', 'action', 'choice'].forEach(function (f) { try { localStorage.removeItem(dKey(i, f)); } catch (e) {} }); });
+      journal.innerHTML = ''; DAYS.forEach(function (_, i) { buildDay(i); }); updateProgress();
+    });
+  })();
+  </script>
+
+</body>
+</html>
