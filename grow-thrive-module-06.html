@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Hidden / unlisted: not indexed and not linked from anywhere on the public site -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>THRIVE · Module 06 — Engage · Do What Matters: Committed Action | The Performance Act</title>
+  <meta name="description" content="THRIVE Module 06 — committed action: turning values into repeatable behaviour with a values-to-action ladder, habit design, and a willingness rehearsal that fuses all three ACE moves.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="style.css?v=17">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=2">
+
+  <style>
+    /* ============================================================
+       THRIVE MODULE PAGE — scoped to .th / .thm-. Black + yellow.
+       ============================================================ */
+    .th { --ink:#ECECEC; --muted:#9A9A9A; --line:rgba(255,255,255,0.1); background:#050505; }
+    .th-sec { padding: clamp(52px, 8vw, 92px) 0; }
+    .th-sec--alt { background:#0b0b0b; }
+    .th-wrap { max-width: 820px; margin: 0 auto; }
+    .th-eyebrow { font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--yellow); margin-bottom:14px; }
+    .th-h2 { font-family:var(--font-heading); font-weight:700; text-transform:uppercase; font-size:clamp(1.7rem,4vw,2.7rem); line-height:1.05; color:#fff; margin-bottom:18px; }
+    .th-h2 em { color:var(--yellow); font-style:normal; }
+    .th-p { color:var(--ink); line-height:1.7; font-weight:300; margin:0 0 16px; }
+    .th-p strong { color:#fff; font-weight:600; }
+    .th-p em { color:#fff; font-style:italic; }
+
+    /* MODULE HERO */
+    .thm-hero { position:relative; overflow:hidden; background:#050505; padding:clamp(120px,16vw,180px) 0 clamp(44px,7vw,72px); border-bottom:1px solid var(--line); }
+    .thm-hero__bg { position:absolute; inset:0; background:url('images/athletics-track.png') center 30% / cover no-repeat; opacity:0.20; filter:grayscale(0.4) contrast(1.05); }
+    .thm-hero::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(5,5,5,0.55) 0%, rgba(5,5,5,0.92) 100%); }
+    .thm-hero .container { position:relative; z-index:2; }
+    .thm-back { display:inline-flex; align-items:center; gap:8px; font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--yellow); margin-bottom:26px; }
+    .thm-back svg { width:16px; height:16px; }
+    .thm-hero__num { font-family:var(--font-heading); font-weight:700; font-size:clamp(3rem,10vw,5.5rem); line-height:0.9; color:var(--yellow); }
+    .thm-hero__pill { display:inline-block; font-family:var(--font-heading); font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:#000; background:var(--yellow); padding:4px 11px; margin-left:14px; vertical-align:middle; }
+    .thm-hero__kicker { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+    .thm-hero__title { font-family:var(--font-heading); font-weight:700; text-transform:uppercase; font-size:clamp(1.9rem,5.4vw,3.3rem); line-height:1.02; color:#fff; margin:6px 0 18px; }
+    .thm-hero__meta { display:flex; flex-wrap:wrap; gap:8px 22px; font-size:0.86rem; color:var(--muted); letter-spacing:0.08em; text-transform:uppercase; font-family:var(--font-heading); }
+    .thm-hero__meta span { display:inline-flex; align-items:center; gap:7px; }
+    .thm-hero__meta svg { width:15px; height:15px; color:var(--yellow); }
+
+    .thm-obj { background:#111; border:1px solid var(--line); border-left:4px solid var(--yellow); padding:26px 28px; margin-top:34px; }
+    .thm-obj h3 { font-family:var(--font-heading); font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--yellow); margin-bottom:14px; }
+    .thm-obj ul { margin:0; padding:0; list-style:none; }
+    .thm-obj li { color:var(--ink); font-size:0.98rem; line-height:1.5; font-weight:300; padding:7px 0 7px 26px; position:relative; }
+    .thm-obj li::before { content:''; position:absolute; left:0; top:13px; width:12px; height:2px; background:var(--yellow); }
+
+    .thm-toc { display:flex; flex-wrap:wrap; gap:10px; margin-top:30px; }
+    .thm-toc a { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink); border:1px solid var(--line); padding:9px 15px; transition:.2s; }
+    .thm-toc a:hover { border-color:var(--yellow); color:var(--yellow); }
+
+    .th-block__label { display:flex; align-items:center; gap:10px; font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--yellow); margin-bottom:12px; }
+    .th-block__label::before { content:''; width:26px; height:2px; background:var(--yellow); }
+
+    .th-quote { border-left:3px solid var(--yellow); padding:6px 0 6px 22px; margin:26px 0; }
+    .th-quote p { font-family:var(--font-heading); font-weight:500; font-size:clamp(1.2rem,2.8vw,1.7rem); line-height:1.3; color:#fff; margin:0; }
+    .th-quote cite { display:block; margin-top:12px; font-style:normal; font-size:0.86rem; color:var(--muted); letter-spacing:0.04em; }
+
+    /* two-up */
+    .thm-vs { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:26px 0; }
+    .thm-vs__col { background:#141414; border:1px solid var(--line); padding:22px 24px; }
+    .thm-vs__col--no { border-top:3px solid #6a6a6a; }
+    .thm-vs__col--yes { border-top:3px solid var(--yellow); }
+    .thm-vs__tag { font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:10px; }
+    .thm-vs__col--no .thm-vs__tag { color:#9a9a9a; }
+    .thm-vs__col--yes .thm-vs__tag { color:var(--yellow); }
+    .thm-vs__col ul { list-style:none; margin:0; padding:0; }
+    .thm-vs__col li { color:var(--ink); font-size:0.94rem; line-height:1.5; font-weight:300; padding:6px 0 6px 20px; position:relative; }
+    .thm-vs__col li::before { content:''; position:absolute; left:0; top:12px; width:6px; height:6px; background:currentColor; opacity:0.6; }
+    .thm-vs__col--yes li::before { background:var(--yellow); opacity:1; }
+
+    /* exercise shell */
+    .thm-ex { background:#0d0d0d; border:1px solid rgba(255,229,0,0.22); border-radius:6px; overflow:hidden; margin:28px 0; }
+    .thm-ex__head { background:rgba(255,229,0,0.08); padding:18px 26px; border-bottom:1px solid rgba(255,229,0,0.2); }
+    .thm-ex__eyebrow { font-family:var(--font-heading); font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--yellow); margin-bottom:4px; }
+    .thm-ex__name { font-family:var(--font-heading); font-size:1.35rem; text-transform:uppercase; color:#fff; letter-spacing:0.02em; }
+    .thm-ex__body { padding:28px 26px; }
+
+    /* shared field styles */
+    .thm-field { margin-bottom:18px; }
+    .thm-field__label { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:9px; }
+    .thm-field__label b { color:var(--yellow); }
+    .thm-field input[type=text], .thm-field textarea { width:100%; background:#0a0a0a; border:1px solid var(--line); color:#fff; font-family:var(--font-body); font-size:0.98rem; font-weight:300; padding:12px 14px; }
+    .thm-field textarea { min-height:60px; line-height:1.55; resize:vertical; }
+    .thm-field input:focus, .thm-field textarea:focus { outline:none; border-color:var(--yellow); }
+    .thm-chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .thm-chip { font-family:var(--font-heading); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.03em; color:var(--ink); background:#191919; border:1px solid var(--line); padding:8px 13px; cursor:pointer; transition:.15s; }
+    .thm-chip:hover { border-color:rgba(255,229,0,0.5); color:#fff; }
+    .thm-chip[aria-pressed="true"] { background:var(--yellow); border-color:var(--yellow); color:#000; }
+
+    /* LADDER preview */
+    .thm-ladder { margin-top:8px; }
+    .thm-ladder__rung { position:relative; padding:0 0 22px 34px; }
+    .thm-ladder__rung::before { content:''; position:absolute; left:11px; top:4px; width:12px; height:12px; border-radius:50%; border:2px solid var(--muted); background:#0d0d0d; z-index:2; }
+    .thm-ladder__rung::after { content:''; position:absolute; left:16px; top:4px; bottom:-4px; width:2px; background:var(--line); }
+    .thm-ladder__rung:last-child::after { display:none; }
+    .thm-ladder__rung.is-filled::before { background:var(--yellow); border-color:var(--yellow); }
+    .thm-ladder__rung--today::before { width:16px; height:16px; left:9px; }
+    .thm-ladder__tier { font-family:var(--font-heading); font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--yellow); margin-bottom:3px; }
+    .thm-ladder__val { color:var(--ink); font-size:1rem; line-height:1.5; font-weight:300; }
+    .thm-ladder__val.ph { color:var(--muted); font-style:italic; }
+    .thm-ladder__rung--today .thm-ladder__val { color:#fff; font-weight:600; }
+
+    /* recipe / statement output */
+    .thm-output { background:linear-gradient(160deg,#161616,#0d0d0d); border:1px solid rgba(255,229,0,0.3); padding:22px 24px; margin-top:20px; }
+    .thm-output__label { font-family:var(--font-heading); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--yellow); margin-bottom:10px; }
+    .thm-output__text { color:#fff; font-size:1.1rem; line-height:1.6; font-weight:300; }
+    .thm-output__text b { color:var(--yellow); font-weight:600; }
+    .thm-output__hint { color:var(--muted); font-size:0.86rem; margin-top:12px; font-weight:300; }
+
+    /* laws grid */
+    .thm-laws { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:0 0 20px; }
+    .thm-law { background:#141414; border:1px solid var(--line); border-left:3px solid var(--yellow); padding:14px 16px; }
+    .thm-law b { display:block; font-family:var(--font-heading); font-size:0.9rem; text-transform:uppercase; color:#fff; letter-spacing:0.02em; margin-bottom:4px; }
+    .thm-law span { color:var(--ink); font-size:0.86rem; line-height:1.5; font-weight:300; }
+
+    /* willingness slider */
+    .thm-will__slider { margin:6px 0 4px; }
+    .thm-will__slider input[type=range] { width:100%; accent-color:var(--yellow); height:6px; cursor:pointer; }
+    .thm-will__scale { display:flex; justify-content:space-between; font-family:var(--font-heading); font-size:0.7rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); margin-top:6px; }
+    .thm-will__read { text-align:center; margin-top:14px; color:var(--ink); font-size:0.95rem; line-height:1.6; font-weight:300; }
+    .thm-will__read b { color:var(--yellow); }
+
+    /* prior-step reference banner */
+    .thm-ref { background:#111; border:1px solid var(--line); border-left:4px solid var(--yellow); padding:16px 20px; margin:0 0 22px; }
+    .thm-ref__label { font-family:var(--font-heading); font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; }
+    .thm-ref__chips { display:flex; flex-wrap:wrap; gap:8px; }
+    .thm-ref__chips span { font-family:var(--font-heading); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.03em; color:#000; background:var(--yellow); padding:5px 11px; cursor:pointer; }
+    .thm-ref__empty { color:var(--muted); font-size:0.9rem; font-style:italic; }
+
+    /* REFLECTION */
+    .th-reflect { background:#111; border:1px solid var(--line); border-radius:4px; padding:24px 26px; margin:24px 0; }
+    .th-reflect__q { color:#fff; font-size:1.02rem; line-height:1.5; font-weight:400; margin:0 0 4px; }
+    .th-reflect__hint { color:var(--muted); font-size:0.86rem; line-height:1.5; font-weight:300; margin:0 0 14px; }
+    .th-reflect textarea { width:100%; min-height:96px; background:#0a0a0a; border:1px solid var(--line); color:#fff; font-family:var(--font-body); font-size:0.98rem; line-height:1.6; font-weight:300; padding:14px 16px; resize:vertical; }
+    .th-reflect textarea:focus { outline:none; border-color:var(--yellow); }
+    .th-reflect__foot { display:flex; align-items:center; justify-content:flex-end; gap:12px; margin-top:10px; }
+    .th-reflect__saved { font-size:0.78rem; color:var(--muted); letter-spacing:0.04em; display:inline-flex; align-items:center; gap:6px; }
+    .th-reflect__saved svg { width:13px; height:13px; color:var(--yellow); }
+
+    /* APPLIED grid */
+    .th-applied { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:24px 0; }
+    .th-applied__col { background:#141414; border:1px solid var(--line); padding:20px 22px; }
+    .th-applied__col--sport { border-top:3px solid var(--yellow); }
+    .th-applied__col--life { border-top:3px solid #fff; }
+    .th-applied__col h5 { font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:8px; }
+    .th-applied__col--sport h5 { color:var(--yellow); }
+    .th-applied__col--life h5 { color:#fff; }
+    .th-applied__col p { color:var(--ink); font-size:0.92rem; line-height:1.6; font-weight:300; margin:0; }
+
+    /* PRACTICAL IDEAS */
+    .thm-ideas { list-style:none; margin:18px 0 0; padding:0; }
+    .thm-ideas li { display:flex; gap:14px; align-items:flex-start; background:#141414; border:1px solid var(--line); padding:16px 18px; margin-bottom:10px; }
+    .thm-ideas__tag { flex-shrink:0; font-family:var(--font-heading); font-size:0.64rem; letter-spacing:0.08em; text-transform:uppercase; color:#000; background:var(--yellow); padding:4px 9px; margin-top:2px; }
+    .thm-ideas p { color:var(--ink); font-size:0.95rem; line-height:1.6; font-weight:300; margin:0; }
+    .thm-ideas strong { color:#fff; font-weight:600; }
+
+    /* 7-DAY LOG */
+    .thm-week__intro { background:#111; border:1px solid var(--line); border-left:4px solid var(--yellow); padding:22px 26px; margin:24px 0 8px; }
+    .thm-week__intro p { color:var(--ink); font-size:0.98rem; line-height:1.65; font-weight:300; margin:0; }
+    .thm-week__intro strong { color:#fff; font-weight:600; }
+    .thm-week__progress { display:flex; align-items:center; gap:16px; margin:20px 0 18px; }
+    .thm-week__track { flex:1; height:10px; background:rgba(255,255,255,0.08); border-radius:100px; overflow:hidden; }
+    .thm-week__fill { height:100%; width:0; background:var(--yellow); transition:width .5s ease; }
+    .thm-week__count { font-family:var(--font-heading); font-size:0.82rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--yellow); white-space:nowrap; }
+    .thm-day { border:1px solid var(--line); border-bottom:none; background:#0f0f0f; }
+    .thm-day:last-child { border-bottom:1px solid var(--line); }
+    .thm-day__trigger { width:100%; display:flex; align-items:center; gap:16px; padding:16px 20px; background:none; border:none; cursor:pointer; text-align:left; }
+    .thm-day__trigger:hover { background:rgba(255,255,255,0.03); }
+    .thm-day__dot { flex-shrink:0; width:26px; height:26px; border-radius:50%; border:2px solid var(--muted); display:flex; align-items:center; justify-content:center; }
+    .thm-day__dot svg { width:15px; height:15px; color:#000; opacity:0; }
+    .thm-day.is-done .thm-day__dot { background:var(--yellow); border-color:var(--yellow); }
+    .thm-day.is-done .thm-day__dot svg { opacity:1; }
+    .thm-day__label { flex:1; font-family:var(--font-heading); font-size:1rem; text-transform:uppercase; letter-spacing:0.03em; color:#fff; }
+    .thm-day__state { font-size:0.78rem; color:var(--muted); font-family:var(--font-heading); letter-spacing:0.05em; text-transform:uppercase; }
+    .thm-day__caret { width:18px; height:18px; color:var(--yellow); transition:transform .3s ease; }
+    .thm-day.is-open .thm-day__caret { transform:rotate(180deg); }
+    .thm-day__panel[hidden] { display:none; }
+    .thm-day__body { padding:4px 20px 22px; }
+    .thm-day__field { margin-bottom:14px; }
+    .thm-day__q { color:#fff; font-size:0.92rem; font-weight:400; margin:0 0 6px; }
+    .thm-day__body textarea { width:100%; min-height:56px; background:#0a0a0a; border:1px solid var(--line); color:#fff; font-family:var(--font-body); font-size:0.94rem; line-height:1.55; font-weight:300; padding:11px 13px; resize:vertical; }
+    .thm-day__body textarea:focus { outline:none; border-color:var(--yellow); }
+    .thm-toggle { display:flex; gap:8px; flex-wrap:wrap; }
+    .thm-toggle button { flex:1 1 90px; background:#191919; border:1px solid var(--line); color:var(--ink); font-family:var(--font-body); font-size:0.88rem; padding:10px 10px; cursor:pointer; transition:.15s; }
+    .thm-toggle button[aria-pressed="true"] { background:var(--yellow); border-color:var(--yellow); color:#000; font-weight:500; }
+    .thm-day__save { display:inline-flex; align-items:center; gap:7px; margin-top:6px; font-size:0.78rem; color:var(--muted); }
+    .thm-day__save svg { width:13px; height:13px; color:var(--yellow); }
+    .thm-week__reset { margin-top:16px; background:none; border:none; color:var(--muted); font-size:0.82rem; text-decoration:underline; cursor:pointer; }
+    .thm-week__reset:hover { color:#fff; }
+
+    .thm-refcard { background:#111; border:1px solid rgba(255,229,0,0.3); padding:26px 30px; margin:26px 0; }
+    .thm-refcard h4 { font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--yellow); margin-bottom:14px; }
+    .thm-refcard ol { margin:0; padding-left:22px; color:var(--ink); }
+    .thm-refcard li { font-size:0.96rem; line-height:1.6; font-weight:300; padding:4px 0; }
+    .thm-refcard li strong { color:#fff; font-weight:600; }
+
+    .th-lock { background:rgba(255,229,0,0.07); border:1px solid rgba(255,229,0,0.22); padding:18px 22px; display:flex; gap:14px; align-items:flex-start; margin-top:8px; }
+    .th-lock svg { width:22px; height:22px; color:var(--yellow); flex-shrink:0; margin-top:2px; }
+    .th-lock p { color:var(--ink); font-size:0.96rem; line-height:1.6; font-weight:300; margin:0; }
+    .th-lock strong { color:#fff; font-weight:600; }
+
+    .thm-nextnav { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:20px; }
+    .thm-nextnav a { display:block; background:#111; border:1px solid var(--line); padding:22px 24px; transition:.2s; }
+    .thm-nextnav a:hover { border-color:var(--yellow); }
+    .thm-nextnav__dir { font-family:var(--font-heading); font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+    .thm-nextnav__title { font-family:var(--font-heading); font-size:1.05rem; color:#fff; text-transform:uppercase; letter-spacing:0.02em; }
+    .thm-nextnav a:hover .thm-nextnav__title { color:var(--yellow); }
+    .thm-nextnav--end { text-align:right; }
+
+    @media (max-width:720px) {
+      .thm-vs, .th-applied, .thm-nextnav, .thm-laws { grid-template-columns:1fr; }
+      .thm-nextnav--end { text-align:left; }
+    }
+  </style>
+</head>
+<body class="th">
+
+  <!-- ========== HEADER / NAV (standard — no THRIVE link anywhere) ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="images/logo-horizontal.png?v=2" alt="The Performance Act" class="logo-img logo-img--header">
+      </a>
+      <nav class="header__nav" id="mainNav" aria-label="Primary">
+        <div class="nav-item nav-item--has-dropdown">
+          <a href="index.html#about" class="nav-link nav-link--has-dropdown" aria-haspopup="true" aria-expanded="false">ABOUT US
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown" role="menu">
+            <a href="approach.html" class="nav-dropdown__link" role="menuitem">Approach</a>
+            <a href="index.html#pillars" class="nav-dropdown__link" role="menuitem">Our Pact</a>
+            <a href="team.html" class="nav-dropdown__link" role="menuitem">Team</a>
+          </div>
+        </div>
+        <a href="programs.html" class="nav-link">SUPPORT &amp; SERVICES</a>
+        <div class="nav-item nav-item--has-dropdown">
+          <a href="grow.html" class="nav-link nav-link--has-dropdown" aria-haspopup="true" aria-expanded="false">GROW PLATFORM
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown" role="menu">
+            <a href="grow.html" class="nav-dropdown__link" role="menuitem">About GROW</a>
+            <a href="grow-login.html" class="nav-dropdown__link" role="menuitem">Member Login</a>
+          </div>
+        </div>
+        <a href="blog.html" class="nav-link">RESOURCES</a>
+        <a href="contact.html" class="nav-link">CONTACT</a>
+      </nav>
+      <div class="header__actions">
+        <a href="contact.html" class="btn btn--primary btn--sm">Let&#8217;s Have a K&#333;rero</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <nav class="mobile-nav__links" aria-label="Mobile">
+      <div class="mobile-nav__group">
+        <button class="mobile-nav__group-toggle" aria-expanded="false" aria-controls="mobileAboutSub">ABOUT US
+          <svg class="mobile-nav__group-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="mobile-nav__sub" id="mobileAboutSub">
+          <a href="approach.html" class="mobile-nav__sublink">Approach</a>
+          <a href="index.html#pillars" class="mobile-nav__sublink">Our Pact</a>
+          <a href="team.html" class="mobile-nav__sublink">Team</a>
+        </div>
+      </div>
+      <a href="programs.html" class="mobile-nav__link">SUPPORT &amp; SERVICES</a>
+      <div class="mobile-nav__group">
+        <button class="mobile-nav__group-toggle" aria-expanded="false" aria-controls="mobileGrowSub">GROW PLATFORM
+          <svg class="mobile-nav__group-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="mobile-nav__sub" id="mobileGrowSub">
+          <a href="grow.html" class="mobile-nav__sublink">About GROW</a>
+          <a href="grow-login.html" class="mobile-nav__sublink">Member Login</a>
+        </div>
+      </div>
+      <a href="blog.html" class="mobile-nav__link">RESOURCES</a>
+      <a href="contact.html" class="mobile-nav__link">CONTACT</a>
+      <div class="mobile-nav__actions">
+        <a href="contact.html" class="btn btn--primary">Let&#8217;s Have a K&#333;rero</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- ========== MODULE HERO ========== -->
+  <section class="thm-hero">
+    <div class="thm-hero__bg"></div>
+    <div class="container">
+      <a href="grow-thrive.html#program" class="thm-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> THRIVE program</a>
+      <div class="th-wrap">
+        <div class="thm-hero__num">06<span class="thm-hero__pill">E · Do What Matters</span></div>
+        <p class="thm-hero__kicker">Engage II · Values into action</p>
+        <h1 class="thm-hero__title">Do What Matters: Committed Action</h1>
+        <div class="thm-hero__meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> ~24 minutes</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v14H4z"/><path d="M4 9h16"/></svg> Build · design · rehearse</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg> Private to you</span>
+        </div>
+
+        <div class="thm-obj">
+          <h3>By the end of this module you can</h3>
+          <ul>
+            <li>Turn a value into a concrete action with the <strong>values-to-action ladder</strong>.</li>
+            <li>Design a <strong>habit</strong> so valued action actually sticks.</li>
+            <li>Use <strong>willingness</strong> &mdash; not motivation &mdash; to act even when it&rsquo;s uncomfortable.</li>
+            <li>Pair action with Acknowledge + Connect &mdash; your first full <strong>ACE</strong> rep.</li>
+          </ul>
+        </div>
+
+        <nav class="thm-toc" aria-label="On this page">
+          <a href="#move">The move</a>
+          <a href="#ladder">Values &rarr; action</a>
+          <a href="#habit">Design the habit</a>
+          <a href="#willing">Willingness</a>
+          <a href="#reflect">Reflect</a>
+          <a href="#week">This week</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 1 · THE MOVE ========== -->
+  <section class="th-sec" id="move">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">01 · The move</p>
+        <h2 class="th-h2">Values off the page,<br><em>into your life</em></h2>
+        <p class="th-p">In Module 05 you found your compass. But a compass only helps if you start walking. <strong>Committed action</strong> is the second half of Do What Matters: taking your values off the page and turning them into behaviour &mdash; again and again, especially when it&rsquo;s hard.</p>
+        <div class="th-quote">
+          <p>"Values without action are just nice words. Action without values is just busyness. Put them together and you&rsquo;ve got a life with direction <em>and</em> traction."</p>
+          <cite>— The heart of committed action</cite>
+        </div>
+        <p class="th-p">Here&rsquo;s the trap almost everyone falls into: <strong>waiting to feel motivated.</strong> Motivation is lovely when it shows up &mdash; but it&rsquo;s a feeling, and feelings are weather. If you only train, study, or reach out when you <em>feel like it</em>, you&rsquo;ll be at the mercy of your mood. The alternative is <strong>willingness</strong>: choosing to act because it matters, whether or not you feel like it. And crucially &mdash; acting on your values will often trigger exactly the thoughts and feelings you met in Modules 2&ndash;4. That&rsquo;s where all three ACE moves finally come together.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 2 · VALUES -> ACTION LADDER ========== -->
+  <section class="th-sec th-sec--alt" id="ladder">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">02 · Build it &middot; do it now</p>
+        <h2 class="th-h2">The values-to-action <em>ladder</em></h2>
+        <p class="th-p">A value is a direction; a ladder turns it into steps you can actually climb. Pick a value, then work down from the big picture to the one small thing you can do <strong>today</strong>. Watch the ladder build as you type &mdash; it all saves on this device.</p>
+
+        <div class="thm-ex">
+          <div class="thm-ex__head">
+            <div class="thm-ex__eyebrow">Interactive builder</div>
+            <div class="thm-ex__name">Your Action Ladder</div>
+          </div>
+          <div class="thm-ex__body">
+            <div class="thm-field">
+              <div class="thm-field__label">1 &middot; Pick a <b>value</b> to act on</div>
+              <input type="text" id="ladVal" maxlength="40" placeholder="e.g. Courage, Growth, Connection…">
+              <div class="thm-chips" id="ladValChips"></div>
+            </div>
+            <div class="thm-field">
+              <div class="thm-field__label">2 &middot; This <b>year</b> — where could living this value take you?</div>
+              <textarea id="ladYear" maxlength="160" placeholder="Over a season / year, living this looks like…"></textarea>
+            </div>
+            <div class="thm-field">
+              <div class="thm-field__label">3 &middot; This <b>month</b> — a nearer step in that direction</div>
+              <textarea id="ladMonth" maxlength="160" placeholder="In the next few weeks, I could…"></textarea>
+            </div>
+            <div class="thm-field">
+              <div class="thm-field__label">4 &middot; <b>Today</b> — the smallest thing you can do in the next 24 hours</div>
+              <textarea id="ladToday" maxlength="160" placeholder="Right now / today, one tiny action is…"></textarea>
+            </div>
+
+            <div class="thm-output">
+              <div class="thm-output__label">Your ladder</div>
+              <div class="thm-ladder" id="ladderView">
+                <div class="thm-ladder__rung" data-rung="val"><div class="thm-ladder__tier">Value · the direction</div><div class="thm-ladder__val ph">Pick a value above…</div></div>
+                <div class="thm-ladder__rung" data-rung="year"><div class="thm-ladder__tier">This year</div><div class="thm-ladder__val ph">Your big-picture step…</div></div>
+                <div class="thm-ladder__rung" data-rung="month"><div class="thm-ladder__tier">This month</div><div class="thm-ladder__val ph">Your nearer step…</div></div>
+                <div class="thm-ladder__rung thm-ladder__rung--today" data-rung="today"><div class="thm-ladder__tier">Today · your first rep</div><div class="thm-ladder__val ph">The one small action…</div></div>
+              </div>
+              <p class="thm-output__hint">The magic is in the bottom rung. Big directions are motivating; <strong style="color:#fff">tiny actions are what actually move you</strong>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 3 · DESIGN THE HABIT ========== -->
+  <section class="th-sec" id="habit">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">03 · Make it stick &middot; do it now</p>
+        <h2 class="th-h2">Design the <em>habit</em></h2>
+        <p class="th-p">One action is a start; a <strong>habit</strong> is what changes your trajectory. The science of habits (James Clear&rsquo;s four laws) says a behaviour sticks when it&rsquo;s <em>obvious, attractive, easy and satisfying</em>. Let&rsquo;s wrap your &ldquo;today&rdquo; action in a habit you&rsquo;ll actually repeat.</p>
+
+        <div class="thm-laws">
+          <div class="thm-law"><b>1 · Obvious</b><span>Tie it to something you already do, at a set time and place.</span></div>
+          <div class="thm-law"><b>2 · Attractive</b><span>Pair it with something you enjoy, or link it to your identity.</span></div>
+          <div class="thm-law"><b>3 · Easy</b><span>Shrink it so small it&rsquo;s almost impossible to say no.</span></div>
+          <div class="thm-law"><b>4 · Satisfying</b><span>Make it feel good now &mdash; tick it off, track the streak.</span></div>
+        </div>
+
+        <div class="thm-ex">
+          <div class="thm-ex__head">
+            <div class="thm-ex__eyebrow">Habit recipe</div>
+            <div class="thm-ex__name">The Habit Designer</div>
+          </div>
+          <div class="thm-ex__body">
+            <div class="thm-field">
+              <div class="thm-field__label">The <b>action</b> (your &ldquo;today&rdquo; step is a good one)</div>
+              <input type="text" id="habAction" maxlength="80" placeholder="e.g. do 10 minutes of core work">
+            </div>
+            <div class="thm-field">
+              <div class="thm-field__label">Make it <b>obvious</b> — after which existing habit? (cue)</div>
+              <input type="text" id="habCue" maxlength="80" placeholder="e.g. after I brush my teeth / after training">
+            </div>
+            <div class="thm-field">
+              <div class="thm-field__label">…and <b>where</b>?</div>
+              <input type="text" id="habWhere" maxlength="80" placeholder="e.g. in my room / at the gym">
+            </div>
+            <div class="thm-field">
+              <div class="thm-field__label">Make it <b>easy</b> — the 2-minute starter version</div>
+              <input type="text" id="habTiny" maxlength="80" placeholder="e.g. just roll out the mat and do one set">
+            </div>
+
+            <div class="thm-output">
+              <div class="thm-output__label">Your habit recipe</div>
+              <div class="thm-output__text" id="habOut">Fill the fields above and your habit will assemble here.</div>
+              <p class="thm-output__hint">To make it <strong style="color:#fff">satisfying</strong>, tick it off in the 7-day log below each time you do it — the streak is the reward.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 4 · WILLINGNESS ========== -->
+  <section class="th-sec th-sec--alt" id="willing">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">04 · The engine &middot; do it now</p>
+        <h2 class="th-h2">Willingness, <em>not</em> motivation</h2>
+        <p class="th-p">Here&rsquo;s the part that ties the whole program together. The moment you go to act on a value, your mind often serves up the exact stuff from earlier &mdash; fear, doubt, &ldquo;I don&rsquo;t feel like it,&rdquo; &ldquo;what if I fail.&rdquo; Waiting for that to disappear is a losing game. Instead you use <strong>willingness</strong>: the choice to make room for the discomfort (Acknowledge), stay present with it (Connect), and take the step anyway (Engage). One full ACE rep.</p>
+
+        <div class="thm-vs">
+          <div class="thm-vs__col thm-vs__col--no">
+            <div class="thm-vs__tag">Waiting for motivation</div>
+            <ul>
+              <li>Rarely shows up on the hard days</li>
+              <li>Puts your <em>feelings</em> in charge</li>
+              <li>You act only once you already want to</li>
+              <li>&ldquo;I&rsquo;ll do it when I feel ready.&rdquo;</li>
+            </ul>
+          </div>
+          <div class="thm-vs__col thm-vs__col--yes">
+            <div class="thm-vs__tag">Using willingness</div>
+            <ul>
+              <li>Available in any mood, any moment</li>
+              <li>Puts your <em>values</em> in charge</li>
+              <li>You act because it matters, feeling or not</li>
+              <li>&ldquo;I don&rsquo;t feel like it &mdash; and I&rsquo;ll do it anyway.&rdquo;</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="thm-ex">
+          <div class="thm-ex__head">
+            <div class="thm-ex__eyebrow">Rehearsal · your first full ACE rep</div>
+            <div class="thm-ex__name">The Willingness Move</div>
+          </div>
+          <div class="thm-ex__body">
+            <div class="thm-field">
+              <div class="thm-field__label">A valued action you&rsquo;ve been <b>avoiding</b></div>
+              <input type="text" id="willAct" maxlength="90" placeholder="e.g. ask the coach for feedback / start the assignment">
+            </div>
+            <div class="thm-field">
+              <div class="thm-field__label">What shows up when you picture doing it? (the <b>feeling or thought</b>)</div>
+              <input type="text" id="willFeel" maxlength="70" placeholder="e.g. fear of looking dumb / a knot in my stomach">
+            </div>
+            <div class="thm-field">
+              <div class="thm-field__label">How <b>willing</b> are you to have that, in order to act?</div>
+              <div class="thm-will__slider">
+                <input type="range" id="willRange" min="0" max="10" value="5" aria-label="How willing are you, 0 to 10">
+                <div class="thm-will__scale"><span>Not yet</span><span>Fully willing</span></div>
+              </div>
+              <p class="thm-will__read" id="willRead"></p>
+            </div>
+
+            <div class="thm-output">
+              <div class="thm-output__label">Your willingness statement</div>
+              <div class="thm-output__text" id="willOut">I can feel <b>[what shows up]</b> &mdash; and <b>[do the action]</b> anyway.</div>
+              <p class="thm-output__hint">That&rsquo;s Acknowledge + Connect + Engage in one sentence. Say it before you act &mdash; then take the step.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 5 · REFLECT ========== -->
+  <section class="th-sec" id="reflect">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">05 · Journal it</p>
+        <h2 class="th-h2">Get <em>honest</em></h2>
+        <p class="th-p">Committed action lives or dies on honesty about what you avoid and why. Take your time &mdash; everything saves <strong>only on this device</strong>.</p>
+
+        <div class="th-reflect">
+          <p class="th-reflect__q">1 · What&rsquo;s one valued action you keep avoiding &mdash; and what does the avoidance cost you?</p>
+          <p class="th-reflect__hint">Be specific about both the thing and the price of dodging it.</p>
+          <textarea data-reflect="m6-avoid" placeholder="I keep avoiding… and it costs me…"></textarea>
+          <div class="th-reflect__foot"><span class="th-reflect__saved" data-saved-for="m6-avoid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device</span></div>
+        </div>
+
+        <div class="th-reflect">
+          <p class="th-reflect__q">2 · Think of a time you did something hard <em>without</em> feeling like it. What made you act?</p>
+          <p class="th-reflect__hint">That thing you found is willingness. You already own it &mdash; where else could you use it?</p>
+          <textarea data-reflect="m6-hard" placeholder="I didn't feel like it, but I acted because…"></textarea>
+          <div class="th-reflect__foot"><span class="th-reflect__saved" data-saved-for="m6-hard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device</span></div>
+        </div>
+
+        <div class="th-reflect">
+          <p class="th-reflect__q">3 · In your own words — what&rsquo;s the difference between motivation and willingness?</p>
+          <p class="th-reflect__hint">Your retrieval question. Say it how you&rsquo;d explain it to a teammate who&rsquo;s &ldquo;waiting to feel ready.&rdquo;</p>
+          <textarea data-reflect="m6-diff" placeholder="Motivation is… but willingness is…"></textarea>
+          <div class="th-reflect__foot"><span class="th-reflect__saved" data-saved-for="m6-diff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device</span></div>
+        </div>
+
+        <div class="th-applied">
+          <div class="th-applied__col th-applied__col--sport"><h5>Apply in Sport</h5><p>Choose one values-based training action and design the habit around it this week (you just did &mdash; now run it). Show up and do the rep even on the flat days; that&rsquo;s the whole skill.</p></div>
+          <div class="th-applied__col th-applied__col--life"><h5>Apply in Life</h5><p>Take one small values-based action outside sport you&rsquo;ve been avoiding &mdash; studying, reaching out to a friend, a hard conversation, a health habit, asking for help. Avoidance is normal; willingness, not motivation, is the engine.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 6 · THIS WEEK ========== -->
+  <section class="th-sec th-sec--alt" id="week">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">06 · This week&rsquo;s Mind Gym</p>
+        <h2 class="th-h2">Run the <em>rep</em></h2>
+        <p class="th-p">This week is simple and hard: do your habit, most days, whether or not you feel like it. Here&rsquo;s your action to keep in front of you, a few ways to make it easier, and a daily log to build the streak.</p>
+
+        <div class="thm-ref" id="planRef">
+          <div class="thm-ref__label">Your plan (from above)</div>
+          <div class="thm-ref__chips" id="planChips"></div>
+          <p class="thm-ref__empty" id="planEmpty">Build your ladder and habit above and your plan will show here.</p>
+        </div>
+
+        <div class="th-block"><span class="th-block__label">Make the rep easier this week</span></div>
+        <ul class="thm-ideas">
+          <li><span class="thm-ideas__tag">Shrink it</span><p>If you skip a day, don&rsquo;t scrap it &mdash; do the <strong>2-minute version</strong>. Showing up small keeps the identity alive: &ldquo;I&rsquo;m someone who does this.&rdquo;</p></li>
+          <li><span class="thm-ideas__tag">Willingness first</span><p>Before the hard rep, say your willingness statement: <em>&ldquo;I can feel this &mdash; and do it anyway.&rdquo;</em> Then start before your mind can argue.</p></li>
+          <li><span class="thm-ideas__tag">Never miss twice</span><p>One missed day is a blip; two is the start of a new (worse) habit. If you miss, make the very next rep non-negotiable.</p></li>
+          <li><span class="thm-ideas__tag">Pair it</span><p>Attach your action to something you enjoy &mdash; a playlist, a coffee, a mate doing it with you. Make it something you look forward to.</p></li>
+          <li><span class="thm-ideas__tag">Diary</span><p>Tick the log below every day you do the rep. The growing streak is the reward &mdash; that&rsquo;s the &ldquo;satisfying&rdquo; law in action.</p></li>
+        </ul>
+
+        <div class="th-block" style="margin-top:36px;"><span class="th-block__label">The 7-day action log</span></div>
+        <div class="thm-week__intro">
+          <p><strong>One entry a day for seven days.</strong> Did you take your action? Log whether you did it, the <em>willingness</em> it took, and one line on how it went. Missing a day isn&rsquo;t failure &mdash; it&rsquo;s data. Everything saves on this device only.</p>
+        </div>
+        <div class="thm-week__progress">
+          <div class="thm-week__track"><div class="thm-week__fill" id="weekFill"></div></div>
+          <span class="thm-week__count" id="weekCount">0 / 7 days</span>
+        </div>
+        <div class="thm-week" id="weekJournal"></div>
+        <button class="thm-week__reset" id="weekReset">Clear this week and start over</button>
+
+        <div class="thm-refcard">
+          <h4>Your committed-action pocket card</h4>
+          <ol>
+            <li><strong>Values without action are just words</strong> &mdash; climb down to the smallest step.</li>
+            <li>Design the habit: <strong>obvious, attractive, easy, satisfying</strong>.</li>
+            <li>Don&rsquo;t wait for motivation &mdash; use <strong>willingness</strong>.</li>
+            <li>Feel the fear <strong>and</strong> do it anyway. That&rsquo;s one full ACE rep.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LOCK IT IN + NEXT ========== -->
+  <section class="th-sec">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">Lock it in</p>
+        <div class="th-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg><p><strong>That&rsquo;s all three moves.</strong> You&rsquo;ve learned to Acknowledge, Connect and Engage &mdash; and just now, in the willingness move, you ran them together for the first time. Next module makes that one fluid skill you can deploy in seconds under pressure: <strong>Putting ACE Together</strong>.</p></div>
+
+        <div class="thm-nextnav">
+          <a href="grow-thrive-module-05.html">
+            <div class="thm-nextnav__dir">&larr; Previous</div>
+            <div class="thm-nextnav__title">05 · Values</div>
+          </a>
+          <a href="grow-thrive.html#program" class="thm-nextnav--end">
+            <div class="thm-nextnav__dir">Next module &rarr;</div>
+            <div class="thm-nextnav__title">07 · Putting ACE Together</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="siteFooter">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-grid__brand">
+          <img src="images/logo-vertical.png?v=2" alt="The Performance Act" class="logo-img logo-img--footer">
+          <p class="footer__tagline">Helping People Grow</p>
+          <p class="footer__email"><a href="mailto:info@performance-act.com">info@performance-act.com</a></p>
+        </div>
+        <div class="footer-grid__links">
+          <h4 class="footer__heading">QUICK LINKS</h4>
+          <a href="index.html#about" class="footer__link">About Us</a>
+          <a href="approach.html" class="footer__link">Our Approach</a>
+          <a href="programs.html" class="footer__link">Programs</a>
+          <a href="team.html" class="footer__link">Our Wh&#257;nau</a>
+        </div>
+        <div class="footer-grid__links">
+          <h4 class="footer__heading">GROW</h4>
+          <a href="grow.html" class="footer__link">About GROW</a>
+          <a href="grow-login.html" class="footer__link">Member Login</a>
+        </div>
+        <div class="footer-grid__social">
+          <h4 class="footer__heading">FOLLOW US</h4>
+          <div class="social-links">
+            <a href="https://www.instagram.com/performance__act/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+            <a href="https://www.facebook.com/ThePerformanceAct" target="_blank" rel="noopener" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a href="https://www.linkedin.com/company/performance-act-ltd/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 The Performance Act. All rights reserved. Aotearoa, New Zealand.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- NZ SUPPORT LINES -->
+  <button class="support-line-btn" id="supportLineBtn" aria-label="NZ support lines">
+    <span class="support-line-btn__dot" aria-hidden="true"></span>
+    Immediate Support
+  </button>
+  <div class="support-line-modal" id="supportLineModal" role="dialog" aria-modal="true" aria-labelledby="supportLineTitle" aria-hidden="true">
+    <div class="support-line-modal__backdrop"></div>
+    <div class="support-line-modal__panel">
+      <button class="support-line-modal__close" id="supportLineClose" aria-label="Close support lines"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      <p class="support-line-modal__eyebrow">Aotearoa, New Zealand</p>
+      <h2 class="support-line-modal__title" id="supportLineTitle">Need immediate support?</h2>
+      <p class="support-line-modal__note">The Performance Act is a sport psychology practice, not a crisis or emergency service. If you or someone you care about needs immediate support, please reach out to one of these trusted services below. They are free, confidential, and available 24&#8202;/&#8202;7.</p>
+      <ul class="support-line-modal__list" role="list">
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">1737 &mdash; Need to Talk?</p><p class="sln-resource__desc">Free call or text, any time. Trained counsellors, 24&#47;7.</p></div><a href="tel:1737" class="sln-resource__number">Call or text 1737</a></li>
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">Youthline</p><p class="sln-resource__desc">For young people. Free call or text 234, 24&#47;7.</p></div><a href="tel:0800376633" class="sln-resource__number">0800 376 633</a></li>
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">Lifeline NZ</p><p class="sln-resource__desc">Crisis support and suicide prevention, 24&#47;7.</p></div><a href="tel:0800543354" class="sln-resource__number">0800 543 354</a></li>
+      </ul>
+      <p class="support-line-modal__footer">More resources at <a href="https://www.mentalhealth.org.nz/get-help/in-crisis" target="_blank" rel="noopener">Mental Health Foundation NZ</a>.</p>
+    </div>
+  </div>
+
+  <script src="script.js?v=5"></script>
+  <script>
+  /* =========================================================
+     THRIVE Module 06 — action ladder, habit designer,
+     willingness rehearsal, reflection autosave, 7-day log.
+     Reads the top-five values saved in Module 05.
+     All state stays in localStorage on this device.
+     ========================================================= */
+  (function () {
+    var LS = 'thrive_m6_';
+    function esc(s) { return (s || '').replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+    function save(k, v) { try { localStorage.setItem(LS + k, v); } catch (e) {} }
+    function load(k) { try { return localStorage.getItem(LS + k) || ''; } catch (e) { return ''; } }
+
+    /* ---- Reflection autosave ---- */
+    document.querySelectorAll('textarea[data-reflect]').forEach(function (ta) {
+      var key = LS + 'reflect_' + ta.getAttribute('data-reflect');
+      var saved = document.querySelector('[data-saved-for="' + ta.getAttribute('data-reflect') + '"]');
+      try { if (localStorage.getItem(key)) ta.value = localStorage.getItem(key); } catch (e) {}
+      if (saved) saved.style.opacity = ta.value ? '1' : '0';
+      var t;
+      ta.addEventListener('input', function () {
+        if (saved) saved.style.opacity = '0.4';
+        clearTimeout(t);
+        t = setTimeout(function () { try { localStorage.setItem(key, ta.value); } catch (e) {} if (saved) saved.style.opacity = ta.value ? '1' : '0'; }, 400);
+      });
+    });
+
+    /* ================= ACTION LADDER ================= */
+    var ladVal = document.getElementById('ladVal'), ladYear = document.getElementById('ladYear'),
+        ladMonth = document.getElementById('ladMonth'), ladToday = document.getElementById('ladToday'),
+        ladderView = document.getElementById('ladderView'), ladValChips = document.getElementById('ladValChips');
+
+    // prefill from saved
+    ladVal.value = load('lad_val'); ladYear.value = load('lad_year');
+    ladMonth.value = load('lad_month'); ladToday.value = load('lad_today');
+
+    // value chips from Module 05
+    (function () {
+      var vals = [];
+      try { vals = JSON.parse(localStorage.getItem('thrive_m5_values') || '[]'); } catch (e) { vals = []; }
+      var names = vals.length ? vals.map(function (v) { return v[0]; }) : ['Courage', 'Growth', 'Discipline', 'Connection', 'Excellence'];
+      names.forEach(function (n) {
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'thm-chip'; b.textContent = n;
+        b.addEventListener('click', function () { ladVal.value = n; save('lad_val', n); renderLadder(); });
+        ladValChips.appendChild(b);
+      });
+    })();
+
+    function setRung(rung, text, isToday) {
+      var el = ladderView.querySelector('[data-rung="' + rung + '"]');
+      var valEl = el.querySelector('.thm-ladder__val');
+      if (text && text.trim()) {
+        valEl.textContent = text.trim(); valEl.classList.remove('ph'); el.classList.add('is-filled');
+      } else {
+        el.classList.remove('is-filled'); valEl.classList.add('ph');
+      }
+    }
+    function renderLadder() {
+      setRung('val', ladVal.value);
+      setRung('year', ladYear.value);
+      setRung('month', ladMonth.value);
+      setRung('today', ladToday.value);
+      renderPlan();
+    }
+    function wire(el, key) { el.addEventListener('input', function () { save(key, el.value); renderLadder(); }); }
+    wire(ladVal, 'lad_val'); wire(ladYear, 'lad_year'); wire(ladMonth, 'lad_month'); wire(ladToday, 'lad_today');
+    // restore placeholders text where empty
+    ladderView.querySelectorAll('.thm-ladder__val.ph').forEach(function () {});
+    renderLadder();
+
+    /* ================= HABIT DESIGNER ================= */
+    var habAction = document.getElementById('habAction'), habCue = document.getElementById('habCue'),
+        habWhere = document.getElementById('habWhere'), habTiny = document.getElementById('habTiny'),
+        habOut = document.getElementById('habOut');
+    habAction.value = load('hab_action'); habCue.value = load('hab_cue');
+    habWhere.value = load('hab_where'); habTiny.value = load('hab_tiny');
+    function renderHabit() {
+      var a = habAction.value.trim(), c = habCue.value.trim(), w = habWhere.value.trim(), t = habTiny.value.trim();
+      if (!a && !c && !w && !t) { habOut.textContent = 'Fill the fields above and your habit will assemble here.'; renderPlan(); return; }
+      var s = 'I will <b>' + (a ? esc(a) : '[action]') + '</b>';
+      if (c) s += ' <b>' + esc(c) + '</b>';
+      if (w) s += ', <b>' + esc(w) + '</b>';
+      s += '.';
+      if (t) s += ' To make it easy, I&rsquo;ll start with just <b>' + esc(t) + '</b>.';
+      habOut.innerHTML = s;
+      renderPlan();
+    }
+    [['hab_action', habAction], ['hab_cue', habCue], ['hab_where', habWhere], ['hab_tiny', habTiny]].forEach(function (p) {
+      p[1].addEventListener('input', function () { save(p[0], p[1].value); renderHabit(); });
+    });
+    renderHabit();
+
+    /* ================= WILLINGNESS ================= */
+    var willAct = document.getElementById('willAct'), willFeel = document.getElementById('willFeel'),
+        willRange = document.getElementById('willRange'), willRead = document.getElementById('willRead'),
+        willOut = document.getElementById('willOut');
+    willAct.value = load('will_act'); willFeel.value = load('will_feel');
+    if (load('will_range')) willRange.value = load('will_range');
+    function willReadText(v) {
+      v = parseInt(v, 10);
+      if (v <= 3) return 'Not very willing yet &mdash; and that&rsquo;s honest. Remember: <b>willingness is a choice you make, not a feeling you wait for.</b> You can pick it up at any number.';
+      if (v <= 7) return 'Somewhat willing &mdash; and that&rsquo;s <b>more than enough</b> to take one small step. You don&rsquo;t need a 10 to act.';
+      return 'Willing. Notice you can <b>choose this even when motivation is low</b> &mdash; that&rsquo;s the whole skill.';
+    }
+    function renderWill() {
+      var a = willAct.value.trim(), f = willFeel.value.trim();
+      willOut.innerHTML = 'I can feel <b>' + (f ? esc(f) : '[what shows up]') + '</b> &mdash; and <b>' + (a ? esc(a) : '[do the action]') + '</b> anyway.';
+      willRead.innerHTML = willReadText(willRange.value);
+    }
+    willAct.addEventListener('input', function () { save('will_act', willAct.value); renderWill(); });
+    willFeel.addEventListener('input', function () { save('will_feel', willFeel.value); renderWill(); });
+    willRange.addEventListener('input', function () { save('will_range', willRange.value); renderWill(); });
+    renderWill();
+
+    /* ================= PLAN REFERENCE (weekly) ================= */
+    function renderPlan() {
+      var chips = document.getElementById('planChips'), empty = document.getElementById('planEmpty');
+      if (!chips || !empty) return;
+      var v = document.getElementById('ladVal'), td = document.getElementById('ladToday'), ha = document.getElementById('habAction');
+      var items = [];
+      if (v && v.value.trim()) items.push('Value: ' + v.value.trim());
+      if (td && td.value.trim()) items.push('Today: ' + td.value.trim());
+      if (ha && ha.value.trim()) items.push('Habit: ' + ha.value.trim());
+      chips.innerHTML = '';
+      if (!items.length) { empty.style.display = 'block'; return; }
+      empty.style.display = 'none';
+      items.forEach(function (t) { var s = document.createElement('span'); s.textContent = t; chips.appendChild(s); });
+    }
+    renderPlan();
+
+    /* ================= 7-DAY ACTION LOG ================= */
+    var DAYS = ['Day 1','Day 2','Day 3','Day 4','Day 5','Day 6','Day 7'];
+    var journal = document.getElementById('weekJournal');
+    var weekFill = document.getElementById('weekFill'), weekCount = document.getElementById('weekCount');
+    function dKey(i, f) { return LS + 'day' + i + '_' + f; }
+    function buildDay(i) {
+      var wrap = document.createElement('div'); wrap.className = 'thm-day';
+      wrap.innerHTML =
+        '<button class="thm-day__trigger" aria-expanded="false" aria-controls="dayp-' + i + '">' +
+          '<span class="thm-day__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>' +
+          '<span class="thm-day__label">' + DAYS[i] + '</span>' +
+          '<span class="thm-day__state" data-state></span>' +
+          '<svg class="thm-day__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>' +
+        '</button>' +
+        '<div class="thm-day__panel" id="dayp-' + i + '" hidden><div class="thm-day__body">' +
+          '<div class="thm-day__field"><p class="thm-day__q">Did you take your action today?</p>' +
+            '<div class="thm-toggle" data-day="' + i + '">' +
+              '<button type="button" data-choice="did" aria-pressed="false">Did it</button>' +
+              '<button type="button" data-choice="tiny" aria-pressed="false">Did the 2-min version</button>' +
+              '<button type="button" data-choice="missed" aria-pressed="false">Missed it</button>' +
+            '</div></div>' +
+          '<div class="thm-day__field"><p class="thm-day__q">How much willingness did it take, and how did it go?</p><textarea data-day="' + i + '" data-f="note" placeholder="One line…"></textarea></div>' +
+          '<span class="thm-day__save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device as you type</span>' +
+        '</div></div>';
+      journal.appendChild(wrap);
+      var trigger = wrap.querySelector('.thm-day__trigger'), panel = wrap.querySelector('.thm-day__panel');
+      trigger.addEventListener('click', function () {
+        var open = trigger.getAttribute('aria-expanded') === 'true';
+        trigger.setAttribute('aria-expanded', open ? 'false' : 'true');
+        wrap.classList.toggle('is-open', !open);
+        if (open) panel.setAttribute('hidden', ''); else panel.removeAttribute('hidden');
+      });
+      wrap.querySelectorAll('textarea').forEach(function (ta) {
+        var key = dKey(i, ta.getAttribute('data-f'));
+        try { if (localStorage.getItem(key)) ta.value = localStorage.getItem(key); } catch (e) {}
+        var t;
+        ta.addEventListener('input', function () { clearTimeout(t); t = setTimeout(function () { try { localStorage.setItem(key, ta.value); } catch (e) {} refreshDay(i); }, 350); });
+      });
+      var savedChoice = null; try { savedChoice = localStorage.getItem(dKey(i, 'choice')); } catch (e) {}
+      wrap.querySelectorAll('.thm-toggle button').forEach(function (btn) {
+        if (savedChoice === btn.getAttribute('data-choice')) btn.setAttribute('aria-pressed', 'true');
+        btn.addEventListener('click', function () {
+          var choice = btn.getAttribute('data-choice'), isOn = btn.getAttribute('aria-pressed') === 'true';
+          wrap.querySelectorAll('.thm-toggle button').forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+          if (!isOn) { btn.setAttribute('aria-pressed', 'true'); try { localStorage.setItem(dKey(i, 'choice'), choice); } catch (e) {} }
+          else { try { localStorage.removeItem(dKey(i, 'choice')); } catch (e) {} }
+          refreshDay(i);
+        });
+      });
+      refreshDay(i);
+    }
+    function dayLogged(i) { try { return !!(localStorage.getItem(dKey(i, 'choice')) || localStorage.getItem(dKey(i, 'note'))); } catch (e) { return false; } }
+    function refreshDay(i) {
+      var wrap = journal.children[i], logged = dayLogged(i);
+      wrap.classList.toggle('is-done', logged);
+      var choice = null; try { choice = localStorage.getItem(dKey(i, 'choice')); } catch (e) {}
+      var map = { did: 'Did it', tiny: '2-min version', missed: 'Missed' };
+      wrap.querySelector('[data-state]').textContent = logged ? (choice ? map[choice] : 'Logged') : 'Not yet';
+      updateProgress();
+    }
+    function updateProgress() {
+      var done = 0; for (var i = 0; i < DAYS.length; i++) { if (dayLogged(i)) done++; }
+      weekFill.style.width = Math.round(done / DAYS.length * 100) + '%';
+      weekCount.textContent = done + ' / 7 days';
+    }
+    DAYS.forEach(function (_, i) { buildDay(i); });
+    updateProgress();
+    document.getElementById('weekReset').addEventListener('click', function () {
+      if (!window.confirm('Clear all 7 days of this week\'s log on this device? This cannot be undone.')) return;
+      DAYS.forEach(function (_, i) { ['choice', 'note'].forEach(function (f) { try { localStorage.removeItem(dKey(i, f)); } catch (e) {} }); });
+      journal.innerHTML = ''; DAYS.forEach(function (_, i) { buildDay(i); }); updateProgress();
+    });
+  })();
+  </script>
+
+</body>
+</html>
