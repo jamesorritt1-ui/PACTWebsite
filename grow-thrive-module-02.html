@@ -114,6 +114,28 @@
     .thm-labeler__sentence b { color:var(--yellow); }
     .thm-labeler__note { color:var(--muted); font-size:0.86rem; margin-top:12px; font-weight:300; }
 
+    /* ===== INTERACTIVE TUG-OF-WAR ===== */
+    .thm-tug { background:#0d0d0d; border:1px solid rgba(255,229,0,0.22); border-radius:6px; padding:24px 22px 26px; margin:28px 0; }
+    .thm-tug__svg { width:100%; height:auto; display:block; max-width:760px; margin:0 auto; }
+    .thm-tug__svg #tugFreedom { transition:opacity .55s ease .15s; }
+    .thm-tug__svg text { user-select:none; }
+    .thm-tug__caption { text-align:center; color:var(--ink); font-size:1rem; line-height:1.6; font-weight:300; max-width:600px; margin:16px auto 22px; min-height:3.2em; }
+    .thm-tug__caption strong { color:#fff; font-weight:600; }
+    .thm-tug__caption b { color:var(--yellow); font-weight:600; }
+    .thm-tug__controls { display:flex; flex-wrap:wrap; align-items:flex-end; gap:20px 28px; justify-content:center; }
+    .thm-tug__slider { flex:1 1 250px; min-width:210px; }
+    .thm-tug__slider label { display:block; font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:9px; }
+    .thm-tug__slider input[type=range] { width:100%; accent-color:var(--yellow); height:6px; cursor:pointer; }
+    .thm-tug__slider input[type=range]:disabled { opacity:0.4; cursor:not-allowed; }
+    .thm-tug__meter { flex:1 1 190px; min-width:170px; }
+    .thm-tug__meter > span { display:block; font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:9px; }
+    .thm-tug__metertrack { height:12px; background:rgba(255,255,255,0.08); border-radius:100px; overflow:hidden; }
+    .thm-tug__meterfill { height:100%; width:55%; background:linear-gradient(90deg,#2f7d47,#b9a227,#c0562e); transition:width .12s linear; }
+    .thm-tug__controls .btn { flex:0 0 auto; }
+    .thm-tug__reminder { text-align:center; font-size:0.88rem; color:var(--muted); margin:20px auto 0; max-width:560px; line-height:1.6; font-weight:300; }
+    .thm-tug__reminder strong { color:#fff; }
+    @media (max-width:600px){ .thm-tug__controls{ flex-direction:column; align-items:stretch; } .thm-tug__controls .btn{ width:100%; } }
+
     /* REFLECTION */
     .th-reflect { background:#111; border:1px solid var(--line); border-radius:4px; padding:24px 26px; margin:24px 0; }
     .th-reflect__q { color:#fff; font-size:1.02rem; line-height:1.5; font-weight:400; margin:0 0 4px; }
@@ -291,6 +313,7 @@
         <nav class="thm-toc" aria-label="On this page">
           <a href="#move">The move</a>
           <a href="#vs">Not giving up</a>
+          <a href="#tugofwar">See it move</a>
           <a href="#rope">Activity: Drop the Rope</a>
           <a href="#name">Activity: Name it</a>
           <a href="#reflect">Reflect</a>
@@ -351,13 +374,89 @@
     </div>
   </section>
 
-  <!-- ========== 3 · ACTIVITY: DROP THE ROPE ========== -->
+  <!-- ========== 3 · INTERACTIVE TUG-OF-WAR ========== -->
+  <section class="th-sec" id="tugofwar">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">03 · See it move</p>
+        <h2 class="th-h2">The tug-of-war<br><em>with the monster</em></h2>
+        <p class="th-p">Here's the whole idea in one moving picture — and you're driving it. Drag the slider to <strong>pull harder</strong> against the anxiety-monster and watch the <b>Suffering</b> meter climb. Then hit <em>Drop the rope</em> and see what changes&hellip; and what doesn't.</p>
+
+        <div class="thm-tug">
+          <svg class="thm-tug__svg" viewBox="0 0 800 380" role="img" aria-label="Interactive tug-of-war between you and the anxiety monster">
+            <!-- ground -->
+            <line x1="20" y1="320" x2="780" y2="320" stroke="rgba(255,255,255,0.14)" stroke-width="2"/>
+            <!-- the pit -->
+            <polygon points="345,320 455,320 480,372 320,372" fill="#000" stroke="rgba(255,229,0,0.28)" stroke-width="1.5"/>
+            <line x1="362" y1="330" x2="374" y2="366" stroke="rgba(255,229,0,0.12)"/>
+            <line x1="400" y1="330" x2="400" y2="368" stroke="rgba(255,229,0,0.12)"/>
+            <line x1="438" y1="330" x2="426" y2="366" stroke="rgba(255,229,0,0.12)"/>
+            <text x="400" y="312" text-anchor="middle" fill="#FFE500" font-family="Oswald,sans-serif" font-size="13" letter-spacing="3">SUFFERING</text>
+
+            <!-- freedom to act (revealed after dropping the rope) -->
+            <g id="tugFreedom" opacity="0">
+              <line x1="165" y1="315" x2="96" y2="315" stroke="#FFE500" stroke-width="2" stroke-dasharray="6 7"/>
+              <polygon points="96,309 84,315 96,321" fill="#FFE500"/>
+              <line x1="72" y1="320" x2="72" y2="248" stroke="#fff" stroke-width="3"/>
+              <polygon points="72,248 112,260 72,272" fill="#FFE500"/>
+              <text x="74" y="300" text-anchor="middle" fill="#9A9A9A" font-family="Oswald,sans-serif" font-size="10" letter-spacing="1.5">WHAT MATTERS</text>
+            </g>
+
+            <!-- rope -->
+            <path id="tugRope" d="M 212 212 Q 400 260 586 212" fill="none" stroke="#b9a24a" stroke-width="4" stroke-linecap="round"/>
+
+            <!-- YOU -->
+            <g id="tugYou">
+              <line x1="186" y1="320" x2="172" y2="262" stroke="#FFE500" stroke-width="5" stroke-linecap="round"/>
+              <line x1="150" y1="320" x2="170" y2="262" stroke="#FFE500" stroke-width="5" stroke-linecap="round"/>
+              <line x1="171" y1="262" x2="182" y2="216" stroke="#FFE500" stroke-width="6" stroke-linecap="round"/>
+              <circle cx="184" cy="201" r="14" fill="none" stroke="#FFE500" stroke-width="4"/>
+              <line x1="181" y1="222" x2="212" y2="212" stroke="#FFE500" stroke-width="5" stroke-linecap="round"/>
+              <text x="176" y="345" text-anchor="middle" fill="#FFE500" font-family="Oswald,sans-serif" font-size="11" letter-spacing="2">YOU</text>
+            </g>
+
+            <!-- MONSTER -->
+            <g id="tugMonster">
+              <polygon points="620,206 612,182 632,201" fill="#242424" stroke="#c0562e" stroke-width="2"/>
+              <polygon points="676,206 684,182 664,201" fill="#242424" stroke="#c0562e" stroke-width="2"/>
+              <ellipse cx="648" cy="256" rx="52" ry="60" fill="#242424" stroke="#c0562e" stroke-width="2.5"/>
+              <circle cx="632" cy="244" r="9" fill="#fff"/><circle cx="634" cy="246" r="4" fill="#000"/>
+              <circle cx="666" cy="244" r="9" fill="#fff"/><circle cx="668" cy="246" r="4" fill="#000"/>
+              <path d="M628 282 Q648 270 668 282" fill="none" stroke="#c0562e" stroke-width="3" stroke-linecap="round"/>
+              <line x1="600" y1="250" x2="586" y2="214" stroke="#242424" stroke-width="7" stroke-linecap="round"/>
+              <text x="648" y="336" text-anchor="middle" fill="#9A9A9A" font-family="Oswald,sans-serif" font-size="10" letter-spacing="1.5">ANXIETY · NEVER SHRINKS</text>
+            </g>
+          </svg>
+
+          <p class="thm-tug__caption" id="tugCaption"></p>
+
+          <div class="thm-tug__controls">
+            <div class="thm-tug__slider">
+              <label for="tugRange">How hard are you pulling?</label>
+              <input type="range" id="tugRange" min="0" max="100" value="55" aria-label="How hard are you pulling against the anxiety monster">
+            </div>
+            <div class="thm-tug__meter">
+              <span>Suffering</span>
+              <div class="thm-tug__metertrack"><div class="thm-tug__meterfill" id="tugMeter"></div></div>
+            </div>
+            <button class="btn btn--primary" id="tugDrop">Drop the rope</button>
+          </div>
+
+          <p class="thm-tug__reminder">Watch the one thing that never changes: the <strong>size of the monster</strong>. Struggling doesn't shrink the feeling — it just piles on suffering. Letting go doesn't delete it either — it frees your hands.</p>
+        </div>
+
+        <p class="th-p">That's acceptance, in one image. The monster — your anxiety, doubt, frustration — doesn't get smaller when you fight it, and it doesn't vanish when you let go. But the instant you <strong>drop the rope</strong>, all the energy you were pouring into the struggle is suddenly free: for the pass, the exam, the conversation. Now let's turn that into something you can actually do.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 4 · ACTIVITY: DROP THE ROPE ========== -->
   <section class="th-sec" id="rope">
     <div class="container">
       <div class="th-wrap">
-        <p class="th-eyebrow">03 · Your practice</p>
+        <p class="th-eyebrow">04 · Your practice</p>
         <h2 class="th-h2">Activity: <em>Drop the Rope</em></h2>
-        <p class="th-p">Time for the real thing. Imagine a tug-of-war with a huge anxiety-monster. As long as you pull, you're locked in a struggle you can't win. But there's a third option that isn't winning <em>or</em> losing: <strong>drop the rope.</strong> This short guided practice walks you through it. Find a quiet-ish minute, bring to mind a feeling you usually try to get rid of, and step through it.</p>
+        <p class="th-p">You just felt it in the picture above — now do it for real, with a feeling of your own. As long as you pull, you're locked in a struggle you can't win. But there's a third option that isn't winning <em>or</em> losing: <strong>drop the rope.</strong> This short guided practice walks you through it. Find a quiet-ish minute, bring to mind a feeling you usually try to get rid of, and step through it.</p>
 
         <div class="thm-activity">
           <div class="thm-activity__head">
@@ -387,7 +486,7 @@
   <section class="th-sec th-sec--alt" id="name">
     <div class="container">
       <div class="th-wrap">
-        <p class="th-eyebrow">04 · A 20-second skill</p>
+        <p class="th-eyebrow">05 · A 20-second skill</p>
         <h2 class="th-h2">Activity: <em>Name it</em> to tame it</h2>
         <p class="th-p">Feelings live in the body — a tight chest, a fluttery stomach, a buzzing in the hands. One of the simplest acceptance skills is just to <strong>notice where it is and give it a name</strong>. Research on "affect labelling" shows that quietly naming a feeling actually turns down its intensity. Build the sentence below — it's the exact move you'll run in real time.</p>
 
@@ -431,7 +530,7 @@
   <section class="th-sec" id="reflect">
     <div class="container">
       <div class="th-wrap">
-        <p class="th-eyebrow">05 · Reflect</p>
+        <p class="th-eyebrow">06 · Reflect</p>
         <h2 class="th-h2">Make it <em>yours</em></h2>
         <p class="th-p">A couple of honest lines. Everything you type is saved <strong>only on this device</strong> and will be here when you come back.</p>
 
@@ -468,7 +567,7 @@
   <section class="th-sec th-sec--alt" id="week">
     <div class="container">
       <div class="th-wrap">
-        <p class="th-eyebrow">06 · This week's Mind Gym</p>
+        <p class="th-eyebrow">07 · This week's Mind Gym</p>
         <h2 class="th-h2">The <em>Make Room</em><br>7-day journal</h2>
         <p class="th-p">Reading about acceptance changes nothing — reps do. This is your training for the week: <strong>one entry a day for seven days.</strong> Each day, once, when a difficult feeling shows up, run the move — name it, make room, drop the rope — then log it here in under a minute. Watch what happens to the <em>struggle</em> across the week.</p>
 
@@ -759,6 +858,77 @@
       journal.innerHTML = '';
       DAYS.forEach(function (_, i) { buildDay(i); });
       updateProgress();
+    });
+  })();
+
+  /* ================= INTERACTIVE TUG-OF-WAR ================= */
+  (function () {
+    var svgYou = document.getElementById('tugYou');
+    var svgMon = document.getElementById('tugMonster');
+    var rope   = document.getElementById('tugRope');
+    var freedom= document.getElementById('tugFreedom');
+    var range  = document.getElementById('tugRange');
+    var meter  = document.getElementById('tugMeter');
+    var cap    = document.getElementById('tugCaption');
+    var dropBtn= document.getElementById('tugDrop');
+    if (!rope || !range) return;
+
+    var struggle = parseInt(range.value, 10);
+    var dropped = false, raf = null;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function place(s) {
+      var dx = s * 0.35, lean = s * 0.12, mdx = -s * 0.28, mlean = s * 0.10;
+      svgYou.setAttribute('transform', 'translate(' + dx.toFixed(1) + ',0) rotate(' + (-lean).toFixed(2) + ' 170 320)');
+      svgMon.setAttribute('transform', 'translate(' + mdx.toFixed(1) + ',0) rotate(' + mlean.toFixed(2) + ' 648 320)');
+      var x1 = 212 + dx, x2 = 586 + mdx, y = 212, sag = Math.max(24, 80 - s * 0.55);
+      rope.setAttribute('d', 'M ' + x1.toFixed(1) + ' ' + y + ' Q 400 ' + (y + sag).toFixed(1) + ' ' + x2.toFixed(1) + ' ' + y);
+      meter.style.width = Math.round(s) + '%';
+    }
+    function released() {
+      svgYou.setAttribute('transform', 'translate(0,0)');
+      svgMon.setAttribute('transform', 'translate(0,0)');
+      rope.setAttribute('d', 'M 196 312 Q 380 366 586 214');
+      meter.style.width = '6%';
+      freedom.setAttribute('opacity', '1');
+    }
+    function setCaption() {
+      var html;
+      if (dropped) html = 'You <b>dropped the rope</b>. The monster is still standing right there &mdash; but it isn\'t dragging you toward the pit anymore. Your hands are free to do <strong>what matters</strong>.';
+      else if (struggle < 25) html = 'Barely pulling &mdash; and notice the monster hasn\'t shrunk one bit. The feeling doesn\'t care how hard you fight it.';
+      else if (struggle < 70) html = 'You\'re locked in the tug-of-war. Watch the <b>Suffering</b> meter climb as you pull &mdash; that\'s the cost of the <strong>struggle</strong>, not the feeling itself.';
+      else html = 'Full-blown struggle: maximum <b>suffering</b>, and the anxiety-monster is exactly the same size. You can\'t win this by pulling harder.';
+      cap.innerHTML = html;
+    }
+
+    place(struggle); setCaption();
+
+    range.addEventListener('input', function () {
+      if (dropped) return;
+      struggle = parseInt(range.value, 10);
+      place(struggle); setCaption();
+    });
+
+    function tweenToDrop() {
+      var from = struggle, start = null, dur = 650;
+      function frame(ts) {
+        if (start === null) start = ts;
+        var t = Math.min((ts - start) / dur, 1), e = 1 - Math.pow(1 - t, 3);
+        place(from * (1 - e));
+        if (t < 1) raf = requestAnimationFrame(frame); else released();
+      }
+      raf = requestAnimationFrame(frame);
+    }
+
+    dropBtn.addEventListener('click', function () {
+      if (!dropped) {
+        dropped = true; range.disabled = true; dropBtn.textContent = 'Pick the rope back up'; setCaption();
+        if (reduce) { released(); } else { freedom.setAttribute('opacity', '0'); tweenToDrop(); }
+      } else {
+        dropped = false; range.disabled = false; dropBtn.textContent = 'Drop the rope';
+        freedom.setAttribute('opacity', '0');
+        struggle = parseInt(range.value, 10); place(struggle); setCaption();
+      }
     });
   })();
   </script>
