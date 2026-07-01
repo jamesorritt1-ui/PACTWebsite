@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Hidden / unlisted: not indexed and not linked from anywhere on the public site -->
   <meta name="robots" content="noindex, nofollow">
-  <title>THRIVE · Module 07 — Putting ACE Together | The Performance Act</title>
-  <meta name="description" content="THRIVE Module 07 — the three moves become one fluid skill: a guided full-ACE practice, a choice-point scenario simulator, and your own saved ACE performance routine.">
+  <title>THRIVE · Module 07 — Self-as-Context: Be the Board | The Performance Act</title>
+  <meta name="description" content="THRIVE Module 07 — self-as-context, the observing self: the steady 'you' that all of ACE is run from. With Russ Harris's Chessboard metaphor, an interactive board, an observer practice and curated resources.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -62,12 +62,33 @@
     .th-quote p { font-family:var(--font-heading); font-weight:500; font-size:clamp(1.2rem,2.8vw,1.7rem); line-height:1.3; color:#fff; margin:0; }
     .th-quote cite { display:block; margin-top:12px; font-style:normal; font-size:0.86rem; color:var(--muted); letter-spacing:0.04em; }
 
-    /* ACE spine mini */
-    .thm-ace3 { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:26px 0; }
-    .thm-ace3__card { background:#141414; border:1px solid var(--line); border-top:3px solid var(--yellow); padding:20px 18px; text-align:center; }
-    .thm-ace3__l { font-family:var(--font-heading); font-size:2.4rem; font-weight:700; color:var(--yellow); line-height:1; }
-    .thm-ace3__w { font-family:var(--font-heading); font-size:1rem; text-transform:uppercase; color:#fff; margin:4px 0 2px; }
-    .thm-ace3__d { color:var(--ink); font-size:0.85rem; line-height:1.5; font-weight:300; }
+    /* two selves */
+    .thm-vs { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:26px 0; }
+    .thm-vs__col { background:#141414; border:1px solid var(--line); padding:22px 24px; }
+    .thm-vs__col--think { border-top:3px solid #6a6a6a; }
+    .thm-vs__col--obs { border-top:3px solid var(--yellow); }
+    .thm-vs__tag { font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:10px; }
+    .thm-vs__col--think .thm-vs__tag { color:#9a9a9a; }
+    .thm-vs__col--obs .thm-vs__tag { color:var(--yellow); }
+    .thm-vs__col ul { list-style:none; margin:0; padding:0; }
+    .thm-vs__col li { color:var(--ink); font-size:0.94rem; line-height:1.5; font-weight:300; padding:6px 0 6px 20px; position:relative; }
+    .thm-vs__col li::before { content:''; position:absolute; left:0; top:12px; width:6px; height:6px; background:currentColor; opacity:0.6; }
+    .thm-vs__col--obs li::before { background:var(--yellow); opacity:1; }
+
+    /* VIDEO EMBED */
+    .thm-vid { margin:26px auto 0; max-width:640px; }
+    .thm-vid__frame { position:relative; width:100%; aspect-ratio:16/9; background:#111; border:1px solid var(--line); overflow:hidden; }
+    .thm-vid__play { position:absolute; inset:0; width:100%; height:100%; border:none; cursor:pointer; background-size:cover; background-position:center; background-color:#111; }
+    .thm-vid__play::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.6)); transition:.2s; }
+    .thm-vid__play:hover::after { background:linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0.45)); }
+    .thm-vid__badge { position:absolute; top:14px; left:14px; z-index:2; font-family:var(--font-heading); font-size:0.62rem; letter-spacing:0.12em; text-transform:uppercase; color:#000; background:var(--yellow); padding:4px 9px; }
+    .thm-vid__btn { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; width:62px; height:62px; border-radius:50%; background:var(--yellow); display:flex; align-items:center; justify-content:center; transition:transform .2s; }
+    .thm-vid__play:hover .thm-vid__btn { transform:translate(-50%,-50%) scale(1.09); }
+    .thm-vid__btn svg { width:24px; height:24px; color:#000; margin-left:3px; }
+    .thm-vid__frame iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+    .thm-vid__cap { margin-top:12px; color:var(--ink); font-size:0.92rem; line-height:1.6; font-weight:300; }
+    .thm-vid__cap b { color:#fff; font-weight:600; }
+    .thm-vid__cap em { color:var(--yellow); font-style:normal; font-weight:500; }
 
     /* exercise shell */
     .thm-ex { background:#0d0d0d; border:1px solid rgba(255,229,0,0.22); border-radius:6px; overflow:hidden; margin:28px 0; }
@@ -76,18 +97,29 @@
     .thm-ex__name { font-family:var(--font-heading); font-size:1.35rem; text-transform:uppercase; color:#fff; letter-spacing:0.02em; }
     .thm-ex__body { padding:28px 26px; }
 
-    /* ACE STEPPER */
-    .thm-practice { text-align:center; min-height:300px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+    /* CHESSBOARD interactive */
+    .thm-cb__svg { width:100%; height:auto; display:block; max-width:720px; margin:0 auto; }
+    .thm-cb__piece.is-shaking { animation:cbShake 0.5s ease; }
+    @keyframes cbShake { 0%,100%{ transform:translate(0,0);} 20%{ transform:translate(-2px,1px);} 40%{ transform:translate(2px,-1px);} 60%{ transform:translate(-2px,-1px);} 80%{ transform:translate(2px,1px);} }
+    @media (prefers-reduced-motion: reduce){ .thm-cb__piece.is-shaking{ animation:none; } }
+    .thm-cb__caption { text-align:center; color:var(--ink); font-size:1rem; line-height:1.6; font-weight:300; max-width:600px; margin:16px auto 20px; min-height:3.4em; }
+    .thm-cb__caption strong { color:#fff; font-weight:600; }
+    .thm-cb__caption b { color:var(--yellow); font-weight:600; }
+    .thm-cb__meter { max-width:520px; margin:0 auto 20px; }
+    .thm-cb__meter > span { display:block; font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; }
+    .thm-cb__track { height:12px; background:rgba(255,255,255,0.08); border-radius:100px; overflow:hidden; }
+    .thm-cb__fill { height:100%; width:0; background:linear-gradient(90deg,#2f7d47,#b9a227,#c0562e); transition:width .3s linear; }
+    .thm-cb__controls { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+    .btn--fight { background:transparent; border:1px solid #6a6a6a; color:#cfcfcf; }
+    .btn--fight:hover { border-color:#c0562e; color:#fff; }
+    @media (max-width:600px){ .thm-cb__controls{ flex-direction:column; } .thm-cb__controls .btn{ width:100%; } }
+
+    /* OBSERVER stepper */
+    .thm-practice { text-align:center; min-height:290px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
     .thm-practice__count { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-bottom:12px; }
-    .thm-practice__letter { font-family:var(--font-heading); font-size:3.4rem; font-weight:700; color:var(--yellow); line-height:0.9; }
-    .thm-practice__title { font-family:var(--font-heading); font-size:clamp(1.2rem,3vw,1.6rem); text-transform:uppercase; color:#fff; margin:6px 0 14px; letter-spacing:0.02em; }
-    .thm-practice__text { color:var(--ink); font-size:1.02rem; line-height:1.7; font-weight:300; max-width:460px; margin:0 auto; }
+    .thm-practice__title { font-family:var(--font-heading); font-size:clamp(1.2rem,3vw,1.6rem); text-transform:uppercase; color:var(--yellow); margin-bottom:14px; letter-spacing:0.02em; }
+    .thm-practice__text { color:var(--ink); font-size:1.02rem; line-height:1.7; font-weight:300; max-width:470px; margin:0 auto; }
     .thm-practice__text strong { color:#fff; font-weight:600; }
-    .thm-breath { width:120px; height:120px; margin:20px auto 6px; position:relative; display:none; }
-    .thm-breath.is-on { display:block; }
-    .thm-breath__circle { position:absolute; inset:0; border-radius:50%; background:radial-gradient(circle, rgba(255,229,0,0.32), rgba(255,229,0,0.03)); border:2px solid var(--yellow); animation:thBreathe 8s ease-in-out infinite; }
-    @keyframes thBreathe { 0%,100%{ transform:scale(0.6);} 50%{ transform:scale(1);} }
-    @media (prefers-reduced-motion: reduce){ .thm-breath__circle{ animation:none; transform:scale(0.85);} }
     .thm-practice__nav { display:flex; gap:12px; justify-content:center; margin-top:24px; flex-wrap:wrap; }
     .thm-practice__prev { background:none; border:1px solid var(--line); color:var(--ink); font-family:var(--font-heading); font-size:0.8rem; letter-spacing:0.06em; text-transform:uppercase; padding:11px 20px; cursor:pointer; transition:.2s; }
     .thm-practice__prev:hover { border-color:#fff; color:#fff; }
@@ -96,49 +128,35 @@
     .thm-dots span { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.18); transition:.2s; }
     .thm-dots span.is-on { background:var(--yellow); transform:scale(1.2); }
 
-    /* CHOICE-POINT SIMULATOR */
-    .thm-sim__screen { display:none; }
-    .thm-sim__screen.is-active { display:block; }
-    .thm-sim__meter { max-width:560px; margin:0 auto 22px; }
-    .thm-sim__meter > span { display:block; font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; }
-    .thm-sim__track { height:12px; background:rgba(255,255,255,0.08); border-radius:100px; overflow:hidden; }
-    .thm-sim__fill { height:100%; width:0; background:var(--yellow); transition:width .5s cubic-bezier(.2,.8,.2,1); }
-    .thm-sim__count { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-bottom:12px; }
-    .thm-sim__tag { display:inline-block; font-family:var(--font-heading); font-size:0.64rem; letter-spacing:0.1em; text-transform:uppercase; color:#000; background:var(--yellow); padding:4px 10px; margin-bottom:12px; }
-    .thm-sim__situation { color:#fff; font-size:1.12rem; line-height:1.55; font-weight:400; margin-bottom:20px; }
-    .thm-sim__opts { display:flex; flex-direction:column; gap:10px; }
-    .thm-sim__opt { text-align:left; background:#141414; border:1px solid var(--line); color:var(--ink); font-family:var(--font-body); font-size:0.98rem; line-height:1.5; font-weight:300; padding:15px 18px; cursor:pointer; transition:.15s; }
-    .thm-sim__opt:hover { border-color:rgba(255,229,0,0.5); }
-    .thm-sim__opt[disabled] { cursor:default; }
-    .thm-sim__opt.is-toward { border-color:var(--yellow); background:rgba(255,229,0,0.08); }
-    .thm-sim__opt.is-away { border-color:#c0562e; opacity:0.75; }
-    .thm-sim__fb { margin-top:18px; background:#0a0a0a; border-left:3px solid var(--yellow); padding:16px 18px; }
-    .thm-sim__fb.away { border-left-color:#c0562e; }
-    .thm-sim__verdict { font-family:var(--font-heading); font-size:0.95rem; text-transform:uppercase; letter-spacing:0.03em; margin-bottom:6px; }
-    .thm-sim__verdict.toward { color:var(--yellow); }
-    .thm-sim__verdict.away { color:#c0562e; }
-    .thm-sim__why { color:var(--ink); font-size:0.94rem; line-height:1.6; font-weight:300; }
-    .thm-sim__next { margin-top:16px; }
-    .thm-sim__result { text-align:center; }
-    .thm-sim__result h3 { font-family:var(--font-heading); font-size:clamp(1.4rem,4vw,2rem); text-transform:uppercase; color:#fff; margin-bottom:10px; }
-    .thm-sim__result h3 b { color:var(--yellow); }
-    .thm-sim__result p { color:var(--ink); font-size:1rem; line-height:1.65; font-weight:300; max-width:520px; margin:0 auto 18px; }
-
-    /* ROUTINE BUILDER */
-    .thm-field { margin-bottom:18px; }
+    /* REFRAME builder */
+    .thm-field { margin-bottom:16px; }
     .thm-field__label { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:9px; }
-    .thm-field__label b { color:var(--yellow); }
-    .thm-field input[type=text], .thm-field textarea { width:100%; background:#0a0a0a; border:1px solid var(--line); color:#fff; font-family:var(--font-body); font-size:0.98rem; font-weight:300; padding:12px 14px; }
-    .thm-field textarea { min-height:60px; line-height:1.55; resize:vertical; }
-    .thm-field input:focus, .thm-field textarea:focus { outline:none; border-color:var(--yellow); }
-    .thm-routine__card { background:linear-gradient(160deg,#161616,#0d0d0d); border:1px solid rgba(255,229,0,0.3); padding:24px 26px; margin-top:20px; }
-    .thm-routine__label { font-family:var(--font-heading); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--yellow); margin-bottom:14px; }
-    .thm-routine__step { display:flex; gap:14px; align-items:flex-start; padding:10px 0; border-top:1px solid rgba(255,255,255,0.06); }
-    .thm-routine__step:first-of-type { border-top:none; }
-    .thm-routine__l { font-family:var(--font-heading); font-size:1.6rem; font-weight:700; color:var(--yellow); line-height:1; width:26px; flex-shrink:0; }
-    .thm-routine__t { color:#fff; font-size:1rem; line-height:1.5; font-weight:300; }
-    .thm-routine__t b { color:var(--yellow); font-weight:600; text-transform:uppercase; font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.08em; display:block; margin-bottom:2px; }
-    .thm-routine__t .ph { color:var(--muted); font-style:italic; }
+    .thm-field input[type=text] { width:100%; background:#0a0a0a; border:1px solid var(--line); color:#fff; font-family:var(--font-body); font-size:0.98rem; font-weight:300; padding:12px 14px; }
+    .thm-field input:focus { outline:none; border-color:var(--yellow); }
+    .thm-field__prefix { color:var(--muted); font-size:0.92rem; margin-bottom:6px; }
+    .thm-reframe__out { background:linear-gradient(160deg,#161616,#0d0d0d); border:1px solid rgba(255,229,0,0.3); padding:22px 24px; margin-top:18px; }
+    .thm-reframe__label { font-family:var(--font-heading); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--yellow); margin-bottom:12px; }
+    .thm-reframe__line { color:#fff; font-size:1.05rem; line-height:1.6; font-weight:300; padding:6px 0; }
+    .thm-reframe__line b { color:var(--yellow); }
+    .thm-reframe__line .ph { color:var(--muted); font-style:italic; }
+    .thm-reframe__note { color:var(--muted); font-size:0.86rem; margin-top:12px; font-weight:300; }
+
+    /* UNDERPINS ACE cards */
+    .thm-ace3 { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:26px 0; }
+    .thm-ace3__card { background:#141414; border:1px solid var(--line); border-top:3px solid var(--yellow); padding:22px 20px; }
+    .thm-ace3__l { font-family:var(--font-heading); font-size:2.4rem; font-weight:700; color:var(--yellow); line-height:1; }
+    .thm-ace3__w { font-family:var(--font-heading); font-size:1rem; text-transform:uppercase; color:#fff; margin:4px 0 8px; }
+    .thm-ace3__d { color:var(--ink); font-size:0.9rem; line-height:1.55; font-weight:300; }
+    .thm-ace3__d strong { color:#fff; }
+
+    /* RESOURCES */
+    .thm-res { list-style:none; margin:18px 0 0; padding:0; }
+    .thm-res li { background:#141414; border:1px solid var(--line); border-left:3px solid var(--yellow); padding:16px 18px; margin-bottom:10px; }
+    .thm-res__kind { font-family:var(--font-heading); font-size:0.64rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--yellow); margin-bottom:5px; }
+    .thm-res__title { color:#fff; font-size:1rem; font-weight:500; margin-bottom:3px; }
+    .thm-res__title a { color:#fff; text-decoration:underline; text-decoration-color:rgba(255,229,0,0.5); }
+    .thm-res__title a:hover { color:var(--yellow); }
+    .thm-res__by { color:var(--ink); font-size:0.9rem; line-height:1.55; font-weight:300; }
 
     /* REFLECTION */
     .th-reflect { background:#111; border:1px solid var(--line); border-radius:4px; padding:24px 26px; margin:24px 0; }
@@ -201,12 +219,11 @@
     .thm-week__reset { margin-top:16px; background:none; border:none; color:var(--muted); font-size:0.82rem; text-decoration:underline; cursor:pointer; }
     .thm-week__reset:hover { color:#fff; }
 
-    /* ACE tree (lock-it-in) */
-    .thm-tree { display:flex; justify-content:center; gap:14px; margin:6px 0 20px; }
-    .thm-tree__node { text-align:center; }
-    .thm-tree__badge { width:64px; height:64px; border-radius:50%; background:var(--yellow); color:#000; font-family:var(--font-heading); font-weight:700; font-size:1.8rem; display:flex; align-items:center; justify-content:center; margin:0 auto 8px; position:relative; }
-    .thm-tree__badge svg { width:20px; height:20px; position:absolute; bottom:-4px; right:-4px; background:#050505; border-radius:50%; padding:2px; color:var(--yellow); }
-    .thm-tree__label { font-family:var(--font-heading); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; color:#fff; }
+    .thm-refcard { background:#111; border:1px solid rgba(255,229,0,0.3); padding:26px 30px; margin:26px 0; }
+    .thm-refcard h4 { font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--yellow); margin-bottom:14px; }
+    .thm-refcard ol { margin:0; padding-left:22px; color:var(--ink); }
+    .thm-refcard li { font-size:0.96rem; line-height:1.6; font-weight:300; padding:4px 0; }
+    .thm-refcard li strong { color:#fff; font-weight:600; }
 
     .th-lock { background:rgba(255,229,0,0.07); border:1px solid rgba(255,229,0,0.22); padding:18px 22px; display:flex; gap:14px; align-items:flex-start; margin-top:8px; }
     .th-lock svg { width:22px; height:22px; color:var(--yellow); flex-shrink:0; margin-top:2px; }
@@ -222,7 +239,7 @@
     .thm-nextnav--end { text-align:right; }
 
     @media (max-width:720px) {
-      .thm-ace3, .th-applied, .thm-nextnav { grid-template-columns:1fr; }
+      .thm-vs, .th-applied, .thm-nextnav, .thm-ace3 { grid-template-columns:1fr; }
       .thm-nextnav--end { text-align:left; }
     }
   </style>
@@ -302,31 +319,33 @@
     <div class="container">
       <a href="grow-thrive.html#program" class="thm-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> THRIVE program</a>
       <div class="th-wrap">
-        <div class="thm-hero__num">07<span class="thm-hero__pill">A · C · E</span></div>
-        <p class="thm-hero__kicker">Integration · The three moves become one</p>
-        <h1 class="thm-hero__title">Putting ACE Together</h1>
+        <div class="thm-hero__num">07<span class="thm-hero__pill">The observing self</span></div>
+        <p class="thm-hero__kicker">Self-as-Context · The ground beneath ACE</p>
+        <h1 class="thm-hero__title">Self-as-Context: Be the Board</h1>
         <div class="thm-hero__meta">
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> ~22 minutes</span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v14H4z"/><path d="M4 9h16"/></svg> Practise · decide · build</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> ~24 minutes</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v14H4z"/><path d="M4 9h16"/></svg> Watch · play · reflect</span>
           <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg> Private to you</span>
         </div>
 
         <div class="thm-obj">
           <h3>By the end of this module you can</h3>
           <ul>
-            <li>Run the full <strong>Acknowledge &rarr; Connect &rarr; Engage</strong> sequence fluently.</li>
-            <li>Use a <strong>choice point</strong> to navigate any pressure moment.</li>
-            <li>Build your own <strong>ACE performance routine</strong> from the tools you&rsquo;ve saved.</li>
-            <li>Deploy the whole skill in 30 seconds &mdash; or stretch it over minutes when you need to.</li>
+            <li>Tell the difference between your <strong>thinking self</strong> and your <strong>observing self</strong>.</li>
+            <li>Experience self-as-context first-hand &mdash; the steady &ldquo;you&rdquo; behind everything.</li>
+            <li>Use the <strong>chessboard</strong> to stop fighting your thoughts and start moving anyway.</li>
+            <li>See how the observing self is the <strong>ground that all of ACE is run from</strong>.</li>
           </ul>
         </div>
 
         <nav class="thm-toc" aria-label="On this page">
-          <a href="#move">The move</a>
-          <a href="#practice">The full ACE run</a>
-          <a href="#sim">Choice-point sim</a>
-          <a href="#routine">Build your routine</a>
-          <a href="#reflect">Reflect</a>
+          <a href="#move">The two selves</a>
+          <a href="#chessboard">The Chessboard</a>
+          <a href="#board">Be the board</a>
+          <a href="#observer">The observer</a>
+          <a href="#reframe">Your self-story</a>
+          <a href="#underpins">How it powers ACE</a>
+          <a href="#resources">Resources</a>
           <a href="#week">This week</a>
         </nav>
       </div>
@@ -337,197 +356,278 @@
   <section class="th-sec" id="move">
     <div class="container">
       <div class="th-wrap">
-        <p class="th-eyebrow">01 · The move</p>
-        <h2 class="th-h2">Three moves,<br><em>one skill</em></h2>
-        <p class="th-p">You&rsquo;ve built each piece separately. Now they fuse into a single, fluid move you can run in seconds &mdash; on the start line, between points, before you walk into a room. It&rsquo;s the complete cycle you met on day one, now yours:</p>
+        <p class="th-eyebrow">01 · The deepest move</p>
+        <h2 class="th-h2">There are two<br><em>of you</em></h2>
+        <p class="th-p">This module goes underneath everything else you&rsquo;ve learned &mdash; to the quietest and most powerful discovery in the whole program. Notice, right now, that there are <em>two</em> parts of you at work.</p>
+        <p class="th-p">There&rsquo;s your <strong>thinking self</strong>: the mind &mdash; the endless commentary, the judgements, the memories, the stories about who you are (&ldquo;I&rsquo;m a big-game player,&rdquo; &ldquo;I&rsquo;m a choker,&rdquo; &ldquo;I&rsquo;m only good enough if I win&rdquo;). And there&rsquo;s your <strong>observing self</strong>: the part of you that is <em>aware</em> of all that &mdash; the one that&rsquo;s noticing the thoughts, feeling the feelings, watching it happen. In ACT this observing self is called <strong>self-as-context</strong>.</p>
+        <div class="thm-vs">
+          <div class="thm-vs__col thm-vs__col--think">
+            <div class="thm-vs__tag">The thinking self</div>
+            <ul>
+              <li>The mind &mdash; thoughts, judgements, stories</li>
+              <li>Constantly changing, often noisy</li>
+              <li>Says who you &ldquo;are&rdquo; and how it&rsquo;s going</li>
+              <li>The content of your experience</li>
+            </ul>
+          </div>
+          <div class="thm-vs__col thm-vs__col--obs">
+            <div class="thm-vs__tag">The observing self</div>
+            <ul>
+              <li>The awareness that notices it all</li>
+              <li>Steady, quiet, unchanged by any of it</li>
+              <li>Has been &ldquo;you&rdquo; your whole life</li>
+              <li>The <em>context</em> your experience happens in</li>
+            </ul>
+          </div>
+        </div>
+        <p class="th-p">Here&rsquo;s the part that changes everything for an athlete: <strong>you are not the content &mdash; you are the context.</strong> You are not the winning thought or the losing thought, not the confidence or the doubt, not even your results or your role. You are the <em>space</em> all of that shows up in &mdash; and that space is never damaged by any storm that passes through it. Your mum called you by name at 5, at 15, and today; your body, your form, your thoughts and your ranking have all changed &mdash; but the &ldquo;you&rdquo; that has been noticing the whole time hasn&rsquo;t. That&rsquo;s the observing self, and it&rsquo;s the most stable ground you&rsquo;ll ever stand on.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 2 · THE CHESSBOARD (VIDEO) ========== -->
+  <section class="th-sec th-sec--alt" id="chessboard">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">02 · Watch</p>
+        <h2 class="th-h2">The <em>chessboard</em> metaphor</h2>
+        <p class="th-p">There&rsquo;s no better way into this than Russ Harris&rsquo;s classic ACT metaphor. Watch it now (it loads right here, so you won&rsquo;t lose your place), then we&rsquo;ll make it yours.</p>
+
+        <div class="thm-vid">
+          <div class="thm-vid__frame" data-yt="phbzSNsY8vc">
+            <button class="thm-vid__play" aria-label="Play: Internal Struggles - The Chessboard Metaphor, by Dr Russ Harris" style="background-image:url('https://i.ytimg.com/vi/phbzSNsY8vc/hqdefault.jpg')">
+              <span class="thm-vid__badge">ACT core</span>
+              <span class="thm-vid__btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+            </button>
+          </div>
+          <figcaption class="thm-vid__cap"><b>Internal Struggles: The Chessboard Metaphor &mdash; Dr Russ Harris.</b> The white pieces are your &ldquo;good&rdquo; thoughts and feelings; the black pieces are the &ldquo;bad&rdquo; ones. Spend your life trying to make white beat black and you&rsquo;re trapped in the war. <em>Watch for:</em> the moment you realise you&rsquo;re not the pieces &mdash; you&rsquo;re the board.</figcaption>
+        </div>
+
+        <p class="th-p">Here&rsquo;s the whole thing in a breath. Down at piece level, you&rsquo;re in a never-ending battle: back yourself with confident thoughts (white), and doubt and fear (black) attack. You can never win the war &mdash; the black pieces don&rsquo;t leave, and fighting them <em>is</em> the suffering. But the <strong>board</strong> holds every piece without being harmed by any of them. The board can carry the whole battle and still <em>move in a direction</em>. <strong>You are the board</strong>, not the pieces. And from the board&rsquo;s perspective, you never had to win the fight to move toward what matters.</p>
+        <div class="th-quote">
+          <p>"You are the board that holds the pieces &mdash; not the pieces that fight. And a board can move any direction it chooses, no matter what the pieces are doing."</p>
+          <cite>— The chessboard, in one line</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 3 · BE THE BOARD (INTERACTIVE) ========== -->
+  <section class="th-sec" id="board">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">03 · See it move &middot; do it now</p>
+        <h2 class="th-h2">Fight the pieces,<br>or <em>be the board?</em></h2>
+        <p class="th-p">Play the metaphor. First try to <strong>win the battle</strong> &mdash; back the good pieces, fight the bad ones &mdash; and watch what happens to your progress. Then choose to <strong>be the board</strong>, and move toward what matters with every piece still on it.</p>
+
+        <div class="thm-ex">
+          <div class="thm-ex__head">
+            <div class="thm-ex__eyebrow">Interactive</div>
+            <div class="thm-ex__name">Be the Board</div>
+          </div>
+          <div class="thm-ex__body">
+            <svg class="thm-cb__svg" viewBox="0 0 720 320" role="img" aria-label="Interactive chessboard: fight the pieces or be the board and move toward what matters">
+              <!-- values flag on the right -->
+              <g id="cbFlag">
+                <line x1="648" y1="250" x2="648" y2="150" stroke="#fff" stroke-width="3"/>
+                <polygon points="648,150 690,163 648,176" fill="#FFE500"/>
+                <text x="648" y="272" text-anchor="middle" fill="#9A9A9A" font-family="Oswald,sans-serif" font-size="11" letter-spacing="1.5">WHAT MATTERS</text>
+              </g>
+              <!-- the board (you) + pieces -->
+              <g id="cbBoard">
+                <!-- board in slight perspective -->
+                <polygon points="60,232 300,232 340,286 20,286" fill="#161616" stroke="#FFE500" stroke-width="2.5"/>
+                <line x1="112" y1="232" x2="86" y2="286" stroke="rgba(255,229,0,0.18)"/>
+                <line x1="164" y1="232" x2="152" y2="286" stroke="rgba(255,229,0,0.18)"/>
+                <line x1="216" y1="232" x2="218" y2="286" stroke="rgba(255,229,0,0.18)"/>
+                <line x1="268" y1="232" x2="284" y2="286" stroke="rgba(255,229,0,0.18)"/>
+                <text x="180" y="308" text-anchor="middle" fill="#FFE500" font-family="Oswald,sans-serif" font-size="11" letter-spacing="2">YOU · THE BOARD</text>
+                <!-- pieces: white (helpful) + black (unhelpful) -->
+                <g class="thm-cb__piece" id="cbP1"><circle cx="110" cy="210" r="15" fill="#f2f2f2" stroke="#bbb" stroke-width="2"/></g>
+                <g class="thm-cb__piece" id="cbP2"><circle cx="160" cy="200" r="15" fill="#242424" stroke="#c0562e" stroke-width="2"/></g>
+                <g class="thm-cb__piece" id="cbP3"><circle cx="210" cy="208" r="15" fill="#f2f2f2" stroke="#bbb" stroke-width="2"/></g>
+                <g class="thm-cb__piece" id="cbP4"><circle cx="255" cy="200" r="15" fill="#242424" stroke="#c0562e" stroke-width="2"/></g>
+                <g class="thm-cb__piece" id="cbP5"><circle cx="185" cy="222" r="14" fill="#242424" stroke="#c0562e" stroke-width="2"/></g>
+              </g>
+            </svg>
+
+            <p class="thm-cb__caption" id="cbCaption"></p>
+
+            <div class="thm-cb__meter"><span>Suffering in the battle</span><div class="thm-cb__track"><div class="thm-cb__fill" id="cbFill"></div></div></div>
+
+            <div class="thm-cb__controls">
+              <button class="btn btn--fight btn--lg" id="cbFight">Fight to win the battle</button>
+              <button class="btn btn--primary btn--lg" id="cbBoardBtn">Be the board &amp; move</button>
+            </div>
+          </div>
+        </div>
+        <p class="th-p">Did you feel it? Fighting the pieces just cranks the <b style="color:var(--yellow)">suffering</b> and the board stays stuck. But the moment you step back to <em>being the board</em>, you can roll toward what matters &mdash; carrying every piece, winning no battles. <strong>That&rsquo;s self-as-context in action.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 4 · THE OBSERVER PRACTICE ========== -->
+  <section class="th-sec th-sec--alt" id="observer">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">04 · Meet it directly &middot; do it now</p>
+        <h2 class="th-h2">Meet the <em>observer</em></h2>
+        <p class="th-p">The chessboard shows you the idea; this exercise lets you <em>experience</em> it. Take a slow minute and step through it for real &mdash; you&rsquo;re about to notice the part of you that&rsquo;s been noticing all along.</p>
+
+        <div class="thm-ex">
+          <div class="thm-ex__head">
+            <div class="thm-ex__eyebrow">Guided practice &middot; ~1 minute</div>
+            <div class="thm-ex__name">The Observing Self</div>
+          </div>
+          <div class="thm-ex__body">
+            <div class="thm-practice" id="obs">
+              <div class="thm-practice__count" id="obsCount">Step 1 of 4</div>
+              <h3 class="thm-practice__title" id="obsTitle">Settle</h3>
+              <p class="thm-practice__text" id="obsText">Sit or stand tall, and take one slow breath out. Let your eyes soften.</p>
+              <div class="thm-dots" id="obsDots"></div>
+              <div class="thm-practice__nav">
+                <button class="thm-practice__prev" id="obsPrev" disabled>&larr; Back</button>
+                <button class="btn btn--primary" id="obsNext">Next step &rarr;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="th-p">That aware &ldquo;you&rdquo; is always available &mdash; especially mid-battle, when the pieces are loudest. You can step back to the observer in a single breath: <em>&ldquo;I&rsquo;m the one noticing all this.&rdquo;</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 5 · SELF-STORY REFRAME ========== -->
+  <section class="th-sec" id="reframe">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">05 · Unhook from the story &middot; do it now</p>
+        <h2 class="th-h2">You are not<br>your <em>self-story</em></h2>
+        <p class="th-p">The mind&rsquo;s stickiest trick is telling you <em>who you are</em>: &ldquo;I&rsquo;m a choker,&rdquo; &ldquo;I&rsquo;m only an athlete,&rdquo; &ldquo;I&rsquo;m not the talented one.&rdquo; Fuse with a self-story and it runs your life. But from the board, even &ldquo;I am X&rdquo; is just another piece &mdash; a thought you can notice. Type in a self-story that hooks you and watch it change shape.</p>
+
+        <div class="thm-ex">
+          <div class="thm-ex__head">
+            <div class="thm-ex__eyebrow">Reframe tool &middot; saved</div>
+            <div class="thm-ex__name">The Self-Story Reframe</div>
+          </div>
+          <div class="thm-ex__body">
+            <div class="thm-field">
+              <div class="thm-field__label">A story your mind tells you about who you are</div>
+              <div class="thm-field__prefix">I am&hellip;</div>
+              <input type="text" id="rfIn" maxlength="60" placeholder="e.g. a choker / not good enough / only an athlete">
+            </div>
+            <div class="thm-reframe__out">
+              <div class="thm-reframe__label">From the board, that becomes&hellip;</div>
+              <div class="thm-reframe__line" id="rfL1"><span class="ph">Type a story above to see it reframed…</span></div>
+              <div class="thm-reframe__line" id="rfL2"></div>
+              <div class="thm-reframe__line" id="rfL3"></div>
+              <p class="thm-reframe__note">Same words &mdash; totally different grip. You go from <em>being</em> the story to <em>noticing</em> it. That&rsquo;s the observing self doing what defusion (Module 03) only pointed at.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 6 · HOW IT UNDERPINS ACE ========== -->
+  <section class="th-sec th-sec--alt" id="underpins">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">06 · Why this matters</p>
+        <h2 class="th-h2">The ground that<br><em>all of ACE</em> stands on</h2>
+        <p class="th-p">Self-as-context isn&rsquo;t a fourth move bolted onto ACE &mdash; it&rsquo;s the <strong>place you run ACE from</strong>. Every single move you&rsquo;ve learned quietly depends on the observing self. Look:</p>
 
         <div class="thm-ace3">
-          <div class="thm-ace3__card"><div class="thm-ace3__l">A</div><div class="thm-ace3__w">Acknowledge</div><div class="thm-ace3__d">Open up. Notice the thoughts and feelings; make room; unhook.</div></div>
-          <div class="thm-ace3__card"><div class="thm-ace3__l">C</div><div class="thm-ace3__w">Connect</div><div class="thm-ace3__d">Come back. Feet, breath, anchor &mdash; land in the present.</div></div>
-          <div class="thm-ace3__card"><div class="thm-ace3__l">E</div><div class="thm-ace3__w">Engage</div><div class="thm-ace3__d">Turn to what matters and take the next valued action.</div></div>
+          <div class="thm-ace3__card"><div class="thm-ace3__l">A</div><div class="thm-ace3__w">Acknowledge</div><div class="thm-ace3__d">To notice a thought <em>as</em> a thought (defusion) or make room for a feeling (acceptance), <strong>someone has to be doing the noticing</strong>. That someone is the observer. No observing self, no Acknowledge.</div></div>
+          <div class="thm-ace3__card"><div class="thm-ace3__l">C</div><div class="thm-ace3__w">Connect</div><div class="thm-ace3__d">The observing self <em>is</em> present-moment awareness. &ldquo;Being present&rdquo; and &ldquo;being the observer&rdquo; are two names for the same steady place &mdash; the calm you drop anchor <strong>into</strong>.</div></div>
+          <div class="thm-ace3__card"><div class="thm-ace3__l">E</div><div class="thm-ace3__w">Engage</div><div class="thm-ace3__d">Because you&rsquo;re <strong>bigger than any piece</strong> &mdash; any thought that says &ldquo;quit&rdquo; or &ldquo;you&rsquo;re not good enough&rdquo; &mdash; you can keep acting on your values no matter what the board is holding.</div></div>
         </div>
 
-        <div class="th-quote">
-          <p>"ACE isn&rsquo;t three things you do &mdash; it&rsquo;s one move with three beats. Open, land, act. You can run it slow and deep, or fast enough that no one even sees."</p>
-          <cite>— Putting it together</cite>
-        </div>
-        <p class="th-p">The key idea of this module is the <strong>choice point</strong>. Every pressure moment is a fork: you can make an <em>away</em> move (fight it, avoid it, get hooked and swept off course) or a <em>toward</em> move (run ACE and step toward your values). You won&rsquo;t always pick the toward move &mdash; nobody does. But the more you <em>see</em> the fork, the more often you get to choose. Let&rsquo;s practise.</p>
+        <p class="th-p">So this is the keystone. Acknowledge, Connect and Engage are all things the <em>observing self</em> does. Strengthen your access to the observer, and every other skill in THRIVE gets stronger with it &mdash; which is exactly why this module sits right before you weld the three moves together.</p>
+        <p class="th-p"><strong>And for your life beyond the field:</strong> this is your deepest protection. Injury, deselection, a bad season, the day you finally retire &mdash; those are storms that hit the pieces. They do not touch the board. You are not your results, not your ranking, not your role. You are the one who has been showing up to all of it &mdash; and you always will be.</p>
       </div>
     </div>
   </section>
 
-  <!-- ========== 2 · THE FULL ACE RUN ========== -->
-  <section class="th-sec th-sec--alt" id="practice">
+  <!-- ========== 7 · RESOURCES ========== -->
+  <section class="th-sec" id="resources">
     <div class="container">
       <div class="th-wrap">
-        <p class="th-eyebrow">02 · Do it now</p>
-        <h2 class="th-h2">The full <em>ACE run</em></h2>
-        <p class="th-p">Before you decide anything, feel the whole sequence once. Bring to mind a pressure moment &mdash; real or coming up &mdash; and run all three beats. Take about a minute.</p>
+        <p class="th-eyebrow">07 · Go deeper</p>
+        <h2 class="th-h2">Really good <em>resources</em></h2>
+        <p class="th-p">Self-as-context is a big idea, and it rewards a second and third pass. Here are the best places to take it further &mdash; from the people who built the model.</p>
 
-        <div class="thm-ex">
-          <div class="thm-ex__head">
-            <div class="thm-ex__eyebrow">Guided sequence &middot; ~1 minute</div>
-            <div class="thm-ex__name">Run ACE, End to End</div>
-          </div>
-          <div class="thm-ex__body">
-            <div class="thm-practice" id="acePractice">
-              <div class="thm-practice__count" id="aceCount">Beat 1 of 4</div>
-              <div class="thm-practice__letter" id="aceLetter">&middot;</div>
-              <h3 class="thm-practice__title" id="aceTitle">Arrive</h3>
-              <div class="thm-breath" id="aceBreath"><div class="thm-breath__circle"></div></div>
-              <p class="thm-practice__text" id="aceText">Stand or sit tall. Bring the pressure moment to mind &mdash; let it be here. Take one slow breath out.</p>
-              <div class="thm-dots" id="aceDots"></div>
-              <div class="thm-practice__nav">
-                <button class="thm-practice__prev" id="acePrev" disabled>&larr; Back</button>
-                <button class="btn btn--primary" id="aceNext">Next beat &rarr;</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p class="th-p">That&rsquo;s the shape of it: <strong>open, land, act</strong>. Slow now, so it&rsquo;s automatic when it&rsquo;s fast.</p>
+        <ul class="thm-res">
+          <li>
+            <div class="thm-res__kind">Watch (above)</div>
+            <div class="thm-res__title">Internal Struggles: The Chessboard Metaphor</div>
+            <div class="thm-res__by">Dr Russ Harris &mdash; the animation embedded in this module; the single clearest 3-minute intro to being the board, not the pieces.</div>
+          </li>
+          <li>
+            <div class="thm-res__kind">Book · start here</div>
+            <div class="thm-res__title">The Confidence Gap</div>
+            <div class="thm-res__by">Russ Harris &mdash; written for exactly this: performing with fear and self-doubt on board. Superb on why you don&rsquo;t need to feel confident to act, and on the observing self.</div>
+          </li>
+          <li>
+            <div class="thm-res__kind">Book · the classic</div>
+            <div class="thm-res__title">The Happiness Trap</div>
+            <div class="thm-res__by">Russ Harris &mdash; the most readable introduction to all six ACT processes, self-as-context included. Free companion resources at <a href="https://thehappinesstrap.com" target="_blank" rel="noopener">thehappinesstrap.com</a>.</div>
+          </li>
+          <li>
+            <div class="thm-res__kind">Book · go deep</div>
+            <div class="thm-res__title">Get Out of Your Mind and Into Your Life</div>
+            <div class="thm-res__by">Steven C. Hayes (the founder of ACT) &mdash; a deeper, experiential workbook; the &ldquo;observer you&rdquo; and &ldquo;you as context&rdquo; exercises are excellent.</div>
+          </li>
+          <li>
+            <div class="thm-res__kind">Book · for sport</div>
+            <div class="thm-res__title">The Mindful Athlete</div>
+            <div class="thm-res__by">George Mumford &mdash; the sports-psych mindfulness coach to elite teams; a sport-native companion to the observing-self and present-moment work.</div>
+          </li>
+          <li>
+            <div class="thm-res__kind">Practitioner &amp; free tools</div>
+            <div class="thm-res__title">Association for Contextual Behavioral Science</div>
+            <div class="thm-res__by">The professional home of ACT &mdash; free self-as-context exercises, metaphors and audios at <a href="https://contextualscience.org" target="_blank" rel="noopener">contextualscience.org</a>.</div>
+          </li>
+          <li>
+            <div class="thm-res__kind">Try · a companion practice</div>
+            <div class="thm-res__title">&ldquo;Leaves on a Stream&rdquo; &amp; &ldquo;Sky &amp; Weather&rdquo;</div>
+            <div class="thm-res__by">Two short guided practices (widely available as free audio) that train the observer directly &mdash; watching thoughts drift by, and being the sky that holds the weather. Pairs perfectly with Module 04.</div>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- ========== 3 · CHOICE-POINT SIMULATOR ========== -->
-  <section class="th-sec" id="sim">
-    <div class="container">
-      <div class="th-wrap">
-        <p class="th-eyebrow">03 · The main event &middot; do it now</p>
-        <h2 class="th-h2">The choice-point <em>simulator</em></h2>
-        <p class="th-p">Five pressure moments &mdash; some sport, some life. At each, you&rsquo;re at a choice point: pick the response that best runs ACE and moves you <strong>toward</strong> what matters. You&rsquo;ll see, in real time, how each choice steers you. There are no trick questions &mdash; just reps at spotting the fork.</p>
-
-        <div class="thm-ex">
-          <div class="thm-ex__head">
-            <div class="thm-ex__eyebrow">Interactive scenarios &middot; ~4 minutes</div>
-            <div class="thm-ex__name">Choice Points</div>
-          </div>
-          <div class="thm-ex__body">
-            <div class="thm-sim">
-              <div class="thm-sim__meter"><span>Moving toward your values</span><div class="thm-sim__track"><div class="thm-sim__fill" id="simFill"></div></div></div>
-
-              <div class="thm-sim__screen is-active" id="simPlay">
-                <div class="thm-sim__count" id="simCount">Moment 1 of 5</div>
-                <div class="thm-sim__tag" id="simTag">Sport</div>
-                <p class="thm-sim__situation" id="simSituation"></p>
-                <div class="thm-sim__opts" id="simOpts"></div>
-                <div class="thm-sim__fb" id="simFb" hidden>
-                  <div class="thm-sim__verdict" id="simVerdict"></div>
-                  <p class="thm-sim__why" id="simWhy"></p>
-                  <button class="btn btn--primary btn--sm thm-sim__next" id="simNext">Next moment &rarr;</button>
-                </div>
-              </div>
-
-              <div class="thm-sim__screen" id="simResult">
-                <div class="thm-sim__result">
-                  <h3 id="simHeadline"></h3>
-                  <p id="simSummary"></p>
-                  <button class="btn btn--ghost" id="simRedo">Run it again</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p class="th-p">Notice what the simulator is really training: not getting it &ldquo;right,&rdquo; but <em>seeing the choice point in the first place</em>. Once you can see the fork, ACE is always available &mdash; even after an away move.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== 4 · BUILD YOUR ROUTINE ========== -->
-  <section class="th-sec th-sec--alt" id="routine">
-    <div class="container">
-      <div class="th-wrap">
-        <p class="th-eyebrow">04 · Make it yours &middot; do it now</p>
-        <h2 class="th-h2">Build your <em>ACE routine</em></h2>
-        <p class="th-p">Now assemble your own pre-performance routine from everything you&rsquo;ve built &mdash; your anchors from Module 04, your values from Module 05. Three beats, one routine you can run before any big moment. It saves on this device; screenshot it for your phone.</p>
-
-        <div class="thm-ex">
-          <div class="thm-ex__head">
-            <div class="thm-ex__eyebrow">Your routine &middot; saved</div>
-            <div class="thm-ex__name">The ACE Routine Builder</div>
-          </div>
-          <div class="thm-ex__body">
-            <div class="thm-field">
-              <div class="thm-field__label"><b>A</b> · Acknowledge — how will you open up to the nerves/thoughts?</div>
-              <input type="text" id="rtA" maxlength="110" placeholder="e.g. name it — 'here's the nerves' — and drop the rope">
-            </div>
-            <div class="thm-field">
-              <div class="thm-field__label"><b>C</b> · Connect — how will you drop anchor?</div>
-              <input type="text" id="rtC" maxlength="110" placeholder="e.g. feet down, one slow breath out, eyes to my anchor">
-            </div>
-            <div class="thm-field">
-              <div class="thm-field__label"><b>E</b> · Engage — what will you turn toward?</div>
-              <input type="text" id="rtE" maxlength="110" placeholder="e.g. my value + my first job">
-            </div>
-
-            <div class="thm-routine__card">
-              <div class="thm-routine__label">Your ACE routine</div>
-              <div class="thm-routine__step"><div class="thm-routine__l">A</div><div class="thm-routine__t"><b>Acknowledge</b><span id="rtOutA" class="ph">how you&rsquo;ll open up…</span></div></div>
-              <div class="thm-routine__step"><div class="thm-routine__l">C</div><div class="thm-routine__t"><b>Connect</b><span id="rtOutC" class="ph">how you&rsquo;ll drop anchor…</span></div></div>
-              <div class="thm-routine__step"><div class="thm-routine__l">E</div><div class="thm-routine__t"><b>Engage</b><span id="rtOutE" class="ph">what you&rsquo;ll turn toward…</span></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== 5 · REFLECT ========== -->
-  <section class="th-sec" id="reflect">
-    <div class="container">
-      <div class="th-wrap">
-        <p class="th-eyebrow">05 · Journal it</p>
-        <h2 class="th-h2">Rehearse on <em>paper</em></h2>
-        <p class="th-p">A pressure moment is easier to handle if you&rsquo;ve met it in advance. Everything saves <strong>only on this device</strong>.</p>
-
-        <div class="th-reflect">
-          <p class="th-reflect__q">1 · Which pressure moment in your sport most often knocks you off? Write your ACE response to it, in advance.</p>
-          <p class="th-reflect__hint">Name the moment, then A / C / E for it. You&rsquo;re pre-loading the choice point.</p>
-          <textarea data-reflect="m7-sport" placeholder="The moment: … My ACE: Acknowledge… Connect… Engage…"></textarea>
-          <div class="th-reflect__foot"><span class="th-reflect__saved" data-saved-for="m7-sport"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device</span></div>
-        </div>
-
-        <div class="th-reflect">
-          <p class="th-reflect__q">2 · Where in life &mdash; not sport &mdash; could a 30-second ACE reset help you most?</p>
-          <p class="th-reflect__hint">Before an exam, a hard conversation, a spiral at 2am, walking into a room.</p>
-          <textarea data-reflect="m7-life" placeholder="Outside sport, ACE would help me most when…"></textarea>
-          <div class="th-reflect__foot"><span class="th-reflect__saved" data-saved-for="m7-life"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device</span></div>
-        </div>
-
-        <div class="th-reflect">
-          <p class="th-reflect__q">3 · Retrieval — say the three ACE moves and what each does, in your own words.</p>
-          <p class="th-reflect__hint">No looking back. This is the whole model in three lines.</p>
-          <textarea data-reflect="m7-recall" placeholder="Acknowledge is… Connect is… Engage is…"></textarea>
-          <div class="th-reflect__foot"><span class="th-reflect__saved" data-saved-for="m7-recall"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device</span></div>
-        </div>
-
-        <div class="th-applied">
-          <div class="th-applied__col th-applied__col--sport"><h5>Apply in Sport</h5><p>Use your ACE routine before every session and competition this week, and log what happened. Even 30 seconds &mdash; open, land, act &mdash; before you start.</p></div>
-          <div class="th-applied__col th-applied__col--life"><h5>Apply in Life</h5><p>Use the full ACE cycle in one high-pressure non-sport moment &mdash; an exam, an interview, a performance, conflict, overwhelm. Same skill, every arena. That&rsquo;s the promise, delivered.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== 6 · THIS WEEK ========== -->
+  <!-- ========== 8 · JOURNAL + THIS WEEK ========== -->
   <section class="th-sec th-sec--alt" id="week">
     <div class="container">
       <div class="th-wrap">
-        <p class="th-eyebrow">06 · This week&rsquo;s Mind Gym</p>
-        <h2 class="th-h2">Run ACE <em>for real</em></h2>
-        <p class="th-p">This week your job is simple: run your ACE routine before things that matter, and notice the choice points as they come. Here&rsquo;s how to make it stick, plus a daily log.</p>
+        <p class="th-eyebrow">08 · Reflect &amp; practise</p>
+        <h2 class="th-h2">Live from the <em>board</em></h2>
+        <p class="th-p">A couple of honest reflections, then a week of stepping back to the observer. Everything saves <strong>only on this device</strong>.</p>
 
-        <ul class="thm-ideas">
-          <li><span class="thm-ideas__tag">On the pitch</span><p>Run your <strong>ACE routine</strong> before every session and game &mdash; even a 10-second version between reps or points.</p></li>
-          <li><span class="thm-ideas__tag">Spot the fork</span><p>Once a day, catch a <strong>choice point</strong> as it happens and name it: <em>&ldquo;toward or away?&rdquo;</em> Just seeing it is a win.</p></li>
-          <li><span class="thm-ideas__tag">Life reps</span><p>Use the full cycle in one non-sport pressure moment &mdash; before you hit send, walk in, or start the hard thing.</p></li>
-          <li><span class="thm-ideas__tag">Recover</span><p>Made an away move? No drama. The next choice point is seconds away &mdash; just run ACE and step back toward your values.</p></li>
-          <li><span class="thm-ideas__tag">Diary</span><p>Log a line a day below. Watch how quickly &ldquo;open, land, act&rdquo; becomes automatic.</p></li>
-        </ul>
+        <div class="th-reflect">
+          <p class="th-reflect__q">1 · Which self-story hooks you hardest &mdash; the one you most often mistake for the truth about you?</p>
+          <p class="th-reflect__hint">Write it as your mind says it. Then, underneath, write it again starting with &ldquo;I&rsquo;m noticing the story that&hellip;&rdquo;</p>
+          <textarea data-reflect="sac-story" placeholder="My mind says: I am… / I'm noticing the story that…"></textarea>
+          <div class="th-reflect__foot"><span class="th-reflect__saved" data-saved-for="sac-story"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device</span></div>
+        </div>
 
-        <div class="th-block" style="margin-top:36px;"><span class="th-block__label">The 7-day ACE log</span></div>
+        <div class="th-reflect">
+          <p class="th-reflect__q">2 · Who are you, apart from the pieces? Name a few things about you that are true whether you win or lose.</p>
+          <p class="th-reflect__hint">The board, not the pieces. This is the start of an identity that outlasts your results.</p>
+          <textarea data-reflect="sac-identity" placeholder="Win or lose, I'm still…"></textarea>
+          <div class="th-reflect__foot"><span class="th-reflect__saved" data-saved-for="sac-identity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device</span></div>
+        </div>
+
+        <div class="th-applied">
+          <div class="th-applied__col th-applied__col--sport"><h5>Apply in Sport</h5><p>Mid-competition, when confident and doubtful thoughts are at war, step back to the board: <em>&ldquo;I&rsquo;m the one noticing all this&rdquo;</em> &mdash; and play the next ball from there, no battle required.</p></div>
+          <div class="th-applied__col th-applied__col--life"><h5>Apply in Life</h5><p>When a harsh self-story shows up &mdash; about your body, your worth, your future &mdash; name it as a piece, not the truth. You are the board that holds it, and you can still move toward what matters.</p></div>
+        </div>
+
+        <div class="th-block" style="margin-top:36px;"><span class="th-block__label">The 7-day observer log</span></div>
         <div class="thm-week__intro">
-          <p><strong>One entry a day for seven days.</strong> Did you run ACE at a pressure moment? Log whether it was mostly a <em>toward</em> or <em>away</em> move, and one line on what happened. Everything saves on this device only.</p>
+          <p><strong>One entry a day for seven days.</strong> Once a day, when the pieces get loud, step back to the board. Log the moment, and whether stepping back helped you move. Everything saves on this device only.</p>
         </div>
         <div class="thm-week__progress">
           <div class="thm-week__track"><div class="thm-week__fill" id="weekFill"></div></div>
@@ -535,6 +635,16 @@
         </div>
         <div class="thm-week" id="weekJournal"></div>
         <button class="thm-week__reset" id="weekReset">Clear this week and start over</button>
+
+        <div class="thm-refcard">
+          <h4>Your self-as-context pocket card</h4>
+          <ol>
+            <li>You are <strong>not the pieces</strong> (thoughts &amp; feelings) &mdash; you&rsquo;re the <strong>board</strong> that holds them.</li>
+            <li>You don&rsquo;t have to win the battle to <strong>move</strong>.</li>
+            <li>Step back with one line: <em>&ldquo;I&rsquo;m the one noticing all this.&rdquo;</em></li>
+            <li>You are not your results, your role, or your worst day. The board is never damaged by the storm.</li>
+          </ol>
+        </div>
       </div>
     </div>
   </section>
@@ -544,21 +654,16 @@
     <div class="container">
       <div class="th-wrap">
         <p class="th-eyebrow">Lock it in</p>
-        <div class="thm-tree">
-          <div class="thm-tree__node"><div class="thm-tree__badge">A<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><div class="thm-tree__label">Acknowledge</div></div>
-          <div class="thm-tree__node"><div class="thm-tree__badge">C<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><div class="thm-tree__label">Connect</div></div>
-          <div class="thm-tree__node"><div class="thm-tree__badge">E<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><div class="thm-tree__label">Engage</div></div>
-        </div>
-        <div class="th-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg><p><strong>All three branches complete.</strong> You&rsquo;ve got the whole skill and your own routine to run it. The final module isn&rsquo;t about learning something new &mdash; it&rsquo;s about <strong>keeping</strong> this for life: handling the off-track days, protecting your identity beyond sport, and pulling everything you&rsquo;ve saved into one toolkit. That&rsquo;s Module 08.</p></div>
+        <div class="th-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg><p><strong>This is the keystone.</strong> You&rsquo;ve met the steady observer that all of ACE is run from &mdash; the board that holds every piece and can still move toward what matters. Now that you can stand on that ground, the next module welds Acknowledge, Connect and Engage into one fluid skill you can fire in seconds: <strong>Putting ACE Together</strong>.</p></div>
 
         <div class="thm-nextnav">
           <a href="grow-thrive-module-06.html">
             <div class="thm-nextnav__dir">&larr; Previous</div>
             <div class="thm-nextnav__title">06 · Committed Action</div>
           </a>
-          <a href="grow-thrive.html#program" class="thm-nextnav--end">
+          <a href="grow-thrive-module-08.html" class="thm-nextnav--end">
             <div class="thm-nextnav__dir">Next module &rarr;</div>
-            <div class="thm-nextnav__title">08 · Living the Model</div>
+            <div class="thm-nextnav__title">08 · Putting ACE Together</div>
           </a>
         </div>
       </div>
@@ -625,16 +730,14 @@
   <script src="script.js?v=5"></script>
   <script>
   /* =========================================================
-     THRIVE Module 07 — full-ACE stepper, choice-point simulator,
-     ACE routine builder (reads M04 anchors + M05 values),
-     reflection autosave, 7-day log. State stays on this device.
+     THRIVE Module 07 — Self-as-Context. Chessboard video +
+     interactive board, observing-self stepper, self-story
+     reframe, 7-day observer log. State stays on this device.
      ========================================================= */
   (function () {
-    var LS = 'thrive_m7_';
+    var LS = 'thrive_sac_';
     function esc(s) { return (s || '').replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
-    function load(k) { try { return localStorage.getItem(LS + k) || ''; } catch (e) { return ''; } }
-    function save(k, v) { try { localStorage.setItem(LS + k, v); } catch (e) {} }
-    function ext(k) { try { return localStorage.getItem(k) || ''; } catch (e) { return ''; } }
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     /* ---- Reflection autosave ---- */
     document.querySelectorAll('textarea[data-reflect]').forEach(function (ta) {
@@ -650,161 +753,99 @@
       });
     });
 
-    /* ================= FULL ACE STEPPER ================= */
-    var BEATS = [
-      { l: '·', title: 'Arrive', breath: false, text: 'Stand or sit tall. Bring the pressure moment to mind — let it be here. Take one slow breath out.' },
-      { l: 'A', title: 'Acknowledge', breath: false, text: 'Notice what shows up. Name the loudest thought and the strongest feeling — "here\'s doubt, here\'s nerves." Make room; don\'t fight them.' },
-      { l: 'C', title: 'Connect', breath: true, text: 'Come back. Push your feet into the floor, follow one slow breath, find your anchor. You\'re here, now.' },
-      { l: 'E', title: 'Engage', breath: false, text: 'Turn to what matters. Name your value and the very next job — then do it. That\'s the rep.' }
-    ];
-    var aIdx = 0;
-    var aCount = document.getElementById('aceCount'), aLetter = document.getElementById('aceLetter'),
-        aTitle = document.getElementById('aceTitle'), aText = document.getElementById('aceText'),
-        aBreath = document.getElementById('aceBreath'), aPrev = document.getElementById('acePrev'),
-        aNext = document.getElementById('aceNext'), aDots = document.getElementById('aceDots');
-    BEATS.forEach(function () { aDots.appendChild(document.createElement('span')); });
-    function renderAce() {
-      var b = BEATS[aIdx];
-      aCount.textContent = 'Beat ' + (aIdx + 1) + ' of ' + BEATS.length;
-      aLetter.textContent = b.l; aTitle.textContent = b.title; aText.textContent = b.text;
-      aBreath.classList.toggle('is-on', !!b.breath);
-      aPrev.disabled = (aIdx === 0);
-      aNext.textContent = (aIdx === BEATS.length - 1) ? 'Finish' : 'Next beat →';
-      aDots.querySelectorAll('span').forEach(function (d, i) { d.classList.toggle('is-on', i === aIdx); });
-    }
-    aNext.addEventListener('click', function () { if (aIdx < BEATS.length - 1) { aIdx++; renderAce(); } else { aIdx = 0; renderAce(); } });
-    aPrev.addEventListener('click', function () { if (aIdx > 0) { aIdx--; renderAce(); } });
-    renderAce();
-
-    /* ================= CHOICE-POINT SIMULATOR ================= */
-    var SCEN = [
-      { tag: 'Sport', s: 'Your warm-up was a shambles and your mind is loud: "You\'re going to be terrible today."',
-        opts: [
-          { t: 'Argue with the thought — force yourself to feel confident and "think positive."', toward: false, why: 'Fighting the thought is an away move — it feeds the struggle and drains focus. Confidence you have to force is fragile.' },
-          { t: 'Acknowledge the nerves, drop anchor (feet, breath), and start your first job.', toward: true, why: 'That\'s ACE. You made room for the noise, landed in the present, and engaged with the next action — a clean toward move.' },
-          { t: 'Mentally check out and just go through the motions.', toward: false, why: 'Checking out is avoidance — an away move. It protects you from caring, but it also guarantees a flat performance.' }
-        ] },
-      { tag: 'Sport', s: 'Hostile crowd. You make an early mistake and feel the heat rising in your chest.',
-        opts: [
-          { t: 'Snap at a teammate to let the frustration out.', toward: false, why: 'Away move. Venting hands the wheel to the feeling and damages the very teamwork you value.' },
-          { t: 'Replay the mistake on a loop for the next five minutes.', toward: false, why: 'Getting hooked and ruminating is an away move — you\'re in the past while the game is in the present.' },
-          { t: 'Name it ("here\'s frustration"), come back to the next play, act on your value.', toward: true, why: 'ACE in seconds: acknowledge the feeling, connect to now, engage with the next play. Toward.' }
-        ] },
-      { tag: 'Life', s: 'Terrible night\'s sleep. You do not feel like training at all.',
-        opts: [
-          { t: 'Wait until you feel motivated, then decide.', toward: false, why: 'Waiting for motivation puts your mood in charge — an away move. Motivation rarely shows up on the flat days.' },
-          { t: 'Feel the flatness, remember your value, and do the 2-minute version anyway.', toward: true, why: 'Willingness, not motivation — a toward move. Acting on your value while feeling flat is the whole skill.' },
-          { t: 'Skip it and promise yourself you\'ll do double tomorrow.', toward: false, why: 'Away move dressed up as a plan. "Double tomorrow" almost never happens; the value goes unlived today.' }
-        ] },
-      { tag: 'Life', s: 'You had a fight with someone close right before a big performance.',
-        opts: [
-          { t: 'Make room for the hurt, drop anchor, and turn to what matters right now.', toward: true, why: 'ACE. You can carry the hurt AND perform — you don\'t have to resolve the feeling first. Toward.' },
-          { t: 'Bottle it up and tell yourself you\'re totally fine.', toward: false, why: 'Suppression is an away move — the feeling doesn\'t vanish, it just leaks out sideways under pressure.' },
-          { t: 'Let it hijack you and spiral about the argument.', toward: false, why: 'Fusion — away move. The thoughts grab the wheel and drive you off the thing that matters now.' }
-        ] },
-      { tag: 'Life', s: 'It\'s 2am. You can\'t sleep, your mind racing about tomorrow.',
-        opts: [
-          { t: 'Try to force yourself to sleep and get frustrated when it doesn\'t work.', toward: false, why: 'Forcing sleep is an away move — the struggle switch is on, and effort makes it worse.' },
-          { t: 'Grab your phone and doom-scroll to distract yourself.', toward: false, why: 'Distraction is avoidance — an away move that trades tonight\'s rest for a longer wired brain.' },
-          { t: 'Notice the worry, unhook ("thanks, mind"), feel your breath, let sleep come.', toward: true, why: 'ACE, gently: acknowledge and defuse the worry, connect to the breath, and let go of the effort. Toward.' }
-        ] }
-    ];
-    var scIdx = 0, towardCount = 0;
-    var simFill = document.getElementById('simFill'), simCount = document.getElementById('simCount'),
-        simTag = document.getElementById('simTag'), simSit = document.getElementById('simSituation'),
-        simOpts = document.getElementById('simOpts'), simFb = document.getElementById('simFb'),
-        simVerdict = document.getElementById('simVerdict'), simWhy = document.getElementById('simWhy'),
-        simNext = document.getElementById('simNext');
-    function simShow(name) { document.getElementById('simPlay').classList.toggle('is-active', name === 'play'); document.getElementById('simResult').classList.toggle('is-active', name === 'result'); }
-    function simMeter() { simFill.style.width = Math.round(towardCount / SCEN.length * 100) + '%'; }
-    function renderScen() {
-      var sc = SCEN[scIdx];
-      simCount.textContent = 'Moment ' + (scIdx + 1) + ' of ' + SCEN.length;
-      simTag.textContent = sc.tag;
-      simSit.textContent = sc.s;
-      simFb.hidden = true;
-      simOpts.innerHTML = '';
-      sc.opts.forEach(function (o) {
-        var b = document.createElement('button');
-        b.className = 'thm-sim__opt'; b.type = 'button'; b.textContent = o.t;
-        b.addEventListener('click', function () { choose(o, b); });
-        simOpts.appendChild(b);
+    /* ---- Video click-to-play ---- */
+    document.querySelectorAll('.thm-vid__frame').forEach(function (frame) {
+      var btn = frame.querySelector('.thm-vid__play'); if (!btn) return;
+      btn.addEventListener('click', function () {
+        var id = frame.getAttribute('data-yt');
+        var ifr = document.createElement('iframe');
+        ifr.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+        ifr.title = btn.getAttribute('aria-label') || 'Video';
+        ifr.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+        ifr.setAttribute('allowfullscreen', ''); ifr.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+        frame.innerHTML = ''; frame.appendChild(ifr);
       });
-    }
-    function choose(o, btn) {
-      if (o._done) return;
-      Array.prototype.forEach.call(simOpts.children, function (c) { c.disabled = true; });
-      btn.classList.add(o.toward ? 'is-toward' : 'is-away');
-      if (o.toward) { towardCount++; simMeter(); }
-      simVerdict.textContent = o.toward ? 'Toward — that\'s a clean ACE move' : 'Away — a step off course';
-      simVerdict.className = 'thm-sim__verdict ' + (o.toward ? 'toward' : 'away');
-      simFb.className = 'thm-sim__fb ' + (o.toward ? '' : 'away');
-      simWhy.textContent = o.why;
-      simFb.hidden = false;
-      simNext.textContent = (scIdx < SCEN.length - 1) ? 'Next moment →' : 'See how you steered →';
-      SCEN[scIdx].opts.forEach(function (x) { x._done = true; });
-    }
-    simNext.addEventListener('click', function () {
-      if (scIdx < SCEN.length - 1) { scIdx++; renderScen(); }
-      else {
-        var pct = Math.round(towardCount / SCEN.length * 100);
-        document.getElementById('simHeadline').innerHTML = 'You made <b>' + towardCount + ' / ' + SCEN.length + '</b> toward moves';
-        var msg;
-        if (towardCount >= 4) msg = 'You\'re spotting the choice point and running ACE under pressure — that\'s exactly the skill. Now take it into your real week.';
-        else if (towardCount >= 2) msg = 'Some clean toward moves and some away ones — which is completely normal. The win is that you can now see the fork. Keep repping it.';
-        else msg = 'Lots of away moves this time — and that\'s okay, it\'s how everyone starts. The point isn\'t perfection; it\'s learning to see the choice point. Run it again and notice the fork each time.';
-        document.getElementById('simSummary').textContent = msg;
-        simShow('result');
-      }
     });
-    document.getElementById('simRedo').addEventListener('click', function () {
-      scIdx = 0; towardCount = 0; simMeter();
-      SCEN.forEach(function (sc) { sc.opts.forEach(function (o) { o._done = false; }); });
-      renderScen(); simShow('play');
+
+    /* ================= CHESSBOARD INTERACTIVE ================= */
+    var cbBoard = document.getElementById('cbBoard');
+    var cbFill = document.getElementById('cbFill');
+    var cbCaption = document.getElementById('cbCaption');
+    var cbFight = document.getElementById('cbFight');
+    var cbBoardBtn = document.getElementById('cbBoardBtn');
+    var cbPieces = ['cbP1', 'cbP2', 'cbP3', 'cbP4', 'cbP5'].map(function (id) { return document.getElementById(id); });
+    var progress = 0, struggle = 0;
+    function cbCap(html) { cbCaption.innerHTML = html; }
+    function cbRender() {
+      cbBoard.setAttribute('transform', 'translate(' + (progress * 3.4) + ',0)');
+      cbFill.style.width = struggle + '%';
+    }
+    cbCap('You&rsquo;re down among the pieces: back the good thoughts, fight the bad ones. Try to <b>win the battle</b>&hellip; then try <b>being the board</b>.');
+    cbRender();
+
+    cbFight.addEventListener('click', function () {
+      struggle = Math.min(100, struggle + 20);
+      if (!reduce) {
+        cbPieces.forEach(function (p) { if (p) { p.classList.remove('is-shaking'); void p.getBBox; p.classList.add('is-shaking'); } });
+      }
+      cbRender();
+      if (struggle >= 100) cbCap('Full-blown war &mdash; <b>maximum suffering</b>, and the board hasn&rsquo;t moved an inch. You can&rsquo;t win this by fighting harder. There&rsquo;s another option&hellip;');
+      else cbCap('You fight to make the good pieces win &mdash; and the <b>suffering</b> climbs while the board goes nowhere. The black pieces never leave.');
     });
-    renderScen(); simMeter();
+    cbPieces.forEach(function (p) { if (p) p.addEventListener('animationend', function () { p.classList.remove('is-shaking'); }); });
 
-    /* ================= ACE ROUTINE BUILDER ================= */
-    var rtA = document.getElementById('rtA'), rtC = document.getElementById('rtC'), rtE = document.getElementById('rtE'),
-        rtOutA = document.getElementById('rtOutA'), rtOutC = document.getElementById('rtOutC'), rtOutE = document.getElementById('rtOutE');
+    cbBoardBtn.addEventListener('click', function () {
+      progress = Math.min(100, progress + 25);
+      struggle = Math.max(0, struggle - 15);
+      cbRender();
+      if (progress >= 100) cbCap('<strong>You reached what matters &mdash; with every piece still on the board.</strong> You never won a single battle. You just stopped fighting and started moving. That&rsquo;s self-as-context.');
+      else cbCap('You step back to <b>being the board</b>. The pieces are still there, still noisy &mdash; but you&rsquo;re rolling toward what matters anyway. No battle required.');
+    });
 
-    // prefill: own saved first, else suggestions from M04 anchors + M05 values
-    (function () {
-      rtA.value = load('rt_a'); rtC.value = load('rt_c'); rtE.value = load('rt_e');
-      if (!rtC.value) {
-        var vis = ext('thrive_m4_an_visual'), phys = ext('thrive_m4_an_physical'), cue = ext('thrive_m4_an_cue');
-        if (vis || phys || cue) {
-          var parts = [];
-          if (phys) parts.push('feel ' + phys); else parts.push('feet down, one slow breath out');
-          if (vis) parts.push('eyes to ' + vis);
-          if (cue) parts.push('say "' + cue + '"');
-          rtC.value = parts.join(', ');
-        }
-      }
-      if (!rtE.value) {
-        var vals = []; try { vals = JSON.parse(ext('thrive_m5_values') || '[]'); } catch (e) { vals = []; }
-        if (vals.length) rtE.value = 'act on ' + vals[0][0].toLowerCase() + ' — my first job';
-      }
-    })();
-
-    function setOut(el, val, ph) {
-      if (val && val.trim()) { el.textContent = val.trim(); el.classList.remove('ph'); }
-      else { el.textContent = ph; el.classList.add('ph'); }
+    /* ================= OBSERVER STEPPER ================= */
+    var STEPS = [
+      { title: 'Settle', text: 'Sit or stand tall, and take one slow breath out. Let your eyes soften.' },
+      { title: 'Notice a thought', text: 'Let a thought show up &mdash; a worry, a judgement, a bit of self-doubt. Watch it as if it&rsquo;s playing on a screen in front of you. Don&rsquo;t argue with it; just notice it&rsquo;s there.' },
+      { title: 'Notice the noticer', text: 'Now notice this: there is a part of you that is <em>aware</em> of that thought. That awareness is not the thought &mdash; it&rsquo;s the one watching it. That&rsquo;s the observing you. Rest your attention there for a breath.' },
+      { title: 'The continuous you', text: 'That same aware &ldquo;you&rdquo; was there when you were eight, on your best day, and on your worst. Your body, your thoughts, your results have all changed &mdash; the observer hasn&rsquo;t. You can come back here anytime, especially mid-battle.' }
+    ];
+    var oIdx = 0;
+    var oCount = document.getElementById('obsCount'), oTitle = document.getElementById('obsTitle'),
+        oText = document.getElementById('obsText'), oPrev = document.getElementById('obsPrev'),
+        oNext = document.getElementById('obsNext'), oDots = document.getElementById('obsDots');
+    STEPS.forEach(function () { oDots.appendChild(document.createElement('span')); });
+    function renderObs() {
+      var s = STEPS[oIdx];
+      oCount.textContent = 'Step ' + (oIdx + 1) + ' of ' + STEPS.length;
+      oTitle.textContent = s.title; oText.innerHTML = s.text;
+      oPrev.disabled = (oIdx === 0);
+      oNext.textContent = (oIdx === STEPS.length - 1) ? 'Finish' : 'Next step →';
+      oDots.querySelectorAll('span').forEach(function (d, i) { d.classList.toggle('is-on', i === oIdx); });
     }
-    function renderRt() {
-      setOut(rtOutA, rtA.value, 'how you’ll open up…');
-      setOut(rtOutC, rtC.value, 'how you’ll drop anchor…');
-      setOut(rtOutE, rtE.value, 'what you’ll turn toward…');
-    }
-    rtA.addEventListener('input', function () { save('rt_a', rtA.value); renderRt(); });
-    rtC.addEventListener('input', function () { save('rt_c', rtC.value); renderRt(); });
-    rtE.addEventListener('input', function () { save('rt_e', rtE.value); renderRt(); });
-    // persist any prefilled suggestions too
-    if (rtC.value) save('rt_c', rtC.value);
-    if (rtE.value) save('rt_e', rtE.value);
-    renderRt();
+    oNext.addEventListener('click', function () { if (oIdx < STEPS.length - 1) { oIdx++; renderObs(); } else { oIdx = 0; renderObs(); } });
+    oPrev.addEventListener('click', function () { if (oIdx > 0) { oIdx--; renderObs(); } });
+    renderObs();
 
-    /* ================= 7-DAY ACE LOG ================= */
+    /* ================= SELF-STORY REFRAME ================= */
+    var rfIn = document.getElementById('rfIn');
+    var rfL1 = document.getElementById('rfL1'), rfL2 = document.getElementById('rfL2'), rfL3 = document.getElementById('rfL3');
+    try { if (localStorage.getItem(LS + 'story')) rfIn.value = localStorage.getItem(LS + 'story'); } catch (e) {}
+    function renderReframe() {
+      var raw = (rfIn.value || '').trim().replace(/^i\s*am\s+/i, '');
+      if (!raw) {
+        rfL1.innerHTML = '<span class="ph">Type a story above to see it reframed…</span>';
+        rfL2.innerHTML = ''; rfL3.innerHTML = '';
+        return;
+      }
+      var t = esc(raw);
+      rfL1.innerHTML = '&ldquo;I&rsquo;m <b>having the thought</b> that I&rsquo;m ' + t + '.&rdquo;';
+      rfL2.innerHTML = '&ldquo;Here&rsquo;s my <b>&lsquo;' + t + '&rsquo; story</b> again.&rdquo;';
+      rfL3.innerHTML = '&ldquo;I&rsquo;m the one <b>noticing</b> the thought &lsquo;I am ' + t + '&rsquo; &mdash; and I can still move.&rdquo;';
+    }
+    rfIn.addEventListener('input', function () { try { localStorage.setItem(LS + 'story', rfIn.value); } catch (e) {} renderReframe(); });
+    renderReframe();
+
+    /* ================= 7-DAY OBSERVER LOG ================= */
     var DAYS = ['Day 1','Day 2','Day 3','Day 4','Day 5','Day 6','Day 7'];
     var journal = document.getElementById('weekJournal');
     var weekFill = document.getElementById('weekFill'), weekCount = document.getElementById('weekCount');
@@ -819,13 +860,13 @@
           '<svg class="thm-day__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>' +
         '</button>' +
         '<div class="thm-day__panel" id="dayp-' + i + '" hidden><div class="thm-day__body">' +
-          '<div class="thm-day__field"><p class="thm-day__q">Did you run ACE at a pressure moment?</p>' +
+          '<div class="thm-day__field"><p class="thm-day__q">When did you step back to the board today?</p><textarea data-day="' + i + '" data-f="when" placeholder="The moment the pieces got loud was…"></textarea></div>' +
+          '<div class="thm-day__field"><p class="thm-day__q">Did stepping back help you move?</p>' +
             '<div class="thm-toggle" data-day="' + i + '">' +
-              '<button type="button" data-choice="toward" aria-pressed="false">Mostly toward</button>' +
-              '<button type="button" data-choice="mixed" aria-pressed="false">Mixed</button>' +
-              '<button type="button" data-choice="away" aria-pressed="false">Mostly away</button>' +
+              '<button type="button" data-choice="yes" aria-pressed="false">Yes</button>' +
+              '<button type="button" data-choice="bit" aria-pressed="false">A bit</button>' +
+              '<button type="button" data-choice="no" aria-pressed="false">Not yet</button>' +
             '</div></div>' +
-          '<div class="thm-day__field"><p class="thm-day__q">What was the moment, and what happened?</p><textarea data-day="' + i + '" data-f="note" placeholder="One line…"></textarea></div>' +
           '<span class="thm-day__save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device as you type</span>' +
         '</div></div>';
       journal.appendChild(wrap);
@@ -855,12 +896,12 @@
       });
       refreshDay(i);
     }
-    function dayLogged(i) { try { return !!(localStorage.getItem(dKey(i, 'choice')) || localStorage.getItem(dKey(i, 'note'))); } catch (e) { return false; } }
+    function dayLogged(i) { try { return !!(localStorage.getItem(dKey(i, 'when')) || localStorage.getItem(dKey(i, 'choice'))); } catch (e) { return false; } }
     function refreshDay(i) {
       var wrap = journal.children[i], logged = dayLogged(i);
       wrap.classList.toggle('is-done', logged);
       var choice = null; try { choice = localStorage.getItem(dKey(i, 'choice')); } catch (e) {}
-      var map = { toward: 'Toward', mixed: 'Mixed', away: 'Away' };
+      var map = { yes: 'Moved', bit: 'A bit', no: 'Not yet' };
       wrap.querySelector('[data-state]').textContent = logged ? (choice ? map[choice] : 'Logged') : 'Not yet';
       updateProgress();
     }
@@ -873,7 +914,7 @@
     updateProgress();
     document.getElementById('weekReset').addEventListener('click', function () {
       if (!window.confirm('Clear all 7 days of this week\'s log on this device? This cannot be undone.')) return;
-      DAYS.forEach(function (_, i) { ['choice', 'note'].forEach(function (f) { try { localStorage.removeItem(dKey(i, f)); } catch (e) {} }); });
+      DAYS.forEach(function (_, i) { ['when', 'choice'].forEach(function (f) { try { localStorage.removeItem(dKey(i, f)); } catch (e) {} }); });
       journal.innerHTML = ''; DAYS.forEach(function (_, i) { buildDay(i); }); updateProgress();
     });
   })();
