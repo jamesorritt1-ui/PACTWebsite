@@ -1,0 +1,77 @@
+/* ==========================================================================
+   THRIVE scroll enhancements
+   Two learning-safe effects, shared across every THRIVE page:
+     1) Gamified "avatar track" scroll-progress bar (runner rides to the flag)
+     2) Fast fade / slide-in reveal-on-scroll for section content
+   Mobile-first. Fully honours prefers-reduced-motion. No-JS = everything
+   visible (effects are gated behind the .thx-js class on <html>).
+   ========================================================================== */
+
+/* ---- 1. Avatar progress track ------------------------------------------ */
+.thx-track{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: rgba(255,255,255,0.08);
+  z-index: 1200;                 /* above header (1000/1001), below modals */
+  pointer-events: none;
+}
+.thx-track__fill{
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  width: 0;
+  background: var(--yellow, #FFE500);
+  box-shadow: 0 0 10px rgba(255,229,0,0.55);
+  transition: width .09s linear;
+  will-change: width;
+}
+.thx-track__flag{
+  position: absolute;
+  top: 50%; right: 6px;
+  transform: translateY(-50%);
+  font-size: 13px;
+  line-height: 1;
+  opacity: .45;
+  transition: opacity .3s ease;
+}
+.thx-track__avatar{
+  position: absolute;
+  top: 50%; left: 0;
+  transform: translate(-50%, -50%);
+  width: 24px; height: 24px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; line-height: 1;
+  transition: left .09s linear;
+  will-change: left;
+}
+.thx-track.is-done .thx-track__flag{ opacity: 1; }
+.thx-track.is-done .thx-track__avatar{ animation: thxPop .55s ease; }
+@keyframes thxPop{
+  0%   { transform: translate(-50%,-50%) scale(1); }
+  40%  { transform: translate(-50%,-50%) scale(1.55); }
+  100% { transform: translate(-50%,-50%) scale(1); }
+}
+
+/* ---- 2. Reveal on scroll ------------------------------------------------ */
+.thx-js .thx-reveal{
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.thx-js .thx-reveal.is-in{
+  opacity: 1;
+  transform: none;
+}
+
+/* ---- Accessibility: prefers-reduced-motion ------------------------------ */
+@media (prefers-reduced-motion: reduce){
+  .thx-js .thx-reveal{
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .thx-track__fill,
+  .thx-track__avatar{ transition: none !important; }
+  .thx-track.is-done .thx-track__avatar{ animation: none !important; }
+}
