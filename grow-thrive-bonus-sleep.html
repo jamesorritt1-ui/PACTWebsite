@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Hidden / unlisted: not indexed and not linked from anywhere on the public site -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>THRIVE · Bonus — Sleep Hygiene for Athletes | The Performance Act</title>
+  <meta name="description" content="THRIVE bonus module — an evidence-based sleep-hygiene guide for athletes: how much sleep you need, what good sleep looks like, the habits that work, and an ACT-consistent way to stop fighting sleep.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="style.css?v=17">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=2">
+
+  <style>
+    /* ============================================================
+       THRIVE BONUS · SLEEP HYGIENE — scoped .th / .thm-. Black + yellow.
+       ============================================================ */
+    .th { --ink:#ECECEC; --muted:#9A9A9A; --line:rgba(255,255,255,0.1); background:#050505; }
+    .th-sec { padding: clamp(52px, 8vw, 92px) 0; }
+    .th-sec--alt { background:#0b0b0b; }
+    .th-wrap { max-width: 820px; margin: 0 auto; }
+    .th-eyebrow { font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--yellow); margin-bottom:14px; }
+    .th-h2 { font-family:var(--font-heading); font-weight:700; text-transform:uppercase; font-size:clamp(1.7rem,4vw,2.7rem); line-height:1.05; color:#fff; margin-bottom:18px; }
+    .th-h2 em { color:var(--yellow); font-style:normal; }
+    .th-p { color:var(--ink); line-height:1.7; font-weight:300; margin:0 0 16px; }
+    .th-p strong { color:#fff; font-weight:600; }
+    .th-p em { color:#fff; font-style:italic; }
+    .th-sup { font-size:0.72em; color:var(--yellow); vertical-align:super; text-decoration:none; }
+
+    /* HERO */
+    .thm-hero { position:relative; overflow:hidden; background:#050505; padding:clamp(120px,16vw,180px) 0 clamp(44px,7vw,72px); border-bottom:1px solid var(--line); }
+    .thm-hero__bg { position:absolute; inset:0; background:url('images/athletics-track.png') center 30% / cover no-repeat; opacity:0.16; filter:grayscale(0.5) contrast(1.05); }
+    .thm-hero::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(5,5,5,0.6) 0%, rgba(5,5,5,0.94) 100%); }
+    .thm-hero .container { position:relative; z-index:2; }
+    .thm-back { display:inline-flex; align-items:center; gap:8px; font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--yellow); margin-bottom:26px; }
+    .thm-back svg { width:16px; height:16px; }
+    .thm-hero__badge { display:inline-flex; align-items:center; gap:8px; font-family:var(--font-heading); font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:#000; background:var(--yellow); padding:5px 12px; margin-bottom:16px; }
+    .thm-hero__badge svg { width:14px; height:14px; }
+    .thm-hero__title { font-family:var(--font-heading); font-weight:700; text-transform:uppercase; font-size:clamp(2.2rem,7vw,4rem); line-height:1; color:#fff; margin:4px 0 16px; }
+    .thm-hero__title em { color:var(--yellow); font-style:normal; }
+    .thm-hero__meta { display:flex; flex-wrap:wrap; gap:8px 22px; font-size:0.86rem; color:var(--muted); letter-spacing:0.08em; text-transform:uppercase; font-family:var(--font-heading); }
+    .thm-hero__meta span { display:inline-flex; align-items:center; gap:7px; }
+    .thm-hero__meta svg { width:15px; height:15px; color:var(--yellow); }
+
+    .thm-obj { background:#111; border:1px solid var(--line); border-left:4px solid var(--yellow); padding:26px 28px; margin-top:34px; }
+    .thm-obj h3 { font-family:var(--font-heading); font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--yellow); margin-bottom:14px; }
+    .thm-obj ul { margin:0; padding:0; list-style:none; }
+    .thm-obj li { color:var(--ink); font-size:0.98rem; line-height:1.5; font-weight:300; padding:7px 0 7px 26px; position:relative; }
+    .thm-obj li::before { content:''; position:absolute; left:0; top:13px; width:12px; height:2px; background:var(--yellow); }
+
+    .thm-toc { display:flex; flex-wrap:wrap; gap:10px; margin-top:30px; }
+    .thm-toc a { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink); border:1px solid var(--line); padding:9px 15px; transition:.2s; }
+    .thm-toc a:hover { border-color:var(--yellow); color:var(--yellow); }
+
+    .th-block__label { display:flex; align-items:center; gap:10px; font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--yellow); margin-bottom:12px; }
+    .th-block__label::before { content:''; width:26px; height:2px; background:var(--yellow); }
+
+    .th-quote { border-left:3px solid var(--yellow); padding:6px 0 6px 22px; margin:26px 0; }
+    .th-quote p { font-family:var(--font-heading); font-weight:500; font-size:clamp(1.2rem,2.8vw,1.7rem); line-height:1.3; color:#fff; margin:0; }
+    .th-quote cite { display:block; margin-top:12px; font-style:normal; font-size:0.86rem; color:var(--muted); letter-spacing:0.04em; }
+
+    .thm-disc { margin-top:22px; background:#111; border:1px solid var(--line); border-left:4px solid var(--yellow); padding:18px 22px; }
+    .thm-disc p { color:var(--muted); font-size:0.88rem; line-height:1.6; font-weight:300; margin:0; }
+    .thm-disc strong { color:#fff; }
+
+    /* WHY cards */
+    .thm-why { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin:24px 0; }
+    .thm-why__card { background:#141414; border:1px solid var(--line); border-top:3px solid var(--yellow); padding:20px 22px; }
+    .thm-why__card h4 { font-family:var(--font-heading); font-size:1rem; text-transform:uppercase; color:#fff; letter-spacing:0.02em; margin-bottom:6px; }
+    .thm-why__card p { color:var(--ink); font-size:0.9rem; line-height:1.55; font-weight:300; margin:0; }
+    .thm-why__card strong { color:#fff; }
+
+    /* DURATION band */
+    .thm-dur { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:24px 0; }
+    .thm-dur__card { background:#111; border:1px solid var(--line); padding:22px 20px; text-align:center; }
+    .thm-dur__who { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; }
+    .thm-dur__big { font-family:var(--font-heading); font-size:2.1rem; font-weight:700; color:var(--yellow); line-height:1; }
+    .thm-dur__big span { font-size:1rem; }
+    .thm-dur__note { color:var(--ink); font-size:0.84rem; line-height:1.5; font-weight:300; margin-top:8px; }
+
+    /* RU-SATED grid */
+    .thm-rusated { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:22px 0; }
+    .thm-rusated__card { background:#141414; border:1px solid var(--line); padding:16px 16px; }
+    .thm-rusated__l { font-family:var(--font-heading); font-size:1.6rem; font-weight:700; color:var(--yellow); line-height:1; }
+    .thm-rusated__n { font-family:var(--font-heading); font-size:0.86rem; text-transform:uppercase; color:#fff; margin:2px 0 4px; }
+    .thm-rusated__d { color:var(--ink); font-size:0.82rem; line-height:1.5; font-weight:300; }
+
+    /* HABITS ACCORDION */
+    .thm-acc { margin:22px 0 0; }
+    .thm-acc__item { border:1px solid var(--line); border-bottom:none; background:#0f0f0f; }
+    .thm-acc__item:last-child { border-bottom:1px solid var(--line); }
+    .thm-acc__trigger { width:100%; display:flex; align-items:center; gap:16px; padding:18px 22px; background:none; border:none; cursor:pointer; text-align:left; transition:background .2s; }
+    .thm-acc__trigger:hover { background:rgba(255,255,255,0.03); }
+    .thm-acc__trigger:focus-visible { outline:2px solid var(--yellow); outline-offset:-2px; }
+    .thm-acc__icon { flex-shrink:0; width:30px; height:30px; color:var(--yellow); }
+    .thm-acc__icon svg { width:100%; height:100%; }
+    .thm-acc__title { flex:1; font-family:var(--font-heading); font-size:1.02rem; text-transform:uppercase; letter-spacing:0.02em; color:#fff; }
+    .thm-acc__plus { position:relative; width:18px; height:18px; flex-shrink:0; }
+    .thm-acc__plus::before,.thm-acc__plus::after { content:''; position:absolute; background:var(--yellow); transition:transform .3s,opacity .3s; }
+    .thm-acc__plus::before { top:8px; left:0; width:18px; height:2px; }
+    .thm-acc__plus::after { left:8px; top:0; width:2px; height:18px; }
+    .thm-acc__trigger[aria-expanded="true"] .thm-acc__plus::after { transform:rotate(90deg); opacity:0; }
+    .thm-acc__panel[hidden] { display:none; }
+    .thm-acc__body { padding:2px 22px 22px 68px; }
+    .thm-acc__body ul { list-style:none; margin:0; padding:0; }
+    .thm-acc__body li { color:var(--ink); font-size:0.94rem; line-height:1.55; font-weight:300; padding:6px 0 6px 20px; position:relative; }
+    .thm-acc__body li::before { content:''; position:absolute; left:0; top:12px; width:7px; height:7px; background:var(--yellow); }
+    .thm-acc__body li strong { color:#fff; font-weight:600; }
+    @media (max-width:620px){ .thm-acc__body { padding-left:22px; } }
+
+    /* AUDIT checklist */
+    .thm-audit { background:#0d0d0d; border:1px solid rgba(255,229,0,0.22); border-radius:6px; overflow:hidden; margin:26px 0; }
+    .thm-audit__head { background:rgba(255,229,0,0.08); padding:18px 26px; border-bottom:1px solid rgba(255,229,0,0.2); }
+    .thm-audit__eyebrow { font-family:var(--font-heading); font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--yellow); margin-bottom:4px; }
+    .thm-audit__name { font-family:var(--font-heading); font-size:1.3rem; text-transform:uppercase; color:#fff; letter-spacing:0.02em; }
+    .thm-audit__body { padding:24px 26px; }
+    .thm-audit__list { list-style:none; margin:0; padding:0; }
+    .thm-audit__list li { margin-bottom:9px; }
+    .thm-audit__list button { display:flex; align-items:center; gap:14px; width:100%; text-align:left; background:#141414; border:1px solid var(--line); color:var(--ink); padding:13px 16px; cursor:pointer; font-family:var(--font-body); font-size:0.95rem; font-weight:300; transition:.15s; }
+    .thm-audit__list button:hover { border-color:rgba(255,229,0,0.4); }
+    .thm-audit__box { flex-shrink:0; width:22px; height:22px; border:2px solid var(--muted); border-radius:5px; display:flex; align-items:center; justify-content:center; transition:.2s; }
+    .thm-audit__box svg { width:14px; height:14px; color:#000; opacity:0; }
+    .thm-audit__list button[aria-pressed="true"] { border-color:var(--yellow); }
+    .thm-audit__list button[aria-pressed="true"] .thm-audit__box { background:var(--yellow); border-color:var(--yellow); }
+    .thm-audit__list button[aria-pressed="true"] .thm-audit__box svg { opacity:1; }
+    .thm-audit__list button[aria-pressed="true"] span:last-child { color:#fff; }
+    .thm-audit__score { margin-top:20px; background:linear-gradient(160deg,#161616,#0d0d0d); border:1px solid rgba(255,229,0,0.3); padding:20px 22px; }
+    .thm-audit__num { font-family:var(--font-heading); font-size:2.2rem; font-weight:700; color:var(--yellow); line-height:1; }
+    .thm-audit__num span { font-size:1rem; color:var(--ink); }
+    .thm-audit__read { color:var(--ink); font-size:0.95rem; line-height:1.6; font-weight:300; margin-top:8px; }
+    .thm-audit__read strong { color:#fff; }
+
+    /* CHIP builder */
+    .thm-field__label { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin:0 0 10px; }
+    .thm-chips { display:flex; flex-wrap:wrap; gap:9px; }
+    .thm-chip { font-family:var(--font-body); font-size:0.92rem; color:var(--ink); background:#191919; border:1px solid var(--line); padding:10px 15px; border-radius:100px; cursor:pointer; transition:.15s; }
+    .thm-chip:hover { border-color:rgba(255,229,0,0.5); }
+    .thm-chip[aria-pressed="true"] { background:var(--yellow); border-color:var(--yellow); color:#000; font-weight:500; }
+    .thm-winddown__out { margin-top:18px; background:linear-gradient(160deg,#161616,#0d0d0d); border:1px solid rgba(255,229,0,0.3); padding:20px 22px; }
+    .thm-winddown__label { font-family:var(--font-heading); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--yellow); margin-bottom:8px; }
+    .thm-winddown__text { color:#fff; font-size:1rem; line-height:1.6; font-weight:300; }
+    .thm-winddown__text b { color:var(--yellow); }
+    .thm-winddown__text .ph { color:var(--muted); font-style:italic; }
+
+    /* ACE-at-2am steps */
+    .thm-steps { counter-reset:st; margin:22px 0; }
+    .thm-steps__item { display:flex; gap:16px; padding:12px 0; border-top:1px solid rgba(255,255,255,0.06); }
+    .thm-steps__item:first-child { border-top:none; }
+    .thm-steps__l { flex-shrink:0; width:34px; height:34px; border-radius:50%; border:2px solid var(--yellow); color:var(--yellow); font-family:var(--font-heading); font-weight:700; display:flex; align-items:center; justify-content:center; }
+    .thm-steps__t { color:var(--ink); font-size:0.96rem; line-height:1.6; font-weight:300; }
+    .thm-steps__t b { color:#fff; font-weight:600; }
+    .thm-steps__t span { display:block; font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--yellow); margin-bottom:2px; }
+
+    /* PRO callout */
+    .thm-pro { background:rgba(255,229,0,0.07); border:1px solid rgba(255,229,0,0.22); padding:20px 24px; margin:22px 0; }
+    .thm-pro h4 { font-family:var(--font-heading); font-size:0.76rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--yellow); margin-bottom:10px; }
+    .thm-pro ul { list-style:none; margin:0 0 10px; padding:0; }
+    .thm-pro li { color:var(--ink); font-size:0.94rem; line-height:1.55; font-weight:300; padding:5px 0 5px 20px; position:relative; }
+    .thm-pro li::before { content:''; position:absolute; left:0; top:12px; width:7px; height:7px; background:var(--yellow); }
+    .thm-pro p { color:var(--ink); font-size:0.94rem; line-height:1.6; font-weight:300; margin:0; }
+    .thm-pro strong { color:#fff; }
+
+    /* RESOURCES / references */
+    .thm-res { list-style:none; margin:18px 0 0; padding:0; }
+    .thm-res li { background:#141414; border:1px solid var(--line); border-left:3px solid var(--yellow); padding:14px 16px; margin-bottom:9px; }
+    .thm-res__kind { font-family:var(--font-heading); font-size:0.64rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--yellow); margin-bottom:4px; }
+    .thm-res__title { color:#fff; font-size:0.98rem; font-weight:500; }
+    .thm-res__title a { color:#fff; text-decoration:underline; text-decoration-color:rgba(255,229,0,0.5); }
+    .thm-res__title a:hover { color:var(--yellow); }
+    .thm-res__by { color:var(--ink); font-size:0.88rem; line-height:1.5; font-weight:300; margin-top:2px; }
+    .thm-refnote { color:var(--muted); font-size:0.8rem; line-height:1.6; font-weight:300; margin-top:18px; }
+
+    /* 7-DAY LOG */
+    .thm-week__intro { background:#111; border:1px solid var(--line); border-left:4px solid var(--yellow); padding:22px 26px; margin:24px 0 8px; }
+    .thm-week__intro p { color:var(--ink); font-size:0.98rem; line-height:1.65; font-weight:300; margin:0; }
+    .thm-week__intro strong { color:#fff; font-weight:600; }
+    .thm-week__progress { display:flex; align-items:center; gap:16px; margin:20px 0 18px; }
+    .thm-week__track { flex:1; height:10px; background:rgba(255,255,255,0.08); border-radius:100px; overflow:hidden; }
+    .thm-week__fill { height:100%; width:0; background:var(--yellow); transition:width .5s ease; }
+    .thm-week__count { font-family:var(--font-heading); font-size:0.82rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--yellow); white-space:nowrap; }
+    .thm-day { border:1px solid var(--line); border-bottom:none; background:#0f0f0f; }
+    .thm-day:last-child { border-bottom:1px solid var(--line); }
+    .thm-day__trigger { width:100%; display:flex; align-items:center; gap:16px; padding:16px 20px; background:none; border:none; cursor:pointer; text-align:left; }
+    .thm-day__trigger:hover { background:rgba(255,255,255,0.03); }
+    .thm-day__dot { flex-shrink:0; width:26px; height:26px; border-radius:50%; border:2px solid var(--muted); display:flex; align-items:center; justify-content:center; }
+    .thm-day__dot svg { width:15px; height:15px; color:#000; opacity:0; }
+    .thm-day.is-done .thm-day__dot { background:var(--yellow); border-color:var(--yellow); }
+    .thm-day.is-done .thm-day__dot svg { opacity:1; }
+    .thm-day__label { flex:1; font-family:var(--font-heading); font-size:1rem; text-transform:uppercase; letter-spacing:0.03em; color:#fff; }
+    .thm-day__state { font-size:0.78rem; color:var(--muted); font-family:var(--font-heading); letter-spacing:0.05em; text-transform:uppercase; }
+    .thm-day__caret { width:18px; height:18px; color:var(--yellow); transition:transform .3s ease; }
+    .thm-day.is-open .thm-day__caret { transform:rotate(180deg); }
+    .thm-day__panel[hidden] { display:none; }
+    .thm-day__body { padding:4px 20px 22px; }
+    .thm-day__field { margin-bottom:14px; }
+    .thm-day__q { color:#fff; font-size:0.92rem; font-weight:400; margin:0 0 6px; }
+    .thm-day__body input[type=text] { width:100%; background:#0a0a0a; border:1px solid var(--line); color:#fff; font-family:var(--font-body); font-size:0.94rem; font-weight:300; padding:10px 13px; }
+    .thm-day__body input:focus { outline:none; border-color:var(--yellow); }
+    .thm-two { display:flex; gap:10px; }
+    .thm-two > div { flex:1; }
+    .thm-toggle { display:flex; gap:8px; flex-wrap:wrap; }
+    .thm-toggle button { flex:1 1 80px; background:#191919; border:1px solid var(--line); color:var(--ink); font-family:var(--font-body); font-size:0.86rem; padding:9px 8px; cursor:pointer; transition:.15s; }
+    .thm-toggle button[aria-pressed="true"] { background:var(--yellow); border-color:var(--yellow); color:#000; font-weight:500; }
+    .thm-day__save { display:inline-flex; align-items:center; gap:7px; margin-top:6px; font-size:0.78rem; color:var(--muted); }
+    .thm-day__save svg { width:13px; height:13px; color:var(--yellow); }
+    .thm-week__reset { margin-top:16px; background:none; border:none; color:var(--muted); font-size:0.82rem; text-decoration:underline; cursor:pointer; }
+    .thm-week__reset:hover { color:#fff; }
+
+    .thm-refcard { background:#111; border:1px solid rgba(255,229,0,0.3); padding:26px 30px; margin:26px 0; }
+    .thm-refcard h4 { font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--yellow); margin-bottom:14px; }
+    .thm-refcard ol { margin:0; padding-left:22px; color:var(--ink); }
+    .thm-refcard li { font-size:0.96rem; line-height:1.6; font-weight:300; padding:4px 0; }
+    .thm-refcard li strong { color:#fff; font-weight:600; }
+
+    .thm-nextnav { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:26px; }
+    .thm-nextnav a { display:block; background:#111; border:1px solid var(--line); padding:22px 24px; transition:.2s; }
+    .thm-nextnav a:hover { border-color:var(--yellow); }
+    .thm-nextnav__dir { font-family:var(--font-heading); font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+    .thm-nextnav__title { font-family:var(--font-heading); font-size:1.05rem; color:#fff; text-transform:uppercase; letter-spacing:0.02em; }
+    .thm-nextnav a:hover .thm-nextnav__title { color:var(--yellow); }
+    .thm-nextnav--end { text-align:right; }
+
+    @media (max-width:720px) {
+      .thm-why, .thm-dur, .thm-rusated, .thm-nextnav { grid-template-columns:1fr; }
+      .thm-nextnav--end { text-align:left; }
+    }
+  </style>
+</head>
+<body class="th">
+
+  <!-- ========== HEADER / NAV (standard — no THRIVE link anywhere) ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="images/logo-horizontal.png?v=2" alt="The Performance Act" class="logo-img logo-img--header">
+      </a>
+      <nav class="header__nav" id="mainNav" aria-label="Primary">
+        <div class="nav-item nav-item--has-dropdown">
+          <a href="index.html#about" class="nav-link nav-link--has-dropdown" aria-haspopup="true" aria-expanded="false">ABOUT US
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown" role="menu">
+            <a href="approach.html" class="nav-dropdown__link" role="menuitem">Approach</a>
+            <a href="index.html#pillars" class="nav-dropdown__link" role="menuitem">Our Pact</a>
+            <a href="team.html" class="nav-dropdown__link" role="menuitem">Team</a>
+          </div>
+        </div>
+        <a href="programs.html" class="nav-link">SUPPORT &amp; SERVICES</a>
+        <div class="nav-item nav-item--has-dropdown">
+          <a href="grow.html" class="nav-link nav-link--has-dropdown" aria-haspopup="true" aria-expanded="false">GROW PLATFORM
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown" role="menu">
+            <a href="grow.html" class="nav-dropdown__link" role="menuitem">About GROW</a>
+            <a href="grow-login.html" class="nav-dropdown__link" role="menuitem">Member Login</a>
+          </div>
+        </div>
+        <a href="blog.html" class="nav-link">RESOURCES</a>
+        <a href="contact.html" class="nav-link">CONTACT</a>
+      </nav>
+      <div class="header__actions">
+        <a href="contact.html" class="btn btn--primary btn--sm">Let&#8217;s Have a K&#333;rero</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <nav class="mobile-nav__links" aria-label="Mobile">
+      <div class="mobile-nav__group">
+        <button class="mobile-nav__group-toggle" aria-expanded="false" aria-controls="mobileAboutSub">ABOUT US
+          <svg class="mobile-nav__group-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="mobile-nav__sub" id="mobileAboutSub">
+          <a href="approach.html" class="mobile-nav__sublink">Approach</a>
+          <a href="index.html#pillars" class="mobile-nav__sublink">Our Pact</a>
+          <a href="team.html" class="mobile-nav__sublink">Team</a>
+        </div>
+      </div>
+      <a href="programs.html" class="mobile-nav__link">SUPPORT &amp; SERVICES</a>
+      <div class="mobile-nav__group">
+        <button class="mobile-nav__group-toggle" aria-expanded="false" aria-controls="mobileGrowSub">GROW PLATFORM
+          <svg class="mobile-nav__group-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="mobile-nav__sub" id="mobileGrowSub">
+          <a href="grow.html" class="mobile-nav__sublink">About GROW</a>
+          <a href="grow-login.html" class="mobile-nav__sublink">Member Login</a>
+        </div>
+      </div>
+      <a href="blog.html" class="mobile-nav__link">RESOURCES</a>
+      <a href="contact.html" class="mobile-nav__link">CONTACT</a>
+      <div class="mobile-nav__actions">
+        <a href="contact.html" class="btn btn--primary">Let&#8217;s Have a K&#333;rero</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="thm-hero">
+    <div class="thm-hero__bg"></div>
+    <div class="container">
+      <a href="grow-thrive-module-00.html#foundations" class="thm-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Brain-health foundations</a>
+      <div class="th-wrap">
+        <span class="thm-hero__badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg> Bonus module · Brain health</span>
+        <h1 class="thm-hero__title">Sleep Hygiene<br>for <em>Athletes</em></h1>
+        <div class="thm-hero__meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> ~20 minutes</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v14H4z"/><path d="M4 9h16"/></svg> Learn · audit · build</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg> Evidence-based</span>
+        </div>
+
+        <div class="thm-obj">
+          <h3>By the end of this bonus module you can</h3>
+          <ul>
+            <li>Explain why sleep is arguably an athlete&rsquo;s <strong>single best recovery tool</strong>.</li>
+            <li>Know how much sleep you actually need &mdash; and what &ldquo;good&rdquo; sleep looks like.</li>
+            <li>Run an <strong>evidence-based sleep-hygiene audit</strong> and pick your biggest wins.</li>
+            <li>Stop <em>fighting</em> sleep &mdash; and use ACE for the 2am racing mind.</li>
+          </ul>
+        </div>
+
+        <nav class="thm-toc" aria-label="On this page">
+          <a href="#why">Why sleep</a>
+          <a href="#howmuch">How much</a>
+          <a href="#good">Good sleep</a>
+          <a href="#habits">The habits</a>
+          <a href="#audit">Your audit</a>
+          <a href="#winddown">Wind-down</a>
+          <a href="#act">Don&rsquo;t fight sleep</a>
+          <a href="#log">Sleep log</a>
+          <a href="#pro">See a pro</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== INTRO / DISCLAIMER ========== -->
+  <section class="th-sec" id="why">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">Why it matters</p>
+        <h2 class="th-h2">Sleep is your<br><em>hidden superpower</em></h2>
+        <p class="th-p">In Module 00 we flagged sleep as the big one. Here&rsquo;s the deep dive. If a supplement did for you what a good night&rsquo;s sleep does, it would be banned as a performance enhancer. Sleep quality and quantity is widely regarded as an athlete&rsquo;s <strong>single best recovery strategy</strong> &mdash; and skimping on it quietly taxes everything you&rsquo;re training for.<a href="#refs" class="th-sup">1</a></p>
+
+        <div class="thm-disc">
+          <p><strong>A clear boundary first.</strong> The Performance Act is a sport-psychology practice &mdash; not a sleep clinic. Everything here is <strong>general, evidence-based education</strong>, not personalised medical advice, and it doesn&rsquo;t replace a doctor. If sleep is a persistent problem, please see the professionals flagged near the end.</p>
+        </div>
+
+        <p class="th-p" style="margin-top:24px;">While you sleep, your brain and body do their most important repair and consolidation work &mdash; and it happens in specific stages:</p>
+        <div class="thm-why">
+          <div class="thm-why__card"><h4>Deep sleep repairs you</h4><p>In deep (slow-wave) sleep your body releases most of its <strong>growth hormone</strong>, repairing muscle and tissue damaged in training. Miss it and recovery and adaptation suffer.<a href="#refs" class="th-sup">2</a></p></div>
+          <div class="thm-why__card"><h4>It locks in skills</h4><p>Slow-wave sleep <strong>consolidates the motor skills and memories</strong> you practised that day &mdash; sleep is when today&rsquo;s reps actually &ldquo;stick.&rdquo;<a href="#refs" class="th-sup">2</a></p></div>
+          <div class="thm-why__card"><h4>It resets your emotions</h4><p><strong>REM (dream) sleep</strong> processes the day&rsquo;s stress and emotion in a calmer chemical state &mdash; part of why everything feels more manageable after a good night.<a href="#refs" class="th-sup">2</a></p></div>
+          <div class="thm-why__card"><h4>It cleans the brain</h4><p>Overnight the brain&rsquo;s <strong>glymphatic system</strong> flushes out metabolic waste that builds up while you&rsquo;re awake &mdash; a nightly deep-clean for your mind.<a href="#refs" class="th-sup">2</a></p></div>
+        </div>
+        <p class="th-p">Flip it around and the cost is stark: too little sleep slows reaction time, blunts decisions and accuracy, dampens mood, weakens the immune and hormone systems, and raises injury risk. And it makes the mental game harder &mdash; a tired brain finds it far more difficult to stay open, present and engaged. Worth knowing: around <strong>63% of elite athletes report disturbed sleep the night before a big competition</strong>, and heavy training days tend to <em>reduce</em> sleep the following night &mdash; exactly when you need it most.<a href="#refs" class="th-sup">3</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW MUCH ========== -->
+  <section class="th-sec th-sec--alt" id="howmuch">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">The number</p>
+        <h2 class="th-h2">How much do you<br><em>actually</em> need?</h2>
+        <p class="th-p">More than you&rsquo;re probably getting. These are the mainstream, guideline-backed ranges &mdash; and hard-training athletes generally sit at the <strong>top</strong> of them, or a little beyond.</p>
+
+        <div class="thm-dur">
+          <div class="thm-dur__card"><div class="thm-dur__who">Teens · 13&ndash;18</div><div class="thm-dur__big">8&ndash;10<span> hrs</span></div><div class="thm-dur__note">The American Academy of Sleep Medicine&rsquo;s recommendation for optimal health.<a href="#refs" class="th-sup">4</a></div></div>
+          <div class="thm-dur__card"><div class="thm-dur__who">Young adults · 18&ndash;25</div><div class="thm-dur__big">7&ndash;9<span> hrs</span></div><div class="thm-dur__note">And more than 9 can be appropriate when training hard or paying back sleep debt.<a href="#refs" class="th-sup">4</a></div></div>
+          <div class="thm-dur__card"><div class="thm-dur__who">Hard-training athletes</div><div class="thm-dur__big">9&ndash;10<span>+ hrs</span></div><div class="thm-dur__note">Many sleep-in-sport researchers suggest aiming higher; some elite performers bank 10&ndash;12.<a href="#refs" class="th-sup">4</a></div></div>
+        </div>
+
+        <p class="th-p">Now the reality gap: studies find adolescent athletes average around <strong>7 hours</strong> a night and miss the recommended 8+ on most nights &mdash; and student-athletes often sleep roughly <strong>2 hours less</strong> than non-athletes. That&rsquo;s a big, fixable edge sitting on the table.<a href="#refs" class="th-sup">4</a></p>
+        <div class="th-quote">
+          <p>"When athletes deliberately <em>extend</em> their sleep toward 10 hours in bed, sprint times, shooting accuracy, reaction time and mood measurably improve. Sleep isn&rsquo;t lost time &mdash; it&rsquo;s training."</p>
+          <cite>— On sleep-extension research in athletes<a href="#refs" class="th-sup">5</a></cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHAT GOOD SLEEP LOOKS LIKE ========== -->
+  <section class="th-sec" id="good">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">Beyond hours</p>
+        <h2 class="th-h2">What <em>good</em> sleep<br>actually looks like</h2>
+        <p class="th-p">Sleep health is more than a number of hours. Sleep researchers describe it across several dimensions &mdash; a handy way to spot <em>which</em> part of your sleep needs work. (Researchers sometimes call these <strong>RU-SATED</strong>.)<a href="#refs" class="th-sup">6</a></p>
+        <div class="thm-rusated">
+          <div class="thm-rusated__card"><div class="thm-rusated__l">R</div><div class="thm-rusated__n">Regularity</div><div class="thm-rusated__d">Similar bed &amp; wake times day to day.</div></div>
+          <div class="thm-rusated__card"><div class="thm-rusated__l">S</div><div class="thm-rusated__n">Satisfaction</div><div class="thm-rusated__d">Sleep feels restful and good.</div></div>
+          <div class="thm-rusated__card"><div class="thm-rusated__l">A</div><div class="thm-rusated__n">Alertness</div><div class="thm-rusated__d">You can stay awake &amp; focused by day.</div></div>
+          <div class="thm-rusated__card"><div class="thm-rusated__l">T</div><div class="thm-rusated__n">Timing</div><div class="thm-rusated__d">Asleep at hours that suit your life.</div></div>
+          <div class="thm-rusated__card"><div class="thm-rusated__l">E</div><div class="thm-rusated__n">Efficiency</div><div class="thm-rusated__d">Fall asleep &amp; stay asleep easily (&gt;~85% of time in bed).</div></div>
+          <div class="thm-rusated__card"><div class="thm-rusated__l">D</div><div class="thm-rusated__n">Duration</div><div class="thm-rusated__d">Enough hours for your age &amp; load.</div></div>
+        </div>
+        <p class="th-p">Notice the first one: <strong>regularity</strong>. A consistent sleep&ndash;wake rhythm &mdash; even on weekends &mdash; may matter as much as the raw hours. It&rsquo;s the single habit most sleep experts start with.<a href="#refs" class="th-sup">6</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== THE HABITS ========== -->
+  <section class="th-sec th-sec--alt" id="habits">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">The evidence-based toolkit</p>
+        <h2 class="th-h2">The habits that<br><em>actually work</em></h2>
+        <p class="th-p">This is &ldquo;sleep hygiene&rdquo; &mdash; the set of habits with a solid research base for helping you sleep well.<a href="#refs" class="th-sup">7</a> Tap each group to open it. You don&rsquo;t need to do all of them &mdash; start with one or two.</p>
+
+        <div class="thm-acc" id="habAcc">
+
+          <div class="thm-acc__item">
+            <button class="thm-acc__trigger" aria-expanded="false" aria-controls="hab-1">
+              <span class="thm-acc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+              <span class="thm-acc__title">Rhythm &amp; routine</span><span class="thm-acc__plus"></span>
+            </button>
+            <div class="thm-acc__panel" id="hab-1" hidden><div class="thm-acc__body"><ul>
+              <li><strong>Get regular.</strong> Go to bed and get up at roughly the same time every day &mdash; <em>including weekends</em>. This is the highest-value habit there is.</li>
+              <li><strong>Build a wind-down ritual.</strong> 30&ndash;60 minutes of the same calming things each night (dim lights, stretch, breathe, read) tells your body sleep is coming.</li>
+              <li><strong>Get morning daylight.</strong> Light early in the day anchors your body clock &mdash; a morning walk is a great reset.</li>
+              <li><strong>Keep your daytime routine after a bad night.</strong> Don&rsquo;t cancel your day because you&rsquo;re tired; that only feeds the problem.</li>
+            </ul></div></div>
+          </div>
+
+          <div class="thm-acc__item">
+            <button class="thm-acc__trigger" aria-expanded="false" aria-controls="hab-2">
+              <span class="thm-acc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
+              <span class="thm-acc__title">Light &amp; screens</span><span class="thm-acc__plus"></span>
+            </button>
+            <div class="thm-acc__panel" id="hab-2" hidden><div class="thm-acc__body"><ul>
+              <li><strong>Dim the lights and screens 30&ndash;60 min before bed.</strong> Bright and blue light in the evening delays your melatonin (your &ldquo;time-to-sleep&rdquo; signal).</li>
+              <li><strong>Keep the phone out of the bed.</strong> If you use it as an alarm, put it across the room.</li>
+              <li><strong>Make the room dark.</strong> Blackout curtains or an eye-mask block early-morning light that wakes you too soon.</li>
+            </ul></div></div>
+          </div>
+
+          <div class="thm-acc__item">
+            <button class="thm-acc__trigger" aria-expanded="false" aria-controls="hab-3">
+              <span class="thm-acc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a3 3 0 010 6h-1"/><path d="M2 8h16v5a5 5 0 01-5 5H7a5 5 0 01-5-5z"/><path d="M6 1v3M10 1v3M14 1v3"/></svg></span>
+              <span class="thm-acc__title">Food, drink &amp; substances</span><span class="thm-acc__plus"></span>
+            </button>
+            <div class="thm-acc__panel" id="hab-3" hidden><div class="thm-acc__body"><ul>
+              <li><strong>Cut caffeine 4&ndash;6+ hours before bed.</strong> It&rsquo;s a stimulant that lingers for hours &mdash; that afternoon energy drink can still be in your system at midnight.</li>
+              <li><strong>Go easy on alcohol.</strong> It might feel relaxing, but it fragments and lowers the quality of your sleep &mdash; avoid it in the hours before bed.</li>
+              <li><strong>Avoid nicotine near bedtime</strong> &mdash; also a stimulant.</li>
+              <li><strong>Get the food timing right.</strong> Don&rsquo;t go to bed starving <em>or</em> stuffed &mdash; a light snack is fine; a heavy meal late can disrupt sleep.</li>
+            </ul></div></div>
+          </div>
+
+          <div class="thm-acc__item">
+            <button class="thm-acc__trigger" aria-expanded="false" aria-controls="hab-4">
+              <span class="thm-acc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20v-6a4 4 0 014-4h12a4 4 0 014 4v6"/><path d="M2 16h20"/><path d="M6 10V7a2 2 0 012-2h8a2 2 0 012 2v3"/></svg></span>
+              <span class="thm-acc__title">Your sleep environment</span><span class="thm-acc__plus"></span>
+            </button>
+            <div class="thm-acc__panel" id="hab-4" hidden><div class="thm-acc__body"><ul>
+              <li><strong>Cool, dark and quiet.</strong> A slightly cool room is ideal &mdash; your core temperature naturally drops as you fall asleep.</li>
+              <li><strong>A warm shower or bath 1&ndash;2 hours before bed</strong> can help: the after-drop in body temperature nudges you toward sleep.</li>
+              <li><strong>Block noise</strong> with earplugs or a fan if your environment is loud.</li>
+              <li><strong>Bed is for sleeping</strong> (and sex) &mdash; not scrolling, studying or gaming, so your brain links bed with sleep.</li>
+            </ul></div></div>
+          </div>
+
+          <div class="thm-acc__item">
+            <button class="thm-acc__trigger" aria-expanded="false" aria-controls="hab-5">
+              <span class="thm-acc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span>
+              <span class="thm-acc__title">Exercise &amp; timing</span><span class="thm-acc__plus"></span>
+            </button>
+            <div class="thm-acc__panel" id="hab-5" hidden><div class="thm-acc__body"><ul>
+              <li><strong>Train regularly</strong> &mdash; consistent exercise improves how quickly you fall asleep and how deeply you sleep.</li>
+              <li><strong>Ease off the hardest sessions in the last few hours before bed</strong> where you can &mdash; intense late training can leave you too wired to settle.</li>
+              <li><strong>Plan around night games and travel.</strong> Late competition and jet lag shift your body clock; a wind-down still matters even when you get home buzzing.</li>
+            </ul></div></div>
+          </div>
+
+          <div class="thm-acc__item">
+            <button class="thm-acc__trigger" aria-expanded="false" aria-controls="hab-6">
+              <span class="thm-acc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 5 4-14 2 9h6"/></svg></span>
+              <span class="thm-acc__title">Napping, done right</span><span class="thm-acc__plus"></span>
+            </button>
+            <div class="thm-acc__panel" id="hab-6" hidden><div class="thm-acc__body"><ul>
+              <li><strong>A short nap of 20&ndash;30 minutes</strong> boosts alertness, mood and recovery without leaving you groggy &mdash; great on a heavy day.</li>
+              <li><strong>Avoid the 30&ndash;75 minute zone</strong> &mdash; you often wake mid-deep-sleep feeling worse (&ldquo;sleep inertia&rdquo;).</li>
+              <li><strong>If you have time, a full ~90-minute nap</strong> completes a sleep cycle and can aid memory and motor learning.</li>
+              <li><strong>Nap earlier in the day</strong> (before mid-afternoon) so it doesn&rsquo;t steal from tonight. If you struggle to sleep at night, skip naps altogether.</li>
+            </ul><p style="color:var(--muted);font-size:0.82rem;margin-top:10px;font-weight:300;">Nap dosing per applied sleep-in-sport guidance.<a href="#refs" class="th-sup">5</a></p></div></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== YOUR AUDIT ========== -->
+  <section class="th-sec" id="audit">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">Do it now</p>
+        <h2 class="th-h2">Your sleep-hygiene <em>audit</em></h2>
+        <p class="th-p">No lectures &mdash; just an honest tick-list. Check the habits you <strong>already do most nights</strong>. What&rsquo;s left un-ticked is your shortlist of biggest wins. (Saved on this device.)</p>
+
+        <div class="thm-audit">
+          <div class="thm-audit__head">
+            <div class="thm-audit__eyebrow">Tick what&rsquo;s already true</div>
+            <div class="thm-audit__name">12-Point Sleep Audit</div>
+          </div>
+          <div class="thm-audit__body">
+            <ul class="thm-audit__list" id="auditList">
+              <li><button type="button" aria-pressed="false" data-a="a1"><span class="thm-audit__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>I go to bed &amp; wake at roughly the same time daily (incl. weekends)</span></button></li>
+              <li><button type="button" aria-pressed="false" data-a="a2"><span class="thm-audit__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>I aim for 8+ hours (toward 9&ndash;10 when training hard)</span></button></li>
+              <li><button type="button" aria-pressed="false" data-a="a3"><span class="thm-audit__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>I have a wind-down routine in the 30&ndash;60 min before bed</span></button></li>
+              <li><button type="button" aria-pressed="false" data-a="a4"><span class="thm-audit__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>I dim lights &amp; get off screens before bed</span></button></li>
+              <li><button type="button" aria-pressed="false" data-a="a5"><span class="thm-audit__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>I keep my phone out of the bed</span></button></li>
+              <li><button type="button" aria-pressed="false" data-a="a6"><span class="thm-audit__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>I cut caffeine 4&ndash;6+ hours before bed</span></button></li>
+              <li><button type="button" aria-pressed="false" data-a="a7"><span class="thm-audit__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>I avoid alcohol in the hours before bed</span></button></li>
+              <li><button type="button" aria-pressed="false" data-a="a8"><span class="thm-audit__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>My room is cool, dark and quiet</span></button></li>
+              <li><button type="button" aria-pressed="false" data-a="a9"><span class="thm-audit__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>I only use my bed for sleep (not scrolling/studying)</span></button></li>
+              <li><button type="button" aria-pressed="false" data-a="a10"><span class="thm-audit__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>If I can&rsquo;t sleep after ~20 min, I get up rather than lie there</span></button></li>
+              <li><button type="button" aria-pressed="false" data-a="a11"><span class="thm-audit__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>I don&rsquo;t clock-watch through the night</span></button></li>
+              <li><button type="button" aria-pressed="false" data-a="a12"><span class="thm-audit__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>I get some daylight &amp; movement during the day</span></button></li>
+            </ul>
+            <div class="thm-audit__score">
+              <div class="thm-audit__num" id="auditNum">0<span> / 12</span></div>
+              <p class="thm-audit__read" id="auditRead">Tick the habits you already do &mdash; then look at what&rsquo;s left. Those are your biggest wins.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WIND-DOWN BUILDER ========== -->
+  <section class="th-sec th-sec--alt" id="winddown">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">Build it · do it now</p>
+        <h2 class="th-h2">Design your <em>wind-down</em></h2>
+        <p class="th-p">The single most useful habit for most people is a consistent <strong>wind-down</strong> &mdash; the same calming sequence each night so your body learns &ldquo;sleep is coming.&rdquo; Pick a few things you&rsquo;ll actually do, starting ~45 minutes before lights-out. (Saved on this device.)</p>
+        <div class="thm-audit"><div class="thm-audit__body">
+          <p class="thm-field__label">Your wind-down &mdash; pick a few</p>
+          <div class="thm-chips" id="wdChips">
+            <button type="button" class="thm-chip" aria-pressed="false" data-wd="Dim the lights">Dim the lights</button>
+            <button type="button" class="thm-chip" aria-pressed="false" data-wd="Phone away / on charge across the room">Phone away</button>
+            <button type="button" class="thm-chip" aria-pressed="false" data-wd="Warm shower">Warm shower</button>
+            <button type="button" class="thm-chip" aria-pressed="false" data-wd="Light stretching">Light stretch</button>
+            <button type="button" class="thm-chip" aria-pressed="false" data-wd="Slow breathing (in 4, out 6)">Slow breathing</button>
+            <button type="button" class="thm-chip" aria-pressed="false" data-wd="Read something easy">Read a book</button>
+            <button type="button" class="thm-chip" aria-pressed="false" data-wd="Jot tomorrow&rsquo;s to-dos so they&rsquo;re out of my head">Brain-dump to-dos</button>
+            <button type="button" class="thm-chip" aria-pressed="false" data-wd="A few minutes of gratitude or journaling">Gratitude / journal</button>
+            <button type="button" class="thm-chip" aria-pressed="false" data-wd="A calming playlist or quiet">Calm playlist</button>
+          </div>
+          <div class="thm-winddown__out">
+            <div class="thm-winddown__label">My wind-down · starts ~45 min before bed</div>
+            <div class="thm-winddown__text" id="wdOut"><span class="ph">Pick a few above to build your routine…</span></div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DON'T FIGHT SLEEP (ACT) ========== -->
+  <section class="th-sec" id="act">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">The ACT angle</p>
+        <h2 class="th-h2">Stop <em>fighting</em><br>to fall asleep</h2>
+        <p class="th-p">Here&rsquo;s where THRIVE&rsquo;s skills matter most. Sleep is one thing you genuinely <em>cannot</em> force &mdash; and <strong>trying harder makes it worse</strong>. The 2am spiral (&ldquo;I <em>have</em> to sleep, I&rsquo;ve got training, why won&rsquo;t my brain switch off&rdquo;) is the <strong>struggle switch</strong> from Module 01, flipped fully on. The effort <em>is</em> the problem.</p>
+        <p class="th-p">So two evidence-based moves that also happen to be pure ACT. First, <strong>stimulus control</strong>: if you&rsquo;re not asleep after about 20 minutes, don&rsquo;t lie there wrestling &mdash; get up, do something calm and boring in dim light, and return to bed only when sleepy. It stops your bed becoming a place of struggle.<a href="#refs" class="th-sup">7</a> Second, <strong>drop the rope with sleep</strong> &mdash; run ACE for the racing mind:</p>
+
+        <div class="thm-steps">
+          <div class="thm-steps__item"><div class="thm-steps__l">A</div><div class="thm-steps__t"><span>Acknowledge</span>Notice the racing thoughts and the frustration without fighting them. &ldquo;Here&rsquo;s my mind, busy again.&rdquo; You don&rsquo;t have to win the argument &mdash; and you can even let go of needing to sleep. Rest, on its own, is still valuable.</div></div>
+          <div class="thm-steps__item"><div class="thm-steps__l">C</div><div class="thm-steps__t"><span>Connect</span>Come back to your body. Feel the weight of the bed, and slow the breath &mdash; a long, gentle out-breath (in for 4, out for 6). You&rsquo;re not breathing to <em>force</em> sleep; you&rsquo;re grounding, and letting sleep come to you.</div></div>
+          <div class="thm-steps__item"><div class="thm-steps__l">E</div><div class="thm-steps__t"><span>Engage</span>Turn gently toward rest: unhook from the thoughts (&ldquo;thanks, mind&rdquo;), and let attention rest on the breath or the sensations of lying down. If you&rsquo;re still wide awake after a while, get up &mdash; without drama &mdash; and try again later.</div></div>
+        </div>
+        <p class="th-p">The paradox is real and well known to sleep scientists: the moment you stop <em>trying</em> to sleep and simply allow rest, sleep has room to arrive. Willingness, not effort.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SLEEP LOG ========== -->
+  <section class="th-sec th-sec--alt" id="log">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">Track it</p>
+        <h2 class="th-h2">Your 7-day <em>sleep log</em></h2>
+        <p class="th-p">A short sleep diary beats guessing &mdash; it shows you the real pattern behind how you feel.<a href="#refs" class="th-sup">7</a> Fill it in for a week. Keep it light (no clock-watching in the night); rough times are fine. Everything saves on this device only.</p>
+
+        <div class="thm-week__intro">
+          <p><strong>One quick entry each morning for seven days.</strong> Roughly what time you went to bed and woke, and how rested you feel. Watch what lines up with your best mornings.</p>
+        </div>
+        <div class="thm-week__progress">
+          <div class="thm-week__track"><div class="thm-week__fill" id="weekFill"></div></div>
+          <span class="thm-week__count" id="weekCount">0 / 7 days</span>
+        </div>
+        <div class="thm-week" id="weekJournal"></div>
+        <button class="thm-week__reset" id="weekReset">Clear this week and start over</button>
+
+        <div class="thm-refcard">
+          <h4>Your sleep pocket card</h4>
+          <ol>
+            <li><strong>Regular beats everything</strong> &mdash; same bed &amp; wake time, even on weekends.</li>
+            <li><strong>Aim for 8+ hours</strong> (toward 9&ndash;10 when training hard).</li>
+            <li><strong>Wind down</strong>: dim light, no screens, cool dark room, no caffeine late.</li>
+            <li><strong>Don&rsquo;t fight it</strong> &mdash; if you can&rsquo;t sleep, get up; run ACE; let rest come.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SEE A PRO + RESOURCES ========== -->
+  <section class="th-sec" id="pro">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">Know your limits</p>
+        <h2 class="th-h2">When to <em>see a pro</em></h2>
+        <p class="th-p">Good sleep hygiene helps most people most of the time &mdash; but it isn&rsquo;t a treatment for a sleep disorder. Please talk to a professional if:</p>
+        <div class="thm-pro">
+          <h4>Worth a conversation with your GP or a sleep specialist</h4>
+          <ul>
+            <li>You&rsquo;ve had <strong>trouble falling or staying asleep most nights for more than about 3&ndash;4 weeks</strong>, despite good habits.</li>
+            <li>You <strong>snore loudly, gasp or stop breathing</strong> in the night (a partner may notice) &mdash; possible sleep apnea.</li>
+            <li>You&rsquo;re <strong>exhausted in the day no matter how long you sleep</strong>.</li>
+            <li>Sleep problems are hitting your <strong>mood, anxiety or wellbeing</strong> &mdash; talk to someone (and the <strong>Immediate Support</strong> button is on every page).</li>
+          </ul>
+          <p>Good to know: for ongoing insomnia, the recommended first-line treatment is <strong>CBT-I</strong> (cognitive behavioural therapy for insomnia) &mdash; it works better in the long run than sleeping pills, which can lose effect and become habit-forming.<a href="#refs" class="th-sup">7</a> Ask your GP.</p>
+        </div>
+
+        <div class="th-block" style="margin-top:36px;" id="refs"><span class="th-block__label">Sources &amp; further reading</span></div>
+        <ul class="thm-res">
+          <li><div class="thm-res__kind">Book · the accessible classic</div><div class="thm-res__title">Why We Sleep</div><div class="thm-res__by">Matthew Walker &mdash; the most readable deep-dive into why sleep matters for brain and body.</div></li>
+          <li><div class="thm-res__kind">Guideline · how much</div><div class="thm-res__title">Teen &amp; adult sleep-duration recommendations</div><div class="thm-res__by">American Academy of Sleep Medicine &mdash; plain-language guidance at <a href="https://sleepeducation.org" target="_blank" rel="noopener">sleepeducation.org</a>.</div></li>
+          <li><div class="thm-res__kind">Handout · the habits</div><div class="thm-res__title">Sleep Hygiene &amp; Sleep Diary</div><div class="thm-res__by">Centre for Clinical Interventions (CCI) &mdash; free, evidence-based worksheets at <a href="https://www.cci.health.wa.gov.au" target="_blank" rel="noopener">cci.health.wa.gov.au</a>.</div></li>
+          <li><div class="thm-res__kind">Model · what good sleep is</div><div class="thm-res__title">Sleep Health &amp; the RU-SATED dimensions</div><div class="thm-res__by">Buysse, D. J. (2014). <em>Sleep Health: Can We Define It? Does It Matter?</em> SLEEP, 37(1), 9&ndash;17.</div></li>
+        </ul>
+        <p class="thm-refnote">References: 1&ndash;3, 5 &mdash; applied sleep-in-sport education (growth hormone &amp; deep sleep; slow-wave memory/motor consolidation; REM emotional processing; glymphatic clearance; ~63% of elite athletes report pre-competition sleep disturbance, Erlacher et al., 2011; nap dosing &amp; sleep-extension effects on athletic performance, e.g. Mah et al., 2011). 4 &mdash; AASM teen sleep-duration advisory (8&ndash;10 h) and adult guidance (7+ h). 6 &mdash; Buysse (2014), sleep-health dimensions. 7 &mdash; CCI sleep-hygiene protocol; stimulus control &amp; CBT-I as first-line for chronic insomnia. This module is general education, not medical advice.</p>
+
+        <div class="thm-nextnav">
+          <a href="grow-thrive-module-00.html#foundations">
+            <div class="thm-nextnav__dir">&larr; Back to</div>
+            <div class="thm-nextnav__title">Brain-health foundations</div>
+          </a>
+          <a href="grow-thrive.html#program" class="thm-nextnav--end">
+            <div class="thm-nextnav__dir">Back to &rarr;</div>
+            <div class="thm-nextnav__title">The THRIVE program</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="siteFooter">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-grid__brand">
+          <img src="images/logo-vertical.png?v=2" alt="The Performance Act" class="logo-img logo-img--footer">
+          <p class="footer__tagline">Helping People Grow</p>
+          <p class="footer__email"><a href="mailto:info@performance-act.com">info@performance-act.com</a></p>
+        </div>
+        <div class="footer-grid__links">
+          <h4 class="footer__heading">QUICK LINKS</h4>
+          <a href="index.html#about" class="footer__link">About Us</a>
+          <a href="approach.html" class="footer__link">Our Approach</a>
+          <a href="programs.html" class="footer__link">Programs</a>
+          <a href="team.html" class="footer__link">Our Wh&#257;nau</a>
+        </div>
+        <div class="footer-grid__links">
+          <h4 class="footer__heading">GROW</h4>
+          <a href="grow.html" class="footer__link">About GROW</a>
+          <a href="grow-login.html" class="footer__link">Member Login</a>
+        </div>
+        <div class="footer-grid__social">
+          <h4 class="footer__heading">FOLLOW US</h4>
+          <div class="social-links">
+            <a href="https://www.instagram.com/performance__act/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+            <a href="https://www.facebook.com/ThePerformanceAct" target="_blank" rel="noopener" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a href="https://www.linkedin.com/company/performance-act-ltd/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 The Performance Act. All rights reserved. Aotearoa, New Zealand.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- NZ SUPPORT LINES -->
+  <button class="support-line-btn" id="supportLineBtn" aria-label="NZ support lines">
+    <span class="support-line-btn__dot" aria-hidden="true"></span>
+    Immediate Support
+  </button>
+  <div class="support-line-modal" id="supportLineModal" role="dialog" aria-modal="true" aria-labelledby="supportLineTitle" aria-hidden="true">
+    <div class="support-line-modal__backdrop"></div>
+    <div class="support-line-modal__panel">
+      <button class="support-line-modal__close" id="supportLineClose" aria-label="Close support lines"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      <p class="support-line-modal__eyebrow">Aotearoa, New Zealand</p>
+      <h2 class="support-line-modal__title" id="supportLineTitle">Need immediate support?</h2>
+      <p class="support-line-modal__note">The Performance Act is a sport psychology practice, not a crisis or emergency service. If you or someone you care about needs immediate support, please reach out to one of these trusted services below. They are free, confidential, and available 24&#8202;/&#8202;7.</p>
+      <ul class="support-line-modal__list" role="list">
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">1737 &mdash; Need to Talk?</p><p class="sln-resource__desc">Free call or text, any time. Trained counsellors, 24&#47;7.</p></div><a href="tel:1737" class="sln-resource__number">Call or text 1737</a></li>
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">Youthline</p><p class="sln-resource__desc">For young people. Free call or text 234, 24&#47;7.</p></div><a href="tel:0800376633" class="sln-resource__number">0800 376 633</a></li>
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">Lifeline NZ</p><p class="sln-resource__desc">Crisis support and suicide prevention, 24&#47;7.</p></div><a href="tel:0800543354" class="sln-resource__number">0800 543 354</a></li>
+      </ul>
+      <p class="support-line-modal__footer">More resources at <a href="https://www.mentalhealth.org.nz/get-help/in-crisis" target="_blank" rel="noopener">Mental Health Foundation NZ</a>.</p>
+    </div>
+  </div>
+
+  <script src="script.js?v=5"></script>
+  <script>
+  /* =========================================================
+     THRIVE Bonus · Sleep Hygiene — habits accordion, 12-point
+     audit, wind-down builder, 7-day sleep log. On-device only.
+     ========================================================= */
+  (function () {
+    var LS = 'thrive_sleep_';
+    function esc(s) { return (s || '').replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+    /* ---- Habits accordion ---- */
+    document.querySelectorAll('#habAcc .thm-acc__trigger').forEach(function (trigger) {
+      trigger.addEventListener('click', function () {
+        var panel = document.getElementById(trigger.getAttribute('aria-controls'));
+        var open = trigger.getAttribute('aria-expanded') === 'true';
+        trigger.setAttribute('aria-expanded', open ? 'false' : 'true');
+        if (panel) { if (open) panel.setAttribute('hidden', ''); else panel.removeAttribute('hidden'); }
+      });
+    });
+
+    /* ---- 12-point audit ---- */
+    var auditNum = document.getElementById('auditNum'), auditRead = document.getElementById('auditRead');
+    var auditBtns = Array.prototype.slice.call(document.querySelectorAll('#auditList button'));
+    function auditRefresh() {
+      var n = auditBtns.filter(function (b) { return b.getAttribute('aria-pressed') === 'true'; }).length;
+      auditNum.innerHTML = n + '<span> / 12</span>';
+      var msg;
+      if (n >= 10) msg = '<strong>Outstanding foundations.</strong> Your sleep habits are genuinely strong &mdash; protect them, and keep the regular bed/wake time sacred.';
+      else if (n >= 7) msg = '<strong>Solid, with room to grow.</strong> Look at the boxes you left un-ticked &mdash; pick just <strong>one</strong> to work on this week.';
+      else if (n >= 4) msg = '<strong>A real opportunity here.</strong> Several easy wins are sitting un-ticked. Start with the top two: a <strong>regular sleep time</strong> and a <strong>wind-down</strong>.';
+      else msg = '<strong>Lots of upside &mdash; that&rsquo;s good news.</strong> Don&rsquo;t overhaul everything at once. Pick one habit (start with a regular bed &amp; wake time) and build from there.';
+      auditRead.innerHTML = msg;
+    }
+    auditBtns.forEach(function (btn) {
+      var key = LS + 'audit_' + btn.getAttribute('data-a');
+      try { if (localStorage.getItem(key) === '1') btn.setAttribute('aria-pressed', 'true'); } catch (e) {}
+      btn.addEventListener('click', function () {
+        var on = btn.getAttribute('aria-pressed') === 'true';
+        btn.setAttribute('aria-pressed', on ? 'false' : 'true');
+        try { localStorage.setItem(key, on ? '0' : '1'); } catch (e) {}
+        auditRefresh();
+      });
+    });
+    auditRefresh();
+
+    /* ---- Wind-down builder ---- */
+    var wdOut = document.getElementById('wdOut');
+    var wdChosen = [];
+    function wdRender() {
+      if (!wdChosen.length) { wdOut.innerHTML = '<span class="ph">Pick a few above to build your routine…</span>'; return; }
+      wdOut.innerHTML = wdChosen.map(function (t, i) { return (i ? ' &rarr; ' : '') + '<b>' + esc(t) + '</b>'; }).join('');
+    }
+    document.querySelectorAll('#wdChips .thm-chip').forEach(function (chip) {
+      var val = chip.getAttribute('data-wd');
+      var key = LS + 'wd_' + val;
+      try { if (localStorage.getItem(key) === '1') { chip.setAttribute('aria-pressed', 'true'); wdChosen.push(val); } } catch (e) {}
+      chip.addEventListener('click', function () {
+        var on = chip.getAttribute('aria-pressed') === 'true';
+        chip.setAttribute('aria-pressed', on ? 'false' : 'true');
+        if (on) { wdChosen = wdChosen.filter(function (x) { return x !== val; }); }
+        else { wdChosen.push(val); }
+        try { localStorage.setItem(key, on ? '0' : '1'); } catch (e) {}
+        wdRender();
+      });
+    });
+    wdRender();
+
+    /* ---- 7-day sleep log ---- */
+    var DAYS = ['Day 1','Day 2','Day 3','Day 4','Day 5','Day 6','Day 7'];
+    var journal = document.getElementById('weekJournal');
+    var weekFill = document.getElementById('weekFill'), weekCount = document.getElementById('weekCount');
+    function dKey(i, f) { return LS + 'day' + i + '_' + f; }
+    function buildDay(i) {
+      var wrap = document.createElement('div'); wrap.className = 'thm-day';
+      wrap.innerHTML =
+        '<button class="thm-day__trigger" aria-expanded="false" aria-controls="dayp-' + i + '">' +
+          '<span class="thm-day__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>' +
+          '<span class="thm-day__label">' + DAYS[i] + '</span>' +
+          '<span class="thm-day__state" data-state></span>' +
+          '<svg class="thm-day__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>' +
+        '</button>' +
+        '<div class="thm-day__panel" id="dayp-' + i + '" hidden><div class="thm-day__body">' +
+          '<div class="thm-day__field"><div class="thm-two">' +
+            '<div><p class="thm-day__q">To bed (approx)</p><input type="text" data-day="' + i + '" data-f="bed" placeholder="e.g. 10:45pm"></div>' +
+            '<div><p class="thm-day__q">Woke (approx)</p><input type="text" data-day="' + i + '" data-f="wake" placeholder="e.g. 7:00am"></div>' +
+          '</div></div>' +
+          '<div class="thm-day__field"><p class="thm-day__q">How rested do you feel?</p>' +
+            '<div class="thm-toggle" data-day="' + i + '">' +
+              '<button type="button" data-choice="great" aria-pressed="false">Great</button>' +
+              '<button type="button" data-choice="ok" aria-pressed="false">Okay</button>' +
+              '<button type="button" data-choice="rough" aria-pressed="false">Rough</button>' +
+            '</div></div>' +
+          '<span class="thm-day__save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device as you type</span>' +
+        '</div></div>';
+      journal.appendChild(wrap);
+      var trigger = wrap.querySelector('.thm-day__trigger'), panel = wrap.querySelector('.thm-day__panel');
+      trigger.addEventListener('click', function () {
+        var open = trigger.getAttribute('aria-expanded') === 'true';
+        trigger.setAttribute('aria-expanded', open ? 'false' : 'true');
+        wrap.classList.toggle('is-open', !open);
+        if (open) panel.setAttribute('hidden', ''); else panel.removeAttribute('hidden');
+      });
+      wrap.querySelectorAll('input[type=text]').forEach(function (inp) {
+        var key = dKey(i, inp.getAttribute('data-f'));
+        try { if (localStorage.getItem(key)) inp.value = localStorage.getItem(key); } catch (e) {}
+        var t;
+        inp.addEventListener('input', function () { clearTimeout(t); t = setTimeout(function () { try { localStorage.setItem(key, inp.value); } catch (e) {} refreshDay(i); }, 350); });
+      });
+      var savedChoice = null; try { savedChoice = localStorage.getItem(dKey(i, 'choice')); } catch (e) {}
+      wrap.querySelectorAll('.thm-toggle button').forEach(function (btn) {
+        if (savedChoice === btn.getAttribute('data-choice')) btn.setAttribute('aria-pressed', 'true');
+        btn.addEventListener('click', function () {
+          var choice = btn.getAttribute('data-choice'), isOn = btn.getAttribute('aria-pressed') === 'true';
+          wrap.querySelectorAll('.thm-toggle button').forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+          if (!isOn) { btn.setAttribute('aria-pressed', 'true'); try { localStorage.setItem(dKey(i, 'choice'), choice); } catch (e) {} }
+          else { try { localStorage.removeItem(dKey(i, 'choice')); } catch (e) {} }
+          refreshDay(i);
+        });
+      });
+      refreshDay(i);
+    }
+    function dayLogged(i) { try { return !!(localStorage.getItem(dKey(i, 'bed')) || localStorage.getItem(dKey(i, 'wake')) || localStorage.getItem(dKey(i, 'choice'))); } catch (e) { return false; } }
+    function refreshDay(i) {
+      var wrap = journal.children[i], logged = dayLogged(i);
+      wrap.classList.toggle('is-done', logged);
+      var choice = null; try { choice = localStorage.getItem(dKey(i, 'choice')); } catch (e) {}
+      var map = { great: 'Great', ok: 'Okay', rough: 'Rough' };
+      wrap.querySelector('[data-state]').textContent = logged ? (choice ? map[choice] : 'Logged') : 'Not yet';
+      updateProgress();
+    }
+    function updateProgress() {
+      var done = 0; for (var i = 0; i < DAYS.length; i++) { if (dayLogged(i)) done++; }
+      weekFill.style.width = Math.round(done / DAYS.length * 100) + '%';
+      weekCount.textContent = done + ' / 7 days';
+    }
+    DAYS.forEach(function (_, i) { buildDay(i); });
+    updateProgress();
+    document.getElementById('weekReset').addEventListener('click', function () {
+      if (!window.confirm('Clear all 7 days of this sleep log on this device? This cannot be undone.')) return;
+      DAYS.forEach(function (_, i) { ['bed', 'wake', 'choice'].forEach(function (f) { try { localStorage.removeItem(dKey(i, f)); } catch (e) {} }); });
+      journal.innerHTML = ''; DAYS.forEach(function (_, i) { buildDay(i); }); updateProgress();
+    });
+  })();
+  </script>
+
+</body>
+</html>
