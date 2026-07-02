@@ -87,6 +87,8 @@
     .thm-pill:hover { border-color:rgba(255,229,0,0.5); }
     .thm-pill[aria-pressed="true"] { background:var(--yellow); border-color:var(--yellow); color:#000; }
     .thm-breathe__controls { display:flex; align-items:center; justify-content:center; gap:20px; }
+    .thm-breathe__guide { margin:14px 0 4px; color:var(--muted); font-size:0.88rem; line-height:1.6; font-weight:300; }
+    .thm-breathe__guide b { color:var(--ink); font-weight:600; }
     .thm-breathe__reps { font-family:var(--font-heading); font-size:0.82rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); }
     .thm-breathe__reps b { color:var(--yellow); font-size:1.1rem; }
 
@@ -391,6 +393,7 @@
               <button type="button" class="thm-pill" aria-pressed="false" data-pat="box">Box · 4·4·4·4</button>
               <button type="button" class="thm-pill" aria-pressed="false" data-pat="calm">Calm · 4·7·8</button>
             </div>
+            <p class="thm-breathe__guide">The numbers are seconds. <b>Settle</b> — in for 4, out for 6; the longer out-breath settles your body, so it’s your go-to before performing. <b>Box</b> — in 4, hold 4, out 4, hold 4; a steady square rhythm that’s good for focus. <b>Calm</b> — in 4, hold 7, out 8; the deepest brake, best for winding down or before sleep. Don’t worry about being exact — the circle does the counting for you.</p>
             <div class="thm-breathe__stage">
               <div class="thm-breathe__circle" id="brCircle"></div>
               <div class="thm-breathe__txt">
