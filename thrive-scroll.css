@@ -221,6 +221,57 @@
   font-weight: 300;
 }
 
+/* ---- 5. Video "catch these moments" notes ------------------------------- */
+.thx-vm{
+  margin: 26px 0 8px;
+  background: #111;
+  border: 1px solid var(--line, rgba(255,255,255,0.1));
+  padding: 24px 26px 20px;
+}
+.thx-vm__label{
+  font-family: var(--font-heading, sans-serif);
+  font-size: .7rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--yellow, #FFE500);
+  margin-bottom: 14px;
+}
+.thx-vm__item{
+  display: flex;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px dashed rgba(255,255,255,0.08);
+}
+.thx-vm__item:last-of-type{ border-bottom: none; }
+.thx-vm__t{
+  flex: 0 0 auto;
+  font-family: var(--font-heading, sans-serif);
+  font-weight: 700;
+  font-size: .78rem;
+  color: var(--yellow, #FFE500);
+  padding-top: 3px;
+  min-width: 38px;
+}
+.thx-vm__item p{
+  margin: 0;
+  color: var(--ink, #ECECEC);
+  font-size: .92rem;
+  line-height: 1.6;
+  font-weight: 300;
+}
+.thx-vm__item p em{ color: #fff; }
+.thx-vm__item p strong{ color: #fff; font-weight: 600; }
+.thx-vm__sum{
+  margin: 16px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,229,0,0.25);
+  color: var(--ink, #ECECEC);
+  font-size: .94rem;
+  line-height: 1.6;
+  font-weight: 300;
+}
+.thx-vm__sum strong{ color: #fff; font-weight: 600; }
+
 /* ---- Accessibility: prefers-reduced-motion ------------------------------ */
 @media (prefers-reduced-motion: reduce){
   .thx-js .thx-reveal{
