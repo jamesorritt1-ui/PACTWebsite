@@ -32,7 +32,8 @@
   function update() {
     var w = progress() * 100;
     if (fill) fill.style.width = w + '%';
-    if (avatar) avatar.style.left = w + '%';
+    /* clamp so the runner never hangs off either screen edge */
+    if (avatar) avatar.style.left = 'clamp(12px, ' + w + '%, calc(100% - 12px))';
     if (w >= 99.5) {
       if (!done) { done = true; track.classList.add('is-done'); }
     } else if (done) {
