@@ -61,6 +61,14 @@
     .thm-toc { display:flex; flex-wrap:wrap; gap:10px; margin-top:30px; }
     .thm-toc a { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink); border:1px solid var(--line); padding:9px 15px; transition:.2s; }
     .thm-toc a:hover { border-color:var(--yellow); color:var(--yellow); }
+    .thm-road { margin-top:34px; background:#111; border:1px solid var(--line); padding:26px 26px 20px; }
+    .thm-road__title { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--yellow); margin-bottom:16px; }
+    .thm-road ol { list-style:none; margin:0; padding:0; }
+    .thm-road li { position:relative; padding:0 0 16px 30px; color:var(--ink); font-size:0.94rem; line-height:1.55; font-weight:300; }
+    .thm-road li::before { content:''; position:absolute; left:6px; top:8px; width:8px; height:8px; border-radius:50%; background:var(--yellow); }
+    .thm-road li:not(:last-child)::after { content:''; position:absolute; left:9.5px; top:20px; bottom:-2px; width:1px; background:rgba(255,229,0,0.25); }
+    .thm-road li b { color:#fff; font-weight:600; }
+    .thm-road__note { margin-top:6px; color:var(--muted); font-size:0.86rem; line-height:1.55; font-weight:300; }
 
     /* BLOCK LABEL */
     .th-block__label { display:flex; align-items:center; gap:10px; font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--yellow); margin-bottom:12px; }
@@ -343,7 +351,7 @@
           <h3>By the end of this module you can</h3>
           <ul>
             <li>Explain what psychological flexibility is in your own words.</li>
-            <li>Find and read the <strong>ACE &rarr; TriFlex</strong> map you'll return to all programme long.</li>
+            <li>Find your way around the <strong>ACE map</strong> &mdash; the three moves you'll return to all programme long.</li>
             <li>Know the <strong>brain-health basics</strong> &mdash; sleep, fuel, hydration and connection &mdash; that your mind skills are built on.</li>
             <li>Set up your practice environment so the habit actually sticks.</li>
             <li>Complete an optional <strong>baseline check-in</strong> — your starting line across Be Open, Be Present and Do What Matters.</li>
@@ -375,7 +383,8 @@
           <cite>— Your welcome from THRIVE</cite>
         </div>
         <p class="th-p">For decades athletes were told to harden up, hide any weakness and bulldoze through. The science no longer backs that. As performance scientist Steve Magness puts it, real toughness is <strong>"experiencing discomfort or distress, leaning in, paying attention, and creating space to take thoughtful action"</strong> — the opposite of false bravado. Athletes who perform out of fear tend to perform <em>worse</em>.</p>
-        <p class="th-p">So THRIVE trains something different: <strong>psychological flexibility</strong> — the ability to be present, open up to whatever shows up, and do what matters, even alongside difficult thoughts and feelings. That single capacity predicts not just performance, but mental health, study success and the quality of your relationships. That dual relevance — <strong>sport and life</strong> — is the whole point.</p>
+        <p class="th-p">Here’s what the alternative looks like. Picture two players stepping up for the same penalty. Both hearts pounding, both minds yelling <em>“don’t miss.”</em> The first player fights it — trying to force calm, push the thought away, <em>feel</em> ready — so half of them is in the battle and only half is in the kick. The second lets the pounding heart come along for the ride: feet grounded, eyes on their spot, fully in the kick. <strong>Same nerves. Different relationship with them.</strong> That difference is a skill — and it has a name: <strong>psychological flexibility</strong> — being able to stay present, open up to whatever shows up, and still do what matters, with the nerves along for the ride. That capacity predicts not just performance, but mental health, study success and the quality of your relationships. That dual relevance — <strong>sport and life</strong> — is the whole point.</p>
+        <p class="th-p">One more bit of background, then we’re off. The approach behind THRIVE is called <strong>ACT</strong> — Acceptance and Commitment Training (you say it as the word <em>“act”</em>, not A-C-T). It’s one of the most-researched approaches in modern psychology, used with Olympic athletes, students, surgeons and soldiers. You don’t need to remember any of the jargon — every idea in this programme comes down to <strong>three moves</strong> you’ll soon know by heart: ACE.</p>
       </div>
     </div>
   </section>
@@ -386,7 +395,7 @@
       <div class="th-wrap">
         <p class="th-eyebrow">02 · Your map</p>
         <h2 class="th-h2">Meet <em>ACE</em> — the home screen<br>for the whole programme</h2>
-        <p class="th-p">Everything in THRIVE hangs off one simple spine you can carry in your head for life. It's called <strong>ACE</strong>, and it maps one-to-one onto the three pillars of psychological flexibility — Russ Harris's <strong>TriFlex</strong>. Three moves. That's the entire model.</p>
+        <p class="th-p">Everything in THRIVE hangs off one simple spine you can carry in your head for life. It's called <strong>ACE</strong>. Three moves. That's the entire model. (If you ever pick up an ACT book, you'll see the same three pillars called the <em>TriFlex</em> — ours is adapted from psychologist <strong>Russ Harris</strong>, one of the world's most-read ACT teachers. His videos and books will pop up as guides throughout the programme.)</p>
 
         <div class="thm-map">
           <div class="thm-map__card">
@@ -410,6 +419,20 @@
         </div>
 
         <p class="th-p"><strong>Here's the quiet power of it.</strong> ACE is three things at once: a 30-second grounding skill you can run on the start line, the table of contents for this whole programme, and a complete, portable model of a flexible mind. The same three moves you use before a penalty also work before an exam, a hard conversation, a job interview, or a 2am spiral of worry. <strong>One skill set, every arena.</strong></p>
+
+        <div class="thm-road">
+          <div class="thm-road__title">The road ahead &mdash; where this is taking you</div>
+          <ol>
+            <li><b>01 &middot; The trap.</b> Why fighting your own head always backfires &mdash; and the question that replaces it.</li>
+            <li><b>02&ndash;03 &middot; Acknowledge.</b> Make room for hard feelings, then unhook from sticky thoughts. The first move.</li>
+            <li><b>04 &middot; Connect.</b> Learn to come back to the present, on demand, when it counts. The second move.</li>
+            <li><b>05&ndash;06 &middot; Engage.</b> Work out what you actually stand for &mdash; then act on it, even on flat days. The third move.</li>
+            <li><b>07 &middot; The ground.</b> Meet the steady &ldquo;you&rdquo; behind all of it &mdash; the part no result can touch.</li>
+            <li><b>08 &middot; One move.</b> Weld the three moves into a 30-second skill you can run on any start line.</li>
+            <li><b>09 &middot; For life.</b> Keep it. Off-track days, life beyond sport, and your personal toolkit.</li>
+          </ol>
+          <p class="thm-road__note">Roughly one module a week &mdash; but it's your pace. The little runner along the top of every page tracks you to the finish line.</p>
+        </div>
       </div>
     </div>
   </section>
