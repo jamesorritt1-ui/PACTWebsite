@@ -114,6 +114,21 @@
     .thm-defuser__result span { color:var(--ink); font-weight:300; font-family:var(--font-body); }
     .thm-defuser__why { color:var(--muted); font-size:0.9rem; line-height:1.55; font-weight:300; margin-top:14px; }
     .thm-defuser__hint { color:var(--muted); font-size:0.86rem; font-weight:300; }
+    /* Technique teaching cards (learn before you try) */
+    .th-h3 { font-family:var(--font-heading); font-weight:700; text-transform:uppercase; font-size:clamp(1.15rem,2.6vw,1.55rem); line-height:1.15; color:#fff; margin-bottom:14px; }
+    .thm-tk { display:flex; flex-direction:column; gap:16px; margin:28px 0; }
+    .thm-tk__card { background:#111; border:1px solid var(--line); padding:24px 24px 22px; position:relative; }
+    .thm-tk__num { position:absolute; top:20px; right:22px; font-family:var(--font-heading); font-weight:700; font-size:1.6rem; color:rgba(255,229,0,0.22); line-height:1; }
+    .thm-tk__name { font-family:var(--font-heading); font-size:1.05rem; text-transform:uppercase; letter-spacing:0.04em; color:#fff; margin-bottom:12px; padding-right:40px; }
+    .thm-tk__row { margin-top:10px; }
+    .thm-tk__k { display:block; font-family:var(--font-heading); font-size:0.66rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--yellow); margin-bottom:4px; }
+    .thm-tk__row p { color:var(--ink); font-size:0.94rem; line-height:1.6; font-weight:300; margin:0; }
+    .thm-tk__row p strong { color:#fff; font-weight:600; }
+    .thm-tk__eg { margin-top:12px; background:#0a0a0a; border-left:3px solid var(--yellow); padding:12px 16px; }
+    .thm-tk__eg p { color:var(--ink); font-size:0.92rem; line-height:1.6; font-weight:300; margin:0; }
+    .thm-tk__eg p em { color:#fff; font-style:italic; }
+    .thm-tk__eg p b { color:var(--yellow); font-weight:600; }
+    .thm-tk__note { margin-top:4px; color:var(--muted); font-size:0.85rem; line-height:1.55; font-weight:300; }
 
     /* REFLECTION */
     .th-reflect { background:#111; border:1px solid var(--line); border-radius:4px; padding:24px 26px; margin:24px 0; }
@@ -339,7 +354,7 @@
           <a href="#hooked">Hooked vs unhooked</a>
           <a href="#bus">See it move: the bus</a>
           <a href="#watch">Watch</a>
-          <a href="#defuser">The Defuser</a>
+          <a href="#defuser">Unhook toolkit</a>
           <a href="#reflect">Reflection questions</a>
           <a href="#ideas">Big ideas</a>
           <a href="#week">This week</a>
@@ -529,21 +544,107 @@
     <div class="container">
       <div class="th-wrap">
         <p class="th-eyebrow">04 · Your toolkit</p>
-        <h2 class="th-h2">The <em>Defuser</em></h2>
-        <p class="th-p">Defusion is a set of small, trainable moves. Type in a thought that genuinely hooks you — something your mind says that stings, like <em>"I'm not good enough"</em> — then tap each technique to feel how it loosens the grip. The words barely change; your relationship to them does.</p>
+        <h2 class="th-h2">Five ways to <em>unhook</em></h2>
+        <p class="th-p">Defusion isn't one trick — it's a small kit of moves, and different ones work for different people. Here are the five classics. For each one you'll see <strong>exactly what you do</strong> and <strong>a worked example</strong>, using the same sample thought all the way through: <em>"I'm going to choke."</em> Read them first — then you'll try them on a thought of your own just below.</p>
+
+        <div class="thm-tk">
+          <div class="thm-tk__card">
+            <div class="thm-tk__num">1</div>
+            <h3 class="thm-tk__name">Name the thought</h3>
+            <div class="thm-tk__row">
+              <span class="thm-tk__k">The move</span>
+              <p>Put the phrase <strong>"I'm having the thought that…"</strong> in front of whatever your mind just said. Say it silently, exactly like that.</p>
+            </div>
+            <div class="thm-tk__eg">
+              <p>Hooked: <em>"I'm going to choke."</em><br>Unhooked: <em>"I'm having the thought that <b>I'm going to choke</b>."</em></p>
+            </div>
+            <div class="thm-tk__row">
+              <span class="thm-tk__k">Why it works</span>
+              <p>Those five extra words turn you from the person <em>inside</em> the thought into the person <em>noticing</em> it. Want more distance? Go one further: <em>"I notice I'm having the thought that…"</em></p>
+            </div>
+          </div>
+
+          <div class="thm-tk__card">
+            <div class="thm-tk__num">2</div>
+            <h3 class="thm-tk__name">Thank your mind</h3>
+            <div class="thm-tk__row">
+              <span class="thm-tk__k">The move</span>
+              <p>Treat your mind like an over-protective mate who means well but panics easily. When it pipes up, reply — silently — <strong>"Thanks, mind."</strong> No arguing, no agreeing. Then carry on with what you were doing.</p>
+            </div>
+            <div class="thm-tk__eg">
+              <p>Mind: <em>"I'm going to choke."</em><br>You: <em>"<b>Thanks, mind</b> — good looking out."</em> …and you keep warming up.</p>
+            </div>
+            <div class="thm-tk__row">
+              <span class="thm-tk__k">Why it works</span>
+              <p>Your mind throws up warnings because its job is to protect you. Thanking it acknowledges the effort without obeying the instruction — the argument never starts, so nothing feeds the thought.</p>
+            </div>
+          </div>
+
+          <div class="thm-tk__card">
+            <div class="thm-tk__num">3</div>
+            <h3 class="thm-tk__name">Name the story</h3>
+            <div class="thm-tk__row">
+              <span class="thm-tk__k">The move</span>
+              <p>Your stickiest thoughts aren't new — they're <strong>reruns</strong>. Give the recurring one a title, like a film: <em>"the Not-Good-Enough story"</em>, <em>"the Choker story"</em>, <em>"the Everyone's-Watching story"</em>. When it starts playing, just note the title.</p>
+            </div>
+            <div class="thm-tk__eg">
+              <p>Thought: <em>"I'm going to choke — everyone will see."</em><br>You: <em>"Ah — the <b>Choker story</b>. Seen this one."</em></p>
+            </div>
+            <div class="thm-tk__row">
+              <span class="thm-tk__k">Why it works</span>
+              <p>A rerun loses its punch the moment you recognise it as a rerun. You're not disputing the story — you're just no longer watching it like it's breaking news.</p>
+            </div>
+          </div>
+
+          <div class="thm-tk__card">
+            <div class="thm-tk__num">4</div>
+            <h3 class="thm-tk__name">Silly voice</h3>
+            <div class="thm-tk__row">
+              <span class="thm-tk__k">The move</span>
+              <p>Take the thought and say it — out loud if you can, in your head if you can't — <strong>in a ridiculous voice</strong>: a cartoon character, a movie-trailer announcer, or sung to the tune of <em>Happy Birthday</em>.</p>
+            </div>
+            <div class="thm-tk__eg">
+              <p><em>"I'm going to choke"</em> … now in a squeaky cartoon voice. Same words. Try keeping a straight face.</p>
+            </div>
+            <div class="thm-tk__row">
+              <span class="thm-tk__k">Why it works</span>
+              <p>The words are identical — only the packaging changed. When a thought can make you smirk, you've just proven it's <em>sound</em>, not truth.</p>
+            </div>
+            <p class="thm-tk__note">Best for everyday sticky thoughts. If a thought is tied to something genuinely painful, use moves 1–3 instead — this one isn't about mocking what hurts.</p>
+          </div>
+
+          <div class="thm-tk__card">
+            <div class="thm-tk__num">5</div>
+            <h3 class="thm-tk__name">Say it &times;10</h3>
+            <div class="thm-tk__row">
+              <span class="thm-tk__k">The move</span>
+              <p>Take the sting word — the one or two words that carry the hurt, like <em>"choke"</em> or <em>"loser"</em> — and <strong>say it out loud, fast, over and over</strong> for about twenty seconds.</p>
+            </div>
+            <div class="thm-tk__eg">
+              <p><em>"choke &middot; choke &middot; choke &middot; choke &middot; choke…"</em> — somewhere around rep fifteen it stops being a verdict and becomes a <b>weird noise</b>.</p>
+            </div>
+            <div class="thm-tk__row">
+              <span class="thm-tk__k">Why it works</span>
+              <p>Psychologists have used this for over a century (it's called word repetition): repeat any word enough and it temporarily loses its meaning. You get to <em>hear</em> that a word is just a sound your mouth makes.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="th-h3" style="margin-top:44px;">Now try them yourself</h3>
+        <p class="th-p">Type in a thought that genuinely hooks <em>you</em> — something your mind says that stings — then tap each move to see it applied to your own words. Notice which one loosens the grip most for you.</p>
 
         <div class="thm-defuser">
           <div class="thm-defuser__label">A thought that hooks you</div>
           <input type="text" id="defIn" maxlength="90" placeholder="e.g. I'm not good enough" aria-label="A thought that hooks you">
           <div class="thm-defuser__techs" id="defTechs">
-            <button type="button" class="thm-tech" aria-pressed="false" data-tech="name">Name the thought</button>
-            <button type="button" class="thm-tech" aria-pressed="false" data-tech="thank">Thank your mind</button>
-            <button type="button" class="thm-tech" aria-pressed="false" data-tech="story">Name the story</button>
-            <button type="button" class="thm-tech" aria-pressed="false" data-tech="silly">Silly voice</button>
-            <button type="button" class="thm-tech" aria-pressed="false" data-tech="fast">Say it &times;10</button>
+            <button type="button" class="thm-tech" aria-pressed="false" data-tech="name">1 · Name the thought</button>
+            <button type="button" class="thm-tech" aria-pressed="false" data-tech="thank">2 · Thank your mind</button>
+            <button type="button" class="thm-tech" aria-pressed="false" data-tech="story">3 · Name the story</button>
+            <button type="button" class="thm-tech" aria-pressed="false" data-tech="silly">4 · Silly voice</button>
+            <button type="button" class="thm-tech" aria-pressed="false" data-tech="fast">5 · Say it &times;10</button>
           </div>
           <div class="thm-defuser__out" id="defOut">
-            <p class="thm-defuser__hint">Type a thought above, then pick a technique to see it defused.</p>
+            <p class="thm-defuser__hint">Type a thought above, then tap one of the five moves to see it applied.</p>
           </div>
         </div>
         <p class="th-p">None of these argue with the thought or try to prove it wrong. They just create a sliver of space — and in that space, <em>you</em> get to choose the next move instead of the thought choosing for you. The one that fits will be different for everyone; keep the two or three that work best for you.</p>
