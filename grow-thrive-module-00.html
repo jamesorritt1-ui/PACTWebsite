@@ -28,6 +28,7 @@
     .th-wrap { max-width: 820px; margin: 0 auto; }
     .th-eyebrow { font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--yellow); margin-bottom:14px; }
     .th-h2 { font-family:var(--font-heading); font-weight:700; text-transform:uppercase; font-size:clamp(1.7rem,4vw,2.7rem); line-height:1.05; color:#fff; margin-bottom:18px; }
+    .th-h3 { font-family:var(--font-heading); font-weight:700; text-transform:uppercase; font-size:clamp(1.15rem,2.6vw,1.55rem); line-height:1.15; color:#fff; margin-bottom:14px; }
     .th-h2 em { color:var(--yellow); font-style:normal; }
     .th-lead { font-size:clamp(1rem,2vw,1.14rem); color:var(--ink); line-height:1.68; font-weight:300; }
     .th-lead + .th-lead { margin-top:16px; }
@@ -225,6 +226,32 @@
     .thm-tease svg { width:26px; height:26px; color:var(--yellow); flex-shrink:0; }
     .thm-tease p { color:var(--ink); font-size:0.92rem; line-height:1.55; font-weight:300; margin:0; }
     .thm-tease strong { color:#fff; }
+    /* Confidence-gap section (myth-buster quiz + rules + big questions) */
+    .thm-myth { margin-top:30px; display:flex; flex-direction:column; gap:14px; }
+    .thm-myth__item { background:#101010; border:1px solid var(--line); padding:20px 22px; }
+    .thm-myth__q { color:#fff; font-size:1.02rem; line-height:1.55; font-weight:500; margin:0 0 14px; }
+    .thm-myth__btns { display:flex; gap:10px; }
+    .thm-myth__btn { flex:0 0 auto; background:none; border:1px solid var(--line); color:var(--ink); font-family:var(--font-heading); font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; padding:10px 22px; cursor:pointer; transition:.2s; }
+    .thm-myth__btn:hover { border-color:var(--yellow); color:var(--yellow); }
+    .thm-myth__item.is-answered .thm-myth__btn { pointer-events:none; opacity:.35; }
+    .thm-myth__item.is-answered .thm-myth__btn.is-picked { opacity:1; }
+    .thm-myth__btn.is-picked.is-right { background:var(--yellow); border-color:var(--yellow); color:#050505; }
+    .thm-myth__btn.is-picked.is-wrong { border-color:#c0392b; color:#e07b6f; }
+    .thm-myth__reveal { display:none; margin-top:14px; padding-top:14px; border-top:1px dashed var(--line); }
+    .thm-myth__item.is-answered .thm-myth__reveal { display:block; }
+    .thm-myth__verdict { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--yellow); margin:0 0 6px; }
+    .thm-myth__why { color:var(--ink); font-size:0.92rem; line-height:1.6; font-weight:300; margin:0; }
+    .thm-myth__why strong { color:#fff; }
+    .thm-myth__score { margin-top:6px; font-family:var(--font-heading); font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); text-align:center; }
+    .thm-myth__score strong { color:var(--yellow); }
+    .thm-rules { margin-top:34px; display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    @media (max-width:680px){ .thm-rules { grid-template-columns:1fr; } }
+    .thm-rule { background:linear-gradient(160deg,#161616,#0c0c0c); border:1px solid rgba(255,229,0,0.25); padding:24px; }
+    .thm-rule__num { font-family:var(--font-heading); font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--yellow); margin-bottom:10px; }
+    .thm-rule__text { color:#fff; font-size:1.08rem; line-height:1.5; font-weight:500; margin:0; }
+    .thm-rule__text em { color:var(--yellow); font-style:normal; }
+    .thm-cred { margin-top:26px; color:var(--muted); font-size:0.85rem; line-height:1.6; font-weight:300; }
+    .thm-cred a { color:var(--ink); text-decoration:underline; }
   </style>
   <link rel="stylesheet" href="thrive-scroll.css?v=2">
 </head>
@@ -307,7 +334,7 @@
         <p class="thm-hero__kicker">Onboarding · Start here</p>
         <h1 class="thm-hero__title">Welcome &amp; Your Map</h1>
         <div class="thm-hero__meta">
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> ~20 minutes</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> ~25 minutes</span>
           <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v14H4z"/><path d="M4 9h16"/></svg> Read · reflect · check-in</span>
           <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg> Private to you</span>
         </div>
@@ -326,6 +353,7 @@
         <nav class="thm-toc" aria-label="On this page">
           <a href="#welcome">The welcome</a>
           <a href="#map">Your map</a>
+          <a href="#confidence">The big question</a>
           <a href="#foundations">Foundations</a>
           <a href="#setup">Set up</a>
           <a href="#reflect">Reflect</a>
@@ -386,11 +414,134 @@
     </div>
   </section>
 
-  <!-- ========== 3 · THE FOUNDATIONS (brain-health behaviours) ========== -->
+  <!-- ========== 3 · THE BIG QUESTION (confidence gap) ========== -->
+  <section class="th-sec" id="confidence">
+    <div class="container">
+      <div class="th-wrap">
+        <p class="th-eyebrow">03 · The big question</p>
+        <h2 class="th-h2">The confidence gap —<br><em>one honest audit before we start</em></h2>
+        <p class="th-p">Most athletes come to a program like this wanting one thing: <strong>more confidence</strong>. Fair enough. But before we start, we need to be honest about the trap most people are stuck in. It's called the <strong>confidence gap</strong>, and it sounds like this: <em>&ldquo;I can't take the shot, speak up, go for the team, play my game &mdash; until I feel more confident.&rdquo;</em> If that sentence rings true, you're in good company — and this program is going to hand you a different set of rules.</p>
+        <p class="th-p">Start here. Take thirty seconds and sit with this one: <strong>what has waiting to &ldquo;feel confident&rdquo; already cost you?</strong> The trial you didn't go to. The shot you didn't take. The hand you didn't put up. Don't rush past it — the answer is the reason the rest of this program matters.</p>
+
+        <h3 class="th-h3" style="margin-top:44px;">First — a quick myth-buster</h3>
+        <p class="th-p">Nearly everything our sporting culture teaches about confidence is backwards. Tap your honest answer for each one — no points for guessing what we <em>want</em> you to say.</p>
+
+        <div class="thm-myth" id="mythQuiz">
+          <div class="thm-myth__item" data-myth="feel-first" data-answer="myth">
+            <p class="thm-myth__q">1. &ldquo;You have to <em>feel</em> confident before you can perform.&rdquo;</p>
+            <div class="thm-myth__btns">
+              <button type="button" class="thm-myth__btn" data-pick="myth">Myth</button>
+              <button type="button" class="thm-myth__btn" data-pick="fact">Fact</button>
+            </div>
+            <div class="thm-myth__reveal">
+              <p class="thm-myth__verdict">Myth — and it's the big one</p>
+              <p class="thm-myth__why">This is the granddaddy of all the wrong rules. If you wait for feelings of confidence before doing what matters, you'll wait forever. <strong>The actions of confidence come first; the feelings come later.</strong> Nelson Mandela put it plainly: <em>&ldquo;Of course I was afraid!&rdquo;</em> — he couldn't control the fear, but he could control how he walked, stood and spoke. That's confidence as an <strong>action</strong>, not a feeling.</p>
+            </div>
+          </div>
+
+          <div class="thm-myth__item" data-myth="no-fear" data-answer="myth">
+            <p class="thm-myth__q">2. &ldquo;Top performers don't feel fear.&rdquo;</p>
+            <div class="thm-myth__btns">
+              <button type="button" class="thm-myth__btn" data-pick="myth">Myth</button>
+              <button type="button" class="thm-myth__btn" data-pick="fact">Fact</button>
+            </div>
+            <div class="thm-myth__reveal">
+              <p class="thm-myth__verdict">Myth</p>
+              <p class="thm-myth__why">Elite performers feel plenty of it — they just call it something else: <em>pumped, revved, amped</em>. Every normal human gets a fight-or-flight response the moment they step out of their comfort zone; the bigger the step, the bigger the surge. If you don't feel it, you're either not being stretched — or you're James Bond, who is fictional.</p>
+            </div>
+          </div>
+
+          <div class="thm-myth__item" data-myth="fear-weak" data-answer="myth">
+            <p class="thm-myth__q">3. &ldquo;Feeling nervous means something is wrong with you.&rdquo;</p>
+            <div class="thm-myth__btns">
+              <button type="button" class="thm-myth__btn" data-pick="myth">Myth</button>
+              <button type="button" class="thm-myth__btn" data-pick="fact">Fact</button>
+            </div>
+            <div class="thm-myth__reveal">
+              <p class="thm-myth__verdict">Myth</p>
+              <p class="thm-myth__why">Nerves before a challenge aren't weakness — they're <strong>the natural state of a normal human being doing something that matters</strong>. What holds people back is never the fear itself; it's treating fear as an enemy that must be gone before you move. That attitude creates fear <em>about</em> fear — and that's the actual trap.</p>
+            </div>
+          </div>
+
+          <div class="thm-myth__item" data-myth="affirm" data-answer="myth">
+            <p class="thm-myth__q">4. &ldquo;Repeating positive statements — <em>I will succeed, I've got this</em> — fixes self-doubt.&rdquo;</p>
+            <div class="thm-myth__btns">
+              <button type="button" class="thm-myth__btn" data-pick="myth">Myth</button>
+              <button type="button" class="thm-myth__btn" data-pick="fact">Fact</button>
+            </div>
+            <div class="thm-myth__reveal">
+              <p class="thm-myth__verdict">Myth</p>
+              <p class="thm-myth__why">Research (Wood, Lee &amp; Perunovic, 2009, <em>Psychological Science</em>) found that for people low in self-confidence, positive self-statements often <strong>backfire</strong> — the mind argues straight back (&ldquo;no you're not!&rdquo;) and mood drops. THRIVE never asks you to out-argue your mind. You'll learn something that works better: changing your <em>relationship</em> with thoughts, not their content.</p>
+            </div>
+          </div>
+
+          <div class="thm-myth__item" data-myth="doing" data-answer="fact">
+            <p class="thm-myth__q">5. &ldquo;Confidence is built by doing — practise, step out, review, adjust, repeat.&rdquo;</p>
+            <div class="thm-myth__btns">
+              <button type="button" class="thm-myth__btn" data-pick="myth">Myth</button>
+              <button type="button" class="thm-myth__btn" data-pick="fact">Fact</button>
+            </div>
+            <div class="thm-myth__reveal">
+              <p class="thm-myth__verdict">Fact — the confidence cycle</p>
+              <p class="thm-myth__why">You've already run this cycle a thousand times: it's how you learned to walk, write and ride a bike. <strong>Practise the skills &rarr; apply them in real situations &rarr; review the results without beating yourself up &rarr; adjust &rarr; go again.</strong> As Lance Armstrong wrote: &ldquo;You can't fake confidence, you have to earn it&hellip; you have to do the work.&rdquo;</p>
+            </div>
+          </div>
+
+          <p class="thm-myth__score" id="mythScore" hidden></p>
+        </div>
+
+        <div class="thm-rules">
+          <div class="thm-rule">
+            <div class="thm-rule__num">Rule 1 of the confidence game</div>
+            <p class="thm-rule__text">The <em>actions</em> of confidence come first; the <em>feelings</em> of confidence come later.</p>
+          </div>
+          <div class="thm-rule">
+            <div class="thm-rule__num">Rule 2 of the confidence game</div>
+            <p class="thm-rule__text">Genuine confidence is not the absence of fear — it's a <em>transformed relationship</em> with fear.</p>
+          </div>
+        </div>
+
+        <h3 class="th-h3" style="margin-top:48px;">Now — the questions that set your compass</h3>
+        <p class="th-p">These are the most useful questions you'll answer all program. Don't polish your answers; rough and honest beats neat and safe. Everything saves <strong>only on this device</strong>, and you'll revisit these when we reach values in Module 05.</p>
+
+        <div class="th-reflect">
+          <p class="th-reflect__q">What has it cost you so far?</p>
+          <p class="th-reflect__hint">What have you given up, avoided, or missed out on because you didn't feel confident enough? A trial, a position, a conversation, a whole sport?</p>
+          <textarea data-reflect="m0-cost" placeholder="Because I was waiting to feel confident, I've…"></textarea>
+          <div class="th-reflect__foot"><span class="th-reflect__saved" data-saved-for="m0-cost"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device</span></div>
+        </div>
+
+        <div class="th-reflect">
+          <p class="th-reflect__q">The magic-switch test</p>
+          <p class="th-reflect__hint">Imagine you woke up tomorrow with all the confidence in the world — but you behaved exactly the same. Same training, same games, same conversations, nothing changes. Would that satisfy you? (Nobody ever says yes.) So what is the confidence actually <em>for</em>?</p>
+          <textarea data-reflect="m0-magic" placeholder="What I actually want the confidence for is…"></textarea>
+          <div class="th-reflect__foot"><span class="th-reflect__saved" data-saved-for="m0-magic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device</span></div>
+        </div>
+
+        <div class="th-reflect">
+          <p class="th-reflect__q">In a world where you had unlimited confidence&hellip;</p>
+          <p class="th-reflect__hint">How would you train, compete and play differently? How would you carry yourself — walk, talk, warm up? How would you treat teammates, coaches, family&hellip; and yourself? How would you talk to yourself? What would you <strong>start</strong> doing — and what would you <strong>stop</strong>?</p>
+          <textarea data-reflect="m0-unlimited" placeholder="With unlimited confidence I would…"></textarea>
+          <div class="th-reflect__foot"><span class="th-reflect__saved" data-saved-for="m0-unlimited"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device</span></div>
+        </div>
+
+        <div class="th-reflect">
+          <p class="th-reflect__q">&ldquo;Life is a daring adventure, or nothing.&rdquo;</p>
+          <p class="th-reflect__hint">Helen Keller — deaf and blind from 19 months old, went on to become a world-famous author and advocate. Given those two options for your sport and your life&hellip; which do you choose? And what's <strong>one small daring move</strong> you could make this week, even with the nerves along for the ride?</p>
+          <textarea data-reflect="m0-daring" placeholder="I choose… and this week my one daring move is…"></textarea>
+          <div class="th-reflect__foot"><span class="th-reflect__saved" data-saved-for="m0-daring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saved on this device</span></div>
+        </div>
+
+        <p class="thm-cred">These questions and the two rules are adapted from <strong><em>The Confidence Gap</em> by Dr Russ Harris</strong> — the same acceptance-and-commitment (ACT) approach this whole program is built on. If this section hooked you, the book is a brilliant companion read to THRIVE.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 4 · THE FOUNDATIONS (brain-health behaviours) ========== -->
   <section class="th-sec" id="foundations">
     <div class="container">
       <div class="th-wrap">
-        <p class="th-eyebrow">03 · The foundations</p>
+        <p class="th-eyebrow">04 · The foundations</p>
         <h2 class="th-h2">Before the mind,<br><em>the body it runs on</em></h2>
         <p class="th-p">Before we train your mind, a straight word about the body it runs on. Psychological flexibility is powerful &mdash; but it&rsquo;s not magic, and it doesn&rsquo;t run on empty. A tired, under-fuelled, dehydrated or disconnected brain will always struggle to be open, present and engaged, no matter how sharp your ACE skills get. These are the <strong>brain-health behaviours</strong> &mdash; the physical foundations of mental performance and wellbeing. Get them roughly right and every skill in THRIVE lands better.</p>
         <p class="th-p">Two things to hold in mind, ACT-style. First, looking after your sleep, fuel, hydration and relationships is itself <strong>values-based action</strong> &mdash; it&rsquo;s you doing what matters for your body and your life. Second, <strong>hold it lightly:</strong> this isn&rsquo;t about perfect, &ldquo;clean&rdquo; living or another stick to beat yourself with. Aim for <em>workable, good-enough</em> habits, not perfection &mdash; otherwise wellbeing just becomes one more thing to struggle with.</p>
@@ -501,7 +652,7 @@
   <section class="th-sec th-sec--alt" id="setup">
     <div class="container">
       <div class="th-wrap">
-        <p class="th-eyebrow">04 · Set up for success</p>
+        <p class="th-eyebrow">05 · Set up for success</p>
         <h2 class="th-h2">Give the habit<br><em>a fighting chance</em></h2>
         <p class="th-p">The number-one enemy of any program like this is drop-off. A tiny bit of set-up now makes it far more likely you'll still be here in nine weeks. Tick these off as you go — your choices save on this device only.</p>
 
@@ -534,7 +685,7 @@
   <section class="th-sec th-sec--alt" id="reflect">
     <div class="container">
       <div class="th-wrap">
-        <p class="th-eyebrow">05 · Reflect</p>
+        <p class="th-eyebrow">06 · Reflect</p>
         <h2 class="th-h2">Before you go on,<br><em>get it down</em></h2>
         <p class="th-p">Reflection is where a program stops being content and starts being yours. Take a couple of minutes with these. Everything you type is saved <strong>only on this device</strong> — nothing is sent anywhere — and it'll still be here when you come back.</p>
 
@@ -571,7 +722,7 @@
   <section class="th-sec" id="checkin">
     <div class="container">
       <div class="th-wrap">
-        <p class="th-eyebrow">06 · Your baseline check-in</p>
+        <p class="th-eyebrow">07 · Your baseline check-in</p>
         <h2 class="th-h2">Find your<br><em>starting line</em></h2>
         <p class="th-p">This is optional, private, and <strong>not a test</strong> — it's a mirror. Twelve quick statements give you a read on where you're starting across the three pillars THRIVE trains: <strong>Be Open, Be Present, Do What Matters</strong>. There are no good or bad scores — just a starting line you'll watch move as you go. Come back and re-take it at the midpoint and the end.</p>
 
@@ -969,6 +1120,57 @@
           try { localStorage.setItem(key, on ? '0' : '1'); } catch (e) {}
         });
       });
+
+      /* Confidence-gap myth-buster quiz */
+      var quiz = document.getElementById('mythQuiz');
+      if (quiz) {
+        var items = quiz.querySelectorAll('.thm-myth__item');
+        var scoreEl = document.getElementById('mythScore');
+
+        function answer(item, pick, silent) {
+          var correct = item.getAttribute('data-answer');
+          item.classList.add('is-answered');
+          item.querySelectorAll('.thm-myth__btn').forEach(function (b) {
+            if (b.getAttribute('data-pick') === pick) {
+              b.classList.add('is-picked', pick === correct ? 'is-right' : 'is-wrong');
+            }
+          });
+          if (!silent) {
+            try { localStorage.setItem('thrive_m0_myth_' + item.getAttribute('data-myth'), pick); } catch (e) {}
+          }
+          updateScore();
+        }
+
+        function updateScore() {
+          var done = 0, right = 0;
+          items.forEach(function (it) {
+            if (it.classList.contains('is-answered')) {
+              done++;
+              if (it.querySelector('.thm-myth__btn.is-right')) right++;
+            }
+          });
+          if (done === items.length) {
+            scoreEl.hidden = false;
+            scoreEl.innerHTML = 'You called <strong>' + right + ' of ' + items.length + '</strong> — ' +
+              (right >= 4 ? 'you’re already thinking like this program.' :
+               right >= 2 ? 'and the ones that surprised you are exactly why THRIVE exists.' :
+               'don’t sweat it — the whole culture teaches the wrong rules. That’s the point.');
+          }
+        }
+
+        items.forEach(function (item) {
+          /* restore saved answers */
+          var saved = null;
+          try { saved = localStorage.getItem('thrive_m0_myth_' + item.getAttribute('data-myth')); } catch (e) {}
+          if (saved) answer(item, saved, true);
+          item.querySelectorAll('.thm-myth__btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              if (item.classList.contains('is-answered')) return;
+              answer(item, btn.getAttribute('data-pick'));
+            });
+          });
+        });
+      }
     })();
   </script>
 
