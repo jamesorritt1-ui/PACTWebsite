@@ -82,14 +82,97 @@
     }, 4000);
   }
 
+  /* ---- 3. Sticky mini table-of-contents -------------------------------- */
+  var tocTicking = false, tocScan = null;
+
+  function headerH() {
+    var v = parseFloat(getComputedStyle(root).getPropertyValue('--header-height'));
+    return isNaN(v) ? 80 : v;
+  }
+
+  function setupToc() {
+    var src = document.querySelector('.thm-toc');
+    if (!src) return;                       /* modules only; hub/bonus skip */
+    var links = src.querySelectorAll('a[href^="#"]');
+    if (!links.length) return;
+
+    var bar = document.createElement('nav');
+    bar.className = 'thx-toc';
+    bar.setAttribute('aria-label', 'Section navigation');
+    var inner = document.createElement('div');
+    inner.className = 'thx-toc__inner';
+
+    var map = [];
+    links.forEach(function (l) {
+      var id = (l.getAttribute('href') || '').slice(1);
+      var sec = id && document.getElementById(id);
+      if (!sec) return;
+      var a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = l.textContent;
+      inner.appendChild(a);
+      map.push({ id: id, link: a, section: sec });
+    });
+    if (!map.length) return;
+
+    bar.appendChild(inner);
+    document.body.appendChild(bar);
+
+    var hero = document.querySelector('.thm-hero');
+    var active = null;
+
+    tocScan = function () {
+      /* show once we've scrolled past the hero */
+      var past = hero
+        ? (hero.getBoundingClientRect().bottom < 60)
+        : ((window.scrollY || 0) > 240);
+      bar.classList.toggle('is-visible', past);
+
+      /* which section are we in? last one whose top has crossed the probe
+         line (upper third of the viewport). */
+      var probe = headerH() + Math.min(150, window.innerHeight * 0.35);
+      var cur = map[0].id;
+      for (var i = 0; i < map.length; i++) {
+        if (map[i].section.getBoundingClientRect().top <= probe) cur = map[i].id;
+      }
+      /* at the very bottom the last section may never reach the probe line
+         (page scroll is clamped) — select it explicitly */
+      var docH = document.documentElement.scrollHeight;
+      if ((window.scrollY || 0) + window.innerHeight >= docH - 4) {
+        cur = map[map.length - 1].id;
+      }
+      if (cur !== active) {
+        active = cur;
+        map.forEach(function (m) {
+          var on = m.id === cur;
+          m.link.classList.toggle('is-active', on);
+          if (on) {
+            /* keep the active chip centred without touching page scroll */
+            bar.scrollLeft = m.link.offsetLeft - bar.clientWidth / 2 + m.link.clientWidth / 2;
+          }
+        });
+      }
+      tocTicking = false;
+    };
+
+    window.addEventListener('scroll', function () {
+      if (!tocTicking) { tocTicking = true; requestAnimationFrame(tocScan); }
+    }, { passive: true });
+    tocScan();
+  }
+
   function init() {
     document.body.appendChild(track);
     fill = track.querySelector('.thx-track__fill');
     avatar = track.querySelector('.thx-track__avatar');
     update();
     setupReveal();
+    setupToc();
     window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll, { passive: true });
+    window.addEventListener('resize', function () {
+      onScroll();
+      if (tocScan) tocScan();
+    }, { passive: true });
   }
 
   if (document.readyState === 'loading') {

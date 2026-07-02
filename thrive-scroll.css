@@ -64,6 +64,52 @@
   transform: none;
 }
 
+/* ---- 3. Sticky mini table-of-contents ----------------------------------- */
+/* Built by JS from the in-hero .thm-toc. Slides in once the hero scrolls
+   away; the chip for the section you're in highlights. Horizontally
+   scrollable so it never wraps or crowds the screen on a phone. */
+.thx-toc{
+  position: fixed;
+  top: var(--header-height, 80px);
+  left: 0; right: 0;
+  z-index: 995;                    /* under the header (1000), over content */
+  background: rgba(5,5,5,0.94);
+  border-bottom: 1px solid var(--line);
+  transform: translateY(-130%);
+  transition: transform .3s ease;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.thx-toc::-webkit-scrollbar{ display: none; }
+.thx-toc.is-visible{ transform: translateY(0); }
+.thx-toc__inner{
+  display: flex;
+  gap: 8px;
+  padding: 9px 16px;
+  white-space: nowrap;
+}
+.thx-toc a{
+  flex: 0 0 auto;
+  font-family: var(--font-heading, sans-serif);
+  font-size: .66rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted, #9A9A9A);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 13px;
+  text-decoration: none;
+  transition: color .2s, border-color .2s, background .2s;
+}
+.thx-toc a:hover{ color: var(--ink, #ECECEC); border-color: var(--ink, #ECECEC); }
+.thx-toc a.is-active{
+  color: #050505;
+  background: var(--yellow, #FFE500);
+  border-color: var(--yellow, #FFE500);
+}
+/* Keep jumped-to sections clear of the fixed header + sticky TOC bar */
+.thx-js .th-sec[id]{ scroll-margin-top: calc(var(--header-height, 80px) + 54px); }
+
 /* ---- Accessibility: prefers-reduced-motion ------------------------------ */
 @media (prefers-reduced-motion: reduce){
   .thx-js .thx-reveal{
@@ -74,4 +120,6 @@
   .thx-track__fill,
   .thx-track__avatar{ transition: none !important; }
   .thx-track.is-done .thx-track__avatar{ animation: none !important; }
+  .thx-toc{ transition: none !important; }
+  .thx-toc a{ transition: none !important; }
 }

@@ -93,6 +93,21 @@
     .thm-breath__label { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-family:var(--font-heading); font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:#fff; }
     @keyframes thBreathe { 0%,100% { transform:scale(0.62); } 50% { transform:scale(1); } }
     @media (prefers-reduced-motion: reduce) { .thm-breath__circle { animation:none; transform:scale(0.85); } }
+    /* Paced-breath scroll-snap carousel (prototype) — horizontal so it never
+       hijacks the page's vertical scroll. Swipe / drag through each cue. */
+    .thm-snap { position:relative; margin:26px 0 8px; border:1px solid var(--line); border-radius:16px; overflow:hidden; background:rgba(255,255,255,0.02); }
+    .thm-snap__hint { position:absolute; top:12px; left:0; right:0; text-align:center; font-family:var(--font-heading); font-size:0.62rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); z-index:2; pointer-events:none; }
+    .thm-snap__track { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+    .thm-snap__track::-webkit-scrollbar { display:none; }
+    .thm-snap__panel { flex:0 0 100%; min-height:230px; scroll-snap-align:center; scroll-snap-stop:always; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:44px 24px 30px; opacity:.4; transform:scale(.95); transition:opacity .45s ease, transform .45s ease; }
+    .thm-snap__panel.is-current { opacity:1; transform:scale(1); }
+    .thm-snap__k { font-family:var(--font-heading); font-size:1.9rem; letter-spacing:0.02em; text-transform:uppercase; color:var(--yellow); line-height:1; }
+    .thm-snap__panel p { margin:12px 0 0; max-width:300px; color:var(--ink); font-weight:300; line-height:1.6; }
+    .thm-snap__panel--end .thm-snap__k { color:#fff; }
+    .thm-snap__dots { display:flex; gap:7px; justify-content:center; padding:0 0 14px; }
+    .thm-snap__dots span { width:7px; height:7px; border-radius:50%; background:var(--line); transition:background .25s, transform .25s; }
+    .thm-snap__dots span.is-on { background:var(--yellow); transform:scale(1.35); }
+    @media (prefers-reduced-motion: reduce) { .thm-snap__track { scroll-behavior:auto; } .thm-snap__panel { opacity:1; transform:none; transition:none; } }
     .thm-practice__nav { display:flex; gap:12px; justify-content:center; margin-top:26px; flex-wrap:wrap; }
     .thm-practice__prev { background:none; border:1px solid var(--line); color:var(--ink); font-family:var(--font-heading); font-size:0.8rem; letter-spacing:0.06em; text-transform:uppercase; padding:11px 20px; cursor:pointer; transition:.2s; }
     .thm-practice__prev:hover { border-color:#fff; color:#fff; }
@@ -233,7 +248,7 @@
     .thm-vid__cap em { color:var(--yellow); font-style:normal; font-weight:500; }
     @media (max-width:640px){ .thm-watch__grid{ grid-template-columns:1fr; } }
   </style>
-  <link rel="stylesheet" href="thrive-scroll.css?v=1">
+  <link rel="stylesheet" href="thrive-scroll.css?v=2">
 </head>
 <body class="th">
 
@@ -546,8 +561,53 @@
           </div>
         </div>
         <p class="th-p">However that felt is fine — there's no "doing it right". If the feeling was still there at the end, <strong>that's success, not failure.</strong> The goal was never to get rid of it. The goal was to stop fighting it and still choose your next move.</p>
+
+        <p class="th-p" style="margin-top:34px;">Want to just breathe for a moment? Swipe slowly through the paced breath below — let each cue land before you move to the next.</p>
+        <div class="thm-snap" id="pacedBreath">
+          <div class="thm-snap__hint">Swipe &rarr; slowly</div>
+          <div class="thm-snap__track" id="pbTrack" tabindex="0" role="group" aria-label="Paced breathing — swipe through each cue">
+            <div class="thm-snap__panel"><span class="thm-snap__k">Settle</span><p>Sit or stand tall. Feet flat. Let your eyes soften.</p></div>
+            <div class="thm-snap__panel"><span class="thm-snap__k">Breathe in</span><p>Slow, through the nose — about four counts.</p></div>
+            <div class="thm-snap__panel"><span class="thm-snap__k">Tiny pause</span><p>Rest at the top for a moment. No strain.</p></div>
+            <div class="thm-snap__panel"><span class="thm-snap__k">Longer out</span><p>Breathe out slowly — about six counts. Longer than the in-breath.</p></div>
+            <div class="thm-snap__panel"><span class="thm-snap__k">Again &times;3</span><p>Keep going — out-breath always a little longer than the in.</p></div>
+            <div class="thm-snap__panel thm-snap__panel--end"><span class="thm-snap__k">Come back</span><p>Feel your feet. The feeling can ride along. Choose your next move.</p></div>
+          </div>
+          <div class="thm-snap__dots" id="pbDots" aria-hidden="true"></div>
+        </div>
       </div>
     </div>
+    <script>
+    /* Paced-breath carousel: current-panel highlight + dots (prototype) */
+    (function () {
+      var track = document.getElementById('pbTrack');
+      var dotsWrap = document.getElementById('pbDots');
+      if (!track || !dotsWrap) return;
+      var panels = track.querySelectorAll('.thm-snap__panel');
+      var dots = [];
+      for (var i = 0; i < panels.length; i++) {
+        var d = document.createElement('span');
+        if (i === 0) d.className = 'is-on';
+        dotsWrap.appendChild(d);
+        dots.push(d);
+      }
+      panels[0].classList.add('is-current');
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            var idx = Array.prototype.indexOf.call(panels, e.target);
+            if (e.isIntersecting && e.intersectionRatio > 0.6) {
+              for (var j = 0; j < panels.length; j++) {
+                panels[j].classList.toggle('is-current', j === idx);
+                dots[j].classList.toggle('is-on', j === idx);
+              }
+            }
+          });
+        }, { root: track, threshold: [0.6] });
+        panels.forEach(function (p) { io.observe(p); });
+      }
+    })();
+    </script>
   </section>
 
   <!-- ========== 4 · ACTIVITY: NAME IT ========== -->
@@ -1001,6 +1061,6 @@
   })();
   </script>
 
-  <script src="thrive-scroll.js?v=1"></script>
+  <script src="thrive-scroll.js?v=3"></script>
 </body>
 </html>
