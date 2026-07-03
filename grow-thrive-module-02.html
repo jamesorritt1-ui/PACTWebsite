@@ -134,6 +134,10 @@
     .thm-tug__svg { width:100%; height:auto; display:block; max-width:760px; margin:0 auto; }
     .thm-tug__svg #tugFreedom { transition:opacity .55s ease .15s; }
     .thm-tug__svg text { user-select:none; }
+    .thm-tug__svg #tugYou, .thm-tug__svg #tugYouFree { transition:opacity .45s ease; }
+    @keyframes tugBreathe { 0%,100% { transform:scale(1); } 50% { transform:scale(1.018); } }
+    .thm-tug__svg #tugMonInner { transform-box:fill-box; transform-origin:50% 95%; animation:tugBreathe 3.2s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) { .thm-tug__svg #tugMonInner { animation:none; } .thm-tug__svg #tugYou, .thm-tug__svg #tugYouFree { transition:none; } }
     .thm-tug__caption { text-align:center; color:var(--ink); font-size:1rem; line-height:1.6; font-weight:300; max-width:600px; margin:16px auto 22px; min-height:3.2em; }
     .thm-tug__caption strong { color:#fff; font-weight:600; }
     .thm-tug__caption b { color:var(--yellow); font-weight:600; }
@@ -149,7 +153,7 @@
     .thm-tug__controls .btn { flex:0 0 auto; }
     .thm-tug__reminder { text-align:center; font-size:0.88rem; color:var(--muted); margin:20px auto 0; max-width:560px; line-height:1.6; font-weight:300; }
     .thm-tug__reminder strong { color:#fff; }
-    @media (max-width:600px){ .thm-tug__controls{ flex-direction:column; align-items:stretch; } .thm-tug__controls .btn{ width:100%; } }
+    @media (max-width:600px){ .thm-tug__controls{ flex-direction:column; align-items:stretch; gap:18px; } .thm-tug__slider, .thm-tug__meter { flex:0 0 auto; min-width:0; } .thm-tug__controls .btn{ width:100%; } }
 
     /* REFLECTION */
     .th-reflect { background:#111; border:1px solid var(--line); border-radius:4px; padding:24px 26px; margin:24px 0; }
@@ -419,47 +423,112 @@
 
         <div class="thm-tug">
           <svg class="thm-tug__svg" viewBox="0 0 800 380" role="img" aria-label="Interactive tug-of-war between you and the anxiety monster">
+            <defs>
+              <radialGradient id="tugBg" cx="50%" cy="42%" r="75%">
+                <stop offset="0%" stop-color="#161616"/>
+                <stop offset="100%" stop-color="#0d0d0d"/>
+              </radialGradient>
+              <radialGradient id="monGrad" cx="42%" cy="34%" r="80%">
+                <stop offset="0%" stop-color="#33302e"/>
+                <stop offset="70%" stop-color="#1d1b1a"/>
+                <stop offset="100%" stop-color="#141313"/>
+              </radialGradient>
+              <linearGradient id="pitGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#3a1c10"/>
+                <stop offset="35%" stop-color="#1a0d07"/>
+                <stop offset="100%" stop-color="#000"/>
+              </linearGradient>
+              <linearGradient id="ropeGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#e3c96b"/>
+                <stop offset="50%" stop-color="#c9a94e"/>
+                <stop offset="100%" stop-color="#a8853a"/>
+              </linearGradient>
+            </defs>
+
+            <rect x="0" y="0" width="800" height="380" fill="url(#tugBg)" rx="8"/>
+
             <!-- ground -->
-            <line x1="20" y1="320" x2="780" y2="320" stroke="rgba(255,255,255,0.14)" stroke-width="2"/>
+            <line x1="24" y1="320" x2="776" y2="320" stroke="rgba(255,255,255,0.16)" stroke-width="2"/>
+            <line x1="24" y1="323.5" x2="776" y2="323.5" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
             <!-- the pit -->
-            <polygon points="345,320 455,320 480,372 320,372" fill="#000" stroke="rgba(255,229,0,0.28)" stroke-width="1.5"/>
-            <line x1="362" y1="330" x2="374" y2="366" stroke="rgba(255,229,0,0.12)"/>
-            <line x1="400" y1="330" x2="400" y2="368" stroke="rgba(255,229,0,0.12)"/>
-            <line x1="438" y1="330" x2="426" y2="366" stroke="rgba(255,229,0,0.12)"/>
-            <text x="400" y="312" text-anchor="middle" fill="#FFE500" font-family="Oswald,sans-serif" font-size="13" letter-spacing="3">SUFFERING</text>
+            <g>
+              <polygon points="342,320 458,320 486,374 314,374" fill="url(#pitGrad)"/>
+              <polygon points="342,320 458,320 486,374 314,374" fill="none" stroke="rgba(192,86,46,0.55)" stroke-width="1.5"/>
+              <path d="M348 322 L360 372 M400 322 L400 373 M452 322 L440 372" stroke="rgba(192,86,46,0.18)" stroke-width="1.2" fill="none"/>
+              <path d="M314 374 L342 320 M486 374 L458 320" stroke="rgba(0,0,0,0.6)" stroke-width="1" fill="none"/>
+              <text x="400" y="310" text-anchor="middle" fill="#c0562e" font-family="Oswald,sans-serif" font-size="13" font-weight="600" letter-spacing="4">SUFFERING</text>
+            </g>
 
             <!-- freedom to act (revealed after dropping the rope) -->
             <g id="tugFreedom" opacity="0">
-              <line x1="165" y1="315" x2="96" y2="315" stroke="#FFE500" stroke-width="2" stroke-dasharray="6 7"/>
-              <polygon points="96,309 84,315 96,321" fill="#FFE500"/>
-              <line x1="72" y1="320" x2="72" y2="248" stroke="#fff" stroke-width="3"/>
-              <polygon points="72,248 112,260 72,272" fill="#FFE500"/>
-              <text x="74" y="300" text-anchor="middle" fill="#9A9A9A" font-family="Oswald,sans-serif" font-size="10" letter-spacing="1.5">WHAT MATTERS</text>
+              <path d="M150 306 L100 306" stroke="#FFE500" stroke-width="2" stroke-dasharray="5 7" fill="none" opacity="0.8"/>
+              <path d="M126 299 L114 306 L126 313 M108 299 L96 306 L108 313" stroke="#FFE500" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="66" y1="320" x2="66" y2="238" stroke="#ECECEC" stroke-width="3.5" stroke-linecap="round"/>
+              <path d="M66 238 L110 250 L66 262 Z" fill="#FFE500"/>
+              <ellipse cx="66" cy="321" rx="16" ry="3.5" fill="rgba(0,0,0,0.5)"/>
+              <text x="70" y="292" text-anchor="middle" fill="#9A9A9A" font-family="Oswald,sans-serif" font-size="10" letter-spacing="2">WHAT MATTERS</text>
             </g>
 
-            <!-- rope -->
-            <path id="tugRope" d="M 212 212 Q 400 260 586 212" fill="none" stroke="#b9a24a" stroke-width="4" stroke-linecap="round"/>
+            <!-- rope (shadow pass + main pass) -->
+            <path id="tugRopeSh" d="M 212 212 Q 400 260 586 212" fill="none" stroke="#59481f" stroke-width="8" stroke-linecap="round"/>
+            <path id="tugRope" d="M 212 212 Q 400 260 586 212" fill="none" stroke="url(#ropeGrad)" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="10 5"/>
 
-            <!-- YOU -->
+            <!-- YOU · pulling (Olympic-pictogram style) -->
             <g id="tugYou">
-              <line x1="186" y1="320" x2="172" y2="262" stroke="#FFE500" stroke-width="5" stroke-linecap="round"/>
-              <line x1="150" y1="320" x2="170" y2="262" stroke="#FFE500" stroke-width="5" stroke-linecap="round"/>
-              <line x1="171" y1="262" x2="182" y2="216" stroke="#FFE500" stroke-width="6" stroke-linecap="round"/>
-              <circle cx="184" cy="201" r="14" fill="none" stroke="#FFE500" stroke-width="4"/>
-              <line x1="181" y1="222" x2="212" y2="212" stroke="#FFE500" stroke-width="5" stroke-linecap="round"/>
-              <text x="176" y="345" text-anchor="middle" fill="#FFE500" font-family="Oswald,sans-serif" font-size="11" letter-spacing="2">YOU</text>
+              <ellipse cx="172" cy="322" rx="42" ry="5" fill="rgba(0,0,0,0.55)"/>
+              <circle cx="167" cy="191" r="15" fill="#FFE500"/>
+              <path d="M175 207 L196 258" stroke="#FFE500" stroke-width="13" stroke-linecap="round" fill="none"/>
+              <path d="M179 213 L198 212 L214 210" stroke="#FFE500" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M182 224 L200 218 L214 214" stroke="#FFE500" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M196 258 L166 290 L146 318" stroke="#FFE500" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M196 258 L193 294 L189 318" stroke="#FFE500" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M146 318 L132 320 M189 318 L177 320" stroke="#FFE500" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <text x="170" y="348" text-anchor="middle" fill="#FFE500" font-family="Oswald,sans-serif" font-size="11" font-weight="600" letter-spacing="2.5">YOU</text>
+            </g>
+
+            <!-- YOU · free (revealed after dropping the rope) -->
+            <g id="tugYouFree" opacity="0">
+              <ellipse cx="170" cy="322" rx="34" ry="5" fill="rgba(0,0,0,0.55)"/>
+              <circle cx="172" cy="186" r="15" fill="#FFE500"/>
+              <path d="M172 203 L172 260" stroke="#FFE500" stroke-width="13" stroke-linecap="round" fill="none"/>
+              <path d="M172 214 L146 230 L124 226" stroke="#FFE500" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M172 218 L188 246 L184 268" stroke="#FFE500" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M172 260 L156 290 L150 318" stroke="#FFE500" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M172 260 L188 292 L192 318" stroke="#FFE500" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M150 318 L136 320 M192 318 L204 320" stroke="#FFE500" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <text x="170" y="348" text-anchor="middle" fill="#FFE500" font-family="Oswald,sans-serif" font-size="11" font-weight="600" letter-spacing="2.5">YOU</text>
             </g>
 
             <!-- MONSTER -->
             <g id="tugMonster">
-              <polygon points="620,206 612,182 632,201" fill="#242424" stroke="#c0562e" stroke-width="2"/>
-              <polygon points="676,206 684,182 664,201" fill="#242424" stroke="#c0562e" stroke-width="2"/>
-              <ellipse cx="648" cy="256" rx="52" ry="60" fill="#242424" stroke="#c0562e" stroke-width="2.5"/>
-              <circle cx="632" cy="244" r="9" fill="#fff"/><circle cx="634" cy="246" r="4" fill="#000"/>
-              <circle cx="666" cy="244" r="9" fill="#fff"/><circle cx="668" cy="246" r="4" fill="#000"/>
-              <path d="M628 282 Q648 270 668 282" fill="none" stroke="#c0562e" stroke-width="3" stroke-linecap="round"/>
-              <line x1="600" y1="250" x2="586" y2="214" stroke="#242424" stroke-width="7" stroke-linecap="round"/>
-              <text x="648" y="336" text-anchor="middle" fill="#9A9A9A" font-family="Oswald,sans-serif" font-size="10" letter-spacing="1.5">ANXIETY · NEVER SHRINKS</text>
+              <ellipse cx="650" cy="322" rx="62" ry="6" fill="rgba(0,0,0,0.6)"/>
+              <g id="tugMonInner">
+                <!-- gripping arm -->
+                <path d="M612 262 C 598 246 590 230 586 214" stroke="#1d1b1a" stroke-width="12" stroke-linecap="round" fill="none"/>
+                <path d="M612 262 C 598 246 590 230 586 214" stroke="rgba(192,86,46,0.5)" stroke-width="12" stroke-linecap="round" fill="none" stroke-opacity="0.25"/>
+                <circle cx="586" cy="213" r="8" fill="#2a2523" stroke="#c0562e" stroke-width="1.5"/>
+                <!-- body with horn bumps -->
+                <path d="M602 302 C 586 262 594 212 622 194 C 626 176 636 170 644 184 C 650 168 662 168 666 186 C 698 194 712 226 710 260 C 708 296 690 312 652 314 C 626 314 610 312 602 302 Z" fill="url(#monGrad)" stroke="#c0562e" stroke-width="2.5"/>
+                <!-- fur ticks -->
+                <path d="M600 240 L592 236 M604 270 L595 270 M618 300 L612 307 M700 236 L708 231 M706 274 L714 276 M688 302 L694 309 M628 190 L624 182 M676 190 L681 183" stroke="rgba(192,86,46,0.45)" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <!-- horns -->
+                <path d="M622 195 C 614 184 610 172 614 162 C 622 170 628 180 630 190 Z" fill="#241f1d" stroke="#c0562e" stroke-width="1.5"/>
+                <path d="M668 189 C 674 178 682 168 692 164 C 690 174 684 186 676 194 Z" fill="#241f1d" stroke="#c0562e" stroke-width="1.5"/>
+                <!-- eyes: asymmetric -->
+                <circle cx="636" cy="240" r="11.5" fill="#f4efe4"/>
+                <circle cx="639" cy="243" r="4.6" fill="#0a0a0a"/>
+                <circle cx="637.4" cy="241.2" r="1.4" fill="#fff"/>
+                <circle cx="672" cy="234" r="7" fill="#f4efe4"/>
+                <circle cx="674" cy="236" r="3" fill="#0a0a0a"/>
+                <path d="M622 226 L648 233 M683 222 L662 229" stroke="#c0562e" stroke-width="3" stroke-linecap="round" fill="none"/>
+                <!-- grin with teeth -->
+                <path d="M622 274 Q 652 294 684 268" fill="none" stroke="#c0562e" stroke-width="3" stroke-linecap="round"/>
+                <path d="M634 279 L638 287 L643 281 M654 283 L658 291 L663 284 M672 278 L677 285 L681 277" fill="none" stroke="#f4efe4" stroke-width="2" stroke-linejoin="round"/>
+                <!-- stub legs -->
+                <path d="M628 312 L626 321 M672 313 L675 321" stroke="#1d1b1a" stroke-width="10" stroke-linecap="round" fill="none"/>
+              </g>
+              <text x="650" y="348" text-anchor="middle" fill="#9A9A9A" font-family="Oswald,sans-serif" font-size="10" letter-spacing="2">ANXIETY &#183; NEVER SHRINKS</text>
             </g>
           </svg>
 
@@ -997,6 +1066,8 @@
     var svgYou = document.getElementById('tugYou');
     var svgMon = document.getElementById('tugMonster');
     var rope   = document.getElementById('tugRope');
+    var ropeSh = document.getElementById('tugRopeSh');
+    var youFree= document.getElementById('tugYouFree');
     var freedom= document.getElementById('tugFreedom');
     var range  = document.getElementById('tugRange');
     var meter  = document.getElementById('tugMeter');
@@ -1013,15 +1084,19 @@
       svgYou.setAttribute('transform', 'translate(' + dx.toFixed(1) + ',0) rotate(' + (-lean).toFixed(2) + ' 170 320)');
       svgMon.setAttribute('transform', 'translate(' + mdx.toFixed(1) + ',0) rotate(' + mlean.toFixed(2) + ' 648 320)');
       var x1 = 212 + dx, x2 = 586 + mdx, y = 212, sag = Math.max(24, 80 - s * 0.55);
-      rope.setAttribute('d', 'M ' + x1.toFixed(1) + ' ' + y + ' Q 400 ' + (y + sag).toFixed(1) + ' ' + x2.toFixed(1) + ' ' + y);
+      var d = 'M ' + x1.toFixed(1) + ' ' + y + ' Q 400 ' + (y + sag).toFixed(1) + ' ' + x2.toFixed(1) + ' ' + y;
+      rope.setAttribute('d', d); ropeSh.setAttribute('d', d);
       meter.style.width = Math.round(s) + '%';
     }
     function released() {
       svgYou.setAttribute('transform', 'translate(0,0)');
       svgMon.setAttribute('transform', 'translate(0,0)');
-      rope.setAttribute('d', 'M 196 312 Q 380 366 586 214');
+      var d = 'M 196 312 Q 380 366 586 214';
+      rope.setAttribute('d', d); ropeSh.setAttribute('d', d);
       meter.style.width = '6%';
       freedom.setAttribute('opacity', '1');
+      svgYou.setAttribute('opacity', '0');
+      youFree.setAttribute('opacity', '1');
     }
     function setCaption() {
       var html;
@@ -1058,6 +1133,8 @@
       } else {
         dropped = false; range.disabled = false; dropBtn.textContent = 'Drop the rope';
         freedom.setAttribute('opacity', '0');
+        svgYou.setAttribute('opacity', '1');
+        youFree.setAttribute('opacity', '0');
         struggle = parseInt(range.value, 10); place(struggle); setCaption();
       }
     });
