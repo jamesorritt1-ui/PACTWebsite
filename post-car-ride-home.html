@@ -482,7 +482,9 @@
   <script src="script.js?v=5"></script>
   <script>
     (function () {
-      const revealEls = document.querySelectorAll('.pt-article__body, .pt-author__card, .bl-card');
+      // The article body is always visible; only short blocks fade in on scroll.
+      // (Gating a very tall element behind an intersection ratio can leave it hidden.)
+      const revealEls = document.querySelectorAll('.pt-author__card, .bl-card');
       revealEls.forEach(el => el.classList.add('reveal'));
       const cards = document.querySelectorAll('.pt-related__grid .bl-card');
       cards.forEach((c, i) => { c.style.transitionDelay = `${i * 0.08}s`; });
@@ -493,8 +495,12 @@
             observer.unobserve(entry.target);
           }
         });
-      }, { rootMargin: '0px 0px -60px 0px', threshold: 0.08 });
+      }, { rootMargin: '0px 0px -60px 0px', threshold: 0 });
       revealEls.forEach(el => observer.observe(el));
+      // Safety net: reveal anything still hidden after 3s no matter what.
+      setTimeout(function () {
+        document.querySelectorAll('.reveal:not(.visible)').forEach(function (el) { el.classList.add('visible'); });
+      }, 3000);
     })();
   </script>
 
