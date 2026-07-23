@@ -187,7 +187,7 @@ sup{font-size:.62em;line-height:0;font-weight:600}
 /* ============ BACK COVER ============ */
 .back__emblem{position:absolute;right:-70px;top:-40px;width:360px;opacity:.06}
 .back__in{position:absolute;inset:0;padding:20mm 18mm 16mm;display:flex;flex-direction:column}
-.back__logo{height:104px;width:auto}
+.back__logo{display:block;height:100px;width:auto;align-self:flex-start}
 .back__title{margin-top:auto;font-family:var(--osw);font-weight:700;font-size:34pt;line-height:1.05;color:#fff}
 .back__title .accent{color:var(--yellow)}
 .back__body{margin-top:14pt;max-width:140mm;font-family:var(--inter);font-weight:300;font-size:12pt;line-height:1.55;color:#CFCFC8}
@@ -226,6 +226,11 @@ sup{font-size:.62em;line-height:0;font-weight:600}
 /* ============ ARROWS BOX (entitlements / not-say) ============ */
 .abox{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--yellow);padding:13pt 16pt 14pt;margin:4pt 0}
 .abox__label{font-family:var(--osw);font-weight:600;font-size:8.8pt;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin-bottom:5pt}
+
+/* ============ DEFINITION (glossary term) ============ */
+.defn{background:var(--panel-warm);border-left:4px solid var(--yellow);padding:12pt 16pt;margin:4pt 0}
+.defn__term{font-family:var(--osw);font-weight:600;font-size:11.5pt;letter-spacing:.03em;text-transform:uppercase;color:var(--ink);margin-bottom:4pt}
+.defn__body{font-family:var(--inter);font-weight:400;font-size:9.9pt;line-height:1.58;color:var(--ink-soft)}
 </style>
 </head>
 <body>
@@ -237,9 +242,9 @@ sup{font-size:.62em;line-height:0;font-weight:600}
   <div class="cover__edge"></div>
   <div class="cover__in">
     <img class="cover__logo" src="assets/logo/logo-vertical.png" alt="The Performance Act">
-    <span class="eyebrow cover__eyebrow">A Guide for Athletes · Ages 13–18</span>
+    <span class="eyebrow cover__eyebrow">A Guide for Athletes</span>
     <h1 class="cover__title">What actually<br>happens when you<br>work with a<br><span class="accent">psychologist.</span></h1>
-    <p class="cover__sub">A straight answer for athletes. What it is, what it isn&rsquo;t, what the research says, and what you&rsquo;re allowed to ask for.</p>
+    <p class="cover__sub">A plain-language guide for athletes — what it is, what it isn&rsquo;t, what the research says, and what you&rsquo;re always welcome to ask about.</p>
     <div class="cover__chips">
       <span class="chip">Psychologist or mental skills coach?</span>
       <span class="chip">Is this therapy?</span>
@@ -257,13 +262,13 @@ sup{font-size:.62em;line-height:0;font-weight:600}
   <div class="inner">
     <div class="section-head">
       <span class="eyebrow">Before you read on</span>
-      <h2 class="htitle">This isn&rsquo;t a pitch.<br>It&rsquo;s an <span class="y">explanation.</span></h2>
+      <h2 class="htitle">What this guide<br>is <span class="y">for.</span></h2>
     </div>
-    <p class="lead">Most athletes we meet have never had anyone explain this properly. They&rsquo;ve heard the words — sport psych, mental skills, mindset, therapy — and they&rsquo;ve quietly filled in the gaps themselves. Usually with something a bit worse than the truth.</p>
+    <p class="lead">A lot of the athletes we meet have never really had this explained to them. They&rsquo;ve heard the words — sport psych, mental skills, mindset, therapy — and understandably filled in the gaps themselves, sometimes with a picture that&rsquo;s a bit scarier than the reality.</p>
     <div class="flow" style="margin-top:12pt">
-      <p class="body">So this document does one job: it tells you what one-to-one psychology support in sport actually involves, in plain language, before you have to decide anything.</p>
+      <p class="body">So all this guide really tries to do is explain, in plain language, what one-to-one psychology support in sport can look like — so that if you do decide anything, you&rsquo;re deciding with the full picture.</p>
       <p class="body">You&rsquo;ll notice we keep coming back to the gym. That&rsquo;s deliberate. The gym is the clearest way we know to explain what this work is, because you already understand how the gym works — the reps, the programme, the boring weeks, the fact that you don&rsquo;t wait until something tears before you start. Everything on the mental side runs on the same logic. It just doesn&rsquo;t get talked about the same way.</p>
-      <p class="body">We&rsquo;ve also included what the research says, including the parts that are less flattering. If someone tells you a psychological approach is guaranteed to work, they&rsquo;re overselling it. We&rsquo;d rather you had the real numbers and made your own call.</p>
+      <p class="body">We&rsquo;ve included what the research says too, including the less flattering parts — because we&rsquo;d rather you had the real picture and made your own mind up. And if anyone ever tells you an approach like this is guaranteed to work, that&rsquo;s promising more than the evidence honestly can.</p>
     </div>
     <div class="note" style="margin-top:14pt">
       <div class="note__label">Who this is for</div>
@@ -311,7 +316,7 @@ sup{font-size:.62em;line-height:0;font-weight:600}
   <div class="inner">
     <div class="section-head">
       <span class="eyebrow">What&rsquo;s inside</span>
-      <h2 class="htitle">Eight honest answers,<br>in the order they <span class="y">matter.</span></h2>
+      <h2 class="htitle">Eight questions,<br>taken one at a <span class="y">time.</span></h2>
     </div>
     <div style="margin-top:8pt">
       <div class="toc__item"><div class="toc__num">01</div><div><div class="toc__t">You already do this — you just call it something else</div><div class="toc__d">Why the mental side is training, not repair work.</div></div><div class="toc__pg">05</div></div>
@@ -341,7 +346,7 @@ sup{font-size:.62em;line-height:0;font-weight:600}
     <div class="flow" style="margin-top:12pt">
       <p class="body">Think about what you already do. You have a way you warm up. You have things you say to yourself after a mistake. You have a way of handling the twenty minutes before you compete — music, silence, mates, distance. You have a story you tell yourself about what it means when you get dropped, or benched, or beaten by someone you used to beat.</p>
       <p class="body">None of that is neutral. All of it affects how you perform. And almost none of it was designed. It got assembled out of whatever you absorbed from coaches, teammates, family, and the internet, somewhere around age eleven, and then it just kept running.</p>
-      <p class="body">Working with a psychologist is the process of taking that system out, looking at it properly, keeping the parts that work, and rebuilding the parts that don&rsquo;t. That&rsquo;s it. That&rsquo;s the whole thing.</p>
+      <p class="body">Working with a psychologist is really just the process of taking that system out, looking at it properly, keeping the parts that work, and reshaping the parts that don&rsquo;t. That&rsquo;s honestly most of what it is.</p>
     </div>
     <div class="gym" style="margin-top:13pt">
       <div class="gym__label"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="7" x2="6" y2="17"/><line x1="3" y1="9.5" x2="3" y2="14.5"/><line x1="18" y1="7" x2="18" y2="17"/><line x1="21" y1="9.5" x2="21" y2="14.5"/><line x1="6" y1="12" x2="18" y2="12"/></svg> In the gym</div>
@@ -377,43 +382,37 @@ sup{font-size:.62em;line-height:0;font-weight:600}
       <span class="eyebrow">Section 02</span>
       <h2 class="htitle">Psychologist, mental skills<br>coach, therapist — <span class="y">who does what</span></h2>
     </div>
-    <p class="lead">This is the question we&rsquo;re asked most, and it&rsquo;s a fair one, because the titles genuinely overlap. Here&rsquo;s the honest version, including a detail almost nobody knows.</p>
-    <h3 class="subhead">First, the thing nobody tells you</h3>
+    <p class="lead">This is one of the questions we&rsquo;re asked most, and it&rsquo;s a fair one — the titles really do overlap. Here&rsquo;s how we&rsquo;d explain it, including one thing that often surprises people.</p>
+    <h3 class="subhead">First, something worth knowing</h3>
     <div class="flow" style="margin-top:6pt">
       <p class="body">In Aotearoa New Zealand there is no such thing as a &ldquo;registered sport psychologist&rdquo;. It isn&rsquo;t a recognised title here. The New Zealand Psychologists Board registers people into defined scopes of practice — Psychologist, Clinical Psychologist, Counselling Psychologist, Educational Psychologist, Neuropsychologist — and sport isn&rsquo;t one of them.</p>
-      <p class="body">So the accurate description of what we are is this: we are registered psychologists who work in sport. The registration is in psychology. The specialisation is in the setting, built through years of working in it. If you ever see someone advertising themselves as a &ldquo;registered sport psychologist&rdquo;, that isn&rsquo;t a qualification they hold — it&rsquo;s a description they&rsquo;ve chosen.</p>
+      <p class="body">So the honest description of what we are is simply this: registered psychologists who work in sport. The registration is in psychology; the specialisation is in the setting, built up over years of working in it. If you do come across the phrase &ldquo;registered sport psychologist&rdquo; anywhere, it&rsquo;s worth knowing that&rsquo;s describing a focus, not a separate qualification — because that qualification doesn&rsquo;t exist here.</p>
     </div>
-    <div class="note" style="margin-top:12pt">
-      <div class="note__label">What &ldquo;registered&rdquo; actually buys you</div>
-      <p>&ldquo;Psychologist&rdquo; is a protected title under the Health Practitioners Competence Assurance Act 2003. To use it, a person must be registered with the New Zealand Psychologists Board, hold a current practising certificate, have completed a minimum of six years of university study plus supervised practice, maintain ongoing professional development and supervision, work under a code of ethics, and be answerable through a formal complaints process.</p>
-      <p>&ldquo;Mental skills coach&rdquo;, &ldquo;mindset coach&rdquo; and &ldquo;performance coach&rdquo; are not protected. Anyone may use them. That does not mean the people using them are unqualified — plenty of mental skills coaches are excellent and have exactly the right training for the work they do. It means the title alone tells you nothing, so you have to ask.</p>
+    <h3 class="subhead" style="margin-top:13pt">So what does being &ldquo;registered&rdquo; mean?</h3>
+    <div class="flow" style="margin-top:6pt">
+      <p class="body">In plain terms, it means we&rsquo;re registered health professionals — the same category as physiotherapists, nurses or doctors. &ldquo;Psychologist&rdquo; is a protected title, so to use it we have to be registered with the New Zealand Psychologists Board and hold a current practising certificate. That brings real obligations: we work to legal standards of care and a code of ethics, we keep up ongoing training and supervision, and there&rsquo;s an independent process you can turn to if something ever isn&rsquo;t right. Those protections exist for you, not for us.</p>
     </div>
   </div>
   <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">07</div></div>
 </section>
 
-<!-- ============================================================ 8 · SECTION 02 table -->
+<!-- ============================================================ 8 · SECTION 02 b — WHAT WE DO -->
 <section class="sheet">
   <div class="inner">
-    <span class="eyebrow" style="margin-bottom:12pt;display:inline-block">Two roles, side by side</span>
-    <h3 class="subhead" style="margin-top:0;margin-bottom:12pt">Where the line actually sits between a mental skills coach and a registered psychologist.</h3>
-    <table class="ctable">
-      <thead>
-        <tr>
-          <th style="width:20%"></th>
-          <th>Mental skills /<br>performance coach</th>
-          <th class="hi">Registered psychologist<br>working in sport</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td class="rl">Focus</td><td>Performance skills — routines, goal setting, focus, confidence, self-talk.</td><td class="hi">Those same skills, plus the psychology underneath them: identity, pressure, motivation, injury, transitions, wellbeing.</td></tr>
-        <tr><td class="rl">Title protected by law?</td><td>No — anyone may use it.</td><td class="hi">Yes. Registration and a current practising certificate are required.</td></tr>
-        <tr><td class="rl">Regulated by</td><td>Not regulated by law. May belong to a voluntary body.</td><td class="hi">NZ Psychologists Board, under the HPCA Act 2003, with a formal complaints pathway.</td></tr>
-        <tr><td class="rl">Can assess for mental health difficulties</td><td>No.</td><td class="hi">Yes, where the psychologist&rsquo;s scope and competence allow it.</td></tr>
-        <tr><td class="rl">Good fit when</td><td>You want to sharpen specific performance skills and nothing else is going on.</td><td class="hi">You want performance work, or you&rsquo;re not sure where the line sits, or both are true at once.</td></tr>
-      </tbody>
-    </table>
-    <div class="pull" style="margin-top:16pt">A registered psychologist is trained across both territories — so you don&rsquo;t have to correctly diagnose your own situation before you book.</div>
+    <span class="eyebrow" style="margin-bottom:12pt;display:inline-block">What that means in practice</span>
+    <h3 class="subhead" style="margin-top:0">Our role — and what &ldquo;scope&rdquo; means</h3>
+    <div class="defn" style="margin-top:11pt">
+      <div class="defn__term">Scope of practice</div>
+      <div class="defn__body">The specific area a practitioner is trained and registered to work within — the lane they&rsquo;re qualified to operate in.</div>
+    </div>
+    <div class="flow" style="margin-top:12pt">
+      <p class="body">Our scope, within The Performance Act, is helping and supporting you with your performance in sport — and the wellbeing that sits underneath it. Day to day, a lot of what we do overlaps with what a good mental skills coach does: the same practical tools — routines, goal-setting, attention, self-talk, imagery. We&rsquo;re genuinely glad that work exists, and we lean on plenty of it ourselves.</p>
+      <p class="body">The main difference is simply the range of support we&rsquo;re trained and qualified to offer. If a performance issue turns out to have something bigger sitting underneath it, we can keep supporting you with that too, rather than having to pass you on — and we&rsquo;ll always talk it through with you first.</p>
+    </div>
+    <div class="note" style="margin-top:13pt">
+      <div class="note__label">Consent &amp; confidentiality</div>
+      <p>Being a health professional also comes with clear boundaries around your information and your say in things. In simple terms: what you share with us stays private — within a few limits we&rsquo;ll always explain right at the start — and we won&rsquo;t pass it on or make big decisions without talking with you first. That&rsquo;s not red tape; it&rsquo;s there so you can speak freely and stay in control of your own story. Section 05 walks through exactly how this works, including where you&rsquo;re under 16.</p>
+    </div>
   </div>
   <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">08</div></div>
 </section>
@@ -425,7 +424,7 @@ sup{font-size:.62em;line-height:0;font-weight:600}
       <div class="gym__label"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="7" x2="6" y2="17"/><line x1="3" y1="9.5" x2="3" y2="14.5"/><line x1="18" y1="7" x2="18" y2="17"/><line x1="21" y1="9.5" x2="21" y2="14.5"/><line x1="6" y1="12" x2="18" y2="12"/></svg> In the gym</div>
       <p>Think about the difference between a strength and conditioning coach and a physiotherapist. Both work on your body. Both know a lot. You&rsquo;d go to the S&amp;C coach to add ten kilos to your squat, and to the physio when your knee is doing something it shouldn&rsquo;t.</p>
       <p>But here&rsquo;s the thing you already know from being in a good programme: the physio doesn&rsquo;t only see injured people, and the S&amp;C coach doesn&rsquo;t stop caring when you get hurt. They overlap constantly. And a physio can do everything an S&amp;C coach can do for your squat, <em>plus</em> handle the knee if it turns out the knee is the actual problem.</p>
-      <p>That&rsquo;s the practical difference here. A registered psychologist is trained across both territories, so you don&rsquo;t have to correctly diagnose your own situation before you book.</p>
+      <p>That&rsquo;s the practical difference here. A registered psychologist is trained across both territories, so you don&rsquo;t have to work out your own situation before you reach out — that part&rsquo;s on us, not you.</p>
     </div>
     <h3 class="subhead" style="margin-top:15pt">The part that actually matters</h3>
     <div class="flow" style="margin-top:6pt">
@@ -447,7 +446,7 @@ sup{font-size:.62em;line-height:0;font-weight:600}
     <p class="lead">We hear this a lot. There are two things bundled inside that sentence, and it&rsquo;s worth pulling them apart, because only one of them is really a question.</p>
     <div class="flow" style="margin-top:12pt">
       <p class="body">The first is factual: <strong>is this the same thing as therapy?</strong> That&rsquo;s fair, it has a clear answer, and we&rsquo;ll give it to you below.</p>
-      <p class="body">The second usually goes unsaid: <em>…and it would say something bad about me if it were.</em> We&rsquo;re not going to nod along with that one. Needing psychological support isn&rsquo;t a character flaw, a weakness, or evidence that you&rsquo;re not tough enough for your sport. It&rsquo;s a normal thing that happens to a very large number of people, including plenty whose careers you&rsquo;d take in a heartbeat. Letting that idea sit unchallenged would make this document easier to read — and would also make us part of the problem.</p>
+      <p class="body">The second usually goes unsaid: <em>…and it would say something bad about me if it were.</em> We&rsquo;d gently push back on that one. Needing psychological support isn&rsquo;t a character flaw, a weakness, or a sign you&rsquo;re not tough enough for your sport. It&rsquo;s a normal thing that happens to a very large number of people, including plenty whose careers you&rsquo;d take in a heartbeat. We could let that idea sit quietly, but it wouldn&rsquo;t feel right to leave it there unspoken.</p>
     </div>
     <h3 class="subhead">So what is therapy, actually?</h3>
     <div class="flow" style="margin-top:6pt">
@@ -508,7 +507,7 @@ sup{font-size:.62em;line-height:0;font-weight:600}
       </div>
     </div>
     <div class="flow" style="margin-top:13pt">
-      <p class="body">So four out of five are managing on their own — not because support wouldn&rsquo;t have helped, but largely because of a story about what asking would mean about them. That story is worth naming out loud, and it&rsquo;s not one we&rsquo;re willing to quietly build a document around.</p>
+      <p class="body">So four out of five are managing on their own — not because support wouldn&rsquo;t have helped, but largely because of a story about what asking would mean about them. That felt worth naming gently, rather than leaving it unsaid.</p>
     </div>
   </div>
   <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">13</div></div>
@@ -526,7 +525,7 @@ sup{font-size:.62em;line-height:0;font-weight:600}
       <div class="jstep">
         <div class="jstep__n">1</div>
         <div><div class="jstep__t">A free <span class="reo">kōrero</span> — working out whether this is even the right thing</div>
-        <p class="jstep__d">Before anything starts there&rsquo;s a free, no-pressure conversation about what&rsquo;s going on and what you&rsquo;re hoping for. You can ask anything. You&rsquo;re not committing to anything. Sometimes the honest answer at this stage is that you don&rsquo;t need a psychologist — you need a conversation with your coach, or better sleep, or a lighter competition schedule. If that&rsquo;s what it looks like, we&rsquo;ll tell you. That&rsquo;s a good outcome, not a failed sale.</p></div>
+        <p class="jstep__d">Before anything starts there&rsquo;s a free, no-pressure conversation about what&rsquo;s going on and what you&rsquo;re hoping for. You can ask anything. You&rsquo;re not committing to anything. Sometimes the honest answer at this stage is that you don&rsquo;t need a psychologist — you need a conversation with your coach, or better sleep, or a lighter competition schedule. If that&rsquo;s what it looks like, we&rsquo;ll say so. That&rsquo;s a good outcome in its own right.</p></div>
       </div>
       <div class="jstep">
         <div class="jstep__n">2</div>
@@ -568,12 +567,12 @@ sup{font-size:.62em;line-height:0;font-weight:600}
       <p>You wouldn&rsquo;t judge a strength block on how you felt after session one. You&rsquo;d give it a training cycle, test it, and adjust. Same here. Most athletes notice something shifting within three or four sessions, and most pieces of work run somewhere between six and twelve — though it depends entirely on what you came in for. And like the gym: the sessions aren&rsquo;t where the change happens. The change happens in the reps you do between them.</p>
     </div>
     <div class="abox" style="margin-top:12pt">
-      <div class="abox__label">What we ask of you</div>
+      <div class="abox__label">A few things that help</div>
       <ul class="arrows">
-        <li>Turn up, including on the weeks you don&rsquo;t feel like it.</li>
-        <li>Be honest — including when the honest answer is &ldquo;I didn&rsquo;t do the thing we agreed.&rdquo;</li>
-        <li>Try things before deciding they won&rsquo;t work.</li>
-        <li>Tell us when something isn&rsquo;t landing. We&rsquo;d much rather change the approach than have you quietly disengage.</li>
+        <li>Turning up, even on the weeks you don&rsquo;t much feel like it.</li>
+        <li>Being honest — including when the honest answer is &ldquo;I didn&rsquo;t do the thing we agreed.&rdquo;</li>
+        <li>Giving things a go before deciding they won&rsquo;t work.</li>
+        <li>Telling us when something isn&rsquo;t landing — we&rsquo;d far rather adjust than have you quietly drift off.</li>
       </ul>
     </div>
   </div>
@@ -825,14 +824,13 @@ sup{font-size:.62em;line-height:0;font-weight:600}
       <div>
         <div class="person__name">James Orritt</div>
         <div class="person__role">Registered Clinical Psychologist</div>
-        <p class="person__bio">A background in rugby, coaching and clinical practice. Leads research on effective coaching conversations, and is committed to making psychology accessible in community sport.</p>
+        <p class="person__bio">James came into psychology through rugby. In the UK he was a student-athlete scholar and played in a professional rugby academy through to age eighteen, having earlier played international schoolboy rugby and spent time in England Rugby&rsquo;s elite player development group on the schoolboy pathway. A chance to keep playing brought him to Aotearoa and into Canterbury&rsquo;s development set-up. After a couple of seasons troubled by concussion he stepped away from playing, and moved into studying clinical and sport psychology — the area he has now worked in for around ten years. That background quietly shapes how he works, and sits behind his research into effective coaching conversations and his focus on making psychology accessible in community sport.</p>
       </div>
     </div>
     <div class="note" style="margin-top:16pt">
       <div class="note__label">If this isn&rsquo;t the right thing right now</div>
-      <p>That&rsquo;s a fine conclusion to reach, and there are other doors. Your GP can help and can refer you on. School counsellors are free and often underrated. If you&rsquo;re in a high-performance programme, there may already be psychology support attached to it that you can access at no cost — worth asking your coach or programme manager before paying for anything privately.</p>
+      <p>That&rsquo;s a completely fine conclusion to reach, and there are other doors. Your GP can help and can refer you on. School counsellors are free and often underrated. If you&rsquo;re in a high-performance programme, there may already be psychology support attached to it that you can access at no cost — worth asking your coach or programme manager before paying for anything privately.</p>
     </div>
-    <div class="pull" style="margin-top:18pt">Two registered psychologists, one standard of care — and a first conversation that costs you nothing but the time.</div>
   </div>
   <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">27</div></div>
 </section>
