@@ -1,7 +1,14 @@
 {
   "cleanUrls": true,
+  "trailingSlash": false,
   "redirects": [
     { "source": "/grow-nomads", "destination": "/grow-login", "permanent": true },
-    { "source": "/grow-nomads.html", "destination": "/grow-login", "permanent": true }
+    { "source": "/grow-nomads.html", "destination": "/grow-login", "permanent": true },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "^performance-act\\.com$" }],
+      "destination": "https://www.performance-act.com/:path*",
+      "permanent": true
+    }
   ]
 }
