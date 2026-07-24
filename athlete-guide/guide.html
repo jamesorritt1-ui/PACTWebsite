@@ -34,11 +34,11 @@ body{font-family:var(--inter);color:var(--ink);background:#555}
 .sheet{position:relative;width:210mm;height:297mm;overflow:hidden;background:var(--paper);page-break-after:always}
 .sheet:last-child{page-break-after:auto}
 .sheet--dark{background:var(--black);color:#fff}
-.inner{position:absolute;inset:0;padding:18mm 18mm 16mm}
-.flow > * + *{margin-top:8.5pt}
+.inner{position:absolute;inset:0;padding:12mm 14mm 14mm}
+.flow > * + *{margin-top:5pt}
 
 /* ============ RUNNING FOOTER ============ */
-.foot{position:absolute;left:18mm;right:18mm;bottom:9mm;display:flex;justify-content:space-between;align-items:center;
+.foot{position:absolute;left:15mm;right:15mm;bottom:7mm;display:flex;justify-content:space-between;align-items:center;
   border-top:1px solid var(--line);padding-top:6px;font-family:var(--osw);font-weight:500;font-size:7.4pt;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .foot__pg{font-weight:600;color:var(--ink);letter-spacing:.1em}
 .foot__mark{display:flex;align-items:center;gap:7px}
@@ -50,15 +50,15 @@ body{font-family:var(--inter);color:var(--ink);background:#555}
 .eyebrow--plain{background:none;color:var(--muted);padding:0;letter-spacing:.26em}
 .hblock{display:inline-block;background:var(--yellow);color:var(--black);font-family:var(--osw);font-weight:700;
   text-transform:uppercase;letter-spacing:.005em;line-height:1.04;padding:8pt 15pt 5pt;font-size:21pt}
-.htitle{font-family:var(--osw);font-weight:700;color:var(--ink);font-size:25pt;line-height:1.08;letter-spacing:.005em}
+.htitle{font-family:var(--osw);font-weight:700;color:var(--ink);font-size:21pt;line-height:1.05;letter-spacing:.005em}
 .htitle .y{color:var(--ink);box-shadow:inset 0 -0.34em 0 var(--yellow)}
 .htitle--dark{color:#fff}
 .accent-rule{width:46pt;height:5px;background:var(--yellow);margin:9pt 0 0}
-.lead{font-family:var(--inter);font-weight:300;font-size:13.5pt;line-height:1.5;color:#4C4840}
+.lead{font-family:var(--inter);font-weight:300;font-size:11.6pt;line-height:1.4;color:#4C4840}
 .lead--dark{color:#CFCFC8}
-p.body{font-family:var(--inter);font-weight:400;font-size:10.4pt;line-height:1.72;color:var(--ink-soft)}
+p.body{font-family:var(--inter);font-weight:400;font-size:9.5pt;line-height:1.44;color:var(--ink-soft)}
 .sheet--dark p.body{color:#CBCBC4}
-.subhead{font-family:var(--inter);font-weight:600;font-size:12pt;line-height:1.3;color:var(--ink);letter-spacing:.005em;margin-top:12pt}
+.subhead{font-family:var(--inter);font-weight:600;font-size:11.4pt;line-height:1.28;color:var(--ink);letter-spacing:.005em;margin-top:8pt}
 .kicker{font-family:var(--osw);font-weight:600;font-size:9pt;letter-spacing:.22em;text-transform:uppercase;color:var(--ink)}
 strong{font-weight:600;color:var(--ink)}
 em{font-style:italic}
@@ -67,7 +67,7 @@ sup{font-size:.62em;line-height:0;font-weight:600}
 .sheet--dark strong{color:#fff}
 
 /* ============ COVER ============ */
-.cover__bg{position:absolute;inset:0;background-size:cover;background-position:center 32%;filter:grayscale(100%) contrast(1.02)}
+.cover__bg{position:absolute;inset:0;background-size:cover;background-position:center 32%}
 .cover__scrim{position:absolute;inset:0;background:
   linear-gradient(180deg,rgba(0,0,0,.86) 0%,rgba(0,0,0,.5) 34%,rgba(0,0,0,.62) 66%,rgba(0,0,0,.95) 100%)}
 .cover__edge{position:absolute;left:0;top:0;bottom:0;width:9px;background:var(--yellow)}
@@ -85,40 +85,40 @@ sup{font-size:.62em;line-height:0;font-weight:600}
 .cover__strip b{color:var(--yellow);font-weight:600}
 
 /* ============ NOTE / ASIDE BOX ============ */
-.note{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--yellow);padding:13pt 16pt 14pt;margin:4pt 0}
-.note__label{font-family:var(--osw);font-weight:600;font-size:8.8pt;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin-bottom:7pt}
-.note p{font-family:var(--inter);font-weight:400;font-size:9.7pt;line-height:1.62;color:var(--ink-soft)}
+.note{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--yellow);padding:10pt 14pt 11pt;margin:4pt 0}
+.note__label{font-family:var(--osw);font-weight:600;font-size:8.6pt;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin-bottom:5pt}
+.note p{font-family:var(--inter);font-weight:400;font-size:9.4pt;line-height:1.48;color:var(--ink-soft)}
 .note p + p{margin-top:6pt}
 
 /* ============ IN THE GYM CALLOUT ============ */
-.gym{background:#0B0B0B;color:#E7E7E2;padding:15pt 17pt 16pt;margin:4pt 0;position:relative}
-.gym__label{display:flex;align-items:center;gap:8px;font-family:var(--osw);font-weight:600;font-size:8.6pt;
-  letter-spacing:.26em;text-transform:uppercase;color:var(--yellow);margin-bottom:9pt}
-.gym__label svg{width:15px;height:15px;stroke:var(--yellow)}
-.gym p{font-family:var(--inter);font-weight:400;font-size:9.7pt;line-height:1.68;color:#D2D2CC}
+.gym{background:#0B0B0B;color:#E7E7E2;padding:11pt 15pt 12pt;margin:4pt 0;position:relative}
+.gym__label{display:flex;align-items:center;gap:8px;font-family:var(--osw);font-weight:600;font-size:8.4pt;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--yellow);margin-bottom:6pt}
+.gym__label svg{width:14px;height:14px;stroke:var(--yellow)}
+.gym p{font-family:var(--inter);font-weight:400;font-size:9.4pt;line-height:1.5;color:#D2D2CC}
 .gym p + p{margin-top:6pt}
 .gym em{color:#fff;font-style:italic}
 
 /* ============ PULL / CALLOUT LINE ============ */
-.pull{border-left:4px solid var(--yellow);padding:2pt 0 2pt 15pt;margin:4pt 0;
-  font-family:var(--inter);font-weight:500;font-size:12.5pt;line-height:1.44;color:var(--ink)}
+.pull{border-left:4px solid var(--yellow);padding:1pt 0 1pt 14pt;margin:4pt 0;
+  font-family:var(--inter);font-weight:500;font-size:11.6pt;line-height:1.34;color:var(--ink)}
 
 /* ============ STAT BAND ============ */
-.statband{display:flex;align-items:center;gap:18pt;background:var(--yellow);color:#000;padding:14pt 18pt;margin:4pt 0}
-.statband__num{font-family:var(--osw);font-weight:700;font-size:40pt;line-height:.86;color:#000;white-space:nowrap}
+.statband{display:flex;align-items:center;gap:16pt;background:var(--yellow);color:#000;padding:11pt 16pt;margin:4pt 0}
+.statband__num{font-family:var(--osw);font-weight:700;font-size:33pt;line-height:.86;color:#000;white-space:nowrap}
 .statband__label{font-family:var(--osw);font-weight:600;font-size:8.6pt;letter-spacing:.14em;text-transform:uppercase;color:#000;margin-bottom:4pt}
 .statband__text{font-family:var(--inter);font-weight:400;font-size:9.2pt;line-height:1.5;color:#1a1a1a}
 
 /* ============ PILLARS ============ */
-.pillar{display:grid;grid-template-columns:auto 1fr;gap:16pt;align-items:start;padding:13pt 0;border-top:1px solid var(--line)}
+.pillar{display:grid;grid-template-columns:auto 1fr;gap:15pt;align-items:start;padding:9pt 0;border-top:1px solid var(--line)}
 .pillar:first-of-type{border-top:none}
-.pillar__num{width:40pt;height:40pt;background:var(--yellow);color:#000;display:flex;align-items:center;justify-content:center;
-  font-family:var(--osw);font-weight:700;font-size:19pt;line-height:1}
-.pillar__t{font-family:var(--osw);font-weight:700;font-size:16pt;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin-bottom:5pt}
-.pillar__d{font-family:var(--inter);font-weight:400;font-size:10pt;line-height:1.62;color:var(--ink-soft)}
+.pillar__num{width:34pt;height:34pt;background:var(--yellow);color:#000;display:flex;align-items:center;justify-content:center;
+  font-family:var(--osw);font-weight:700;font-size:16pt;line-height:1}
+.pillar__t{font-family:var(--osw);font-weight:700;font-size:15pt;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin-bottom:3pt}
+.pillar__d{font-family:var(--inter);font-weight:400;font-size:9.6pt;line-height:1.5;color:var(--ink-soft)}
 
 /* ============ CONTENTS ============ */
-.toc__item{display:grid;grid-template-columns:auto 1fr auto;column-gap:15pt;align-items:baseline;padding:10.5pt 0;border-bottom:1px solid var(--line)}
+.toc__item{display:grid;grid-template-columns:auto 1fr auto;column-gap:15pt;align-items:baseline;padding:8pt 0;border-bottom:1px solid var(--line)}
 .toc__num{font-family:var(--osw);font-weight:700;font-size:13pt;color:#000;background:var(--yellow);padding:2pt 7pt 1pt;align-self:start}
 .toc__t{font-family:var(--inter);font-weight:600;font-size:11.5pt;color:var(--ink);line-height:1.25}
 .toc__d{font-family:var(--inter);font-weight:400;font-size:9pt;color:var(--muted);line-height:1.4;margin-top:2pt}
@@ -136,34 +136,34 @@ sup{font-size:.62em;line-height:0;font-weight:600}
 .ctable tbody tr:last-child td{border-bottom:none}
 
 /* ============ Q & A ============ */
-.qa{padding:9pt 0;border-bottom:1px solid var(--line-soft);break-inside:avoid}
+.qa{padding:6.5pt 0;border-bottom:1px solid var(--line-soft);break-inside:avoid}
 .qa__q{display:grid;grid-template-columns:auto 1fr;gap:10pt;align-items:start}
 .qa__mark{width:19pt;height:19pt;background:var(--yellow);color:#000;font-family:var(--osw);font-weight:700;font-size:11pt;
   display:flex;align-items:center;justify-content:center}
 .qa__qt{font-family:var(--inter);font-weight:600;font-size:10.6pt;line-height:1.35;color:var(--ink);align-self:center}
-.qa__a{font-family:var(--inter);font-weight:400;font-size:9.6pt;line-height:1.6;color:var(--ink-soft);margin-top:5pt;padding-left:29pt}
+.qa__a{font-family:var(--inter);font-weight:400;font-size:9.3pt;line-height:1.46;color:var(--ink-soft);margin-top:4pt;padding-left:29pt}
 
 /* ============ CHECKLIST ============ */
 .checks{list-style:none;margin:4pt 0}
-.checks li{position:relative;padding:6pt 0 6pt 22pt;font-family:var(--inter);font-weight:400;font-size:10pt;line-height:1.5;
+.checks li{position:relative;padding:4.5pt 0 4.5pt 22pt;font-family:var(--inter);font-weight:400;font-size:9.7pt;line-height:1.4;
   color:var(--ink-soft);border-bottom:1px solid var(--line-soft)}
 .checks li:last-child{border-bottom:none}
 .checks li::before{content:'';position:absolute;left:0;top:10.5pt;width:9px;height:9px;background:var(--yellow)}
 .arrows{list-style:none;margin:4pt 0}
-.arrows li{position:relative;padding:5pt 0 5pt 24pt;font-family:var(--inter);font-weight:400;font-size:10pt;line-height:1.5;color:var(--ink-soft)}
+.arrows li{position:relative;padding:4pt 0 4pt 24pt;font-family:var(--inter);font-weight:400;font-size:9.7pt;line-height:1.42;color:var(--ink-soft)}
 .arrows li::before{content:'→';position:absolute;left:0;top:5pt;font-family:var(--osw);font-weight:700;color:var(--yellow-line);font-size:11pt}
 .sheet--dark .arrows li{color:#D2D2CC}
 
 /* ============ PEOPLE ============ */
-.person{display:grid;grid-template-columns:27mm 1fr;gap:15pt;align-items:start;padding:12pt 0;border-top:1px solid var(--line)}
-.person__ph{width:27mm;height:27mm;object-fit:cover;filter:grayscale(100%) contrast(1.05);border:1px solid var(--line)}
+.person{display:grid;grid-template-columns:26mm 1fr;gap:14pt;align-items:start;padding:9pt 0;border-top:1px solid var(--line)}
+.person__ph{width:26mm;height:26mm;object-fit:cover;border:1px solid var(--line)}
 .person__name{font-family:var(--osw);font-weight:700;font-size:15pt;letter-spacing:.03em;text-transform:uppercase;color:var(--ink)}
 .person__role{font-family:var(--osw);font-weight:500;font-size:8pt;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin:3pt 0 6pt}
-.person__bio{font-family:var(--inter);font-weight:400;font-size:9.4pt;line-height:1.58;color:var(--ink-soft)}
+.person__bio{font-family:var(--inter);font-weight:400;font-size:9.2pt;line-height:1.47;color:var(--ink-soft)}
 
 /* ============ SUPPORT LINES ============ */
 .sup{display:flex;justify-content:space-between;align-items:center;gap:12pt;background:var(--panel);
-  border:1px solid var(--line);border-left:3px solid var(--yellow);padding:9pt 13pt;margin-bottom:6pt}
+  border:1px solid var(--line);border-left:3px solid var(--yellow);padding:7pt 13pt;margin-bottom:4pt}
 .sup__name{font-family:var(--osw);font-weight:600;font-size:10pt;letter-spacing:.02em;text-transform:uppercase;color:var(--ink)}
 .sup__desc{font-family:var(--inter);font-weight:400;font-size:8.4pt;color:var(--muted);margin-top:2pt}
 .sup__num{font-family:var(--osw);font-weight:700;font-size:9.4pt;letter-spacing:.02em;background:#000;color:var(--yellow);
@@ -177,7 +177,7 @@ sup{font-size:.62em;line-height:0;font-weight:600}
 .ref__t i{font-style:italic}
 
 /* ============ DIVIDER (photo) ============ */
-.divider__bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(100%) contrast(1.02)}
+.divider__bg{position:absolute;inset:0;background-size:cover;background-position:center}
 .divider__scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.72),rgba(0,0,0,.58) 45%,rgba(0,0,0,.82))}
 .divider__in{position:absolute;inset:0;padding:24mm 22mm;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
 .divider__q{font-family:var(--osw);font-weight:700;font-size:33pt;line-height:1.06;color:#fff;letter-spacing:.006em;max-width:150mm}
@@ -203,34 +203,36 @@ sup{font-size:.62em;line-height:0;font-weight:600}
 .mt6{margin-top:6pt}.mt10{margin-top:10pt}.mt14{margin-top:14pt}
 .spacer{flex:1}
 .hr{height:1px;background:var(--line);margin:11pt 0}
-.section-head{margin-bottom:12pt}
-.section-head .eyebrow{margin-bottom:11pt}
+.section-head{margin-bottom:8pt}
+.section-head .eyebrow{margin-bottom:7pt}
+.sec-gap{height:0;margin:14pt 0;border-top:1px solid var(--line)}
+.section-head{break-inside:avoid}
 
 /* ============ JOURNEY STEPS ============ */
 .journey{margin-top:8pt}
-.jstep{display:grid;grid-template-columns:auto 1fr;column-gap:15pt;align-items:start;padding-bottom:13pt;position:relative}
+.jstep{display:grid;grid-template-columns:auto 1fr;column-gap:14pt;align-items:start;padding-bottom:9pt;position:relative}
 .jstep:last-child{padding-bottom:0}
 .jstep__n{width:30pt;height:30pt;border-radius:50%;background:var(--yellow);color:#000;display:flex;align-items:center;justify-content:center;
   font-family:var(--osw);font-weight:700;font-size:14pt;z-index:1;flex-shrink:0}
 .jstep:not(:last-child)::before{content:'';position:absolute;left:15pt;top:32pt;bottom:2pt;width:2px;background:var(--yellow-line);transform:translateX(-1px)}
 .jstep__t{font-family:var(--inter);font-weight:600;font-size:11pt;color:var(--ink);margin-bottom:4pt;line-height:1.3;padding-top:5pt}
-.jstep__d{font-family:var(--inter);font-weight:400;font-size:9.6pt;line-height:1.58;color:var(--ink-soft)}
+.jstep__d{font-family:var(--inter);font-weight:400;font-size:9.3pt;line-height:1.46;color:var(--ink-soft)}
 .jstep__d em{font-style:italic;color:var(--muted)}
 
 /* ============ CANDID (dark caveat, no dumbbell) ============ */
-.candid{background:#0B0B0B;color:#E7E7E2;padding:15pt 17pt 16pt;margin:4pt 0;border-top:4px solid var(--yellow)}
-.candid__label{font-family:var(--osw);font-weight:600;font-size:8.6pt;letter-spacing:.22em;text-transform:uppercase;color:var(--yellow);margin-bottom:9pt}
-.candid p{font-family:var(--inter);font-weight:400;font-size:9.6pt;line-height:1.66;color:#D2D2CC}
+.candid{background:#0B0B0B;color:#E7E7E2;padding:11pt 15pt 12pt;margin:4pt 0;border-top:4px solid var(--yellow)}
+.candid__label{font-family:var(--osw);font-weight:600;font-size:8.4pt;letter-spacing:.22em;text-transform:uppercase;color:var(--yellow);margin-bottom:6pt}
+.candid p{font-family:var(--inter);font-weight:400;font-size:9.3pt;line-height:1.5;color:#D2D2CC}
 .candid p + p{margin-top:6pt}
 
 /* ============ ARROWS BOX (entitlements / not-say) ============ */
-.abox{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--yellow);padding:13pt 16pt 14pt;margin:4pt 0}
+.abox{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--yellow);padding:10pt 14pt 11pt;margin:4pt 0}
 .abox__label{font-family:var(--osw);font-weight:600;font-size:8.8pt;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin-bottom:5pt}
 
 /* ============ DEFINITION (glossary term) ============ */
-.defn{background:var(--panel-warm);border-left:4px solid var(--yellow);padding:12pt 16pt;margin:4pt 0}
-.defn__term{font-family:var(--osw);font-weight:600;font-size:11.5pt;letter-spacing:.03em;text-transform:uppercase;color:var(--ink);margin-bottom:4pt}
-.defn__body{font-family:var(--inter);font-weight:400;font-size:9.9pt;line-height:1.58;color:var(--ink-soft)}
+.defn{background:var(--panel-warm);border-left:4px solid var(--yellow);padding:10pt 15pt;margin:4pt 0}
+.defn__term{font-family:var(--osw);font-weight:600;font-size:11pt;letter-spacing:.03em;text-transform:uppercase;color:var(--ink);margin-bottom:3pt}
+.defn__body{font-family:var(--inter);font-weight:400;font-size:9.5pt;line-height:1.48;color:var(--ink-soft)}
 </style>
 </head>
 <body>
@@ -243,8 +245,8 @@ sup{font-size:.62em;line-height:0;font-weight:600}
   <div class="cover__in">
     <img class="cover__logo" src="assets/logo/logo-vertical.png" alt="The Performance Act">
     <span class="eyebrow cover__eyebrow">A Guide for Athletes</span>
-    <h1 class="cover__title">What actually<br>happens when you<br>work with a<br><span class="accent">psychologist.</span></h1>
-    <p class="cover__sub">A plain-language guide for athletes — what it is, what it isn&rsquo;t, what the research says, and what you&rsquo;re always welcome to ask about.</p>
+    <h1 class="cover__title">Working with a<br><span class="accent">psychologist</span><br>in sport.</h1>
+    <p class="cover__sub">A plain-language look at individual psychological support for athletes — the skills, the journey, what it is and isn&rsquo;t, and what you&rsquo;re welcome to ask about.</p>
     <div class="cover__chips">
       <span class="chip">Psychologist or mental skills coach?</span>
       <span class="chip">Is this therapy?</span>
@@ -257,7 +259,6 @@ sup{font-size:.62em;line-height:0;font-weight:600}
   </div>
 </section>
 
-<!-- ============================================================ 2 · BEFORE YOU READ ON -->
 <section class="sheet">
   <div class="inner">
     <div class="section-head">
@@ -265,31 +266,28 @@ sup{font-size:.62em;line-height:0;font-weight:600}
       <h2 class="htitle">What this guide<br>is <span class="y">for.</span></h2>
     </div>
     <p class="lead">A lot of the athletes we meet have never really had this explained to them. They&rsquo;ve heard the words — sport psych, mental skills, mindset, therapy — and understandably filled in the gaps themselves, sometimes with a picture that&rsquo;s a bit scarier than the reality.</p>
-    <div class="flow" style="margin-top:12pt">
+    <div class="flow" style="margin-top:7pt">
       <p class="body">So all this guide really tries to do is explain, in plain language, what one-to-one psychology support in sport can look like — so that if you do decide anything, you&rsquo;re deciding with the full picture.</p>
       <p class="body">You&rsquo;ll notice we keep coming back to the gym. That&rsquo;s deliberate. The gym is the clearest way we know to explain what this work is, because you already understand how the gym works — the reps, the programme, the boring weeks, the fact that you don&rsquo;t wait until something tears before you start. Everything on the mental side runs on the same logic. It just doesn&rsquo;t get talked about the same way.</p>
       <p class="body">We&rsquo;ve included what the research says too, including the less flattering parts — because we&rsquo;d rather you had the real picture and made your own mind up. And if anyone ever tells you an approach like this is guaranteed to work, that&rsquo;s promising more than the evidence honestly can.</p>
     </div>
-    <div class="note" style="margin-top:14pt">
+    <div class="note" style="margin-top:9pt">
       <div class="note__label">Who this is for</div>
       <p>Athletes roughly <strong>13 to 18</strong>, in any sport, at any level — club, school, regional, national. You don&rsquo;t have to be in a high-performance programme. You don&rsquo;t have to have a problem. You&rsquo;re also welcome to hand this to a parent, caregiver, coach or <span class="reo">whānau</span> member if that&rsquo;s easier than explaining it yourself.</p>
     </div>
+  
   </div>
-  <div class="foot">
-    <div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div>
-    <div class="foot__pg">02</div>
-  </div>
+  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">02</div></div>
 </section>
 
-<!-- ============================================================ 3 · OUR PACT -->
 <section class="sheet">
   <div class="inner">
     <div class="section-head">
       <span class="eyebrow">Our Pact</span>
       <h2 class="htitle">Three pillars that guide<br>everything we <span class="y">do.</span></h2>
-      <p class="lead" style="margin-top:12pt">Before the how, the why. These are the commitments underneath every session, every programme and every conversation we have with an athlete.</p>
+      <p class="lead" style="margin-top:7pt">Before the how, the why. These are the commitments underneath every session, every programme and every conversation we have with an athlete.</p>
     </div>
-    <div style="margin-top:6pt">
+    <div style="margin-top:4pt">
       <div class="pillar">
         <div class="pillar__num">01</div>
         <div><div class="pillar__t">Impact</div><p class="pillar__d">Evidence-based programmes led by high-quality practitioners, integrating research, clinical expertise and your values to create meaningful, lasting change.</p></div>
@@ -303,39 +301,28 @@ sup{font-size:.62em;line-height:0;font-weight:600}
         <div><div class="pillar__t">Care</div><p class="pillar__d">You are the expert on your own experience. Every challenge is valid, and every person deserves to be heard and supported.</p></div>
       </div>
     </div>
-    <div class="pull" style="margin-top:22pt">You don&rsquo;t have to have a problem to be here. You just have to want to get better at something — on purpose, rather than by accident.</div>
-  </div>
-  <div class="foot">
-    <div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div>
-    <div class="foot__pg">03</div>
-  </div>
-</section>
-
-<!-- ============================================================ 4 · CONTENTS -->
-<section class="sheet">
-  <div class="inner">
+    <div class="pull" style="margin-top:14pt">You don&rsquo;t have to have a problem to be here. You just have to want to get better at something — on purpose, rather than by accident.</div>
+  
+    <div class="sec-gap"></div>
     <div class="section-head">
       <span class="eyebrow">What&rsquo;s inside</span>
       <h2 class="htitle">Eight questions,<br>taken one at a <span class="y">time.</span></h2>
     </div>
-    <div style="margin-top:8pt">
-      <div class="toc__item"><div class="toc__num">01</div><div><div class="toc__t">You already do this — you just call it something else</div><div class="toc__d">Why the mental side is training, not repair work.</div></div><div class="toc__pg">05</div></div>
-      <div class="toc__item"><div class="toc__num">02</div><div><div class="toc__t">Psychologist, mental skills coach, therapist — who does what</div><div class="toc__d">Including why nobody in New Zealand is a &ldquo;registered sport psychologist&rdquo;.</div></div><div class="toc__pg">07</div></div>
-      <div class="toc__item"><div class="toc__num">03</div><div><div class="toc__t">&ldquo;I don&rsquo;t need therapy&rdquo;</div><div class="toc__d">Two questions hiding inside one sentence. Both worth answering.</div></div><div class="toc__pg">10</div></div>
-      <div class="toc__item"><div class="toc__num">04</div><div><div class="toc__t">What the journey actually looks like</div><div class="toc__d">From the first <span class="reo">kōrero</span> to the last session.</div></div><div class="toc__pg">14</div></div>
-      <div class="toc__item"><div class="toc__num">05</div><div><div class="toc__t">Who finds out what</div><div class="toc__d">Confidentiality, your coach, your <span class="reo">whānau</span>, and the limits.</div></div><div class="toc__pg">17</div></div>
-      <div class="toc__item"><div class="toc__num">06</div><div><div class="toc__t">Does any of this actually work?</div><div class="toc__d">What the studies found, in plain English — including the awkward bits.</div></div><div class="toc__pg">19</div></div>
-      <div class="toc__item"><div class="toc__num">07</div><div><div class="toc__t">Questions athletes actually ask</div><div class="toc__d">Including the ones people feel awkward saying out loud.</div></div><div class="toc__pg">23</div></div>
-      <div class="toc__item"><div class="toc__num">08</div><div><div class="toc__t">What to ask us — and where else to go</div><div class="toc__d">A checklist you can use on any practitioner, including ours.</div></div><div class="toc__pg">26</div></div>
+    <div style="margin-top:5pt">
+      <div class="toc__item"><div class="toc__num">01</div><div><div class="toc__t">You already do this — you just call it something else</div><div class="toc__d">Why the mental side is training, not repair work.</div></div><div class="toc__pg">04</div></div>
+      <div class="toc__item"><div class="toc__num">02</div><div><div class="toc__t">Psychologist, mental skills coach, therapist — who does what</div><div class="toc__d">Including why nobody in New Zealand is a &ldquo;registered sport psychologist&rdquo;.</div></div><div class="toc__pg">05</div></div>
+      <div class="toc__item"><div class="toc__num">03</div><div><div class="toc__t">&ldquo;I don&rsquo;t need therapy&rdquo;</div><div class="toc__d">Two questions hiding inside one sentence. Both worth answering.</div></div><div class="toc__pg">07</div></div>
+      <div class="toc__item"><div class="toc__num">04</div><div><div class="toc__t">What the journey actually looks like</div><div class="toc__d">From the first <span class="reo">kōrero</span> to the last session.</div></div><div class="toc__pg">09</div></div>
+      <div class="toc__item"><div class="toc__num">05</div><div><div class="toc__t">Who finds out what</div><div class="toc__d">Confidentiality, your coach, your <span class="reo">whānau</span>, and the limits.</div></div><div class="toc__pg">12</div></div>
+      <div class="toc__item"><div class="toc__num">06</div><div><div class="toc__t">Does any of this actually work?</div><div class="toc__d">What the studies found, in plain English — including the awkward bits.</div></div><div class="toc__pg">13</div></div>
+      <div class="toc__item"><div class="toc__num">07</div><div><div class="toc__t">Questions athletes actually ask</div><div class="toc__d">Including the ones people feel awkward saying out loud.</div></div><div class="toc__pg">15</div></div>
+      <div class="toc__item"><div class="toc__num">08</div><div><div class="toc__t">What to ask us — and where else to go</div><div class="toc__d">A checklist you can use on any practitioner, including ours.</div></div><div class="toc__pg">17</div></div>
     </div>
+  
   </div>
-  <div class="foot">
-    <div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div>
-    <div class="foot__pg">04</div>
-  </div>
+  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">03</div></div>
 </section>
 
-<!-- ============================================================ 5 · SECTION 01 a -->
 <section class="sheet">
   <div class="inner">
     <div class="section-head">
@@ -343,100 +330,90 @@ sup{font-size:.62em;line-height:0;font-weight:600}
       <h2 class="htitle">You already do this.<br>You just call it<br>something <span class="y">else.</span></h2>
     </div>
     <p class="lead">Every athlete has a mental approach. Nobody competes without one. The only question is whether yours was built on purpose or picked up by accident.</p>
-    <div class="flow" style="margin-top:12pt">
+    <div class="flow" style="margin-top:7pt">
       <p class="body">Think about what you already do. You have a way you warm up. You have things you say to yourself after a mistake. You have a way of handling the twenty minutes before you compete — music, silence, mates, distance. You have a story you tell yourself about what it means when you get dropped, or benched, or beaten by someone you used to beat.</p>
       <p class="body">None of that is neutral. All of it affects how you perform. And almost none of it was designed. It got assembled out of whatever you absorbed from coaches, teammates, family, and the internet, somewhere around age eleven, and then it just kept running.</p>
       <p class="body">Working with a psychologist is really just the process of taking that system out, looking at it properly, keeping the parts that work, and reshaping the parts that don&rsquo;t. That&rsquo;s honestly most of what it is.</p>
     </div>
-    <div class="gym" style="margin-top:13pt">
+    <div class="gym" style="margin-top:8pt">
       <div class="gym__label"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="7" x2="6" y2="17"/><line x1="3" y1="9.5" x2="3" y2="14.5"/><line x1="18" y1="7" x2="18" y2="17"/><line x1="21" y1="9.5" x2="21" y2="14.5"/><line x1="6" y1="12" x2="18" y2="12"/></svg> In the gym</div>
       <p>Nobody thinks it&rsquo;s strange to have a strength programme. You don&rsquo;t lift because your legs are broken. You lift because you want more of something — power, speed, durability — and because leaving it to chance produces a worse athlete than training it on purpose.</p>
       <p>Your attention, your reaction to pressure, your ability to reset after a mistake: these behave exactly like physical capacities. They can be assessed. They can be loaded. They respond to structured practice and they fade without it. The only real difference is that nobody&rsquo;s ever handed you a programme for them.</p>
     </div>
+  
   </div>
-  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">05</div></div>
+  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">04</div></div>
 </section>
 
-<!-- ============================================================ 6 · SECTION 01 b -->
 <section class="sheet">
   <div class="inner">
     <h3 class="subhead" style="margin-top:0">Why this gets left to chance</h3>
-    <div class="flow" style="margin-top:6pt">
+    <div class="flow" style="margin-top:4pt">
       <p class="body">Partly it&rsquo;s history — the mental side of sport was ignored for a long time, and when people did talk about it, it was usually in the language of weakness. Partly it&rsquo;s that you can&rsquo;t see it. A hamstring strain shows up on a scan. Losing your focus on the third-last hole doesn&rsquo;t.</p>
       <p class="body">And partly it&rsquo;s that the only time most athletes hear about psychology is when something has already gone badly wrong. So the whole field gets filed under &ldquo;for when you&rsquo;re struggling&rdquo;, which is a bit like deciding the gym is only for people coming back from injury. Rehab absolutely happens there, and it matters. It&rsquo;s just not the only reason anyone walks in.</p>
     </div>
-    <div class="pull" style="margin-top:13pt">If you only ever start the mental work when things fall over, you&rsquo;ll only ever associate it with things falling over.</div>
-    <h3 class="subhead" style="margin-top:16pt">What &ldquo;getting stronger&rdquo; looks like here</h3>
-    <div class="flow" style="margin-top:6pt">
+    <div class="pull" style="margin-top:8pt">If you only ever start the mental work when things fall over, you&rsquo;ll only ever associate it with things falling over.</div>
+    <h3 class="subhead" style="margin-top:10pt">What &ldquo;getting stronger&rdquo; looks like here</h3>
+    <div class="flow" style="margin-top:4pt">
       <p class="body">The specific capacities differ from athlete to athlete, but they usually come from a familiar list: holding attention on what matters when there&rsquo;s noise everywhere else; recovering quickly after an error instead of carrying it for the next twenty minutes; making decisions under fatigue; managing the gap between how good you want to be and how good you currently are; staying motivated across a long season when the initial excitement has worn off; and knowing what you actually want out of your sport, so that the sacrifices feel like they&rsquo;re paying for something.</p>
       <p class="body">None of that requires anything to be wrong with you. It requires the same thing everything else in your sport requires: a look at where you&rsquo;re at, a plan, and some reps.</p>
     </div>
-  </div>
-  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">06</div></div>
-</section>
-
-<!-- ============================================================ 7 · SECTION 02 a -->
-<section class="sheet">
-  <div class="inner">
+  
+    <div class="sec-gap"></div>
     <div class="section-head">
       <span class="eyebrow">Section 02</span>
       <h2 class="htitle">Psychologist, mental skills<br>coach, therapist — <span class="y">who does what</span></h2>
     </div>
     <p class="lead">This is one of the questions we&rsquo;re asked most, and it&rsquo;s a fair one — the titles really do overlap. Here&rsquo;s how we&rsquo;d explain it, including one thing that often surprises people.</p>
     <h3 class="subhead">First, something worth knowing</h3>
-    <div class="flow" style="margin-top:6pt">
+    <div class="flow" style="margin-top:4pt">
       <p class="body">In Aotearoa New Zealand there is no such thing as a &ldquo;registered sport psychologist&rdquo;. It isn&rsquo;t a recognised title here. The New Zealand Psychologists Board registers people into defined scopes of practice — Psychologist, Clinical Psychologist, Counselling Psychologist, Educational Psychologist, Neuropsychologist — and sport isn&rsquo;t one of them.</p>
       <p class="body">So the honest description of what we are is simply this: registered psychologists who work in sport. The registration is in psychology; the specialisation is in the setting, built up over years of working in it. If you do come across the phrase &ldquo;registered sport psychologist&rdquo; anywhere, it&rsquo;s worth knowing that&rsquo;s describing a focus, not a separate qualification — because that qualification doesn&rsquo;t exist here.</p>
     </div>
-    <h3 class="subhead" style="margin-top:13pt">So what does being &ldquo;registered&rdquo; mean?</h3>
-    <div class="flow" style="margin-top:6pt">
+    <h3 class="subhead" style="margin-top:8pt">So what does being &ldquo;registered&rdquo; mean?</h3>
+    <div class="flow" style="margin-top:4pt">
       <p class="body">In plain terms, it means we&rsquo;re registered health professionals — the same category as physiotherapists, nurses or doctors. &ldquo;Psychologist&rdquo; is a protected title, so to use it we have to be registered with the New Zealand Psychologists Board and hold a current practising certificate. That brings real obligations: we work to legal standards of care and a code of ethics, we keep up ongoing training and supervision, and there&rsquo;s an independent process you can turn to if something ever isn&rsquo;t right. Those protections exist for you, not for us.</p>
     </div>
+  
   </div>
-  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">07</div></div>
+  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">05</div></div>
 </section>
 
-<!-- ============================================================ 8 · SECTION 02 b — WHAT WE DO -->
 <section class="sheet">
   <div class="inner">
-    <span class="eyebrow" style="margin-bottom:12pt;display:inline-block">What that means in practice</span>
+    <span class="eyebrow" style="margin-bottom:7pt;display:inline-block">What that means in practice</span>
     <h3 class="subhead" style="margin-top:0">Our role — and what &ldquo;scope&rdquo; means</h3>
-    <div class="defn" style="margin-top:11pt">
+    <div class="defn" style="margin-top:7pt">
       <div class="defn__term">Scope of practice</div>
       <div class="defn__body">The specific area a practitioner is trained and registered to work within — the lane they&rsquo;re qualified to operate in.</div>
     </div>
-    <div class="flow" style="margin-top:12pt">
+    <div class="flow" style="margin-top:7pt">
       <p class="body">Our scope, within The Performance Act, is helping and supporting you with your performance in sport — and the wellbeing that sits underneath it. Day to day, a lot of what we do overlaps with what a good mental skills coach does: the same practical tools — routines, goal-setting, attention, self-talk, imagery. We&rsquo;re genuinely glad that work exists, and we lean on plenty of it ourselves.</p>
       <p class="body">The main difference is simply the range of support we&rsquo;re trained and qualified to offer. If a performance issue turns out to have something bigger sitting underneath it, we can keep supporting you with that too, rather than having to pass you on — and we&rsquo;ll always talk it through with you first.</p>
     </div>
-    <div class="note" style="margin-top:13pt">
+    <div class="note" style="margin-top:8pt">
       <div class="note__label">Consent &amp; confidentiality</div>
       <p>Being a health professional also comes with clear boundaries around your information and your say in things. In simple terms: what you share with us stays private — within a few limits we&rsquo;ll always explain right at the start — and we won&rsquo;t pass it on or make big decisions without talking with you first. That&rsquo;s not red tape; it&rsquo;s there so you can speak freely and stay in control of your own story. Section 05 walks through exactly how this works, including where you&rsquo;re under 16.</p>
     </div>
-  </div>
-  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">08</div></div>
-</section>
-
-<!-- ============================================================ 9 · SECTION 02 b -->
-<section class="sheet">
-  <div class="inner">
+  
+    <div class="sec-gap"></div>
     <div class="gym" style="margin-top:0">
       <div class="gym__label"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="7" x2="6" y2="17"/><line x1="3" y1="9.5" x2="3" y2="14.5"/><line x1="18" y1="7" x2="18" y2="17"/><line x1="21" y1="9.5" x2="21" y2="14.5"/><line x1="6" y1="12" x2="18" y2="12"/></svg> In the gym</div>
       <p>Think about the difference between a strength and conditioning coach and a physiotherapist. Both work on your body. Both know a lot. You&rsquo;d go to the S&amp;C coach to add ten kilos to your squat, and to the physio when your knee is doing something it shouldn&rsquo;t.</p>
       <p>But here&rsquo;s the thing you already know from being in a good programme: the physio doesn&rsquo;t only see injured people, and the S&amp;C coach doesn&rsquo;t stop caring when you get hurt. They overlap constantly. And a physio can do everything an S&amp;C coach can do for your squat, <em>plus</em> handle the knee if it turns out the knee is the actual problem.</p>
       <p>That&rsquo;s the practical difference here. A registered psychologist is trained across both territories, so you don&rsquo;t have to work out your own situation before you reach out — that part&rsquo;s on us, not you.</p>
     </div>
-    <h3 class="subhead" style="margin-top:15pt">The part that actually matters</h3>
-    <div class="flow" style="margin-top:6pt">
+    <h3 class="subhead" style="margin-top:9pt">The part that actually matters</h3>
+    <div class="flow" style="margin-top:4pt">
       <p class="body">Most of the time you don&rsquo;t need to work out which category your situation belongs in. That&rsquo;s the practitioner&rsquo;s job, not yours. What you need is someone qualified to notice when a performance conversation turns into something else — because it often does, and usually without warning.</p>
       <p class="body">An athlete comes in wanting to fix their pre-race nerves. Three sessions later it turns out they haven&rsquo;t slept properly in four months, or they&rsquo;re carrying something from an injury a year ago, or the thing driving the nerves is a relationship with a parent that nobody&rsquo;s ever named out loud. That&rsquo;s not a rare plot twist — it&rsquo;s closer to routine, and there is nothing unusual or alarming about being that person.</p>
       <p class="body">Nothing about that makes a good mental skills coach less valuable. It just means the range of things a practitioner can safely hold is worth knowing about up front.</p>
     </div>
+  
   </div>
-  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">09</div></div>
+  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">06</div></div>
 </section>
 
-<!-- ============================================================ 10 · SECTION 03 a -->
 <section class="sheet">
   <div class="inner">
     <div class="section-head">
@@ -444,76 +421,66 @@ sup{font-size:.62em;line-height:0;font-weight:600}
       <h2 class="htitle">&ldquo;I don&rsquo;t need <span class="y">therapy.</span>&rdquo;</h2>
     </div>
     <p class="lead">We hear this a lot. There are two things bundled inside that sentence, and it&rsquo;s worth pulling them apart, because only one of them is really a question.</p>
-    <div class="flow" style="margin-top:12pt">
+    <div class="flow" style="margin-top:7pt">
       <p class="body">The first is factual: <strong>is this the same thing as therapy?</strong> That&rsquo;s fair, it has a clear answer, and we&rsquo;ll give it to you below.</p>
       <p class="body">The second usually goes unsaid: <em>…and it would say something bad about me if it were.</em> We&rsquo;d gently push back on that one. Needing psychological support isn&rsquo;t a character flaw, a weakness, or a sign you&rsquo;re not tough enough for your sport. It&rsquo;s a normal thing that happens to a very large number of people, including plenty whose careers you&rsquo;d take in a heartbeat. We could let that idea sit quietly, but it wouldn&rsquo;t feel right to leave it there unspoken.</p>
     </div>
     <h3 class="subhead">So what is therapy, actually?</h3>
-    <div class="flow" style="margin-top:6pt">
+    <div class="flow" style="margin-top:4pt">
       <p class="body">When people say the word, they usually picture one specific image: a room, a couch, a box of tissues, and someone asking how your childhood made you feel. That version exists, and it helps a great many people. It&rsquo;s also a small slice of a very large field, and it isn&rsquo;t what a session with us usually looks like.</p>
     </div>
-  </div>
-  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">10</div></div>
-</section>
-
-<!-- ============================================================ 11 · SECTION 03 b -->
-<section class="sheet">
-  <div class="inner">
+  
+    <div class="sec-gap"></div>
     <div class="flow" style="margin-top:0">
       <p class="body">Here&rsquo;s a more useful definition. <strong>Therapy is a structured, evidence-based way of changing how you respond to your own thoughts, feelings and situations.</strong> That&rsquo;s the whole category. The couch, the childhood and the tissues are a stereotype attached to one corner of it.</p>
       <p class="body">Most of the work we do with athletes sits in a different corner — skills, situations, and what you do under pressure on Saturday. Some of the athletes we see are also working through something harder than that. That work is no less valuable, and it usually takes more courage, not less.</p>
     </div>
-    <div class="gym" style="margin-top:13pt">
+    <div class="gym" style="margin-top:8pt">
       <div class="gym__label"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="7" x2="6" y2="17"/><line x1="3" y1="9.5" x2="3" y2="14.5"/><line x1="18" y1="7" x2="18" y2="17"/><line x1="21" y1="9.5" x2="21" y2="14.5"/><line x1="6" y1="12" x2="18" y2="12"/></svg> In the gym</div>
       <p>Physiotherapy is a good word to sit with. When you&rsquo;re rehabbing a torn ACL, that&rsquo;s physiotherapy. When your physio gives you single-leg balance work in pre-season so you don&rsquo;t tear one, that&rsquo;s also physiotherapy. Same profession, same evidence base, sometimes the same exercises.</p>
       <p>And notice what doesn&rsquo;t happen in a good environment: nobody thinks less of the person in the rehab room. They&rsquo;re doing exactly what their body needs at the point they need it, which is what being an athlete looks like over a long enough timeline.</p>
       <p>Psychological work runs along the same spectrum. Where you happen to be standing on it isn&rsquo;t a verdict on you.</p>
     </div>
+  
   </div>
-  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">11</div></div>
+  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">07</div></div>
 </section>
 
-<!-- ============================================================ 12 · SECTION 03 c -->
 <section class="sheet">
   <div class="inner">
     <h3 class="subhead" style="margin-top:0">What a session actually looks like</h3>
-    <div class="flow" style="margin-top:6pt">
+    <div class="flow" style="margin-top:4pt">
       <p class="body">Mostly it looks like a focused conversation with a whiteboard. You describe a situation in detail — a specific race, a specific moment in a specific game. We slow it down and work out what was actually happening: what you were paying attention to, what your body was doing, what you told yourself, what you did next, and whether that helped. Then we build something you can practise at training on Thursday.</p>
       <p class="body">It&rsquo;s more like a video review session than anything you&rsquo;ve seen in a film. You&rsquo;ll be asked a lot of questions. You&rsquo;ll do most of the talking. You&rsquo;ll usually leave with something concrete to try.</p>
     </div>
-    <div class="note" style="margin-top:12pt">
+    <div class="note" style="margin-top:7pt">
       <div class="note__label">Where we actually stand on this</div>
       <p>You do not need to be struggling to come, and most of the athletes we see aren&rsquo;t. You are also not disqualified if you are.</p>
       <p>Sport adds pressures a lot of people never carry: selection, injury, weight, performing in public, and having a large part of who you are tied to something that can be taken away in an afternoon. Anyone can hit a hard patch inside that. It isn&rsquo;t a sign you were never cut out for it, and it isn&rsquo;t rare.</p>
       <p>If something bigger is going on, it matters that the person sitting across from you is trained to recognise it and qualified to help. That&rsquo;s not a warning label. It&rsquo;s the reason the qualification exists.</p>
     </div>
-  </div>
-  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">12</div></div>
-</section>
-
-<!-- ============================================================ 13 · SECTION 03 d -->
-<section class="sheet">
-  <div class="inner">
+  
+    <div class="sec-gap"></div>
     <h3 class="subhead" style="margin-top:0">Why we&rsquo;re making a point of this</h3>
-    <div class="flow" style="margin-top:6pt">
+    <div class="flow" style="margin-top:4pt">
       <p class="body">Plenty of athletes tell us the thing that put them off wasn&rsquo;t the work — it was what they assumed it would say about them. That going means admitting weakness, or that word would get around, or that a coach would file them under &ldquo;fragile&rdquo;.</p>
       <p class="body">That worry deserves to be taken seriously rather than waved away, because it&rsquo;s extremely common and because it costs people things. Research with young elite athletes has found the same result repeatedly: the biggest single thing stopping athletes from getting support is stigma — the fear of what people will think. Bigger than cost, bigger than time, bigger than being able to get an appointment.<sup>1</sup></p>
     </div>
-    <div class="statband" style="margin-top:13pt">
+    <div class="statband" style="margin-top:8pt">
       <div class="statband__num">1 in 5</div>
       <div>
         <div class="statband__label">Athletes in difficulty who seek formal help</div>
         <div class="statband__text">A review across twenty-two studies found that only around one in five athletes experiencing difficulty actually reaches out.<sup>2</sup></div>
       </div>
     </div>
-    <div class="flow" style="margin-top:13pt">
+    <div class="flow" style="margin-top:8pt">
       <p class="body">So four out of five are managing on their own — not because support wouldn&rsquo;t have helped, but largely because of a story about what asking would mean about them. That felt worth naming gently, rather than leaving it unsaid.</p>
     </div>
+  
   </div>
-  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">13</div></div>
+  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">08</div></div>
 </section>
 
-<!-- ============================================================ 14 · SECTION 04 a -->
 <section class="sheet">
   <div class="inner">
     <div class="section-head">
@@ -521,7 +488,7 @@ sup{font-size:.62em;line-height:0;font-weight:600}
       <h2 class="htitle">What the journey<br>actually <span class="y">looks like</span></h2>
     </div>
     <p class="lead">Not a mystery, not open-ended, not forever. Here&rsquo;s the shape of it — from the first <span class="reo">kōrero</span> to the last session.</p>
-    <div class="journey" style="margin-top:12pt">
+    <div class="journey" style="margin-top:7pt">
       <div class="jstep">
         <div class="jstep__n">1</div>
         <div><div class="jstep__t">A free <span class="reo">kōrero</span> — working out whether this is even the right thing</div>
@@ -538,11 +505,11 @@ sup{font-size:.62em;line-height:0;font-weight:600}
         <p class="jstep__d">We map out what seems to be happening and why, and we show you the map. You get to argue with it. This matters, and it&rsquo;s one of our three pillars: you are the expert on your own experience. If the explanation doesn&rsquo;t ring true to you, it&rsquo;s the wrong explanation, and we change it. From that map comes a small number of specific targets. Not fifteen. Usually two or three.</p></div>
       </div>
     </div>
+  
   </div>
-  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">14</div></div>
+  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">09</div></div>
 </section>
 
-<!-- ============================================================ 15 · SECTION 04 b -->
 <section class="sheet">
   <div class="inner">
     <div class="journey" style="margin-top:0">
@@ -562,11 +529,11 @@ sup{font-size:.62em;line-height:0;font-weight:600}
         <p class="jstep__d">We check against the targets we set at the start. What&rsquo;s changed, what hasn&rsquo;t, what&rsquo;s worth continuing. Plenty of athletes finish here, come back for a block before a pinnacle event, and that&rsquo;s it. Others shift to occasional check-ins. Both are normal. <em>There is a defined end. You are not signing up for something indefinite.</em></p></div>
       </div>
     </div>
-    <div class="gym" style="margin-top:14pt">
+    <div class="gym" style="margin-top:9pt">
       <div class="gym__label"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="7" x2="6" y2="17"/><line x1="3" y1="9.5" x2="3" y2="14.5"/><line x1="18" y1="7" x2="18" y2="17"/><line x1="21" y1="9.5" x2="21" y2="14.5"/><line x1="6" y1="12" x2="18" y2="12"/></svg> In the gym</div>
       <p>You wouldn&rsquo;t judge a strength block on how you felt after session one. You&rsquo;d give it a training cycle, test it, and adjust. Same here. Most athletes notice something shifting within three or four sessions, and most pieces of work run somewhere between six and twelve — though it depends entirely on what you came in for. And like the gym: the sessions aren&rsquo;t where the change happens. The change happens in the reps you do between them.</p>
     </div>
-    <div class="abox" style="margin-top:12pt">
+    <div class="abox" style="margin-top:7pt">
       <div class="abox__label">A few things that help</div>
       <ul class="arrows">
         <li>Turning up, even on the weeks you don&rsquo;t much feel like it.</li>
@@ -575,8 +542,9 @@ sup{font-size:.62em;line-height:0;font-weight:600}
         <li>Telling us when something isn&rsquo;t landing — we&rsquo;d far rather adjust than have you quietly drift off.</li>
       </ul>
     </div>
+  
   </div>
-  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">15</div></div>
+  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">10</div></div>
 </section>
 
 <!-- ============================================================ 16 · DIVIDER -->
@@ -586,12 +554,11 @@ sup{font-size:.62em;line-height:0;font-weight:600}
   <div class="cover__edge"></div>
   <div class="divider__in">
     <span class="eyebrow">The reps between sessions</span>
-    <div class="divider__q" style="margin-top:16pt">The session ends.<br><span class="accent">The growing doesn&rsquo;t.</span></div>
+    <div class="divider__q" style="margin-top:10pt">The session ends.<br><span class="accent">The growing doesn&rsquo;t.</span></div>
     <div class="divider__cap">The Performance Act · Helping People Grow</div>
   </div>
 </section>
 
-<!-- ============================================================ 17 · SECTION 05 a -->
 <section class="sheet">
   <div class="inner">
     <div class="section-head">
@@ -599,46 +566,41 @@ sup{font-size:.62em;line-height:0;font-weight:600}
       <h2 class="htitle">Who finds out <span class="y">what</span></h2>
     </div>
     <p class="lead">For a lot of athletes this is the actual deciding question, and it rarely gets answered clearly. So, clearly:</p>
-    <div class="flow" style="margin-top:12pt">
+    <div class="flow" style="margin-top:7pt">
       <p class="body">What you say in the room is confidential. It is not reported back to your coach, your selectors, your school or your team by default. Not the content, not the tone, not &ldquo;how you seemed&rdquo;. Your health information is protected under New Zealand law, and psychologists work under a professional code that takes this seriously.</p>
       <p class="body">If it would genuinely help for us to talk to your coach, physio or <span class="reo">whānau</span> about something specific, we&rsquo;ll ask you first, we&rsquo;ll agree exactly what is and isn&rsquo;t shared, and you can say no. You can also change your mind later.</p>
     </div>
-    <div class="note" style="margin-top:12pt">
+    <div class="note" style="margin-top:7pt">
       <div class="note__label">The limits — the honest ones</div>
       <p>There are a small number of situations where a psychologist has to act on information even without your agreement. Broadly: if there&rsquo;s a serious risk to your safety or someone else&rsquo;s, or where the law requires it, such as a court order. Any psychologist you see should explain these limits to you at the start, in plain language, before you tell them anything. If they don&rsquo;t, ask.</p>
     </div>
-    <div class="note" style="margin-top:10pt">
+    <div class="note" style="margin-top:6pt">
       <div class="note__label">If you&rsquo;re under 16</div>
       <p>Your parents, caregivers or <span class="reo">whānau</span> are usually involved in agreeing to and arranging the support, and often in paying for it. That doesn&rsquo;t mean they get a transcript. In practice, we&rsquo;ll talk with you and your <span class="reo">whānau</span> early on about what gets shared and what stays in the room, so everyone knows where they stand before the work starts — and so you&rsquo;re not left guessing. These arrangements are made <em>with</em> you, not <em>about</em> you.</p>
     </div>
-  </div>
-  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">17</div></div>
-</section>
-
-<!-- ============================================================ 18 · SECTION 05 b — RIGHTS -->
-<section class="sheet">
-  <div class="inner">
+  
+    <div class="sec-gap"></div>
     <div class="section-head">
       <span class="eyebrow">Your rights in the room</span>
       <h2 class="htitle">Things you&rsquo;re entitled<br>to ask <span class="y">for</span></h2>
     </div>
-    <div class="pull" style="margin-top:6pt">Being able to say &ldquo;actually, I&rsquo;d rather not talk about that today&rdquo; is part of the process, not a problem with it.</div>
-    <ul class="checks" style="margin-top:18pt">
+    <div class="pull" style="margin-top:4pt">Being able to say &ldquo;actually, I&rsquo;d rather not talk about that today&rdquo; is part of the process, not a problem with it.</div>
+    <ul class="checks" style="margin-top:11pt">
       <li>To have a support person with you, or to be seen on your own.</li>
       <li>To know what&rsquo;s written down about you, and to see it.</li>
       <li>To have the confidentiality limits explained before you start.</li>
       <li>To say no to any exercise, question or referral.</li>
       <li>To stop, or to ask to work with someone else, without justifying it.</li>
     </ul>
-    <div class="note" style="margin-top:22pt">
+    <div class="note" style="margin-top:14pt">
       <div class="note__label">In short</div>
       <p>None of these make you difficult. They&rsquo;re the ordinary terms of good, safe support — and a practitioner worth working with will be glad you know them.</p>
     </div>
+  
   </div>
-  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">18</div></div>
+  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">12</div></div>
 </section>
 
-<!-- ============================================================ 19 · SECTION 06 a -->
 <section class="sheet">
   <div class="inner">
     <div class="section-head">
@@ -647,77 +609,67 @@ sup{font-size:.62em;line-height:0;font-weight:600}
     </div>
     <p class="lead">Short answer: yes — but not like magic, and not for everyone. Here&rsquo;s the honest version, including the bits that don&rsquo;t make us look good.</p>
     <h3 class="subhead">First, how anyone knows anything about this</h3>
-    <div class="flow" style="margin-top:6pt">
+    <div class="flow" style="margin-top:4pt">
       <p class="body">The way you test whether something works is to take two groups of athletes who are pretty similar, give one group the psychology work and the other group nothing, and then see whether the first group ends up doing better. One study like that doesn&rsquo;t prove much on its own — maybe that group got lucky, or was unusually keen to begin with. So every few years researchers gather up every study ever run on a question and add them all together. That gives you a far more trustworthy answer than any single study can.</p>
       <p class="body">That&rsquo;s where everything below comes from. The small numbers dotted through this section point to the actual studies, which are listed at the back if you ever want to look them up yourself.</p>
     </div>
-    <h3 class="subhead" style="margin-top:14pt">What they found</h3>
-    <div class="statband" style="margin-top:8pt">
+    <h3 class="subhead" style="margin-top:9pt">What they found</h3>
+    <div class="statband" style="margin-top:5pt">
       <div class="statband__num">7 in 10</div>
       <div>
         <div class="statband__label">How the average athlete who trained the mental side compared</div>
         <div class="statband__text">Across forty years of studies, the typical athlete who trained the mental side finished ahead of about seven out of every ten who didn&rsquo;t.<sup>3</sup></div>
       </div>
     </div>
-    <div class="flow" style="margin-top:12pt">
+    <div class="flow" style="margin-top:7pt">
       <p class="body">Researchers pulled together forty years of studies on psychology and sport performance. Athletes who did this kind of work performed better than athletes who didn&rsquo;t — not by a landslide, but by a real and repeatable margin. The things with the strongest track record were skills training (routines, focus, goal setting, self-talk), mindfulness and acceptance approaches, and imagery — mentally rehearsing a performance in detail before you do it.<sup>4</sup></p>
     </div>
-  </div>
-  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">19</div></div>
-</section>
-
-<!-- ============================================================ 20 · SECTION 06 b -->
-<section class="sheet">
-  <div class="inner">
+  
+    <div class="sec-gap"></div>
     <div class="candid" style="margin-top:0">
       <div class="candid__label">And here&rsquo;s the part that doesn&rsquo;t help our case</div>
       <p>Some studies are built better than others. The strongest ones split people into groups properly and measure real results — times, scores, placings. Weaker ones rely on athletes rating their own performance afterwards, which isn&rsquo;t the same thing at all.</p>
       <p>When one large review in 2024 kept only the strongest studies and set the weaker ones aside, the performance benefit stopped being clear enough to call proven. The researchers&rsquo; conclusion was that the findings look promising, but the research itself isn&rsquo;t good enough yet.<sup>4</sup></p>
       <p>You should hear that from us rather than find it out later. It doesn&rsquo;t mean the work doesn&rsquo;t help — but anyone promising you a guaranteed improvement is telling you something the evidence doesn&rsquo;t back up.</p>
     </div>
-    <h3 class="subhead" style="margin-top:15pt">Where the evidence is actually strongest</h3>
-    <div class="flow" style="margin-top:6pt">
+    <h3 class="subhead" style="margin-top:9pt">Where the evidence is actually strongest</h3>
+    <div class="flow" style="margin-top:4pt">
       <p class="body">This is the part that gets talked about least and probably matters most — because most people reading this won&rsquo;t end up earning a living from their sport, but all of them will spend years of their life inside it.</p>
       <p class="body">Researchers have followed teenage athletes over time to see who stays in their sport and who walks away. What predicts it isn&rsquo;t talent. It comes down to three things: whether you feel you have some say in what happens to you, whether you feel like you&rsquo;re actually getting good at it, and whether you feel like you belong there. Athletes with those three tend to keep playing. Athletes who are mostly playing out of pressure, guilt or obligation tend to stop.<sup>7</sup> When researchers looked across all the studies of why kids and teenagers quit sport, the reasons were overwhelmingly about how they felt — not about their bodies.<sup>8</sup></p>
     </div>
+  
   </div>
-  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">20</div></div>
+  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">13</div></div>
 </section>
 
-<!-- ============================================================ 21 · SECTION 06 c -->
 <section class="sheet">
   <div class="inner">
     <p class="body" style="margin-top:0">Burnout works the same way. That&rsquo;s the flat, worn-down, can&rsquo;t-really-be-bothered feeling, where something you used to love starts feeling like an obligation. Studies of programmes built to help young athletes with it found that the kinds of approaches we use reduced most of it.<sup>9,&#8202;10</sup></p>
-    <div class="pull" style="margin-top:12pt">This work makes it more likely you&rsquo;ll still be playing in five years — and more likely you&rsquo;ll enjoy it while you are.</div>
-    <div class="gym" style="margin-top:13pt">
+    <div class="pull" style="margin-top:7pt">This work makes it more likely you&rsquo;ll still be playing in five years — and more likely you&rsquo;ll enjoy it while you are.</div>
+    <div class="gym" style="margin-top:8pt">
       <div class="gym__label"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="7" x2="6" y2="17"/><line x1="3" y1="9.5" x2="3" y2="14.5"/><line x1="18" y1="7" x2="18" y2="17"/><line x1="21" y1="9.5" x2="21" y2="14.5"/><line x1="6" y1="12" x2="18" y2="12"/></svg> In the gym</div>
       <p>Nobody lifts purely for the number on the bar. You lift so you can hit contact without getting hurt, hold your technique at the end of a match, and still be playing at twenty-five. Durability is the point.</p>
       <p>Same here. Some of this is about performing better on Saturday. A lot of it is about still wanting to be there next season.</p>
     </div>
-    <h3 class="subhead" style="margin-top:15pt">The approach we use, and why</h3>
-    <div class="flow" style="margin-top:6pt">
+    <h3 class="subhead" style="margin-top:9pt">The approach we use, and why</h3>
+    <div class="flow" style="margin-top:4pt">
       <p class="body">We don&rsquo;t put everyone through the same programme — we use a range of approaches and shape them around the person in front of us. A lot of our work comes from something called ACT (said as a word, not spelled out; it stands for acceptance and commitment therapy).</p>
       <p class="body">The idea behind it is a change of target. Most people assume the goal is to get rid of the nerves, the doubt and the unhelpful thoughts. ACT says: good luck with that — and also, you don&rsquo;t have to. The goal is to get better at performing while all that is going on, and to keep doing what actually matters to you anyway.</p>
     </div>
-  </div>
-  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">21</div></div>
-</section>
-
-<!-- ============================================================ 22 · SECTION 06 d -->
-<section class="sheet">
-  <div class="inner">
+  
+    <div class="sec-gap"></div>
     <p class="body" style="margin-top:0">Which is a practical place to start, because you can&rsquo;t reliably talk yourself out of feeling nervous before a final. If you spend the warm-up fighting your own nervous system, that&rsquo;s attention you no longer have for the race. If you can let the feeling be there and get on with it, you keep that attention.</p>
-    <div class="statband" style="margin-top:13pt">
+    <div class="statband" style="margin-top:8pt">
       <div class="statband__num">Ages<br>10–19</div>
       <div>
         <div class="statband__label">Where the evidence is newest</div>
         <div class="statband__text">A 2026 review looked only at ACT with athletes aged 10 to 19, and found it consistently helped how young athletes handled their own thoughts and feelings — with encouraging early signs for wellbeing and performance.<sup>5</sup></div>
       </div>
     </div>
-    <div class="flow" style="margin-top:12pt">
+    <div class="flow" style="margin-top:7pt">
       <p class="body">Most research in this area has been done on adults, which is a fair criticism of the field. That&rsquo;s changing — though the review above is upfront that there still aren&rsquo;t many high-quality studies in this age group. A trial with elite teenage athletes using a similar approach found improvements in the same areas, and in how satisfied athletes were with how they were performing.<sup>6</sup></p>
     </div>
-    <div class="abox" style="margin-top:13pt">
+    <div class="abox" style="margin-top:8pt">
       <div class="abox__label">What the evidence does <span style="text-decoration:underline;text-decoration-color:var(--yellow-line);text-underline-offset:2px">not</span> say</div>
       <ul class="arrows">
         <li>That it works for everyone. It doesn&rsquo;t. Some athletes get a lot from it; some get a little.</li>
@@ -727,18 +679,18 @@ sup{font-size:.62em;line-height:0;font-weight:600}
         <li>That the difference is enormous. It&rsquo;s real and it&rsquo;s worth having — but it isn&rsquo;t a transformation, and we&rsquo;re not going to pretend otherwise.</li>
       </ul>
     </div>
+  
   </div>
-  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">22</div></div>
+  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">14</div></div>
 </section>
 
-<!-- ============================================================ 23 · SECTION 07 a -->
 <section class="sheet">
   <div class="inner">
     <div class="section-head">
       <span class="eyebrow">Section 07</span>
       <h2 class="htitle">Questions athletes<br>actually <span class="y">ask</span></h2>
     </div>
-    <p class="lead" style="margin-bottom:6pt">Collected from the athletes we work with — including the ones people tend to ask right at the door, on the way out.</p>
+    <p class="lead" style="margin-bottom:4pt">Collected from the athletes we work with — including the ones people tend to ask right at the door, on the way out.</p>
     <div>
       <div class="qa"><div class="qa__q"><div class="qa__mark">Q</div><div class="qa__qt">So are you a sport psychologist or not?</div></div><p class="qa__a">Technically, no — and neither is anyone else in New Zealand, because it isn&rsquo;t a registered title here. We&rsquo;re registered psychologists whose work is in sport. It&rsquo;s a small distinction that tells you something useful: our qualification is in psychology, and our experience is in your world.</p></div>
       <div class="qa"><div class="qa__q"><div class="qa__mark">Q</div><div class="qa__qt">Will this make me overthink? I already think too much.</div></div><p class="qa__a">This is the most common worry, and a reasonable one. But there&rsquo;s a difference between thinking about your thinking and being stuck inside it. Most of the work goes in the opposite direction from analysis — it&rsquo;s about getting your attention out of your head and onto the ball, the water, the road. Athletes who overthink often find this is the part that helps most.</p></div>
@@ -746,13 +698,8 @@ sup{font-size:.62em;line-height:0;font-weight:600}
       <div class="qa"><div class="qa__q"><div class="qa__mark">Q</div><div class="qa__qt">What if I don&rsquo;t know what to say?</div></div><p class="qa__a">Then we ask better questions. Nobody expects you to arrive with a prepared speech. Turning up and saying &ldquo;I don&rsquo;t really know why I&rsquo;m here&rdquo; is a completely normal opening.</p></div>
       <div class="qa"><div class="qa__q"><div class="qa__mark">Q</div><div class="qa__qt">Can my coach make me do this?</div></div><p class="qa__a">A coach can suggest it or arrange it. They can&rsquo;t make you engage, and forced attendance doesn&rsquo;t work anyway. If you&rsquo;re here because someone else sent you, say so in the first session — that&rsquo;s useful information, not an insult.</p></div>
     </div>
-  </div>
-  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">23</div></div>
-</section>
-
-<!-- ============================================================ 24 · SECTION 07 b -->
-<section class="sheet">
-  <div class="inner">
+  
+    <div class="sec-gap"></div>
     <div style="margin-top:0">
       <div class="qa"><div class="qa__q"><div class="qa__mark">Q</div><div class="qa__qt">Will my parents be in the room?</div></div><p class="qa__a">Usually not for the main work, though <span class="reo">whānau</span> may be involved at the start and at review points, especially if you&rsquo;re younger. This gets agreed openly at the beginning rather than decided behind you.</p></div>
       <div class="qa"><div class="qa__q"><div class="qa__mark">Q</div><div class="qa__qt">What if I get upset?</div></div><p class="qa__a">Then you get upset, and that&rsquo;s genuinely okay. It happens, we&rsquo;re not thrown by it, and nobody makes it awkward afterwards. Usually it means you&rsquo;ve reached something that actually matters to you — which is useful information, not something to be embarrassed about.</p></div>
@@ -761,11 +708,11 @@ sup{font-size:.62em;line-height:0;font-weight:600}
       <div class="qa"><div class="qa__q"><div class="qa__mark">Q</div><div class="qa__qt">What if my problem isn&rsquo;t really about sport?</div></div><p class="qa__a">Very common, and completely fine. Sport is often just where the problem becomes visible, because it&rsquo;s where you&rsquo;re being measured. We work with the whole picture.</p></div>
       <div class="qa"><div class="qa__q"><div class="qa__mark">Q</div><div class="qa__qt">Are you going to tell me to think positive?</div></div><p class="qa__a">No. Forced positive thinking has a poor track record in sport and tends to backfire under real pressure — telling yourself you feel great when you plainly don&rsquo;t just adds a second problem. We&rsquo;re more interested in what you do when you feel awful.</p></div>
     </div>
+  
   </div>
-  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">24</div></div>
+  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">15</div></div>
 </section>
 
-<!-- ============================================================ 25 · SECTION 07 c -->
 <section class="sheet">
   <div class="inner">
     <div style="margin-top:0">
@@ -776,11 +723,11 @@ sup{font-size:.62em;line-height:0;font-weight:600}
       <div class="qa"><div class="qa__q"><div class="qa__mark">Q</div><div class="qa__qt">Can it be done online?</div></div><p class="qa__a">Yes, and it works — useful if you&rsquo;re rural, travelling, or fitting sessions around school. We work with athletes right across Aotearoa this way. Some prefer in person. Both are legitimate.</p></div>
       <div class="qa"><div class="qa__q"><div class="qa__mark">Q</div><div class="qa__qt">Will this go on some kind of permanent record?</div></div><p class="qa__a">Clinical notes are kept — that&rsquo;s a professional requirement, and they&rsquo;re stored securely. They are not shared with schools, selectors or sporting bodies, and they don&rsquo;t follow you around. You&rsquo;re entitled to ask what&rsquo;s in them.</p></div>
     </div>
+  
   </div>
-  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">25</div></div>
+  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">16</div></div>
 </section>
 
-<!-- ============================================================ 26 · SECTION 08 a -->
 <section class="sheet">
   <div class="inner">
     <div class="section-head">
@@ -789,7 +736,7 @@ sup{font-size:.62em;line-height:0;font-weight:600}
     </div>
     <p class="lead">You&rsquo;re allowed to interview the person you&rsquo;re thinking of working with. We&rsquo;d encourage it — including with us.</p>
     <h3 class="subhead">Worth asking any practitioner</h3>
-    <ul class="checks" style="margin-top:6pt">
+    <ul class="checks" style="margin-top:4pt">
       <li>Are you registered, and with whom? What scope of practice are you registered in?</li>
       <li>Have you worked with athletes my age, in my sport or one like it?</li>
       <li>What approach do you use, and what&rsquo;s the evidence behind it?</li>
@@ -798,19 +745,19 @@ sup{font-size:.62em;line-height:0;font-weight:600}
       <li>How will we know whether this is working?</li>
       <li>How do I stop if I want to?</li>
     </ul>
-    <p class="body" style="margin-top:11pt">You can check anyone&rsquo;s registration yourself on the New Zealand Psychologists Board public register. If a practitioner is uncomfortable with these questions, that in itself is an answer.</p>
-    <div class="gym" style="margin-top:12pt">
+    <p class="body" style="margin-top:7pt">You can check anyone&rsquo;s registration yourself on the New Zealand Psychologists Board public register. If a practitioner is uncomfortable with these questions, that in itself is an answer.</p>
+    <div class="gym" style="margin-top:7pt">
       <div class="gym__label"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="7" x2="6" y2="17"/><line x1="3" y1="9.5" x2="3" y2="14.5"/><line x1="18" y1="7" x2="18" y2="17"/><line x1="21" y1="9.5" x2="21" y2="14.5"/><line x1="6" y1="12" x2="18" y2="12"/></svg> In the gym</div>
       <p>You wouldn&rsquo;t take a programme from someone who couldn&rsquo;t explain why it was built that way. Apply exactly the same standard here.</p>
     </div>
+  
   </div>
-  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">26</div></div>
+  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">17</div></div>
 </section>
 
-<!-- ============================================================ 27 · SECTION 08 b — TEAM -->
 <section class="sheet">
   <div class="inner">
-    <span class="eyebrow" style="display:inline-block;margin-bottom:14pt">Who you&rsquo;d be working with</span>
+    <span class="eyebrow" style="display:inline-block;margin-bottom:9pt">Who you&rsquo;d be working with</span>
     <div class="person" style="border-top:none;padding-top:0">
       <img class="person__ph" src="assets/img/jason.jpg" alt="Jason Yuill Proctor">
       <div>
@@ -827,15 +774,15 @@ sup{font-size:.62em;line-height:0;font-weight:600}
         <p class="person__bio">James came into psychology through rugby. In the UK he was a student-athlete scholar and played in a professional rugby academy through to age eighteen, having earlier played international schoolboy rugby and spent time in England Rugby&rsquo;s elite player development group on the schoolboy pathway. A chance to keep playing brought him to Aotearoa and into Canterbury&rsquo;s development set-up. After a couple of seasons troubled by concussion he stepped away from playing, and moved into studying clinical and sport psychology — the area he has now worked in for around ten years. That background quietly shapes how he works, and sits behind his research into effective coaching conversations and his focus on making psychology accessible in community sport.</p>
       </div>
     </div>
-    <div class="note" style="margin-top:16pt">
+    <div class="note" style="margin-top:10pt">
       <div class="note__label">If this isn&rsquo;t the right thing right now</div>
       <p>That&rsquo;s a completely fine conclusion to reach, and there are other doors. Your GP can help and can refer you on. School counsellors are free and often underrated. If you&rsquo;re in a high-performance programme, there may already be psychology support attached to it that you can access at no cost — worth asking your coach or programme manager before paying for anything privately.</p>
     </div>
+  
   </div>
-  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">27</div></div>
+  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">18</div></div>
 </section>
 
-<!-- ============================================================ 28 · NEED IMMEDIATE SUPPORT -->
 <section class="sheet">
   <div class="inner">
     <div class="section-head">
@@ -843,7 +790,7 @@ sup{font-size:.62em;line-height:0;font-weight:600}
       <h2 class="htitle">Need immediate <span class="y">support?</span></h2>
     </div>
     <p class="body" style="margin-top:2pt">The Performance Act is a psychology practice working in sport — <strong>not a crisis or emergency service</strong>. If you or someone you care about needs support right now, these services are free, confidential and available 24/7. None of them require you to have anything figured out before you get in touch.</p>
-    <div style="margin-top:13pt">
+    <div style="margin-top:8pt">
       <div class="sup"><div class="sup__info"><div class="sup__name">1737 — Need to Talk?</div><div class="sup__desc">Free call or text, any time. Trained counsellors, 24/7.</div></div><a class="sup__num" href="tel:1737">Call or text 1737</a></div>
       <div class="sup"><div class="sup__info"><div class="sup__name">Youthline</div><div class="sup__desc">For young people. Free, 24/7.</div></div><a class="sup__num" href="tel:0800376633">0800 376 633 · txt 234</a></div>
       <div class="sup"><div class="sup__info"><div class="sup__name">Lifeline Aotearoa</div><div class="sup__desc">Crisis support and suicide prevention, 24/7.</div></div><a class="sup__num" href="tel:0800543354">0800 543 354</a></div>
@@ -851,24 +798,24 @@ sup{font-size:.62em;line-height:0;font-weight:600}
       <div class="sup"><div class="sup__info"><div class="sup__name">Samaritans</div><div class="sup__desc">Confidential emotional support, any time.</div></div><a class="sup__num" href="tel:0800726666">0800 726 666</a></div>
       <div class="sup" style="border-left-color:#000;background:#000"><div class="sup__info"><div class="sup__name" style="color:#fff">In an emergency</div><div class="sup__desc" style="color:#B7B7AE">Immediate danger to you or someone else.</div></div><a class="sup__num" href="tel:111" style="background:var(--yellow);color:#000">Call 111</a></div>
     </div>
-    <p class="body" style="margin-top:9pt;font-size:9pt;color:var(--muted)">More resources at <strong>mentalhealth.org.nz</strong> and <strong>depression.org.nz</strong>.</p>
-    <div class="note" style="margin-top:14pt">
+    <p class="body" style="margin-top:6pt;font-size:9pt;color:var(--muted)">More resources at <strong>mentalhealth.org.nz</strong> and <strong>depression.org.nz</strong>.</p>
+    <div class="note" style="margin-top:9pt">
       <div class="note__label">If you&rsquo;d like to start</div>
       <p>The first step is a free <span class="reo">kōrero</span>, not a commitment. You can get in touch yourself, or a parent, caregiver, <span class="reo">whānau</span> member or coach can on your behalf. We&rsquo;ll talk about what&rsquo;s going on, what you&rsquo;re after, and whether we&rsquo;re the right people for it. If we&rsquo;re not, we&rsquo;ll say so and point you somewhere better.</p>
     </div>
-    <p style="margin-top:12pt;font-family:var(--inter);font-weight:400;font-size:8pt;line-height:1.5;color:var(--muted-2);font-style:italic">Every athlete&rsquo;s situation is different, and nothing in this document is individual advice. It&rsquo;s here so you can make an informed decision about whether to have a conversation — nothing more than that.</p>
+    <p style="margin-top:7pt;font-family:var(--inter);font-weight:400;font-size:8pt;line-height:1.5;color:var(--muted-2);font-style:italic">Every athlete&rsquo;s situation is different, and nothing in this document is individual advice. It&rsquo;s here so you can make an informed decision about whether to have a conversation — nothing more than that.</p>
+  
   </div>
-  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">28</div></div>
+  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">19</div></div>
 </section>
 
-<!-- ============================================================ 29 · REFERENCES -->
 <section class="sheet">
   <div class="inner">
     <div class="section-head">
       <span class="eyebrow">References</span>
       <h2 class="htitle">Where these claims<br>come <span class="y">from</span></h2>
     </div>
-    <p class="lead" style="font-size:11.5pt;margin-bottom:14pt">Every number quoted in this guide comes from one of these — all peer-reviewed, published studies you can find online if you ever want to read one for yourself.</p>
+    <p class="lead" style="font-size:11.5pt;margin-bottom:9pt">Every number quoted in this guide comes from one of these — all peer-reviewed, published studies you can find online if you ever want to read one for yourself.</p>
     <div class="refs">
       <div class="ref"><div class="ref__n">1</div><div class="ref__t">Gulliver, A., Griffiths, K. M., &amp; Christensen, H. (2012). Barriers and facilitators to mental health help-seeking for young elite athletes: A qualitative study. <i>BMC Psychiatry, 12,</i> 157.</div></div>
       <div class="ref"><div class="ref__n">2</div><div class="ref__t">Cosh, S. M., McNeil, D. G., Jeffreys, A., Clark, L., &amp; Tully, P. J. (2024). Athlete mental health help-seeking: A systematic review and meta-analysis of rates, barriers and facilitators. <i>Psychology of Sport and Exercise, 71,</i> 102586.</div></div>
@@ -885,8 +832,9 @@ sup{font-size:.62em;line-height:0;font-weight:600}
       <div class="ref"><div class="ref__n">13</div><div class="ref__t">Lange-Smith, S., Cabot, J., Coffee, P., Gunnell, K., &amp; Tod, D. (2024). The efficacy of psychological skills training for enhancing performance in sport: A review of reviews. <i>International Journal of Sport and Exercise Psychology, 22</i>(4), 1012–1029.</div></div>
       <div class="ref"><div class="ref__n">14</div><div class="ref__t">New Zealand Psychologists Board — Scopes of Practice. Health Practitioners Competence Assurance Act 2003 (NZ); Health Information Privacy Code 2020 (NZ); Code of Health and Disability Services Consumers&rsquo; Rights (NZ).</div></div>
     </div>
+  
   </div>
-  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">29</div></div>
+  <div class="foot"><div class="foot__mark"><span class="foot__dot"></span> The Performance Act · A Guide for Athletes</div><div class="foot__pg">20</div></div>
 </section>
 
 <!-- ============================================================ 30 · BACK COVER -->

@@ -1,8 +1,8 @@
 # The Performance Act — Athlete Guide (PDF source)
 
 Source files for **`ThePerformanceAct-AthleteGuide.pdf`** (in the repo root): a
-30-page, fully branded brochure that explains to athletes (ages 13–18) what
-working with a sport psychologist actually involves.
+compact, fully branded brochure for teenage athletes explaining what working
+with a psychologist in sport actually involves.
 
 This is a standalone print/share PDF — it is **not** linked from the website.
 
