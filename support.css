@@ -245,12 +245,15 @@
   background-size: cover;
   background-position: center;
   transform: scale(1.05);
-  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  filter: grayscale(100%) contrast(1.1) brightness(0.85);
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+              filter 0.8s ease;
   z-index: 1;
 }
 
 .sp-choice-card:hover .sp-choice-card__bg {
   transform: scale(1.12);
+  filter: grayscale(40%) contrast(1.05) brightness(0.9);
 }
 
 .sp-choice-card__overlay {
@@ -532,14 +535,19 @@
 }
 
 .sp-section__media img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  filter: grayscale(100%) contrast(1.1) brightness(0.85);
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+              filter 0.8s ease;
 }
 
 .sp-section:hover .sp-section__media img {
   transform: scale(1.03);
+  filter: grayscale(40%) contrast(1.05) brightness(0.95);
 }
 
 .sp-section__num {
