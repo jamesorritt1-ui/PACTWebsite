@@ -703,5 +703,7 @@
       background: rgba(255, 255, 255, 0.03); border-bottom: 2px solid var(--yellow);
     }
     .legal-table td:first-child { font-weight: 600; color: #fff; }
+    .legal-table a { color: var(--yellow); text-decoration: none; border-bottom: 1px solid rgba(255, 229, 0, 0.35); }
+    .legal-table a:hover { border-bottom-color: var(--yellow); }
     .legal-table tbody tr:last-child td { border-bottom: none; }
     .legal-table tbody tr:hover td { background: rgba(255, 255, 255, 0.02); }
