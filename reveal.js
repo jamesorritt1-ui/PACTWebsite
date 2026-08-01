@@ -11,7 +11,8 @@
   var SELECTORS = [
     '.section-heading', '.section-intro',
     '.about-grid__image', '.about-grid__content',
-    '.pillar-card', '.journey-card', '.stat', '.team-card', '.community-card',
+    '.pillar-card', '.journey-card', '.stat', '.team-card',
+    '.privacy-note', '.privacy-note + .programs-footer',
     '.sp-section__media', '.sp-section__content',
     '.sp-lead__title', '.sp-lead__text', '.sp-lead__aside',
     '.sp-choice-card', '.sp-both__inner', '.sp-imm__inner',
