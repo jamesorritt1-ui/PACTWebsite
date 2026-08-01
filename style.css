@@ -1191,6 +1191,23 @@ img {
   margin-top: 2px;
 }
 
+/* ---------- PRIVACY NOTE ---------- */
+.privacy-note {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.privacy-note__text {
+  font-size: 1.05rem;
+  color: var(--gray-300);
+  line-height: 1.8;
+}
+
+.privacy-note__text + .privacy-note__text {
+  margin-top: 20px;
+}
+
 /* =========================================================
    NEWSLETTER
    ========================================================= */
