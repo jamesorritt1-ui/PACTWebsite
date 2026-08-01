@@ -1208,6 +1208,42 @@ img {
   margin-top: 20px;
 }
 
+/* Scroll-driven "reading light": a warm edge sweeps across each line as
+   it travels up the viewport, leaving the text brighter behind it.
+   Progressive enhancement — browsers without scroll-driven animation
+   (Firefox today) keep the static colour above, and reduced-motion users
+   opt out. The unlit state stays above AA contrast on black, so the text
+   is fully readable at every point in the sweep. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .privacy-note__text {
+      color: transparent;
+      background-image: linear-gradient(
+        100deg,
+        var(--white) 0%,
+        var(--white) 36%,
+        var(--yellow) 45%,
+        rgba(255, 255, 255, 0.55) 58%,
+        rgba(255, 255, 255, 0.55) 100%
+      );
+      background-size: 300% 100%;
+      background-position: 100% 0;
+      background-repeat: no-repeat;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: privacy-note-lightup linear both;
+      animation-timeline: view();
+      animation-range: entry 100% cover 68%;
+    }
+  }
+}
+
+@keyframes privacy-note-lightup {
+  to {
+    background-position: 0 0;
+  }
+}
+
 /* =========================================================
    NEWSLETTER
    ========================================================= */
