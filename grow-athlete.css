@@ -744,7 +744,165 @@
 }
 
 /* ---------------------------------------------------------
-   8. PRINT (so athletes can print their journal)
+   8. COLLAPSIBLE TOOLS
+
+   Every toolkit page runs 25-40 screens long if you open it
+   flat. Collapsed, the same page is a two-screen contents
+   list you can scan — so the page opens as an index and the
+   athlete pulls down only the skill they came for.
+   --------------------------------------------------------- */
+
+.aj-tool--fold { padding-bottom: 0; transition: border-color .2s; }
+.aj-tool--fold.is-open { padding-bottom: 32px; }
+
+/* A section whose tools are all shut is a row in a list, not a
+   chapter — drop the chapter-sized padding and the alternating
+   band so the folded cards read as one continuous index. */
+.aj-sec--folded { padding: 5px 0; background: transparent; }
+.aj-sec--folded .aj-tool--fold { margin-bottom: 0; }
+
+.aj-tool__head--toggle {
+  cursor: pointer; margin-bottom: 0; padding: 0 0 30px;
+  align-items: center; user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.aj-tool--fold.is-open .aj-tool__head--toggle { padding-bottom: 22px; }
+.aj-tool__head--toggle:hover .aj-tool__name,
+.aj-tool__head--toggle:focus-visible .aj-tool__name { color: var(--yellow); }
+.aj-tool__head--toggle:focus-visible { outline: 2px solid var(--yellow); outline-offset: 6px; }
+
+/* Collapsed, the "for:" line is the whole pitch — keep it. */
+.aj-tool__meta { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+
+.aj-tool__state {
+  font-family: var(--font-heading); font-size: 0.62rem; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 5px 10px; white-space: nowrap;
+  border: 1px solid var(--line); color: var(--muted);
+}
+.aj-tool__state--part { border-color: rgba(255,229,0,0.45); color: var(--yellow); }
+.aj-tool__state--done { background: var(--yellow); border-color: var(--yellow); color: #000; font-weight: 600; }
+
+.aj-tool__chev {
+  width: 26px; height: 26px; flex-shrink: 0; color: var(--yellow);
+  transition: transform .25s ease; display: block;
+}
+.aj-tool--fold.is-open .aj-tool__chev { transform: rotate(180deg); }
+.aj-tool__chev svg { width: 100%; height: 100%; display: block; }
+
+.aj-tool__body--fold { animation: ajFold .22s ease-out; }
+@keyframes ajFold { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+
+@media (max-width: 620px) {
+  .aj-tool__head--toggle { flex-wrap: wrap; gap: 12px; }
+  .aj-tool__state { display: none; }
+}
+
+/* ---- The sticky bar becomes the page's navigation ---- */
+
+.aj-progress--nav .aj-progress__label { display: none; }
+.aj-progress__inner { row-gap: 10px; }
+
+.aj-navselect {
+  flex: 1 1 210px; min-width: 0; max-width: 340px;
+  background: #111; border: 1px solid var(--line); color: #fff;
+  font-family: var(--font-heading); font-size: 0.74rem; letter-spacing: 0.08em;
+  text-transform: uppercase; padding: 9px 12px; cursor: pointer;
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFE500' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 10px center; background-size: 15px;
+  padding-right: 32px;
+}
+.aj-navselect:focus { outline: none; border-color: var(--yellow); }
+.aj-navselect optgroup { background: #111; color: var(--muted); }
+.aj-navselect option { background: #111; color: #fff; text-transform: none; letter-spacing: 0; font-size: 0.85rem; }
+
+.aj-navbtn {
+  flex-shrink: 0; background: none; border: 1px solid var(--line); color: var(--ink);
+  font-family: var(--font-heading); font-size: 0.66rem; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 9px 13px; cursor: pointer; transition: .2s;
+  white-space: nowrap;
+}
+.aj-navbtn:hover { border-color: var(--yellow); color: var(--yellow); }
+
+@media (max-width: 720px) {
+  .aj-progress--nav .aj-progress__track { display: none; }
+  .aj-navselect { flex: 1 1 100%; max-width: none; }
+}
+
+/* ---------------------------------------------------------
+   9. THE JOURNAL — filter, search, drill down
+
+   A full journal is 260+ answers. Rendered flat that is
+   fifty screens with no way in, so it renders as a folder
+   tree instead: pillar, then tool, then the answers.
+   --------------------------------------------------------- */
+
+.jn-bar {
+  position: sticky; top: var(--header-height); z-index: 30;
+  /* fully opaque — entries scrolling underneath must not bleed through */
+  background: #0b0b0b;
+  border: 1px solid var(--line); padding: 16px 18px; margin-bottom: 24px;
+  box-shadow: 0 10px 20px -12px rgba(0,0,0,0.9);
+}
+.jn-bar__row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.jn-bar__row + .jn-bar__row { margin-top: 12px; }
+
+.jn-search {
+  flex: 1 1 220px; min-width: 0; background: #0a0a0a; border: 1px solid var(--line);
+  color: #fff; font-family: var(--font-body); font-size: 0.92rem; padding: 11px 14px;
+}
+.jn-search:focus { outline: none; border-color: var(--yellow); }
+.jn-search::placeholder { color: var(--muted); }
+
+.jn-filter {
+  background: none; border: 1px solid var(--line); color: var(--ink);
+  font-family: var(--font-heading); font-size: 0.64rem; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 8px 12px; cursor: pointer; transition: .15s;
+  white-space: nowrap;
+}
+.jn-filter:hover { border-color: rgba(255,229,0,0.5); color: #fff; }
+.jn-filter[aria-pressed="true"] { background: var(--yellow); border-color: var(--yellow); color: #000; font-weight: 600; }
+.jn-filter b { font-weight: inherit; opacity: 0.6; margin-left: 5px; }
+
+.jn-group { margin-bottom: 30px; }
+.jn-group__h {
+  font-family: var(--font-heading); font-size: 0.74rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--yellow); margin: 0 0 12px;
+  padding-bottom: 9px; border-bottom: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+}
+.jn-group__n { color: var(--muted); letter-spacing: 0.08em; font-size: 0.66rem; white-space: nowrap; }
+
+.jn-tool { border: 1px solid var(--line); background: var(--panel); margin-bottom: 8px; }
+.jn-tool__head {
+  width: 100%; display: flex; align-items: center; gap: 12px; text-align: left;
+  background: none; border: none; color: #fff; cursor: pointer;
+  padding: 14px 16px; font-family: var(--font-body); font-size: 0.95rem;
+}
+.jn-tool__head:hover { background: rgba(255,229,0,0.05); }
+.jn-tool__head:focus-visible { outline: 2px solid var(--yellow); outline-offset: -2px; }
+.jn-tool__name { flex: 1; font-weight: 500; }
+.jn-tool__n { color: var(--muted); font-size: 0.78rem; white-space: nowrap; }
+.jn-tool__chev { width: 17px; height: 17px; color: var(--yellow); flex-shrink: 0; transition: transform .22s; }
+.jn-tool.is-open .jn-tool__chev { transform: rotate(180deg); }
+.jn-tool__body { padding: 2px 16px 14px; }
+.jn-tool__body .aj-entry { background: #0a0a0a; margin-bottom: 8px; padding: 15px 17px; }
+.jn-tool__body .aj-entry:last-child { margin-bottom: 0; }
+
+.jn-hit { background: rgba(255,229,0,0.28); color: #fff; }
+.jn-none { color: var(--muted); font-size: 0.95rem; font-style: italic; padding: 30px 0; text-align: center; }
+
+@media (max-width: 620px) {
+  .jn-bar { padding: 14px; position: static; }
+  .jn-group__h { flex-direction: column; gap: 4px; }
+}
+
+/* ---------------------------------------------------------
+   10. PRINT (so athletes can print their journal)
+
+   Everything folded away on screen must come back for print
+   — a printed journal with the answers collapsed would be
+   blank paper.
    --------------------------------------------------------- */
 
 @media print {
@@ -758,4 +916,12 @@
   .aj-entry__a, .aj-entry__q, .aj-h2, .aj-h3, .aj-p { color: #000 !important; }
   .aj-entry__tool, .aj-eyebrow { color: #666 !important; }
   a { color: #000 !important; text-decoration: none !important; }
+
+  /* unfold everything */
+  .aj-tool__body[hidden], .jn-tool__body[hidden] { display: block !important; }
+  .aj-tool__chev, .aj-tool__state, .jn-tool__chev, .jn-bar, .dd__filters { display: none !important; }
+  .jn-tool { border: none !important; background: none !important; }
+  .jn-tool__head { color: #000 !important; padding-left: 0 !important; }
+  .jn-group__h { color: #000 !important; }
+  .dd__entry-more[hidden] { display: block !important; }
 }

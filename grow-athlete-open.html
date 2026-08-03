@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
   <title>OPEN — Acceptance &amp; Defusion | Skills Journal | The Performance Act</title>
-  <meta name="description" content="Six skills for making room for difficult thoughts and feelings instead of fighting them or obeying them.">
+  <meta name="description" content="Ten skills for making room for difficult thoughts and feelings instead of fighting them or obeying them.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -81,20 +81,45 @@
     .dd__v[data-v="away"][aria-pressed="true"] { background:#c0562e; border-color:#c0562e; color:#fff; }
     .dd__v[data-v="mixed"][aria-pressed="true"] { background:#8a7a3a; border-color:#8a7a3a; color:#fff; }
 
-    .dd__entries { margin-top:22px; }
-    .dd__entry { background:#111; border:1px solid var(--line); border-left:3px solid var(--yellow); padding:15px 17px; margin-bottom:10px; position:relative; }
+    /* The log is a reference list, so each entry collapses to one
+       scannable line and opens for the workability detail. Fourteen
+       entries take one screen instead of ten. */
+    .dd__log { margin-top:24px; padding-top:20px; border-top:1px solid var(--line); }
+    .dd__loghead { display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; margin-bottom:12px; }
+    .dd__filters { display:flex; gap:5px; flex-wrap:wrap; }
+    .dd__f { background:none; border:1px solid var(--line); color:var(--muted); font-family:var(--font-heading); font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; padding:5px 9px; cursor:pointer; transition:.15s; }
+    .dd__f:hover { border-color:rgba(255,229,0,0.5); color:#fff; }
+    .dd__f[aria-pressed="true"] { background:var(--yellow); border-color:var(--yellow); color:#000; font-weight:600; }
+    .dd__f[data-f="away"][aria-pressed="true"] { background:#c0562e; border-color:#c0562e; color:#fff; }
+
+    .dd__entries { margin-top:0; }
+    .dd__entry { background:#111; border:1px solid var(--line); border-left:3px solid var(--yellow); margin-bottom:6px; position:relative; }
     .dd__entry--away { border-left-color:#c0562e; }
     .dd__entry--mixed { border-left-color:#8a7a3a; }
-    .dd__entry-top { display:flex; align-items:center; gap:10px; margin-bottom:7px; flex-wrap:wrap; }
-    .dd__badge { font-family:var(--font-heading); font-size:0.62rem; letter-spacing:0.12em; text-transform:uppercase; background:var(--yellow); color:#000; padding:3px 8px; }
+    .dd__entry-top { display:flex; align-items:center; gap:11px; padding:11px 14px; cursor:pointer; }
+    .dd__entry-top:hover { background:rgba(255,229,0,0.04); }
+    .dd__badge { font-family:var(--font-heading); font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; background:var(--yellow); color:#000; padding:3px 7px; flex-shrink:0; }
     .dd__entry--away .dd__badge { background:#c0562e; color:#fff; }
     .dd__entry--mixed .dd__badge { background:#8a7a3a; color:#fff; }
-    .dd__what { color:#fff; font-size:0.95rem; font-weight:500; flex:1; }
-    .dd__del { background:none; border:none; color:var(--muted); cursor:pointer; font-size:1.1rem; line-height:1; padding:0 3px; }
-    .dd__del:hover { color:#c0562e; }
-    .dd__line { color:var(--ink); font-size:0.87rem; line-height:1.6; font-weight:300; margin:3px 0 0; }
+    .dd__what { color:#fff; font-size:0.92rem; font-weight:500; flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .dd__when { color:var(--muted); font-size:0.74rem; white-space:nowrap; flex-shrink:0; }
+    .dd__verdict-tag { font-size:0.74rem; white-space:nowrap; flex-shrink:0; color:var(--yellow); }
+    .dd__entry--away .dd__verdict-tag { color:#d4744a; }
+    .dd__entry--mixed .dd__verdict-tag { color:#b0a05a; }
+    .dd__caret { width:15px; height:15px; color:var(--muted); flex-shrink:0; transition:transform .2s; }
+    .dd__caret svg { width:100%; height:100%; display:block; }
+    .dd__entry.is-open .dd__caret { transform:rotate(180deg); }
+    .dd__more-wrap { padding:0 14px 13px; border-top:1px solid var(--line); margin-top:-1px; }
+    .dd__del { background:none; border:1px solid var(--line); color:var(--muted); cursor:pointer; font-family:var(--font-heading); font-size:0.58rem; letter-spacing:0.1em; text-transform:uppercase; padding:5px 9px; margin-top:10px; }
+    .dd__del:hover { color:#c0562e; border-color:#c0562e; }
+    .dd__line { color:var(--ink); font-size:0.87rem; line-height:1.6; font-weight:300; margin:9px 0 0; }
     .dd__line b { color:var(--muted); font-weight:400; }
     .dd__empty { color:var(--muted); font-size:0.9rem; font-style:italic; padding:16px 0; }
+    .dd__more { display:block; width:100%; margin-top:10px; background:none; border:1px dashed var(--line); color:var(--ink); font-family:var(--font-heading); font-size:0.64rem; letter-spacing:0.12em; text-transform:uppercase; padding:11px; cursor:pointer; transition:.15s; }
+    .dd__more:hover { border-color:var(--yellow); color:var(--yellow); }
+    @media (max-width:620px){
+      .dd__when, .dd__verdict-tag { display:none; }
+    }
 
     /* aggregate readout */
     .dd__sum { margin-top:22px; padding-top:20px; border-top:1px solid var(--line); }
@@ -173,7 +198,7 @@
       </a>
       <span class="aj-hero__badge">Pillar one of the TriFlex</span>
       <h1 class="aj-hero__title"><span>OPEN</span></h1>
-      <p class="aj-hero__lead"><strong>Acceptance and defusion.</strong> Six skills for the moments when what&rsquo;s going on inside you is loud &mdash; and your instinct is either to fight it or to do what it says.</p>
+      <p class="aj-hero__lead"><strong>Acceptance and defusion.</strong> Ten skills for the moments when what&rsquo;s going on inside you is loud &mdash; and your instinct is either to fight it or to do what it says.</p>
       <p class="aj-hero__meta"><span>10 skills</span> &middot; <span>10 activities</span> &middot; <span>Dip in anywhere</span></p>
       <div class="aj-toc">
         <a href="#struggle">01 &middot; The struggle switch</a>
@@ -1815,12 +1840,31 @@
                   <span class="aj-field__hint" id="ddMsg" style="margin:0;"></span>
                 </div>
 
-                <div class="dd__entries" id="ddList"></div>
+                <!-- The read-out comes before the log: the pattern is
+                     what the athlete is here for, the entries are the
+                     reference behind it. -->
                 <div class="dd__sum" id="ddSum" hidden>
                   <p class="dd__sum-t">What your diary is showing you</p>
                   <div id="ddStrats"></div>
                   <p class="dd__insight" id="ddInsight"></p>
                 </div>
+
+                <div class="dd__log" id="ddLog" hidden>
+                  <div class="dd__loghead">
+                    <p class="dd__sum-t" style="margin:0;">Your entries <span id="ddCount"></span></p>
+                    <div class="dd__filters" id="ddFilters">
+                      <button type="button" class="dd__f" data-f="all" aria-pressed="true">All</button>
+                      <button type="button" class="dd__f" data-f="D" aria-pressed="false">D</button>
+                      <button type="button" class="dd__f" data-f="O" aria-pressed="false">O</button>
+                      <button type="button" class="dd__f" data-f="T" aria-pressed="false">T</button>
+                      <button type="button" class="dd__f" data-f="S" aria-pressed="false">S</button>
+                      <button type="button" class="dd__f" data-f="away" aria-pressed="false">Away only</button>
+                    </div>
+                  </div>
+                  <div class="dd__entries" id="ddList"></div>
+                  <button type="button" class="dd__more" id="ddMore" hidden></button>
+                </div>
+                <div class="dd__entries" id="ddEmpty"></div>
               </div>
 
               <div class="aj-field" style="margin-top:24px;">
@@ -2323,6 +2367,17 @@
     var sumEl     = document.getElementById('ddSum');
     var stratsEl  = document.getElementById('ddStrats');
     var insightEl = document.getElementById('ddInsight');
+    var logEl     = document.getElementById('ddLog');
+    var emptyEl   = document.getElementById('ddEmpty');
+    var countEl   = document.getElementById('ddCount');
+    var filtersEl = document.getElementById('ddFilters');
+    var moreEl    = document.getElementById('ddMore');
+
+    var PAGE = 6;                 /* how many rows before "show the rest" */
+    var view = { filter: 'all', showAll: false, open: {} };
+
+    var CARET = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" ' +
+                'stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
 
     /* ---------- storage ---------- */
 
@@ -2402,6 +2457,11 @@
       sitEl.value = whatEl.value = gaveEl.value = costEl.value = '';
       letterGroup.clear();
       verdictGroup.clear();
+      /* never let a filter swallow the entry they just wrote */
+      view.filter = 'all';
+      filtersEl.querySelectorAll('.dd__f').forEach(function (o) {
+        o.setAttribute('aria-pressed', o.getAttribute('data-f') === 'all' ? 'true' : 'false');
+      });
       msgEl.style.color = '';
       msgEl.textContent = 'Logged. ' + entries.length + (entries.length === 1 ? ' entry' : ' entries') + ' so far.';
       render();
@@ -2416,39 +2476,109 @@
       } catch (err) { return ''; }
     }
 
+    function passesFilter(e) {
+      if (view.filter === 'all') return true;
+      if (view.filter === 'away') return e.verdict === 'away';
+      return e.letter === view.filter;
+    }
+
     function renderList() {
       if (!entries.length) {
-        listEl.innerHTML = '<p class="dd__empty">Nothing logged yet. The next one you catch &mdash; even a two-minute one &mdash; put it in here.</p>';
+        logEl.hidden = true;
+        emptyEl.innerHTML = '<p class="dd__empty">Nothing logged yet. The next one you catch &mdash; even a two-minute one &mdash; put it in here.</p>';
+        return;
+      }
+      emptyEl.innerHTML = '';
+      logEl.hidden = false;
+
+      countEl.textContent = '(' + entries.length + ')';
+
+      /* newest first */
+      var rows = entries.slice().sort(function (a, b) { return b.at - a.at; }).filter(passesFilter);
+
+      if (!rows.length) {
+        listEl.innerHTML = '<p class="dd__empty">No entries match that filter.</p>';
+        moreEl.hidden = true;
         return;
       }
 
-      /* newest first */
-      var rows = entries.slice().sort(function (a, b) { return b.at - a.at; });
+      var hidden = 0;
+      if (!view.showAll && rows.length > PAGE) {
+        hidden = rows.length - PAGE;
+        rows = rows.slice(0, PAGE);
+      }
 
       listEl.innerHTML = rows.map(function (e) {
         var mod = e.verdict === 'away' ? ' dd__entry--away' : (e.verdict === 'mixed' ? ' dd__entry--mixed' : '');
-        return '<div class="dd__entry' + mod + '">' +
-            '<div class="dd__entry-top">' +
-              '<span class="dd__badge">' + esc(e.letter) + ' &middot; ' + esc(LETTERS[e.letter] || '') + '</span>' +
+        var isOpen = !!view.open[e.at];
+        return '<div class="dd__entry' + mod + (isOpen ? ' is-open' : '') + '">' +
+            '<div class="dd__entry-top" role="button" tabindex="0" aria-expanded="' + isOpen + '" data-row="' + e.at + '">' +
+              '<span class="dd__badge">' + esc(e.letter) + '</span>' +
               '<span class="dd__what">' + esc(e.what) + '</span>' +
-              '<button type="button" class="dd__del" data-at="' + e.at + '" title="Delete this entry" aria-label="Delete this entry">&times;</button>' +
+              '<span class="dd__verdict-tag">' + (VERDICTS[e.verdict] || esc(e.verdict)) + '</span>' +
+              '<span class="dd__when">' + when(e.at) + '</span>' +
+              '<span class="dd__caret" aria-hidden="true">' + CARET + '</span>' +
             '</div>' +
-            (e.sit ? '<p class="dd__line"><b>After:</b> ' + esc(e.sit) + '</p>' : '') +
-            '<p class="dd__line"><b>Gave me:</b> ' + esc(e.gave) + '</p>' +
-            '<p class="dd__line"><b>Cost me:</b> ' + esc(e.cost) + '</p>' +
-            '<p class="dd__line"><b>' + when(e.at) + ' &middot; verdict:</b> ' + (VERDICTS[e.verdict] || esc(e.verdict)) + '</p>' +
+            '<div class="dd__more-wrap" data-detail="' + e.at + '"' + (isOpen ? '' : ' hidden') + '>' +
+              '<p class="dd__line"><b>' + esc(LETTERS[e.letter] || '') + ' &middot; ' + when(e.at) + '</b></p>' +
+              (e.sit ? '<p class="dd__line"><b>After:</b> ' + esc(e.sit) + '</p>' : '') +
+              '<p class="dd__line"><b>Gave me:</b> ' + esc(e.gave) + '</p>' +
+              '<p class="dd__line"><b>Cost me:</b> ' + esc(e.cost) + '</p>' +
+              '<button type="button" class="dd__del" data-at="' + e.at + '">Delete this entry</button>' +
+            '</div>' +
           '</div>';
       }).join('');
+
+      moreEl.hidden = !(hidden || view.showAll);
+      if (!moreEl.hidden) {
+        moreEl.textContent = view.showAll
+          ? 'Show fewer'
+          : 'Show ' + hidden + ' older ' + (hidden === 1 ? 'entry' : 'entries');
+      }
+
+      function toggle(at) {
+        view.open[at] = !view.open[at];
+        var row = listEl.querySelector('[data-row="' + at + '"]');
+        var detail = listEl.querySelector('[data-detail="' + at + '"]');
+        if (!row || !detail) return;
+        detail.hidden = !view.open[at];
+        row.setAttribute('aria-expanded', view.open[at] ? 'true' : 'false');
+        row.parentNode.classList.toggle('is-open', !!view.open[at]);
+      }
+
+      listEl.querySelectorAll('.dd__entry-top').forEach(function (top) {
+        var at = Number(top.getAttribute('data-row'));
+        top.addEventListener('click', function () { toggle(at); });
+        top.addEventListener('keydown', function (ev) {
+          if (ev.key === 'Enter' || ev.key === ' ' || ev.key === 'Spacebar') { ev.preventDefault(); toggle(at); }
+        });
+      });
 
       listEl.querySelectorAll('.dd__del').forEach(function (b) {
         b.addEventListener('click', function () {
           var at = Number(b.getAttribute('data-at'));
           entries = entries.filter(function (e) { return e.at !== at; });
+          delete view.open[at];
           save();
           render();
         });
       });
     }
+
+    filtersEl.querySelectorAll('.dd__f').forEach(function (b) {
+      b.addEventListener('click', function () {
+        view.filter = b.getAttribute('data-f');
+        filtersEl.querySelectorAll('.dd__f').forEach(function (o) {
+          o.setAttribute('aria-pressed', o === b ? 'true' : 'false');
+        });
+        renderList();
+      });
+    });
+
+    moreEl.addEventListener('click', function () {
+      view.showAll = !view.showAll;
+      renderList();
+    });
 
     /* ---------- the aggregate: what the diary is showing you ---------- */
 
@@ -2618,6 +2748,10 @@
     function render() { renderList(); renderSummary(); }
 
     render();
+    /* Keep the printable journal in step with the diary even if the
+       two ever drift apart — the journal is what gets brought to a
+       session, so it should never be stale. */
+    if (entries.length) syncJournal();
   })();
   </script>
 </body>
