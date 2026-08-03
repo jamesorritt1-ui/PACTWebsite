@@ -544,11 +544,13 @@
      --------------------------------------------------------- */
 
   var PILLAR_NAMES = {
+    start: 'GETTING STARTED',
+    five: 'THE FIVE MOVES',
+    prac: 'THE PRACTICE ROOM',
     open: 'OPEN — Acceptance & Defusion',
     aware: 'AWARE — Present Moment & Perspective',
     engaged: 'ENGAGED — Values & Committed Action',
-    brain: 'BRAIN HEALTH BEHAVIOURS',
-    start: 'GETTING STARTED'
+    brain: 'BRAIN HEALTH BEHAVIOURS'
   };
 
   function gatherEntries() {
@@ -580,7 +582,7 @@
     var host = document.getElementById('ajJournal');
     if (!host) return;
     var groups = gatherEntries();
-    var order = ['start', 'open', 'aware', 'engaged', 'brain'];
+    var order = ['start', 'five', 'prac', 'open', 'aware', 'engaged', 'brain'];
     var extras = Object.keys(groups).filter(function (p) { return order.indexOf(p) === -1; });
     var all = order.concat(extras).filter(function (p) { return groups[p] && groups[p].length; });
 
@@ -616,7 +618,7 @@
 
   function journalAsText() {
     var groups = gatherEntries();
-    var order = ['start', 'open', 'aware', 'engaged', 'brain'];
+    var order = ['start', 'five', 'prac', 'open', 'aware', 'engaged', 'brain'];
     var extras = Object.keys(groups).filter(function (p) { return order.indexOf(p) === -1; });
     var lines = [
       'MY SKILLS JOURNAL',

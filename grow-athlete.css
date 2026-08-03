@@ -190,6 +190,7 @@
 
 .aj-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; }
 .aj-pillars--four { grid-template-columns: repeat(4, 1fr); }
+.aj-pillars--two { grid-template-columns: repeat(2, 1fr); }
 
 .aj-pillar {
   display: flex; flex-direction: column;
@@ -729,10 +730,10 @@
    --------------------------------------------------------- */
 
 @media (max-width: 900px) {
-  .aj-pillars, .aj-pillars--four { grid-template-columns: 1fr 1fr; }
+  .aj-pillars, .aj-pillars--four, .aj-pillars--two { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 720px) {
-  .aj-pillars, .aj-pillars--four { grid-template-columns: 1fr; }
+  .aj-pillars, .aj-pillars--four, .aj-pillars--two { grid-template-columns: 1fr; }
   .aj-vs, .aj-applied, .aj-cp, .aj-nextnav, .aj-watch { grid-template-columns: 1fr; }
   .aj-nextnav--end { text-align: left; }
   .aj-tool { padding: 24px 20px 26px; }

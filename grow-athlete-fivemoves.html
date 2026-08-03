@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>The Five Moves | Skills Journal | The Performance Act</title>
+  <meta name="description" content="Notice, Name, Let Go, Soften, Expand — one sequence that runs across all three pillars, plus a diagnostic that finds your weak link.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=18">
+  <link rel="stylesheet" href="grow-athlete.css?v=2">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=2">
+  <style>
+    /* ---- Five Moves: the spine diagram ---- */
+    .fm-spine { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin:34px 0 10px; }
+    .fm-step {
+      background:#111; border:1px solid var(--line); padding:20px 16px 18px;
+      border-top:4px solid var(--yellow); position:relative; transition:.25s;
+    }
+    .fm-step--aware { border-top-color:var(--aware); }
+    .fm-step--open { border-top-color:var(--yellow); }
+    .fm-step--engaged { border-top-color:var(--engaged); }
+    .fm-step__n { font-family:var(--font-heading); font-size:0.68rem; letter-spacing:0.16em; color:var(--muted); }
+    .fm-step__name { font-family:var(--font-heading); font-weight:700; font-size:1.25rem; text-transform:uppercase; color:#fff; margin:6px 0 8px; line-height:1.1; }
+    .fm-step__q { color:var(--ink); font-size:0.85rem; line-height:1.55; font-weight:300; margin:0; }
+    .fm-step__pillar { margin-top:12px; padding-top:10px; border-top:1px solid var(--line); font-family:var(--font-heading); font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase; }
+    .fm-step--aware .fm-step__pillar { color:var(--aware); }
+    .fm-step--open .fm-step__pillar { color:var(--yellow); }
+    .fm-step--engaged .fm-step__pillar { color:var(--engaged); }
+    @media (max-width:900px){ .fm-spine { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:520px){ .fm-spine { grid-template-columns:1fr; } }
+
+    /* ---- Weak link diagnostic ---- */
+    .wl { background:#0a0a0a; border:1px dashed rgba(255,229,0,0.35); padding:24px 22px; margin-top:22px; }
+    .wl__title { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--yellow); margin:0 0 16px; }
+    .wl__bars { display:flex; flex-direction:column; gap:11px; margin-bottom:18px; }
+    .wl__row { display:grid; grid-template-columns:96px 1fr 34px; gap:12px; align-items:center; }
+    .wl__k { font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.06em; text-transform:uppercase; color:#cfcfcf; }
+    .wl__track { display:block; height:10px; background:rgba(255,255,255,0.08); border-radius:100px; overflow:hidden; }
+    .wl__fill { display:block; height:100%; width:0; border-radius:100px; background:var(--yellow); transition:width .6s cubic-bezier(.2,.8,.2,1); }
+    .wl__fill--weak { background:#c0562e; }
+    .wl__v { font-family:var(--font-heading); font-size:0.84rem; font-weight:700; color:var(--yellow); text-align:right; }
+    .wl__verdict { border-top:1px solid var(--line); padding-top:18px; }
+    .wl__head { font-family:var(--font-heading); font-size:1.15rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--yellow); margin-bottom:9px; }
+    .wl__body { color:var(--ink); font-size:0.95rem; line-height:1.7; font-weight:300; margin:0 0 14px; }
+    .wl__body strong { color:#fff; font-weight:600; }
+    .wl__links { display:flex; flex-wrap:wrap; gap:9px; }
+    .wl__link {
+      font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase;
+      border:1px solid rgba(255,229,0,0.45); color:var(--yellow); padding:9px 14px; transition:.2s;
+    }
+    .wl__link:hover { background:var(--yellow); color:#000; }
+
+    /* ---- Full run capture ---- */
+    .fr__phase { border-left:3px solid var(--line); padding-left:18px; margin-bottom:18px; transition:border-color .3s; }
+    .fr__phase.is-live { border-left-color:var(--yellow); }
+    .fr__label { font-family:var(--font-heading); font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+    .fr__phase.is-live .fr__label { color:var(--yellow); }
+  </style>
+</head>
+<body class="aj">
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="images/logo-horizontal.png?v=2" alt="The Performance Act" class="logo-img logo-img--header">
+      </a>
+      <nav class="header__nav" id="mainNav" aria-label="Primary">
+        <a href="grow-athlete.html" class="nav-link">SKILLS JOURNAL</a>
+        <a href="grow-athlete-fivemoves.html" class="nav-link active">FIVE MOVES</a>
+        <a href="grow-athlete-practice.html" class="nav-link">PRACTICE</a>
+        <a href="grow-athlete-open.html" class="nav-link">OPEN</a>
+        <a href="grow-athlete-aware.html" class="nav-link">AWARE</a>
+        <a href="grow-athlete-engaged.html" class="nav-link">ENGAGED</a>
+      </nav>
+      <div class="header__actions">
+        <a href="grow-athlete-journal.html" class="btn btn--primary btn--sm">My Journal</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <nav class="mobile-nav__links" aria-label="Mobile">
+      <a href="grow-athlete.html" class="mobile-nav__link">SKILLS JOURNAL HOME</a>
+      <a href="grow-athlete-fivemoves.html" class="mobile-nav__link">THE FIVE MOVES</a>
+      <a href="grow-athlete-practice.html" class="mobile-nav__link">THE PRACTICE ROOM</a>
+      <a href="grow-athlete-open.html" class="mobile-nav__link">OPEN</a>
+      <a href="grow-athlete-aware.html" class="mobile-nav__link">AWARE</a>
+      <a href="grow-athlete-engaged.html" class="mobile-nav__link">ENGAGED</a>
+      <a href="grow-athlete-brain.html" class="mobile-nav__link">BRAIN HEALTH</a>
+      <a href="grow-athlete-journal.html" class="mobile-nav__link">MY JOURNAL</a>
+    </nav>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="aj-hero" id="top">
+    <div class="aj-hero__bg"></div>
+    <div class="container">
+      <a href="grow-athlete.html" class="aj-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Skills Journal
+      </a>
+      <span class="aj-hero__badge">The star tool &middot; runs across all three pillars</span>
+      <h1 class="aj-hero__title">THE FIVE<br><span>MOVES</span></h1>
+      <p class="aj-hero__lead"><strong>Notice. Name. Let go. Soften. Expand.</strong> Five things your mind has to do, in order, to get from &ldquo;something is wrong&rdquo; to &ldquo;here&rsquo;s what I&rsquo;m doing about it&rdquo; &mdash; in about five minutes. This is the sequence every other tool in this area is a piece of.</p>
+      <p class="aj-hero__meta"><span>5 moves</span> &middot; <span>~5 minutes</span> &middot; <span>Finds your weak link</span></p>
+      <div class="aj-toc">
+        <a href="#map">The map</a>
+        <a href="#weaklink">Find your weak link</a>
+        <a href="#notice">01 &middot; Notice</a>
+        <a href="#name">02 &middot; Name</a>
+        <a href="#letgo">03 &middot; Let go</a>
+        <a href="#soften">04 &middot; Soften</a>
+        <a href="#expand">05 &middot; Expand</a>
+        <a href="#run">Run the whole thing</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="aj-progress">
+    <div class="container">
+      <div class="aj-progress__inner">
+        <span class="aj-progress__label">Your progress through the Five Moves</span>
+        <div class="aj-progress__track"><div class="aj-progress__fill" id="ajProgressFill"></div></div>
+        <span class="aj-progress__count" id="ajProgressCount">0 / 0 saved</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== THE MAP ========== -->
+  <section class="aj-sec" id="map">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">Why this is the star tool</p>
+        <h2 class="aj-h2">One sequence.<br>All three <em>pillars.</em></h2>
+        <p class="aj-lead">Everything else in this area is a single skill you pull out when you need it. This is different. This is the <strong>order the skills go in</strong> &mdash; and once you have it, you stop hunting through a toolkit mid-crisis and just run the sequence.</p>
+
+        <p class="aj-p" style="margin-top:20px;">Here is the neat part, and it is not a coincidence. The five moves come from the work of <strong>Kirk Strosahl and colleagues</strong> on present-moment awareness. Strosahl is also the person who grouped the six ACT processes into the three pillars this whole area is built on &mdash; <strong>Open, Aware, Engaged</strong>. So the five moves and the TriFlex are two views of the same thing, by the same author. They line up exactly:</p>
+
+        <div class="fm-spine">
+          <div class="fm-step fm-step--aware">
+            <div class="fm-step__n">MOVE 01</div>
+            <div class="fm-step__name">Notice</div>
+            <p class="fm-step__q">&ldquo;What&rsquo;s actually here?&rdquo;</p>
+            <div class="fm-step__pillar">Aware</div>
+          </div>
+          <div class="fm-step fm-step--aware">
+            <div class="fm-step__n">MOVE 02</div>
+            <div class="fm-step__name">Name</div>
+            <p class="fm-step__q">&ldquo;What do I call it?&rdquo;</p>
+            <div class="fm-step__pillar">Aware</div>
+          </div>
+          <div class="fm-step fm-step--open">
+            <div class="fm-step__n">MOVE 03</div>
+            <div class="fm-step__name">Let&nbsp;Go</div>
+            <p class="fm-step__q">&ldquo;Can I stop gripping it?&rdquo;</p>
+            <div class="fm-step__pillar">Open</div>
+          </div>
+          <div class="fm-step fm-step--open">
+            <div class="fm-step__n">MOVE 04</div>
+            <div class="fm-step__name">Soften</div>
+            <p class="fm-step__q">&ldquo;Can I be decent to myself here?&rdquo;</p>
+            <div class="fm-step__pillar">Open</div>
+          </div>
+          <div class="fm-step fm-step--engaged">
+            <div class="fm-step__n">MOVE 05</div>
+            <div class="fm-step__name">Expand</div>
+            <p class="fm-step__q">&ldquo;What does this make possible?&rdquo;</p>
+            <div class="fm-step__pillar">Engaged</div>
+          </div>
+        </div>
+
+        <div class="aj-block" style="margin-top:30px;">
+          <span class="aj-block__k">Why the order matters</span>
+          <p>The moves are <strong>progressive</strong>. Finishing one is what makes the next one possible. You can&rsquo;t name what you haven&rsquo;t noticed. You can&rsquo;t let go of something you can&rsquo;t name. You can&rsquo;t soften around a thing you&rsquo;re still fused with. And expanding &mdash; turning the whole experience into fuel for something that matters &mdash; only lands if the first four have happened.</p>
+          <p>Which is why <strong>skipping straight to the end never works.</strong> Most athletes try to jump from &ldquo;I feel terrible&rdquo; to &ldquo;right, get on with it&rdquo; and wonder why it doesn&rsquo;t hold. They&rsquo;ve attempted move five without doing one to four.</p>
+        </div>
+
+        <div class="aj-warn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+          <p><strong>It will not be tidy.</strong> Expect to slip backwards. You&rsquo;ll be halfway through letting go and find yourself back at square one because something new showed up. That&rsquo;s not failing the exercise &mdash; that&rsquo;s the exercise. The human mind is genuinely poor at staying in the present moment, which is exactly why this is trainable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WEAK LINK DIAGNOSTIC ========== -->
+  <section class="aj-sec aj-sec--alt" id="weaklink">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">Before you run it &middot; 4 minutes</p>
+        <h2 class="aj-h2">Find your<br><em>weak link</em></h2>
+        <p class="aj-lead">Everybody is strong at some of these moves and weak at others, and <strong>your weakest one is where the sequence breaks</strong> every time. Most people have never checked which it is &mdash; they just know the whole thing stops working somewhere.</p>
+        <p class="aj-p" style="margin-top:18px;">Score yourself honestly. There is no good profile to have, and nobody sees this. The point is to find the one to work on.</p>
+
+        <div class="aj-act">
+          <span class="aj-act__tag">Activity &middot; the diagnostic</span>
+          <h3 class="aj-act__title">Score the five moves</h3>
+          <p class="aj-act__intro">0 = I genuinely can&rsquo;t do this. 10 = I do this easily, even under pressure.</p>
+
+          <div class="aj-field">
+            <p class="aj-field__q">1 &middot; NOTICE &mdash; When something difficult shows up, I can turn towards it rather than checking out, changing the subject or getting busy.</p>
+            <div class="aj-slider">
+              <input type="range" min="0" max="10" value="5" class="wl-in" data-move="notice"
+                     data-aj="five.score.notice" data-aj-out="s1"
+                     data-aj-tool="The Five Moves — diagnostic" data-aj-q="NOTICE — turning towards what's there (0–10)">
+              <span class="aj-slider__val" id="s1">5</span>
+            </div>
+          </div>
+          <div class="aj-field">
+            <p class="aj-field__q">2 &middot; NAME &mdash; I can put accurate words on what I&rsquo;m feeling, and tell apart two feelings in the same moment.</p>
+            <div class="aj-slider">
+              <input type="range" min="0" max="10" value="5" class="wl-in" data-move="name"
+                     data-aj="five.score.name" data-aj-out="s2"
+                     data-aj-tool="The Five Moves — diagnostic" data-aj-q="NAME — accurate words for what I feel (0–10)">
+              <span class="aj-slider__val" id="s2">5</span>
+            </div>
+          </div>
+          <div class="aj-field">
+            <p class="aj-field__q">3 &middot; LET GO &mdash; I can watch my mind&rsquo;s commentary without believing it or arguing with it.</p>
+            <div class="aj-slider">
+              <input type="range" min="0" max="10" value="5" class="wl-in" data-move="letgo"
+                     data-aj="five.score.letgo" data-aj-out="s3"
+                     data-aj-tool="The Five Moves — diagnostic" data-aj-q="LET GO — unhooking from commentary (0–10)">
+              <span class="aj-slider__val" id="s3">5</span>
+            </div>
+          </div>
+          <div class="aj-field">
+            <p class="aj-field__q">4 &middot; SOFTEN &mdash; When I&rsquo;ve messed up or I&rsquo;m hurting, I can be as decent to myself as I&rsquo;d be to a teammate.</p>
+            <div class="aj-slider">
+              <input type="range" min="0" max="10" value="5" class="wl-in" data-move="soften"
+                     data-aj="five.score.soften" data-aj-out="s4"
+                     data-aj-tool="The Five Moves — diagnostic" data-aj-q="SOFTEN — self-compassion under pressure (0–10)">
+              <span class="aj-slider__val" id="s4">5</span>
+            </div>
+          </div>
+          <div class="aj-field">
+            <p class="aj-field__q">5 &middot; EXPAND &mdash; I can take a hard experience and turn it into a reason to do something that matters.</p>
+            <div class="aj-slider">
+              <input type="range" min="0" max="10" value="5" class="wl-in" data-move="expand"
+                     data-aj="five.score.expand" data-aj-out="s5"
+                     data-aj-tool="The Five Moves — diagnostic" data-aj-q="EXPAND — turning it into values-based action (0–10)">
+              <span class="aj-slider__val" id="s5">5</span>
+            </div>
+          </div>
+
+          <div class="wl" id="wlPanel">
+            <p class="wl__title">Your five-move profile</p>
+            <div class="wl__bars" id="wlBars"></div>
+            <div class="wl__verdict">
+              <div class="wl__head" id="wlHead">Move the sliders</div>
+              <p class="wl__body" id="wlBody">Score all five and your weak link &mdash; plus the exact tools that train it &mdash; will appear here.</p>
+              <div class="wl__links" id="wlLinks"></div>
+            </div>
+          </div>
+
+          <div class="aj-field" style="margin-top:22px;">
+            <p class="aj-field__q">Does that match your experience?</p>
+            <p class="aj-field__hint">Where in your sport does the sequence usually break down for you?</p>
+            <textarea class="aj-textarea"
+                      data-aj="five.weaklink.reflection"
+                      data-aj-tool="The Five Moves — diagnostic"
+                      data-aj-q="Where the sequence breaks down for me"
+                      placeholder="e.g. I can notice and name it fine. It's letting go — I get into an argument with my own head and I'm still in it two hours later."></textarea>
+            <span class="aj-saved" data-aj-saved="five.weaklink.reflection">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MOVE 01 — NOTICE ========== -->
+  <section class="aj-sec" id="notice">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">01</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Notice</h2>
+              <p class="aj-tool__for">Showing up. Becoming aware of what&rsquo;s happening, inside and out.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">The move</span>
+            <p>Turn towards what&rsquo;s there instead of away from it. That&rsquo;s the whole move, and it&rsquo;s the hardest one to do honestly, because everybody has a well-practised set of escape routines that fire the moment the heat comes up.</p>
+            <p>The escape routines are worth knowing by name: <strong>going numb, getting busy, changing the subject, going analytical, making a joke, picking a fight.</strong> Every one of them works, briefly. Every one of them costs you the information you needed.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Three levels of noticing</span>
+              <p>Think of trying to understand what a rollercoaster is like.</p>
+              <ol class="aj-steps">
+                <li><strong>Participant.</strong> You&rsquo;re on the ride, screaming. Totally immersed &mdash; and you can&rsquo;t report anything useful, because you <em>are</em> the experience. This is where most athletes are during a bad patch.</li>
+                <li><strong>Participant-observer.</strong> You&rsquo;re on the ride <em>and</em> tracking what&rsquo;s happening: stomach drops here, hands grip there. Both at once. This is the working level.</li>
+                <li><strong>Observer.</strong> You&rsquo;re watching the ride from the ground. Maximum perspective, and useful when things are overwhelming &mdash; but stay here too long and you&rsquo;ve just found a more sophisticated way to check out.</li>
+              </ol>
+              <p>The skill isn&rsquo;t picking one. It&rsquo;s <strong>being able to move between them</strong> depending on what the moment needs.</p>
+            </div>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Three things attention does</span>
+              <p><strong>Orienting</strong> &mdash; pointing at something. <strong>Focusing</strong> &mdash; holding it there. <strong>Shifting</strong> &mdash; moving it when the situation changes. All three are trainable, and all three are separate. Plenty of athletes can focus like a laser and cannot shift to save their lives; that&rsquo;s the player still fuming about a decision three plays later.</p>
+            </div>
+
+            <div class="aj-eg">
+              <span class="aj-eg__k">Why it matters &mdash; the thing nobody tells you</span>
+              <p>Feelings are not obstacles. The Latin root of &ldquo;emotion&rdquo; means <em>to move</em> &mdash; they&rsquo;re signals designed to move you towards more useful behaviour.</p>
+              <p>Which means an athlete who has learned to not-feel has switched off their own guidance system. Their behaviour goes rigid and rule-driven, because the live information that would have made it flexible isn&rsquo;t reaching them any more. <strong>Checking out isn&rsquo;t neutral. It costs you the data.</strong></p>
+            </div>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 3 minutes</span>
+              <h3 class="aj-act__title">Name your escape routine</h3>
+              <div class="aj-field">
+                <p class="aj-field__q">When the heat comes up, how do you disappear?</p>
+                <p class="aj-field__hint">Tap all that are true. Most people have two or three favourites.</p>
+                <div class="aj-chips"
+                     data-aj-chips="five.notice.escapes"
+                     data-aj-tool="Move 1 — Notice"
+                     data-aj-q="How I disappear when the heat comes up">
+                  <button class="aj-chip">Go numb / blank</button>
+                  <button class="aj-chip">Get busy</button>
+                  <button class="aj-chip">Change the subject</button>
+                  <button class="aj-chip">Go analytical</button>
+                  <button class="aj-chip">Make a joke</button>
+                  <button class="aj-chip">Pick a fight</button>
+                  <button class="aj-chip">Reach for my phone</button>
+                  <button class="aj-chip">Go straight to solving it</button>
+                  <button class="aj-chip">Say &ldquo;I&rsquo;m fine&rdquo;</button>
+                  <button class="aj-chip">Train harder</button>
+                </div>
+              </div>
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">Which level do you live at &mdash; participant, participant-observer, or observer?</p>
+                <div class="aj-chips" data-aj-single
+                     data-aj-chips="five.notice.level"
+                     data-aj-tool="Move 1 — Notice"
+                     data-aj-q="Which level of noticing I default to">
+                  <button class="aj-chip">Participant &mdash; I&rsquo;m in it</button>
+                  <button class="aj-chip">Participant-observer</button>
+                  <button class="aj-chip">Observer &mdash; watching from outside</button>
+                </div>
+              </div>
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">And which of the three attention jobs is weakest for you?</p>
+                <div class="aj-chips" data-aj-single
+                     data-aj-chips="five.notice.attention"
+                     data-aj-tool="Move 1 — Notice"
+                     data-aj-q="My weakest attention job">
+                  <button class="aj-chip">Orienting &mdash; pointing it</button>
+                  <button class="aj-chip">Focusing &mdash; holding it</button>
+                  <button class="aj-chip">Shifting &mdash; moving it on</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MOVE 02 — NAME ========== -->
+  <section class="aj-sec aj-sec--alt" id="name">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">02</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Name</h2>
+              <p class="aj-tool__for">Answering the oldest question there is: <em>what is that?</em></p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">The move</span>
+            <p>Put words on it. Specific ones.</p>
+            <p>There&rsquo;s a real paradox here worth understanding. Most of this area is about loosening the grip of language &mdash; and now we&rsquo;re asking you to use language deliberately. That&rsquo;s not a contradiction. Sensations, memories and emotions don&rsquo;t arrive in words; they arrive as a bundle, undifferentiated and often overwhelming. <strong>Words are the only tool you have for taking the bundle apart.</strong></p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Three levels of naming</span>
+              <ol class="aj-steps">
+                <li><strong>Right category.</strong> Using an anger word when it&rsquo;s anger. Sounds trivial; isn&rsquo;t. Plenty of people report &ldquo;stressed&rdquo; for everything from grief to excitement.</li>
+                <li><strong>Telling apart two feelings in the same moment.</strong> You can be angry <em>and</em> hurt in the same conversation, and they need completely different responses. If it all comes out as &ldquo;angry&rdquo;, you&rsquo;ll respond to the wrong one.</li>
+                <li><strong>Getting the intensity right.</strong> <em>Irritated</em> is not <em>livid</em>. <em>Nervous</em> is not <em>terrified</em>. Athletes who only have the top of the scale end up treating every 3 as a 9.</li>
+              </ol>
+            </div>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why it works</span>
+              <p>People who can verbally discriminate between different internal experiences score higher on emotional regulation &mdash; the ability to read a signal and adjust behaviour rather than be driven by it. Naming is what converts a bundle into information you can use.</p>
+              <p>And when someone first turns towards an avoided experience, they usually can&rsquo;t name much at all: <em>&ldquo;I don&rsquo;t know, it&rsquo;s just a lot.&rdquo;</em> Fifteen minutes later, with prompting, the same person can describe several distinct sensations in different places. <strong>The vocabulary isn&rsquo;t fixed. It&rsquo;s trainable, and it grows fast.</strong></p>
+            </div>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 4 minutes</span>
+              <h3 class="aj-act__title">Take the bundle apart</h3>
+              <p class="aj-act__intro">Bring to mind a recent moment that felt like &ldquo;a lot&rdquo;. Now separate it.</p>
+              <div class="aj-field">
+                <p class="aj-field__q">Name at least two <em>different</em> feelings that were both present</p>
+                <p class="aj-field__hint">Not one feeling described twice. Two genuinely different ones &mdash; angry <em>and</em> ashamed, relieved <em>and</em> guilty, nervous <em>and</em> excited.</p>
+                <textarea class="aj-textarea"
+                          data-aj="five.name.two"
+                          data-aj-tool="Move 2 — Name"
+                          data-aj-q="Two different feelings that were both present"
+                          placeholder="e.g. Furious with the ref — and underneath it, embarrassed that I'd been beaten so easily."></textarea>
+                <span class="aj-saved" data-aj-saved="five.name.two">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">Now get the intensity right</p>
+                <p class="aj-field__hint">Pick the word that actually fits the size of it, not the loudest word available.</p>
+                <input type="text" class="aj-input"
+                       data-aj="five.name.intensity"
+                       data-aj-tool="Move 2 — Name"
+                       data-aj-q="The word that actually fits the intensity"
+                       placeholder="e.g. Not 'devastated'. 'Deflated' is closer, and it's a 6 not a 9.">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">Which one was underneath?</p>
+                <p class="aj-field__hint">There&rsquo;s often a loud feeling on top and a quieter, more accurate one underneath. The quiet one usually tells you more.</p>
+                <input type="text" class="aj-input"
+                       data-aj="five.name.underneath"
+                       data-aj-tool="Move 2 — Name"
+                       data-aj-q="The feeling that was underneath">
+              </div>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MOVE 03 — LET GO ========== -->
+  <section class="aj-sec" id="letgo">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">03</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Let Go</h2>
+              <p class="aj-tool__for">Loosening your grip on the commentary &mdash; without arguing with it.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">The move</span>
+            <p>Your mind never shuts up. Call it <strong>busy mind</strong>. It is superb at some jobs &mdash; crossing a road, reading a defence, planning a season &mdash; and catastrophically bad at others. The problem is that it has no built-in feature that stops it giving you advice on subjects it knows nothing about.</p>
+            <p>Busy mind&rsquo;s favourite topic is judging: good/bad, right/wrong, fair/unfair, whose fault. And it loves projecting those judgements backwards and forwards in time, which is how a single dropped ball becomes a verdict on your entire career.</p>
+            <p>Letting go is not silencing it, winning against it, or agreeing with it. It&rsquo;s <strong>moving your attention from the content of the commentary to the fact that commentary is happening.</strong></p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Attachment, in one image</span>
+              <p>The root of &ldquo;attachment&rdquo; means <em>bound to</em>. The root of &ldquo;detachment&rdquo; means <em>set apart from</em>.</p>
+              <p>When you&rsquo;re attached to an experience, the gap between you and it disappears &mdash; you&rsquo;re back at the participant level from move one, being led around by whatever your mind produces next. The bits that grab hardest are always the emotionally loaded ones: harsh self-judgements, painful memories, catastrophic pictures of what&rsquo;s coming.</p>
+              <p>You are not trying to live permanently detached. You&rsquo;re trying to <strong>move freely between being in it and standing beside it.</strong></p>
+            </div>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+              <p><strong>Letting go is not letting it win, and it isn&rsquo;t not caring.</strong> Athletes hear &ldquo;detach&rdquo; and think it means going flat &mdash; lowering the stakes so nothing hurts. That&rsquo;s a different thing entirely, and it wrecks performance. You can be completely gripped by wanting to win and completely ungripped by your mind&rsquo;s running commentary about whether you deserve to.</p>
+            </div>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 4 minutes</span>
+              <h3 class="aj-act__title">Catch busy mind at work</h3>
+              <div class="aj-field">
+                <p class="aj-field__q">What is busy mind&rsquo;s favourite subject when it comes to you?</p>
+                <div class="aj-chips"
+                     data-aj-chips="five.letgo.topics"
+                     data-aj-tool="Move 3 — Let Go"
+                     data-aj-q="Busy mind's favourite subjects">
+                  <button class="aj-chip">Whether I&rsquo;m good enough</button>
+                  <button class="aj-chip">What others think of me</button>
+                  <button class="aj-chip">Whose fault it was</button>
+                  <button class="aj-chip">Replaying mistakes</button>
+                  <button class="aj-chip">What&rsquo;s going to go wrong</button>
+                  <button class="aj-chip">Comparing me to someone</button>
+                  <button class="aj-chip">Whether it&rsquo;s fair</button>
+                  <button class="aj-chip">Whether I should quit</button>
+                </div>
+              </div>
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">Where does it project &mdash; backwards or forwards?</p>
+                <div class="aj-chips" data-aj-single
+                     data-aj-chips="five.letgo.direction"
+                     data-aj-tool="Move 3 — Let Go"
+                     data-aj-q="Whether busy mind projects backwards or forwards">
+                  <button class="aj-chip">Backwards &mdash; replaying</button>
+                  <button class="aj-chip">Forwards &mdash; predicting</button>
+                  <button class="aj-chip">Both, constantly</button>
+                </div>
+              </div>
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">Your line for stepping back from it</p>
+                <p class="aj-field__hint">Something that notices the <em>process</em> rather than debating the <em>content</em>. &ldquo;There&rsquo;s the judging machine, going again.&rdquo;</p>
+                <input type="text" class="aj-input"
+                       data-aj="five.letgo.line"
+                       data-aj-tool="Move 3 — Let Go"
+                       data-aj-q="My line for stepping back from busy mind"
+                       placeholder="e.g. 'Busy mind's doing the fairness thing again. Noted.'">
+              </div>
+              <div class="aj-block" style="margin-top:20px;">
+                <span class="aj-block__k">Need more on this one?</span>
+                <p>Move three is the whole <a href="grow-athlete-open.html#unhook">Unhooking</a> tool in the Open kit &mdash; six different ways to do it. If letting go is your weak link, that&rsquo;s where to go next.</p>
+              </div>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MOVE 04 — SOFTEN ========== -->
+  <section class="aj-sec aj-sec--alt" id="soften">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">04</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Soften</h2>
+              <p class="aj-tool__for">The move almost everyone skips &mdash; and the one that makes the rest hold.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">The move</span>
+            <p>Some things won&rsquo;t detach. You can name them, you can step back from the commentary, and they still stick to you like glue.</p>
+            <p>Call these your <strong>scars</strong>. Things you did that you&rsquo;re not proud of: the shortcut, the lie about the injury, the way you spoke to someone after a loss. And things done to you: the coach who broke something in you at sixteen, the injury that took a year, being dropped without a conversation.</p>
+            <p>You know you&rsquo;re near one when the memory makes you physically wince.</p>
+            <p>Scars don&rsquo;t detach because <strong>the pain in them is a direct measure of what you care about.</strong> Detaching from that would mean detaching from the caring. So there&rsquo;s a different move needed: not stepping back from it, but <em>holding it gently.</em></p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why you&rsquo;re bad at this &mdash; and it isn&rsquo;t your fault</span>
+              <p>Almost everyone is far better at compassion for other people than for themselves, and there&rsquo;s a straightforward reason. From the time you learn to speak you&rsquo;re rewarded for being kind to others &mdash; and <em>corrected</em>, told off, or punished for your own failures of self-control. Over years, you internalise that: you stop needing anyone else to deliver the criticism because you&rsquo;ve learned to do it yourself, symbolically, on demand.</p>
+              <p>So your relationship with self-directed correction is negative by training, and your relationship with other-directed kindness is positive by training. Asking yourself <em>&ldquo;why can&rsquo;t I be as kind to me as I am to my teammates?&rdquo;</em> won&rsquo;t fix it, because it was never an intellectual problem. <strong>It&rsquo;s a conditioning problem, and it takes reps, not insight.</strong></p>
+            </div>
+
+            <div class="aj-eg">
+              <span class="aj-eg__k">The bit that makes this more than self-care</span>
+              <p>Softening isn&rsquo;t only about feeling better. Done properly it&rsquo;s a kind of judo: you accept yourself, scars included, <em>and then use the experience of having flaws to be genuinely decent about other people&rsquo;s.</em></p>
+              <p>Which is why the athletes who can do this are so often the ones the group trusts. Someone who has made peace with their own worst day can sit with a teammate on theirs without flinching, fixing, or making it about themselves. <strong>You cannot offer anyone else something you refuse to offer yourself.</strong></p>
+            </div>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 6 minutes</span>
+              <h3 class="aj-act__title">Hold one scar gently</h3>
+              <p class="aj-act__intro">Pick something that makes you wince &mdash; but start mid-range, not the worst thing you carry. If the worst thing is what came to mind, that one belongs in a session with us, not on a webpage.</p>
+              <div class="aj-field">
+                <p class="aj-field__q">1. What&rsquo;s the story your mind tells you about it?</p>
+                <p class="aj-field__hint">Not the event. The <em>story</em> &mdash; what it supposedly means about you.</p>
+                <textarea class="aj-textarea"
+                          data-aj="five.soften.story"
+                          data-aj-tool="Move 4 — Soften"
+                          data-aj-q="The story my mind tells about this scar"
+                          placeholder="e.g. That it proves I fold when it counts, and always will."></textarea>
+                <span class="aj-saved" data-aj-saved="five.soften.story">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">2. What does the pain in it tell you that you care about?</p>
+                <p class="aj-field__hint">This is the reframe that matters. It only hurts because something underneath it is important to you. Name that thing.</p>
+                <textarea class="aj-textarea"
+                          data-aj="five.soften.cares"
+                          data-aj-tool="Move 4 — Soften"
+                          data-aj-q="What the pain tells me I care about"
+                          placeholder="e.g. That I hate letting people down who backed me. Which means being reliable actually matters to me."></textarea>
+                <span class="aj-saved" data-aj-saved="five.soften.cares">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">3. Who else does this make you able to understand?</p>
+                <p class="aj-field__hint">The judo move. Having this scar makes you better at sitting with someone who has one too. Name a specific person.</p>
+                <input type="text" class="aj-input"
+                       data-aj="five.soften.judo"
+                       data-aj-tool="Move 4 — Soften"
+                       data-aj-q="Who this makes me able to understand"
+                       placeholder="e.g. The younger lad who missed last week and hasn't spoken since.">
+              </div>
+              <div class="aj-block" style="margin-top:20px;">
+                <span class="aj-block__k">Need more on this one?</span>
+                <p>Move four is the <a href="grow-athlete-open.html#kind">Kind Hands &amp; the Teammate Test</a> tool in the Open kit, which gives you the physical half of it too.</p>
+              </div>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MOVE 05 — EXPAND ========== -->
+  <section class="aj-sec" id="expand">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">05</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Expand</h2>
+              <p class="aj-tool__for">The ribbon cutting. Turning all of that into something you actually do.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">The move</span>
+            <p>Everything up to here has been clearing ground. This is the move where it turns into behaviour &mdash; and if it doesn&rsquo;t, the whole sequence was an interesting five minutes that changed nothing.</p>
+            <p>Think of it as a ribbon cutting. You&rsquo;ve built something over the previous four moves; now you put it into service. There&rsquo;s often a noticeably light, almost playful quality to this bit &mdash; people are usually a little surprised by how free they feel once they&rsquo;ve stopped wrestling with their own head.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">The specific shift</span>
+              <p>Two things change, and they&rsquo;re worth stating precisely.</p>
+              <p><strong>In your head:</strong> from <em>&ldquo;the goal is to feel less of this&rdquo;</em> to <em>&ldquo;I&rsquo;ll carry this, because of what it&rsquo;s for.&rdquo;</em></p>
+              <p><strong>In your behaviour:</strong> from moves governed by escape and avoidance, to moves governed by what you actually value.</p>
+              <p>The pain doesn&rsquo;t get removed. It gets <strong>re-read</strong> &mdash; from something traumatic that happened to you, into a reflection of something you care about deeply enough to hurt over. That reframe is what dignifies the discomfort and makes it purposeful, and it&rsquo;s the difference between suffering and paying a price on purpose.</p>
+            </div>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+              <p><strong>Make it small and make it now.</strong> The temptation at this point is a grand declaration &mdash; a new attitude, a fresh start on Monday. Don&rsquo;t. The measure of a good expand is <em>one specific thing you will do in the next 24 hours</em>. Grand declarations are what busy mind offers you to avoid doing anything today.</p>
+            </div>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 4 minutes</span>
+              <h3 class="aj-act__title">Cut the ribbon</h3>
+              <div class="aj-field">
+                <p class="aj-field__q">1. What does this difficult thing point at that matters to you?</p>
+                <textarea class="aj-textarea"
+                          data-aj="five.expand.points"
+                          data-aj-tool="Move 5 — Expand"
+                          data-aj-q="What this difficulty points at that matters to me"
+                          placeholder="e.g. The nerves before games point at the fact I actually want this, badly."></textarea>
+                <span class="aj-saved" data-aj-saved="five.expand.points">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">2. What&rsquo;s different if you carry it instead of fighting it?</p>
+                <p class="aj-field__hint">Concretely. What becomes available that wasn&rsquo;t before?</p>
+                <textarea class="aj-textarea"
+                          data-aj="five.expand.different"
+                          data-aj-tool="Move 5 — Expand"
+                          data-aj-q="What's different if I carry it instead of fighting it"
+                          placeholder="e.g. I stop spending the whole warm-up trying to feel calm, and use it to actually warm up."></textarea>
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">3. The one thing you&rsquo;ll do in the next 24 hours</p>
+                <p class="aj-field__hint">Specific, small, and today or tomorrow. Not a plan &mdash; an action.</p>
+                <input type="text" class="aj-input"
+                       data-aj="five.expand.action"
+                       data-aj-tool="Move 5 — Expand"
+                       data-aj-q="The one thing I'll do in the next 24 hours"
+                       placeholder="e.g. Ask the coach tomorrow what he actually wants from me at set pieces.">
+              </div>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== THE FULL RUN ========== -->
+  <section class="aj-sec aj-sec--alt" id="run">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">Put it together</p>
+        <h2 class="aj-h2">Run the whole<br><em>sequence</em></h2>
+        <p class="aj-lead">Five moves, about five minutes. Bring something genuinely live &mdash; a real thing that&rsquo;s bothering you this week. Press start, follow the cues, and write one line at each phase as you go.</p>
+
+        <div class="aj-act">
+          <span class="aj-act__tag">Activity &middot; 5 minutes guided</span>
+          <h3 class="aj-act__title">The full run</h3>
+          <p class="aj-act__intro">Don&rsquo;t worry about doing it beautifully. <strong>Slipping backwards is part of it</strong> &mdash; if you find yourself back at noticing halfway through, that&rsquo;s the sequence working, not failing.</p>
+
+          <div class="aj-timer" data-aj-timer='[
+            {"phase":"01 — Notice","secs":60,"cue":"Bring it to mind and <strong>turn towards it</strong>. Watch for your escape routine firing — going numb, getting busy, going analytical. When you catch it, come back."},
+            {"phase":"02 — Name","secs":60,"cue":"<strong>Words on it.</strong> What emotion, precisely? Is there a second one underneath? What intensity, honestly — a 4 or a 9?"},
+            {"phase":"03 — Let Go","secs":60,"cue":"Busy mind will be commentating. <strong>Notice that it&rsquo;s commentating</strong> rather than what it&rsquo;s saying. Don&rsquo;t argue. Don&rsquo;t agree. Just clock the process."},
+            {"phase":"04 — Soften","secs":75,"cue":"Now be decent about it. A hand on your chest if that helps. <strong>The pain is there because something matters.</strong> Can you hold it gently — the way you&rsquo;d hold a teammate&rsquo;s?"},
+            {"phase":"05 — Expand","secs":60,"cue":"<strong>What does this make possible?</strong> Not a resolution — an action. One specific thing, in the next 24 hours, that this makes you want to do."},
+            {"phase":"Done","secs":20,"cue":"Come back to the room. Feet on the floor. <strong>Now write it down below</strong>, while it&rsquo;s fresh."}
+          ]'>
+            <div class="aj-timer__clock" data-timer-clock>1:00</div>
+            <div class="aj-timer__phase" data-timer-phase>01 &mdash; Notice</div>
+            <p class="aj-timer__cue" data-timer-cue></p>
+            <div class="aj-timer__controls">
+              <button type="button" class="aj-btn" data-timer-start>Start</button>
+              <button type="button" class="aj-btn aj-btn--ghost" data-timer-reset>Reset</button>
+            </div>
+          </div>
+
+          <div style="margin-top:26px;">
+            <div class="fr__phase">
+              <div class="fr__label">01 &mdash; What I noticed</div>
+              <textarea class="aj-textarea"
+                        data-aj="five.run.notice"
+                        data-aj-tool="The Five Moves — full run"
+                        data-aj-q="01 Notice — what I noticed"
+                        placeholder="What was actually there, inside and out?"></textarea>
+            </div>
+            <div class="fr__phase">
+              <div class="fr__label">02 &mdash; What I named it</div>
+              <textarea class="aj-textarea"
+                        data-aj="five.run.name"
+                        data-aj-tool="The Five Moves — full run"
+                        data-aj-q="02 Name — what I named it"
+                        placeholder="The precise words, and the intensity."></textarea>
+            </div>
+            <div class="fr__phase">
+              <div class="fr__label">03 &mdash; What busy mind was doing</div>
+              <textarea class="aj-textarea"
+                        data-aj="five.run.letgo"
+                        data-aj-tool="The Five Moves — full run"
+                        data-aj-q="03 Let Go — what busy mind was doing"
+                        placeholder="The commentary — described, not argued with."></textarea>
+            </div>
+            <div class="fr__phase">
+              <div class="fr__label">04 &mdash; How I held it</div>
+              <textarea class="aj-textarea"
+                        data-aj="five.run.soften"
+                        data-aj-tool="The Five Moves — full run"
+                        data-aj-q="04 Soften — how I held it"
+                        placeholder="Was I decent about it? What did the pain point at?"></textarea>
+            </div>
+            <div class="fr__phase">
+              <div class="fr__label">05 &mdash; What I&rsquo;m going to do</div>
+              <textarea class="aj-textarea"
+                        data-aj="five.run.expand"
+                        data-aj-tool="The Five Moves — full run"
+                        data-aj-q="05 Expand — what I'm going to do"
+                        placeholder="One specific action, in the next 24 hours."></textarea>
+              <span class="aj-saved" data-aj-saved="five.run.expand">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+              </span>
+            </div>
+          </div>
+
+          <div class="aj-field" style="margin-top:22px;">
+            <p class="aj-field__q">Which move was hardest this time?</p>
+            <p class="aj-field__hint">It won&rsquo;t always be the same one. Notice whether it matches your diagnostic score above.</p>
+            <div class="aj-chips" data-aj-single
+                 data-aj-chips="five.run.hardest"
+                 data-aj-tool="The Five Moves — full run"
+                 data-aj-q="Which move was hardest this time">
+              <button class="aj-chip">Notice</button>
+              <button class="aj-chip">Name</button>
+              <button class="aj-chip">Let go</button>
+              <button class="aj-chip">Soften</button>
+              <button class="aj-chip">Expand</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="aj-takeaways" style="margin-top:34px;">
+          <h3>The five moves, in five lines</h3>
+          <ul>
+            <li><strong>Notice</strong> &mdash; turn towards it. Your escape routines are automatic; catching them is the skill.</li>
+            <li><strong>Name</strong> &mdash; precise words. Two feelings, right intensity, and whatever is underneath.</li>
+            <li><strong>Let go</strong> &mdash; watch the commentary happening instead of debating what it says.</li>
+            <li><strong>Soften</strong> &mdash; hold the scar gently. It hurts because you care, and that&rsquo;s information.</li>
+            <li><strong>Expand</strong> &mdash; one small action in 24 hours, or the previous four were a nice sit-down.</li>
+          </ul>
+        </div>
+
+        <div class="aj-nextnav">
+          <a href="grow-athlete-practice.html">
+            <div class="aj-nextnav__dir">Build the base &rarr;</div>
+            <div class="aj-nextnav__title">The Practice Room</div>
+          </a>
+          <a href="grow-athlete.html" class="aj-nextnav--end">
+            <div class="aj-nextnav__dir">&larr; Back to</div>
+            <div class="aj-nextnav__title">Skills Journal</div>
+          </a>
+        </div>
+
+        <div class="aj-why" style="margin-top:26px;">
+          <p><strong>Source.</strong> The five phases of present-moment awareness &mdash; noticing, naming, letting go, softening and expanding &mdash; are the model set out in <cite>Strosahl, Robinson &amp; Gustavsson, Inside This Moment (2015), Context Press</cite>. The three levels of observing and the orienting/focusing/shifting distinction come from the same source. The mapping onto the TriFlex is ours, but it is not a stretch: the Open/Aware/Engaged grouping is <cite>Strosahl, Robinson &amp; Gustavsson (2012)</cite> &mdash; the same authors. On verbal labelling and emotion regulation, see <cite>Smieja et al. (2011)</cite> and <cite>Lieberman et al. (2007)</cite>. The five-facet mindfulness work underpinning the phases is <cite>Baer et al. (2008)</cite>.</p>
+        </div>
+
+        <div class="aj-disclaimer">
+          <p>This sequence supports the work we do together &mdash; it doesn&rsquo;t replace it, and it isn&rsquo;t therapy. Move four in particular can bring up more than you expected; if it does, that is worth a session rather than another go on your own. Free, confidential support is available 24/7 across Aotearoa: call or text <a href="tel:1737">1737</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom" style="border-top:none;">
+        <p>&copy; 2026 The Performance Act. Private athlete area.</p>
+        <div class="footer__bottom-links">
+          <a href="grow-athlete.html">Skills Journal</a>
+          <a href="grow-athlete-journal.html">My Journal</a>
+          <a href="grow-athlete.html#sources">Sources</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <button class="support-line-btn" id="supportLineBtn" aria-label="NZ support lines">
+    <span class="support-line-btn__dot" aria-hidden="true"></span>
+    Immediate Support
+  </button>
+  <div class="support-line-modal" id="supportLineModal" role="dialog" aria-modal="true" aria-labelledby="supportLineTitle" aria-hidden="true">
+    <div class="support-line-modal__backdrop"></div>
+    <div class="support-line-modal__panel">
+      <button class="support-line-modal__close" id="supportLineClose" aria-label="Close support lines">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <p class="support-line-modal__eyebrow">Aotearoa, New Zealand</p>
+      <h2 class="support-line-modal__title" id="supportLineTitle">Need immediate support?</h2>
+      <p class="support-line-modal__note">The Performance Act is a sport psychology practice, not a crisis or emergency service. If you or someone you care about needs immediate support, please reach out to one of these trusted services. They are free, confidential, and available 24&#8202;/&#8202;7.</p>
+      <ul class="support-line-modal__list" role="list">
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">1737 &mdash; Need to Talk?</p><p class="sln-resource__desc">Free call or text, any time. Trained counsellors, 24&#47;7.</p></div>
+          <a href="tel:1737" class="sln-resource__number">Call or text 1737</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Lifeline NZ</p><p class="sln-resource__desc">Crisis support and suicide prevention, 24&#47;7.</p></div>
+          <a href="tel:0800543354" class="sln-resource__number">0800 543 354</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Youthline</p><p class="sln-resource__desc">For young people. Free call or text 234, 24&#47;7.</p></div>
+          <a href="tel:0800376633" class="sln-resource__number">0800 376 633</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Suicide Crisis Helpline</p><p class="sln-resource__desc">0508 TAUTOKO. Support for those in crisis, 24&#47;7.</p></div>
+          <a href="tel:0508828865" class="sln-resource__number">0508 828 865</a>
+        </li>
+      </ul>
+      <p class="support-line-modal__footer">More resources at <a href="https://www.mentalhealth.org.nz/get-help/in-crisis" target="_blank" rel="noopener">Mental Health Foundation NZ</a> and <a href="https://www.depression.org.nz" target="_blank" rel="noopener">depression.org.nz</a>.</p>
+    </div>
+  </div>
+
+  <script src="script.js?v=5"></script>
+  <script src="grow-athlete.js?v=2"></script>
+
+  <script>
+  /* ==========================================================
+     WEAK-LINK DIAGNOSTIC — scores the five moves, finds the
+     lowest, and routes the athlete to the tools that train it.
+     ========================================================== */
+  (function () {
+    'use strict';
+    var bars = document.getElementById('wlBars');
+    var head = document.getElementById('wlHead');
+    var body = document.getElementById('wlBody');
+    var links = document.getElementById('wlLinks');
+    if (!bars) return;
+
+    var MOVES = [
+      {
+        k: 'notice', label: 'Notice', pillar: 'AWARE',
+        weak: 'Your sequence breaks at the very first step &mdash; which means everything downstream is running on missing information. ' +
+              'You are almost certainly leaving the moment before you have read it, and the escape happens so fast it does not feel like a choice. ' +
+              '<strong>Train the turning-towards.</strong>',
+        tools: [
+          { t: 'Dropping anchor', u: 'grow-athlete-aware.html#anchor' },
+          { t: 'The reaction replay', u: 'grow-athlete-aware.html#replay' },
+          { t: 'The 9-second check', u: 'grow-athlete-practice.html#check' }
+        ]
+      },
+      {
+        k: 'name', label: 'Name', pillar: 'AWARE',
+        weak: 'You can turn towards it, but it stays as one undifferentiated lump &mdash; &ldquo;bad&rdquo;, &ldquo;stressed&rdquo;, &ldquo;a lot&rdquo;. ' +
+              'That matters more than it sounds: an unnamed bundle cannot be worked with, only endured. The good news is that vocabulary is the fastest of the five to improve. ' +
+              '<strong>Train precision.</strong>',
+        tools: [
+          { t: 'Notice &amp; name', u: 'grow-athlete-aware.html#notice' },
+          { t: 'The 2BSET sweep', u: 'grow-athlete-practice.html#bset' },
+          { t: 'The reaction replay', u: 'grow-athlete-aware.html#replay' }
+        ]
+      },
+      {
+        k: 'letgo', label: 'Let go', pillar: 'OPEN',
+        weak: 'You know what is going on and you can name it &mdash; and then you get into a wrestling match with your own commentary and stay there. ' +
+              'This is the most common weak link in competitive athletes, because arguing with your mind <em>feels</em> like effort and effort feels like progress. ' +
+              '<strong>Train unhooking.</strong>',
+        tools: [
+          { t: 'Unhooking from thoughts', u: 'grow-athlete-open.html#unhook' },
+          { t: 'The four doors', u: 'grow-athlete-open.html#doors' },
+          { t: 'The struggle switch', u: 'grow-athlete-open.html#struggle' }
+        ]
+      },
+      {
+        k: 'soften', label: 'Soften', pillar: 'OPEN',
+        weak: 'This is the one high performers skip, and skipping it is why the rest does not hold. ' +
+              'You can notice, name and unhook &mdash; but the moment it is about <em>you</em> having failed, the whole thing collapses into self-criticism. ' +
+              'Remember this was trained into you rather than chosen. <strong>It takes reps, not insight.</strong>',
+        tools: [
+          { t: 'Kind hands', u: 'grow-athlete-open.html#kind' },
+          { t: 'The documentary of you', u: 'grow-athlete-aware.html#documentary' },
+          { t: 'The expectation ladder', u: 'grow-athlete-aware.html#ladder' }
+        ]
+      },
+      {
+        k: 'expand', label: 'Expand', pillar: 'ENGAGED',
+        weak: 'You process it beautifully and then nothing changes. You have the insight and not the action &mdash; which is the most frustrating profile of the five, ' +
+              'because from the inside it feels like you are doing the work. <strong>You need the ribbon cutting: something small, specific, and today.</strong>',
+        tools: [
+          { t: 'Building a real goal', u: 'grow-athlete-engaged.html#goal' },
+          { t: 'The brave action ladder', u: 'grow-athlete-engaged.html#brave' },
+          { t: 'The coin', u: 'grow-athlete-engaged.html#coin' }
+        ]
+      }
+    ];
+
+    var inputs = Array.prototype.slice.call(document.querySelectorAll('.wl-in'));
+
+    function paint() {
+      var vals = MOVES.map(function (m) {
+        var el = inputs.filter(function (i) { return i.getAttribute('data-move') === m.k; })[0];
+        return el ? parseInt(el.value, 10) : 5;
+      });
+      var min = Math.min.apply(null, vals);
+      var max = Math.max.apply(null, vals);
+
+      bars.innerHTML = MOVES.map(function (m, i) {
+        var weak = vals[i] === min && min < max;
+        return '<div class="wl__row">' +
+          '<span class="wl__k">' + m.label + '</span>' +
+          '<span class="wl__track"><span class="wl__fill' + (weak ? ' wl__fill--weak' : '') +
+            '" style="width:' + (vals[i] * 10) + '%"></span></span>' +
+          '<span class="wl__v">' + vals[i] + '</span>' +
+          '</div>';
+      }).join('');
+
+      if (min === max) {
+        head.textContent = 'All level';
+        head.style.color = 'var(--yellow)';
+        body.innerHTML = 'Every move scored the same, so there is no single weak link showing. Either you are genuinely even &mdash; unusual &mdash; or you have not ' +
+          'separated them yet. <strong>Run the full sequence below on something real</strong>, then come back and score again. It is much easier to rate these once you have felt the difference between them.';
+        links.innerHTML = '';
+        return;
+      }
+
+      var weakest = MOVES[vals.indexOf(min)];
+      head.innerHTML = 'Your weak link: ' + weakest.label.toUpperCase() +
+        ' <span style="color:var(--muted);font-size:0.7rem;letter-spacing:0.14em;">&middot; ' + weakest.pillar + ' PILLAR</span>';
+      head.style.color = 'var(--yellow)';
+      body.innerHTML = weakest.weak;
+      links.innerHTML = weakest.tools.map(function (t) {
+        return '<a class="wl__link" href="' + t.u + '">' + t.t + ' &rarr;</a>';
+      }).join('');
+    }
+
+    inputs.forEach(function (el) {
+      el.addEventListener('input', paint);
+      el.addEventListener('aj:restored', paint);
+    });
+    setTimeout(paint, 300);
+  })();
+
+  /* Highlight the matching capture box as the guided run moves phase */
+  (function () {
+    'use strict';
+    var phaseEl = document.querySelector('#run [data-timer-phase]');
+    var boxes = Array.prototype.slice.call(document.querySelectorAll('.fr__phase'));
+    if (!phaseEl || !boxes.length) return;
+
+    var obs = new MutationObserver(function () {
+      var txt = phaseEl.textContent || '';
+      var m = txt.match(/^0(\d)/);
+      boxes.forEach(function (b, i) {
+        b.classList.toggle('is-live', !!m && parseInt(m[1], 10) - 1 === i);
+      });
+    });
+    obs.observe(phaseEl, { childList: true, characterData: true, subtree: true });
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>The Practice Room | Skills Journal | The Performance Act</title>
+  <meta name="description" content="Short, sport-specific mindfulness practices you can actually use — from nine seconds to six minutes — plus what to do when practice goes badly.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=18">
+  <link rel="stylesheet" href="grow-athlete.css?v=2">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=2">
+  <style>
+    .aj-tool { border-left-color: var(--aware); }
+    .aj-tool__num { color: rgba(111,211,224,0.35); }
+    .aj-act { border-color: rgba(111,211,224,0.32); background: linear-gradient(165deg,#101a1c,#0c0c0c); }
+    .aj-act__tag { background: var(--aware); }
+    .aj-hero__title span { color: var(--aware); }
+    .aj-block__k, .aj-eg__k, .aj-eyebrow, .aj-label { color: var(--aware); }
+    .aj-label::before, .aj-ul li::before { background: var(--aware); }
+    .aj-eg { border-left-color: var(--aware); }
+    .aj-steps li::before { border-color: rgba(111,211,224,0.5); color: var(--aware); }
+    .aj-h2 em, .aj-takeaways h3 { color: var(--aware); }
+    .aj-takeaways li::before { background: var(--aware); }
+    .aj-takeaways { border-color: rgba(111,211,224,0.3); }
+    .aj-back, .aj-hero__badge { color: var(--aware); }
+    .aj-hero__badge { border-color: rgba(111,211,224,0.4); }
+    .aj-btn { background: var(--aware); border-color: var(--aware); }
+    .aj-btn:hover { box-shadow: 0 8px 22px rgba(111,211,224,0.22); }
+    .aj-btn--ghost { background: transparent; border-color: rgba(255,255,255,0.35); color: var(--ink); }
+    .aj-chip[aria-pressed="true"] { background: var(--aware); border-color: var(--aware); }
+    .aj-slider input[type=range]::-webkit-slider-thumb { background: var(--aware); }
+    .aj-slider input[type=range]::-moz-range-thumb { background: var(--aware); }
+    .aj-slider__val { color: var(--aware); }
+    .aj-progress__fill { background: var(--aware); }
+    .aj-progress__count { color: var(--aware); }
+    .aj-timer__clock { color: var(--aware); }
+    .aj-timer__cue strong { color: var(--aware); }
+    .aj-builder__chip { border-left-color: var(--aware); }
+    .aj-day.is-done .aj-day__dot { background: var(--aware); border-color: var(--aware); }
+    .aj-day__caret { color: var(--aware); }
+
+    /* practice index */
+    .px { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:30px; }
+    .px__card { display:block; background:#111; border:1px solid var(--line); border-left:3px solid var(--aware); padding:20px 22px; transition:.22s; }
+    .px__card:hover { border-color:var(--aware); transform:translateY(-3px); }
+    .px__time { font-family:var(--font-heading); font-size:0.66rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--aware); }
+    .px__name { font-family:var(--font-heading); font-size:1.1rem; text-transform:uppercase; color:#fff; letter-spacing:0.02em; margin:6px 0 7px; }
+    .px__for { color:var(--ink); font-size:0.88rem; line-height:1.6; font-weight:300; margin:0; }
+    @media (max-width:680px){ .px { grid-template-columns:1fr; } }
+
+    /* sense table builder */
+    .st { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-top:8px; }
+    .st__col { background:#0a0a0a; border:1px solid var(--line); border-top:3px solid var(--aware); padding:14px 12px; }
+    .st__col h5 { font-family:var(--font-heading); font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--aware); margin-bottom:8px; }
+    .st__col textarea { min-height:110px; font-size:0.9rem; }
+    @media (max-width:820px){ .st { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:520px){ .st { grid-template-columns:1fr; } }
+
+    /* troubleshooting accordion */
+    .tb { border:1px solid var(--line); background:#0f0f0f; margin-top:20px; }
+    .tb__item { border-bottom:1px solid var(--line); }
+    .tb__item:last-child { border-bottom:none; }
+    .tb__q { width:100%; display:flex; align-items:center; gap:14px; padding:17px 20px; background:none; border:none; cursor:pointer; text-align:left; }
+    .tb__q:hover { background:rgba(255,255,255,0.03); }
+    .tb__q span { flex:1; color:#fff; font-size:0.96rem; font-weight:400; line-height:1.5; }
+    .tb__plus { position:relative; width:18px; height:18px; flex-shrink:0; }
+    .tb__plus::before, .tb__plus::after { content:''; position:absolute; background:var(--aware); transition:transform .3s ease, opacity .3s ease; }
+    .tb__plus::before { top:8px; left:0; width:18px; height:2px; }
+    .tb__plus::after { left:8px; top:0; width:2px; height:18px; }
+    .tb__q[aria-expanded="true"] .tb__plus::after { transform:rotate(90deg); opacity:0; }
+    .tb__a[hidden] { display:none; }
+    .tb__a { padding:0 20px 20px 52px; }
+    .tb__a p { color:var(--ink); font-size:0.94rem; line-height:1.75; font-weight:300; margin:0 0 12px; }
+    .tb__a p:last-child { margin-bottom:0; }
+    .tb__a p strong { color:#fff; font-weight:600; }
+    .tb__a p em { color:#fff; font-style:italic; }
+    @media (max-width:600px){ .tb__a { padding-left:20px; } }
+  </style>
+</head>
+<body class="aj">
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="images/logo-horizontal.png?v=2" alt="The Performance Act" class="logo-img logo-img--header">
+      </a>
+      <nav class="header__nav" id="mainNav" aria-label="Primary">
+        <a href="grow-athlete.html" class="nav-link">SKILLS JOURNAL</a>
+        <a href="grow-athlete-fivemoves.html" class="nav-link">FIVE MOVES</a>
+        <a href="grow-athlete-practice.html" class="nav-link active">PRACTICE</a>
+        <a href="grow-athlete-open.html" class="nav-link">OPEN</a>
+        <a href="grow-athlete-aware.html" class="nav-link">AWARE</a>
+        <a href="grow-athlete-engaged.html" class="nav-link">ENGAGED</a>
+      </nav>
+      <div class="header__actions">
+        <a href="grow-athlete-journal.html" class="btn btn--primary btn--sm">My Journal</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <nav class="mobile-nav__links" aria-label="Mobile">
+      <a href="grow-athlete.html" class="mobile-nav__link">SKILLS JOURNAL HOME</a>
+      <a href="grow-athlete-fivemoves.html" class="mobile-nav__link">THE FIVE MOVES</a>
+      <a href="grow-athlete-practice.html" class="mobile-nav__link">THE PRACTICE ROOM</a>
+      <a href="grow-athlete-open.html" class="mobile-nav__link">OPEN</a>
+      <a href="grow-athlete-aware.html" class="mobile-nav__link">AWARE</a>
+      <a href="grow-athlete-engaged.html" class="mobile-nav__link">ENGAGED</a>
+      <a href="grow-athlete-brain.html" class="mobile-nav__link">BRAIN HEALTH</a>
+      <a href="grow-athlete-journal.html" class="mobile-nav__link">MY JOURNAL</a>
+    </nav>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="aj-hero" id="top">
+    <div class="aj-hero__bg"></div>
+    <div class="container">
+      <a href="grow-athlete.html" class="aj-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Skills Journal
+      </a>
+      <span class="aj-hero__badge">Where the reps happen</span>
+      <h1 class="aj-hero__title">THE PRACTICE<br><span>ROOM</span></h1>
+      <p class="aj-hero__lead"><strong>Eight practices, from nine seconds to six minutes.</strong> Every skill in this area needs an attention that can be pointed and held. This is where you build it &mdash; in your sport, in your kit, in the gaps you already have.</p>
+      <p class="aj-hero__meta"><span>8 practices</span> &middot; <span>9 seconds to 6 minutes</span> &middot; <span>Plus what to do when it goes badly</span></p>
+    </div>
+  </section>
+
+  <div class="aj-progress">
+    <div class="container">
+      <div class="aj-progress__inner">
+        <span class="aj-progress__label">Your progress through the Practice Room</span>
+        <div class="aj-progress__track"><div class="aj-progress__fill" id="ajProgressFill"></div></div>
+        <span class="aj-progress__count" id="ajProgressCount">0 / 0 saved</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== HOW TO PRACTISE ========== -->
+  <section class="aj-sec">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">Read this first</p>
+        <h2 class="aj-h2">Don&rsquo;t fit it in.<br><em>Build it in.</em></h2>
+        <p class="aj-lead">The single most common reason athletes stop doing this is that they treated it as one more item on a list that is already too long.</p>
+        <p class="aj-p" style="margin-top:18px;">So don&rsquo;t add it. <strong>Attach it to something you already do.</strong> The walk from the car park. The queue at the physio. The two minutes between sets. The first thirty seconds of your warm-up. You are not looking for spare time &mdash; you don&rsquo;t have any &mdash; you are looking for moments that already exist and are currently being spent on your phone.</p>
+
+        <div class="aj-block">
+          <span class="aj-block__k">What you&rsquo;re actually training</span>
+          <p>Not relaxation. Relaxation is a possible <em>side effect</em>, not the purpose &mdash; and if you make it the purpose, you&rsquo;ve turned the practice into another struggle strategy.</p>
+          <p>What you&rsquo;re training is the ability to <strong>put your attention where you choose and bring it back when it wanders</strong>. Every time you notice your mind has gone and you return it, that&rsquo;s the rep. Not the staying &mdash; the returning. An athlete whose mind wandered forty times and came back forty times did forty reps. Someone who sat there placidly did none.</p>
+          <p>That reframe matters, because it means <strong>there is no such thing as being bad at this.</strong> A busy mind isn&rsquo;t a failed practice; it&rsquo;s a heavier set.</p>
+        </div>
+
+        <div class="aj-warn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+          <p><strong>It can feel worse before it feels better.</strong> When you stop moving and start paying attention, things that were in the background come forward. Think of a lake: the water looks opaque until the silt settles, and then you can see what&rsquo;s on the bottom &mdash; including the odd wrecked car. Those things were always there. You&rsquo;re just seeing them now. That&rsquo;s normal, it settles, and if it doesn&rsquo;t, that&rsquo;s exactly what your sessions with us are for.</p>
+        </div>
+
+        <div class="px">
+          <a href="#check" class="px__card">
+            <div class="px__time">9 seconds</div>
+            <div class="px__name">The 9-Second Check</div>
+            <p class="px__for">Mind, body, breath. The fastest read on where you are.</p>
+          </a>
+          <a href="#cpr" class="px__card">
+            <div class="px__time">30 seconds</div>
+            <div class="px__name">CPR Under Pressure</div>
+            <p class="px__for">For the free throw, the penalty, the second serve.</p>
+          </a>
+          <a href="#bset" class="px__card">
+            <div class="px__time">2 minutes</div>
+            <div class="px__name">The 2BSET Sweep</div>
+            <p class="px__for">Breath, body, senses, emotions, thoughts &mdash; in order.</p>
+          </a>
+          <a href="#senses" class="px__card">
+            <div class="px__time">10 minutes, once</div>
+            <div class="px__name">Your Sense Map</div>
+            <p class="px__for">Find the sense that gets you back fastest.</p>
+          </a>
+          <a href="#anchors" class="px__card">
+            <div class="px__time">5 minutes, once</div>
+            <div class="px__name">Visual Anchors</div>
+            <p class="px__for">Fixed points in your venue you can come back to.</p>
+          </a>
+          <a href="#breathe" class="px__card">
+            <div class="px__time">1 minute</div>
+            <div class="px__name">Breathing Through It</div>
+            <p class="px__for">For when you&rsquo;ve stopped breathing properly and haven&rsquo;t noticed.</p>
+          </a>
+          <a href="#scan" class="px__card">
+            <div class="px__time">6 minutes</div>
+            <div class="px__name">The Sitting Body Scan</div>
+            <p class="px__for">The foundation practice. Also works lying down for sleep.</p>
+          </a>
+          <a href="#warmup" class="px__card">
+            <div class="px__time">Your whole warm-up</div>
+            <div class="px__name">The Mindful Warm-Up</div>
+            <p class="px__for">Turn the thing you already do into the practice.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 01 — 9 SECOND CHECK ========== -->
+  <section class="aj-sec aj-sec--alt" id="check">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">01</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">The 9-Second Check</h2>
+              <p class="aj-tool__for">Three seconds each on mind, body and breath. Short enough that &ldquo;no time&rdquo; stops being an argument.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+            <span class="aj-block__k">The practice</span>
+            <ol class="aj-steps">
+              <li><strong>Three seconds &mdash; mind.</strong> What thoughts are here? What emotions? Don&rsquo;t analyse them. Just clock what&rsquo;s running.</li>
+              <li><strong>Three seconds &mdash; body.</strong> Sweep head to toe. What&rsquo;s normal, what&rsquo;s different, what&rsquo;s sore, what&rsquo;s tight, what&rsquo;s loose?</li>
+              <li><strong>Three seconds &mdash; breath.</strong> Where is it, how fast, how deep? See if you can notice it <em>without changing it</em> &mdash; harder than it sounds, and the noticing is the skill.</li>
+            </ol>
+            <p class="aj-p" style="margin-top:16px;">That&rsquo;s the whole thing. Nine seconds gives you a genuine read on your own status. If it&rsquo;s good, carry on. If it isn&rsquo;t, you now know early enough to do something.</p>
+
+            <div class="aj-eg">
+              <span class="aj-eg__k">Why so short</span>
+              <p>Because a practice you&rsquo;ll actually do beats a better practice you won&rsquo;t. Nine seconds fits in a substitution, a drinks break, the walk back to your mark, the lift up to the start. There is no version of your week that doesn&rsquo;t have room for it.</p>
+              <p>And it gets you the thing that matters most: <strong>early information.</strong> Most athletes only notice they&rsquo;ve gone when they&rsquo;re a long way gone.</p>
+            </div>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 9 seconds, then set the habit</span>
+              <h3 class="aj-act__title">Run it now, then attach it</h3>
+              <div class="aj-timer" data-aj-timer='[
+                {"phase":"Mind","secs":3,"cue":"What thoughts are here? What emotions? <strong>Just clock them.</strong>"},
+                {"phase":"Body","secs":3,"cue":"Head to toe. <strong>Normal, different, sore, tight, loose?</strong>"},
+                {"phase":"Breath","secs":3,"cue":"Where is it? How fast? <strong>Can you notice it without changing it?</strong>"}
+              ]'>
+                <div class="aj-timer__clock" data-timer-clock>0:03</div>
+                <div class="aj-timer__phase" data-timer-phase>Mind</div>
+                <p class="aj-timer__cue" data-timer-cue></p>
+                <div class="aj-timer__controls">
+                  <button type="button" class="aj-btn" data-timer-start>Start</button>
+                  <button type="button" class="aj-btn aj-btn--ghost" data-timer-reset>Reset</button>
+                </div>
+              </div>
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">Could you notice the breath without changing it?</p>
+                <p class="aj-field__hint">Almost nobody can at first. Being able to observe something without immediately interfering with it is the core skill of this entire area, and this is the cleanest test of it.</p>
+                <textarea class="aj-textarea"
+                          data-aj="prac.check.breath"
+                          data-aj-tool="The 9-Second Check"
+                          data-aj-q="Could I notice my breath without changing it?"
+                          placeholder="e.g. No — the second I looked at it I started doing deliberate deep breaths. Took three goes before I could just watch it."></textarea>
+                <span class="aj-saved" data-aj-saved="prac.check.breath">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">Where will you attach it? Pick three moments that already exist.</p>
+                <div class="aj-builder__row" data-aj-builder="prac.check.moments"
+                     data-aj-tool="The 9-Second Check"
+                     data-aj-q="Where I'll attach the 9-second check"
+                     data-aj-empty="Add three existing moments.">
+                  <input type="text" class="aj-input" placeholder="e.g. Every time I pick up my water bottle">
+                  <button type="button" class="aj-btn" data-aj-add>Add</button>
+                  <div class="aj-builder__list" style="flex:1 1 100%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> Adapted from the three-second rule practice in <cite>Biegel &amp; Corbin, Mindfulness for Student Athletes (2018), Instant Help / New Harbinger</cite>.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 02 — CPR ========== -->
+  <section class="aj-sec" id="cpr">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">02</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">CPR Under Pressure</h2>
+              <p class="aj-tool__for">The moment the game is on you and your body starts tightening up.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+            <span class="aj-block__k">The practice</span>
+            <p>Three letters, in order, in about thirty seconds.</p>
+            <ol class="aj-steps">
+              <li><strong>C &mdash; Check in.</strong> What&rsquo;s in your body, and where has your mind gone? Usually it has gone to <em>what happens if I miss</em> &mdash; which is the future, not the shot.</li>
+              <li><strong>P &mdash; Pause with a breath.</strong> One or two, and actually notice them flowing. This is the bit that interrupts the tightening.</li>
+              <li><strong>R &mdash; Reset, then refocus.</strong> Reset means restart your routine from the top &mdash; the batter stepping out and back in, the server bouncing the ball again. Refocus means pointing at <strong>what you want to happen</strong>, not what you&rsquo;re trying to avoid.</li>
+            </ol>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+              <p><strong>Point at the thing, not away from it.</strong> &ldquo;Don&rsquo;t hit it long&rdquo; puts <em>long</em> in your head, and your body is remarkably obliging. &ldquo;Deep and left&rdquo; gives it somewhere to go. This one small habit is worth more than most of what gets called mental toughness.</p>
+            </div>
+
+            <div class="aj-eg">
+              <span class="aj-eg__k">Feel the difference yourself</span>
+              <p>Take whatever you hold &mdash; bat, racquet, club, stick, or just your hands &mdash; and make your normal movement with <strong>every muscle deliberately tight</strong>. Notice what happens to the motion, to your breathing, and to your head.</p>
+              <p>Now run C, P, R and make the identical movement with the tension out. Most athletes report the second version feels not just easier but <em>more accurate</em>, and that their attention had somewhere to go. That difference is what you&rsquo;re protecting when you use this.</p>
+            </div>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 5 minutes</span>
+              <h3 class="aj-act__title">Build your CPR</h3>
+              <div class="aj-field">
+                <p class="aj-field__q">1. Where do you feel pressure first, physically?</p>
+                <p class="aj-field__hint">Your early-warning signal. Hands, jaw, shoulders, stomach, breathing.</p>
+                <input type="text" class="aj-input"
+                       data-aj="prac.cpr.tell"
+                       data-aj-tool="CPR Under Pressure"
+                       data-aj-q="Where I feel pressure first"
+                       placeholder="e.g. Forearms grip up and my breathing goes high in my chest">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">2. Your reset &mdash; the physical restart of your routine</p>
+                <p class="aj-field__hint">What&rsquo;s the first action of your routine? That&rsquo;s what you go back to.</p>
+                <input type="text" class="aj-input"
+                       data-aj="prac.cpr.reset"
+                       data-aj-tool="CPR Under Pressure"
+                       data-aj-q="My physical reset"
+                       placeholder="e.g. Step out of the box, tap both shoes, step back in">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">3. Your refocus &mdash; stated as what you want</p>
+                <p class="aj-field__hint">Rewrite any &ldquo;don&rsquo;t&rdquo; into a &ldquo;do&rdquo;. This is the part people get wrong.</p>
+                <input type="text" class="aj-input"
+                       data-aj="prac.cpr.refocus"
+                       data-aj-tool="CPR Under Pressure"
+                       data-aj-q="My refocus cue, stated as what I want"
+                       placeholder="e.g. Not 'don't pull it left' — 'through the ball, at the right post'">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">4. The three moments you&rsquo;ll use it</p>
+                <div class="aj-builder__row" data-aj-builder="prac.cpr.moments"
+                     data-aj-tool="CPR Under Pressure"
+                     data-aj-q="Moments I'll use CPR"
+                     data-aj-empty="Name the pressure moments in your sport.">
+                  <input type="text" class="aj-input" placeholder="e.g. Any free throw in the last two minutes">
+                  <button type="button" class="aj-btn" data-aj-add>Add</button>
+                  <div class="aj-builder__list" style="flex:1 1 100%;"></div>
+                </div>
+              </div>
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">5. What did you notice doing the tight-versus-relaxed comparison?</p>
+                <textarea class="aj-textarea"
+                          data-aj="prac.cpr.compare"
+                          data-aj-tool="CPR Under Pressure"
+                          data-aj-q="Tight versus relaxed — what I noticed"
+                          placeholder="e.g. Tight, I couldn't finish the swing and I was holding my breath without realising. Relaxed, it was quicker and I could actually see the target."></textarea>
+                <span class="aj-saved" data-aj-saved="prac.cpr.compare">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> The CPR sequence for pressure moments is from <cite>Biegel &amp; Corbin, Mindfulness for Student Athletes (2018)</cite>. On approach-framed rather than avoidance-framed cues, see the wider attentional-focus literature in applied sport psychology.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 03 — 2BSET ========== -->
+  <section class="aj-sec aj-sec--alt" id="bset">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">03</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">The 2BSET Sweep</h2>
+              <p class="aj-tool__for">A full read of your whole system in about two minutes, in a fixed order so you can&rsquo;t skip the awkward bits.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+            <span class="aj-block__k">The practice</span>
+            <p>Five channels, always in the same sequence. The order is deliberate: it starts with the easiest thing to find and finishes with the hardest, so you arrive at your thoughts already steady rather than diving straight into the noise.</p>
+            <ul class="aj-ul">
+              <li><strong>B &mdash; Breath.</strong> Just notice it. Don&rsquo;t fix it.</li>
+              <li><strong>B &mdash; Body.</strong> Feet on the ground, hands, the feel of clothing on skin, the area around your eyes.</li>
+              <li><strong>S &mdash; Senses.</strong> One thing you can see, hear, smell, feel, taste. Noticing an <em>absence</em> counts.</li>
+              <li><strong>E &mdash; Emotions.</strong> Name what&rsquo;s here. Then watch the intensity change on its own, without you doing anything to it.</li>
+              <li><strong>T &mdash; Thoughts.</strong> Watch them go past like clouds. You are not required to board any of them.</li>
+            </ul>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why the order</span>
+              <p>Because most athletes, left to themselves, go straight to <strong>T</strong> &mdash; and thoughts are the loudest, stickiest, least reliable channel of the five. Starting at the breath and working outwards means that by the time you get to thinking, you have four other sources of information already in view, and the commentary has to compete rather than dominate.</p>
+              <p>There&rsquo;s also a useful move at the end: find where an emotion sits in your body, then <strong>breathe into that spot</strong>. It won&rsquo;t remove the feeling. It tends to take the edge off it, and more importantly it keeps you in contact with it rather than in flight from it.</p>
+            </div>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 2 minutes guided</span>
+              <h3 class="aj-act__title">Sweep all five</h3>
+              <div class="aj-timer" data-aj-timer='[
+                {"phase":"B — Breath","secs":25,"cue":"Find your breath. <strong>Don&rsquo;t change it</strong> — just locate it and watch it. When your mind goes, bring it back. That&rsquo;s the rep."},
+                {"phase":"B — Body","secs":25,"cue":"Feet on the ground. Where are your hands? Feel your clothing on your skin. <strong>Notice the area around your eyes</strong> — most people are holding tension there."},
+                {"phase":"S — Senses","secs":25,"cue":"One thing you can <strong>see</strong>. One you can <strong>hear</strong>. One you can <strong>smell</strong>, <strong>feel</strong>, <strong>taste</strong>. Noticing that a sense is empty still counts."},
+                {"phase":"E — Emotions","secs":25,"cue":"What are you feeling? <strong>Name it.</strong> Now just watch it — notice whether the intensity shifts on its own, without you doing anything."},
+                {"phase":"T — Thoughts","secs":25,"cue":"Watch them pass like clouds. <strong>You don&rsquo;t have to get on any of them.</strong> Notice what your mind is offering right now."},
+                {"phase":"Breathe into it","secs":25,"cue":"Go back to the strongest feeling. Find where it sits in your body. <strong>Breathe into that spot</strong> — not to shift it, just to stay with it."}
+              ]'>
+                <div class="aj-timer__clock" data-timer-clock>0:25</div>
+                <div class="aj-timer__phase" data-timer-phase>B &mdash; Breath</div>
+                <p class="aj-timer__cue" data-timer-cue></p>
+                <div class="aj-timer__controls">
+                  <button type="button" class="aj-btn" data-timer-start>Start</button>
+                  <button type="button" class="aj-btn aj-btn--ghost" data-timer-reset>Reset</button>
+                </div>
+              </div>
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">Which channel was easiest to find? Which was hardest?</p>
+                <p class="aj-field__hint">Your easiest one is your fastest route back to the present when you need it in a hurry.</p>
+                <textarea class="aj-textarea"
+                          data-aj="prac.bset.channels"
+                          data-aj-tool="The 2BSET Sweep"
+                          data-aj-q="Easiest and hardest channels"
+                          placeholder="e.g. Body was easy — I could feel my feet straight away. Emotions were almost blank, I couldn't name anything for ages."></textarea>
+                <span class="aj-saved" data-aj-saved="prac.bset.channels">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">Did the emotion change on its own while you watched it?</p>
+                <div class="aj-chips" data-aj-single
+                     data-aj-chips="prac.bset.shift"
+                     data-aj-tool="The 2BSET Sweep"
+                     data-aj-q="Did the emotion change while I watched it?">
+                  <button class="aj-chip">Yes &mdash; it faded</button>
+                  <button class="aj-chip">Yes &mdash; it got stronger first</button>
+                  <button class="aj-chip">It stayed about the same</button>
+                  <button class="aj-chip">I couldn&rsquo;t find one</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> The 2BSET model of awareness is from <cite>Biegel &amp; Corbin, Mindfulness for Student Athletes (2018)</cite>.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 04 — SENSE MAP ========== -->
+  <section class="aj-sec" id="senses">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">04</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Your Sense Map</h2>
+              <p class="aj-tool__for">Working out which of your five senses gets you back to now the fastest.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+            <span class="aj-block__k">The practice</span>
+            <p>Your senses only ever operate in the present tense. You cannot smell last Tuesday or hear next week. That makes them the most direct route back into the moment there is &mdash; more reliable than any instruction to &ldquo;focus&rdquo;.</p>
+            <p>But people aren&rsquo;t equal across the five, and almost nobody knows which of theirs is strongest. Once you do, you have a shortcut: when you need to be here <em>right now</em>, you go to your strongest sense first rather than fishing.</p>
+
+            <div class="aj-eg">
+              <span class="aj-eg__k">The point of writing it down</span>
+              <p>Filling this in forces you to notice detail you have been playing alongside for years without registering: the specific squeak of your shoes on that surface, the smell of the changing room, the taste of your mouthguard, the exact sound the ball makes off the middle.</p>
+              <p>That inventory becomes a resource. When you&rsquo;re lost in your own head at 3&ndash;1 down, <strong>&ldquo;find the sound of feet on the court&rdquo; is a real instruction you can follow.</strong> &ldquo;Concentrate&rdquo; is not.</p>
+            </div>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 10 minutes, once</span>
+              <h3 class="aj-act__title">Map your sport</h3>
+              <div class="aj-field">
+                <p class="aj-field__q">Your sport</p>
+                <input type="text" class="aj-input"
+                       data-aj="prac.senses.sport"
+                       data-aj-tool="Your Sense Map"
+                       data-aj-q="My sport" placeholder="e.g. Netball">
+              </div>
+              <p class="aj-field__hint" style="margin-bottom:10px;">Now fill each column with everything you can &mdash; before, during and after. Be specific. &ldquo;The ball&rdquo; is weak; &ldquo;the grain of the ball under my fingertips&rdquo; is usable.</p>
+              <div class="st">
+                <div class="st__col">
+                  <h5>See</h5>
+                  <textarea class="aj-textarea" data-sense="see"
+                            data-aj="prac.senses.see"
+                            data-aj-tool="Your Sense Map" data-aj-q="What I can see"
+                            placeholder="lines, hoop, opposition bibs, sideline, roof beams..."></textarea>
+                </div>
+                <div class="st__col">
+                  <h5>Hear</h5>
+                  <textarea class="aj-textarea" data-sense="hear"
+                            data-aj="prac.senses.hear"
+                            data-aj-tool="Your Sense Map" data-aj-q="What I can hear"
+                            placeholder="squeak of shoes, whistle, my own breathing, the bench..."></textarea>
+                </div>
+                <div class="st__col">
+                  <h5>Touch</h5>
+                  <textarea class="aj-textarea" data-sense="touch"
+                            data-aj="prac.senses.touch"
+                            data-aj-tool="Your Sense Map" data-aj-q="What I can feel"
+                            placeholder="ball grain, sweat, bib strap, floor through my soles..."></textarea>
+                </div>
+                <div class="st__col">
+                  <h5>Smell</h5>
+                  <textarea class="aj-textarea" data-sense="smell"
+                            data-aj="prac.senses.smell"
+                            data-aj-tool="Your Sense Map" data-aj-q="What I can smell"
+                            placeholder="floor polish, deep heat, the hall, rain outside..."></textarea>
+                </div>
+                <div class="st__col">
+                  <h5>Taste</h5>
+                  <textarea class="aj-textarea" data-sense="taste"
+                            data-aj="prac.senses.taste"
+                            data-aj-tool="Your Sense Map" data-aj-q="What I can taste"
+                            placeholder="sports drink, blood, dry mouth, mouthguard..."></textarea>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">Which sense is strongest and most available to you?</p>
+                <p class="aj-field__hint">This becomes your first port of call when you need to get back here fast.</p>
+                <div class="aj-chips" data-aj-single
+                     data-aj-chips="prac.senses.strongest"
+                     data-aj-tool="Your Sense Map"
+                     data-aj-q="My strongest sense">
+                  <button class="aj-chip">See</button>
+                  <button class="aj-chip">Hear</button>
+                  <button class="aj-chip">Touch</button>
+                  <button class="aj-chip">Smell</button>
+                  <button class="aj-chip">Taste</button>
+                </div>
+              </div>
+              <div class="aj-field" style="margin-top:20px;">
+                <p class="aj-field__q">And which is hardest to notice?</p>
+                <p class="aj-field__hint">Worth practising occasionally &mdash; it&rsquo;s usually the one that would tell you something new.</p>
+                <div class="aj-chips" data-aj-single
+                     data-aj-chips="prac.senses.hardest"
+                     data-aj-tool="Your Sense Map"
+                     data-aj-q="My hardest sense to notice">
+                  <button class="aj-chip">See</button>
+                  <button class="aj-chip">Hear</button>
+                  <button class="aj-chip">Touch</button>
+                  <button class="aj-chip">Smell</button>
+                  <button class="aj-chip">Taste</button>
+                </div>
+              </div>
+              <div class="aj-field" style="margin-top:20px;">
+                <p class="aj-field__q">Your one-line instruction</p>
+                <p class="aj-field__hint">Write the actual sentence you&rsquo;ll say to yourself. Concrete enough to obey without thinking.</p>
+                <input type="text" class="aj-input"
+                       data-aj="prac.senses.cue"
+                       data-aj-tool="Your Sense Map"
+                       data-aj-q="My sense cue"
+                       placeholder="e.g. 'Find the squeak of the shoes.'">
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> The sense-awareness inventory for athletes is from <cite>Biegel &amp; Corbin, Mindfulness for Student Athletes (2018)</cite>.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 05 — VISUAL ANCHORS ========== -->
+  <section class="aj-sec aj-sec--alt" id="anchors">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">05</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Visual Anchors</h2>
+              <p class="aj-tool__for">Fixed points in your venue that you can put your eyes on when your head goes.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+            <span class="aj-block__k">The practice</span>
+            <p>Pick physical objects you can always find where you play, and use them deliberately. A flag. The line markings. A floodlight. The scoreboard. A sticker on your bat. A wristband you can flick. Your own laces.</p>
+            <p>When your attention is spiralling, you put your eyes on the anchor and take a few slow breaths while you look at it &mdash; noticing its actual detail: shape, texture, colour, whether it&rsquo;s moving.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why it works</span>
+              <p>Because it&rsquo;s far easier to <em>move</em> attention than to <em>stop</em> it. Telling yourself to stop thinking about the missed shot doesn&rsquo;t work &mdash; you already know this. Giving your eyes a specific, external, physically present job does, because attention has somewhere to go.</p>
+              <p>It also travels. You can&rsquo;t always take your routine with you, but there is always a line, a post, a light or a sleeve.</p>
+            </div>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 5 minutes, once</span>
+              <h3 class="aj-act__title">Choose your anchors</h3>
+              <div class="aj-field">
+                <p class="aj-field__q">1. Anchors available at your home venue</p>
+                <div class="aj-builder__row" data-aj-builder="prac.anchors.home"
+                     data-aj-tool="Visual Anchors"
+                     data-aj-q="My home-venue anchors"
+                     data-aj-empty="Add two or three.">
+                  <input type="text" class="aj-input" placeholder="e.g. The clock on the far wall">
+                  <button type="button" class="aj-btn" data-aj-add>Add</button>
+                  <div class="aj-builder__list" style="flex:1 1 100%;"></div>
+                </div>
+              </div>
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">2. Anchors that travel with you</p>
+                <p class="aj-field__hint">On your body or your kit, so they work at any away ground.</p>
+                <div class="aj-chips"
+                     data-aj-chips="prac.anchors.portable"
+                     data-aj-tool="Visual Anchors"
+                     data-aj-q="Anchors that travel with me">
+                  <button class="aj-chip">My laces</button>
+                  <button class="aj-chip">A wristband</button>
+                  <button class="aj-chip">Tape on my hand</button>
+                  <button class="aj-chip">A mark on my kit</button>
+                  <button class="aj-chip">My mouthguard</button>
+                  <button class="aj-chip">The grip of my bat/stick/racquet</button>
+                  <button class="aj-chip">A ring or necklace</button>
+                  <button class="aj-chip">Something written on my boot</button>
+                </div>
+              </div>
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">3. When will you use them?</p>
+                <textarea class="aj-textarea"
+                          data-aj="prac.anchors.when"
+                          data-aj-tool="Visual Anchors"
+                          data-aj-q="When I'll use my anchors"
+                          placeholder="e.g. Straight after any turnover I cause. Eyes to the clock, three breaths, back in."></textarea>
+                <span class="aj-saved" data-aj-saved="prac.anchors.when">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> Visual anchor points for athletes are from <cite>Biegel &amp; Corbin, Mindfulness for Student Athletes (2018)</cite>.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 06 — BREATHING THROUGH IT ========== -->
+  <section class="aj-sec" id="breathe">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">06</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Breathing Through It</h2>
+              <p class="aj-tool__for">The moments you stop breathing properly and don&rsquo;t notice for another twenty seconds.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+            <span class="aj-block__k">The practice</span>
+            <p>Under stress, athletes hold their breath or breathe shallow and high in the chest. It happens automatically and it happens at the worst possible time &mdash; while your muscles are tightening and you&rsquo;re trying to execute something skilful.</p>
+            <p>You breathe roughly twenty thousand times a day without deciding to. This is about deliberately taking hold of a handful of those, at the moments that count.</p>
+            <ol class="aj-steps">
+              <li><strong>Catch it.</strong> Notice you&rsquo;ve stopped breathing normally &mdash; that&rsquo;s the whole skill and it&rsquo;s the bit that takes practice.</li>
+              <li><strong>Longer out than in.</strong> Breathe in for a comfortable count, out for a bit longer. Don&rsquo;t force the volume; extend the exhale.</li>
+              <li><strong>Low, not high.</strong> Let the movement be in your belly rather than your shoulders. If your shoulders are lifting, you&rsquo;re breathing high.</li>
+              <li><strong>Three of them, then back to the job.</strong> Not ten. Three, and then your attention goes back out to the task.</li>
+            </ol>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+              <p><strong>Keep it gentle.</strong> Deliberately deep or forceful breathing can make you light-headed or tingly and will make anxiety worse, not better. Slow and small beats big. If you feel dizzy, stop and breathe normally &mdash; and use a <a href="#anchors">visual anchor</a> instead, which does the same job with none of the physiology.</p>
+            </div>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 1 minute</span>
+              <h3 class="aj-act__title">Three breaths, properly</h3>
+              <div class="aj-timer" data-aj-timer='[
+                {"phase":"Find it","secs":15,"cue":"Where is your breath right now — <strong>high in the chest, or low in the belly?</strong> Are your shoulders involved? Just notice."},
+                {"phase":"Breath one","secs":15,"cue":"In gently. Then <strong>out for longer than you came in</strong>. Let the shoulders drop."},
+                {"phase":"Breath two","secs":15,"cue":"Again. <strong>Low and slow.</strong> The belly moves, the shoulders stay put."},
+                {"phase":"Breath three, then out","secs":15,"cue":"One more — then <strong>attention straight back out</strong> to the room, and to whatever you were doing."}
+              ]'>
+                <div class="aj-timer__clock" data-timer-clock>0:15</div>
+                <div class="aj-timer__phase" data-timer-phase>Find it</div>
+                <p class="aj-timer__cue" data-timer-cue></p>
+                <div class="aj-timer__controls">
+                  <button type="button" class="aj-btn" data-timer-start>Start</button>
+                  <button type="button" class="aj-btn aj-btn--ghost" data-timer-reset>Reset</button>
+                </div>
+              </div>
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">When does your breathing go, in your sport?</p>
+                <p class="aj-field__hint">Be specific about the moment. That&rsquo;s where you&rsquo;ll catch it.</p>
+                <input type="text" class="aj-input"
+                       data-aj="prac.breathe.when"
+                       data-aj-tool="Breathing Through It"
+                       data-aj-q="When my breathing goes"
+                       placeholder="e.g. Every time I'm in the circle waiting for the ball to come in">
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> Breathing through difficult moments for athletes: <cite>Biegel &amp; Corbin, Mindfulness for Student Athletes (2018)</cite>. The caution on over-breathing follows standard guidance on hyperventilation in anxiety management.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 07 — BODY SCAN ========== -->
+  <section class="aj-sec aj-sec--alt" id="scan">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">07</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">The Sitting Body Scan</h2>
+              <p class="aj-tool__for">The foundation practice. Everything else gets easier once this is in place.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+            <span class="aj-block__k">The practice</span>
+            <p>Move your attention slowly through your body, area by area, noticing what&rsquo;s there without trying to change any of it. Six minutes, sitting, eyes closed or softly lowered.</p>
+            <p>Two things you are <em>not</em> doing: relaxing, and fixing. If tension shows up, you notice the tension. If nothing shows up in an area, you notice the nothing. That&rsquo;s a legitimate result and it&rsquo;s data.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why athletes get more from this than most people</span>
+              <p>Because you already have an unusually detailed relationship with your body &mdash; you just use it for a narrow purpose. You can tell whether a hamstring is at 80% or 90%. You can feel a technical fault in a movement. That&rsquo;s a real skill and most people don&rsquo;t have it.</p>
+              <p>What this practice does is widen that same attention from <em>performance monitoring</em> to <em>everything else</em>: the tension you carry the night before, where dread actually sits, what your body does in the twenty minutes after a loss. That information has always been there. You&rsquo;ve simply never been asked to read it for anything other than output.</p>
+            </div>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 6 minutes guided</span>
+              <h3 class="aj-act__title">Scan, head to feet</h3>
+              <p class="aj-act__intro">Sit upright but not rigid. Feet flat. Hands wherever they&rsquo;re comfortable. Eyes closed, or resting on a spot on the floor.</p>
+              <div class="aj-timer" data-aj-timer='[
+                {"phase":"Arrive","secs":45,"cue":"Feel the chair underneath you and your feet on the floor. <strong>Nothing to achieve here.</strong> Just arriving."},
+                {"phase":"Head &amp; face","secs":50,"cue":"Scalp, forehead, <strong>the area around your eyes</strong>, jaw. Most people hold a surprising amount in the jaw. Don&rsquo;t release it — just notice it."},
+                {"phase":"Neck &amp; shoulders","secs":50,"cue":"Down through the neck into both shoulders. <strong>Is one different from the other?</strong> Athletes very often carry asymmetry here."},
+                {"phase":"Arms &amp; hands","secs":50,"cue":"Upper arms, elbows, forearms, all the way to the fingertips. <strong>Temperature, weight, tingling, contact.</strong>"},
+                {"phase":"Chest &amp; back","secs":50,"cue":"The chest rising and falling. Then the back — <strong>upper, middle, lower.</strong> Notice where it meets the chair."},
+                {"phase":"Stomach","secs":50,"cue":"The belly. This is where a lot of nerves live. <strong>Whatever&rsquo;s there, let it be there</strong> and just describe it to yourself."},
+                {"phase":"Hips &amp; legs","secs":50,"cue":"Hips, thighs, knees, calves. <strong>Old injuries often speak up here</strong> — notice without diagnosing."},
+                {"phase":"Feet","secs":45,"cue":"Ankles, heels, soles, each toe. <strong>The full contact with the floor.</strong>"},
+                {"phase":"Whole body","secs":50,"cue":"Now the <strong>whole body at once</strong>, breathing. Not part by part — all of it, as one thing."},
+                {"phase":"Close","secs":30,"cue":"Widen out to the sounds in the room. <strong>Move your fingers and toes.</strong> Open your eyes when you&rsquo;re ready."}
+              ]'>
+                <div class="aj-timer__clock" data-timer-clock>0:45</div>
+                <div class="aj-timer__phase" data-timer-phase>Arrive</div>
+                <p class="aj-timer__cue" data-timer-cue></p>
+                <div class="aj-timer__controls">
+                  <button type="button" class="aj-btn" data-timer-start>Start</button>
+                  <button type="button" class="aj-btn aj-btn--ghost" data-timer-reset>Reset</button>
+                </div>
+              </div>
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">Where were you holding something you hadn&rsquo;t noticed?</p>
+                <textarea class="aj-textarea"
+                          data-aj="prac.scan.holding"
+                          data-aj-tool="The Sitting Body Scan"
+                          data-aj-q="Where I was holding something I hadn't noticed"
+                          placeholder="e.g. Jaw was completely clamped and I had no idea. Left shoulder up near my ear."></textarea>
+                <span class="aj-saved" data-aj-saved="prac.scan.holding">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">Any areas that were blank?</p>
+                <p class="aj-field__hint">Completely normal, especially early on. Blank areas usually fill in with practice.</p>
+                <input type="text" class="aj-input"
+                       data-aj="prac.scan.blank"
+                       data-aj-tool="The Sitting Body Scan"
+                       data-aj-q="Areas that were blank">
+              </div>
+            </div>
+
+            <div class="aj-block" style="margin-top:24px;">
+              <span class="aj-block__k">The lying-down version, for sleep</span>
+              <p>Same practice, lying on your back, and you simply don&rsquo;t worry about staying awake. Falling asleep partway through is not failing &mdash; for this version it&rsquo;s rather the point. Pairs well with the wind-down in the <a href="grow-athlete-brain.html#sleep">Brain Health</a> toolkit.</p>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> The body scan is a core practice of <cite>Mindfulness-Based Stress Reduction (Kabat-Zinn)</cite>; this athlete-facing version follows <cite>Biegel &amp; Corbin (2018)</cite>, with facilitation guidance from <cite>Wolf &amp; Serpa, A Clinician&rsquo;s Guide to Teaching Mindfulness (2015), New Harbinger</cite>.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 08 — MINDFUL WARM-UP ========== -->
+  <section class="aj-sec" id="warmup">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">08</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">The Mindful Warm-Up</h2>
+              <p class="aj-tool__for">Turning something you already do every session into the practice, so it costs you nothing.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+            <span class="aj-block__k">The practice</span>
+            <p>You already warm up. You already stretch, jog, run lines, take shots. Most athletes do all of it on autopilot with their mind somewhere else entirely &mdash; which is a wasted twenty minutes twice a day, five days a week.</p>
+            <p>Same warm-up. Attention actually in it.</p>
+            <ul class="aj-ul">
+              <li><strong>Stretching:</strong> feel where the stretch actually is, and notice the exact point where it changes from lengthening to strain. Notice the difference between your two sides.</li>
+              <li><strong>Walking or jogging the lines:</strong> feel each foot land and lift. Match your breathing to your stride. When your mind goes &mdash; and it will &mdash; bring it back to the feet.</li>
+              <li><strong>First touches:</strong> the very first ten contacts with the ball, given full attention. Weight, texture, sound, where it meets your hand or foot.</li>
+            </ul>
+
+            <div class="aj-eg">
+              <span class="aj-eg__k">Why this is the highest-value practice on the page</span>
+              <p>Because it requires no extra time whatsoever, and because it trains attention <strong>in the exact environment where you need it</strong>. Sitting on a bedroom floor builds the general capacity. Doing it on your own pitch, in your own kit, with your own noise around you, builds the thing you will actually use on Saturday.</p>
+              <p>It also fixes something else. Athletes who warm up on autopilot arrive at the first whistle having not yet turned up. This has you present before the game starts rather than three minutes into it.</p>
+            </div>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; your next session</span>
+              <h3 class="aj-act__title">Pick one part and own it</h3>
+              <p class="aj-act__intro">Not the whole warm-up. <strong>One part.</strong> Trying to do the lot mindfully lasts about a week.</p>
+              <div class="aj-field">
+                <p class="aj-field__q">Which part of your warm-up will you do with full attention?</p>
+                <div class="aj-chips" data-aj-single
+                     data-aj-chips="prac.warmup.part"
+                     data-aj-tool="The Mindful Warm-Up"
+                     data-aj-q="The part of my warm-up I'll do with full attention">
+                  <button class="aj-chip">The first jog / lines</button>
+                  <button class="aj-chip">Stretching</button>
+                  <button class="aj-chip">First ten touches</button>
+                  <button class="aj-chip">Activation / band work</button>
+                  <button class="aj-chip">The walk from the changing room</button>
+                  <button class="aj-chip">First length / first reps</button>
+                </div>
+              </div>
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">What will you put your attention on, exactly?</p>
+                <p class="aj-field__hint">One specific physical thing. Not &ldquo;be present&rdquo; &mdash; that&rsquo;s not an instruction you can follow.</p>
+                <input type="text" class="aj-input"
+                       data-aj="prac.warmup.focus"
+                       data-aj-tool="The Mindful Warm-Up"
+                       data-aj-q="What exactly I'll put my attention on"
+                       placeholder="e.g. Each foot landing and lifting, and matching my breathing to it">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">After you&rsquo;ve tried it &mdash; what was different?</p>
+                <textarea class="aj-textarea"
+                          data-aj="prac.warmup.result"
+                          data-aj-tool="The Mindful Warm-Up"
+                          data-aj-q="What was different doing the warm-up with attention"
+                          placeholder="e.g. Noticed my left calf was much tighter than the right, which I'd have missed. Also I was actually ready at kick-off instead of waking up after ten minutes."></textarea>
+                <span class="aj-saved" data-aj-saved="prac.warmup.result">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> Mindful stretching, warm-ups and walking the lines: <cite>Biegel &amp; Corbin, Mindfulness for Student Athletes (2018)</cite>. On informal practice woven into daily activity rather than added to it, see <cite>Wolf &amp; Serpa (2015)</cite>.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRACTICE LOG ========== -->
+  <section class="aj-sec aj-sec--alt" id="log">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">Keep yourself honest</p>
+        <h2 class="aj-h2">Seven-day<br><em>practice log</em></h2>
+        <p class="aj-lead">Two lines a day. Which practice, and what you noticed. That&rsquo;s all &mdash; and it is the difference between reading this page and having these skills.</p>
+
+        <div class="aj-act" style="margin-top:26px;">
+          <span class="aj-act__tag">Activity &middot; 7 days</span>
+          <h3 class="aj-act__title">Log your reps</h3>
+          <p class="aj-act__intro">Aim for <strong>one short practice a day</strong>, not a long one occasionally. Nine seconds counts. Consistency beats duration by a distance at this stage.</p>
+          <div id="pracDays"></div>
+          <div class="aj-field" style="margin-top:22px;">
+            <p class="aj-field__q">After a week: what changed, if anything?</p>
+            <p class="aj-field__hint">Be honest, including if the answer is &ldquo;nothing yet&rdquo;. Growth here isn&rsquo;t linear and it&rsquo;s genuinely hard to see from the inside.</p>
+            <textarea class="aj-textarea"
+                      data-aj="prac.log.review"
+                      data-aj-tool="Practice log"
+                      data-aj-q="What changed after a week of practice"
+                      placeholder="e.g. Nothing dramatic. But I caught myself gripping the wheel on the drive to training twice, and I'd never have noticed that before."></textarea>
+            <span class="aj-saved" data-aj-saved="prac.log.review">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TROUBLESHOOTING ========== -->
+  <section class="aj-sec" id="trouble">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">When it goes badly</p>
+        <h2 class="aj-h2">Everything that<br><em>goes wrong</em></h2>
+        <p class="aj-lead">These are the objections and problems that come up most often. Almost all of them are normal, and almost all of them are based on a misunderstanding of what the practice is for.</p>
+
+        <div class="tb">
+          <div class="tb__item">
+            <button class="tb__q" aria-expanded="false"><span>&ldquo;My mind is all over the place. I can&rsquo;t do this.&rdquo;</span><span class="tb__plus"></span></button>
+            <div class="tb__a" hidden>
+              <p>There&rsquo;s an expectation hidden in that sentence &mdash; that a mind is supposed to be quiet. It isn&rsquo;t. That&rsquo;s just what minds are like, and some days more than others.</p>
+              <p><strong>Noticing it has wandered and bringing it back is the entire exercise.</strong> If that happened thirty times, you did thirty reps. Nobody thinks a heavy set means they&rsquo;re bad at lifting.</p>
+              <p>The paradox is that minds usually settle once you genuinely stop demanding that they do.</p>
+            </div>
+          </div>
+          <div class="tb__item">
+            <button class="tb__q" aria-expanded="false"><span>&ldquo;I keep falling asleep.&rdquo;</span><span class="tb__plus"></span></button>
+            <div class="tb__a" hidden>
+              <p>Could it be that you&rsquo;re tired? Athletes carry a lot of sleep debt, and the moment you stop moving it shows up. The honest answer is usually more sleep &mdash; see the <a href="grow-athlete-brain.html#sleep">sleep tool</a>.</p>
+              <p>In the meantime: sit up rather than lying down, open your eyes slightly, put more light in the room, slide forward off the back of the chair, or try it standing. Practise at a different time of day &mdash; straight after a hard session is a hard sell.</p>
+            </div>
+          </div>
+          <div class="tb__item">
+            <button class="tb__q" aria-expanded="false"><span>&ldquo;It&rsquo;s making things worse. I feel more, not less.&rdquo;</span><span class="tb__plus"></span></button>
+            <div class="tb__a" hidden>
+              <p>This is common early on and it has a mechanism. When you stop and pay attention, things that were in the background come forward. They were always there; you&rsquo;re just seeing them now that the water has cleared.</p>
+              <p>Firefighters have a word for something similar &mdash; <em>backdraft</em>. Open a door on a closed, oxygen-starved fire and the fresh air makes it flare. Turning fresh attention onto a closed-off part of yourself can do the same.</p>
+              <p><strong>What to do:</strong> stay with it if you can, dip a toe rather than diving, and back off and come back later if it&rsquo;s too much. And bring it to a session &mdash; this is exactly the sort of thing that is much better worked through with someone than alone.</p>
+            </div>
+          </div>
+          <div class="tb__item">
+            <button class="tb__q" aria-expanded="false"><span>&ldquo;I don&rsquo;t have time.&rdquo;</span><span class="tb__plus"></span></button>
+            <div class="tb__a" hidden>
+              <p>Then don&rsquo;t try to <em>fit it in</em> &mdash; <strong>build it in.</strong> Attach it to something already in your day: the walk from the car, the queue, the two minutes between sets, your warm-up.</p>
+              <p>Start with the nine-second check. If nine seconds genuinely isn&rsquo;t available, the problem isn&rsquo;t time &mdash; and that&rsquo;s worth a conversation in itself.</p>
+            </div>
+          </div>
+          <div class="tb__item">
+            <button class="tb__q" aria-expanded="false"><span>&ldquo;All I notice is pain or an old injury.&rdquo;</span><span class="tb__plus"></span></button>
+            <div class="tb__a" hidden>
+              <p>As distractions fall away the volume goes up on everything internal, so this is expected &mdash; especially if you&rsquo;re carrying something.</p>
+              <p>The invitation is to look more closely rather than away. <em>Which parts of you are not in pain? How much of your body is actually involved? Is it there every single moment, or does it change? What happens to it when you tense against it?</em></p>
+              <p>Obviously: sharp, new or unusual pain is a medical question, not a mindfulness one. Get it looked at.</p>
+            </div>
+          </div>
+          <div class="tb__item">
+            <button class="tb__q" aria-expanded="false"><span>&ldquo;I can&rsquo;t connect with my breath.&rdquo;</span><span class="tb__plus"></span></button>
+            <div class="tb__a" hidden>
+              <p>Fine &mdash; use something else. The breath is a common anchor, not a required one, and for some people focusing on it actually increases anxiety.</p>
+              <p>Use sound, the sensation in your hands, your feet on the floor, or a visual anchor. <strong>Any stable thing you can return to will do the job.</strong></p>
+            </div>
+          </div>
+          <div class="tb__item">
+            <button class="tb__q" aria-expanded="false"><span>&ldquo;Isn&rsquo;t this just relaxation?&rdquo;</span><span class="tb__plus"></span></button>
+            <div class="tb__a" hidden>
+              <p>No &mdash; and the distinction matters for an athlete. Relaxation may happen; it&rsquo;s a possible result, not the purpose. The purpose is to be able to put your attention where you choose and meet what&rsquo;s there.</p>
+              <p>There&rsquo;s evidence behind the distinction. When people were randomly assigned to mindfulness training, relaxation training, or nothing, both active groups improved mood &mdash; but <strong>only the mindfulness group showed reduced distraction and rumination.</strong> That is the mechanism you want on a pitch, and relaxation doesn&rsquo;t deliver it.</p>
+            </div>
+          </div>
+          <div class="tb__item">
+            <button class="tb__q" aria-expanded="false"><span>&ldquo;I had one brilliant session and now I can&rsquo;t get it back.&rdquo;</span><span class="tb__plus"></span></button>
+            <div class="tb__a" hidden>
+              <p>You had a good one. Now your mind wants it again, and the wanting is now in the way &mdash; you&rsquo;re practising in order to get somewhere, which means you&rsquo;re no longer here.</p>
+              <p>Notice the disappointment. Notice the chasing. <strong>Then practise with what&rsquo;s actually here today</strong>, which is a different thing and equally valid.</p>
+            </div>
+          </div>
+          <div class="tb__item">
+            <button class="tb__q" aria-expanded="false"><span>&ldquo;It&rsquo;s too noisy where I live.&rdquo;</span><span class="tb__plus"></span></button>
+            <div class="tb__a" hidden>
+              <p>If you can easily change it, change it &mdash; no need to make this harder than it is.</p>
+              <p>If you can&rsquo;t: practise with it. Where did the idea come from that conditions have to be right? You will need this skill in a stadium, not a monastery. The same input can be heard as <em>noise</em> or as <em>sound</em> &mdash; identical vibration, completely different experience. Noticing which one you&rsquo;re making it is itself the practice.</p>
+            </div>
+          </div>
+          <div class="tb__item">
+            <button class="tb__q" aria-expanded="false"><span>&ldquo;I feel spacey and vague afterwards.&rdquo;</span><span class="tb__plus"></span></button>
+            <div class="tb__a" hidden>
+              <p>Common early on, and it usually settles as your practice develops. New meditators often swing between being very tense and very floaty before finding the middle.</p>
+              <p>If it persists, shorten the practice, keep your eyes open, and choose something more physical &mdash; the warm-up practice or the feet-on-the-floor anchor rather than a long scan. And don&rsquo;t do a long practice immediately before you compete; that&rsquo;s not what these are for.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="aj-takeaways" style="margin-top:34px;">
+          <h3>The Practice Room in five lines</h3>
+          <ul>
+            <li><strong>Build it in, don&rsquo;t fit it in.</strong> Attach it to moments you already have.</li>
+            <li><strong>The returning is the rep</strong>, not the staying. A wandering mind is a heavier set, not a failure.</li>
+            <li><strong>Nine seconds counts.</strong> Consistency beats duration, especially at the start.</li>
+            <li><strong>It is not relaxation.</strong> Calm is a side effect; attention is the point.</li>
+            <li><strong>Worse before better is normal.</strong> The silt settles and you see what was always there.</li>
+          </ul>
+        </div>
+
+        <div class="aj-nextnav">
+          <a href="grow-athlete-fivemoves.html">
+            <div class="aj-nextnav__dir">&larr; The star tool</div>
+            <div class="aj-nextnav__title">The Five Moves</div>
+          </a>
+          <a href="grow-athlete-aware.html" class="aj-nextnav--end">
+            <div class="aj-nextnav__dir">Next &rarr;</div>
+            <div class="aj-nextnav__title">Aware</div>
+          </a>
+        </div>
+
+        <div class="aj-disclaimer">
+          <p>These practices support the work we do together &mdash; they don&rsquo;t replace it, and they aren&rsquo;t therapy. If a practice consistently brings up more than you can hold on your own, stop and bring it to a session; that is a sensible decision, not a setback. Free, confidential support is available 24/7 across Aotearoa: call or text <a href="tel:1737">1737</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom" style="border-top:none;">
+        <p>&copy; 2026 The Performance Act. Private athlete area.</p>
+        <div class="footer__bottom-links">
+          <a href="grow-athlete.html">Skills Journal</a>
+          <a href="grow-athlete-journal.html">My Journal</a>
+          <a href="grow-athlete.html#sources">Sources</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <button class="support-line-btn" id="supportLineBtn" aria-label="NZ support lines">
+    <span class="support-line-btn__dot" aria-hidden="true"></span>
+    Immediate Support
+  </button>
+  <div class="support-line-modal" id="supportLineModal" role="dialog" aria-modal="true" aria-labelledby="supportLineTitle" aria-hidden="true">
+    <div class="support-line-modal__backdrop"></div>
+    <div class="support-line-modal__panel">
+      <button class="support-line-modal__close" id="supportLineClose" aria-label="Close support lines">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <p class="support-line-modal__eyebrow">Aotearoa, New Zealand</p>
+      <h2 class="support-line-modal__title" id="supportLineTitle">Need immediate support?</h2>
+      <p class="support-line-modal__note">The Performance Act is a sport psychology practice, not a crisis or emergency service. If you or someone you care about needs immediate support, please reach out to one of these trusted services. They are free, confidential, and available 24&#8202;/&#8202;7.</p>
+      <ul class="support-line-modal__list" role="list">
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">1737 &mdash; Need to Talk?</p><p class="sln-resource__desc">Free call or text, any time. Trained counsellors, 24&#47;7.</p></div>
+          <a href="tel:1737" class="sln-resource__number">Call or text 1737</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Lifeline NZ</p><p class="sln-resource__desc">Crisis support and suicide prevention, 24&#47;7.</p></div>
+          <a href="tel:0800543354" class="sln-resource__number">0800 543 354</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Youthline</p><p class="sln-resource__desc">For young people. Free call or text 234, 24&#47;7.</p></div>
+          <a href="tel:0800376633" class="sln-resource__number">0800 376 633</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Suicide Crisis Helpline</p><p class="sln-resource__desc">0508 TAUTOKO. Support for those in crisis, 24&#47;7.</p></div>
+          <a href="tel:0508828865" class="sln-resource__number">0508 828 865</a>
+        </li>
+      </ul>
+      <p class="support-line-modal__footer">More resources at <a href="https://www.mentalhealth.org.nz/get-help/in-crisis" target="_blank" rel="noopener">Mental Health Foundation NZ</a> and <a href="https://www.depression.org.nz" target="_blank" rel="noopener">depression.org.nz</a>.</p>
+    </div>
+  </div>
+
+  <script src="script.js?v=5"></script>
+
+  <!-- Build the 7-day practice log before the engine binds -->
+  <script>
+  (function () {
+    'use strict';
+    var host = document.getElementById('pracDays');
+    if (!host) return;
+    var DAYS = ['Day 1','Day 2','Day 3','Day 4','Day 5','Day 6','Day 7'];
+    host.innerHTML = DAYS.map(function (label, i) {
+      var n = i + 1;
+      return '' +
+      '<div class="aj-day">' +
+        '<button type="button" class="aj-day__trigger">' +
+          '<span class="aj-day__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>' +
+          '<span class="aj-day__label">' + label + '</span>' +
+          '<svg class="aj-day__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>' +
+        '</button>' +
+        '<div class="aj-day__panel" hidden>' +
+          '<div class="aj-day__body">' +
+            '<div class="aj-field">' +
+              '<p class="aj-field__q" style="font-size:0.88rem;">Which practice, and for how long?</p>' +
+              '<input type="text" class="aj-input" ' +
+                'data-aj="prac.log.d' + n + '.what" ' +
+                'data-aj-tool="Practice log" ' +
+                'data-aj-q="' + label + ': which practice" ' +
+                'placeholder="e.g. 9-second check x3, plus the body scan">' +
+            '</div>' +
+            '<div class="aj-field" style="margin-bottom:0;">' +
+              '<p class="aj-field__q" style="font-size:0.88rem;">One thing you noticed</p>' +
+              '<input type="text" class="aj-input" ' +
+                'data-aj="prac.log.d' + n + '.noticed" ' +
+                'data-aj-tool="Practice log" ' +
+                'data-aj-q="' + label + ': one thing I noticed" ' +
+                'placeholder="e.g. Jaw was tight again. Third day running.">' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+  })();
+  </script>
+
+  <script src="grow-athlete.js?v=2"></script>
+
+  <script>
+  /* troubleshooting accordion */
+  (function () {
+    'use strict';
+    document.querySelectorAll('.tb__item').forEach(function (item) {
+      var q = item.querySelector('.tb__q');
+      var a = item.querySelector('.tb__a');
+      if (!q || !a) return;
+      q.addEventListener('click', function () {
+        var open = q.getAttribute('aria-expanded') === 'true';
+        q.setAttribute('aria-expanded', open ? 'false' : 'true');
+        a.hidden = open;
+      });
+    });
+  })();
+  </script>
+</body>
+</html>

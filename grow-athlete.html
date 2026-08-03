@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=18">
-  <link rel="stylesheet" href="grow-athlete.css?v=1">
+  <link rel="stylesheet" href="grow-athlete.css?v=2">
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=2">
 </head>
@@ -57,6 +57,8 @@
   <div class="mobile-nav" id="mobileNav">
     <nav class="mobile-nav__links" aria-label="Mobile">
       <a href="grow-athlete.html" class="mobile-nav__link">SKILLS JOURNAL HOME</a>
+      <a href="grow-athlete-fivemoves.html" class="mobile-nav__link">THE FIVE MOVES</a>
+      <a href="grow-athlete-practice.html" class="mobile-nav__link">THE PRACTICE ROOM</a>
       <a href="grow-athlete-open.html" class="mobile-nav__link">OPEN</a>
       <a href="grow-athlete-aware.html" class="mobile-nav__link">AWARE</a>
       <a href="grow-athlete-engaged.html" class="mobile-nav__link">ENGAGED</a>
@@ -77,7 +79,7 @@
       <h1 class="aj-hero__title">YOUR SKILLS<br><span>JOURNAL</span></h1>
       <p class="aj-hero__lead"><strong>Everything we work on together, in one place.</strong> Not a course to get through &mdash; a library to raid. Come here when something is hard, find the skill that fits, do the activity, and bring what you write back into our next session.</p>
       <p class="aj-hero__meta">
-        <span>4 toolkits</span> &middot; <span>34 skills</span> &middot; <span>An activity for every one</span> &middot; <span>Yours to keep</span>
+        <span>The Five Moves</span> &middot; <span>4 toolkits</span> &middot; <span>34 skills + 8 practices</span> &middot; <span>An activity for every one</span>
       </p>
       <div class="aj-hero__actions">
         <a href="#areas" class="btn btn--primary btn--lg">Choose an area</a>
@@ -183,6 +185,21 @@
           <div class="aj-select-wrap">
             <select class="aj-select" id="areaSelect">
               <option value="">&mdash; Select an area or skill &mdash;</option>
+              <optgroup label="START HERE">
+                <option value="grow-athlete-fivemoves.html">The Five Moves &mdash; the star tool</option>
+                <option value="grow-athlete-fivemoves.html#weaklink">Find my weak link</option>
+                <option value="grow-athlete-fivemoves.html#run">Run the five moves</option>
+                <option value="grow-athlete-practice.html">The Practice Room &mdash; all 8 practices</option>
+                <option value="grow-athlete-practice.html#check">The 9-second check</option>
+                <option value="grow-athlete-practice.html#cpr">CPR under pressure</option>
+                <option value="grow-athlete-practice.html#bset">The 2BSET sweep</option>
+                <option value="grow-athlete-practice.html#senses">Your sense map</option>
+                <option value="grow-athlete-practice.html#anchors">Visual anchors</option>
+                <option value="grow-athlete-practice.html#breathe">Breathing through it</option>
+                <option value="grow-athlete-practice.html#scan">The sitting body scan</option>
+                <option value="grow-athlete-practice.html#warmup">The mindful warm-up</option>
+                <option value="grow-athlete-practice.html#trouble">When practice goes badly</option>
+              </optgroup>
               <optgroup label="OPEN — Acceptance &amp; Defusion">
                 <option value="grow-athlete-open.html">Open &mdash; the whole toolkit</option>
                 <option value="grow-athlete-open.html#struggle">The Struggle Switch</option>
@@ -238,10 +255,49 @@
         <div class="aj-jump__go">
           <button type="submit" class="aj-btn" data-aj-jump-go>Go &rarr;</button>
         </div>
-        <p class="aj-jump__note">Not sure? <strong>If something is bothering you right now</strong>, start with Open. <strong>If you can&rsquo;t focus</strong>, start with Aware. <strong>If you feel flat or directionless</strong>, start with Engaged. <strong>If you&rsquo;re running on empty</strong>, start with Brain Health.</p>
+        <p class="aj-jump__note">Not sure? <strong>Start with the Five Moves</strong> &mdash; it will tell you which pillar you need. Otherwise: <strong>if something is bothering you right now</strong>, Open. <strong>If you can&rsquo;t focus</strong>, Aware. <strong>If you feel flat or directionless</strong>, Engaged. <strong>If you&rsquo;re running on empty</strong>, Brain Health.</p>
       </form>
 
+      <!-- Start-here pair: the star tool and the practice library -->
       <div class="aj-wrap--wide" style="margin-top:44px;">
+        <div class="aj-pillars aj-pillars--two">
+
+          <a href="grow-athlete-fivemoves.html" class="aj-pillar">
+            <div class="aj-pillar__word">The Five Moves</div>
+            <div class="aj-pillar__sub">Start here &middot; ~5 minutes</div>
+            <p class="aj-pillar__desc"><strong style="color:#fff;">Notice. Name. Let go. Soften. Expand.</strong> The sequence every other tool in here is a piece of &mdash; one run across all three pillars. It also scores your five moves and tells you which one is your weak link, then sends you to the tools that train it.</p>
+            <ul class="aj-pillar__tools">
+              <li>The map: five moves, three pillars</li>
+              <li>Find your weak link</li>
+              <li>All five, one at a time</li>
+              <li>The full guided run</li>
+            </ul>
+            <span class="aj-pillar__cta">Open the star tool
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+
+          <a href="grow-athlete-practice.html" class="aj-pillar aj-pillar--aware">
+            <div class="aj-pillar__word">The Practice Room</div>
+            <div class="aj-pillar__sub">8 practices &middot; 9 seconds to 6 minutes</div>
+            <p class="aj-pillar__desc">None of the skills work without an attention you can point and hold. This is where you build it &mdash; in your sport, in your kit, in gaps you already have. Plus an honest section on everything that goes wrong.</p>
+            <ul class="aj-pillar__tools">
+              <li>The 9-second check</li>
+              <li>CPR under pressure</li>
+              <li>The 2BSET sweep</li>
+              <li>Your sense map &amp; visual anchors</li>
+              <li>Body scan &amp; the mindful warm-up</li>
+              <li>When practice goes badly</li>
+            </ul>
+            <span class="aj-pillar__cta">Open the practice room
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="aj-wrap--wide" style="margin-top:20px;">
         <div class="aj-pillars aj-pillars--four">
 
           <a href="grow-athlete-open.html" class="aj-pillar">
@@ -545,6 +601,9 @@
             <li>Walser, R. D., &amp; Westrup, D. (2019). <em>Learning ACT: An Acceptance and Commitment Therapy Skills Training Manual for Therapists</em> (2nd ed.). Context Press / New Harbinger. &mdash; The six flexibility processes, the three pillars (Open, Aware, Engaged), and the therapeutic stance behind how we work with you.</li>
             <li>Magness, S. (2022). <em>Do Hard Things: Why We Get Resilience Wrong and the Surprising Science of Real Toughness</em>. HarperOne. &mdash; Real toughness, emotions as messengers, distanced self-talk, zooming in and out, and coping flexibility.</li>
             <li>Bernardi, G., Fitzgerald, M., &amp; Zilcha-Mano, S. (2018). <em>ACT in Sport: Improve Performance through Mindfulness, Acceptance and Commitment</em>. Dark River. &mdash; The sport-specific application: passengers on the bus, the breath-hold experiment, the reaction replay, the rehearsal room, the coin, and the friction principle.</li>
+            <li>Strosahl, K. D., Robinson, P. J., &amp; Gustavsson, T. (2015). <em>Inside This Moment: A Clinician&rsquo;s Guide to Promoting Radical Change Using Acceptance and Commitment Therapy</em>. Context Press. &mdash; The five phases of present-moment awareness (notice, name, let go, soften, expand) behind The Five Moves. Same authors as the Open/Aware/Engaged grouping.</li>
+            <li>Biegel, G. M., &amp; Corbin, T. (2018). <em>Mindfulness for Student Athletes: A Workbook to Help Teens Reduce Stress and Enhance Performance</em>. Instant Help / New Harbinger. &mdash; The sport-specific practices in The Practice Room: the 9-second check, CPR under pressure, the 2BSET sweep, sense mapping and visual anchors.</li>
+            <li>Wolf, C., &amp; Serpa, J. G. (2015). <em>A Clinician&rsquo;s Guide to Teaching Mindfulness</em>. New Harbinger. &mdash; How these practices are led and troubleshot: the returning-is-the-rep framing, backdraft, and the obstacles section.</li>
             <li>Ciarrochi, J., &amp; Bailey, A. (2008). <em>A CBT Practitioner&rsquo;s Guide to ACT</em>. New Harbinger. &mdash; The flexibility model, the &ldquo;don&rsquo;t-get-eaten machine&rdquo;, and the bridge between traditional CBT and ACT.</li>
             <li>Hayes, S. C., Strosahl, K. D., &amp; Wilson, K. G. (2012). <em>Acceptance and Commitment Therapy: The Process and Practice of Mindful Change</em> (2nd ed.). Guilford Press. &mdash; The primary scientific account of the model.</li>
           </ol>
@@ -652,6 +711,6 @@
   </div>
 
   <script src="script.js?v=5"></script>
-  <script src="grow-athlete.js?v=1"></script>
+  <script src="grow-athlete.js?v=2"></script>
 </body>
 </html>
