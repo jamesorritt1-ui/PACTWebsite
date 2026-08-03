@@ -26,6 +26,18 @@
     .aj-takeaways { border-color: rgba(111,211,224,0.3); }
     .aj-back, .aj-hero__badge { color: var(--aware); }
     .aj-hero__badge { border-color: rgba(111,211,224,0.4); }
+    .aj-btn { background: var(--aware); border-color: var(--aware); }
+    .aj-btn:hover { box-shadow: 0 8px 22px rgba(111,211,224,0.22); }
+    .aj-btn--ghost { background: transparent; border-color: rgba(255,255,255,0.35); color: var(--ink); }
+    .aj-chip[aria-pressed="true"] { background: var(--aware); border-color: var(--aware); }
+    .aj-slider input[type=range]::-webkit-slider-thumb { background: var(--aware); }
+    .aj-slider input[type=range]::-moz-range-thumb { background: var(--aware); }
+    .aj-slider__val { color: var(--aware); }
+    .aj-progress__fill { background: var(--aware); }
+    .aj-progress__count { color: var(--aware); }
+    .aj-timer__clock { color: var(--aware); }
+    .aj-timer__cue strong { color: var(--aware); }
+    .aj-builder__chip { border-left-color: var(--aware); }
     .aj-label::before, .aj-ul li::before { background: var(--aware); }
     .aj-eg { border-left-color: var(--aware); }
     .aj-steps li::before { border-color: rgba(111,211,224,0.5); color: var(--aware); }
@@ -50,6 +62,21 @@
     .ng__cell p { color:var(--muted); font-size:0.82rem; line-height:1.5; font-weight:300; margin:0 0 10px; }
     .ng__cell textarea { min-height:70px; }
     @media (max-width:640px){ .ng { grid-template-columns:1fr; } }
+
+    /* ---- Reaction replay: attention split readout ---- */
+    .rr { background:#0a0a0a; border:1px dashed rgba(111,211,224,0.35); padding:22px 22px 20px; margin-top:20px; }
+    .rr__title { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--aware); margin:0 0 16px; }
+    .rr__bars { display:flex; flex-direction:column; gap:11px; }
+    .rr__row { display:grid; grid-template-columns:150px 1fr 46px; gap:12px; align-items:center; }
+    .rr__k { font-family:var(--font-heading); font-size:0.7rem; letter-spacing:0.06em; text-transform:uppercase; color:#cfcfcf; }
+    .rr__track { display:block; height:10px; background:rgba(255,255,255,0.08); border-radius:100px; overflow:hidden; }
+    .rr__fill { display:block; height:100%; width:0; border-radius:100px; transition:width .6s cubic-bezier(.2,.8,.2,1); background:var(--aware); }
+    .rr__fill--thin { background:#c0562e; }
+    .rr__pct { font-family:var(--font-heading); font-size:0.82rem; font-weight:700; color:var(--aware); text-align:right; }
+    .rr__read { color:var(--ink); font-size:0.93rem; line-height:1.7; font-weight:300; margin:18px 0 0; }
+    .rr__read strong { color:#fff; font-weight:600; }
+    .rr__read b { color:var(--aware); font-weight:600; }
+    @media (max-width:600px){ .rr__row { grid-template-columns:110px 1fr 40px; gap:8px; } .rr__k { font-size:0.62rem; } }
   </style>
 </head>
 <body class="aj">
@@ -96,7 +123,7 @@
       <span class="aj-hero__badge">Pillar two of the TriFlex</span>
       <h1 class="aj-hero__title"><span>AWARE</span></h1>
       <p class="aj-hero__lead"><strong>Present moment and perspective.</strong> Seven skills for putting your attention where you choose &mdash; and for stepping back from the stories your mind writes about who you are.</p>
-      <p class="aj-hero__meta"><span>7 skills</span> &middot; <span>7 activities</span> &middot; <span>The central pillar</span></p>
+      <p class="aj-hero__meta"><span>9 skills</span> &middot; <span>9 activities</span> &middot; <span>The central pillar</span></p>
       <div class="aj-toc">
         <a href="#anchor">01 &middot; Dropping anchor</a>
         <a href="#notice">02 &middot; Notice &amp; name</a>
@@ -105,6 +132,8 @@
         <a href="#documentary">05 &middot; The documentary of you</a>
         <a href="#selftalk">06 &middot; Distanced self-talk</a>
         <a href="#reset">07 &middot; Your reset routine</a>
+        <a href="#replay">08 &middot; The reaction replay</a>
+        <a href="#ladder">09 &middot; The expectation ladder</a>
       </div>
     </div>
   </section>
@@ -1073,8 +1102,284 @@
     </div>
   </section>
 
+  <!-- ==========================================================
+       TOOL 08 — THE REACTION REPLAY
+       ========================================================== -->
+  <section class="aj-sec aj-sec--alt" id="replay">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">08</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">The Reaction Replay</h2>
+              <p class="aj-tool__for">For: finding out where your attention actually goes when it matters &mdash; not where you think it goes.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>Take one moment &mdash; big or trivial &mdash; and break your reaction into five separate channels. Then look at how much you were able to write in each one.</p>
+            <p>That last part is the whole tool, and it is where it stops being a worksheet and starts being a diagnostic.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">The five channels</span>
+              <ol class="aj-steps">
+                <li><strong>The trigger.</strong> What set it off &mdash; something outside you, or something inside like a memory or a twinge?</li>
+                <li><strong>What your senses picked up.</strong> Everything from outside your skin: what you could see, hear, smell, taste, feel through touch. The physical world, as it actually was.</li>
+                <li><strong>What your mind said.</strong> Thoughts, judgements, predictions, images, comparisons, the running commentary.</li>
+                <li><strong>What your body did.</strong> Sensations from inside: tightness, heat, churn, heaviness, tingling. <em>Physical words only.</em></li>
+                <li><strong>What you did.</strong> Behaviour. Anything a camera would have caught.</li>
+              </ol>
+            </div>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why it works &mdash; and what it nearly always shows</span>
+              <p>Do this once and something predictable happens. Channel three &mdash; <strong>what your mind said</strong> &mdash; fills up. Channels two and four come out nearly empty.</p>
+              <p>A golfer replaying a bad tee shot can write half a page of judgements and predictions. Ask what he could see and he says: <em>&ldquo;well, I must have seen the ball. The grass would have been green.&rdquo;</em> <strong>Must have. Would have.</strong> He wasn&rsquo;t there. His attention was almost entirely inside his own commentary, at the exact moment he needed to be reading a shot.</p>
+              <p>That is not a personal failing. It is what attention does under pressure, in everyone. But it explains something important: <strong>catastrophic drops in performance are strongly linked to attention shifting off the game and onto self-evaluation.</strong> Not to lack of skill. To where you were looking.</p>
+              <p>So the aim isn&rsquo;t to think less. It&rsquo;s to <em>turn up the volume</em> on channels two and four &mdash; the physical world and your actual body &mdash; so that your mind's commentary stops being the only thing in the room.</p>
+            </div>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+              <p><strong>&ldquo;Embarrassed&rdquo; is not a body sensation.</strong> It&rsquo;s a summary word for a bundle of sensations plus a judgement. Push past it: <em>face hot, shoulders drawing forward, stomach dropping, throat tight.</em> Same for &ldquo;my face went red&rdquo; &mdash; unless you had a mirror, that&rsquo;s a conclusion, not something you felt. The precision is the practice.</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 8 minutes, repeatable</span>
+              <h3 class="aj-act__title">Replay one moment &mdash; then read your attention split</h3>
+              <p class="aj-act__intro">Close your eyes and put yourself back in it before you write anything. Use big moments <em>and</em> small ones &mdash; a cold coffee, a bit of traffic, someone&rsquo;s tone. <strong>The everyday ones train the skill; the big ones show you the pattern.</strong></p>
+
+              <div class="aj-field">
+                <p class="aj-field__q">The moment</p>
+                <input type="text" class="aj-input"
+                       data-aj="aware.replay.moment"
+                       data-aj-tool="The Reaction Replay"
+                       data-aj-q="The moment I replayed"
+                       placeholder="e.g. Sliced my second shot on the 4th, Sunday medal">
+              </div>
+
+              <div class="ng">
+                <div class="ng__cell">
+                  <h5>1 &middot; The trigger</h5>
+                  <p>Outside you, or inside you?</p>
+                  <textarea class="aj-textarea" data-rr="trigger"
+                            data-aj="aware.replay.trigger"
+                            data-aj-tool="The Reaction Replay"
+                            data-aj-q="The trigger"
+                            placeholder="e.g. Standing on the tee, group waiting behind us"></textarea>
+                </div>
+                <div class="ng__cell">
+                  <h5>2 &middot; What your senses picked up</h5>
+                  <p>See, hear, smell, taste, touch. Outside the skin.</p>
+                  <textarea class="aj-textarea" data-rr="senses"
+                            data-aj="aware.replay.senses"
+                            data-aj-tool="The Reaction Replay"
+                            data-aj-q="What my senses picked up"
+                            placeholder="e.g. Wind on my left cheek. Someone coughing. The grip under my fingers."></textarea>
+                </div>
+                <div class="ng__cell">
+                  <h5>3 &middot; What your mind said</h5>
+                  <p>Thoughts, judgements, predictions, images.</p>
+                  <textarea class="aj-textarea" data-rr="mind"
+                            data-aj="aware.replay.mind"
+                            data-aj-tool="The Reaction Replay"
+                            data-aj-q="What my mind said"
+                            placeholder="e.g. Don't slice it. They're watching. Here we go again."></textarea>
+                </div>
+                <div class="ng__cell">
+                  <h5>4 &middot; What your body did</h5>
+                  <p>Physical words only. Where, what shape, hot or cold?</p>
+                  <textarea class="aj-textarea" data-rr="body"
+                            data-aj="aware.replay.body"
+                            data-aj-tool="The Reaction Replay"
+                            data-aj-q="What my body did"
+                            placeholder="e.g. Tight band across the chest. Hands cold. Jaw clamped."></textarea>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:14px;">
+                <p class="aj-field__q">5 &middot; What you did</p>
+                <p class="aj-field__hint">Behaviour only &mdash; what the camera caught.</p>
+                <textarea class="aj-textarea" data-rr="did"
+                          data-aj="aware.replay.did"
+                          data-aj-tool="The Reaction Replay"
+                          data-aj-q="What I did"
+                          placeholder="e.g. Rushed the routine, didn't re-aim, swung hard."></textarea>
+              </div>
+
+              <div class="rr" id="rrPanel">
+                <p class="rr__title">Your attention split</p>
+                <div class="rr__bars" id="rrBars"></div>
+                <p class="rr__read" id="rrRead">Fill in the boxes above and your attention split will appear here.</p>
+              </div>
+
+              <div class="aj-field" style="margin-top:20px;">
+                <p class="aj-field__q">Looking at that split &mdash; what does it tell you?</p>
+                <textarea class="aj-textarea"
+                          data-aj="aware.replay.insight"
+                          data-aj-tool="The Reaction Replay"
+                          data-aj-q="What my attention split tells me"
+                          placeholder="e.g. I could write six lines of commentary and two words about what I could actually see. I wasn't on the tee at all."></textarea>
+                <span class="aj-saved" data-aj-saved="aware.replay.insight">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">Your sensory rep for this week</p>
+                <p class="aj-field__hint">Three times a day, stop and name <strong>five things from outside your skin</strong>. Not thoughts about them &mdash; the raw thing. Pick when.</p>
+                <input type="text" class="aj-input"
+                       data-aj="aware.replay.rep"
+                       data-aj-tool="The Reaction Replay"
+                       data-aj-q="My daily sensory rep"
+                       placeholder="e.g. Waiting for the kettle, at the lights, between sets">
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> The five-channel record is adapted from the Diary of Reactive Habits used with athletes in <cite>Bernardi, Fitzgerald &amp; Zilcha-Mano, ACT in Sport (2018)</cite>, which is built on <cite>Dr Bruno Cayoun&rsquo;s Mindfulness-Integrated CBT</cite>. The attention-split readout is our own addition. On attention shifting to self-evaluation preceding sudden performance collapse, see <cite>Edwards, Kingston, Hardy &amp; Gould (2002)</cite>.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       TOOL 09 — THE EXPECTATION LADDER
+       ========================================================== -->
+  <section class="aj-sec" id="ladder">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">09</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">The Expectation Ladder</h2>
+              <p class="aj-tool__for">For: the standard you never agreed to, never said out loud, and quietly fail against every week.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>Most athletes can tell you their goals. Almost none can tell you their <em>expectations</em> &mdash; and expectations are what actually determine whether a performance feels like a success or a quiet disappointment.</p>
+            <p>The difference matters. A goal is something you chose, out loud, and could write down. An expectation is a vague, unspoken sense of what you <strong>should</strong> be able to do &mdash; and because it was never stated, it never gets examined, and it drifts upward without ever being checked.</p>
+            <p>So you play a solid game, hit your actual goals, and still drive home flat. That gap has a cause, and this exercise drags it into the light by making it ridiculous.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why it works</span>
+              <p>You build a ladder of outcomes for one upcoming event. Rung one is fine. Rung two is a bit better. And you keep climbing until it&rsquo;s absurd &mdash; national call-up, sponsorship, the house on the beach.</p>
+              <p>Then you mark <strong>where the disappointment actually starts.</strong></p>
+              <p>Almost everyone discovers their line sits several rungs above what they&rsquo;d have said their goal was, and often somewhere faintly comical. Seeing your private standard written between &ldquo;played well&rdquo; and &ldquo;buys an island&rdquo; does something no amount of reasoning does &mdash; it makes it <em>visible as a story</em> rather than felt as a fact.</p>
+              <p>To be clear: this is not about wanting less. Ambition is fine, and desire drives performance. What we&rsquo;re loosening is <em>fusion</em> with an unexamined standard &mdash; the thing that turns a good day into a failure and takes your attention off the job.</p>
+            </div>
+
+            <div class="aj-eg">
+              <span class="aj-eg__k">Worked example &middot; a club golfer&rsquo;s ladder</span>
+              <p><strong>1.</strong> Turns up, no disasters, plays roughly to handicap.<br>
+              <strong>2.</strong> Better than usual. A few decent holes.<br>
+              <strong>3.</strong> Best round of the season. Someone mentions it in the bar.<br>
+              <strong>4.</strong> Best round ever. Wins the club championship.<br>
+              <strong>5.</strong> Invited to play in a pro-am.<br>
+              <strong>6.</strong> Wins a major.<br>
+              <strong>7.</strong> Buys a mansion in Hawaii.</p>
+              <p>His stated goal was rung one. When he was honest about where the flatness kicked in, <strong>it was rung three.</strong> He had been quietly grading himself against the best round of his season, every single week, and calling the resulting mood &ldquo;not being satisfied easily&rdquo;.</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 8 minutes</span>
+              <h3 class="aj-act__title">Build your ladder, then find your line</h3>
+              <p class="aj-act__intro">Pick one event coming up. Build at least six rungs and <strong>let the top ones get genuinely silly</strong> &mdash; the absurdity is doing real work, not providing comic relief.</p>
+
+              <div class="aj-field">
+                <p class="aj-field__q">1. The event</p>
+                <input type="text" class="aj-input"
+                       data-aj="aware.ladder.event"
+                       data-aj-tool="The Expectation Ladder"
+                       data-aj-q="The event I'm building a ladder for"
+                       placeholder="e.g. Saturday's league game">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">2. Your stated goal &mdash; what you&rsquo;d tell your coach</p>
+                <input type="text" class="aj-input"
+                       data-aj="aware.ladder.stated"
+                       data-aj-tool="The Expectation Ladder"
+                       data-aj-q="My stated goal"
+                       placeholder="e.g. Complete my defensive jobs and get through 80 minutes">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">3. Build the ladder &mdash; lowest rung first, climbing to ridiculous</p>
+                <div class="aj-builder__row" data-aj-builder="aware.ladder.rungs"
+                     data-aj-tool="The Expectation Ladder"
+                     data-aj-q="My expectation ladder, lowest first"
+                     data-aj-empty="Add at least six rungs. Let the top ones get silly.">
+                  <input type="text" class="aj-input" placeholder="e.g. Rung 1: solid, no mistakes, job done">
+                  <button type="button" class="aj-btn" data-aj-add>Add rung</button>
+                  <div class="aj-builder__list" style="flex:1 1 100%;"></div>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">4. Now the honest one: which rung is the <em>lowest</em> you could hit and still drive home happy?</p>
+                <p class="aj-field__hint">Not which one you&rsquo;d <em>say</em>. The one where the flatness actually starts.</p>
+                <div class="aj-slider">
+                  <input type="range" min="1" max="8" value="3"
+                         data-aj="aware.ladder.line"
+                         data-aj-out="ldLine"
+                         data-aj-tool="The Expectation Ladder"
+                         data-aj-q="The rung where my disappointment actually starts">
+                  <span class="aj-slider__val" id="ldLine">3</span>
+                </div>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">5. What&rsquo;s the gap between your stated goal and your actual line?</p>
+                <p class="aj-field__hint">If they&rsquo;re the same rung, brilliant &mdash; and unusual. If there&rsquo;s a gap, that gap is where your flat Sundays come from.</p>
+                <textarea class="aj-textarea"
+                          data-aj="aware.ladder.gap"
+                          data-aj-tool="The Expectation Ladder"
+                          data-aj-q="The gap between my stated goal and my real line"
+                          placeholder="e.g. I say I want to do my job. I'm actually grading myself against man of the match, every week, without ever saying so."></textarea>
+                <span class="aj-saved" data-aj-saved="aware.ladder.gap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">6. Name it, so you can spot it next time</p>
+                <p class="aj-field__hint">Give the unspoken standard a title, the way you named your story in the Open toolkit.</p>
+                <input type="text" class="aj-input"
+                       data-aj="aware.ladder.name"
+                       data-aj-tool="The Expectation Ladder"
+                       data-aj-q="What I'm calling my unspoken standard"
+                       placeholder="e.g. 'The man-of-the-match rule'">
+              </div>
+            </div>
+
+            <div class="aj-block" style="margin-top:26px;">
+              <span class="aj-block__k">Take it into the week</span>
+              <p>After your next event, before you decide how it went, ask one question: <strong>&ldquo;which rung am I marking this against &mdash; my goal, or my rule?&rdquo;</strong> You don&rsquo;t have to change the answer. Just notice which one you used.</p>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> Adapted from the escalating-expectations half of the walk-through exercise in <cite>Bernardi, Fitzgerald &amp; Zilcha-Mano, ACT in Sport (2018)</cite>. On fusion with a conceptualised ideal self, see <cite>Walser &amp; Westrup, Learning ACT (2019), ch. 1</cite>; on fragile, performance-contingent self-worth, <cite>Harris, The Happiness Trap (2022), ch. 19</cite>.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== CLOSE ========== -->
-  <section class="aj-sec">
+  <section class="aj-sec aj-sec--alt">
     <div class="container">
       <div class="aj-wrap">
         <div class="aj-takeaways">
@@ -1087,6 +1392,8 @@
             <li><strong>You are not your thinking self.</strong> You&rsquo;re the part that notices it.</li>
             <li><strong>The documentary isn&rsquo;t you.</strong> Hold the bad reviews and the good ones equally lightly.</li>
             <li><strong>Change the pronoun.</strong> The smallest intervention in this whole area, and one of the best evidenced.</li>
+            <li><strong>Turn up the volume on the physical world.</strong> Your commentary is loud enough already.</li>
+            <li><strong>Know which rung you&rsquo;re grading yourself against.</strong> It&rsquo;s rarely the one you&rsquo;d name out loud.</li>
           </ul>
         </div>
 
@@ -1210,6 +1517,87 @@
     }
     range.addEventListener('input', paint);
     paint();
+  })();
+
+  /* ---------- REACTION REPLAY: ATTENTION SPLIT ---------- */
+  (function () {
+    'use strict';
+    var panel = document.getElementById('rrPanel');
+    var barsEl = document.getElementById('rrBars');
+    var readEl = document.getElementById('rrRead');
+    if (!panel || !barsEl) return;
+
+    var CHANNELS = [
+      { k: 'senses', label: 'Senses — outside' },
+      { k: 'body',   label: 'Body — inside' },
+      { k: 'mind',   label: 'Mind — commentary' },
+      { k: 'did',    label: 'What you did' }
+    ];
+
+    function fields() {
+      var out = {};
+      CHANNELS.forEach(function (c) {
+        var el = document.querySelector('[data-rr="' + c.k + '"]');
+        out[c.k] = el ? (el.value || '').trim() : '';
+      });
+      return out;
+    }
+
+    /* Weight by meaningful words, not raw characters — a long
+       rambling sentence shouldn't outscore four precise observations. */
+    function weight(s) {
+      if (!s) return 0;
+      return s.split(/[\s,;.]+/).filter(function (w) { return w.length > 2; }).length;
+    }
+
+    function paint() {
+      var vals = fields();
+      var counts = CHANNELS.map(function (c) { return weight(vals[c.k]); });
+      var total = counts.reduce(function (a, b) { return a + b; }, 0);
+
+      if (total < 4) {
+        barsEl.innerHTML = '';
+        readEl.innerHTML = 'Fill in the boxes above and your attention split will appear here.';
+        return;
+      }
+
+      barsEl.innerHTML = CHANNELS.map(function (c, i) {
+        var pct = Math.round(counts[i] / total * 100);
+        var thin = (c.k === 'senses' || c.k === 'body') && pct < 15;
+        return '<div class="rr__row">' +
+          '<span class="rr__k">' + c.label + '</span>' +
+          '<span class="rr__track"><span class="rr__fill' + (thin ? ' rr__fill--thin' : '') +
+            '" style="width:' + pct + '%"></span></span>' +
+          '<span class="rr__pct">' + pct + '%</span>' +
+          '</div>';
+      }).join('');
+
+      var mindPct = Math.round(counts[2] / total * 100);
+      var outsidePct = Math.round((counts[0] + counts[1]) / total * 100);
+
+      if (mindPct >= 50) {
+        readEl.innerHTML = '<b>' + mindPct + '% of what you could recall was commentary.</b> Only <strong>' + outsidePct +
+          '%</strong> was the physical world and your actual body. That is the standard pattern, and it is worth sitting with: ' +
+          'in the moment that mattered, most of your attention was inside your own head rather than on the thing in front of you. ' +
+          'Nothing is wrong with you &mdash; but this is exactly the split that precedes a performance falling apart.';
+      } else if (outsidePct >= 45) {
+        readEl.innerHTML = 'Now that is unusual. <b>' + outsidePct + '%</b> of what you recalled came from the physical world and your body, ' +
+          'against <strong>' + mindPct + '%</strong> commentary. <strong>You were genuinely present for this one.</strong> ' +
+          'Worth noticing what was different &mdash; because whatever it was, that is the state you want to be able to find on purpose.';
+      } else {
+        readEl.innerHTML = 'Reasonably balanced: <strong>' + mindPct + '%</strong> commentary against <b>' + outsidePct +
+          '%</b> from the physical world and your body. Keep going &mdash; run this on a moment where the pressure was genuinely high ' +
+          'and see whether the split holds up. It usually shifts.';
+      }
+    }
+
+    CHANNELS.forEach(function (c) {
+      var el = document.querySelector('[data-rr="' + c.k + '"]');
+      if (!el) return;
+      el.addEventListener('input', paint);
+      el.addEventListener('aj:restored', paint);
+    });
+    setTimeout(paint, 300);
   })();
   </script>
 </body>

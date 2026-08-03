@@ -31,6 +31,16 @@
     .aj-eg { border-left-color: var(--engaged); }
     .aj-steps li::before { border-color: rgba(255,157,77,0.5); color: var(--engaged); }
     .aj-builder__chip { border-left-color: var(--engaged); }
+    .aj-btn { background: var(--engaged); border-color: var(--engaged); }
+    .aj-btn:hover { box-shadow: 0 8px 22px rgba(255,157,77,0.22); }
+    .aj-btn--ghost { background: transparent; border-color: rgba(255,255,255,0.35); color: var(--ink); }
+    .aj-slider input[type=range]::-webkit-slider-thumb { background: var(--engaged); }
+    .aj-slider input[type=range]::-moz-range-thumb { background: var(--engaged); }
+    .aj-slider__val { color: var(--engaged); }
+    .aj-progress__fill { background: var(--engaged); }
+    .aj-progress__count { color: var(--engaged); }
+    .aj-timer__clock { color: var(--engaged); }
+    .aj-timer__cue strong { color: var(--engaged); }
 
     /* values counter */
     .vc-counter {
@@ -51,6 +61,24 @@
     .gr__verdict { font-family:var(--font-heading); font-size:1.05rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--engaged); margin-bottom:8px; }
     .gr__note { color:var(--ink); font-size:0.92rem; line-height:1.65; font-weight:300; margin:0; }
     .gr__note strong { color:#fff; font-weight:600; }
+
+    /* ---- The coin: flip card ---- */
+    .cn { text-align:center; margin:22px 0; }
+    .cn__card { position:relative; width:100%; max-width:420px; min-height:210px; margin:0 auto 16px; perspective:1200px; }
+    .cn__face {
+      position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden;
+      border:1px solid rgba(255,157,77,0.4); background:linear-gradient(160deg,#1c1510,#0c0c0c);
+      border-radius:10px; padding:24px 22px; display:flex; flex-direction:column; justify-content:center;
+      transition:transform .7s cubic-bezier(.2,.8,.2,1);
+    }
+    .cn__face--front { transform:rotateY(0deg); }
+    .cn__face--back  { transform:rotateY(180deg); border-color:rgba(255,255,255,0.28); }
+    .cn.is-flipped .cn__face--front { transform:rotateY(-180deg); }
+    .cn.is-flipped .cn__face--back  { transform:rotateY(0deg); }
+    .cn__k { font-family:var(--font-heading); font-size:0.66rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--engaged); margin-bottom:12px; }
+    .cn__face--back .cn__k { color:#cfcfcf; }
+    .cn__body { color:var(--ink); font-size:0.98rem; line-height:1.65; font-weight:300; margin:0; white-space:pre-wrap; }
+    @media (prefers-reduced-motion: reduce) { .cn__face { transition:none; } }
   </style>
 </head>
 <body class="aj">
@@ -97,7 +125,7 @@
       <span class="aj-hero__badge">Pillar three of the TriFlex</span>
       <h1 class="aj-hero__title"><span>ENGAGED</span></h1>
       <p class="aj-hero__lead"><strong>Values and committed action.</strong> The point of the other two pillars. Making room for discomfort and steadying your attention are worth nothing unless they buy you something &mdash; and this is what they buy.</p>
-      <p class="aj-hero__meta"><span>6 skills</span> &middot; <span>6 activities</span> &middot; <span>Where it becomes real</span></p>
+      <p class="aj-hero__meta"><span>10 skills</span> &middot; <span>10 activities</span> &middot; <span>Where it becomes real</span></p>
       <div class="aj-toc">
         <a href="#values">01 &middot; Finding your values</a>
         <a href="#choicepoint">02 &middot; The choice point</a>
@@ -105,6 +133,10 @@
         <a href="#goal">04 &middot; Building a real goal</a>
         <a href="#hard">05 &middot; The HARD barriers</a>
         <a href="#brave">06 &middot; The brave action ladder</a>
+        <a href="#coin">07 &middot; The coin</a>
+        <a href="#anyway">08 &middot; Do it anyway</a>
+        <a href="#friction">09 &middot; The friction audit</a>
+        <a href="#process">10 &middot; Process over podium</a>
       </div>
     </div>
   </section>
@@ -1014,6 +1046,481 @@
     </div>
   </section>
 
+  <!-- ==========================================================
+       TOOL 07 — THE COIN
+       ========================================================== -->
+  <section class="aj-sec aj-sec--alt" id="coin">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">07</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">The Coin</h2>
+              <p class="aj-tool__for">For: the moment you realise the thing you love is also the thing that hurts.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>Every value you hold comes with a bill attached, and the two are not separable. They are one object with two faces.</p>
+            <p>On one face: what you care about. Competing. Getting better. Being someone your teammates can rely on.</p>
+            <p>On the other: everything that costs you. The 5am alarms. The nights out you miss. The lengths of a pool while other people are having breakfast. The gut-punch when it goes badly &mdash; which only lands that hard <em>because</em> of what&rsquo;s on the first face.</p>
+            <p><strong>You can choose your coin. You cannot choose to be handed only one side of it.</strong></p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why it works</span>
+              <p>Because it kills a specific and very common fantasy: that if you just got your head right, you could have the caring without the cost.</p>
+              <p>You can&rsquo;t. The size of the pain tracks the size of the caring &mdash; that&rsquo;s not a design flaw, it&rsquo;s arithmetic. The only route to never being gutted by a result is to stop caring about results, and nobody reading this wants that trade.</p>
+              <p>Which reframes the whole question. It stops being <em>&ldquo;how do I get rid of this feeling?&rdquo;</em> and becomes <em>&ldquo;am I willing to carry this, for that?&rdquo;</em> The first question has no answer. The second one you can actually decide, and re-decide, on any given morning.</p>
+            </div>
+
+            <div class="aj-eg">
+              <span class="aj-eg__k">Where else you already know this</span>
+              <p>Anyone you love is a coin. The reason losing them would wreck you is precisely the reason having them is worth it. People who protect themselves from the second face by refusing the first &mdash; never committing, keeping everyone at arm&rsquo;s length &mdash; don&rsquo;t escape the cost. They just pay it in a different currency, quietly, for longer.</p>
+              <p>Sport works the same way. There is no version where you care enough to be good and it never hurts.</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 10 minutes, then carry it</span>
+              <h3 class="aj-act__title">Mint your coin</h3>
+              <p class="aj-act__intro">Fill in both faces, then flip it. When you&rsquo;re done, <strong>write it on an actual card</strong> and put it in your wallet or your kit bag &mdash; this one is meant to live in your pocket, not on a screen.</p>
+
+              <div class="cn" id="cnWidget">
+                <div class="cn__card" id="cnCard">
+                  <div class="cn__face cn__face--front">
+                    <span class="cn__k">What I&rsquo;m in this for</span>
+                    <p class="cn__body" id="cnFront">Fill in the boxes below&hellip;</p>
+                  </div>
+                  <div class="cn__face cn__face--back">
+                    <span class="cn__k">What it costs me</span>
+                    <p class="cn__body" id="cnBack">&hellip;then flip the coin.</p>
+                  </div>
+                </div>
+                <button type="button" class="aj-btn aj-btn--sm" id="cnFlip">Flip the coin</button>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">Face one &mdash; what matters most to you about your sport</p>
+                <p class="aj-field__hint">Qualities, not trophies. Three or four words each. Pull from your values work above.</p>
+                <textarea class="aj-textarea" id="cnFrontIn"
+                          data-aj="engaged.coin.front"
+                          data-aj-tool="The Coin"
+                          data-aj-q="Face one — what I'm in this for"
+                          placeholder="e.g. Getting properly good at something. Being someone the group can count on. Finding out what I've got."></textarea>
+                <span class="aj-saved" data-aj-saved="engaged.coin.front">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">Face two &mdash; what that costs you</p>
+                <p class="aj-field__hint">All of it. The physical pain, the boredom, the things you miss, the fear of letting people down, the flat Sunday nights. Don&rsquo;t soften it.</p>
+                <textarea class="aj-textarea" id="cnBackIn"
+                          data-aj="engaged.coin.back"
+                          data-aj-tool="The Coin"
+                          data-aj-q="Face two — what it costs me"
+                          placeholder="e.g. Early alarms. Missing most of my mates' weekends. The dread before selection. Feeling sick after a bad one."></textarea>
+                <span class="aj-saved" data-aj-saved="engaged.coin.back">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">Now the question. Looking at both faces: do you want this coin?</p>
+                <p class="aj-field__hint">Not &ldquo;do you want face one&rdquo;. The whole coin. Both faces. As it actually is.</p>
+                <div class="aj-chips" data-aj-single
+                     data-aj-chips="engaged.coin.verdict"
+                     data-aj-tool="The Coin"
+                     data-aj-q="Do I want this coin — both faces?">
+                  <button class="aj-chip">Yes &mdash; both faces</button>
+                  <button class="aj-chip">Yes, but I need to change what&rsquo;s on face two</button>
+                  <button class="aj-chip">I&rsquo;m genuinely not sure</button>
+                  <button class="aj-chip">No &mdash; and that&rsquo;s worth talking about</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">If anything on face two shouldn&rsquo;t be there, name it.</p>
+                <p class="aj-field__hint">Important distinction. Some costs are the genuine price of the thing &mdash; effort, nerves, disappointment. Others are <em>avoidable</em> and have quietly attached themselves: a coach who belittles you, an injury being ignored, a culture that costs you your friendships. <strong>The first kind you accept. The second kind you change, and we should talk about it.</strong></p>
+                <textarea class="aj-textarea"
+                          data-aj="engaged.coin.shouldnt"
+                          data-aj-tool="The Coin"
+                          data-aj-q="What's on face two that shouldn't be there"
+                          placeholder="e.g. The nerves are fair enough. Being spoken to like that on Tuesdays isn't the price of anything."></textarea>
+                <span class="aj-saved" data-aj-saved="engaged.coin.shouldnt">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+            </div>
+
+            <div class="aj-block" style="margin-top:26px;">
+              <span class="aj-block__k">Take it into the week</span>
+              <p>Write both faces on a real card. Carry it. Take it out when the alarm goes off in the dark, when you&rsquo;re on the third rep of something horrible, and after a result that stings. Look at both sides and ask the question again. <strong>Some mornings the answer will be a grudging yes, and a grudging yes is a completely valid answer.</strong></p>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> The two-sides-of-the-coin exercise for athletes appears in <cite>Bernardi, Fitzgerald &amp; Zilcha-Mano, ACT in Sport (2018)</cite>. The underlying idea &mdash; that pain and caring are two expressions of the same thing &mdash; runs throughout <cite>Harris, The Happiness Trap (2022), ch. 14</cite>. The distinction between costs worth accepting and costs worth changing is our addition, and it matters.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       TOOL 08 — DO IT ANYWAY
+       ========================================================== -->
+  <section class="aj-sec" id="anyway">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">08</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Do It Anyway</h2>
+              <p class="aj-tool__for">For: breaking the assumed link between what your mind says and what your body does.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>A drill so simple it sounds like a joke, and it reliably lands harder than anything else on this page.</p>
+            <p>Sit down. Think, as convincingly as you can, <em>&ldquo;I can&rsquo;t stand up and walk around.&rdquo;</em> Try to actually feel it &mdash; a heaviness, a sense of being stuck. Really commit to it.</p>
+            <p><strong>Now stand up and walk around, while continuing to think it.</strong></p>
+            <p>Keep the thought running the entire time you&rsquo;re walking. Notice the gap between what your mind is insisting and what your legs are demonstrably doing.</p>
+            <p>That gap is the most important piece of real estate in this whole area, and you just proved it exists.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why it works</span>
+              <p>Most of us operate on an unexamined assumption: that thoughts and feelings cause actions the way one snooker ball causes another to move. <em>I felt unmotivated, so I skipped it.</em> Stated like that, it sounds like physics.</p>
+              <p>It isn&rsquo;t. Thoughts and actions are only linked <strong>in a particular context</strong> &mdash; and this drill builds a context where you can watch them come apart in real time. You aren&rsquo;t arguing with the thought. You aren&rsquo;t replacing it with something more positive. You&rsquo;re letting it run at full volume and going about your business.</p>
+              <p>The reason it has to be done rather than read: you already <em>know</em> intellectually that you don&rsquo;t have to obey your thoughts. Knowing it changes nothing. Standing up while your head insists you can&rsquo;t gives you something knowledge never does &mdash; direct evidence, in your own body.</p>
+            </div>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+              <p><strong>Yes, you can see the point without doing it.</strong> Do it anyway &mdash; that&rsquo;s rather the name of the exercise. The whole value is in the experience, and it takes thirty seconds.</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 30 seconds, then a week of reps</span>
+              <h3 class="aj-act__title">Uncouple</h3>
+              <p class="aj-act__intro">Three levels. Do level one right now, before you read on.</p>
+
+              <div class="aj-block" style="margin-bottom:20px;">
+                <span class="aj-block__k">Level 1 &mdash; the demonstration</span>
+                <p>Sit. Think <em>&ldquo;I can&rsquo;t stand up&rdquo;</em> and feel it. Stand up and walk for thirty seconds, keeping the thought going the whole time. That&rsquo;s it.</p>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">What was that like?</p>
+                <textarea class="aj-textarea"
+                          data-aj="engaged.anyway.level1"
+                          data-aj-tool="Do It Anyway"
+                          data-aj-q="What the uncoupling demonstration was like"
+                          placeholder="e.g. Genuinely strange. The thought kept going and my legs just carried on regardless. Felt a bit like catching my mind out."></textarea>
+                <span class="aj-saved" data-aj-saved="engaged.anyway.level1">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-block" style="margin:22px 0;">
+                <span class="aj-block__k">Level 2 &mdash; the daily rep</span>
+                <p>Three to five times a day this week, pick any ordinary one-minute task &mdash; brushing your teeth, tying your laces, filling a bottle &mdash; and do it while thinking <em>&ldquo;I can&rsquo;t do this.&rdquo;</em> Keep noticing the mismatch. Ordinary tasks on purpose: you&rsquo;re building the habit somewhere it costs you nothing.</p>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">Which everyday task will you use?</p>
+                <input type="text" class="aj-input"
+                       data-aj="engaged.anyway.task"
+                       data-aj-tool="Do It Anyway"
+                       data-aj-q="My everyday uncoupling task"
+                       placeholder="e.g. Every time I fill my water bottle">
+              </div>
+
+              <div class="aj-block" style="margin:22px 0;">
+                <span class="aj-block__k">Level 3 &mdash; the real one</span>
+                <p>Now aim it at something that actually costs you. Take the exact excuse your mind uses, <strong>say it deliberately</strong>, and do the thing anyway for one more minute. Your mind says <em>ease off, this is too hard</em> on the hill? Think it on purpose, and keep pushing for thirty seconds longer.</p>
+                <p>You are deliberately walking into your own reason-giving rather than waiting to be ambushed by it. That is the entire trick, and it works because you&rsquo;ve chosen the timing.</p>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">Your mind&rsquo;s exact excuse &mdash; word for word</p>
+                <input type="text" class="aj-input"
+                       data-aj="engaged.anyway.excuse"
+                       data-aj-tool="Do It Anyway"
+                       data-aj-q="My mind's exact excuse"
+                       placeholder="e.g. 'That's enough for today, you don't want to overdo it'">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">And where you&rsquo;ll deliberately meet it</p>
+                <input type="text" class="aj-input"
+                       data-aj="engaged.anyway.where"
+                       data-aj-tool="Do It Anyway"
+                       data-aj-q="Where I'll deliberately meet my excuse"
+                       placeholder="e.g. Rep 6 of 8 on Thursday. I'll think it on purpose and do rep 7 anyway.">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">Log &mdash; what your mind said vs what you did</p>
+                <p class="aj-field__hint">A running tally. Over a week this becomes surprisingly persuasive evidence about who is actually in charge.</p>
+                <textarea class="aj-textarea"
+                          data-aj="engaged.anyway.log"
+                          data-aj-tool="Do It Anyway"
+                          data-aj-q="My uncoupling log — what my mind said vs what I did"
+                          placeholder="e.g. Tue: 'you're done' at rep 6 — did 8. Wed: 'too cold' at 6am — went. Thu: 'you've earned a night off' — went, and it was the best session of the week."></textarea>
+                <span class="aj-saved" data-aj-saved="engaged.anyway.log">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> The independence-training and uncoupling drills for athletes are set out in <cite>Bernardi, Fitzgerald &amp; Zilcha-Mano, ACT in Sport (2018)</cite>, drawing on standard ACT defusion procedures in <cite>Hayes, Strosahl &amp; Wilson (1999)</cite>. The three-level progression here is ours.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       TOOL 09 — THE FRICTION AUDIT
+       ========================================================== -->
+  <section class="aj-sec aj-sec--alt" id="friction">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">09</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">The Friction Audit</h2>
+              <p class="aj-tool__for">For: when willpower keeps losing &mdash; and the answer is to stop relying on it.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>You can&rsquo;t evict your passengers. They&rsquo;re part of the bus. But you <em>can</em> give them far fewer openings to complain in.</p>
+            <p>Every valued action has a number of steps between you and doing it. Each step is an opening &mdash; a moment where a voice can pipe up with something reasonable-sounding and you can quietly agree with it.</p>
+            <p>Gym is a 45-minute drive: that&rsquo;s a lot of openings. Kit already packed by the door: almost none. Same person, same motivation, wildly different odds.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why it works</span>
+              <p>Because it moves the fight to ground you can actually win. Willpower is a finite, badly-behaved resource that is at its worst exactly when you need it most &mdash; when you&rsquo;re tired, stressed, or it&rsquo;s dark and cold.</p>
+              <p>Your environment isn&rsquo;t. It doesn&rsquo;t get fatigued and it doesn&rsquo;t negotiate. A decision made calmly on Sunday about where your kit lives will still be in force at 5:40 on a wet Wednesday, when the version of you making decisions is far less impressive.</p>
+              <p><strong>The move is to design the friction rather than fight it.</strong> Take steps out of the things you want to do. Put steps into the things you don&rsquo;t.</p>
+            </div>
+
+            <div class="aj-eg">
+              <span class="aj-eg__k">Worked example &middot; counting the openings</span>
+              <p><strong>Before:</strong> alarm goes &rarr; find phone &rarr; turn it off in bed &rarr; decide whether to get up &rarr; find kit &rarr; realise the bottle needs washing &rarr; make breakfast &rarr; find keys &rarr; leave. <em>Eight openings, several of them while horizontal.</em></p>
+              <p><strong>After:</strong> alarm across the room &rarr; kit already on the chair &rarr; bag and bottle by the door &rarr; leave. <em>Three openings, and the first one has you standing up.</em></p>
+              <p>Nothing about his motivation changed. He just stopped asking it to do a job it was never any good at.</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 10 minutes, then 15 to set up</span>
+              <h3 class="aj-act__title">Count the openings, then close them</h3>
+              <p class="aj-act__intro">Pick the one valued action you keep failing to do. Then map every single step between waking up and doing it &mdash; including the small stupid ones. <strong>The small stupid ones are usually the problem.</strong></p>
+
+              <div class="aj-field">
+                <p class="aj-field__q">1. The action you keep not doing</p>
+                <input type="text" class="aj-input"
+                       data-aj="engaged.friction.action"
+                       data-aj-tool="The Friction Audit"
+                       data-aj-q="The action I keep not doing"
+                       placeholder="e.g. The morning mobility session">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">2. Every step between you and doing it</p>
+                <p class="aj-field__hint">Add them one at a time, in order. Be embarrassingly granular &mdash; &ldquo;find the other sock&rdquo; counts, and is probably load-bearing.</p>
+                <div class="aj-builder__row" data-aj-builder="engaged.friction.steps"
+                     data-aj-tool="The Friction Audit"
+                     data-aj-q="Every step between me and the action"
+                     data-aj-empty="Add each step. The more granular the better.">
+                  <input type="text" class="aj-input" placeholder="e.g. Find where I left my trainers">
+                  <button type="button" class="aj-btn" data-aj-add>Add step</button>
+                  <div class="aj-builder__list" style="flex:1 1 100%;"></div>
+                </div>
+                <p class="aj-field__hint" id="frCount" style="margin-top:12px;"></p>
+              </div>
+
+              <div class="aj-field" style="margin-top:20px;">
+                <p class="aj-field__q">3. Which steps can you delete tonight?</p>
+                <p class="aj-field__hint">Not &ldquo;do better at&rdquo;. <em>Delete.</em> Move it, pre-pack it, buy a second one, automate it, put it where you&rsquo;ll trip over it.</p>
+                <textarea class="aj-textarea"
+                          data-aj="engaged.friction.delete"
+                          data-aj-tool="The Friction Audit"
+                          data-aj-q="Steps I'm deleting"
+                          placeholder="e.g. Kit laid out on the chair the night before. Bottle filled and in the fridge. Alarm on the bookshelf so I have to stand up."></textarea>
+                <span class="aj-saved" data-aj-saved="engaged.friction.delete">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">4. Now the reverse &mdash; what do you want to do <em>less</em> of?</p>
+                <p class="aj-field__hint">Same tool, inverted. Add steps. Phone charging in another room. Delete the app and use the browser. Put the biscuits somewhere annoying.</p>
+                <textarea class="aj-textarea"
+                          data-aj="engaged.friction.add"
+                          data-aj-tool="The Friction Audit"
+                          data-aj-q="Friction I'm adding to away moves"
+                          placeholder="e.g. Phone charges in the kitchen. Logged out of everything on the laptop."></textarea>
+                <span class="aj-saved" data-aj-saved="engaged.friction.add">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">5. When will you actually set this up?</p>
+                <p class="aj-field__hint">A specific time in the next 48 hours. Environment design that stays theoretical is just a nicer kind of procrastination.</p>
+                <input type="text" class="aj-input"
+                       data-aj="engaged.friction.when"
+                       data-aj-tool="The Friction Audit"
+                       data-aj-q="When I'll set up my environment"
+                       placeholder="e.g. Tonight, straight after dinner, before I sit down">
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> Reducing the opportunities your passengers get to complain is described in <cite>Bernardi, Fitzgerald &amp; Zilcha-Mano, ACT in Sport (2018)</cite>. It converges with the wider behavioural-science literature on friction and choice architecture, and with the committed-action principle of arranging your environment to support values-based choices &mdash; <cite>Walser &amp; Westrup, Learning ACT (2019), ch. 7</cite>.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       TOOL 10 — PROCESS OVER PODIUM
+       ========================================================== -->
+  <section class="aj-sec" id="process">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">10</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Process Over Podium</h2>
+              <p class="aj-tool__for">For: when the sport you chose has stopped being something you enjoy and become a series of hurdles.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>Someone who loves skiing takes the lift to the top of the mountain. Before she can set off, a helicopter lands. The pilot asks where she&rsquo;s heading. She points at a hut in the distance &mdash; she&rsquo;s planning to ski down to it.</p>
+            <p>He&rsquo;s going that way anyway, so he flies her there. Much faster. Then he asks where next. She points at another hut. He flies her to that one too. And the next.</p>
+            <p>By the end of the day she has reached every destination she named. <strong>She has done almost no skiing.</strong></p>
+            <p>A great many athletic careers are a version of that helicopter ride &mdash; and the pilot is usually the athlete&rsquo;s own goal-focus.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why it works</span>
+              <p>An outcome-focused mind runs on a permanent deficit. There is always a gap between where you are and the target, and that gap <em>is</em> the dissatisfaction. Close it and the relief lasts about a fortnight before a new target appears and the deficit reopens.</p>
+              <p>So you get long stretches of discontent punctuated by short bursts of relief, and you call the whole arrangement ambition.</p>
+              <p>The alternative is not to abandon your goals. Keep them &mdash; they give direction. But move where your <em>attention and satisfaction</em> come from: onto the rewards that are actually available today. The session done properly. Something clicking that didn&rsquo;t click last month. The people. The specific physical pleasure of your sport done well, which is presumably why you started.</p>
+              <p>This isn&rsquo;t consolation for people who don&rsquo;t win. It&rsquo;s a performance argument: the athlete who finds reward in the process turns up on the grim days, and turning up on the grim days is most of what separates careers.</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 8 minutes</span>
+              <h3 class="aj-act__title">Get off the helicopter</h3>
+              <p class="aj-act__intro">Take your big outcome goals and, for each one, find what&rsquo;s available <strong>today</strong> in the pursuit of it.</p>
+
+              <div class="aj-field">
+                <p class="aj-field__q">1. Your big outcome goals right now</p>
+                <p class="aj-field__hint">The results. Selection, times, places, titles.</p>
+                <textarea class="aj-textarea"
+                          data-aj="engaged.process.outcomes"
+                          data-aj-tool="Process Over Podium"
+                          data-aj-q="My big outcome goals"
+                          placeholder="e.g. Make the first team. Break 17 minutes. Get through a season uninjured."></textarea>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">2. How much of your satisfaction currently depends on reaching them?</p>
+                <p class="aj-field__hint">0 = I enjoy the doing regardless. 10 = nothing counts until I get there.</p>
+                <div class="aj-slider">
+                  <input type="range" min="0" max="10" value="7"
+                         data-aj="engaged.process.dependence"
+                         data-aj-out="prDep"
+                         data-aj-tool="Process Over Podium"
+                         data-aj-q="How much my satisfaction depends on outcomes (0–10)">
+                  <span class="aj-slider__val" id="prDep">7</span>
+                </div>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">3. What&rsquo;s genuinely available in a normal week?</p>
+                <p class="aj-field__hint">Tap what actually gives you something &mdash; not what you think should.</p>
+                <div class="aj-chips"
+                     data-aj-chips="engaged.process.rewards"
+                     data-aj-tool="Process Over Podium"
+                     data-aj-q="Process rewards available to me weekly">
+                  <button class="aj-chip">The feeling of a session done properly</button>
+                  <button class="aj-chip">Something clicking technically</button>
+                  <button class="aj-chip">Being outdoors</button>
+                  <button class="aj-chip">The people I train with</button>
+                  <button class="aj-chip">Learning from my coach</button>
+                  <button class="aj-chip">Being properly tired</button>
+                  <button class="aj-chip">Getting better at something hard</button>
+                  <button class="aj-chip">Helping someone younger</button>
+                  <button class="aj-chip">Being fully absorbed</button>
+                  <button class="aj-chip">The physical sensation of it</button>
+                  <button class="aj-chip">Doing it when I didn&rsquo;t want to</button>
+                  <button class="aj-chip">Being trusted by the group</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">4. Take the session you dread most. What&rsquo;s actually in it?</p>
+                <p class="aj-field__hint">Every session contains something &mdash; the cold air, the burn, the rhythm, the finishing. This isn&rsquo;t pretending to like it. It&rsquo;s noticing what&rsquo;s there instead of enduring it with your eyes shut.</p>
+                <textarea class="aj-textarea"
+                          data-aj="engaged.process.dread"
+                          data-aj-tool="Process Over Podium"
+                          data-aj-q="What's actually available in the session I dread"
+                          placeholder="e.g. Long swim sets. I hate them. But the water's the only 40 minutes all week nobody can reach me, and I quite like that."></textarea>
+                <span class="aj-saved" data-aj-saved="engaged.process.dread">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">5. Your process marker for this week</p>
+                <p class="aj-field__hint">One thing you&rsquo;ll judge the week on that has nothing to do with a result &mdash; and that you fully control.</p>
+                <input type="text" class="aj-input"
+                       data-aj="engaged.process.marker"
+                       data-aj-tool="Process Over Podium"
+                       data-aj-q="My process marker for this week"
+                       placeholder="e.g. Did I do my full routine before every set piece — yes or no. Nothing about whether they went in.">
+              </div>
+            </div>
+
+            <div class="aj-block" style="margin-top:26px;">
+              <span class="aj-block__k">Take it into the week</span>
+              <p>At the end of each session, before you judge it, name <strong>one thing that was genuinely good about the doing of it</strong>. Out loud if you can. It takes five seconds and it slowly retrains where your satisfaction comes from &mdash; which turns out to be the thing that keeps people in sport long enough to get good at it.</p>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> The skiing-and-helicopter story is a long-standing ACT metaphor from <cite>Hayes, Strosahl &amp; Wilson (1999)</cite>, applied to athletes in <cite>Bernardi, Fitzgerald &amp; Zilcha-Mano, ACT in Sport (2018)</cite>. On goal-focus as a source of chronic discontent, see <cite>Harris, The Happiness Trap (2022), ch. 22</cite>; on intrinsic satisfaction and persistence, <cite>Ryan &amp; Deci (2017)</cite>.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== CLOSE ========== -->
   <section class="aj-sec aj-sec--alt">
     <div class="container">
@@ -1027,6 +1534,10 @@
             <li><strong>One arena at a time.</strong> Try to fix everything and you&rsquo;ll fix nothing.</li>
             <li><strong>If it&rsquo;s under 7 out of 10 realistic, make it smaller.</strong> Every time.</li>
             <li><strong>Brave is a doing word.</strong> Confidence follows the action; it doesn&rsquo;t authorise it.</li>
+            <li><strong>Every coin has two faces.</strong> You choose the coin, not which side you&rsquo;re handed.</li>
+            <li><strong>Your thoughts don&rsquo;t drive your legs.</strong> Prove it to yourself, then use it.</li>
+            <li><strong>Design the friction; don&rsquo;t fight it.</strong> Your environment never gets tired.</li>
+            <li><strong>Don&rsquo;t take the helicopter.</strong> You came for the skiing.</li>
           </ul>
         </div>
 
@@ -1149,6 +1660,67 @@
     slider.addEventListener('input', paintVerdict);
     slider.addEventListener('aj:restored', paintVerdict);
     paintVerdict();
+  })();
+
+  /* ---------- THE COIN: live faces + flip ---------- */
+  (function () {
+    'use strict';
+    var card = document.getElementById('cnCard');
+    var flip = document.getElementById('cnFlip');
+    var frontIn = document.getElementById('cnFrontIn');
+    var backIn = document.getElementById('cnBackIn');
+    var frontOut = document.getElementById('cnFront');
+    var backOut = document.getElementById('cnBack');
+    var wrap = document.getElementById('cnWidget');
+    if (!card || !flip || !wrap) return;
+
+    function paint() {
+      var f = (frontIn.value || '').trim();
+      var b = (backIn.value || '').trim();
+      frontOut.textContent = f || 'Fill in face one below…';
+      backOut.textContent = b || '…and face two.';
+      frontOut.style.color = f ? '' : 'var(--muted)';
+      backOut.style.color = b ? '' : 'var(--muted)';
+    }
+
+    flip.addEventListener('click', function () {
+      var flipped = wrap.classList.toggle('is-flipped');
+      flip.textContent = flipped ? 'Flip back' : 'Flip the coin';
+    });
+
+    [frontIn, backIn].forEach(function (el) {
+      el.addEventListener('input', paint);
+      el.addEventListener('aj:restored', paint);
+    });
+    setTimeout(paint, 250);
+  })();
+
+  /* ---------- FRICTION AUDIT: live opening count ---------- */
+  (function () {
+    'use strict';
+    var wrap = document.querySelector('[data-aj-builder="engaged.friction.steps"]');
+    var out = document.getElementById('frCount');
+    if (!wrap || !out) return;
+    var list = wrap.querySelector('.aj-builder__list');
+
+    function paint() {
+      var n = list.querySelectorAll('.aj-builder__chip').length;
+      if (!n) { out.innerHTML = ''; return; }
+      var msg = '<strong style="color:#fff;">' + n + ' step' + (n === 1 ? '' : 's') +
+                '</strong> between you and doing it &mdash; which is <strong style="color:var(--engaged);">' + n +
+                ' opening' + (n === 1 ? '' : 's') + '</strong> for a passenger to talk you out of it. ';
+      if (n >= 7) {
+        msg += 'That is a lot of ground to defend on a cold morning. <strong style="color:#fff;">Aim to halve it.</strong>';
+      } else if (n >= 4) {
+        msg += 'Workable &mdash; but there are almost certainly two you could delete tonight.';
+      } else {
+        msg += 'That is tight. If you are still not doing it, the problem is probably not friction &mdash; check the <a href="#hard" style="color:var(--engaged);">HARD barriers</a> instead.';
+      }
+      out.innerHTML = msg;
+    }
+
+    new MutationObserver(paint).observe(list, { childList: true });
+    setTimeout(paint, 250);
   })();
   </script>
 </body>

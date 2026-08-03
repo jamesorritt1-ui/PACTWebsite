@@ -36,6 +36,34 @@
     .sw__caption { color:var(--ink); font-size:0.95rem; line-height:1.7; font-weight:300; max-width:540px; margin:18px auto 0; text-align:center; min-height:4.6em; }
     .sw__caption strong { color:#fff; font-weight:600; }
     .sw__caption b { color:var(--yellow); font-weight:600; }
+
+    /* ---- Breath-hold experiment ---- */
+    .bh { background:#0d0d0d; border:1px solid rgba(255,229,0,0.22); padding:26px 22px; margin:22px 0; text-align:center; }
+    .bh__clock { font-family:var(--font-heading); font-weight:700; font-size:clamp(3rem,12vw,4.6rem); color:var(--yellow); line-height:1; }
+    .bh__round { font-family:var(--font-heading); font-size:0.8rem; letter-spacing:0.14em; text-transform:uppercase; color:#fff; margin-top:12px; }
+    .bh__cue { color:var(--ink); font-size:0.94rem; line-height:1.65; font-weight:300; max-width:480px; margin:12px auto 0; min-height:3.2em; }
+    .bh__cue strong { color:var(--yellow); font-weight:600; }
+    .bh__controls { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:18px; }
+    .bh__results { margin-top:22px; padding-top:20px; border-top:1px solid var(--line); }
+    .bh__res { display:flex; justify-content:space-between; align-items:baseline; padding:8px 0; }
+    .bh__res-k { font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); }
+    .bh__res-v { font-family:var(--font-heading); font-weight:700; font-size:1.5rem; color:#fff; }
+    .bh__verdict { color:var(--ink); font-size:0.95rem; line-height:1.7; font-weight:300; margin:16px 0 0; text-align:left; }
+    .bh__verdict strong { color:#fff; font-weight:600; }
+    .bh__verdict b { color:var(--yellow); font-weight:600; }
+
+    /* ---- Four doors compass ---- */
+    .fd { background:#0d0d0d; border:1px solid rgba(255,229,0,0.22); padding:24px 22px; margin:22px 0; display:grid; grid-template-columns:220px 1fr; gap:26px; align-items:center; }
+    .fd__svg { width:100%; height:auto; max-width:220px; }
+    .fd__label { fill:var(--muted); font-family:var(--font-heading); font-size:11px; letter-spacing:2px; }
+    .fd__buttons { display:flex; flex-wrap:wrap; gap:9px; margin-bottom:18px; }
+    .fd__btn { font-family:var(--font-heading); font-size:0.76rem; letter-spacing:0.08em; text-transform:uppercase; background:#191919; border:1px solid var(--line); color:var(--ink); padding:11px 17px; cursor:pointer; transition:.15s; }
+    .fd__btn:hover { border-color:rgba(255,229,0,0.5); }
+    .fd__btn[aria-pressed="true"] { background:var(--yellow); border-color:var(--yellow); color:#000; font-weight:600; }
+    .fd__heading { font-family:var(--font-heading); font-size:1.1rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--yellow); margin-bottom:9px; }
+    .fd__body { color:var(--ink); font-size:0.94rem; line-height:1.7; font-weight:300; margin:0; }
+    .fd__body strong { color:#fff; font-weight:600; }
+    @media (max-width:700px){ .fd { grid-template-columns:1fr; } .fd__compass { max-width:200px; margin:0 auto; } }
   </style>
 </head>
 <body class="aj">
@@ -82,7 +110,7 @@
       <span class="aj-hero__badge">Pillar one of the TriFlex</span>
       <h1 class="aj-hero__title"><span>OPEN</span></h1>
       <p class="aj-hero__lead"><strong>Acceptance and defusion.</strong> Six skills for the moments when what&rsquo;s going on inside you is loud &mdash; and your instinct is either to fight it or to do what it says.</p>
-      <p class="aj-hero__meta"><span>6 skills</span> &middot; <span>6 activities</span> &middot; <span>Dip in anywhere</span></p>
+      <p class="aj-hero__meta"><span>9 skills</span> &middot; <span>9 activities</span> &middot; <span>Dip in anywhere</span></p>
       <div class="aj-toc">
         <a href="#struggle">01 &middot; The struggle switch</a>
         <a href="#tame">02 &middot; Making room</a>
@@ -90,6 +118,9 @@
         <a href="#workability">04 &middot; Helpful vs true</a>
         <a href="#urge">05 &middot; Urge surfing</a>
         <a href="#kind">06 &middot; Kind hands</a>
+        <a href="#breath">07 &middot; The breath-hold</a>
+        <a href="#doors">08 &middot; The four doors</a>
+        <a href="#rehearsal">09 &middot; The rehearsal room</a>
       </div>
     </div>
   </section>
@@ -294,7 +325,7 @@
           <div class="aj-tool__head">
             <div class="aj-tool__num">02</div>
             <div class="aj-tool__titles">
-              <h2 class="aj-tool__name">Making Room &mdash; TAME It</h2>
+              <h2 class="aj-tool__name" id="tameName">Making Room &mdash; TAME It</h2>
               <p class="aj-tool__for">For: a feeling that&rsquo;s big and physical &mdash; the chest, the stomach, the throat &mdash; and won&rsquo;t be talked out of you.</p>
             </div>
           </div>
@@ -972,8 +1003,476 @@
     </div>
   </section>
 
+  <!-- ==========================================================
+       TOOL 07 — THE BREATH-HOLD EXPERIMENT
+       ========================================================== -->
+  <section class="aj-sec aj-sec--alt" id="breath">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">07</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">The Breath-Hold Experiment</h2>
+              <p class="aj-tool__for">For: proving to yourself &mdash; with your own data &mdash; that acceptance outperforms grit.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>Everything else in this toolkit asks you to take our word for something counter-intuitive: that <em>allowing</em> discomfort gets you further than <em>fighting</em> it. This one doesn&rsquo;t ask you to take anyone&rsquo;s word for anything. It hands you a stopwatch and lets you find out.</p>
+            <p>You hold your breath twice. <strong>Round one:</strong> however you normally would &mdash; grit your teeth and battle the urge. <strong>Round two:</strong> same task, but you meet the discomfort with the skills from this toolkit instead of fighting it.</p>
+            <p>Then you compare your own two numbers.</p>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+              <p><strong>Safety first, and this is not optional.</strong> Skip this entirely if you are pregnant, have any respiratory or cardiac condition, epilepsy, high blood pressure, a history of fainting, or any other reason breath-holding might not be safe for you. Never do it in or near water, while driving, or standing up. Sit down. Stop the moment you want to &mdash; the exercise works perfectly well at a mild level of discomfort, and nothing about it requires you to push to an extreme. If you&rsquo;re unsure, don&rsquo;t do it: the <a href="#urge">urge surfing</a> tool teaches the same lesson with no physical demand at all.</p>
+            </div>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why it works</span>
+              <p>The urge to breathe is the cleanest laboratory for willingness you will ever get. It&rsquo;s intense, it&rsquo;s completely safe within sensible limits, it builds predictably, and &mdash; crucially &mdash; <strong>it is entirely internal.</strong> There is no opponent, no crowd, no coach, no scoreboard. Just you and a rising signal your body is generating.</p>
+              <p>Most people go longer on round two, and often substantially. Nothing about their lungs changed in the four minutes between attempts. What changed was how much of their attention went into the <em>struggle</em> rather than the task.</p>
+              <p>And there&rsquo;s the whole model, demonstrated on your own body in about eight minutes. Not a metaphor. A measurement.</p>
+            </div>
+
+            <div class="aj-eg">
+              <span class="aj-eg__k">If your second number is lower</span>
+              <p>That happens, and it is not a failure. The usual reasons: you went hard on round one and hadn&rsquo;t fully recovered; you turned round two into a competition with yourself, which is just the struggle switch wearing a disguise; or you were monitoring the clock instead of your body.</p>
+              <p>Rest properly, drop any goal of beating the first number, and try again another day. <strong>The number is the by-product. The skill is what you did while the urge was rising.</strong></p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 8 minutes</span>
+              <h3 class="aj-act__title">Run the experiment</h3>
+              <p class="aj-act__intro">Sit down. Read both rounds before you start. Rest at least three minutes in between &mdash; the gap matters, or you&rsquo;re measuring fatigue rather than skill.</p>
+
+              <div class="aj-vs" style="margin-top:6px;">
+                <div class="aj-vs__col aj-vs__col--no">
+                  <p class="aj-vs__tag">Round 1 &mdash; the usual way</p>
+                  <ul>
+                    <li>Take a comfortable breath and hold</li>
+                    <li>Do what you&rsquo;d normally do: brace, grit, battle it</li>
+                    <li>Fight the urge for as long as you can</li>
+                    <li>Breathe when you need to. Log the time.</li>
+                  </ul>
+                </div>
+                <div class="aj-vs__col aj-vs__col--yes">
+                  <p class="aj-vs__tag">Round 2 &mdash; the skills</p>
+                  <ul>
+                    <li>Same comfortable breath, same hold</li>
+                    <li><strong>Find</strong> the urge. Where exactly? What shape, what temperature?</li>
+                    <li><strong>Allow</strong> it. Turn the willingness dial up. Let it build.</li>
+                    <li><strong>Notice</strong> the mind&rsquo;s sales pitch: <em>&ldquo;that&rsquo;ll do&rdquo;</em>. Thank it.</li>
+                    <li><strong>Widen out</strong>. Sounds in the room. Feet on the floor.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="bh" id="bhWidget">
+                <div class="bh__clock" id="bhClock">0:00</div>
+                <div class="bh__round" id="bhRound">Round 1 &mdash; hold it the way you normally would</div>
+                <p class="bh__cue" id="bhCue">Sit down, get comfortable, and press start when you take the breath.</p>
+                <div class="bh__controls">
+                  <button type="button" class="aj-btn" id="bhStart">Start round 1</button>
+                  <button type="button" class="aj-btn aj-btn--ghost" id="bhReset">Reset</button>
+                </div>
+                <div class="bh__results" id="bhResults" hidden>
+                  <div class="bh__res">
+                    <span class="bh__res-k">Round 1 &mdash; fighting it</span>
+                    <span class="bh__res-v" id="bhR1">&mdash;</span>
+                  </div>
+                  <div class="bh__res">
+                    <span class="bh__res-k">Round 2 &mdash; allowing it</span>
+                    <span class="bh__res-v" id="bhR2">&mdash;</span>
+                  </div>
+                  <p class="bh__verdict" id="bhVerdict"></p>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">Your two times</p>
+                <p class="aj-field__hint">The widget fills these in, or type them yourself if you used your own stopwatch.</p>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                  <input type="text" class="aj-input" id="bhIn1"
+                         data-aj="open.breath.round1"
+                         data-aj-tool="The Breath-Hold Experiment"
+                         data-aj-q="Round 1 — fighting it" placeholder="Round 1, e.g. 0:38">
+                  <input type="text" class="aj-input" id="bhIn2"
+                         data-aj="open.breath.round2"
+                         data-aj-tool="The Breath-Hold Experiment"
+                         data-aj-q="Round 2 — allowing it" placeholder="Round 2, e.g. 0:57">
+                </div>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">What was different about round two &mdash; in your body, and in your head?</p>
+                <p class="aj-field__hint">This is the part that transfers. The number is just the receipt.</p>
+                <textarea class="aj-textarea"
+                          data-aj="open.breath.difference"
+                          data-aj-tool="The Breath-Hold Experiment"
+                          data-aj-q="What was different in round two"
+                          placeholder="e.g. Round one I was clenched everywhere and staring at the clock. Round two I was curious about where the urge actually sat, and I stopped bracing my shoulders."></textarea>
+                <span class="aj-saved" data-aj-saved="open.breath.difference">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">What did your mind try to sell you, and when?</p>
+                <p class="aj-field__hint">Everyone gets a version of <em>&ldquo;that&rsquo;s enough, you&rsquo;ve done well.&rdquo;</em> Write yours down &mdash; you will hear the exact same voice in the last ten minutes of a game.</p>
+                <input type="text" class="aj-input"
+                       data-aj="open.breath.salespitch"
+                       data-aj-tool="The Breath-Hold Experiment"
+                       data-aj-q="What my mind tried to sell me"
+                       placeholder="e.g. 'This is pointless, you've proved the point already'">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">Where does this transfer?</p>
+                <p class="aj-field__hint">Name the exact training moment where the same voice shows up &mdash; the last rep, the second-to-last interval, the hill.</p>
+                <input type="text" class="aj-input"
+                       data-aj="open.breath.transfer"
+                       data-aj-tool="The Breath-Hold Experiment"
+                       data-aj-q="Where this transfers in my training"
+                       placeholder="e.g. Rep 6 of 8. Every single time, that's where the voice starts.">
+              </div>
+            </div>
+
+            <div class="aj-block" style="margin-top:26px;">
+              <span class="aj-block__k">Take it into the week</span>
+              <p>Pick <strong>one</strong> moment in training where the voice reliably arrives, and meet it the round-two way: find the sensation, allow it, notice the sales pitch, widen out, keep going. One moment. Not the whole session &mdash; that&rsquo;s how you burn out rather than build a skill.</p>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> The two-round breath-hold as a willingness demonstration is a long-standing ACT exercise, set out in <cite>Hayes &amp; Smith, Get Out of Your Mind and Into Your Life (2005)</cite> and adapted for athletes in <cite>Bernardi, Fitzgerald &amp; Zilcha-Mano, ACT in Sport (2018)</cite>. The underlying finding &mdash; that an acceptance stance beats a control stance when facing uncomfortable body sensations &mdash; comes from <cite>Eifert &amp; Heffner (2003)</cite>, whose acceptance group reported less intense fear and fewer catastrophic thoughts than the group taught to control their symptoms.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       TOOL 08 — THE FOUR DOORS
+       ========================================================== -->
+  <section class="aj-sec" id="doors">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">08</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">The Four Doors</h2>
+              <p class="aj-tool__for">For: seeing exactly what each of your four options does to your heading.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>Picture yourself driving towards what matters to you. Then a passenger starts up &mdash; the doubt, the comparison, the voice that says don&rsquo;t bother.</p>
+            <p>You have exactly four doors available. Everyone has a favourite, most people have never noticed which one it is, and <strong>two of the four quietly turn the wheel.</strong></p>
+
+            <ol class="aj-steps">
+              <li><strong>Avoid.</strong> Ease away from it. Skip the session, pull out of the trial, give it eighty percent so a bad result doesn&rsquo;t count. Rarely dramatic &mdash; usually just a small turn away.</li>
+              <li><strong>Argue.</strong> Turn round and fight it. Debate it, disprove it, shout it down. Feels strong. But notice where you have to look to do it: <em>backwards, at the passenger</em>, not forwards at the road.</li>
+              <li><strong>Allow.</strong> Hear it. Feel what it does to you, without flinching or wincing or fixing. Acknowledge that it&rsquo;s aboard. Nothing more.</li>
+              <li><strong>Advance.</strong> Allow it &mdash; and take one deliberate step towards what matters anyway, while it&rsquo;s still shouting.</li>
+            </ol>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why it works</span>
+              <p>The insight isn&rsquo;t that avoiding and arguing are &ldquo;bad&rdquo;. It&rsquo;s about <strong>where your attention has to go</strong> to perform each one.</p>
+              <p>To avoid, you look away from your direction. To argue, you turn round and face the passenger. Both take your eyes off the road, and both feel productive at the time &mdash; arguing especially, because effort feels like progress.</p>
+              <p>Allow and advance are the only two that let you keep your eyes on where you&rsquo;re going. That is the entire finding, and the widget below makes it visible rather than asking you to believe it.</p>
+            </div>
+
+            <div class="fd" id="fdWidget">
+              <div class="fd__compass">
+                <svg viewBox="0 0 220 220" class="fd__svg" aria-hidden="true">
+                  <circle cx="110" cy="110" r="96" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                  <circle cx="110" cy="110" r="70" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                  <text x="110" y="24" text-anchor="middle" class="fd__label">WHAT MATTERS</text>
+                  <g id="fdArrow" style="transform-origin:110px 110px;transition:transform .7s cubic-bezier(.2,.8,.2,1);">
+                    <line x1="110" y1="110" x2="110" y2="42" stroke="var(--yellow)" stroke-width="5" stroke-linecap="round"/>
+                    <polygon points="110,30 102,50 118,50" fill="var(--yellow)"/>
+                  </g>
+                  <circle cx="110" cy="110" r="9" fill="#0d0d0d" stroke="var(--yellow)" stroke-width="3"/>
+                </svg>
+              </div>
+              <div class="fd__panel">
+                <div class="fd__buttons">
+                  <button type="button" class="fd__btn" data-door="avoid">Avoid</button>
+                  <button type="button" class="fd__btn" data-door="argue">Argue</button>
+                  <button type="button" class="fd__btn" data-door="allow">Allow</button>
+                  <button type="button" class="fd__btn" data-door="advance">Advance</button>
+                </div>
+                <div class="fd__read">
+                  <div class="fd__heading" id="fdHeading">On heading</div>
+                  <p class="fd__body" id="fdBody">Your passenger is shouting and you&rsquo;re still pointed at what matters. Try each of the four doors and watch what it does to your heading.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 10 minutes</span>
+              <h3 class="aj-act__title">Walk your own passenger through all four doors</h3>
+              <p class="aj-act__intro">Do this out loud and standing up if you possibly can. Face a real direction in the room that represents what matters to you, and physically turn as you go. <strong>It works far better in the body than on a screen</strong> &mdash; that is not a throwaway line, it is the point of the exercise.</p>
+
+              <div class="aj-field">
+                <p class="aj-field__q">1. Your loudest passenger</p>
+                <p class="aj-field__hint">The exact words it uses.</p>
+                <input type="text" class="aj-input"
+                       data-aj="open.doors.passenger"
+                       data-aj-tool="The Four Doors"
+                       data-aj-q="My loudest passenger"
+                       placeholder="e.g. 'You're the weak link and everyone knows it'">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">2. Avoid &mdash; say it out loud, then turn a quarter-turn away. What did that feel like?</p>
+                <textarea class="aj-textarea"
+                          data-aj="open.doors.avoid"
+                          data-aj-tool="The Four Doors"
+                          data-aj-q="Door 1 — Avoid: what it felt like"
+                          placeholder="e.g. Instant relief, and then a bit hollow. Familiar. This is what I do every time selection comes up."></textarea>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">3. Argue &mdash; turn and fight it. Give it a real go. Then: where were your eyes?</p>
+                <textarea class="aj-textarea"
+                          data-aj="open.doors.argue"
+                          data-aj-tool="The Four Doors"
+                          data-aj-q="Door 2 — Argue: what it felt like"
+                          placeholder="e.g. Felt powerful for about ten seconds, then exhausting. And I was completely turned round — I couldn't see the direction I was meant to be going at all."></textarea>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">4. Allow &mdash; hear it fully. No wincing, no smirking, no fixing. Rest a hand on your own shoulder to mark that you&rsquo;ve heard it. What happened?</p>
+                <p class="aj-field__hint">Most people find this the hardest of the four by a distance. Take your time and don&rsquo;t rush the acknowledgement.</p>
+                <textarea class="aj-textarea"
+                          data-aj="open.doors.allow"
+                          data-aj-tool="The Four Doors"
+                          data-aj-q="Door 3 — Allow: what happened"
+                          placeholder="e.g. Horrible. Wanted to argue back the whole time. But I was still facing the right way."></textarea>
+                <span class="aj-saved" data-aj-saved="open.doors.allow">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">5. Advance &mdash; let it shout, and take one real physical step forward anyway.</p>
+                <p class="aj-field__hint">Don&rsquo;t shut the passenger up first and then step. That&rsquo;s cheating, and it&rsquo;s also the thing you can&rsquo;t do in a real game. Step <em>while</em> it&rsquo;s loud.</p>
+                <textarea class="aj-textarea"
+                          data-aj="open.doors.advance"
+                          data-aj-tool="The Four Doors"
+                          data-aj-q="Door 4 — Advance: could I take the step?"
+                          placeholder="e.g. Took two steps. It was still going the whole time. Nothing happened. That was oddly the most surprising bit."></textarea>
+                <span class="aj-saved" data-aj-saved="open.doors.advance">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">6. Which door is your default?</p>
+                <p class="aj-field__hint">Be honest. Knowing your default is worth more than any technique on this page.</p>
+                <div class="aj-chips" data-aj-single
+                     data-aj-chips="open.doors.default"
+                     data-aj-tool="The Four Doors"
+                     data-aj-q="My default door">
+                  <button class="aj-chip">Avoid</button>
+                  <button class="aj-chip">Argue</button>
+                  <button class="aj-chip">Allow</button>
+                  <button class="aj-chip">Advance</button>
+                  <button class="aj-chip">Avoid and argue, both</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">7. Where will you use door four this week?</p>
+                <input type="text" class="aj-input"
+                       data-aj="open.doors.thisweek"
+                       data-aj-tool="The Four Doors"
+                       data-aj-q="Where I'll use door four this week"
+                       placeholder="e.g. Thursday's contact session — I'll go into the collision instead of easing out of it">
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> Adapted from the passengers-on-the-bus family of ACT exercises &mdash; originally <cite>Hayes, Strosahl &amp; Wilson (1999)</cite> &mdash; and specifically from the four-response version for athletes (avoid, argue, acknowledge, act) in <cite>Bernardi, Fitzgerald &amp; Zilcha-Mano, ACT in Sport (2018)</cite>. The heading compass, the naming and the sport framing here are ours.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       TOOL 09 — THE REHEARSAL ROOM
+       ========================================================== -->
+  <section class="aj-sec aj-sec--alt" id="rehearsal">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">09</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">The Rehearsal Room</h2>
+              <p class="aj-tool__for">For: the situation you dread. Meeting it fifty times in your head before you meet it once for real.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>Take the moment you dread &mdash; the penalty, the start line, the weigh-in, the conversation with the coach &mdash; and rehearse it in your imagination in slow, deliberate sections. Not to make it go smoothly. <strong>To get thoroughly used to what it does to you.</strong></p>
+            <p>Two things make this different from ordinary visualisation, and both matter.</p>
+            <p><strong>First: you start well before the moment itself.</strong> Not at the penalty spot &mdash; at packing your bag the night before. The dread rarely begins where you think it does, and the early scenes are usually where it is actually manufactured.</p>
+            <p><strong>Second: you rewind.</strong> When a scene stirs something up, you don&rsquo;t push forward to get it over with. You go back a step or two and run it again, and again, until the charge comes down a little. Then you move on. <em>Reaching the end is not the goal.</em> Most people never get near the end, and it works anyway.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why it works</span>
+              <p>This is <strong>exposure</strong>, done in imagination and paced by you. Repeatedly making contact with something difficult, while staying open to it rather than escaping, is the most reliably effective procedure in the whole of clinical psychology &mdash; and it doesn&rsquo;t require the real situation to be available.</p>
+              <p>There is a striking piece of evidence for this in sport. University runners were split into two groups; one did a structured stress-rehearsal programme, the other simple relaxation. Their physical training was identical. The rehearsal group improved more over the season &mdash; and their <em>aerobic capacity</em> improved more too. Same running, different heads.</p>
+              <p>The mechanism is simple enough. A dreaded situation costs you attention twice: once in advance, and once during. Rehearsal drains the advance charge, so more of you is available on the day.</p>
+            </div>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+              <p><strong>Work near your edge, not over it.</strong> Pick something that genuinely bothers you &mdash; around 5 or 6 out of 10 to start &mdash; not the worst thing that ever happened to you. If a scene takes you somewhere overwhelming, stop, drop anchor, and bring it to a session instead. This tool is for performance dread, not for trauma. If what you&rsquo;re carrying is trauma, that deserves proper support and we will help you find it.</p>
+            </div>
+
+            <div class="aj-eg">
+              <span class="aj-eg__k">Worked example &middot; a golfer, club championship</span>
+              <p>He doesn&rsquo;t start at the first tee. He starts in his kitchen the night before, making dinner and thinking about getting an early night. Sink, lino, the pan. And a sick jolt in the stomach that shoots up towards his throat. He rates it an <strong>8</strong>.</p>
+              <p>So he stays there. Notices where the feeling sits, whether it&rsquo;s hot or cold, sharp or dull, moving or still. One slow breath. Then he rewinds to sitting in the lounge beforehand and runs the kitchen scene again. And again.</p>
+              <p>When it settles to a <strong>6</strong>, he moves on &mdash; to lying in bed thinking about freezing on the first tee. Then back a step. Then forward.</p>
+              <p>Across a whole session he got as far as gripping the steering wheel on the drive to the club. He never reached the golf. <strong>That was a complete and successful rep.</strong></p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 15 minutes, repeatable</span>
+              <h3 class="aj-act__title">Build and run your rehearsal</h3>
+              <p class="aj-act__intro">Break the lead-up into scenes, rate each one, then work through them with the rewind rule. Come back and re-rate after a few sessions &mdash; the drop across reps is the whole point, and it is very satisfying to watch.</p>
+
+              <div class="aj-field">
+                <p class="aj-field__q">1. The moment you dread</p>
+                <input type="text" class="aj-input"
+                       data-aj="open.rehearsal.moment"
+                       data-aj-tool="The Rehearsal Room"
+                       data-aj-q="The moment I dread"
+                       placeholder="e.g. Stepping up to take a penalty in front of a home crowd">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">2. Rewind the tape. What are the scenes <em>leading up</em> to it?</p>
+                <p class="aj-field__hint">Go back further than feels natural &mdash; the night before, the bag, the drive, the changing room, the warm-up. Add them earliest first.</p>
+                <div class="aj-builder__row" data-aj-builder="open.rehearsal.scenes"
+                     data-aj-tool="The Rehearsal Room"
+                     data-aj-q="My rehearsal scenes, earliest first"
+                     data-aj-empty="Add your scenes, starting with the earliest.">
+                  <input type="text" class="aj-input" placeholder="e.g. Packing my bag the night before">
+                  <button type="button" class="aj-btn" data-aj-add>Add scene</button>
+                  <div class="aj-builder__list" style="flex:1 1 100%;"></div>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">3. Which scene carries the most charge &mdash; and how much?</p>
+                <input type="text" class="aj-input"
+                       data-aj="open.rehearsal.hottest"
+                       data-aj-tool="The Rehearsal Room"
+                       data-aj-q="The scene with the most charge"
+                       placeholder="e.g. Walking from the halfway line to the spot. Easily the worst bit.">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">Peak intensity, first time through</p>
+                <div class="aj-slider">
+                  <input type="range" min="0" max="10" value="7"
+                         data-aj="open.rehearsal.peak"
+                         data-aj-out="rhPeak"
+                         data-aj-tool="The Rehearsal Room"
+                         data-aj-q="Peak intensity, first run (0–10)">
+                  <span class="aj-slider__val" id="rhPeak">7</span>
+                </div>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">Peak intensity now, after a few reps</p>
+                <p class="aj-field__hint">Come back and update this. If it hasn&rsquo;t moved after several sessions, the scenes are probably too big &mdash; break them smaller.</p>
+                <div class="aj-slider">
+                  <input type="range" min="0" max="10" value="7"
+                         data-aj="open.rehearsal.now"
+                         data-aj-out="rhNow"
+                         data-aj-tool="The Rehearsal Room"
+                         data-aj-q="Peak intensity after reps (0–10)">
+                  <span class="aj-slider__val" id="rhNow">7</span>
+                </div>
+              </div>
+
+              <p class="aj-field__hint" style="margin:20px 0 10px;"><strong style="color:#fff;">Now run it.</strong> Follow the cues. Keep the rewind rule in mind: when a scene stirs something, go <em>back</em> a step, not forward.</p>
+
+              <div class="aj-timer" data-aj-timer='[
+                {"phase":"Settle","secs":90,"cue":"Sit upright. Just the sensations of breathing. <strong>Don&rsquo;t rush this</strong> — it&rsquo;s the platform for everything after it."},
+                {"phase":"Scene one","secs":90,"cue":"Go to your <strong>earliest</strong> scene. Where are you? What can you see, hear, smell? What&rsquo;s in your body? What does your mind start saying?"},
+                {"phase":"Stay with it","secs":90,"cue":"Find the strongest sensation. <strong>Where does it start and end? Hot or cold? Sharp or dull? Moving or still?</strong> Don&rsquo;t fix it. Just get to know it."},
+                {"phase":"Rewind","secs":90,"cue":"Go <strong>back a step or two</strong> and run the same scene again. Yes, again. This is the rep — the repetition is what does the work, not the progress."},
+                {"phase":"Move on — or don&rsquo;t","secs":90,"cue":"Dropped a couple of points? Move to the next scene. Still high? <strong>Stay here.</strong> Reaching the end is not the goal and never was."},
+                {"phase":"Close","secs":60,"cue":"Let the scene go. Back to the breath. Notice the room, the sounds, your feet. <strong>Open your eyes.</strong>"}
+              ]'>
+                <div class="aj-timer__clock" data-timer-clock>1:30</div>
+                <div class="aj-timer__phase" data-timer-phase>Settle</div>
+                <p class="aj-timer__cue" data-timer-cue></p>
+                <div class="aj-timer__controls">
+                  <button type="button" class="aj-btn" data-timer-start>Start</button>
+                  <button type="button" class="aj-btn aj-btn--ghost" data-timer-reset>Reset</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:24px;">
+                <p class="aj-field__q">4. Rehearsal log</p>
+                <p class="aj-field__hint">Date, which scene you worked, where it started and where it finished. Short entries. The pattern across weeks is what you&rsquo;re after.</p>
+                <textarea class="aj-textarea"
+                          data-aj="open.rehearsal.log"
+                          data-aj-tool="The Rehearsal Room"
+                          data-aj-q="My rehearsal log"
+                          placeholder="e.g. Tue — changing room scene, started 8, finished 6 after four rewinds. Thu — same scene started at 6. Moved on to the walk-up."></textarea>
+                <span class="aj-saved" data-aj-saved="open.rehearsal.log">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">5. And when the real thing came round?</p>
+                <p class="aj-field__hint">Fill this in afterwards. Compare it with what you rehearsed.</p>
+                <textarea class="aj-textarea"
+                          data-aj="open.rehearsal.real"
+                          data-aj-tool="The Rehearsal Room"
+                          data-aj-q="What happened when the real thing came round"
+                          placeholder="e.g. The walk-up was the bit I'd rehearsed most and it was the calmest part of the whole night. Still felt it. Just wasn't news any more."></textarea>
+                <span class="aj-saved" data-aj-saved="open.rehearsal.real">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> Adapted from the walk-through exercise for athletes in <cite>Bernardi, Fitzgerald &amp; Zilcha-Mano, ACT in Sport (2018)</cite>, which itself draws on the exposure tradition and on <cite>Meichenbaum&rsquo;s Stress Inoculation Training</cite>. The runners&rsquo; study is <cite>Whelan, Mahoney &amp; Meyers</cite>-era SIT research in sport, discussed in the same chapter. Scene-laddering, the rewind rule as stated here, and the intensity tracking are our implementation.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== CLOSE ========== -->
-  <section class="aj-sec aj-sec--alt">
+  <section class="aj-sec">
     <div class="container">
       <div class="aj-wrap">
         <div class="aj-takeaways">
@@ -985,6 +1484,9 @@
             <li><strong>You don&rsquo;t have to change a thought to change its grip.</strong> Change the context instead.</li>
             <li><strong>Ask &ldquo;is this useful?&rdquo;, not &ldquo;is this true?&rdquo;</strong> You&rsquo;ll never win the second argument.</li>
             <li><strong>The hurt means you care.</strong> Treat it accordingly.</li>
+            <li><strong>Allowing beats gritting</strong> &mdash; and the breath-hold gives you your own data to prove it.</li>
+            <li><strong>Avoiding and arguing both turn the wheel.</strong> Only allowing and advancing keep your eyes on the road.</li>
+            <li><strong>Rehearse the lead-up, not just the moment.</strong> The dread is manufactured earlier than you think.</li>
           </ul>
         </div>
 
@@ -1186,6 +1688,168 @@
 
     input.addEventListener('input', render);
     input.addEventListener('aj:restored', render);
+
+    /* ---------- 3. BREATH-HOLD EXPERIMENT ---------- */
+    (function () {
+      var clock = document.getElementById('bhClock');
+      var roundEl = document.getElementById('bhRound');
+      var cueEl = document.getElementById('bhCue');
+      var startBtn = document.getElementById('bhStart');
+      var resetBtn = document.getElementById('bhReset');
+      var results = document.getElementById('bhResults');
+      var r1El = document.getElementById('bhR1');
+      var r2El = document.getElementById('bhR2');
+      var verdict = document.getElementById('bhVerdict');
+      var in1 = document.getElementById('bhIn1');
+      var in2 = document.getElementById('bhIn2');
+      if (!clock || !startBtn) return;
+
+      var ROUNDS = [
+        {
+          label: 'Round 1 &mdash; hold it the way you normally would',
+          idle: 'Sit down, get comfortable, and press start as you take the breath.',
+          live: 'Hold. Do it <strong>the way you always have</strong> — brace, grit, battle it. Press stop when you breathe.'
+        },
+        {
+          label: 'Round 2 &mdash; hold it with the skills',
+          idle: 'Rest at least three minutes first. Breathe normally. Then press start.',
+          live: 'Hold. <strong>Find</strong> the urge — where, what shape, what temperature? <strong>Allow</strong> it to build. <strong>Notice</strong> the sales pitch. <strong>Widen out</strong> to the room.'
+        }
+      ];
+
+      var round = 0, secs = 0, tick = null, running = false;
+      var times = [null, null];
+
+      function fmt(s) { return Math.floor(s / 60) + ':' + (s % 60 < 10 ? '0' : '') + (s % 60); }
+
+      function paintIdle() {
+        clock.textContent = fmt(secs);
+        if (round < 2) {
+          roundEl.innerHTML = ROUNDS[round].label;
+          cueEl.innerHTML = ROUNDS[round].idle;
+          startBtn.textContent = 'Start round ' + (round + 1);
+          startBtn.disabled = false;
+        } else {
+          roundEl.innerHTML = 'Both rounds done';
+          cueEl.innerHTML = 'Your two numbers are below. The interesting one is the gap.';
+          startBtn.textContent = 'Run it again';
+          startBtn.disabled = false;
+        }
+      }
+
+      function paintResults() {
+        if (times[0] === null && times[1] === null) { results.hidden = true; return; }
+        results.hidden = false;
+        r1El.textContent = times[0] === null ? '—' : fmt(times[0]);
+        r2El.textContent = times[1] === null ? '—' : fmt(times[1]);
+
+        if (times[0] === null || times[1] === null) { verdict.innerHTML = ''; return; }
+
+        var diff = times[1] - times[0];
+        var pct = times[0] > 0 ? Math.round(diff / times[0] * 100) : 0;
+
+        if (diff > 0) {
+          verdict.innerHTML = 'You went <b>' + diff + ' seconds longer</b>' +
+            (pct >= 5 ? ' — about <b>' + pct + '% more</b>' : '') +
+            '. <strong>Nothing about your lungs changed in those few minutes.</strong> What changed is how much of you went into the struggle rather than the task. ' +
+            'That gap is the whole model, measured on your own body. Now go and find the training moment where the same voice shows up.';
+        } else if (diff === 0) {
+          verdict.innerHTML = 'Dead level. <strong>That is still a useful result</strong> — it means the same capacity was available both ways, and round two got there without the bracing and the clock-watching. ' +
+            'Try it again another day when you are properly rested, and pay attention to <em>how</em> each round felt rather than what it measured.';
+        } else {
+          verdict.innerHTML = 'Round two came in shorter. <strong>Completely normal, and not a failure.</strong> Usually one of three things: you hadn&rsquo;t recovered from round one, ' +
+            'you turned round two into a competition (which is the struggle switch in disguise), or you were watching the clock instead of your body. ' +
+            'Rest properly, drop any target, and run it again. <b>The number was never the skill.</b>';
+        }
+      }
+
+      function stop() {
+        clearInterval(tick);
+        running = false;
+        times[round] = secs;
+        if (round === 0 && in1) { in1.value = fmt(secs); in1.dispatchEvent(new Event('input', { bubbles: true })); }
+        if (round === 1 && in2) { in2.value = fmt(secs); in2.dispatchEvent(new Event('input', { bubbles: true })); }
+        round++;
+        secs = 0;
+        paintIdle();
+        paintResults();
+      }
+
+      startBtn.addEventListener('click', function () {
+        if (running) { stop(); return; }
+        if (round >= 2) { round = 0; times = [null, null]; results.hidden = true; }
+        secs = 0;
+        running = true;
+        startBtn.textContent = 'Stop — I breathed';
+        roundEl.innerHTML = ROUNDS[round].label;
+        cueEl.innerHTML = ROUNDS[round].live;
+        clock.textContent = fmt(secs);
+        tick = setInterval(function () { secs++; clock.textContent = fmt(secs); }, 1000);
+      });
+
+      resetBtn.addEventListener('click', function () {
+        clearInterval(tick);
+        running = false; round = 0; secs = 0; times = [null, null];
+        results.hidden = true;
+        paintIdle();
+      });
+
+      paintIdle();
+    })();
+
+    /* ---------- 4. THE FOUR DOORS COMPASS ---------- */
+    (function () {
+      var arrow = document.getElementById('fdArrow');
+      var headEl = document.getElementById('fdHeading');
+      var bodyEl = document.getElementById('fdBody');
+      var wrap = document.getElementById('fdWidget');
+      if (!arrow || !wrap) return;
+
+      var DOORS = {
+        avoid: {
+          deg: 68, heading: 'Off heading',
+          body: 'You eased away. The discomfort dropped straight away &mdash; that is exactly why this door is so popular, and why it is usually invisible. ' +
+                '<strong>But look where you are pointed now.</strong> Rarely a dramatic turn. Just a quarter-turn, taken often enough that it becomes the route.'
+        },
+        argue: {
+          deg: 175, heading: 'Facing backwards',
+          body: 'You turned round and took it on. This one feels <em>strong</em> &mdash; you are doing something, you are fighting. ' +
+                '<strong>But you are now looking at the passenger instead of the road</strong>, and the passenger is delighted to have your full attention. Effort is not the same as progress.'
+        },
+        allow: {
+          deg: 0, heading: 'On heading',
+          body: 'You let it be there. Nothing has gone quiet, and nothing has been fixed &mdash; <strong>the passenger is still shouting.</strong> ' +
+                'But your eyes never left where you were going. That is the entire difference, and it costs you nothing but the discomfort you were already having.'
+        },
+        advance: {
+          deg: 0, heading: 'On heading, and moving',
+          body: 'Allowed it &mdash; <em>and</em> took the step anyway, while it was still loud. <strong>This is the only door that gets you anywhere.</strong> ' +
+                'Note what it did not require: the passenger going quiet first. You never needed that, and you were never going to get it.'
+        }
+      };
+
+      var btns = Array.prototype.slice.call(wrap.querySelectorAll('.fd__btn'));
+
+      btns.forEach(function (b) {
+        b.setAttribute('aria-pressed', 'false');
+        b.addEventListener('click', function () {
+          var d = DOORS[b.getAttribute('data-door')];
+          btns.forEach(function (o) { o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); });
+          arrow.style.transform = 'rotate(' + d.deg + 'deg)';
+          headEl.textContent = d.heading;
+          headEl.style.color = d.deg === 0 ? 'var(--yellow)' : '#c0562e';
+          bodyEl.innerHTML = d.body;
+          if (b.getAttribute('data-door') === 'advance') {
+            arrow.animate(
+              [{ transform: 'rotate(0deg) translateY(0)' },
+               { transform: 'rotate(0deg) translateY(-10px)' },
+               { transform: 'rotate(0deg) translateY(0)' }],
+              { duration: 700, easing: 'ease-out' }
+            );
+          }
+        });
+      });
+    })();
 
     techWrap.querySelectorAll('.aj-tech').forEach(function (b) {
       b.setAttribute('aria-pressed', 'false');
