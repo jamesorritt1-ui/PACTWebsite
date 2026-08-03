@@ -678,10 +678,45 @@
   }
 
   /* ---------------------------------------------------------
+     12. Log out — clears the GROW gateway session and returns
+         to the login page.
+
+         Note this deliberately does NOT touch anything the
+         athlete has written. Their journal stays on the device
+         so it's still here next time they log in; "Delete
+         everything" on the journal page is the only thing that
+         removes it.
+     --------------------------------------------------------- */
+
+  var GROW_SESSION_KEYS = ['grow_nomads_club', 'grow_nomads_role'];
+
+  function bindLogout() {
+    document.querySelectorAll('[data-aj-logout]').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var entries = 0;
+        try { entries = store.keys().length; } catch (err) {}
+        var msg = 'Log out of GROW?\n\nYou\'ll need your password to get back in.';
+        if (entries) {
+          msg += '\n\nYour ' + entries + ' saved journal ' +
+                 (entries === 1 ? 'entry stays' : 'entries stay') +
+                 ' on this device and will still be here when you return.';
+        }
+        if (!window.confirm(msg)) return;
+        GROW_SESSION_KEYS.forEach(function (k) {
+          try { localStorage.removeItem(k); } catch (err) {}
+        });
+        window.location.href = 'grow-login.html';
+      });
+    });
+  }
+
+  /* ---------------------------------------------------------
      Boot
      --------------------------------------------------------- */
 
   function init() {
+    bindLogout();
     bindFields();
     bindSliders();
     bindChips();
