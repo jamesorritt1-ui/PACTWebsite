@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>OPEN — Acceptance &amp; Defusion | Skills Journal | The Performance Act</title>
+  <meta name="description" content="Six skills for making room for difficult thoughts and feelings instead of fighting them or obeying them.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=18">
+  <link rel="stylesheet" href="grow-athlete.css?v=1">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=2">
+  <style>
+    /* ---- Struggle-switch widget (this page only) ---- */
+    .sw { background:#0d0d0d; border:1px solid rgba(255,229,0,0.22); padding:24px 22px 26px; margin:18px 0; }
+    .sw__toggle { display:flex; align-items:center; justify-content:center; gap:18px; margin-bottom:22px; flex-wrap:wrap; }
+    .sw__btn {
+      font-family:var(--font-heading); font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;
+      background:#191919; border:1px solid var(--line); color:#cfcfcf; padding:12px 22px; cursor:pointer; transition:.15s;
+    }
+    .sw__btn[aria-pressed="true"] { background:var(--yellow); border-color:var(--yellow); color:#000; font-weight:600; }
+    .sw__stack { max-width:520px; margin:0 auto; }
+    .sw__layer { margin-bottom:10px; }
+    .sw__layer-top { display:flex; justify-content:space-between; font-family:var(--font-heading); font-size:0.74rem; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:6px; }
+    .sw__layer-name { color:#fff; }
+    .sw__layer-val { color:var(--yellow); font-weight:700; }
+    .sw__track { height:11px; background:rgba(255,255,255,0.08); border-radius:100px; overflow:hidden; }
+    .sw__fill { height:100%; width:0; background:var(--yellow); transition:width .6s cubic-bezier(.2,.8,.2,1); }
+    .sw__fill--extra { background:#c0562e; }
+    .sw__total { text-align:center; margin-top:20px; padding-top:18px; border-top:1px solid var(--line); }
+    .sw__total-num { font-family:var(--font-heading); font-weight:700; font-size:2.4rem; color:var(--yellow); line-height:1; }
+    .sw__total-lab { font-family:var(--font-heading); font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-top:6px; }
+    .sw__caption { color:var(--ink); font-size:0.95rem; line-height:1.7; font-weight:300; max-width:540px; margin:18px auto 0; text-align:center; min-height:4.6em; }
+    .sw__caption strong { color:#fff; font-weight:600; }
+    .sw__caption b { color:var(--yellow); font-weight:600; }
+  </style>
+</head>
+<body class="aj">
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="images/logo-horizontal.png?v=2" alt="The Performance Act" class="logo-img logo-img--header">
+      </a>
+      <nav class="header__nav" id="mainNav" aria-label="Primary">
+        <a href="grow-athlete.html" class="nav-link">SKILLS JOURNAL</a>
+        <a href="grow-athlete-open.html" class="nav-link active">OPEN</a>
+        <a href="grow-athlete-aware.html" class="nav-link">AWARE</a>
+        <a href="grow-athlete-engaged.html" class="nav-link">ENGAGED</a>
+        <a href="grow-athlete-brain.html" class="nav-link">BRAIN HEALTH</a>
+      </nav>
+      <div class="header__actions">
+        <a href="grow-athlete-journal.html" class="btn btn--primary btn--sm">My Journal</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <nav class="mobile-nav__links" aria-label="Mobile">
+      <a href="grow-athlete.html" class="mobile-nav__link">SKILLS JOURNAL HOME</a>
+      <a href="grow-athlete-open.html" class="mobile-nav__link">OPEN</a>
+      <a href="grow-athlete-aware.html" class="mobile-nav__link">AWARE</a>
+      <a href="grow-athlete-engaged.html" class="mobile-nav__link">ENGAGED</a>
+      <a href="grow-athlete-brain.html" class="mobile-nav__link">BRAIN HEALTH</a>
+      <a href="grow-athlete-journal.html" class="mobile-nav__link">MY JOURNAL</a>
+    </nav>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="aj-hero" id="top">
+    <div class="aj-hero__bg"></div>
+    <div class="container">
+      <a href="grow-athlete.html" class="aj-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Skills Journal
+      </a>
+      <span class="aj-hero__badge">Pillar one of the TriFlex</span>
+      <h1 class="aj-hero__title"><span>OPEN</span></h1>
+      <p class="aj-hero__lead"><strong>Acceptance and defusion.</strong> Six skills for the moments when what&rsquo;s going on inside you is loud &mdash; and your instinct is either to fight it or to do what it says.</p>
+      <p class="aj-hero__meta"><span>6 skills</span> &middot; <span>6 activities</span> &middot; <span>Dip in anywhere</span></p>
+      <div class="aj-toc">
+        <a href="#struggle">01 &middot; The struggle switch</a>
+        <a href="#tame">02 &middot; Making room</a>
+        <a href="#unhook">03 &middot; Unhooking</a>
+        <a href="#workability">04 &middot; Helpful vs true</a>
+        <a href="#urge">05 &middot; Urge surfing</a>
+        <a href="#kind">06 &middot; Kind hands</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROGRESS ========== -->
+  <div class="aj-progress">
+    <div class="container">
+      <div class="aj-progress__inner">
+        <span class="aj-progress__label">Your progress through Open</span>
+        <div class="aj-progress__track"><div class="aj-progress__fill" id="ajProgressFill"></div></div>
+        <span class="aj-progress__count" id="ajProgressCount">0 / 0 saved</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== INTRO ========== -->
+  <section class="aj-sec">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">Before you start</p>
+        <h2 class="aj-h2">The problem isn&rsquo;t<br>the feeling. It&rsquo;s the <em>fight.</em></h2>
+        <p class="aj-lead">Your brain is very good at solving problems in the outside world. Locked out of the house? Break a window. Don&rsquo;t like the peeling paint? Scrape it and repaint.</p>
+        <p class="aj-p" style="margin-top:18px;">The trouble starts when you turn that same machinery inward. Try to scrape away a thought and it gets stickier. Try to force a feeling out and it gets louder. This is one of the most reliably replicated findings in psychology: <strong>deliberate attempts to suppress a thought increase how often it shows up</strong>, and how much power it has over what you do.</p>
+        <p class="aj-p">Which leaves you with a real problem, because the pre-match nerves, the flash of anger at a bad call, the doubt that arrives at 3&mdash;0 down &mdash; none of it is going anywhere. Nobody has ever found the delete button. There isn&rsquo;t one.</p>
+        <p class="aj-p"><strong>Open is the alternative.</strong> Not liking the feeling. Not wanting it. Just stopping the war with it, so that all the energy currently going into the fight is available for the thing you actually came here to do.</p>
+
+        <div class="aj-why">
+          <p><strong>Why this pillar exists.</strong> In the ACT model, the two processes that most narrow what you&rsquo;re capable of are <em>experiential avoidance</em> (trying to control or get rid of what you feel) and <em>cognitive fusion</em> (getting so caught in the content of a thought that it dominates everything else). Together they form the pillar of inflexibility called <em>Closed</em>. Openness &mdash; acceptance plus defusion &mdash; is the direct antidote. <cite>Walser &amp; Westrup, Learning ACT (2019); Hayes et al. (2012).</cite></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       TOOL 01 — THE STRUGGLE SWITCH
+       ========================================================== -->
+  <section class="aj-sec aj-sec--alt" id="struggle">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">01</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">The Struggle Switch</h2>
+              <p class="aj-tool__for">For: when a feeling seems to be getting worse the harder you try to sort it out.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>Imagine there&rsquo;s a switch at the back of your mind. When it&rsquo;s <strong>on</strong>, you fight every uncomfortable feeling that turns up. When it&rsquo;s <strong>off</strong>, feelings are free to come and go without you going to war with them.</p>
+            <p>Watch what the switch does. Nerves show up before a game. Switch on: <em>&ldquo;Oh no, not this again. Why am I like this? I hate feeling like this. It&rsquo;s going to wreck my performance.&rdquo;</em> Now you&rsquo;ve got anxiety about your anxiety. Then frustration about the anxiety. Then a bit of shame about the frustration. The original nerves haven&rsquo;t changed at all &mdash; but you&rsquo;re now carrying four things instead of one.</p>
+            <p>Switch off: nerves show up, you notice them, you let them be there, and you go and warm up. Same nerves. A quarter of the load.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why it works</span>
+              <p>The struggle switch is an <strong>emotion amplifier</strong>. Every layer you add is a second-order emotion &mdash; a feeling about a feeling &mdash; and each one is generated by the fight, not by the original event. Turn the switch off and the layers stop being manufactured. Your emotions are then free to rise and fall as the situation actually warrants.</p>
+              <p>It also frees up capacity. Struggling is expensive: it consumes attention, working memory and physical energy you would otherwise be putting into the task.</p>
+            </div>
+
+            <div class="sw" id="swWidget">
+              <div class="sw__toggle">
+                <button type="button" class="sw__btn" id="swOn" aria-pressed="true">Switch ON</button>
+                <button type="button" class="sw__btn" id="swOff" aria-pressed="false">Switch OFF</button>
+              </div>
+              <div class="sw__stack" id="swStack"></div>
+              <div class="sw__total">
+                <div class="sw__total-num" id="swTotal">0</div>
+                <div class="sw__total-lab">Total load you&rsquo;re carrying</div>
+              </div>
+              <p class="sw__caption" id="swCaption"></p>
+            </div>
+
+            <div class="aj-eg">
+              <span class="aj-eg__k">Worked example &middot; a netballer, switch on</span>
+              <p>Mia gets tight hands in the last quarter of close games. She hates it, so before every close game she scans her hands to check whether the tightness has arrived. <em>Checking for it is the struggle.</em> Because she&rsquo;s scanning, she notices every tiny change, which reads as the tightness starting, which produces a spike of dread, which produces genuine tightness. She has built a machine that reliably manufactures the exact thing she&rsquo;s trying to avoid.</p>
+              <p><strong>Switch off:</strong> Mia stops running the check. When tightness turns up she notes it &mdash; <em>&ldquo;there it is, tight hands, last quarter&rdquo;</em> &mdash; and puts her attention on the next pass. The tightness still comes some nights. It just no longer arrives with an entourage.</p>
+            </div>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+              <p><strong>The trap to avoid.</strong> Turning the struggle switch off is not a clever new way to make the feeling go away. If you do it hoping the nerves will vanish, you&rsquo;ve just switched the struggle back on wearing a disguise. The aim is to stop paying the extra tax &mdash; not to get rid of the original feeling.</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 10 minutes</span>
+              <h3 class="aj-act__title">Your struggle audit</h3>
+              <p class="aj-act__intro">Almost everyone has a handful of go-to struggle strategies. They usually work brilliantly in the short term &mdash; that&rsquo;s exactly why they stick around. The question is never &ldquo;is this bad?&rdquo; It&rsquo;s <strong>&ldquo;what does it cost me over time, and is it getting me where I want to go?&rdquo;</strong></p>
+
+              <div class="aj-field">
+                <p class="aj-field__q">1. Which feeling do you fight the hardest?</p>
+                <p class="aj-field__hint">One word if you can. Nerves, anger, doubt, shame, boredom, dread, flatness.</p>
+                <input type="text" class="aj-input"
+                       data-aj="open.struggle.feeling"
+                       data-aj-tool="The Struggle Switch"
+                       data-aj-q="Which feeling do you fight the hardest?"
+                       placeholder="e.g. the dread the night before a game">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">2. What do you actually do to fight it?</p>
+                <p class="aj-field__hint">Tap everything that&rsquo;s true for you. Be honest &mdash; nobody sees this.</p>
+                <div class="aj-chips"
+                     data-aj-chips="open.struggle.strategies"
+                     data-aj-tool="The Struggle Switch"
+                     data-aj-q="What I do to fight the feeling">
+                  <button class="aj-chip">Avoid the situation</button>
+                  <button class="aj-chip">Overthink / analyse it</button>
+                  <button class="aj-chip">Distract with my phone</button>
+                  <button class="aj-chip">Pretend I&rsquo;m fine</button>
+                  <button class="aj-chip">Get angry</button>
+                  <button class="aj-chip">Go quiet / withdraw</button>
+                  <button class="aj-chip">Over-train</button>
+                  <button class="aj-chip">Under-train / skip</button>
+                  <button class="aj-chip">Eat</button>
+                  <button class="aj-chip">Drink</button>
+                  <button class="aj-chip">Seek reassurance</button>
+                  <button class="aj-chip">Perfectionism</button>
+                  <button class="aj-chip">Blame others</button>
+                  <button class="aj-chip">Push through, say nothing</button>
+                  <button class="aj-chip">Ritual / superstition</button>
+                  <button class="aj-chip">Sleep more than I need</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">3. Short term, what do those strategies give you?</p>
+                <p class="aj-field__hint">Give them credit. They wouldn&rsquo;t be there if they did nothing.</p>
+                <textarea class="aj-textarea"
+                          data-aj="open.struggle.shortterm"
+                          data-aj-tool="The Struggle Switch"
+                          data-aj-q="Short term, what do my struggle strategies give me?"
+                          placeholder="e.g. Ten minutes of relief. I don't have to feel the dread while I'm scrolling."></textarea>
+                <span class="aj-saved" data-aj-saved="open.struggle.shortterm">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">4. And long term, what do they cost you?</p>
+                <p class="aj-field__hint">Time, energy, relationships, opportunities, performance, self-respect. This is the honest bit.</p>
+                <textarea class="aj-textarea"
+                          data-aj="open.struggle.cost"
+                          data-aj-tool="The Struggle Switch"
+                          data-aj-q="Long term, what do my struggle strategies cost me?"
+                          placeholder="e.g. I sleep badly, I go into games flat, and I've stopped telling anyone when I'm struggling."></textarea>
+                <span class="aj-saved" data-aj-saved="open.struggle.cost">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">5. Be your own judge: how well is the struggle working?</p>
+                <p class="aj-field__hint">0 = it isn&rsquo;t working at all. 10 = it is genuinely solving the problem.</p>
+                <div class="aj-slider">
+                  <input type="range" min="0" max="10" value="5"
+                         data-aj="open.struggle.working"
+                         data-aj-out="swWorkVal"
+                         data-aj-tool="The Struggle Switch"
+                         data-aj-q="How well is the struggle actually working? (0–10)">
+                  <span class="aj-slider__val" id="swWorkVal">5</span>
+                </div>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">6. One place this week where you&rsquo;ll leave the switch off.</p>
+                <p class="aj-field__hint">Name the moment, not the outcome. &ldquo;When the pre-game nerves hit in the car park, I&rsquo;ll let them ride and walk in anyway.&rdquo;</p>
+                <textarea class="aj-textarea"
+                          data-aj="open.struggle.experiment"
+                          data-aj-tool="The Struggle Switch"
+                          data-aj-q="Where will I leave the struggle switch off this week?"
+                          placeholder="When ____ happens, instead of ____ I'll ____."></textarea>
+                <span class="aj-saved" data-aj-saved="open.struggle.experiment">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+            </div>
+
+            <div class="aj-block" style="margin-top:26px;">
+              <span class="aj-block__k">Take it into the week</span>
+              <p>You don&rsquo;t need to change anything yet. Just <strong>notice the switch flicking on</strong>. That&rsquo;s the whole rep. Most people find that simply catching it &mdash; &ldquo;ah, I&rsquo;m struggling with this&rdquo; &mdash; takes some of the heat out on its own.</p>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> The struggle switch is Russ Harris&rsquo;s metaphor, from <cite>The Happiness Trap</cite> (2022), ch. 13. The underlying process &mdash; experiential avoidance and its paradoxical effects &mdash; is documented in <cite>Hayes et al. (1996)</cite> and reviewed in <cite>Wenzlaff &amp; Wegner (2000), Thought suppression, Annual Review of Psychology</cite>.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       TOOL 02 — MAKING ROOM / TAME IT
+       ========================================================== -->
+  <section class="aj-sec" id="tame">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">02</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Making Room &mdash; TAME It</h2>
+              <p class="aj-tool__for">For: a feeling that&rsquo;s big and physical &mdash; the chest, the stomach, the throat &mdash; and won&rsquo;t be talked out of you.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>If the struggle switch is the <em>idea</em>, TAME is the <em>method</em>. Four steps for opening up around a difficult feeling and letting it be there without either obeying it or fighting it.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">The four steps</span>
+              <ol class="aj-steps">
+                <li><strong>T &mdash; Take note.</strong> Find the feeling in your body. Where is it most? Scan head to toe. Name what you find: <em>&ldquo;here&rsquo;s tightness across my chest&rdquo;</em>, <em>&ldquo;here&rsquo;s a churn in my stomach&rdquo;</em>.</li>
+                <li><strong>A &mdash; Allow.</strong> Give it permission to be there. Not because you like it. Because it&rsquo;s already there and arguing with reality is a losing game. Silently: <em>&ldquo;let it be&rdquo;</em>.</li>
+                <li><strong>M &mdash; Make room.</strong> Breathe into and around it. Imagine space opening up so the feeling has somewhere to sit. Then get a sense of it as an object &mdash; if it had a size, a weight, a temperature, a colour, what would they be? You are not visualising for the sake of it; describing a feeling in physical terms is what turns it from a threat into a thing you&rsquo;re observing.</li>
+                <li><strong>E &mdash; Expand awareness.</strong> Keep the feeling in view <em>and</em> widen out. Notice the room, the sounds, your feet on the floor. The feeling is now one thing in a big picture rather than the whole picture.</li>
+              </ol>
+            </div>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why it works</span>
+              <p>Two mechanisms. First, <strong>naming</strong>: putting an internal experience into words engages the prefrontal cortex and reliably reduces the reactivity of the brain&rsquo;s threat system &mdash; the effect is well documented as &ldquo;affect labelling&rdquo;. Second, <strong>exposure without avoidance</strong>: staying in contact with a feeling while <em>not</em> running your usual escape routine teaches your nervous system that the feeling itself is survivable. It doesn&rsquo;t need to be dangerous &mdash; and repeated experience is the only thing that ever really convinces a body of that.</p>
+            </div>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+              <p><strong>Start small.</strong> Nobody teaches a sailor to handle a storm by sending them into one. Practise TAME first on a 3-out-of-10 feeling &mdash; mild irritation, low-level nerves, the twinge of a small disappointment. Build up. If you go straight for the biggest thing you carry, you will conclude that the skill doesn&rsquo;t work, when in fact you just skipped the training.</p>
+            </div>
+
+            <div class="aj-eg">
+              <span class="aj-eg__k">Worked example &middot; a swimmer, behind the blocks</span>
+              <p><strong>T:</strong> <em>&ldquo;Stomach. High up, just under the ribs. Cold and fizzy.&rdquo;</em><br>
+              <strong>A:</strong> <em>&ldquo;Okay. You can be there. I&rsquo;m not sending you away.&rdquo;</em><br>
+              <strong>M:</strong> Two slow breaths into it. <em>&ldquo;About the size of a fist. Metallic. Vibrating.&rdquo;</em> Space around it.<br>
+              <strong>E:</strong> Feet on the tiles. Smell of chlorine. The starter&rsquo;s voice. The block in front of her.</p>
+              <p>Total time: about forty seconds. The fizz did not go. She swam a season best. Those two facts are not in conflict &mdash; that&rsquo;s the entire point.</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 4 minutes guided</span>
+              <h3 class="aj-act__title">Run one full TAME cycle now</h3>
+              <p class="aj-act__intro">Bring to mind something that&rsquo;s genuinely bothering you &mdash; but pick something in the <strong>3&ndash;5 out of 10</strong> range for this first go. Let the feeling show up in your body, then press start and follow the cues.</p>
+
+              <div class="aj-timer" data-aj-timer='[
+                {"phase":"T — Take note","secs":60,"cue":"Scan slowly from your head to your feet. Where do you feel this most? <strong>Name it</strong> — \"here is tightness in my chest\", \"here is a churn in my stomach\". Just noticing and naming. Nothing else."},
+                {"phase":"A — Allow","secs":45,"cue":"Silently say: <strong>\"let it be\"</strong>. You are not agreeing to like it. You are dropping the rope. Notice any urge to push it away — and let that be there too."},
+                {"phase":"M — Make room","secs":90,"cue":"Breathe <strong>into</strong> it. Then <strong>around</strong> it — imagine space opening up. Now get a sense of it as an object: how big? What weight? What temperature? Moving or still?"},
+                {"phase":"E — Expand awareness","secs":45,"cue":"Keep the feeling in view — and <strong>widen out</strong>. Your feet on the floor. Three sounds. The light in the room. The feeling is one thing in a much bigger picture."}
+              ]'>
+                <div class="aj-timer__clock" data-timer-clock>1:00</div>
+                <div class="aj-timer__phase" data-timer-phase>T &mdash; Take note</div>
+                <p class="aj-timer__cue" data-timer-cue></p>
+                <div class="aj-timer__controls">
+                  <button type="button" class="aj-btn" data-timer-start>Start</button>
+                  <button type="button" class="aj-btn aj-btn--ghost" data-timer-reset>Reset</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:24px;">
+                <p class="aj-field__q">Where did you feel it, and what was it like as an object?</p>
+                <p class="aj-field__hint">Size, weight, temperature, texture, colour, movement. Physical words only.</p>
+                <textarea class="aj-textarea"
+                          data-aj="open.tame.object"
+                          data-aj-tool="Making Room — TAME It"
+                          data-aj-q="Where did I feel it, and what was it like as an object?"
+                          placeholder="e.g. Middle of my chest. About the size of a cricket ball. Heavy, warm, pressing outwards."></textarea>
+                <span class="aj-saved" data-aj-saved="open.tame.object">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">Intensity before the practice</p>
+                <div class="aj-slider">
+                  <input type="range" min="0" max="10" value="5"
+                         data-aj="open.tame.before"
+                         data-aj-out="tameBefore"
+                         data-aj-tool="Making Room — TAME It"
+                         data-aj-q="Intensity before TAME (0–10)">
+                  <span class="aj-slider__val" id="tameBefore">5</span>
+                </div>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">Intensity after</p>
+                <p class="aj-field__hint">If it didn&rsquo;t drop, that is a completely normal and successful outcome. Read the note below.</p>
+                <div class="aj-slider">
+                  <input type="range" min="0" max="10" value="5"
+                         data-aj="open.tame.after"
+                         data-aj-out="tameAfter"
+                         data-aj-tool="Making Room — TAME It"
+                         data-aj-q="Intensity after TAME (0–10)">
+                  <span class="aj-slider__val" id="tameAfter">5</span>
+                </div>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">What changed &mdash; not in the feeling, but in your <em>grip</em> on it?</p>
+                <p class="aj-field__hint">Could you move more freely? Was it easier to think? Did it feel less like an emergency?</p>
+                <textarea class="aj-textarea"
+                          data-aj="open.tame.shift"
+                          data-aj-tool="Making Room — TAME It"
+                          data-aj-q="What changed in my grip on the feeling?"
+                          placeholder="e.g. Still there, same size. But it stopped feeling like something I had to solve before I could do anything else."></textarea>
+                <span class="aj-saved" data-aj-saved="open.tame.shift">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+            </div>
+
+            <div class="aj-warn" style="margin-top:24px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+              <p><strong>&ldquo;It didn&rsquo;t work &mdash; I still feel it.&rdquo;</strong> That is the single most common response, and it is based on a misunderstanding. TAME is not an off switch. The measure of success is not &ldquo;is the feeling smaller?&rdquo; but <strong>&ldquo;can I move, think and act more freely while it&rsquo;s here?&rdquo;</strong> If the feeling shrinks, take the bonus. Don&rsquo;t expect it, and never make it the goal &mdash; the moment you do, you&rsquo;ve turned the tool into another struggle strategy.</p>
+            </div>
+
+            <div class="aj-applied">
+              <div class="aj-applied__col aj-applied__col--sport">
+                <h5>In sport</h5>
+                <p>Behind the blocks. In the tunnel. On the bench after being subbed. In the medical room when the scan result lands. Anywhere you can&rsquo;t leave and can&rsquo;t fix it.</p>
+              </div>
+              <div class="aj-applied__col aj-applied__col--life">
+                <h5>In life</h5>
+                <p>Before an exam or a job interview. When someone hasn&rsquo;t replied. Waking at 3am. Sitting with a friend who&rsquo;s in a bad place, when you want to fix it and can&rsquo;t.</p>
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> TAME is Russ Harris&rsquo;s four-step formula from <cite>The Happiness Trap</cite> (2022), ch. 14&ndash;15. The naming mechanism is described in <cite>Lieberman et al. (2007), Putting feelings into words, Psychological Science</cite>. On acceptance as flexible exposure rather than symptom reduction, see <cite>Walser &amp; Westrup (2019), ch. 2</cite>.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       TOOL 03 — UNHOOKING (DEFUSION)
+       ========================================================== -->
+  <section class="aj-sec aj-sec--alt" id="unhook">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">03</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Unhooking From Thoughts</h2>
+              <p class="aj-tool__for">For: the sentence in your head that keeps deciding what you do.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>&ldquo;Fusion&rdquo; comes from a Latin root meaning <em>to pour</em>. When you&rsquo;re fused with a thought, the thought and the world it describes have been poured together into one thing &mdash; like water, sugar and lemons becoming lemonade. You are no longer looking <em>at</em> a thought. You&rsquo;re looking <em>from</em> it.</p>
+            <p>Think of it as sunglasses you&rsquo;ve forgotten you&rsquo;re wearing. Everything is tinted and you have no idea, because you can&rsquo;t see the lens &mdash; only the world through it. <strong>Defusion is taking the glasses off and holding them up.</strong> Same lens. But now it&rsquo;s an object you&rsquo;re inspecting, not the truth about the world.</p>
+
+            <div class="aj-vs">
+              <div class="aj-vs__col aj-vs__col--no">
+                <p class="aj-vs__tag">Hooked</p>
+                <ul>
+                  <li>&ldquo;I&rsquo;m going to choke&rdquo; is a forecast</li>
+                  <li>You argue with it, or obey it</li>
+                  <li>It decides whether you take the shot</li>
+                  <li>Your attention is inside the sentence</li>
+                  <li>It feels like reality</li>
+                </ul>
+              </div>
+              <div class="aj-vs__col aj-vs__col--yes">
+                <p class="aj-vs__tag">Unhooked</p>
+                <ul>
+                  <li>&ldquo;I&rsquo;m going to choke&rdquo; is a sentence</li>
+                  <li>You notice it and carry on</li>
+                  <li>You decide whether you take the shot</li>
+                  <li>Your attention is on the ball</li>
+                  <li>It feels like weather</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why it works</span>
+              <p>Here&rsquo;s the counter-intuitive part, and it&rsquo;s the single biggest thing that separates ACT from the version of &ldquo;mental skills&rdquo; you may have been taught before: <strong>you do not have to change the content of a thought to change its effect on you.</strong></p>
+              <p>Trying to argue a thought down usually expands the network around it and makes it <em>more</em> central. Defusion sidesteps that entirely. It changes the context in which the thought occurs &mdash; and it&rsquo;s context, not content, that determines whether a thought grabs the wheel. The typical result is a drop in how <em>believable</em> and how <em>sticky</em> the thought feels, without any change in how often it turns up.</p>
+            </div>
+
+            <div class="aj-block">
+              <span class="aj-block__k">The six moves</span>
+              <p>Different ones land for different people. Learn all six; keep the two that work for you.</p>
+              <ol class="aj-steps">
+                <li><strong>Name the thought.</strong> Put &ldquo;I&rsquo;m having the thought that&hellip;&rdquo; in front of it. Five words that turn you from the person inside the thought into the person noticing it. Want more distance? &ldquo;I notice I&rsquo;m having the thought that&hellip;&rdquo;</li>
+                <li><strong>Thank your mind.</strong> Your mind produces warnings because that is its job &mdash; it is a threat-detection machine that has kept your species alive. Say, warmly and without sarcasm, <em>&ldquo;Thanks, mind.&rdquo;</em> No argument starts, so nothing feeds it.</li>
+                <li><strong>Name the story.</strong> Your stickiest thoughts aren&rsquo;t new &mdash; they&rsquo;re reruns. Title it like a film: <em>the Not-Good-Enough story</em>, <em>the Everyone&rsquo;s-Watching story</em>. When it starts playing, just note the title.</li>
+                <li><strong>Silly voice.</strong> Say it in a cartoon voice, or sing it to <em>Happy Birthday</em>. Identical words, different packaging. If a thought can make you smirk, you&rsquo;ve just proved it&rsquo;s sound, not truth.</li>
+                <li><strong>Play with the text.</strong> Picture the words on a screen. Space them out. Run them together. Change the colour, the font, make them bounce. Watch the grip loosen as the packaging changes.</li>
+                <li><strong>Repeat it fast.</strong> Say a two-word version out loud, over and over, for thirty seconds. It dissolves into noise. That noise is what it always was.</li>
+              </ol>
+            </div>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+              <p><strong>Use the right move for the weight of the thought.</strong> The silly-voice and fast-repeat moves are for everyday sticky thoughts. If a thought is tied to something genuinely painful &mdash; grief, a serious injury, something someone did to you &mdash; use moves 1 to 3. Defusion is never about mocking what actually hurts.</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 8 minutes</span>
+              <h3 class="aj-act__title">The Unhooker</h3>
+              <p class="aj-act__intro">Type the thought that hooks you most often. Keep it short &mdash; the exact words your mind uses. Then work through all six moves and notice which one actually shifts something. <strong>There is no right answer; there&rsquo;s only what works for you.</strong></p>
+
+              <div class="aj-field">
+                <p class="aj-field__q">The thought that hooks you</p>
+                <input type="text" class="aj-input" id="unThought"
+                       data-aj="open.unhook.thought"
+                       data-aj-tool="Unhooking From Thoughts"
+                       data-aj-q="The thought that hooks me most often"
+                       placeholder="e.g. I'm going to let everyone down">
+              </div>
+
+              <div class="aj-techs" id="unTechs">
+                <button type="button" class="aj-tech" data-t="name">Name the thought</button>
+                <button type="button" class="aj-tech" data-t="thank">Thank your mind</button>
+                <button type="button" class="aj-tech" data-t="story">Name the story</button>
+                <button type="button" class="aj-tech" data-t="silly">Silly voice</button>
+                <button type="button" class="aj-tech" data-t="text">Play with text</button>
+                <button type="button" class="aj-tech" data-t="fast">Repeat it fast</button>
+              </div>
+
+              <div class="aj-out" id="unOut">
+                <p class="aj-out__hint">Type a thought above, then tap a move to see it change shape.</p>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">How much did you believe that thought <em>before</em>?</p>
+                <div class="aj-slider">
+                  <input type="range" min="0" max="10" value="8"
+                         data-aj="open.unhook.before"
+                         data-aj-out="unBefore"
+                         data-aj-tool="Unhooking From Thoughts"
+                         data-aj-q="Believability before unhooking (0–10)">
+                  <span class="aj-slider__val" id="unBefore">8</span>
+                </div>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">And how much does it push you around <em>now</em>?</p>
+                <div class="aj-slider">
+                  <input type="range" min="0" max="10" value="8"
+                         data-aj="open.unhook.after"
+                         data-aj-out="unAfter"
+                         data-aj-tool="Unhooking From Thoughts"
+                         data-aj-q="How much it pushes me around after unhooking (0–10)">
+                  <span class="aj-slider__val" id="unAfter">8</span>
+                </div>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">Which move worked best for you?</p>
+                <div class="aj-chips" data-aj-single
+                     data-aj-chips="open.unhook.best"
+                     data-aj-tool="Unhooking From Thoughts"
+                     data-aj-q="The unhooking move that worked best for me">
+                  <button class="aj-chip">Name the thought</button>
+                  <button class="aj-chip">Thank your mind</button>
+                  <button class="aj-chip">Name the story</button>
+                  <button class="aj-chip">Silly voice</button>
+                  <button class="aj-chip">Play with text</button>
+                  <button class="aj-chip">Repeat it fast</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">Name your story &mdash; give the recurring one a title.</p>
+                <p class="aj-field__hint">Short, a bit wry, easy to say to yourself mid-game. &ldquo;Ah &mdash; the Bottler story. Seen this one.&rdquo;</p>
+                <input type="text" class="aj-input"
+                       data-aj="open.unhook.story"
+                       data-aj-tool="Unhooking From Thoughts"
+                       data-aj-q="My recurring story, named"
+                       placeholder="e.g. The 'they're all watching' story">
+              </div>
+            </div>
+
+            <div class="aj-block" style="margin-top:26px;">
+              <span class="aj-block__k">Take it into the week</span>
+              <p>Run this sequence whenever you notice you&rsquo;re hooked: <strong>(1)</strong> notice and name it &mdash; &ldquo;here&rsquo;s the ___ story&rdquo;. <strong>(2)</strong> Still hooked? Use your best playful move. <strong>(3)</strong> Still hooked? Drop anchor (that&rsquo;s in the <a href="grow-athlete-aware.html#anchor">Aware</a> toolkit). Three steps, in that order, every time.</p>
+            </div>
+
+            <div class="aj-watch is-single">
+              <figure class="aj-vid">
+                <div class="aj-vid__frame" data-yt="_X0mgOOSpLU">
+                  <button class="aj-vid__play" aria-label="Play: Carol Dweck on believing you can improve" style="background-image:url('https://i.ytimg.com/vi/_X0mgOOSpLU/hqdefault.jpg')">
+                    <span class="aj-vid__badge">Related</span>
+                    <span class="aj-vid__btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+                  </button>
+                </div>
+                <figcaption class="aj-vid__cap"><b>Carol Dweck &mdash; The power of believing you can improve.</b> The stories we hold about our own ability are among the stickiest thoughts there are. <em>Watch for:</em> how a fixed story shuts down effort long before ability does.</figcaption>
+              </figure>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> Defusion techniques adapted from <cite>Harris, The Happiness Trap (2022), ch. 6&ndash;7</cite> and <cite>Walser &amp; Westrup, Learning ACT (2019), ch. 3</cite>. On why changing context beats changing content, see <cite>Levin et al. (2012), meta-analysis of ACT component studies</cite>.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       TOOL 04 — HELPFUL VS TRUE
+       ========================================================== -->
+  <section class="aj-sec" id="workability">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">04</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Helpful vs True</h2>
+              <p class="aj-tool__for">For: when you&rsquo;re stuck arguing with your own head about whether a thought is fair.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>A short-cut out of an argument you cannot win. When a harsh thought turns up &mdash; <em>&ldquo;I&rsquo;m not good enough for this level&rdquo;</em> &mdash; the instinct is to check whether it&rsquo;s true. Gather the evidence. List your achievements. Debate it.</p>
+            <p>You can burn hours in there, and most of the time it changes nothing, because a lot of harsh thoughts contain a grain of truth. That&rsquo;s exactly what makes them stick.</p>
+            <p>So we ask a different question. Not <em>is this true?</em> but <strong>is this useful?</strong> If a thought helps you be the person you want to be, do what you want to do, and build the life you want &mdash; take it, use it. If it doesn&rsquo;t, you don&rsquo;t have to disprove it. You just don&rsquo;t have to obey it.</p>
+
+            <div class="aj-eg">
+              <span class="aj-eg__k">Worked example &middot; the client who was right</span>
+              <p>A man came in convinced he was overweight. He was. He wanted to argue about whether the thought was accurate. His clinician wouldn&rsquo;t take the bet, and asked instead: <em>&ldquo;When your mind calls you lazy and disgusting &mdash; what happens next?&rdquo;</em></p>
+              <p><em>&ldquo;I get low.&rdquo;</em> And then? <em>&ldquo;I eat rubbish.&rdquo;</em></p>
+              <p>So the thought was accurate <em>and</em> it was reliably driving the opposite of what he cared about. Both things at once. Truth turned out to be the wrong question entirely. <span style="color:var(--muted);">(Adapted from Harris, The Happiness Trap, ch. 7.)</span></p>
+            </div>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why it works</span>
+              <p>This is <strong>workability</strong>, the pragmatic test at the centre of ACT. Instead of measuring a thought against reality, you measure it against your own direction of travel. It sidesteps the debate entirely, and it puts the decision back with you rather than with your mind.</p>
+              <p>There&rsquo;s a second reason, and it matters for athletes especially. Harsh self-criticism <em>does</em> sometimes kick you into action &mdash; which is why so many high performers swear by it. But the long-run bill is steep: stress, burnout, exhaustion, and a self-worth that collapses the moment performance dips. This is the engine of unhealthy perfectionism. There are better motivators, and the <a href="grow-athlete-engaged.html#values">Engaged</a> toolkit is full of them.</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 6 minutes</span>
+              <h3 class="aj-act__title">The workability check</h3>
+              <p class="aj-act__intro">Take a thought that&rsquo;s been running lately &mdash; ideally one you suspect might be at least partly true, because that&rsquo;s where this tool earns its keep.</p>
+
+              <div class="aj-field">
+                <p class="aj-field__q">The thought</p>
+                <input type="text" class="aj-input"
+                       data-aj="open.work.thought"
+                       data-aj-tool="Helpful vs True"
+                       data-aj-q="The thought I'm testing"
+                       placeholder="e.g. I'm the weakest link in this squad">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">1. Is this an old thought? Have you heard it before?</p>
+                <p class="aj-field__hint">If you&rsquo;ve heard it a hundred times, ask what listening to it again gets you.</p>
+                <textarea class="aj-textarea"
+                          data-aj="open.work.old"
+                          data-aj-tool="Helpful vs True"
+                          data-aj-q="Is this an old thought? What does listening to it again get me?"
+                          placeholder="e.g. Heard it since I was 14. It's never once made me train better."></textarea>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">2. When you buy into it, what do you actually <em>do</em> next?</p>
+                <p class="aj-field__hint">Behaviour, not feelings. What does the tape show?</p>
+                <textarea class="aj-textarea"
+                          data-aj="open.work.behaviour"
+                          data-aj-tool="Helpful vs True"
+                          data-aj-q="When I buy into this thought, what do I actually do next?"
+                          placeholder="e.g. I stop asking for the ball. I train hard but I go silent in the group."></textarea>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">3. Does that take you towards, or away from, the athlete and person you want to be?</p>
+                <div class="aj-chips" data-aj-single
+                     data-aj-chips="open.work.direction"
+                     data-aj-tool="Helpful vs True"
+                     data-aj-q="Does buying into this thought take me towards or away?">
+                  <button class="aj-chip">Towards</button>
+                  <button class="aj-chip">Away</button>
+                  <button class="aj-chip">Both, depending</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">4. Is there anything genuinely useful buried in it?</p>
+                <p class="aj-field__hint">Sometimes there is. &ldquo;I&rsquo;m the weakest link&rdquo; might be carrying real information: <em>my left foot needs work</em>. Strip out the insult and keep the data.</p>
+                <textarea class="aj-textarea"
+                          data-aj="open.work.signal"
+                          data-aj-tool="Helpful vs True"
+                          data-aj-q="What's genuinely useful buried in this thought?"
+                          placeholder="e.g. The useful bit: my aerobic base is behind. The useless bit: everything else it says about me."></textarea>
+                <span class="aj-saved" data-aj-saved="open.work.signal">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">5. So: keep it, or hold it lightly?</p>
+                <p class="aj-field__hint">Write the one-line verdict you&rsquo;ll say to yourself next time it shows up.</p>
+                <input type="text" class="aj-input"
+                       data-aj="open.work.verdict"
+                       data-aj-tool="Helpful vs True"
+                       data-aj-q="My verdict on this thought"
+                       placeholder="e.g. 'Noted. The bit about my left foot goes in the training plan. The rest can ride along.'">
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> Workability and the helpful-versus-true distinction: <cite>Harris, The Happiness Trap (2022), ch. 7</cite>. On functional contextualism &mdash; truth defined by what works in the service of chosen values &mdash; see <cite>Walser &amp; Westrup (2019), ch. 1</cite>; <cite>Biglan &amp; Hayes (2016)</cite>.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       TOOL 05 — URGE SURFING
+       ========================================================== -->
+  <section class="aj-sec aj-sec--alt" id="urge">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">05</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Urge Surfing</h2>
+              <p class="aj-tool__for">For: the urge to snap at the ref, to skip the session, to check the phone, to say the thing you&rsquo;ll regret.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>Sit on a beach and watch a wave. It starts small, builds, gathers speed, reaches a crest &mdash; then subsides. Give it room and it does that harmlessly. Put something solid in its way and it explodes.</p>
+            <p>Urges do exactly the same thing. The instinct is to obey them or to fight them. Surfing is the third option: you neither give in nor resist. You watch the urge rise, crest and fall, and you don&rsquo;t act on it.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why it works</span>
+              <p>Most urges run their full wave in around <strong>three minutes</strong>. People often protest that theirs last for hours &mdash; and they&rsquo;re right, because resisting is what stretches them out. Fighting an urge, ruminating about it, or trying to distract yourself all keep it alive. Make room for it and the wave tends to complete quickly.</p>
+              <p>The technique came out of Alan Marlatt and Judith Gordon&rsquo;s work on addiction in the 1980s. The same principle transfers to any urge at all &mdash; including the small ones that quietly cost athletes seasons.</p>
+            </div>
+
+            <div class="aj-block">
+              <span class="aj-block__k">How to do it</span>
+              <ol class="aj-steps">
+                <li><strong>Take note.</strong> Where do you feel the urge? Restless legs? Tight jaw? Heat in the chest? Hands wanting to move? Name it: <em>&ldquo;here&rsquo;s an urge to&hellip;&rdquo;</em></li>
+                <li><strong>Allow.</strong> Give it permission to be there. &ldquo;Let it be.&rdquo;</li>
+                <li><strong>Make room.</strong> Breathe around it. Let it rise and peak and fall in its own time.</li>
+                <li><strong>Expand.</strong> Keep the urge in view and widen out to the room, the body, the task.</li>
+                <li><strong>Score it as it moves.</strong> Out loud or silently: <em>&ldquo;it&rsquo;s a 7&hellip; now an 8&hellip; still 8&hellip; now a 6.&rdquo;</em> Scoring is what turns it from a command into a wave you&rsquo;re watching.</li>
+              </ol>
+            </div>
+
+            <div class="aj-eg">
+              <span class="aj-eg__k">Worked example &middot; a footballer, minute 63</span>
+              <p>Bad tackle, no card, and the urge to go after the player is instant and total. <strong>Take note:</strong> heat in the face, hands balled. <strong>Allow:</strong> &ldquo;yep, there it is.&rdquo; <strong>Score:</strong> a 9. He jogs back to position, still a 9. Ten seconds: 8. Twenty: 6. By the goal kick it&rsquo;s a 4 and he&rsquo;s in shape.</p>
+              <p>He didn&rsquo;t calm down and he didn&rsquo;t &ldquo;let it go&rdquo;. He just refused to hand the urge his legs for ninety seconds. That&rsquo;s all it took.</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 3 minutes + one real rep</span>
+              <h3 class="aj-act__title">Surf one wave</h3>
+              <p class="aj-act__intro">First map your urge. Then, next time it turns up for real, run the timer and log the wave. <strong>Riding one wave all the way through, once, teaches you more than reading this ten times.</strong></p>
+
+              <div class="aj-field">
+                <p class="aj-field__q">1. Which urge costs you the most?</p>
+                <input type="text" class="aj-input"
+                       data-aj="open.urge.what"
+                       data-aj-tool="Urge Surfing"
+                       data-aj-q="The urge that costs me most"
+                       placeholder="e.g. The urge to argue with the ref">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">2. What sets it off?</p>
+                <p class="aj-field__hint">Be precise about the trigger. Precision is what lets you see it coming.</p>
+                <input type="text" class="aj-input"
+                       data-aj="open.urge.trigger"
+                       data-aj-tool="Urge Surfing"
+                       data-aj-q="What sets this urge off"
+                       placeholder="e.g. A decision going against me when we're already behind">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">3. Where do you feel it in your body?</p>
+                <p class="aj-field__hint">This is your early-warning system. Learn it and you get seconds of choice you didn&rsquo;t have before.</p>
+                <input type="text" class="aj-input"
+                       data-aj="open.urge.body"
+                       data-aj-tool="Urge Surfing"
+                       data-aj-q="Where I feel this urge in my body"
+                       placeholder="e.g. Jaw clamps, heat up the back of my neck, hands close">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">4. What will you do <em>instead</em>?</p>
+                <p class="aj-field__hint">Not &ldquo;don&rsquo;t react&rdquo; &mdash; a corpse can do that better than you. Name a live action: jog to position, three breaths, touch the wristband, look for the next job.</p>
+                <input type="text" class="aj-input"
+                       data-aj="open.urge.instead"
+                       data-aj-tool="Urge Surfing"
+                       data-aj-q="What I'll do instead of acting on the urge"
+                       placeholder="e.g. Turn away, jog five steps, find my mark, score the urge">
+              </div>
+
+              <p class="aj-field__hint" style="margin:22px 0 10px;">Now practise the shape of it. Three minutes &mdash; the length of an average wave.</p>
+
+              <div class="aj-timer" data-aj-timer='[
+                {"phase":"Take note &amp; name","secs":30,"cue":"Bring the urge to mind, or work with any restlessness that&rsquo;s here now. Where is it in your body? Name it: <strong>\"here&rsquo;s an urge to…\"</strong>"},
+                {"phase":"Allow &amp; score","secs":60,"cue":"Give it room. Now <strong>score it 0&ndash;10</strong>. Say the number silently. Notice whether it&rsquo;s rising, holding or falling. You are watching a wave, not fighting one."},
+                {"phase":"Ride the crest","secs":60,"cue":"This is the peak — where you&rsquo;d normally give in. Keep breathing around it. <strong>Score it again.</strong> Add a kind line if it helps: <em>\"this is hard, and I can surf this.\"</em>"},
+                {"phase":"Watch it fall","secs":30,"cue":"Score it once more. Whether it&rsquo;s dropped or not, notice this: <strong>you didn&rsquo;t act on it.</strong> That is the entire skill, and you just did it."}
+              ]'>
+                <div class="aj-timer__clock" data-timer-clock>0:30</div>
+                <div class="aj-timer__phase" data-timer-phase>Take note &amp; name</div>
+                <p class="aj-timer__cue" data-timer-cue></p>
+                <div class="aj-timer__controls">
+                  <button type="button" class="aj-btn" data-timer-start>Start</button>
+                  <button type="button" class="aj-btn aj-btn--ghost" data-timer-reset>Reset</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:24px;">
+                <p class="aj-field__q">5. Log a real wave</p>
+                <p class="aj-field__hint">After you&rsquo;ve surfed one for real: what were the numbers, how long did it take, and what did you do instead?</p>
+                <textarea class="aj-textarea"
+                          data-aj="open.urge.log"
+                          data-aj-tool="Urge Surfing"
+                          data-aj-q="My real urge-surf log"
+                          placeholder="e.g. Tuesday training. Urge to walk off after being dropped from the drill. Peaked at 8, down to 3 in about two minutes. I stayed and did the next rep."></textarea>
+                <span class="aj-saved" data-aj-saved="open.urge.log">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> Urge surfing was developed by <cite>Marlatt &amp; Gordon (1985), Relapse Prevention</cite>. The TAME adaptation and the three-minute wave: <cite>Harris, The Happiness Trap (2022), ch. 15</cite>.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       TOOL 06 — KIND HANDS
+       ========================================================== -->
+  <section class="aj-sec" id="kind">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">06</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Kind Hands &amp; the Teammate Test</h2>
+              <p class="aj-tool__for">For: after a bad one. When the voice in your head is the harshest coach you&rsquo;ve ever had.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>Two moves that go together: kind words, and kind touch.</p>
+            <p>Let&rsquo;s deal with the obvious objection first, because most athletes have it. The first time this gets suggested, a lot of people react the way one of Russ Harris&rsquo;s clients did: <em>&ldquo;what&rsquo;s this new-age rubbish?&rdquo;</em> Fair enough. Try it anyway and judge it on what happens, not on how it sounds.</p>
+            <p><strong>Kind hands:</strong> place a hand on your chest or your stomach (or let it hover just above), and deliberately send warmth inward. That hand has held someone who was upset, or hugged a mate who was struggling. Put that same quality into it, aimed at yourself.</p>
+            <p><strong>Kind words:</strong> say to yourself, silently, what you&rsquo;d say to a teammate in exactly your position. Not a pep talk. Not a lie. Just the honest, warm thing you&rsquo;d actually say to someone you rated.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why it works</span>
+              <p>Every painful feeling is telling you something: <strong>that you care.</strong> There&rsquo;s a gap between the reality you wanted and the reality you got, and the size of the pain tracks the size of that gap. Which means the hurt after a bad game isn&rsquo;t a defect. It&rsquo;s evidence that this matters to you.</p>
+              <p>Self-criticism and self-reassurance activate different systems &mdash; criticism engages error-processing and threat circuitry, warmth engages the systems tied to compassion and soothing. That&rsquo;s why the harsh voice reliably keeps you agitated even when its content is accurate. And in athletes, self-compassion is consistently associated with better recovery from setbacks, more persistence, and less of the rumination that turns one bad performance into a bad month.</p>
+            </div>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+              <p><strong>This is not letting yourself off.</strong> Self-compassion is not the same as low standards &mdash; if anything the evidence runs the other way, because people who aren&rsquo;t terrified of their own reaction to failure look at their failures more honestly. You can review a shocking performance with complete rigour <em>and</em> not tear strips off yourself while you do it. Those are separate dials.</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 7 minutes</span>
+              <h3 class="aj-act__title">The teammate test</h3>
+              <p class="aj-act__intro">This works best when you&rsquo;re actually smarting from something. If nothing is live right now, bring to mind the last performance you&rsquo;re still annoyed about.</p>
+
+              <div class="aj-field">
+                <p class="aj-field__q">1. What is your mind saying to you about it?</p>
+                <p class="aj-field__hint">Write it as it actually sounds, in the actual words. Don&rsquo;t soften it &mdash; the point is to get it out where you can see it.</p>
+                <textarea class="aj-textarea"
+                          data-aj="open.kind.harsh"
+                          data-aj-tool="Kind Hands & the Teammate Test"
+                          data-aj-q="What my mind says to me after a bad one"
+                          placeholder="e.g. You bottled it. Again. Everyone saw. You don't belong at this level."></textarea>
+                <span class="aj-saved" data-aj-saved="open.kind.harsh">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">2. Now imagine a teammate you rate, in exactly that position, saying exactly that to themselves.</p>
+                <p class="aj-field__hint">Same performance, same stakes, same everything. What would you say to them? Write it to them, by name.</p>
+                <textarea class="aj-textarea"
+                          data-aj="open.kind.teammate"
+                          data-aj-tool="Kind Hands & the Teammate Test"
+                          data-aj-q="What I'd say to a teammate in exactly my position"
+                          placeholder="e.g. Mate, you were carrying that game for 60 minutes. One error doesn't undo that. Get some sleep and we'll look at the footage Tuesday."></textarea>
+                <span class="aj-saved" data-aj-saved="open.kind.teammate">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">3. Notice the gap.</p>
+                <p class="aj-field__hint">Almost everyone finds the two answers are wildly different. What does that tell you?</p>
+                <textarea class="aj-textarea"
+                          data-aj="open.kind.gap"
+                          data-aj-tool="Kind Hands & the Teammate Test"
+                          data-aj-q="What the gap between those two answers tells me"
+                          placeholder="e.g. I'd never speak to anyone else the way I speak to me. And I'd think less of a coach who did."></textarea>
+              </div>
+
+              <p class="aj-field__hint" style="margin:22px 0 10px;">Now the physical half. Follow the cues &mdash; hand on your chest, or hovering just above if you&rsquo;d rather not touch.</p>
+
+              <div class="aj-timer" data-aj-timer='[
+                {"phase":"Find it","secs":40,"cue":"Where is the hurt in your body? Notice it. Name it. <strong>Don&rsquo;t try to change it.</strong>"},
+                {"phase":"Fill the hand","secs":30,"cue":"Turn one hand palm up. This hand has comforted people. <strong>Put that same kindness into it now</strong> — feel it, imagine it, or just decide it&rsquo;s there."},
+                {"phase":"Rest it there","secs":60,"cue":"Place the hand on your chest, or over the feeling. Let warmth flow inward. Imagine your body <strong>softening around the pain</strong>, making space. Hold it the way you&rsquo;d hold something fragile."},
+                {"phase":"Say the words","secs":50,"cue":"Silently say what you wrote to your teammate — <strong>to yourself, by your own name</strong>. If you&rsquo;re stuck: <em>\"this really hurts. Be kind.\"</em>"},
+                {"phase":"Acknowledge","secs":40,"cue":"This feeling is a sign you care. There&rsquo;s a gap between what you wanted and what you got, and <strong>that gap is what hurts</strong>. Every athlete alive has that. Can you make peace with it — even though it hurts?"}
+              ]'>
+                <div class="aj-timer__clock" data-timer-clock>0:40</div>
+                <div class="aj-timer__phase" data-timer-phase>Find it</div>
+                <p class="aj-timer__cue" data-timer-cue></p>
+                <div class="aj-timer__controls">
+                  <button type="button" class="aj-btn" data-timer-start>Start</button>
+                  <button type="button" class="aj-btn aj-btn--ghost" data-timer-reset>Reset</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:24px;">
+                <p class="aj-field__q">4. Your line.</p>
+                <p class="aj-field__hint">One sentence, in your words, that you&rsquo;ll say to yourself next time. Short enough to remember in a car park at 10pm.</p>
+                <input type="text" class="aj-input"
+                       data-aj="open.kind.line"
+                       data-aj-tool="Kind Hands & the Teammate Test"
+                       data-aj-q="My self-compassion line"
+                       placeholder="e.g. 'That hurt because it mattered. Same person tomorrow.'">
+              </div>
+            </div>
+
+            <div class="aj-applied">
+              <div class="aj-applied__col aj-applied__col--sport">
+                <h5>In sport</h5>
+                <p>The drive home. The night after a deselection. Week three of a long rehab, when the progress has stalled and nobody&rsquo;s asking how you are any more.</p>
+              </div>
+              <div class="aj-applied__col aj-applied__col--life">
+                <h5>In life</h5>
+                <p>After results come out. After a fight with someone you love. Lying awake at 3am with dread. This is the one people report using most outside sport &mdash; by a distance.</p>
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> Kind hands and the TAME-with-kindness routine: <cite>Harris, The Happiness Trap (2022), ch. 11 and 15</cite>. On distinct neural signatures for self-criticism versus self-reassurance, see the research summarised in <cite>Magness, Do Hard Things (2022), ch. 7</cite>. Foundational self-compassion work: <cite>Neff (2003)</cite>; <cite>Gilbert (2009)</cite>.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CLOSE ========== -->
+  <section class="aj-sec aj-sec--alt">
+    <div class="container">
+      <div class="aj-wrap">
+        <div class="aj-takeaways">
+          <h3>The whole pillar in six lines</h3>
+          <ul>
+            <li><strong>The fight is the problem.</strong> Not the nerves, the doubt or the anger &mdash; the war you wage against them.</li>
+            <li><strong>There is no delete button.</strong> Anyone selling you one is selling you a struggle strategy in a nicer box.</li>
+            <li><strong>Name it to tame it.</strong> Putting an experience into words takes the heat out of it, every time.</li>
+            <li><strong>You don&rsquo;t have to change a thought to change its grip.</strong> Change the context instead.</li>
+            <li><strong>Ask &ldquo;is this useful?&rdquo;, not &ldquo;is this true?&rdquo;</strong> You&rsquo;ll never win the second argument.</li>
+            <li><strong>The hurt means you care.</strong> Treat it accordingly.</li>
+          </ul>
+        </div>
+
+        <div class="aj-nextnav">
+          <a href="grow-athlete.html">
+            <div class="aj-nextnav__dir">&larr; Back to</div>
+            <div class="aj-nextnav__title">Skills Journal home</div>
+          </a>
+          <a href="grow-athlete-aware.html" class="aj-nextnav--end">
+            <div class="aj-nextnav__dir">Next pillar &rarr;</div>
+            <div class="aj-nextnav__title">Aware</div>
+          </a>
+        </div>
+
+        <div class="aj-disclaimer">
+          <p>These skills support the work we do together &mdash; they don&rsquo;t replace it, and they aren&rsquo;t therapy or a crisis service. If something in here has stirred up more than you expected, that is worth bringing to your next session, or sooner. Free, confidential support is available 24/7 across Aotearoa: call or text <a href="tel:1737">1737</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom" style="border-top:none;">
+        <p>&copy; 2026 The Performance Act. Private athlete area.</p>
+        <div class="footer__bottom-links">
+          <a href="grow-athlete.html">Skills Journal</a>
+          <a href="grow-athlete-journal.html">My Journal</a>
+          <a href="grow-athlete.html#sources">Sources</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- ========== NZ SUPPORT LINES ========== -->
+  <button class="support-line-btn" id="supportLineBtn" aria-label="NZ support lines">
+    <span class="support-line-btn__dot" aria-hidden="true"></span>
+    Immediate Support
+  </button>
+  <div class="support-line-modal" id="supportLineModal" role="dialog" aria-modal="true" aria-labelledby="supportLineTitle" aria-hidden="true">
+    <div class="support-line-modal__backdrop"></div>
+    <div class="support-line-modal__panel">
+      <button class="support-line-modal__close" id="supportLineClose" aria-label="Close support lines">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <p class="support-line-modal__eyebrow">Aotearoa, New Zealand</p>
+      <h2 class="support-line-modal__title" id="supportLineTitle">Need immediate support?</h2>
+      <p class="support-line-modal__note">The Performance Act is a sport psychology practice, not a crisis or emergency service. If you or someone you care about needs immediate support, please reach out to one of these trusted services. They are free, confidential, and available 24&#8202;/&#8202;7.</p>
+      <ul class="support-line-modal__list" role="list">
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">1737 &mdash; Need to Talk?</p><p class="sln-resource__desc">Free call or text, any time. Trained counsellors, 24&#47;7.</p></div>
+          <a href="tel:1737" class="sln-resource__number">Call or text 1737</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Lifeline NZ</p><p class="sln-resource__desc">Crisis support and suicide prevention, 24&#47;7.</p></div>
+          <a href="tel:0800543354" class="sln-resource__number">0800 543 354</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Youthline</p><p class="sln-resource__desc">For young people. Free call or text 234, 24&#47;7.</p></div>
+          <a href="tel:0800376633" class="sln-resource__number">0800 376 633</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Suicide Crisis Helpline</p><p class="sln-resource__desc">0508 TAUTOKO. Support for those in crisis, 24&#47;7.</p></div>
+          <a href="tel:0508828865" class="sln-resource__number">0508 828 865</a>
+        </li>
+      </ul>
+      <p class="support-line-modal__footer">More resources at <a href="https://www.mentalhealth.org.nz/get-help/in-crisis" target="_blank" rel="noopener">Mental Health Foundation NZ</a> and <a href="https://www.depression.org.nz" target="_blank" rel="noopener">depression.org.nz</a>.</p>
+    </div>
+  </div>
+
+  <script src="script.js?v=5"></script>
+  <script src="grow-athlete.js?v=1"></script>
+
+  <script>
+  /* ==========================================================
+     PAGE WIDGETS — struggle switch + the unhooker
+     ========================================================== */
+  (function () {
+    'use strict';
+    var esc = (window.AJ && window.AJ.esc) || function (s) { return s; };
+
+    /* ---------- 1. STRUGGLE SWITCH ---------- */
+    var LAYERS_ON = [
+      { name: 'The original nerves', val: 45 },
+      { name: '+ Anxiety about the anxiety', val: 60, extra: true },
+      { name: '+ Frustration that it&rsquo;s happening again', val: 70, extra: true },
+      { name: '+ Shame about the frustration', val: 80, extra: true }
+    ];
+    var LAYERS_OFF = [
+      { name: 'The original nerves', val: 45 }
+    ];
+
+    var stack = document.getElementById('swStack');
+    var totalEl = document.getElementById('swTotal');
+    var capEl = document.getElementById('swCaption');
+    var onBtn = document.getElementById('swOn');
+    var offBtn = document.getElementById('swOff');
+    if (!stack) return;
+
+    function paint(on) {
+      var layers = on ? LAYERS_ON : LAYERS_OFF;
+      stack.innerHTML = layers.map(function (l) {
+        return '<div class="sw__layer">' +
+          '<div class="sw__layer-top"><span class="sw__layer-name">' + l.name + '</span>' +
+          '<span class="sw__layer-val">' + l.val + '</span></div>' +
+          '<div class="sw__track"><div class="sw__fill' + (l.extra ? ' sw__fill--extra' : '') + '" style="width:0"></div></div>' +
+          '</div>';
+      }).join('');
+
+      /* animate in on the next frame so the transition fires */
+      requestAnimationFrame(function () {
+        stack.querySelectorAll('.sw__fill').forEach(function (f, i) {
+          f.style.width = layers[i].val + '%';
+        });
+      });
+
+      var total = layers.reduce(function (n, l) { return n + l.val; }, 0);
+      totalEl.textContent = total;
+
+      capEl.innerHTML = on
+        ? 'Switch <b>on</b>. The nerves haven&rsquo;t moved &mdash; they&rsquo;re still a 45. But you&rsquo;re now carrying <strong>four things instead of one</strong>, and three of them were manufactured entirely by the fight. This is why it feels like it&rsquo;s getting worse the harder you try.'
+        : 'Switch <b>off</b>. Same nerves. Same 45. <strong>No extra layers</strong>, because nothing is being manufactured. You didn&rsquo;t get rid of anything &mdash; you just stopped paying the tax on it.';
+
+      onBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      offBtn.setAttribute('aria-pressed', on ? 'false' : 'true');
+    }
+
+    onBtn.addEventListener('click', function () { paint(true); });
+    offBtn.addEventListener('click', function () { paint(false); });
+    paint(true);
+
+    /* ---------- 2. THE UNHOOKER ---------- */
+    var input = document.getElementById('unThought');
+    var out = document.getElementById('unOut');
+    var techWrap = document.getElementById('unTechs');
+    if (!input || !out || !techWrap) return;
+    var active = null;
+
+    /* Pull a usable story name out of the athlete's own words. Leading
+       filler ("I'm going to…", "I always…") makes a hopeless title, so
+       skip past it and take the words that actually carry the meaning. */
+    var FILLER = /^(i|i'm|im|i've|ive|i'll|ill|am|a|an|the|is|are|was|were|be|been|going|gonna|to|too|so|just|really|always|never|keep|keeps|feel|feels|felt|think|thinks|thought|know|knows|that|this|it|its|it's|my|me|will|would|can|can't|cant|don't|dont|not|no|maybe|probably|definitely|about|of|for|and|but|like)$/i;
+
+    function shortLabel(t) {
+      var words = t.replace(/[.,!?;:]+/g, ' ').split(/\s+/).filter(Boolean);
+      var start = 0;
+      while (start < words.length - 1 && FILLER.test(words[start])) start++;
+      var picked = words.slice(start, start + 3).join(' ');
+      if (!picked) picked = words.slice(0, 3).join(' ');
+      return picked || 'that';
+    }
+
+    function render() {
+      var raw = (input.value || '').trim();
+      if (!raw) {
+        out.innerHTML = '<p class="aj-out__hint">Type a thought above, then tap a move to see it change shape.</p>';
+        return;
+      }
+      var t = esc(raw), result = '', why = '';
+
+      switch (active) {
+        case 'name':
+          result = 'I&rsquo;m having the thought that <b>&ldquo;' + t + '&rdquo;</b>';
+          why = 'Five extra words, and you&rsquo;ve moved from being <em>inside</em> the thought to being the one <em>noticing</em> it. Want more room still? &ldquo;I notice I&rsquo;m having the thought that&hellip;&rdquo;';
+          break;
+        case 'thank':
+          result = '<span>&ldquo;Thanks, mind. I know you&rsquo;re trying to help.&rdquo;</span><br>' + t;
+          why = 'No agreeing, no arguing. You&rsquo;ve acknowledged that your mind is doing its job &mdash; threat detection &mdash; and carried on anyway. The argument never starts, so nothing feeds it.';
+          break;
+        case 'story':
+          result = 'Ah &mdash; here&rsquo;s my <b>&ldquo;' + esc(shortLabel(raw)) + '&rdquo; story</b> again.';
+          why = 'A rerun loses its punch the moment you recognise it as a rerun. You&rsquo;re not disputing the story &mdash; you&rsquo;ve just stopped watching it like it&rsquo;s breaking news.';
+          break;
+        case 'silly':
+          result = 'Now say it out loud, in a cartoon voice:<br><b>&ldquo;' + t + '&rdquo;</b>';
+          why = 'Identical words, different packaging. If you can smirk at a thought, you&rsquo;ve just proved to yourself it&rsquo;s <em>sound</em> rather than truth. Skip this one if the thought is tied to something that genuinely hurts.';
+          break;
+        case 'text':
+          result = '<b>' + t.split('').join('&thinsp;') + '</b><br><span style="letter-spacing:-0.06em;">' + t.replace(/\s+/g, '') + '</span>';
+          why = 'Spaced out, then run together. Same words &mdash; but once you can see them as marks on a page rather than a message about the world, they stop being an instruction.';
+          break;
+        case 'fast':
+          var two = raw.split(/\s+/).slice(0, 2).join(' ') || raw;
+          result = esc((two + ' &middot; ').repeat(7)).trim().replace(/&middot;\s*$/, '');
+          why = 'Say a two-word version out loud, fast, for thirty seconds. It dissolves into noise. That noise is what it always was &mdash; sound your mouth makes.';
+          break;
+        default:
+          out.innerHTML = '<p class="aj-out__result"><span>' + t + '</span></p>' +
+                          '<p class="aj-out__why">There&rsquo;s your thought, sitting on a page instead of running the show. Now tap a move above and watch the grip change.</p>';
+          return;
+      }
+      out.innerHTML = '<p class="aj-out__result">' + result + '</p><p class="aj-out__why">' + why + '</p>';
+    }
+
+    input.addEventListener('input', render);
+    input.addEventListener('aj:restored', render);
+
+    techWrap.querySelectorAll('.aj-tech').forEach(function (b) {
+      b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', function () {
+        var t = b.getAttribute('data-t');
+        active = (active === t) ? null : t;
+        techWrap.querySelectorAll('.aj-tech').forEach(function (o) {
+          o.setAttribute('aria-pressed', o.getAttribute('data-t') === active ? 'true' : 'false');
+        });
+        render();
+      });
+    });
+
+    render();
+  })();
+  </script>
+</body>
+</html>

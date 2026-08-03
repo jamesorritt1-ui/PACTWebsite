@@ -1619,37 +1619,43 @@
 
         <p class="gw-card__eyebrow">The Performance Act</p>
         <h1 class="gw-card__title">GROW<br><span>PLATFORM</span></h1>
-        <p class="gw-card__sub">Your club's exclusive sport psychology resource hub</p>
+        <p class="gw-card__sub">Your private sport psychology resource hub</p>
 
         <form id="gwForm" novalidate>
           <div class="gw-form-group">
-            <label class="gw-label" for="clubSelect">Select Club</label>
+            <label class="gw-label" for="clubSelect">Select Your Area</label>
             <div class="gw-select-wrap">
               <select class="gw-select" id="clubSelect">
-                <option value="">— Select your club —</option>
-                <option value="nomads">Nomads United AFC</option>
-                <option value="marist">Marist Albion Rugby Academy</option>
+                <option value="">— Select your club or area —</option>
+                <optgroup label="Clubs &amp; Academies">
+                  <option value="nomads">Nomads United AFC</option>
+                  <option value="marist">Marist Albion Rugby Academy</option>
+                </optgroup>
+                <optgroup label="One-to-One">
+                  <option value="individual">Individual Athlete — Skills Journal</option>
+                </optgroup>
               </select>
             </div>
           </div>
 
           <div class="gw-form-group">
-            <label class="gw-label" for="pwInput">Club Password</label>
+            <label class="gw-label" for="pwInput">Password</label>
             <input
               class="gw-input"
               id="pwInput"
               type="password"
-              placeholder="Enter your club password"
+              placeholder="Enter your password"
               autocomplete="current-password"
             >
-            <p class="gw-error" id="gwError">Incorrect password. Please check with your club administrator.</p>
+            <p class="gw-error" id="gwError">Incorrect password. Please check with The Performance Act.</p>
           </div>
 
           <button type="submit" class="gw-submit">ACCESS GROW &rarr;</button>
         </form>
 
         <p class="gw-card__footer-note">
-          GROW is a private resource area. Your club password is provided by The Performance Act.
+          GROW is a private resource area. Your password is provided by The Performance Act.
+          Working with us one to one? Choose <strong>Individual Athlete</strong> for your Skills Journal.
           No personal data is collected or stored.
         </p>
       </div>
@@ -2565,6 +2571,20 @@
           dark:    '#0E5226',
           accent:  '#1B7A3D'
         }
+      },
+      individual: {
+        name:      'Individual Athlete',
+        shortName: 'Athlete',
+        password:  'Athlete2026',
+        /* The one-to-one Skills Journal — a library of ACT and sport
+           psychology tools for athletes we work with face to face.
+           No role selection: straight into the hub. */
+        redirect:  'grow-athlete.html',
+        colors: {
+          primary: '#FFE500',
+          dark:    '#1A1A1A',
+          accent:  '#FFE500'
+        }
       }
       /* future clubs:
       tigers: { name: 'Tigers FC', password: 'Tigers2026', colors: {...} }
@@ -2793,14 +2813,14 @@
       errEl.classList.remove('is-visible');
 
       if (!clubKey) {
-        errEl.textContent = 'Please select your club first.';
+        errEl.textContent = 'Please select your club or area first.';
         errEl.classList.add('is-visible');
         return;
       }
 
       const club = CLUB_CONFIG[clubKey];
       if (!club || pw !== club.password) {
-        errEl.textContent = 'Incorrect password. Please check with your club administrator.';
+        errEl.textContent = 'Incorrect password. Please check with The Performance Act.';
         errEl.classList.add('is-visible');
         document.getElementById('pwInput').value = '';
         return;

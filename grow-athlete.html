@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Private member area: not indexed, not linked from the public site -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>The Skills Journal | Athlete Area | The Performance Act</title>
+  <meta name="description" content="A private library of sport psychology skills for the athletes we work with one to one. Built on the TriFlex — Open, Aware, Engaged — plus brain health behaviours.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=18">
+  <link rel="stylesheet" href="grow-athlete.css?v=1">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=2">
+</head>
+<body class="aj">
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="images/logo-horizontal.png?v=2" alt="The Performance Act" class="logo-img logo-img--header">
+      </a>
+      <nav class="header__nav" id="mainNav" aria-label="Primary">
+        <div class="nav-item nav-item--has-dropdown">
+          <a href="index.html#about" class="nav-link nav-link--has-dropdown" aria-haspopup="true" aria-expanded="false">ABOUT US
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown" role="menu">
+            <a href="approach.html" class="nav-dropdown__link" role="menuitem">Approach</a>
+            <a href="index.html#pillars" class="nav-dropdown__link" role="menuitem">Our Pact</a>
+            <a href="team.html" class="nav-dropdown__link" role="menuitem">Team</a>
+          </div>
+        </div>
+        <a href="programs.html" class="nav-link">SUPPORT &amp; SERVICES</a>
+        <div class="nav-item nav-item--has-dropdown">
+          <a href="grow.html" class="nav-link nav-link--has-dropdown active" aria-haspopup="true" aria-expanded="false">GROW PLATFORM
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown" role="menu">
+            <a href="grow.html" class="nav-dropdown__link" role="menuitem">About GROW</a>
+            <a href="grow-login.html" class="nav-dropdown__link" role="menuitem">Member Login</a>
+          </div>
+        </div>
+        <a href="blog.html" class="nav-link">RESOURCES</a>
+        <a href="contact.html" class="nav-link">CONTACT</a>
+      </nav>
+      <div class="header__actions">
+        <a href="grow-athlete-journal.html" class="btn btn--primary btn--sm">My Journal</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <nav class="mobile-nav__links" aria-label="Mobile">
+      <a href="grow-athlete.html" class="mobile-nav__link">SKILLS JOURNAL HOME</a>
+      <a href="grow-athlete-open.html" class="mobile-nav__link">OPEN</a>
+      <a href="grow-athlete-aware.html" class="mobile-nav__link">AWARE</a>
+      <a href="grow-athlete-engaged.html" class="mobile-nav__link">ENGAGED</a>
+      <a href="grow-athlete-brain.html" class="mobile-nav__link">BRAIN HEALTH</a>
+      <a href="grow-athlete-journal.html" class="mobile-nav__link">MY JOURNAL</a>
+      <a href="grow-login.html" class="mobile-nav__link">BACK TO GROW LOGIN</a>
+      <div class="mobile-nav__actions">
+        <a href="contact.html" class="btn btn--primary">Let&#8217;s Have a K&#333;rero</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="aj-hero" id="top">
+    <div class="aj-hero__bg"></div>
+    <div class="container">
+      <span class="aj-hero__badge">Private athlete area &middot; The Performance Act</span>
+      <h1 class="aj-hero__title">YOUR SKILLS<br><span>JOURNAL</span></h1>
+      <p class="aj-hero__lead"><strong>Everything we work on together, in one place.</strong> Not a course to get through &mdash; a library to raid. Come here when something is hard, find the skill that fits, do the activity, and bring what you write back into our next session.</p>
+      <p class="aj-hero__meta">
+        <span>4 toolkits</span> &middot; <span>24 skills</span> &middot; <span>An activity for every one</span> &middot; <span>Yours to keep</span>
+      </p>
+      <div class="aj-hero__actions">
+        <a href="#areas" class="btn btn--primary btn--lg">Choose an area</a>
+        <a href="#start" class="btn btn--ghost btn--lg">Start here</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHAT THIS IS ========== -->
+  <section class="aj-sec">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">What this is</p>
+        <h2 class="aj-h2">A workshop,<br><em>not a waiting room</em></h2>
+        <p class="aj-lead">You already have the sessions. This is the bit in between &mdash; the place where the work actually sticks.</p>
+        <p class="aj-p" style="margin-top:18px;">Every skill in here comes from <strong>Acceptance and Commitment Training (ACT)</strong> and the wider performance-psychology evidence base. ACT has more than three thousand published studies behind it, and it is used by professional teams, Olympic athletes, armed forces and health services around the world. It is not about thinking positive, or getting rid of nerves, or hardening up. It is about one specific, trainable capacity: <strong>psychological flexibility</strong> &mdash; being able to do what matters to you, even while difficult thoughts and feelings are showing up.</p>
+        <p class="aj-p">That capacity predicts more than performance. It predicts how you handle study, injury, selection, relationships, and the days when sport is not going your way. That dual relevance &mdash; on the field and off it &mdash; is the whole point.</p>
+
+        <div class="aj-vs">
+          <div class="aj-vs__col aj-vs__col--no">
+            <p class="aj-vs__tag">The old playbook</p>
+            <ul>
+              <li>Don&rsquo;t show weakness</li>
+              <li>Get rid of the nerves before you go</li>
+              <li>Think positive, block the doubt out</li>
+              <li>Push through, no matter what</li>
+              <li>Confidence first, action second</li>
+            </ul>
+          </div>
+          <div class="aj-vs__col aj-vs__col--yes">
+            <p class="aj-vs__tag">What actually works</p>
+            <ul>
+              <li>Name what&rsquo;s there &mdash; accurately</li>
+              <li>Let the nerves come; they&rsquo;re fuel, not faults</li>
+              <li>Notice the doubt without obeying it</li>
+              <li>Read the signal, then choose your response</li>
+              <li>Action first; confidence is the by-product</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="aj-eg">
+          <span class="aj-eg__k">The definition we work from</span>
+          <p>&ldquo;Real toughness is <em>experiencing discomfort or distress, leaning in, paying attention, and creating space to take thoughtful action.</em> It&rsquo;s navigating discomfort to make the best decision you can.&rdquo;</p>
+          <p style="color:var(--muted);font-size:0.86rem;">&mdash; Steve Magness, <em>Do Hard Things</em> (2022)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== THE TRIFLEX ========== -->
+  <section class="aj-sec aj-sec--alt" id="triflex">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">The spine of everything in here</p>
+        <h2 class="aj-h2">Open. Aware.<br><em>Engaged.</em></h2>
+        <p class="aj-lead">Psychological flexibility is built from six processes. Grouped into three pillars &mdash; the <strong>TriFlex</strong> &mdash; they become something you can actually hold in your head under pressure.</p>
+      </div>
+
+      <div class="aj-wrap--wide">
+        <div class="aj-pillars">
+          <div class="aj-pillar">
+            <div class="aj-pillar__word">Open</div>
+            <div class="aj-pillar__sub">Acceptance + Defusion</div>
+            <p class="aj-pillar__desc">Make room for what shows up &mdash; nerves, doubt, anger, the urge to quit &mdash; instead of fighting it or obeying it. Let your thoughts be thoughts rather than orders.</p>
+          </div>
+          <div class="aj-pillar aj-pillar--aware">
+            <div class="aj-pillar__word">Aware</div>
+            <div class="aj-pillar__sub">Present moment + Perspective</div>
+            <p class="aj-pillar__desc">Put your attention where you choose, when you choose. Come back to now, and to the part of you that simply notices &mdash; the part that is bigger than any story about you.</p>
+          </div>
+          <div class="aj-pillar aj-pillar--engaged">
+            <div class="aj-pillar__word">Engaged</div>
+            <div class="aj-pillar__sub">Values + Committed action</div>
+            <p class="aj-pillar__desc">Know what you stand for, and keep taking the next small step in that direction &mdash; on the good days, and especially on the ones where you don&rsquo;t feel like it.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="aj-wrap" style="margin-top:34px;">
+        <div class="aj-eg">
+          <span class="aj-eg__k">And the 30-second version: ACE</span>
+          <p><strong>A &mdash; Acknowledge</strong> what&rsquo;s showing up. <strong>C &mdash; Connect</strong> with your body. <strong>E &mdash; Engage</strong> in what you&rsquo;re doing.</p>
+          <p>Three moves that map straight onto the three pillars. You can run them on the start line, in the sin bin, before a hard conversation, or at 2am when your head won&rsquo;t stop. One skill set, every arena. (Adapted with credit from Russ Harris&rsquo;s &ldquo;dropping anchor&rdquo;.)</p>
+        </div>
+        <p class="aj-p">If you have been through <strong>THRIVE</strong>, this will look familiar &mdash; it is the same spine. The difference is that THRIVE is a nine-week programme you work through in order. This is not. This is a library you dip into, in whatever order your season and your sessions demand.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CHOOSE AN AREA ========== -->
+  <section class="aj-sec" id="areas">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">Choose an area</p>
+        <h2 class="aj-h2">Where do you want<br><em>to work today?</em></h2>
+        <p class="aj-lead" style="margin-bottom:30px;">Pick from the menu if you know what you need, or scroll on and browse the four toolkits.</p>
+      </div>
+
+      <form class="aj-jump" data-aj-jump>
+        <div class="aj-jump__field">
+          <label class="aj-jump__label" for="areaSelect">Jump straight to a skill</label>
+          <div class="aj-select-wrap">
+            <select class="aj-select" id="areaSelect">
+              <option value="">&mdash; Select an area or skill &mdash;</option>
+              <optgroup label="OPEN — Acceptance &amp; Defusion">
+                <option value="grow-athlete-open.html">Open &mdash; the whole toolkit</option>
+                <option value="grow-athlete-open.html#struggle">The Struggle Switch</option>
+                <option value="grow-athlete-open.html#tame">Making room (TAME it)</option>
+                <option value="grow-athlete-open.html#unhook">Unhooking from thoughts</option>
+                <option value="grow-athlete-open.html#workability">Helpful vs true</option>
+                <option value="grow-athlete-open.html#urge">Urge surfing</option>
+                <option value="grow-athlete-open.html#kind">Kind hands &amp; self-compassion</option>
+              </optgroup>
+              <optgroup label="AWARE — Present Moment &amp; Perspective">
+                <option value="grow-athlete-aware.html">Aware &mdash; the whole toolkit</option>
+                <option value="grow-athlete-aware.html#anchor">Dropping anchor (ACE)</option>
+                <option value="grow-athlete-aware.html#notice">Notice &amp; name</option>
+                <option value="grow-athlete-aware.html#zoom">Zoom in, zoom out</option>
+                <option value="grow-athlete-aware.html#noticing">The noticing self</option>
+                <option value="grow-athlete-aware.html#documentary">The documentary of you</option>
+                <option value="grow-athlete-aware.html#selftalk">Distanced self-talk</option>
+                <option value="grow-athlete-aware.html#reset">Your reset routine</option>
+              </optgroup>
+              <optgroup label="ENGAGED — Values &amp; Committed Action">
+                <option value="grow-athlete-engaged.html">Engaged &mdash; the whole toolkit</option>
+                <option value="grow-athlete-engaged.html#values">Finding your values</option>
+                <option value="grow-athlete-engaged.html#choicepoint">The choice point</option>
+                <option value="grow-athlete-engaged.html#square">The four arenas</option>
+                <option value="grow-athlete-engaged.html#goal">Building a real goal</option>
+                <option value="grow-athlete-engaged.html#hard">The HARD barriers</option>
+                <option value="grow-athlete-engaged.html#brave">The brave action ladder</option>
+              </optgroup>
+              <optgroup label="BRAIN HEALTH BEHAVIOURS">
+                <option value="grow-athlete-brain.html">Brain health &mdash; the whole toolkit</option>
+                <option value="grow-athlete-brain.html#sleep">Sleep</option>
+                <option value="grow-athlete-brain.html#fuel">Fuel</option>
+                <option value="grow-athlete-brain.html#hydration">Hydration</option>
+                <option value="grow-athlete-brain.html#connection">Social connection</option>
+                <option value="grow-athlete-brain.html#movement">Movement &amp; recovery</option>
+                <option value="grow-athlete-brain.html#quiet">Quiet &amp; screens</option>
+              </optgroup>
+              <optgroup label="YOUR RECORD">
+                <option value="grow-athlete-journal.html">My journal &mdash; everything I&rsquo;ve written</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+        <div class="aj-jump__go">
+          <button type="submit" class="aj-btn" data-aj-jump-go>Go &rarr;</button>
+        </div>
+        <p class="aj-jump__note">Not sure? <strong>If something is bothering you right now</strong>, start with Open. <strong>If you can&rsquo;t focus</strong>, start with Aware. <strong>If you feel flat or directionless</strong>, start with Engaged. <strong>If you&rsquo;re running on empty</strong>, start with Brain Health.</p>
+      </form>
+
+      <div class="aj-wrap--wide" style="margin-top:44px;">
+        <div class="aj-pillars aj-pillars--four">
+
+          <a href="grow-athlete-open.html" class="aj-pillar">
+            <div class="aj-pillar__word">Open</div>
+            <div class="aj-pillar__sub">6 skills</div>
+            <p class="aj-pillar__desc">For when the noise inside is loud &mdash; nerves, doubt, frustration, the urge to hide or to blow up.</p>
+            <ul class="aj-pillar__tools">
+              <li>The struggle switch</li>
+              <li>Making room (TAME it)</li>
+              <li>Unhooking from thoughts</li>
+              <li>Helpful vs true</li>
+              <li>Urge surfing</li>
+              <li>Kind hands</li>
+            </ul>
+            <span class="aj-pillar__cta">Open the toolkit
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+
+          <a href="grow-athlete-aware.html" class="aj-pillar aj-pillar--aware">
+            <div class="aj-pillar__word">Aware</div>
+            <div class="aj-pillar__sub">7 skills</div>
+            <p class="aj-pillar__desc">For when your attention is somewhere other than where you need it &mdash; the last mistake, the scoreboard, the crowd, tomorrow.</p>
+            <ul class="aj-pillar__tools">
+              <li>Dropping anchor (ACE)</li>
+              <li>Notice &amp; name</li>
+              <li>Zoom in, zoom out</li>
+              <li>The noticing self</li>
+              <li>The documentary of you</li>
+              <li>Distanced self-talk</li>
+              <li>Your reset routine</li>
+            </ul>
+            <span class="aj-pillar__cta">Open the toolkit
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+
+          <a href="grow-athlete-engaged.html" class="aj-pillar aj-pillar--engaged">
+            <div class="aj-pillar__word">Engaged</div>
+            <div class="aj-pillar__sub">6 skills</div>
+            <p class="aj-pillar__desc">For when you&rsquo;ve lost the thread &mdash; why you&rsquo;re doing this, what you stand for, and what the next step actually is.</p>
+            <ul class="aj-pillar__tools">
+              <li>Finding your values</li>
+              <li>The choice point</li>
+              <li>The four arenas</li>
+              <li>Building a real goal</li>
+              <li>The HARD barriers</li>
+              <li>The brave action ladder</li>
+            </ul>
+            <span class="aj-pillar__cta">Open the toolkit
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+
+          <a href="grow-athlete-brain.html" class="aj-pillar aj-pillar--brain">
+            <div class="aj-pillar__word">Brain<br>Health</div>
+            <div class="aj-pillar__sub">6 behaviours</div>
+            <p class="aj-pillar__desc">The foundation underneath all of it. No mental skill works properly on four hours&rsquo; sleep and no breakfast.</p>
+            <ul class="aj-pillar__tools">
+              <li>Sleep</li>
+              <li>Fuel</li>
+              <li>Hydration</li>
+              <li>Social connection</li>
+              <li>Movement &amp; recovery</li>
+              <li>Quiet &amp; screens</li>
+            </ul>
+            <span class="aj-pillar__cta">Open the toolkit
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW EACH SKILL WORKS ========== -->
+  <section class="aj-sec aj-sec--alt">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">How to use it</p>
+        <h2 class="aj-h2">Every skill is built<br><em>the same way</em></h2>
+        <p class="aj-lead">So you always know what you&rsquo;re getting and how long it will take.</p>
+
+        <ol class="aj-steps" style="margin-top:26px;">
+          <li><strong>What it is, in plain English.</strong> Two minutes of reading. No jargon that isn&rsquo;t explained.</li>
+          <li><strong>Why it works.</strong> The short version of the evidence, with the source named so you can go and check it.</li>
+          <li><strong>How to do it.</strong> Numbered steps you could follow in a changing room.</li>
+          <li><strong>A worked sport example.</strong> Someone actually using it, so you can see the shape of it.</li>
+          <li><strong>The activity.</strong> One clear thing to complete. This is the bit that matters &mdash; it saves straight to your journal.</li>
+          <li><strong>Take it into the week.</strong> The smallest real-world rep to try before we next meet.</li>
+        </ol>
+
+        <div class="aj-warn" style="margin-top:26px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+          <p><strong>Reading is not practising.</strong> Russ Harris tells a story about a client who threw his book on the table and said &ldquo;it didn&rsquo;t work&rdquo; &mdash; then admitted she hadn&rsquo;t done a single exercise. These are skills, like a set piece or a stroke correction. They only load in through reps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== START HERE ========== -->
+  <section class="aj-sec" id="start">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">Start here &middot; 5 minutes</p>
+        <h2 class="aj-h2">Your baseline</h2>
+        <p class="aj-lead">Before you go anywhere else, take a snapshot of where you are right now. In a few weeks you&rsquo;ll come back to this and it&rsquo;ll tell you something honest. There are no right answers and nobody else sees it.</p>
+
+        <div class="aj-act">
+          <span class="aj-act__tag">Activity &middot; 01</span>
+          <h3 class="aj-act__title">Where are you right now?</h3>
+          <p class="aj-act__intro">Score each one <strong>as it&rsquo;s actually been this past week</strong>, not as you&rsquo;d like it to be. 0 = not at all. 10 = completely.</p>
+
+          <div class="aj-field">
+            <p class="aj-field__q">OPEN &mdash; When difficult thoughts and feelings show up, I can let them be there without fighting them or being run by them.</p>
+            <div class="aj-slider">
+              <input type="range" min="0" max="10" value="5"
+                     data-aj="start.baseline.open"
+                     data-aj-out="bOpenVal"
+                     data-aj-tool="Your baseline"
+                     data-aj-q="OPEN — letting difficult thoughts and feelings be there (0–10)">
+              <span class="aj-slider__val" id="bOpenVal">5</span>
+            </div>
+          </div>
+
+          <div class="aj-field">
+            <p class="aj-field__q">AWARE &mdash; I can put my attention where I want it, and bring it back when it wanders.</p>
+            <div class="aj-slider">
+              <input type="range" min="0" max="10" value="5"
+                     data-aj="start.baseline.aware"
+                     data-aj-out="bAwareVal"
+                     data-aj-tool="Your baseline"
+                     data-aj-q="AWARE — putting attention where I want it (0–10)">
+              <span class="aj-slider__val" id="bAwareVal">5</span>
+            </div>
+          </div>
+
+          <div class="aj-field">
+            <p class="aj-field__q">ENGAGED &mdash; I know what I stand for, and my actions this week matched it.</p>
+            <div class="aj-slider">
+              <input type="range" min="0" max="10" value="5"
+                     data-aj="start.baseline.engaged"
+                     data-aj-out="bEngagedVal"
+                     data-aj-tool="Your baseline"
+                     data-aj-q="ENGAGED — acting on what I stand for (0–10)">
+              <span class="aj-slider__val" id="bEngagedVal">5</span>
+            </div>
+          </div>
+
+          <div class="aj-field">
+            <p class="aj-field__q">BRAIN HEALTH &mdash; Sleep, food, water, connection: my foundations have been solid this week.</p>
+            <div class="aj-slider">
+              <input type="range" min="0" max="10" value="5"
+                     data-aj="start.baseline.brain"
+                     data-aj-out="bBrainVal"
+                     data-aj-tool="Your baseline"
+                     data-aj-q="BRAIN HEALTH — sleep, food, water, connection (0–10)">
+              <span class="aj-slider__val" id="bBrainVal">5</span>
+            </div>
+          </div>
+
+          <div class="aj-field" style="margin-top:24px;">
+            <p class="aj-field__q">What brought you here? What&rsquo;s the thing you&rsquo;d most like to be different in three months?</p>
+            <p class="aj-field__hint">Be specific and be honest. This is the one your practitioner will want to talk about.</p>
+            <textarea class="aj-textarea"
+                      data-aj="start.baseline.why"
+                      data-aj-tool="Your baseline"
+                      data-aj-q="What brought you here, and what would you most like to be different in three months?"
+                      placeholder="e.g. I want to stop going quiet and playing safe after I make an early mistake..."></textarea>
+            <span class="aj-saved" data-aj-saved="start.baseline.why">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Saved to your journal
+            </span>
+          </div>
+
+          <div class="aj-field">
+            <p class="aj-field__q">Lowest score above? That&rsquo;s usually where to start.</p>
+            <p class="aj-field__hint">Not a rule &mdash; just a decent default when you don&rsquo;t know where to begin.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== VIDEO LIBRARY ========== -->
+  <section class="aj-sec aj-sec--alt" id="watch">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">Watch</p>
+        <h2 class="aj-h2">The library</h2>
+        <p class="aj-lead">Short, worth your time, and each one tied to a skill in here. Nothing loads until you press play. More sit inside the individual toolkits, next to the skill they belong to.</p>
+
+        <div class="aj-watch" style="margin-top:28px;">
+          <figure class="aj-vid">
+            <div class="aj-vid__frame" data-yt="fDmRwjBryu0">
+              <button class="aj-vid__play" aria-label="Play: Before the Start of the Doubles Luge" style="background-image:url('https://i.ytimg.com/vi/fDmRwjBryu0/hqdefault.jpg')">
+                <span class="aj-vid__badge">Open</span>
+                <span class="aj-vid__btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+              </button>
+            </div>
+            <figcaption class="aj-vid__cap"><b>Before the Start of the Doubles Luge.</b> Two Olympians at the top of the track, feeling the nerves fully instead of pretending they aren&rsquo;t there. <em>Watch for:</em> how they let the pressure be present, and go anyway.</figcaption>
+          </figure>
+
+          <figure class="aj-vid">
+            <div class="aj-vid__frame" data-yt="lJBL1kkCxA8">
+              <button class="aj-vid__play" aria-label="Play: Jonny Wilkinson on perfectionism and clarity" style="background-image:url('https://i.ytimg.com/vi/lJBL1kkCxA8/hqdefault.jpg')">
+                <span class="aj-vid__badge">Engaged</span>
+                <span class="aj-vid__btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+              </button>
+            </div>
+            <figcaption class="aj-vid__cap"><b>Jonny Wilkinson &mdash; he won the World Cup and woke up empty.</b> The clearest account you&rsquo;ll find of the difference between a goal and a value. <em>Watch for:</em> what was still missing the morning after the biggest goal of his life.</figcaption>
+          </figure>
+
+          <figure class="aj-vid">
+            <div class="aj-vid__frame" data-yt="aQ9zeQTyXaI">
+              <button class="aj-vid__play" aria-label="Play: ACT in Sport" style="background-image:url('https://i.ytimg.com/vi/aQ9zeQTyXaI/hqdefault.jpg')">
+                <span class="aj-vid__badge">Foundations</span>
+                <span class="aj-vid__btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+              </button>
+            </div>
+            <figcaption class="aj-vid__cap"><b>ACT in sport &mdash; acceptance, values and performance.</b> The framework behind this whole area: why trying to delete mental noise makes it louder. <em>Watch for:</em> the shift from controlling thoughts to changing your relationship with them.</figcaption>
+          </figure>
+
+          <figure class="aj-vid">
+            <div class="aj-vid__frame" data-yt="RcGyVTAoXEU">
+              <button class="aj-vid__play" aria-label="Play: Kelly McGonigal, How to Make Stress Your Friend" style="background-image:url('https://i.ytimg.com/vi/RcGyVTAoXEU/hqdefault.jpg')">
+                <span class="aj-vid__badge">Open</span>
+                <span class="aj-vid__btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+              </button>
+            </div>
+            <figcaption class="aj-vid__cap"><b>Kelly McGonigal &mdash; How to make stress your friend.</b> How the way you read your own racing heart changes what that racing heart does to you. <em>Watch for:</em> the reframe from &ldquo;something is wrong&rdquo; to &ldquo;my body is getting me ready&rdquo;.</figcaption>
+          </figure>
+
+          <figure class="aj-vid">
+            <div class="aj-vid__frame" data-yt="_X0mgOOSpLU">
+              <button class="aj-vid__play" aria-label="Play: Carol Dweck, The power of believing you can improve" style="background-image:url('https://i.ytimg.com/vi/_X0mgOOSpLU/hqdefault.jpg')">
+                <span class="aj-vid__badge">Aware</span>
+                <span class="aj-vid__btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+              </button>
+            </div>
+            <figcaption class="aj-vid__cap"><b>Carol Dweck &mdash; The power of believing you can improve.</b> Why the story you hold about your own ability shapes how far it develops. <em>Watch for:</em> the word &ldquo;yet&rdquo;.</figcaption>
+          </figure>
+
+          <figure class="aj-vid">
+            <div class="aj-vid__frame" data-yt="iCvmsMzlF7o">
+              <button class="aj-vid__play" aria-label="Play: Brené Brown, The power of vulnerability" style="background-image:url('https://i.ytimg.com/vi/iCvmsMzlF7o/hqdefault.jpg')">
+                <span class="aj-vid__badge">Engaged</span>
+                <span class="aj-vid__btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+              </button>
+            </div>
+            <figcaption class="aj-vid__cap"><b>Bren&eacute; Brown &mdash; The power of vulnerability.</b> Courage and connection, and why hiding the hard stuff costs you more than showing it. <em>Watch for:</em> the link between being seen and being able to perform.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== YOUR JOURNAL ========== -->
+  <section class="aj-sec">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">Your record</p>
+        <h2 class="aj-h2">Everything you write<br><em>lands in one place</em></h2>
+        <p class="aj-p">Complete an activity anywhere in this area and it saves automatically. Your journal page pulls all of it together so you can read it back, print it, download it, or bring it to a session.</p>
+
+        <div class="aj-warn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          <p><strong>Where your writing lives.</strong> Everything stays in this browser, on this device. It is never sent to us or to anyone else &mdash; we can&rsquo;t see it unless you show us. That also means it won&rsquo;t follow you to another device, and clearing your browser data will wipe it. If something matters, download a copy.</p>
+        </div>
+
+        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;">
+          <a href="grow-athlete-journal.html" class="btn btn--primary btn--lg">Open my journal</a>
+          <a href="grow-athlete-open.html" class="btn btn--ghost btn--lg">Start with Open</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SOURCES ========== -->
+  <section class="aj-sec aj-sec--alt" id="sources">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">Where this comes from</p>
+        <h2 class="aj-h2">Sources</h2>
+        <p class="aj-p">Nothing in this area is made up. Every skill is adapted, with credit, from published clinical and performance psychology. If you want to go deeper, these are the books and papers we work from &mdash; and they are worth reading in full.</p>
+
+        <details class="aj-refs" open>
+          <summary>The core texts</summary>
+          <ol>
+            <li>Harris, R. (2022). <em>The Happiness Trap: How to Stop Struggling and Start Living</em> (2nd ed.). Shambhala. &mdash; The plain-English source for dropping anchor (ACE), the choice point, unhooking, TAME, urge surfing, kind hands, values work and the HARD barriers.</li>
+            <li>Walser, R. D., &amp; Westrup, D. (2019). <em>Learning ACT: An Acceptance and Commitment Therapy Skills Training Manual for Therapists</em> (2nd ed.). Context Press / New Harbinger. &mdash; The six flexibility processes, the three pillars (Open, Aware, Engaged), and the therapeutic stance behind how we work with you.</li>
+            <li>Magness, S. (2022). <em>Do Hard Things: Why We Get Resilience Wrong and the Surprising Science of Real Toughness</em>. HarperOne. &mdash; Real toughness, emotions as messengers, distanced self-talk, zooming in and out, and coping flexibility.</li>
+            <li>Ciarrochi, J., &amp; Bailey, A. (2008). <em>A CBT Practitioner&rsquo;s Guide to ACT</em>. New Harbinger. &mdash; The flexibility model, the &ldquo;don&rsquo;t-get-eaten machine&rdquo;, and the bridge between traditional CBT and ACT.</li>
+            <li>Hayes, S. C., Strosahl, K. D., &amp; Wilson, K. G. (2012). <em>Acceptance and Commitment Therapy: The Process and Practice of Mindful Change</em> (2nd ed.). Guilford Press. &mdash; The primary scientific account of the model.</li>
+          </ol>
+        </details>
+
+        <details class="aj-refs">
+          <summary>Supporting research referenced across the toolkits</summary>
+          <ol>
+            <li>A-Tjak, J. G. L., et al. (2015). A meta-analysis of the efficacy of acceptance and commitment therapy for clinically relevant mental and physical health problems. <em>Psychotherapy and Psychosomatics, 84</em>(1), 30&ndash;36.</li>
+            <li>Kross, E., et al. (2014). Self-talk as a regulatory mechanism: How you do it matters. <em>Journal of Personality and Social Psychology, 106</em>(2), 304&ndash;324.</li>
+            <li>Sheppes, G., et al. (2011). Emotion-regulation choice. <em>Psychological Science, 22</em>(11), 1391&ndash;1396.</li>
+            <li>Lieberman, M. D., et al. (2007). Putting feelings into words: Affect labelling disrupts amygdala activity in response to affective stimuli. <em>Psychological Science, 18</em>(5), 421&ndash;428.</li>
+            <li>Wenzlaff, R. M., &amp; Wegner, D. M. (2000). Thought suppression. <em>Annual Review of Psychology, 51</em>, 59&ndash;91.</li>
+            <li>Marlatt, G. A., &amp; Gordon, J. R. (1985). <em>Relapse Prevention</em>. Guilford Press. &mdash; The original urge-surfing work.</li>
+            <li>Walker, M. (2017). <em>Why We Sleep</em>. Scribner; and Watson, A. M. (2017). Sleep and athletic performance. <em>Current Sports Medicine Reports, 16</em>(6), 413&ndash;418.</li>
+            <li>Ryan, R. M., &amp; Deci, E. L. (2017). <em>Self-Determination Theory</em>. Guilford Press. &mdash; Autonomy, competence and relatedness.</li>
+            <li>Holt-Lunstad, J., et al. (2015). Loneliness and social isolation as risk factors for mortality. <em>Perspectives on Psychological Science, 10</em>(2), 227&ndash;237.</li>
+          </ol>
+        </details>
+
+        <div class="aj-disclaimer">
+          <p><strong>An important note.</strong> This area supports the work we do together face to face &mdash; it does not replace it, and it is not therapy or a crisis service. If things feel heavy, bring it to your next session or contact us sooner. If you need help right now, the <em>Immediate Support</em> button on this page lists free, confidential services available 24/7 across Aotearoa. Call or text <a href="tel:1737">1737</a> any time to speak to a trained counsellor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-grid__brand">
+          <img src="images/logo-vertical.png?v=2" alt="The Performance Act" class="logo-img logo-img--footer">
+          <p class="footer__tagline">Helping People Grow</p>
+          <p class="footer__email"><a href="mailto:info@performance-act.com">info@performance-act.com</a></p>
+        </div>
+        <div class="footer-grid__links">
+          <h4 class="footer__heading">YOUR TOOLKITS</h4>
+          <a href="grow-athlete-open.html" class="footer__link">Open</a>
+          <a href="grow-athlete-aware.html" class="footer__link">Aware</a>
+          <a href="grow-athlete-engaged.html" class="footer__link">Engaged</a>
+          <a href="grow-athlete-brain.html" class="footer__link">Brain Health</a>
+        </div>
+        <div class="footer-grid__links">
+          <h4 class="footer__heading">YOUR RECORD</h4>
+          <a href="grow-athlete-journal.html" class="footer__link">My Journal</a>
+          <a href="grow-athlete.html#sources" class="footer__link">Sources</a>
+          <a href="grow-login.html" class="footer__link">Back to GROW login</a>
+        </div>
+        <div class="footer-grid__social">
+          <h4 class="footer__heading">NEED A HAND?</h4>
+          <div class="footer__cta">
+            <a href="mailto:info@performance-act.com" class="btn btn--primary btn--sm">GET IN TOUCH</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 The Performance Act. All rights reserved. Aotearoa, New Zealand.</p>
+        <div class="footer__bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- ========== NZ SUPPORT LINES ========== -->
+  <button class="support-line-btn" id="supportLineBtn" aria-label="NZ support lines">
+    <span class="support-line-btn__dot" aria-hidden="true"></span>
+    Immediate Support
+  </button>
+  <div class="support-line-modal" id="supportLineModal" role="dialog" aria-modal="true" aria-labelledby="supportLineTitle" aria-hidden="true">
+    <div class="support-line-modal__backdrop"></div>
+    <div class="support-line-modal__panel">
+      <button class="support-line-modal__close" id="supportLineClose" aria-label="Close support lines">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <p class="support-line-modal__eyebrow">Aotearoa, New Zealand</p>
+      <h2 class="support-line-modal__title" id="supportLineTitle">Need immediate support?</h2>
+      <p class="support-line-modal__note">The Performance Act is a sport psychology practice, not a crisis or emergency service. If you or someone you care about needs immediate support, please reach out to one of these trusted services below. They are free, confidential, and available 24&#8202;/&#8202;7.</p>
+      <ul class="support-line-modal__list" role="list">
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">1737 &mdash; Need to Talk?</p><p class="sln-resource__desc">Free call or text, any time. Trained counsellors, 24&#47;7.</p></div>
+          <a href="tel:1737" class="sln-resource__number">Call or text 1737</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Lifeline NZ</p><p class="sln-resource__desc">Crisis support and suicide prevention, 24&#47;7.</p></div>
+          <a href="tel:0800543354" class="sln-resource__number">0800 543 354</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Youthline</p><p class="sln-resource__desc">For young people. Free call or text 234, 24&#47;7.</p></div>
+          <a href="tel:0800376633" class="sln-resource__number">0800 376 633</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Suicide Crisis Helpline</p><p class="sln-resource__desc">0508 TAUTOKO. Support for those in crisis, 24&#47;7.</p></div>
+          <a href="tel:0508828865" class="sln-resource__number">0508 828 865</a>
+        </li>
+      </ul>
+      <p class="support-line-modal__footer">More resources at <a href="https://www.mentalhealth.org.nz/get-help/in-crisis" target="_blank" rel="noopener">Mental Health Foundation NZ</a> and <a href="https://www.depression.org.nz" target="_blank" rel="noopener">depression.org.nz</a>.</p>
+    </div>
+  </div>
+
+  <script src="script.js?v=5"></script>
+  <script src="grow-athlete.js?v=1"></script>
+</body>
+</html>

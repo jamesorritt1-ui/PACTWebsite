@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>ENGAGED — Values &amp; Committed Action | Skills Journal | The Performance Act</title>
+  <meta name="description" content="Six skills for knowing what you stand for and taking the next step towards it — especially on the days you don't feel like it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=18">
+  <link rel="stylesheet" href="grow-athlete.css?v=1">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=2">
+  <style>
+    /* Engaged pillar accent */
+    .aj-tool { border-left-color: var(--engaged); }
+    .aj-tool__num { color: rgba(255,157,77,0.35); }
+    .aj-act { border-color: rgba(255,157,77,0.32); background: linear-gradient(165deg,#1c1510,#0c0c0c); }
+    .aj-act__tag { background: var(--engaged); }
+    .aj-hero__title span { color: var(--engaged); }
+    .aj-chip[aria-pressed="true"] { background: var(--engaged); border-color: var(--engaged); }
+    .aj-block__k, .aj-eg__k, .aj-eyebrow, .aj-label { color: var(--engaged); }
+    .aj-h2 em, .aj-takeaways h3 { color: var(--engaged); }
+    .aj-takeaways li::before { background: var(--engaged); }
+    .aj-takeaways { border-color: rgba(255,157,77,0.3); }
+    .aj-back, .aj-hero__badge { color: var(--engaged); }
+    .aj-hero__badge { border-color: rgba(255,157,77,0.4); }
+    .aj-label::before, .aj-ul li::before { background: var(--engaged); }
+    .aj-eg { border-left-color: var(--engaged); }
+    .aj-steps li::before { border-color: rgba(255,157,77,0.5); color: var(--engaged); }
+    .aj-builder__chip { border-left-color: var(--engaged); }
+
+    /* values counter */
+    .vc-counter {
+      display:inline-block; font-family:var(--font-heading); font-size:0.72rem;
+      letter-spacing:0.14em; text-transform:uppercase; color:var(--engaged);
+      border:1px solid rgba(255,157,77,0.4); padding:6px 13px; margin-bottom:12px;
+    }
+    /* arena grid */
+    .ar { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:8px; }
+    .ar__cell { background:#0a0a0a; border:1px solid var(--line); border-top:3px solid var(--engaged); padding:18px 20px; }
+    .ar__cell h5 { font-family:var(--font-heading); font-size:0.8rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--engaged); margin-bottom:3px; }
+    .ar__cell > p { color:var(--muted); font-size:0.82rem; line-height:1.5; font-weight:300; margin:0 0 11px; }
+    .ar__score { margin-top:12px; }
+    .ar__score span.k { display:block; font-family:var(--font-heading); font-size:0.64rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-bottom:5px; }
+    @media (max-width:640px){ .ar { grid-template-columns:1fr; } }
+    /* goal readiness */
+    .gr { border:1px solid rgba(255,157,77,0.3); background:#0a0a0a; padding:18px 20px; margin-top:18px; }
+    .gr__verdict { font-family:var(--font-heading); font-size:1.05rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--engaged); margin-bottom:8px; }
+    .gr__note { color:var(--ink); font-size:0.92rem; line-height:1.65; font-weight:300; margin:0; }
+    .gr__note strong { color:#fff; font-weight:600; }
+  </style>
+</head>
+<body class="aj">
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="images/logo-horizontal.png?v=2" alt="The Performance Act" class="logo-img logo-img--header">
+      </a>
+      <nav class="header__nav" id="mainNav" aria-label="Primary">
+        <a href="grow-athlete.html" class="nav-link">SKILLS JOURNAL</a>
+        <a href="grow-athlete-open.html" class="nav-link">OPEN</a>
+        <a href="grow-athlete-aware.html" class="nav-link">AWARE</a>
+        <a href="grow-athlete-engaged.html" class="nav-link active">ENGAGED</a>
+        <a href="grow-athlete-brain.html" class="nav-link">BRAIN HEALTH</a>
+      </nav>
+      <div class="header__actions">
+        <a href="grow-athlete-journal.html" class="btn btn--primary btn--sm">My Journal</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <nav class="mobile-nav__links" aria-label="Mobile">
+      <a href="grow-athlete.html" class="mobile-nav__link">SKILLS JOURNAL HOME</a>
+      <a href="grow-athlete-open.html" class="mobile-nav__link">OPEN</a>
+      <a href="grow-athlete-aware.html" class="mobile-nav__link">AWARE</a>
+      <a href="grow-athlete-engaged.html" class="mobile-nav__link">ENGAGED</a>
+      <a href="grow-athlete-brain.html" class="mobile-nav__link">BRAIN HEALTH</a>
+      <a href="grow-athlete-journal.html" class="mobile-nav__link">MY JOURNAL</a>
+    </nav>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="aj-hero" id="top">
+    <div class="aj-hero__bg"></div>
+    <div class="container">
+      <a href="grow-athlete.html" class="aj-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Skills Journal
+      </a>
+      <span class="aj-hero__badge">Pillar three of the TriFlex</span>
+      <h1 class="aj-hero__title"><span>ENGAGED</span></h1>
+      <p class="aj-hero__lead"><strong>Values and committed action.</strong> The point of the other two pillars. Making room for discomfort and steadying your attention are worth nothing unless they buy you something &mdash; and this is what they buy.</p>
+      <p class="aj-hero__meta"><span>6 skills</span> &middot; <span>6 activities</span> &middot; <span>Where it becomes real</span></p>
+      <div class="aj-toc">
+        <a href="#values">01 &middot; Finding your values</a>
+        <a href="#choicepoint">02 &middot; The choice point</a>
+        <a href="#square">03 &middot; The four arenas</a>
+        <a href="#goal">04 &middot; Building a real goal</a>
+        <a href="#hard">05 &middot; The HARD barriers</a>
+        <a href="#brave">06 &middot; The brave action ladder</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="aj-progress">
+    <div class="container">
+      <div class="aj-progress__inner">
+        <span class="aj-progress__label">Your progress through Engaged</span>
+        <div class="aj-progress__track"><div class="aj-progress__fill" id="ajProgressFill"></div></div>
+        <span class="aj-progress__count" id="ajProgressCount">0 / 0 saved</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== INTRO ========== -->
+  <section class="aj-sec">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">Before you start</p>
+        <h2 class="aj-h2">Two kids in the back<br>of a <em>car</em></h2>
+        <p class="aj-lead">Both are being driven three hours to the same theme park. Both want exactly the same thing: to get there.</p>
+        <p class="aj-p" style="margin-top:18px;">The first kid is fixed entirely on the goal. He&rsquo;s on the edge of his seat, agitated, asking every ten minutes how much longer. The second kid has the same goal &mdash; but he&rsquo;s also in touch with what he values: curiosity, playing, messing about. So he&rsquo;s looking out of the window, playing games, waving at trucks.</p>
+        <p class="aj-p">They both arrive. They&rsquo;re both happy. <strong>Only one of them enjoyed three hours of his life.</strong></p>
+        <p class="aj-p">Now change the story: the car breaks down and neither gets there. Which one had the better day?</p>
+        <p class="aj-p">A heavily goal-focused life is a life of chronic discontentment &mdash; long stretches of dissatisfaction punctuated by brief hits of relief when you tick something off, which evaporate the moment the next target appears. That is a description of a great many athletic careers.</p>
+
+        <div class="aj-block">
+          <span class="aj-block__k">Values are not goals</span>
+          <p>A <strong>goal</strong> is something you can get, achieve or complete. Make the squad. Break 2:10. Win the title. You either get it or you don&rsquo;t, and then it&rsquo;s over.</p>
+          <p>A <strong>value</strong> is a quality you bring to how you behave. Being courageous. Being a good teammate. Being honest about where you&rsquo;re at. You can never &ldquo;complete&rdquo; being courageous &mdash; but you can act on it in the next ten minutes, and every day for the rest of your life.</p>
+          <p>Which is why values hold when goals don&rsquo;t. Injured? You can still be a good teammate. Deselected? You can still train with discipline. Retired? All of it still applies. <strong>Goals run out. Values don&rsquo;t.</strong></p>
+        </div>
+
+        <div class="aj-why">
+          <p><strong>Why this pillar exists.</strong> In the ACT model, lack of values clarity plus inaction, impulsivity or avoidant persistence make up the inflexibility pillar called <em>Disconnected</em>. Values act as the selection criteria for behaviour, and committed action is how a change gets retained rather than lost. Values are described as the linchpin of the whole model &mdash; acceptance and defusion are never ends in themselves; they clear the path for a values-consistent life. <cite>Walser &amp; Westrup, Learning ACT (2019), ch. 1, 6 &amp; 7.</cite></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       TOOL 01 — FINDING YOUR VALUES
+       ========================================================== -->
+  <section class="aj-sec aj-sec--alt" id="values">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">01</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Finding Your Values</h2>
+              <p class="aj-tool__for">For: &ldquo;I don&rsquo;t know why I&rsquo;m doing this any more.&rdquo;</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>Values are your heart&rsquo;s deepest desires for <em>how you want to behave</em> &mdash; how you want to treat yourself, other people, and the world around you. They&rsquo;re verbs and adverbs, not nouns. Not &ldquo;a good career&rdquo; but &ldquo;to work honestly&rdquo;. Not &ldquo;a great team&rdquo; but &ldquo;to support people generously&rdquo;.</p>
+            <p>Five things they give you: <strong>wiser choices</strong>, because you&rsquo;ve got a criterion. <strong>Direction</strong>, like an inner compass. <strong>Motivation</strong> that doesn&rsquo;t need you to feel good first. <strong>Colour</strong>, when things are grey. And <strong>fulfilment</strong> &mdash; the sense of being true to yourself, available on any given Tuesday rather than only at a medal ceremony.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Values are not rules</span>
+              <p>This distinction matters enormously for athletes, because sport is drowning in rules dressed up as values.</p>
+              <p>A <strong>value</strong> is a direction: <em>being committed.</em> A <strong>rule</strong> is a command with a threat attached: <em>I must never miss a session, no matter what.</em> Rules contain <em>must, should, have to, always, never, can&rsquo;t unless.</em></p>
+              <p>Here&rsquo;s how you tell them apart from the inside. When you act on a value, you feel <strong>meaning, purpose, vitality</strong>. When you&rsquo;re obeying a rule, you feel <strong>pressure, obligation, heaviness, guilt</strong>. Same behaviour, sometimes. Completely different engine &mdash; and completely different long-run cost.</p>
+              <p>The more rigidly you obey a rule, the fewer options you have, and the more anxiety shows up if you ever bend it. That is a decent one-line description of how a committed athlete turns into a burnt-out one.</p>
+            </div>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+              <p><strong>&ldquo;But I haven&rsquo;t been living like that, so it can&rsquo;t be my value.&rdquo;</strong> Very common, and wrong. Values describe how you <em>want</em> to behave. If you&rsquo;d like to be a generous teammate &mdash; even if you&rsquo;ve been a resentful one for six months &mdash; then generosity is already your value. It&rsquo;s a quality of behaviour you desire, and you can start acting on it today. Your self-defeating behaviour isn&rsquo;t evidence of your values; it&rsquo;s evidence you got hooked and pulled away from them.</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 12 minutes</span>
+              <h3 class="aj-act__title">The values sort</h3>
+              <p class="aj-act__intro">Three rounds. Don&rsquo;t overthink round one &mdash; go on instinct, and remember these are about <strong>how you want to behave</strong>, not what you want to get.</p>
+
+              <div class="aj-field">
+                <p class="aj-field__q">Round 1 &mdash; Tap everything that genuinely matters to you.</p>
+                <p class="aj-field__hint">Be generous here. Twelve to twenty is normal.</p>
+                <div class="aj-chips"
+                     data-aj-chips="engaged.values.long"
+                     data-aj-tool="Finding Your Values"
+                     data-aj-q="Values that matter to me (long list)">
+                  <button class="aj-chip">Courage</button>
+                  <button class="aj-chip">Honesty</button>
+                  <button class="aj-chip">Persistence</button>
+                  <button class="aj-chip">Curiosity</button>
+                  <button class="aj-chip">Discipline</button>
+                  <button class="aj-chip">Generosity</button>
+                  <button class="aj-chip">Loyalty</button>
+                  <button class="aj-chip">Humility</button>
+                  <button class="aj-chip">Playfulness</button>
+                  <button class="aj-chip">Fairness</button>
+                  <button class="aj-chip">Kindness</button>
+                  <button class="aj-chip">Leadership</button>
+                  <button class="aj-chip">Independence</button>
+                  <button class="aj-chip">Openness</button>
+                  <button class="aj-chip">Reliability</button>
+                  <button class="aj-chip">Self-respect</button>
+                  <button class="aj-chip">Gratitude</button>
+                  <button class="aj-chip">Adventure</button>
+                  <button class="aj-chip">Mastery</button>
+                  <button class="aj-chip">Connection</button>
+                  <button class="aj-chip">Respect</button>
+                  <button class="aj-chip">Creativity</button>
+                  <button class="aj-chip">Focus</button>
+                  <button class="aj-chip">Patience</button>
+                  <button class="aj-chip">Compassion</button>
+                  <button class="aj-chip">Assertiveness</button>
+                  <button class="aj-chip">Responsibility</button>
+                  <button class="aj-chip">Whanaungatanga</button>
+                  <button class="aj-chip">Manaakitanga</button>
+                  <button class="aj-chip">Integrity</button>
+                  <button class="aj-chip">Growth</button>
+                  <button class="aj-chip">Presence</button>
+                  <button class="aj-chip">Encouragement</button>
+                  <button class="aj-chip">Toughness</button>
+                  <button class="aj-chip">Care for my body</button>
+                  <button class="aj-chip">Contribution</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:24px;">
+                <p class="aj-field__q">Round 2 &mdash; Now cut it to six.</p>
+                <p class="aj-field__hint">Retype the six that survive. This bit is meant to be hard.</p>
+                <span class="vc-counter" id="vcCount">0 of 6 chosen</span>
+                <div class="aj-builder__row" data-aj-builder="engaged.values.six"
+                     data-aj-tool="Finding Your Values"
+                     data-aj-q="My six core values"
+                     data-aj-empty="Add up to six.">
+                  <input type="text" class="aj-input" placeholder="e.g. Courage">
+                  <button type="button" class="aj-btn" data-aj-add>Add</button>
+                  <div class="aj-builder__list" style="flex:1 1 100%;"></div>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:24px;">
+                <p class="aj-field__q">Round 3 &mdash; The top three, and what each one actually looks like.</p>
+                <p class="aj-field__hint">A value you can&rsquo;t describe as a behaviour is still just a word on a wall. Finish each sentence with something someone could film you doing.</p>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">Value 1 &mdash; and what it looks like in action</p>
+                <textarea class="aj-textarea"
+                          data-aj="engaged.values.one"
+                          data-aj-tool="Finding Your Values"
+                          data-aj-q="Value 1 and what it looks like in action"
+                          placeholder="Courage — asking for the ball when we're 2–0 down and I've already given it away twice."></textarea>
+                <span class="aj-saved" data-aj-saved="engaged.values.one">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">Value 2 &mdash; and what it looks like in action</p>
+                <textarea class="aj-textarea"
+                          data-aj="engaged.values.two"
+                          data-aj-tool="Finding Your Values"
+                          data-aj-q="Value 2 and what it looks like in action"
+                          placeholder="e.g. Generosity — being the first to talk to the new player at training."></textarea>
+                <span class="aj-saved" data-aj-saved="engaged.values.two">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">Value 3 &mdash; and what it looks like in action</p>
+                <textarea class="aj-textarea"
+                          data-aj="engaged.values.three"
+                          data-aj-tool="Finding Your Values"
+                          data-aj-q="Value 3 and what it looks like in action"
+                          placeholder="e.g. Honesty — telling the physio the truth about my knee instead of what I want to be true."></textarea>
+                <span class="aj-saved" data-aj-saved="engaged.values.three">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field" style="margin-top:24px;">
+                <p class="aj-field__q">The rules check.</p>
+                <p class="aj-field__hint">Look back at your six. Is any of them actually a rule in disguise &mdash; a <em>must</em>, a <em>should</em>, a <em>never</em>? Write it out here, then write the value buried underneath it.</p>
+                <textarea class="aj-textarea"
+                          data-aj="engaged.values.rules"
+                          data-aj-tool="Finding Your Values"
+                          data-aj-q="A rule I've been obeying, and the value buried underneath"
+                          placeholder="Rule: I must never miss a session or I'm soft. Value underneath: commitment — which sometimes means resting so I can commit for ten more years."></textarea>
+                <span class="aj-saved" data-aj-saved="engaged.values.rules">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+            </div>
+
+            <div class="aj-block" style="margin-top:26px;">
+              <span class="aj-block__k">Take it into the week &mdash; flavouring and savouring</span>
+              <p>Each morning, pick <strong>one</strong> value. Then look for chances to sprinkle it into whatever you&rsquo;re doing that day &mdash; training, a conversation, a bus ride. And as you flavour it, <em>savour</em> it: give it your full attention and actually notice what it&rsquo;s like to be that person for a moment. Small, daily, and far more powerful than trying to overhaul your life at the weekend.</p>
+            </div>
+
+            <div class="aj-watch is-single">
+              <figure class="aj-vid">
+                <div class="aj-vid__frame" data-yt="lJBL1kkCxA8">
+                  <button class="aj-vid__play" aria-label="Play: Jonny Wilkinson on perfectionism, pressure and clarity" style="background-image:url('https://i.ytimg.com/vi/lJBL1kkCxA8/hqdefault.jpg')">
+                    <span class="aj-vid__badge">Essential</span>
+                    <span class="aj-vid__btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+                  </button>
+                </div>
+                <figcaption class="aj-vid__cap"><b>Jonny Wilkinson &mdash; he won the World Cup and woke up empty.</b> The single clearest illustration of the goal/value distinction you will find anywhere. <em>Watch for:</em> the moment he realises the goal, once achieved, just hands you the next stressful target &mdash; and what he found instead.</figcaption>
+              </figure>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> Values, the two-kids-in-a-car metaphor, values versus rules, and flavouring and savouring: <cite>Harris, The Happiness Trap (2022), ch. 22</cite>. On values as chosen qualities of ongoing action rather than achievable objects: <cite>Walser &amp; Westrup, Learning ACT (2019), ch. 6</cite>.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       TOOL 02 — THE CHOICE POINT
+       ========================================================== -->
+  <section class="aj-sec" id="choicepoint">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">02</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">The Choice Point</h2>
+              <p class="aj-tool__for">For: seeing the whole pattern &mdash; what hooks you, where it takes you, and where you&rsquo;d rather go.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>A single map of how you operate under pressure. It has three parts.</p>
+            <p><strong>At the bottom: the hooks.</strong> The difficult situations, thoughts, feelings, sensations, memories and urges that show up. You don&rsquo;t choose these and you can&rsquo;t stop them arriving.</p>
+            <p><strong>The left arrow: away moves.</strong> What you do that takes you away from the athlete and person you want to be. Includes things you do in your head &mdash; worrying, ruminating, replaying.</p>
+            <p><strong>The right arrow: toward moves.</strong> What you do that takes you towards them.</p>
+            <p>Two ways of getting hooked pull you left. <strong>OBEY:</strong> your thoughts and feelings command you &mdash; the thought &ldquo;it&rsquo;s hopeless&rdquo; turns up and you stop trying. <strong>STRUGGLE:</strong> you fight them &mdash; anything to avoid, escape or suppress. Usually both at once.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">The bit that catches everyone out</span>
+              <p><strong>Any action can be a toward move or an away move, depending on the situation.</strong></p>
+              <p>Extra gym session? Toward move if it&rsquo;s part of a considered plan. Away move if you&rsquo;re doing it at 10pm on a rest day to stop yourself feeling anxious about selection. Same behaviour. Opposite direction.</p>
+              <p>Watching video of your last game? Toward move if you&rsquo;re looking for information. Away move if you&rsquo;re on the ninth replay of the same error at 1am.</p>
+              <p>This is <strong>workability</strong>, and it&rsquo;s the reason nobody else can fill in your choice point for you. Only you know which one you&rsquo;re doing.</p>
+            </div>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+              <p><strong>Feelings never go on the arrows.</strong> Emotions, sensations and urges always live at the bottom &mdash; they show up whether you like it or not. The arrows are for things you <em>do</em>. So &ldquo;feeling anxious&rdquo; goes at the bottom; &ldquo;pulling out of the trial&rdquo; goes on the away arrow. This distinction is the whole point of the map: <strong>you get a say over the arrows, not over the bottom.</strong></p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 12 minutes</span>
+              <h3 class="aj-act__title">Map your choice point</h3>
+              <p class="aj-act__intro">Fill this in for your life as it is <strong>today</strong>. Not how you&rsquo;d like it to be. This becomes the road map for everything else you do in here &mdash; and it&rsquo;s worth bringing to your next session.</p>
+
+              <div class="aj-field">
+                <p class="aj-field__q">THE BOTTOM &mdash; Your situations</p>
+                <p class="aj-field__hint">Four or five difficult situations you&rsquo;re actually dealing with. Selection, injury, study load, a coach relationship, money, home, a teammate.</p>
+                <textarea class="aj-textarea"
+                          data-aj="engaged.cp.situations"
+                          data-aj-tool="The Choice Point"
+                          data-aj-q="Difficult situations I'm dealing with"
+                          placeholder="e.g. Waiting on selection. Six weeks into rehab. Exams in a month. Barely see my mates."></textarea>
+                <span class="aj-saved" data-aj-saved="engaged.cp.situations">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">THE BOTTOM &mdash; Your thoughts, feelings, sensations and urges</p>
+                <p class="aj-field__hint">The recurring ones. Self-judgements, beliefs, predictions, and where you feel them in your body.</p>
+                <textarea class="aj-textarea"
+                          data-aj="engaged.cp.hooks"
+                          data-aj-tool="The Choice Point"
+                          data-aj-q="My hooks — thoughts, feelings, sensations, urges"
+                          placeholder="e.g. 'They've already decided.' Dread in my stomach on Sunday nights. Urge to check the group chat every ten minutes."></textarea>
+                <span class="aj-saved" data-aj-saved="engaged.cp.hooks">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-cp">
+                <div class="aj-cp__arm aj-cp__arm--away">
+                  <h5>&larr; Away moves</h5>
+                  <p class="aj-field__hint">What you <em>do</em> in OBEY or STRUGGLE mode. Include the in-your-head ones: worrying, ruminating, replaying.</p>
+                  <textarea class="aj-textarea"
+                            data-aj="engaged.cp.away"
+                            data-aj-tool="The Choice Point"
+                            data-aj-q="My away moves"
+                            placeholder="e.g. Go quiet in the group. Scroll for two hours instead of sleeping. Skip the extras. Snap at my family."></textarea>
+                  <span class="aj-saved" data-aj-saved="engaged.cp.away">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                  </span>
+                </div>
+                <div class="aj-cp__arm aj-cp__arm--toward">
+                  <h5>Toward moves &rarr;</h5>
+                  <p class="aj-field__hint">Start with what you <em>already</em> do &mdash; including reading this. Then add what you&rsquo;d like to start.</p>
+                  <textarea class="aj-textarea"
+                            data-aj="engaged.cp.toward"
+                            data-aj-tool="The Choice Point"
+                            data-aj-q="My toward moves"
+                            placeholder="e.g. Turn up to rehab on the bad days. Text one mate a week. Ask the coach a direct question instead of guessing."></textarea>
+                  <span class="aj-saved" data-aj-saved="engaged.cp.toward">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                  </span>
+                </div>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">The workability question</p>
+                <p class="aj-field__hint">Pick one behaviour that&rsquo;s on <em>both</em> lists depending on the day. When is it a toward move for you, and when does it flip?</p>
+                <textarea class="aj-textarea"
+                          data-aj="engaged.cp.workability"
+                          data-aj-tool="The Choice Point"
+                          data-aj-q="A behaviour that's sometimes toward and sometimes away"
+                          placeholder="e.g. Video analysis. Toward on Monday with the coach. Away at 1am on my own for the fifth time."></textarea>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">Which single away move costs you the most?</p>
+                <input type="text" class="aj-input"
+                       data-aj="engaged.cp.biggest"
+                       data-aj-tool="The Choice Point"
+                       data-aj-q="The away move that costs me most">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">And what will you do instead?</p>
+                <p class="aj-field__hint">A live action, not an absence. &ldquo;Not scrolling&rdquo; isn&rsquo;t an answer &mdash; a corpse does that better than you.</p>
+                <input type="text" class="aj-input"
+                       data-aj="engaged.cp.instead"
+                       data-aj-tool="The Choice Point"
+                       data-aj-q="What I'll do instead of my biggest away move">
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> The choice point was co-created by <cite>Russ Harris, Joseph Ciarrochi and Ann Bailey</cite> as a simplified way of teaching the ACT model, and is set out in <cite>The Happiness Trap (2022), ch. 2</cite>. In ACT terms, OBEY is fusion and STRUGGLE is experiential avoidance.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       TOOL 03 — THE FOUR ARENAS
+       ========================================================== -->
+  <section class="aj-sec aj-sec--alt" id="square">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">03</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">The Four Arenas</h2>
+              <p class="aj-tool__for">For: when everything needs fixing at once and you don&rsquo;t know where to start.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>Nobody sculpts a statue by chipping at ten places simultaneously. One chip at a time, and eventually a block of stone becomes something.</p>
+            <p>Same with a life. Try to fix everything and you&rsquo;ll be overwhelmed inside a week. So we split life into four arenas and work on <strong>one at a time</strong>.</p>
+            <ul class="aj-ul">
+              <li><strong>Sport &amp; work.</strong> Your sport, plus study, a job, and any training or learning you do.</li>
+              <li><strong>People.</strong> Family, partner, teammates, friends, coaches &mdash; anyone you have or want a real bond with.</li>
+              <li><strong>Play.</strong> Rest, recreation, fun, hobbies, the things you do that aren&rsquo;t about performance. Athletes are notoriously terrible at this arena.</li>
+              <li><strong>Self-care.</strong> Physical health, mental health, and if it&rsquo;s relevant to you, spiritual or cultural life.</li>
+            </ul>
+            <p>The four overlap, which is exactly what you want &mdash; it creates a domino effect. Small changes in one arena reliably improve the others.</p>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 10 minutes</span>
+              <h3 class="aj-act__title">Score the four arenas</h3>
+              <p class="aj-act__intro">For each arena: write one to three values you want to put into play there, then score <strong>how well you&rsquo;ve actually lived them over the past week</strong>. 0 = not at all, 10 = very well. Average it out &mdash; nobody is consistent, and pretending otherwise defeats the purpose.</p>
+
+              <div class="ar">
+                <div class="ar__cell">
+                  <h5>Sport &amp; Work</h5>
+                  <p>Training, competition, study, job.</p>
+                  <textarea class="aj-textarea"
+                            data-aj="engaged.arena.sport.values"
+                            data-aj-tool="The Four Arenas"
+                            data-aj-q="Values I want to put into play in Sport & Work"
+                            placeholder="e.g. Courage. Mastery. Honesty with my coach."></textarea>
+                  <div class="ar__score">
+                    <span class="k">How well I lived them this week</span>
+                    <div class="aj-slider">
+                      <input type="range" min="0" max="10" value="5"
+                             data-aj="engaged.arena.sport.score"
+                             data-aj-out="arSport"
+                             data-aj-tool="The Four Arenas"
+                             data-aj-q="Sport & Work — how well I lived my values this week (0–10)">
+                      <span class="aj-slider__val" id="arSport">5</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ar__cell">
+                  <h5>People</h5>
+                  <p>Family, friends, teammates, partner, coaches.</p>
+                  <textarea class="aj-textarea"
+                            data-aj="engaged.arena.people.values"
+                            data-aj-tool="The Four Arenas"
+                            data-aj-q="Values I want to put into play with People"
+                            placeholder="e.g. Generosity. Being present. Telling the truth about how I am."></textarea>
+                  <div class="ar__score">
+                    <span class="k">How well I lived them this week</span>
+                    <div class="aj-slider">
+                      <input type="range" min="0" max="10" value="5"
+                             data-aj="engaged.arena.people.score"
+                             data-aj-out="arPeople"
+                             data-aj-tool="The Four Arenas"
+                             data-aj-q="People — how well I lived my values this week (0–10)">
+                      <span class="aj-slider__val" id="arPeople">5</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ar__cell">
+                  <h5>Play</h5>
+                  <p>Rest, fun, hobbies, anything that isn&rsquo;t performance.</p>
+                  <textarea class="aj-textarea"
+                            data-aj="engaged.arena.play.values"
+                            data-aj-tool="The Four Arenas"
+                            data-aj-q="Values I want to put into play in Play"
+                            placeholder="e.g. Playfulness. Curiosity. Doing something badly and enjoying it."></textarea>
+                  <div class="ar__score">
+                    <span class="k">How well I lived them this week</span>
+                    <div class="aj-slider">
+                      <input type="range" min="0" max="10" value="5"
+                             data-aj="engaged.arena.play.score"
+                             data-aj-out="arPlay"
+                             data-aj-tool="The Four Arenas"
+                             data-aj-q="Play — how well I lived my values this week (0–10)">
+                      <span class="aj-slider__val" id="arPlay">5</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ar__cell">
+                  <h5>Self-Care</h5>
+                  <p>Body, mind, and whatever keeps you grounded.</p>
+                  <textarea class="aj-textarea"
+                            data-aj="engaged.arena.self.values"
+                            data-aj-tool="The Four Arenas"
+                            data-aj-q="Values I want to put into play in Self-Care"
+                            placeholder="e.g. Caring for my body. Self-respect. Asking for help early."></textarea>
+                  <div class="ar__score">
+                    <span class="k">How well I lived them this week</span>
+                    <div class="aj-slider">
+                      <input type="range" min="0" max="10" value="5"
+                             data-aj="engaged.arena.self.score"
+                             data-aj-out="arSelf"
+                             data-aj-tool="The Four Arenas"
+                             data-aj-q="Self-Care — how well I lived my values this week (0–10)">
+                      <span class="aj-slider__val" id="arSelf">5</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:24px;">
+                <p class="aj-field__q">Which single arena will you work on this week?</p>
+                <p class="aj-field__hint">One. Just one. The lowest score is a reasonable default, but choose whichever would make the biggest difference.</p>
+                <div class="aj-chips" data-aj-single
+                     data-aj-chips="engaged.arena.focus"
+                     data-aj-tool="The Four Arenas"
+                     data-aj-q="The arena I'm working on this week">
+                  <button class="aj-chip">Sport &amp; Work</button>
+                  <button class="aj-chip">People</button>
+                  <button class="aj-chip">Play</button>
+                  <button class="aj-chip">Self-Care</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:20px;">
+                <p class="aj-field__q">Notice what came up when you scored yourself.</p>
+                <p class="aj-field__hint">Almost everyone scores lower than they&rsquo;d like, and almost everyone&rsquo;s mind reacts. What did yours say? Then thank it and carry on.</p>
+                <textarea class="aj-textarea"
+                          data-aj="engaged.arena.reaction"
+                          data-aj-tool="The Four Arenas"
+                          data-aj-q="What my mind said when I scored myself"
+                          placeholder="e.g. Straight to 'you're failing at everything.' Which is exactly the story from the Aware toolkit."></textarea>
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> The four life domains and the values-square scoring exercise: <cite>Harris, The Happiness Trap (2022), ch. 23</cite>. Arena names adapted for athletes. On the importance of balancing dimensions of development rather than optimising one, see <cite>Walser &amp; Westrup (2019), ch. 1</cite> &mdash; there is little point building a healthy emotional life while ignoring the health behaviours that make a vital life possible.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       TOOL 04 — BUILDING A REAL GOAL
+       ========================================================== -->
+  <section class="aj-sec" id="goal">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">04</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Building a Real Goal</h2>
+              <p class="aj-tool__for">For: turning &ldquo;I should sort myself out&rdquo; into something that will actually happen.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">The five rules</span>
+            <ol class="aj-steps">
+              <li><strong>Not too easy, not too hard.</strong> Too easy isn&rsquo;t growth. Too hard and you&rsquo;ll try, fail, and conclude you&rsquo;re the problem. Find the middle.</li>
+              <li><strong>No emotional goals.</strong> &ldquo;Feel confident before games&rdquo; is not a goal &mdash; it&rsquo;s a wish about your inner weather, and chasing it drags you straight back into struggle. Set a goal about what you&rsquo;ll <em>do</em>.</li>
+              <li><strong>No dead person&rsquo;s goals.</strong> If a corpse can do it better than you, it&rsquo;s not a goal. &ldquo;Stop getting angry with the ref&rdquo; &mdash; a dead body has that nailed. Convert it: <em>if I don&rsquo;t do that, what will I do instead?</em></li>
+              <li><strong>Make it specific.</strong> Not &ldquo;more recovery work&rdquo; but &ldquo;fifteen minutes of mobility, Tuesday and Thursday, straight after training, in the gym.&rdquo; What, when, where.</li>
+              <li><strong>Make it realistic for your actual resources.</strong> Time, money, energy, health, skills, support. Not the resources of the version of you that gets eight hours&rsquo; sleep and has no exams.</li>
+            </ol>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Then two more questions that most goal-setting skips</span>
+              <p><strong>What difficult thoughts and feelings will show up?</strong> Leaving your comfort zone produces discomfort &mdash; that&rsquo;s not a sign of a bad plan, it&rsquo;s the definition of the thing. Name in advance what your reason-giving machine will say.</p>
+              <p><strong>Are you willing to make room for that in order to do this?</strong> If the honest answer is no, the goal is too big. Make it smaller, simpler, easier &mdash; until the answer is yes.</p>
+            </div>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+              <p><strong>Write it down.</strong> Research consistently shows you are far more likely to follow through on a written goal than a thought one &mdash; and more likely again if you tell someone supportive and trustworthy what you&rsquo;re going to do. That&rsquo;s two minutes of effort for a large effect. Do both.</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 10 minutes</span>
+              <h3 class="aj-act__title">The goal builder</h3>
+              <p class="aj-act__intro">One goal, in the arena you picked above, that you can do <strong>in the next seven days</strong>.</p>
+
+              <div class="aj-field">
+                <p class="aj-field__q">1. Which value is this in service of?</p>
+                <input type="text" class="aj-input"
+                       data-aj="engaged.goal.value"
+                       data-aj-tool="Building a Real Goal"
+                       data-aj-q="The value this goal serves"
+                       placeholder="e.g. Caring for my body">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">2. The goal &mdash; what, when, where?</p>
+                <p class="aj-field__hint">Specific enough that someone else could tell whether you did it.</p>
+                <textarea class="aj-textarea"
+                          data-aj="engaged.goal.what"
+                          data-aj-tool="Building a Real Goal"
+                          data-aj-q="My goal — what, when, where"
+                          placeholder="e.g. Phone out of the bedroom and lights off by 10:30, Sunday to Thursday."></textarea>
+                <span class="aj-saved" data-aj-saved="engaged.goal.what">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">3. Dead person&rsquo;s check &mdash; is this a &ldquo;do&rdquo; or a &ldquo;don&rsquo;t&rdquo;?</p>
+                <p class="aj-field__hint">If your goal is about <em>not</em> doing something, rewrite it here as what you&rsquo;ll do instead.</p>
+                <input type="text" class="aj-input"
+                       data-aj="engaged.goal.alive"
+                       data-aj-tool="Building a Real Goal"
+                       data-aj-q="The live-person version of my goal"
+                       placeholder="Instead of ____, I will ____.">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">4. What will your reason-giving machine say?</p>
+                <p class="aj-field__hint">Predict the excuses now. They&rsquo;re much easier to spot when you&rsquo;ve already written them down.</p>
+                <textarea class="aj-textarea"
+                          data-aj="engaged.goal.reasons"
+                          data-aj-tool="Building a Real Goal"
+                          data-aj-q="What my reason-giving machine will say"
+                          placeholder="e.g. 'Just this once.' 'You'll never sleep anyway.' 'You've had a hard day, you've earned it.'"></textarea>
+                <span class="aj-saved" data-aj-saved="engaged.goal.reasons">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">5. Are you willing to make room for that discomfort in order to do this?</p>
+                <div class="aj-chips" data-aj-single
+                     data-aj-chips="engaged.goal.willing"
+                     data-aj-tool="Building a Real Goal"
+                     data-aj-q="Am I willing to make room for the discomfort?">
+                  <button class="aj-chip">Yes</button>
+                  <button class="aj-chip">No &mdash; making the goal smaller</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:20px;">
+                <p class="aj-field__q">6. How realistic is it that you&rsquo;ll actually do this?</p>
+                <p class="aj-field__hint">Be brutally honest. <strong>Under 7 means change the goal</strong> &mdash; smaller, simpler, easier.</p>
+                <div class="aj-slider">
+                  <input type="range" min="0" max="10" value="7" id="goalRealistic"
+                         data-aj="engaged.goal.realistic"
+                         data-aj-out="goalRealVal"
+                         data-aj-tool="Building a Real Goal"
+                         data-aj-q="How realistic it is I'll do this (0–10)">
+                  <span class="aj-slider__val" id="goalRealVal">7</span>
+                </div>
+                <div class="gr" id="goalVerdict">
+                  <div class="gr__verdict" id="grVerdict">Good to go</div>
+                  <p class="gr__note" id="grNote"></p>
+                </div>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">7. Who will you tell?</p>
+                <p class="aj-field__hint">Someone supportive and trustworthy. Telling them is the goal &mdash; today.</p>
+                <input type="text" class="aj-input"
+                       data-aj="engaged.goal.who"
+                       data-aj-tool="Building a Real Goal"
+                       data-aj-q="Who I'll tell about this goal">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">8. Plan B</p>
+                <p class="aj-field__hint">If plan A falls through &mdash; and sometimes it will &mdash; what&rsquo;s another way to act on the same value? Any size. The point is that the value survives the plan failing.</p>
+                <input type="text" class="aj-input"
+                       data-aj="engaged.goal.planb"
+                       data-aj-tool="Building a Real Goal"
+                       data-aj-q="My plan B for living the same value">
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> Goal-setting rules, the dead person&rsquo;s goal, the willingness question and the 0&ndash;10 realism check: <cite>Harris, The Happiness Trap (2022), ch. 23</cite>. On committed action as the building of larger and larger patterns of values-linked behaviour: <cite>Walser &amp; Westrup, Learning ACT (2019), ch. 7</cite>.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       TOOL 05 — HARD BARRIERS
+       ========================================================== -->
+  <section class="aj-sec aj-sec--alt" id="hard">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">05</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">The HARD Barriers</h2>
+              <p class="aj-tool__for">For: after you said you&rsquo;d do it and then didn&rsquo;t.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>You set a goal. You meant it. You didn&rsquo;t do it. Now you feel guilty, and the guilt makes you less likely to try again.</p>
+            <p>First, the honest bit: <strong>this happens to everybody.</strong> Practitioners see it constantly. Authors of books about it do it. It is the human condition, not a character flaw. So unhook from &ldquo;not good enough&rdquo;, hold yourself kindly, and then do something more useful &mdash; work out which of the four barriers stopped you.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">The four, and their antidotes</span>
+              <ol class="aj-steps">
+                <li><strong>H &mdash; Hooked.</strong> Your reason-giving machine talked you out of it. <em>&ldquo;I&rsquo;m too tired.&rdquo; &ldquo;I&rsquo;ll do it tomorrow.&rdquo; &ldquo;It won&rsquo;t work anyway.&rdquo;</em> <br><span style="color:var(--engaged);">Antidote:</span> unhooking skills. Notice and name it, thank your mind, or drop anchor. See the <a href="grow-athlete-open.html#unhook">Open</a> toolkit.</li>
+                <li><strong>A &mdash; Avoiding discomfort.</strong> Doing the thing means feeling something you&rsquo;d rather not. <br><span style="color:var(--engaged);">Antidote:</span> TAME it. And get into the habit of asking, <em>&ldquo;am I willing to make room for this in order to do what matters?&rdquo;</em></li>
+                <li><strong>R &mdash; Remoteness from values.</strong> You&rsquo;ve lost sight of why this matters, so there&rsquo;s no fuel. <br><span style="color:var(--engaged);">Antidote:</span> reconnect. Your values haven&rsquo;t gone anywhere &mdash; a value is like your body: neglect it for years and it&rsquo;s still there.</li>
+                <li><strong>D &mdash; Doubtful goals.</strong> The goal was too big, too fast, too perfect, or needed resources you don&rsquo;t have. <br><span style="color:var(--engaged);">Antidote:</span> break it down. Ask: <em>what&rsquo;s the smallest, easiest step that gets me even slightly closer?</em> Then do that one.</li>
+              </ol>
+            </div>
+
+            <div class="aj-eg">
+              <span class="aj-eg__k">The one question that cuts through</span>
+              <p>A client had every valid reason not to go for a morning run: he liked sleeping in, it was cold, he was unfit, his knees, he&rsquo;d lost his shoes, he looked ridiculous in the gear.</p>
+              <p>So he was asked: <em>&ldquo;Suppose the person you love most in the world had been kidnapped, and the only way to get them back was to go for that run. Would you go?&rdquo;</em></p>
+              <p>&ldquo;Yes, obviously.&rdquo;</p>
+              <p><em>&ldquo;Even with all those perfectly valid reasons not to?&rdquo;</em></p>
+              <p>That&rsquo;s the point. <strong>You do not have to wait for the reasons to stop, or for your mind to become a cheerleader.</strong> You can have thirty perfectly good reasons not to do something, notice all of them, and go and do it anyway. <span style="color:var(--muted);">(Adapted from Harris, ch. 24.)</span></p>
+            </div>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Two proofs you don&rsquo;t have to obey your thoughts</span>
+              <p>Say silently to yourself, <em>&ldquo;I can&rsquo;t lift my arm, I can&rsquo;t lift my arm&rdquo;</em> &mdash; and lift your arm.</p>
+              <p>Now say, <em>&ldquo;I have to close this page, I have to close this page&rdquo;</em> &mdash; and keep reading.</p>
+              <p>You just did the whole skill twice. The better you get at unhooking, the more often that gap between thought and action is available to you.</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 8 minutes</span>
+              <h3 class="aj-act__title">Diagnose your barrier</h3>
+              <p class="aj-act__intro">Think of something you genuinely intended to do in the last month and didn&rsquo;t. Work out which barrier &mdash; often it&rsquo;s more than one &mdash; and apply the antidote.</p>
+
+              <div class="aj-field">
+                <p class="aj-field__q">1. What did you intend to do, and not do?</p>
+                <input type="text" class="aj-input"
+                       data-aj="engaged.hard.what"
+                       data-aj-tool="The HARD Barriers"
+                       data-aj-q="What I intended to do and didn't"
+                       placeholder="e.g. The extra mobility work I said I'd do three times a week">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">2. Which barrier stopped you?</p>
+                <p class="aj-field__hint">Tap all that apply &mdash; sometimes it&rsquo;s all four.</p>
+                <div class="aj-chips"
+                     data-aj-chips="engaged.hard.which"
+                     data-aj-tool="The HARD Barriers"
+                     data-aj-q="Which HARD barrier(s) stopped me">
+                  <button class="aj-chip">H &mdash; Hooked by thoughts</button>
+                  <button class="aj-chip">A &mdash; Avoiding discomfort</button>
+                  <button class="aj-chip">R &mdash; Remote from my values</button>
+                  <button class="aj-chip">D &mdash; Doubtful / oversized goal</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">3. What exactly did your mind say in the moment?</p>
+                <p class="aj-field__hint">The precise words. That&rsquo;s your reason-giving machine&rsquo;s greatest hits, and you&rsquo;ll hear them again.</p>
+                <textarea class="aj-textarea"
+                          data-aj="engaged.hard.reasons"
+                          data-aj-tool="The HARD Barriers"
+                          data-aj-q="What my mind said in the moment"
+                          placeholder="e.g. 'You've done enough today.' 'Nobody else does this.' 'You'll start properly on Monday.'"></textarea>
+                <span class="aj-saved" data-aj-saved="engaged.hard.reasons">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">4. Apply the antidote. What are you changing?</p>
+                <p class="aj-field__hint">Hooked &rarr; how you&rsquo;ll unhook. Avoiding &rarr; what you&rsquo;ll make room for. Remote &rarr; the value you&rsquo;re reconnecting to. Doubtful &rarr; the smaller version.</p>
+                <textarea class="aj-textarea"
+                          data-aj="engaged.hard.antidote"
+                          data-aj-tool="The HARD Barriers"
+                          data-aj-q="The antidote I'm applying"
+                          placeholder="e.g. It was D. Three sessions was fantasy. New version: five minutes, once, after Tuesday training, in the same room I'm already in."></textarea>
+                <span class="aj-saved" data-aj-saved="engaged.hard.antidote">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">5. The smallest, easiest step.</p>
+                <p class="aj-field__hint">So small it feels almost insulting. That is the correct size. How do you eat an elephant? One mouthful at a time.</p>
+                <input type="text" class="aj-input"
+                       data-aj="engaged.hard.smallest"
+                       data-aj-tool="The HARD Barriers"
+                       data-aj-q="The smallest, easiest step I could take">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">6. And what did you say to yourself about not doing it?</p>
+                <p class="aj-field__hint">If it was harsh, rewrite it here the way you&rsquo;d say it to a teammate.</p>
+                <textarea class="aj-textarea"
+                          data-aj="engaged.hard.selftalk"
+                          data-aj-tool="The HARD Barriers"
+                          data-aj-q="What I said to myself about not doing it — and the fairer version"
+                          placeholder="e.g. Said: 'you're all talk.' Fairer: 'you set a goal that needed a version of you with more hours in the day. Try a smaller one.'"></textarea>
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> The HARD barriers, the kidnap question and the arm-lifting demonstrations: <cite>Harris, The Happiness Trap (2022), ch. 24</cite>.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       TOOL 06 — THE BRAVE ACTION LADDER
+       ========================================================== -->
+  <section class="aj-sec" id="brave">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">06</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">The Brave Action Ladder</h2>
+              <p class="aj-tool__for">For: the thing you keep not doing because you&rsquo;re waiting to feel ready.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>Brave is not a feeling. It&rsquo;s a doing word.</p>
+            <p>The mistake almost every athlete makes at some point is treating confidence as a prerequisite &mdash; <em>once I feel ready, I&rsquo;ll ask for the ball / tell the coach / try the harder line.</em> But confidence is a <strong>by-product</strong> of doing the thing, not an entry requirement for it. Wait for the feeling and you&rsquo;ll wait a long time, because the feeling is downstream of the action.</p>
+            <p>So we build a ladder. Small brave actions first, bigger ones later, each one done <em>with</em> the discomfort rather than after it&rsquo;s gone.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why it works</span>
+              <p>This is exposure with a values-based purpose. You are deliberately making contact with something uncomfortable, and staying with it, while doing something that matters to you. Two things change: your nervous system gets direct evidence that the discomfort is survivable, and you accumulate real proof that <strong>you can act independently of how you feel.</strong> That second one is worth more than any amount of positive self-talk.</p>
+              <p>It also explains why real toughness is not what most sporting cultures taught. Toughness built on fear and hiding weakness is fragile &mdash; performing out of fear reliably makes performance worse. Toughness built on <em>doing the hard thing while feeling the hard feeling</em> is the version that holds.</p>
+            </div>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+              <p><strong>The rungs must be genuinely small.</strong> A ladder that starts at rung seven isn&rsquo;t a ladder, it&rsquo;s a wall. If your first step doesn&rsquo;t feel slightly embarrassingly easy, it&rsquo;s too big.</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 10 minutes</span>
+              <h3 class="aj-act__title">Build your ladder</h3>
+              <p class="aj-act__intro">One thing you keep avoiding. Five rungs. Then commit to rung one <strong>this week</strong>.</p>
+
+              <div class="aj-field">
+                <p class="aj-field__q">1. What are you avoiding?</p>
+                <p class="aj-field__hint">Something that matters. If it didn&rsquo;t matter you wouldn&rsquo;t be avoiding it.</p>
+                <input type="text" class="aj-input"
+                       data-aj="engaged.brave.avoiding"
+                       data-aj-tool="The Brave Action Ladder"
+                       data-aj-q="What I'm avoiding"
+                       placeholder="e.g. Asking the coach directly where I stand for selection">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">2. Which value does doing it serve?</p>
+                <input type="text" class="aj-input"
+                       data-aj="engaged.brave.value"
+                       data-aj-tool="The Brave Action Ladder"
+                       data-aj-q="The value that doing it serves"
+                       placeholder="e.g. Courage, and honesty about where I'm at">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">3. Build the rungs &mdash; easiest first.</p>
+                <p class="aj-field__hint">Add five, from &ldquo;almost too easy&rdquo; to &ldquo;the actual thing&rdquo;.</p>
+                <div class="aj-builder__row" data-aj-builder="engaged.brave.ladder"
+                     data-aj-tool="The Brave Action Ladder"
+                     data-aj-q="My brave action ladder"
+                     data-aj-empty="Add your rungs, easiest first.">
+                  <input type="text" class="aj-input" placeholder="e.g. Rung 1: write down the exact question I want to ask">
+                  <button type="button" class="aj-btn" data-aj-add>Add rung</button>
+                  <div class="aj-builder__list" style="flex:1 1 100%;"></div>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">4. What will show up when you take rung one?</p>
+                <p class="aj-field__hint">Name it now, so it isn&rsquo;t a surprise later.</p>
+                <textarea class="aj-textarea"
+                          data-aj="engaged.brave.discomfort"
+                          data-aj-tool="The Brave Action Ladder"
+                          data-aj-q="What will show up when I take rung one"
+                          placeholder="e.g. Hot face, the thought that I'm being needy, the urge to make a joke of it instead."></textarea>
+                <span class="aj-saved" data-aj-saved="engaged.brave.discomfort">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">5. When and where will you take rung one?</p>
+                <input type="text" class="aj-input"
+                       data-aj="engaged.brave.when"
+                       data-aj-tool="The Brave Action Ladder"
+                       data-aj-q="When and where I'll take rung one"
+                       placeholder="e.g. Thursday, straight after training, before I get changed">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">6. Afterwards: what actually happened?</p>
+                <p class="aj-field__hint">Come back and fill this in. Compare it with what you predicted in step 4. That comparison is where the learning lives.</p>
+                <textarea class="aj-textarea"
+                          data-aj="engaged.brave.result"
+                          data-aj-tool="The Brave Action Ladder"
+                          data-aj-q="What actually happened when I took the brave action"
+                          placeholder="e.g. Felt sick for about 20 seconds. He gave me a straight answer. I've been avoiding that conversation for eleven weeks."></textarea>
+                <span class="aj-saved" data-aj-saved="engaged.brave.result">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+            </div>
+
+            <div class="aj-watch is-single">
+              <figure class="aj-vid">
+                <div class="aj-vid__frame" data-yt="iCvmsMzlF7o">
+                  <button class="aj-vid__play" aria-label="Play: Brené Brown on the power of vulnerability" style="background-image:url('https://i.ytimg.com/vi/iCvmsMzlF7o/hqdefault.jpg')">
+                    <span class="aj-vid__badge">Watch</span>
+                    <span class="aj-vid__btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+                  </button>
+                </div>
+                <figcaption class="aj-vid__cap"><b>Bren&eacute; Brown &mdash; The power of vulnerability.</b> Why the willingness to be seen struggling is the thing that makes brave action possible &mdash; and why hiding it costs more than showing it. <em>Watch for:</em> the difference between courage and never being afraid.</figcaption>
+              </figure>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> Willingness as an action and a choice: <cite>Walser &amp; Westrup, Learning ACT (2019), ch. 2</cite>. Leaving the comfort zone and building patterns of committed action: <cite>Harris, The Happiness Trap (2022), ch. 10 &amp; 23</cite>. On fear-based toughness producing worse performance than acceptance-based approaches: <cite>Magness, Do Hard Things (2022), ch. 1 &amp; 11</cite>.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CLOSE ========== -->
+  <section class="aj-sec aj-sec--alt">
+    <div class="container">
+      <div class="aj-wrap">
+        <div class="aj-takeaways">
+          <h3>The whole pillar in six lines</h3>
+          <ul>
+            <li><strong>Goals run out. Values don&rsquo;t.</strong> One is a destination, the other is a direction you keep walking.</li>
+            <li><strong>Values are not rules.</strong> Meaning and vitality versus pressure and guilt. Learn to tell them apart from the inside.</li>
+            <li><strong>Any action can go either way.</strong> Only you can judge whether what you&rsquo;re doing is working.</li>
+            <li><strong>One arena at a time.</strong> Try to fix everything and you&rsquo;ll fix nothing.</li>
+            <li><strong>If it&rsquo;s under 7 out of 10 realistic, make it smaller.</strong> Every time.</li>
+            <li><strong>Brave is a doing word.</strong> Confidence follows the action; it doesn&rsquo;t authorise it.</li>
+          </ul>
+        </div>
+
+        <div class="aj-nextnav">
+          <a href="grow-athlete-aware.html">
+            <div class="aj-nextnav__dir">&larr; Previous pillar</div>
+            <div class="aj-nextnav__title">Aware</div>
+          </a>
+          <a href="grow-athlete-brain.html" class="aj-nextnav--end">
+            <div class="aj-nextnav__dir">Next &rarr;</div>
+            <div class="aj-nextnav__title">Brain Health</div>
+          </a>
+        </div>
+
+        <div class="aj-disclaimer">
+          <p>These skills support the work we do together &mdash; they don&rsquo;t replace it, and they aren&rsquo;t therapy or a crisis service. If something here has stirred up more than you expected, bring it to your next session, or sooner. Free, confidential support is available 24/7 across Aotearoa: call or text <a href="tel:1737">1737</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom" style="border-top:none;">
+        <p>&copy; 2026 The Performance Act. Private athlete area.</p>
+        <div class="footer__bottom-links">
+          <a href="grow-athlete.html">Skills Journal</a>
+          <a href="grow-athlete-journal.html">My Journal</a>
+          <a href="grow-athlete.html#sources">Sources</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <button class="support-line-btn" id="supportLineBtn" aria-label="NZ support lines">
+    <span class="support-line-btn__dot" aria-hidden="true"></span>
+    Immediate Support
+  </button>
+  <div class="support-line-modal" id="supportLineModal" role="dialog" aria-modal="true" aria-labelledby="supportLineTitle" aria-hidden="true">
+    <div class="support-line-modal__backdrop"></div>
+    <div class="support-line-modal__panel">
+      <button class="support-line-modal__close" id="supportLineClose" aria-label="Close support lines">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <p class="support-line-modal__eyebrow">Aotearoa, New Zealand</p>
+      <h2 class="support-line-modal__title" id="supportLineTitle">Need immediate support?</h2>
+      <p class="support-line-modal__note">The Performance Act is a sport psychology practice, not a crisis or emergency service. If you or someone you care about needs immediate support, please reach out to one of these trusted services. They are free, confidential, and available 24&#8202;/&#8202;7.</p>
+      <ul class="support-line-modal__list" role="list">
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">1737 &mdash; Need to Talk?</p><p class="sln-resource__desc">Free call or text, any time. Trained counsellors, 24&#47;7.</p></div>
+          <a href="tel:1737" class="sln-resource__number">Call or text 1737</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Lifeline NZ</p><p class="sln-resource__desc">Crisis support and suicide prevention, 24&#47;7.</p></div>
+          <a href="tel:0800543354" class="sln-resource__number">0800 543 354</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Youthline</p><p class="sln-resource__desc">For young people. Free call or text 234, 24&#47;7.</p></div>
+          <a href="tel:0800376633" class="sln-resource__number">0800 376 633</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Suicide Crisis Helpline</p><p class="sln-resource__desc">0508 TAUTOKO. Support for those in crisis, 24&#47;7.</p></div>
+          <a href="tel:0508828865" class="sln-resource__number">0508 828 865</a>
+        </li>
+      </ul>
+      <p class="support-line-modal__footer">More resources at <a href="https://www.mentalhealth.org.nz/get-help/in-crisis" target="_blank" rel="noopener">Mental Health Foundation NZ</a> and <a href="https://www.depression.org.nz" target="_blank" rel="noopener">depression.org.nz</a>.</p>
+    </div>
+  </div>
+
+  <script src="script.js?v=5"></script>
+  <script src="grow-athlete.js?v=1"></script>
+
+  <script>
+  /* ---------- values counter + goal readiness verdict ---------- */
+  (function () {
+    'use strict';
+
+    /* values: count the six-list builder chips */
+    var counter = document.getElementById('vcCount');
+    var sixWrap = document.querySelector('[data-aj-builder="engaged.values.six"]');
+    if (counter && sixWrap) {
+      var list = sixWrap.querySelector('.aj-builder__list');
+      var paint = function () {
+        var n = list.querySelectorAll('.aj-builder__chip').length;
+        counter.textContent = n + ' of 6 chosen';
+        counter.style.color = n > 6 ? '#c0562e' : '';
+        counter.style.borderColor = n > 6 ? 'rgba(192,86,46,0.5)' : '';
+      };
+      new MutationObserver(paint).observe(list, { childList: true });
+      paint();
+    }
+
+    /* goal readiness */
+    var slider = document.getElementById('goalRealistic');
+    var verdict = document.getElementById('grVerdict');
+    var note = document.getElementById('grNote');
+    if (!slider || !verdict || !note) return;
+
+    function paintVerdict() {
+      var v = parseInt(slider.value, 10);
+      if (v >= 8) {
+        verdict.textContent = 'Good to go';
+        verdict.style.color = '#8ED88E';
+        note.innerHTML = 'That is a goal you will probably do. <strong>Now tell someone</strong> &mdash; commitment made to another person is one of the strongest predictors of follow-through.';
+      } else if (v >= 7) {
+        verdict.textContent = 'Just about there';
+        verdict.style.color = 'var(--engaged)';
+        note.innerHTML = 'Seven is the floor. It will work &mdash; but if anything unexpected turns up this week, it&rsquo;s the first thing to go. <strong>Consider trimming it slightly</strong> so it survives a bad week.';
+      } else {
+        verdict.textContent = 'Make it smaller';
+        verdict.style.color = '#c0562e';
+        note.innerHTML = 'Below 7, and you are setting yourself up to fail and then blame yourself for it. <strong>Shrink it now.</strong> Ask: what&rsquo;s the smallest, easiest step that gets me even slightly closer? Then make <em>that</em> the goal.';
+      }
+    }
+    slider.addEventListener('input', paintVerdict);
+    slider.addEventListener('aj:restored', paintVerdict);
+    paintVerdict();
+  })();
+  </script>
+</body>
+</html>

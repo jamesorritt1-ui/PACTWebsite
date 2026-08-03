@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>BRAIN HEALTH BEHAVIOURS | Skills Journal | The Performance Act</title>
+  <meta name="description" content="Sleep, fuel, hydration, connection, movement and quiet — the six behaviours that decide whether every other mental skill has anything to work with.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=18">
+  <link rel="stylesheet" href="grow-athlete.css?v=1">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=2">
+  <style>
+    /* Brain health accent */
+    .aj-tool { border-left-color: var(--brain); }
+    .aj-tool__num { color: rgba(142,216,142,0.35); }
+    .aj-act { border-color: rgba(142,216,142,0.32); background: linear-gradient(165deg,#101a10,#0c0c0c); }
+    .aj-act__tag { background: var(--brain); }
+    .aj-hero__title span { color: var(--brain); }
+    .aj-chip[aria-pressed="true"] { background: var(--brain); border-color: var(--brain); }
+    .aj-check__row.is-on .aj-check__box { background: var(--brain); border-color: var(--brain); }
+    .aj-meter__fill, .aj-progress__fill { background: var(--brain); }
+    .aj-progress__count, .aj-meter__val { color: var(--brain); }
+    .aj-slider input[type=range]::-webkit-slider-thumb { background: var(--brain); }
+    .aj-slider input[type=range]::-moz-range-thumb { background: var(--brain); }
+    .aj-slider__val { color: var(--brain); }
+    .aj-day.is-done .aj-day__dot { background: var(--brain); border-color: var(--brain); }
+    .aj-day__caret { color: var(--brain); }
+    .aj-btn { background: var(--brain); border-color: var(--brain); }
+    .aj-btn:hover { box-shadow: 0 8px 22px rgba(142,216,142,0.22); }
+    .aj-btn--ghost { background: transparent; border-color: rgba(255,255,255,0.35); color: var(--ink); }
+    .aj-block__k, .aj-eg__k, .aj-eyebrow, .aj-label { color: var(--brain); }
+    .aj-h2 em { color: var(--brain); }
+    .aj-takeaways { border-color: rgba(142,216,142,0.3); }
+    .aj-back, .aj-hero__badge { color: var(--brain); }
+    .aj-hero__badge { border-color: rgba(142,216,142,0.4); }
+    .aj-label::before, .aj-ul li::before { background: var(--brain); }
+    .aj-eg { border-left-color: var(--brain); }
+    .aj-steps li::before { border-color: rgba(142,216,142,0.5); color: var(--brain); }
+    .aj-builder__chip { border-left-color: var(--brain); }
+    .aj-takeaways li::before { background: var(--brain); }
+    .aj-takeaways h3 { color: var(--brain); }
+
+    /* number cards */
+    .nm { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:22px 0; }
+    .nm__card { background:#111; border:1px solid var(--line); border-top:3px solid var(--brain); padding:20px 20px; }
+    .nm__big { font-family:var(--font-heading); font-weight:700; font-size:1.7rem; color:var(--brain); line-height:1; }
+    .nm__lab { font-family:var(--font-heading); font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:#fff; margin:8px 0 6px; }
+    .nm__note { color:var(--muted); font-size:0.84rem; line-height:1.55; font-weight:300; margin:0; }
+    @media (max-width:720px){ .nm { grid-template-columns:1fr; } }
+
+    /* urine colour scale */
+    .uc { display:flex; gap:0; margin:16px 0 8px; border:1px solid var(--line); overflow:hidden; }
+    .uc__step { flex:1; padding:14px 6px 12px; text-align:center; cursor:pointer; transition:.15s; border-right:1px solid rgba(0,0,0,0.35); }
+    .uc__step:last-child { border-right:none; }
+    .uc__step span { display:block; font-family:var(--font-heading); font-weight:700; font-size:0.9rem; color:#1a1a1a; }
+    .uc__step[aria-pressed="true"] { outline:3px solid #fff; outline-offset:-3px; }
+    .uc__read { color:var(--ink); font-size:0.93rem; line-height:1.65; font-weight:300; margin:10px 0 0; min-height:3em; }
+    .uc__read strong { color:#fff; font-weight:600; }
+
+    /* sweat calculator */
+    .sc { background:#0a0a0a; border:1px solid var(--line); padding:20px 22px; margin-top:16px; }
+    .sc__row { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .sc__row label { display:block; font-family:var(--font-heading); font-size:0.64rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+    .sc__out { margin-top:18px; padding-top:16px; border-top:1px solid var(--line); }
+    .sc__num { font-family:var(--font-heading); font-weight:700; font-size:2rem; color:var(--brain); line-height:1; }
+    .sc__note { color:var(--ink); font-size:0.9rem; line-height:1.6; font-weight:300; margin:10px 0 0; }
+    .sc__note strong { color:#fff; font-weight:600; }
+    @media (max-width:640px){ .sc__row { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body class="aj">
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="images/logo-horizontal.png?v=2" alt="The Performance Act" class="logo-img logo-img--header">
+      </a>
+      <nav class="header__nav" id="mainNav" aria-label="Primary">
+        <a href="grow-athlete.html" class="nav-link">SKILLS JOURNAL</a>
+        <a href="grow-athlete-open.html" class="nav-link">OPEN</a>
+        <a href="grow-athlete-aware.html" class="nav-link">AWARE</a>
+        <a href="grow-athlete-engaged.html" class="nav-link">ENGAGED</a>
+        <a href="grow-athlete-brain.html" class="nav-link active">BRAIN HEALTH</a>
+      </nav>
+      <div class="header__actions">
+        <a href="grow-athlete-journal.html" class="btn btn--primary btn--sm">My Journal</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <nav class="mobile-nav__links" aria-label="Mobile">
+      <a href="grow-athlete.html" class="mobile-nav__link">SKILLS JOURNAL HOME</a>
+      <a href="grow-athlete-open.html" class="mobile-nav__link">OPEN</a>
+      <a href="grow-athlete-aware.html" class="mobile-nav__link">AWARE</a>
+      <a href="grow-athlete-engaged.html" class="mobile-nav__link">ENGAGED</a>
+      <a href="grow-athlete-brain.html" class="mobile-nav__link">BRAIN HEALTH</a>
+      <a href="grow-athlete-journal.html" class="mobile-nav__link">MY JOURNAL</a>
+    </nav>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="aj-hero" id="top">
+    <div class="aj-hero__bg"></div>
+    <div class="container">
+      <a href="grow-athlete.html" class="aj-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Skills Journal
+      </a>
+      <span class="aj-hero__badge">The foundation under all three pillars</span>
+      <h1 class="aj-hero__title">BRAIN HEALTH<br><span>BEHAVIOURS</span></h1>
+      <p class="aj-hero__lead"><strong>Sleep. Fuel. Hydration. Connection. Movement. Quiet.</strong> Six behaviours that decide whether every mental skill in this area has anything to work with. Get these wrong and nothing else lands properly.</p>
+      <p class="aj-hero__meta"><span>6 behaviours</span> &middot; <span>6 activities</span> &middot; <span>Start with the worst one</span></p>
+      <div class="aj-toc">
+        <a href="#sleep">01 &middot; Sleep</a>
+        <a href="#fuel">02 &middot; Fuel</a>
+        <a href="#hydration">03 &middot; Hydration</a>
+        <a href="#connection">04 &middot; Social connection</a>
+        <a href="#movement">05 &middot; Movement &amp; recovery</a>
+        <a href="#quiet">06 &middot; Quiet &amp; screens</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="aj-progress">
+    <div class="container">
+      <div class="aj-progress__inner">
+        <span class="aj-progress__label">Your progress through Brain Health</span>
+        <div class="aj-progress__track"><div class="aj-progress__fill" id="ajProgressFill"></div></div>
+        <span class="aj-progress__count" id="ajProgressCount">0 / 0 saved</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== INTRO ========== -->
+  <section class="aj-sec">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">Before you start</p>
+        <h2 class="aj-h2">You cannot think<br>your way out of <em>exhaustion</em></h2>
+        <p class="aj-lead">Nobody in sport psychology likes admitting this, but it&rsquo;s true: the single most common reason an athlete&rsquo;s mental skills stop working is not that the skills are wrong. It&rsquo;s that they are being run on four hours&rsquo; sleep, no breakfast and a fortnight of not talking to anyone.</p>
+        <p class="aj-p" style="margin-top:18px;">There&rsquo;s good evidence for this from an unexpected direction. Researchers asked people to estimate how high a bar they could step over. Then they asked a group who had been kept awake for twenty-four hours. The sleep-deprived group <strong>badly underestimated what they could physically do</strong> &mdash; their actual capability hadn&rsquo;t changed, only their reading of it. As one sport psychologist put it: we perceive the environment in terms of the costs of acting within it.</p>
+        <p class="aj-p">In other words, when you&rsquo;re depleted, everything looks harder than it is. The hill looks steeper. The opponent looks better. The conversation looks more dangerous. And you will interpret all of that as evidence about <em>you</em>, when it is actually evidence about your recovery.</p>
+
+        <div class="aj-block">
+          <span class="aj-block__k">Why this sits inside a psychology resource</span>
+          <p>Psychological flexibility is described in the ACT literature as a <strong>multidimensional</strong> business &mdash; you cannot sensibly build a healthy emotional life while ignoring diet, sleep and exercise, because those are what make a vital life physically possible. It is one system. This page is the other half of the same job.</p>
+        </div>
+
+        <div class="aj-warn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+          <p><strong>Pick one.</strong> Six behaviours is far too many to change at once, and trying will guarantee you change none of them. Work through the audits, find your worst one, and give it a fortnight. The others will benefit anyway &mdash; these things pull each other along.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       01 — SLEEP
+       ========================================================== -->
+  <section class="aj-sec aj-sec--alt" id="sleep">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">01</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Sleep</h2>
+              <p class="aj-tool__for">The single biggest performance lever most athletes are leaving on the table.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">Why it matters</span>
+            <p>While you sleep, your brain consolidates the motor skills you drilled that day, clears metabolic waste, regulates emotion, and restores attention. Nothing you can buy comes close. When athletes deliberately <em>extend</em> their sleep towards ten hours in bed, sprint times, shooting accuracy, reaction time and mood all measurably improve.</p>
+            <p>The emotional side matters just as much here. Short sleep reliably increases reactivity and lowers your tolerance for frustration &mdash; which means a bad night doesn&rsquo;t just cost you a step of pace, it costs you the composure you were relying on your mental skills to provide.</p>
+
+            <div class="nm">
+              <div class="nm__card">
+                <div class="nm__big">8&ndash;10 hrs</div>
+                <div class="nm__lab">Teens, 13&ndash;18</div>
+                <p class="nm__note">The American Academy of Sleep Medicine recommendation for optimal health.</p>
+              </div>
+              <div class="nm__card">
+                <div class="nm__big">7&ndash;9 hrs</div>
+                <div class="nm__lab">Young adults, 18&ndash;25</div>
+                <p class="nm__note">More than nine is appropriate when training hard or paying back sleep debt.</p>
+              </div>
+              <div class="nm__card">
+                <div class="nm__big">9&ndash;10+ hrs</div>
+                <div class="nm__lab">Hard-training athletes</div>
+                <p class="nm__note">Sleep-in-sport researchers suggest aiming higher. Some elite performers bank 10&ndash;12.</p>
+              </div>
+            </div>
+
+            <p class="aj-p">And the reality gap: studies find adolescent athletes average around <strong>seven hours</strong> a night, and student-athletes often sleep roughly two hours less than non-athletes. That is a large, fixable edge sitting on the table.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">More than just hours &mdash; RU-SATED</span>
+              <p>Sleep researchers describe sleep health across six dimensions. It&rsquo;s a useful way to find which bit of yours is actually broken.</p>
+              <ul class="aj-ul">
+                <li><strong>Regularity</strong> &mdash; similar bed and wake times day to day. <em>Start here. This is the highest-value habit there is.</em></li>
+                <li><strong>Satisfaction</strong> &mdash; sleep feels restful.</li>
+                <li><strong>Alertness</strong> &mdash; you can stay awake and focused during the day.</li>
+                <li><strong>Timing</strong> &mdash; you&rsquo;re asleep at hours that suit your life.</li>
+                <li><strong>Efficiency</strong> &mdash; you fall asleep and stay asleep reasonably easily.</li>
+                <li><strong>Duration</strong> &mdash; enough hours for your age and training load.</li>
+              </ul>
+            </div>
+
+            <div class="aj-block">
+              <span class="aj-block__k">And the ACT bit: stop fighting to fall asleep</span>
+              <p>Everything in the <a href="grow-athlete-open.html">Open</a> toolkit applies at 2am. Lying there trying to <em>force</em> sleep is the struggle switch at full power &mdash; and it manufactures exactly the arousal that keeps you awake. You cannot will yourself unconscious.</p>
+              <p>What you can do is make room for being awake. Drop anchor. Let the frustration be there. Notice the &ldquo;I&rsquo;m going to be wrecked tomorrow&rdquo; story and thank your mind for it. Kind hands, if you have them. <strong>The aim is to stop the fight, not to win it.</strong></p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; audit + 7 nights</span>
+              <h3 class="aj-act__title">Sleep audit and wind-down build</h3>
+              <p class="aj-act__intro">Tick what you already do. Don&rsquo;t aim to tick everything &mdash; <strong>pick one or two to add</strong>, and let the rest be.</p>
+
+              <div class="aj-meter">
+                <div class="aj-meter__top">
+                  <span class="aj-meter__name">Habits in place</span>
+                  <span class="aj-meter__val" id="sleepMeterVal">0 / 12</span>
+                </div>
+                <div class="aj-meter__track"><div class="aj-meter__fill" id="sleepMeterFill"></div></div>
+              </div>
+
+              <div class="aj-check"
+                   data-aj-check="brain.sleep.habits"
+                   data-aj-meter="sleepMeterFill"
+                   data-aj-meter-val="sleepMeterVal"
+                   data-aj-tool="Sleep"
+                   data-aj-q="Sleep habits I already have in place">
+                <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Same bed and wake time</b>Within about an hour, including weekends.</div></div>
+                <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>A wind-down ritual</b>30&ndash;60 minutes of the same calming things each night.</div></div>
+                <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Morning daylight</b>Light early anchors your body clock. A walk works.</div></div>
+                <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Phone out of the bed</b>Across the room if you use it as an alarm.</div></div>
+                <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Dim lights and screens before bed</b>Bright evening light delays your melatonin.</div></div>
+                <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>No caffeine within 4&ndash;6 hours of bed</b>That 4pm energy drink is still in you at midnight.</div></div>
+                <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Room dark, cool and quiet</b>Your core temperature drops as you fall asleep.</div></div>
+                <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Bed is for sleeping</b>Not scrolling, studying or gaming.</div></div>
+                <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Not going to bed starving or stuffed</b>A light snack is fine; a heavy late meal isn&rsquo;t.</div></div>
+                <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Naps done properly</b>20&ndash;30 min, before mid-afternoon. Avoid the 30&ndash;75 min zone.</div></div>
+                <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Keeping the day normal after a bad night</b>Cancelling your day feeds the problem.</div></div>
+                <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Not fighting to fall asleep</b>Making room for being awake instead of forcing sleep.</div></div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">Your wind-down &mdash; the same three things, every night</p>
+                <p class="aj-field__hint">Boring and repeatable beats clever. The consistency is the active ingredient.</p>
+                <textarea class="aj-textarea"
+                          data-aj="brain.sleep.winddown"
+                          data-aj-tool="Sleep"
+                          data-aj-q="My three-step wind-down"
+                          placeholder="e.g. 1. Phone on the desk at 9:45. 2. Shower and stretch. 3. Read something on paper until my eyes go."></textarea>
+                <span class="aj-saved" data-aj-saved="brain.sleep.winddown">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">The one habit you&rsquo;re adding this fortnight</p>
+                <input type="text" class="aj-input"
+                       data-aj="brain.sleep.onehabit"
+                       data-aj-tool="Sleep"
+                       data-aj-q="The one sleep habit I'm adding"
+                       placeholder="e.g. Same wake time every day, including Sunday">
+              </div>
+
+              <p class="aj-field__hint" style="margin:26px 0 12px;"><strong style="color:#fff;">Seven-night log.</strong> Tap a night to open it. Two lines each &mdash; that&rsquo;s all.</p>
+
+              <div id="sleepDays"></div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">After seven nights: what did you notice?</p>
+                <textarea class="aj-textarea"
+                          data-aj="brain.sleep.review"
+                          data-aj-tool="Sleep"
+                          data-aj-q="What I noticed after seven nights"
+                          placeholder="e.g. The nights I kept the phone out I fell asleep in about ten minutes instead of an hour. Training on Thursday was the best it's been in weeks."></textarea>
+                <span class="aj-saved" data-aj-saved="brain.sleep.review">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+            </div>
+
+            <div class="aj-warn" style="margin-top:24px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+              <p><strong>When to see someone.</strong> If you regularly take more than 30 minutes to fall asleep, wake repeatedly and can&rsquo;t get back off, snore heavily or stop breathing in your sleep, or feel exhausted despite adequate hours &mdash; and it&rsquo;s been going on for weeks &mdash; that is worth a GP visit. Sleep hygiene doesn&rsquo;t fix insomnia disorder or sleep apnoea, and both are very treatable.</p>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> Duration guidance from the <cite>American Academy of Sleep Medicine</cite>; sleep-extension studies in athletes summarised in <cite>Watson (2017), Sleep and athletic performance, Current Sports Medicine Reports</cite>; RU-SATED from <cite>Buysse (2014), Sleep health, SLEEP</cite>; general mechanism, <cite>Walker (2017), Why We Sleep</cite>. The sleep-deprivation and perceived-capability study: <cite>Daviaux et al., discussed in Magness, Do Hard Things (2022), ch. 3</cite>. A fuller deep-dive on sleep lives in our <a href="grow-thrive-bonus-sleep.html">THRIVE sleep module</a>.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       02 — FUEL
+       ========================================================== -->
+  <section class="aj-sec" id="fuel">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">02</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Fuel</h2>
+              <p class="aj-tool__for">Your brain runs on glucose. Under-fuel and the first thing you lose is judgement.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">Why it matters</span>
+            <p>Your brain is roughly 2% of your body weight and consumes something like 20% of your energy. It has almost no storage. When available fuel drops, the functions that go first are the expensive ones: sustained attention, decision-making under pressure, and emotional regulation.</p>
+            <p>Which is why under-fuelled athletes are not just slower &mdash; they are shorter-tempered, more easily hooked by unhelpful thoughts, and worse at reading a game. If someone tells you they&rsquo;ve &ldquo;lost their bottle&rdquo; and they last ate at 7am, take the food history before you take the psychology.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">The four things that actually matter</span>
+              <ol class="aj-steps">
+                <li><strong>Eat enough, full stop.</strong> Chronic under-fuelling &mdash; whether deliberate or just disorganised &mdash; is the most common and most damaging nutrition problem in sport. It costs bone health, hormonal health, immune function, mood and eventually your season.</li>
+                <li><strong>Fuel <em>around</em> the work.</strong> Something with carbohydrate 1&ndash;3 hours before training. Something with carbohydrate and protein reasonably soon after. This is the highest-yield timing change most athletes can make.</li>
+                <li><strong>Don&rsquo;t skip breakfast on training days.</strong> It is the most commonly skipped meal and the one most likely to be followed by a session.</li>
+                <li><strong>Build the plate.</strong> Carbohydrate for fuel, protein for repair, fruit and vegetables for everything else, some fat. It genuinely is that boring.</li>
+              </ol>
+            </div>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+              <p><strong>An honest boundary.</strong> We are a sport psychology practice, not dietitians. This page covers the behavioural basics only. Anything to do with body composition targets, restrictive eating, weight-making, or a relationship with food that has started to feel distressing or controlling belongs with a registered sports dietitian and, where relevant, a clinician &mdash; and we will help you get there. <strong>Please bring it to a session rather than working it out alone.</strong></p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 8 minutes</span>
+              <h3 class="aj-act__title">Map a training day</h3>
+              <p class="aj-act__intro">Take a typical <strong>heavy</strong> training day and write down what actually happens &mdash; not what should happen. Then find the single gap worth closing.</p>
+
+              <div class="aj-field">
+                <p class="aj-field__q">1. Walk through the day as it really is.</p>
+                <p class="aj-field__hint">Times and what you eat. Include the gaps honestly &mdash; that&rsquo;s the useful part.</p>
+                <textarea class="aj-textarea"
+                          data-aj="brain.fuel.day"
+                          data-aj-tool="Fuel"
+                          data-aj-q="What I actually eat on a heavy training day"
+                          placeholder="e.g. 7am nothing. 10:30 something from the canteen. 1pm sandwich. Training 4–6. 7:30pm big dinner."></textarea>
+                <span class="aj-saved" data-aj-saved="brain.fuel.day">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">2. Where is the longest gap before a hard session?</p>
+                <input type="text" class="aj-input"
+                       data-aj="brain.fuel.gap"
+                       data-aj-tool="Fuel"
+                       data-aj-q="The longest gap before a hard session"
+                       placeholder="e.g. 1pm to 6pm, and training is in the middle of it">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">3. Which of these are true for you at the moment?</p>
+                <div class="aj-chips"
+                     data-aj-chips="brain.fuel.patterns"
+                     data-aj-tool="Fuel"
+                     data-aj-q="Fuelling patterns that are true for me">
+                  <button class="aj-chip">I skip breakfast</button>
+                  <button class="aj-chip">I train on an empty stomach</button>
+                  <button class="aj-chip">I don&rsquo;t eat after training</button>
+                  <button class="aj-chip">I eat most of my food at night</button>
+                  <button class="aj-chip">I forget to eat when busy</button>
+                  <button class="aj-chip">I rely on energy drinks</button>
+                  <button class="aj-chip">I get shaky or irritable mid-afternoon</button>
+                  <button class="aj-chip">I&rsquo;m fine, honestly</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">4. The pre-session fix</p>
+                <p class="aj-field__hint">Something with carbohydrate, 1&ndash;3 hours before. Name the actual food and where it comes from &mdash; a plan that requires shopping you won&rsquo;t do isn&rsquo;t a plan.</p>
+                <input type="text" class="aj-input"
+                       data-aj="brain.fuel.pre"
+                       data-aj-tool="Fuel"
+                       data-aj-q="My pre-session fuel plan"
+                       placeholder="e.g. Two crumpets and a banana at 3pm, kept in my bag">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">5. The post-session fix</p>
+                <p class="aj-field__hint">Carbohydrate + protein, reasonably soon after. Again: what and from where.</p>
+                <input type="text" class="aj-input"
+                       data-aj="brain.fuel.post"
+                       data-aj-tool="Fuel"
+                       data-aj-q="My post-session fuel plan"
+                       placeholder="e.g. Milk and a sandwich in the car, made before I leave the house">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">6. Notice the mood link.</p>
+                <p class="aj-field__hint">For one week, when you feel unusually irritable, flat or hopeless, ask first: <em>when did I last eat?</em> Log what you find.</p>
+                <textarea class="aj-textarea"
+                          data-aj="brain.fuel.mood"
+                          data-aj-tool="Fuel"
+                          data-aj-q="What I noticed about food and mood"
+                          placeholder="e.g. Every single time I've snapped at someone this week it's been between 4 and 6pm, and I hadn't eaten since lunch."></textarea>
+                <span class="aj-saved" data-aj-saved="brain.fuel.mood">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> General principles consistent with the <cite>International Olympic Committee consensus statement on Relative Energy Deficiency in Sport (RED-S)</cite> and mainstream sports nutrition guidance (<cite>Thomas, Erdman &amp; Burke, 2016, Nutrition and Athletic Performance</cite>). For individual advice, see a registered sports dietitian.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       03 — HYDRATION
+       ========================================================== -->
+  <section class="aj-sec aj-sec--alt" id="hydration">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">03</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Hydration</h2>
+              <p class="aj-tool__for">The cheapest, most-ignored variable in the whole list.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">Why it matters</span>
+            <p>Fluid loss of around <strong>2% of body mass</strong> &mdash; about 1.5&nbsp;kg for a 75&nbsp;kg athlete, which is an ordinary hard session in warm conditions &mdash; is enough to measurably impair endurance performance, and there is reasonable evidence it also degrades concentration, mood and skill execution before you feel especially thirsty.</p>
+            <p>The psychology angle: mild dehydration produces low mood, irritability and a heavy-legged, can&rsquo;t-be-bothered feeling that is very easy to misread as a motivation problem. Athletes routinely conclude they&rsquo;ve gone soft when they&rsquo;ve simply gone dry.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">How to actually judge it</span>
+              <ul class="aj-ul">
+                <li><strong>Urine colour, first thing.</strong> Crude, free, and good enough. Pale straw is the target.</li>
+                <li><strong>Body mass before and after a session.</strong> Every 1&nbsp;kg lost is roughly 1&nbsp;litre of fluid. This is the only way to know <em>your</em> sweat rate rather than a number off a poster.</li>
+                <li><strong>Thirst.</strong> Useful, but it lags &mdash; by the time you&rsquo;re properly thirsty you&rsquo;re already behind.</li>
+              </ul>
+              <p>Replace roughly <strong>1.25&ndash;1.5 litres for every kilogram lost</strong> across the hours after a session, and include some sodium if you&rsquo;re a salty or heavy sweater or it&rsquo;s hot.</p>
+            </div>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+              <p><strong>More is not better.</strong> Drinking far beyond your losses is not harmless &mdash; overdrinking during prolonged exercise can cause hyponatraemia, which is dangerous. Aim to roughly match your losses, not to drown them. And note the obvious: some urine colour changes come from supplements (B vitamins especially) rather than hydration.</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; one session to measure</span>
+              <h3 class="aj-act__title">Find your sweat rate</h3>
+              <p class="aj-act__intro">This takes one session and a set of scales, and it replaces guesswork with a number that belongs to you.</p>
+
+              <div class="aj-field">
+                <p class="aj-field__q">1. This morning&rsquo;s urine colour</p>
+                <p class="aj-field__hint">Tap the closest match. First void of the day is the most informative.</p>
+                <div class="uc" id="ucScale">
+                  <button type="button" class="uc__step" data-i="0" style="background:#F7F2C8;" aria-pressed="false"><span>1</span></button>
+                  <button type="button" class="uc__step" data-i="1" style="background:#F5EBA0;" aria-pressed="false"><span>2</span></button>
+                  <button type="button" class="uc__step" data-i="2" style="background:#F0DF78;" aria-pressed="false"><span>3</span></button>
+                  <button type="button" class="uc__step" data-i="3" style="background:#E8CE4E;" aria-pressed="false"><span>4</span></button>
+                  <button type="button" class="uc__step" data-i="4" style="background:#DAB534;" aria-pressed="false"><span>5</span></button>
+                  <button type="button" class="uc__step" data-i="5" style="background:#C79A28;" aria-pressed="false"><span>6</span></button>
+                  <button type="button" class="uc__step" data-i="6" style="background:#B07D20;" aria-pressed="false"><span>7</span></button>
+                  <button type="button" class="uc__step" data-i="7" style="background:#8F5F1A;" aria-pressed="false"><span>8</span></button>
+                </div>
+                <p class="uc__read" id="ucRead">Tap a shade to see what it suggests.</p>
+                <input type="hidden" data-aj="brain.hydration.colour"
+                       data-aj-tool="Hydration"
+                       data-aj-q="My typical morning urine colour (1–8 scale)" id="ucStore">
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">2. Sweat-rate calculator</p>
+                <p class="aj-field__hint">Weigh yourself in minimal dry clothing before and after a session. Note anything you drank during it.</p>
+                <div class="sc">
+                  <div class="sc__row">
+                    <div>
+                      <label for="scPre">Weight before (kg)</label>
+                      <input type="number" step="0.1" class="aj-input" id="scPre"
+                             data-aj="brain.hydration.pre"
+                             data-aj-tool="Hydration"
+                             data-aj-q="Weight before session (kg)" placeholder="75.0">
+                    </div>
+                    <div>
+                      <label for="scPost">Weight after (kg)</label>
+                      <input type="number" step="0.1" class="aj-input" id="scPost"
+                             data-aj="brain.hydration.post"
+                             data-aj-tool="Hydration"
+                             data-aj-q="Weight after session (kg)" placeholder="73.6">
+                    </div>
+                    <div>
+                      <label for="scDrank">Drank during (litres)</label>
+                      <input type="number" step="0.1" class="aj-input" id="scDrank"
+                             data-aj="brain.hydration.drank"
+                             data-aj-tool="Hydration"
+                             data-aj-q="Fluid drunk during session (L)" placeholder="0.5">
+                    </div>
+                  </div>
+                  <div class="sc__out">
+                    <div class="sc__num" id="scNum">&mdash;</div>
+                    <p class="sc__note" id="scNote">Enter your numbers to see your fluid loss and what to replace.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">3. Your hydration plan</p>
+                <p class="aj-field__hint">Where the bottle lives, when you fill it, and what you&rsquo;ll drink after a session. Concrete beats aspirational.</p>
+                <textarea class="aj-textarea"
+                          data-aj="brain.hydration.plan"
+                          data-aj-tool="Hydration"
+                          data-aj-q="My hydration plan"
+                          placeholder="e.g. 1L bottle filled and in my bag before I leave. Second one in the car for the drive home. Glass of water with every meal."></textarea>
+                <span class="aj-saved" data-aj-saved="brain.hydration.plan">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> Thresholds and replacement ratios consistent with the <cite>American College of Sports Medicine position stand on exercise and fluid replacement (Sawka et al., 2007)</cite> and <cite>McDermott et al. (2017), National Athletic Trainers&rsquo; Association position statement on fluid replacement</cite>. Urine-colour charts as a practical field measure: <cite>Armstrong et al. (1994)</cite>.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       04 — SOCIAL CONNECTION
+       ========================================================== -->
+  <section class="aj-sec" id="connection">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">04</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Social Connection</h2>
+              <p class="aj-tool__for">The behaviour athletes cut first, and the one they can least afford to lose.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">Why it matters</span>
+            <p>This is not the soft one on the list. In a meta-analysis covering more than three million people, social isolation and loneliness were associated with substantially increased mortality risk &mdash; effects comparable in size to well-established risk factors. Connection is not a nice-to-have. It is a health behaviour, in the same category as sleep.</p>
+            <p>For athletes there&rsquo;s a specific problem. Sport eats your time, and the first things to go are the relationships that have nothing to do with performance. Then something goes wrong &mdash; injury, deselection, a bad run &mdash; and you discover that you narrowed your whole identity and your whole social world onto one thing, at exactly the moment that thing became painful.</p>
+            <p>There&rsquo;s also good evidence about what actually builds team belonging: not team-bonding days or big speeches, but the accumulation of small everyday moments that either include people or quietly exclude them.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">The self-determination angle</span>
+              <p>Motivation research identifies three basic psychological needs: <strong>autonomy</strong> (having a say), <strong>competence</strong> (getting better at something), and <strong>relatedness</strong> (belonging with people). Sport is usually excellent at the middle one and can be dreadful at the other two. Relatedness is the one most often starved &mdash; and when it is, motivation quietly drains away, which people then misdiagnose as not wanting it enough.</p>
+            </div>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+              <p><strong>Withdrawing is a struggle strategy.</strong> Going quiet when things are hard feels protective and it is the most common away move athletes make. It reliably makes everything worse, and it&rsquo;s the one your teammates and family notice long before you admit it. If you recognise yourself here, that is worth naming in your next session.</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 8 minutes + one message</span>
+              <h3 class="aj-act__title">Your connection map</h3>
+              <p class="aj-act__intro">Four circles. Be honest about how each one is actually going &mdash; not how it looks from outside.</p>
+
+              <div class="aj-field">
+                <p class="aj-field__q">1. Who is in your corner right now?</p>
+                <p class="aj-field__hint">Names. People who&rsquo;d turn up if you rang them at a bad hour.</p>
+                <div class="aj-builder__row" data-aj-builder="brain.connect.corner"
+                     data-aj-tool="Social Connection"
+                     data-aj-q="Who's in my corner"
+                     data-aj-empty="Add the names.">
+                  <input type="text" class="aj-input" placeholder="First name is enough">
+                  <button type="button" class="aj-btn" data-aj-add>Add</button>
+                  <div class="aj-builder__list" style="flex:1 1 100%;"></div>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">2. Score each circle: how connected do you feel there this month?</p>
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q" style="font-size:0.9rem;">Family / home</p>
+                <div class="aj-slider">
+                  <input type="range" min="0" max="10" value="5" data-aj="brain.connect.family" data-aj-out="cnFamily"
+                         data-aj-tool="Social Connection" data-aj-q="Connection — family/home (0–10)">
+                  <span class="aj-slider__val" id="cnFamily">5</span>
+                </div>
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q" style="font-size:0.9rem;">Teammates / training group</p>
+                <div class="aj-slider">
+                  <input type="range" min="0" max="10" value="5" data-aj="brain.connect.team" data-aj-out="cnTeam"
+                         data-aj-tool="Social Connection" data-aj-q="Connection — teammates (0–10)">
+                  <span class="aj-slider__val" id="cnTeam">5</span>
+                </div>
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q" style="font-size:0.9rem;">Friends outside sport</p>
+                <div class="aj-slider">
+                  <input type="range" min="0" max="10" value="5" data-aj="brain.connect.friends" data-aj-out="cnFriends"
+                         data-aj-tool="Social Connection" data-aj-q="Connection — friends outside sport (0–10)">
+                  <span class="aj-slider__val" id="cnFriends">5</span>
+                </div>
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q" style="font-size:0.9rem;">Wider community &mdash; club, school, work, culture, marae, faith</p>
+                <div class="aj-slider">
+                  <input type="range" min="0" max="10" value="5" data-aj="brain.connect.community" data-aj-out="cnCommunity"
+                         data-aj-tool="Social Connection" data-aj-q="Connection — wider community (0–10)">
+                  <span class="aj-slider__val" id="cnCommunity">5</span>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">3. Who have you drifted from since sport got serious?</p>
+                <p class="aj-field__hint">No guilt required. Just notice.</p>
+                <textarea class="aj-textarea"
+                          data-aj="brain.connect.drift"
+                          data-aj-tool="Social Connection"
+                          data-aj-q="Who I've drifted from"
+                          placeholder="e.g. My two mates from school. I haven't seen either since February and I used to see them weekly."></textarea>
+                <span class="aj-saved" data-aj-saved="brain.connect.drift">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">4. What do you talk about when you&rsquo;re struggling &mdash; and with whom?</p>
+                <p class="aj-field__hint">If the honest answer is &ldquo;nobody&rdquo;, write that. It&rsquo;s the most useful thing you could put in this box.</p>
+                <textarea class="aj-textarea"
+                          data-aj="brain.connect.who"
+                          data-aj-tool="Social Connection"
+                          data-aj-q="Who I talk to when I'm struggling"
+                          placeholder=""></textarea>
+                <span class="aj-saved" data-aj-saved="brain.connect.who">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">5. One message. This week.</p>
+                <p class="aj-field__hint">One person, one message, and it doesn&rsquo;t have to be deep &mdash; &ldquo;been ages, how are you?&rdquo; will do. Write who, and what you&rsquo;ll say.</p>
+                <input type="text" class="aj-input"
+                       data-aj="brain.connect.action"
+                       data-aj-tool="Social Connection"
+                       data-aj-q="The one person I'll message this week"
+                       placeholder="e.g. Text Josh on Sunday and ask if he wants a coffee this week">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">6. And one small thing you&rsquo;ll do for the group.</p>
+                <p class="aj-field__hint">Belonging is built in micro-moments. Learning the new player&rsquo;s name. Sitting somewhere different on the bus. Saying well done and meaning it.</p>
+                <input type="text" class="aj-input"
+                       data-aj="brain.connect.team-action"
+                       data-aj-tool="Social Connection"
+                       data-aj-q="One small thing I'll do for the group">
+              </div>
+            </div>
+
+            <div class="aj-watch is-single">
+              <figure class="aj-vid">
+                <div class="aj-vid__frame" data-yt="cVad2Ctv0bU">
+                  <button class="aj-vid__play" aria-label="Play: Togetherness — building team identity in sport" style="background-image:url('https://i.ytimg.com/vi/cVad2Ctv0bU/hqdefault.jpg')">
+                    <span class="aj-vid__badge">Watch</span>
+                    <span class="aj-vid__btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+                  </button>
+                </div>
+                <figcaption class="aj-vid__cap"><b>Togetherness: building team identity in sport.</b> Matt Slater&rsquo;s research on what actually creates belonging &mdash; and it isn&rsquo;t the team-bonding day. <em>Watch for:</em> the micro-moments, and how many of them are within your gift rather than the coach&rsquo;s.</figcaption>
+              </figure>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> <cite>Holt-Lunstad et al. (2015), Loneliness and social isolation as risk factors for mortality, Perspectives on Psychological Science</cite>. Basic psychological needs: <cite>Ryan &amp; Deci (2017), Self-Determination Theory</cite>. Team identity and belonging: the applied work of <cite>Matt Slater</cite> and colleagues on social identity in sport.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       05 — MOVEMENT & RECOVERY
+       ========================================================== -->
+  <section class="aj-sec aj-sec--alt" id="movement">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">05</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Movement &amp; Recovery</h2>
+              <p class="aj-tool__for">You already train. This is about the other half of the equation.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">Why it matters</span>
+            <p>You are an athlete, so you are not short of movement. What most athletes are short of is <strong>recovery</strong> &mdash; and specifically, the recognition that training stress and life stress land in the same account.</p>
+            <p>Exams, a house move, a relationship ending, a part-time job, a long commute: all of that is load. Your body does not keep separate ledgers for &ldquo;training stress&rdquo; and &ldquo;everything else stress&rdquo;. When the total exceeds what you can absorb, you get the classic picture &mdash; flat, irritable, sleeping badly, performing worse the harder you push, and increasingly convinced the answer is to push harder still.</p>
+            <p>There is a second, less obvious point. Movement that is <em>not</em> training &mdash; a walk, a swim with no watch on, getting outside &mdash; does something training doesn&rsquo;t. Research consistently shows that time in nature broadens perspective, shifts difficult situations from being read as threats to being read as challenges, and speeds up recovery from stress. It is one of the most reliable ways to zoom out.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Signals that your total load is too high</span>
+              <ul class="aj-ul">
+                <li>Resting heart rate creeping up, or sleep getting worse despite going to bed earlier</li>
+                <li>Performance dropping while effort increases</li>
+                <li>Losing enjoyment for a sport you used to love</li>
+                <li>Snapping at people, or nothing feeling worth doing</li>
+                <li>Picking up niggles and small illnesses more than usual</li>
+                <li>Needing more and more to feel anything at all</li>
+              </ul>
+              <p>Any two of those, persisting for a couple of weeks, is a conversation to have &mdash; with your coach, with us, and if it&rsquo;s physical, with a doctor.</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 7 minutes</span>
+              <h3 class="aj-act__title">Your total load audit</h3>
+              <p class="aj-act__intro">Everything that draws on the same account, in one place. Athletes almost always find the answer isn&rsquo;t &ldquo;train less&rdquo; &mdash; it&rsquo;s something they hadn&rsquo;t counted as load at all.</p>
+
+              <div class="aj-field">
+                <p class="aj-field__q">1. Training load this week</p>
+                <p class="aj-field__hint">Sessions, and roughly how hard on a 1&ndash;10 scale.</p>
+                <input type="text" class="aj-input"
+                       data-aj="brain.move.training"
+                       data-aj-tool="Movement & Recovery"
+                       data-aj-q="My training load this week"
+                       placeholder="e.g. 5 sessions, two of them 9/10, plus a game">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">2. Life load this week</p>
+                <p class="aj-field__hint">Study, work, travel, family, money, anything going on at home. This is the column people forget.</p>
+                <textarea class="aj-textarea"
+                          data-aj="brain.move.life"
+                          data-aj-tool="Movement & Recovery"
+                          data-aj-q="My life load this week"
+                          placeholder="e.g. Two assignments due. 12 hours at work. Nan's in hospital. Two hours a day commuting."></textarea>
+                <span class="aj-saved" data-aj-saved="brain.move.life">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">3. Recovery this week &mdash; what actually went <em>in</em>?</p>
+                <div class="aj-chips"
+                     data-aj-chips="brain.move.recovery"
+                     data-aj-tool="Movement & Recovery"
+                     data-aj-q="Recovery I actually got this week">
+                  <button class="aj-chip">A full day off</button>
+                  <button class="aj-chip">8+ hours&rsquo; sleep, most nights</button>
+                  <button class="aj-chip">Time outside, not training</button>
+                  <button class="aj-chip">A proper meal with people</button>
+                  <button class="aj-chip">Something purely for fun</button>
+                  <button class="aj-chip">Time alone, no screen</button>
+                  <button class="aj-chip">Easy movement (walk, swim, bike)</button>
+                  <button class="aj-chip">Honestly, none of these</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">4. Which warning signals are showing?</p>
+                <div class="aj-chips"
+                     data-aj-chips="brain.move.signals"
+                     data-aj-tool="Movement & Recovery"
+                     data-aj-q="Overload warning signals I'm showing">
+                  <button class="aj-chip">Sleep getting worse</button>
+                  <button class="aj-chip">Performance down, effort up</button>
+                  <button class="aj-chip">Lost enjoyment</button>
+                  <button class="aj-chip">Short-tempered</button>
+                  <button class="aj-chip">Niggles / getting ill</button>
+                  <button class="aj-chip">Flat, nothing feels worth it</button>
+                  <button class="aj-chip">None right now</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">5. The balance, honestly</p>
+                <p class="aj-field__hint">0 = load is far beyond what I&rsquo;m recovering from. 10 = comfortably on top of it.</p>
+                <div class="aj-slider">
+                  <input type="range" min="0" max="10" value="5"
+                         data-aj="brain.move.balance"
+                         data-aj-out="mvBalance"
+                         data-aj-tool="Movement & Recovery"
+                         data-aj-q="Load vs recovery balance (0–10)">
+                  <span class="aj-slider__val" id="mvBalance">5</span>
+                </div>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">6. Your zoom-out movement &mdash; and when it happens</p>
+                <p class="aj-field__hint">Not training. Outside if you can. Put a day and a time on it or it won&rsquo;t happen.</p>
+                <input type="text" class="aj-input"
+                       data-aj="brain.move.outside"
+                       data-aj-tool="Movement & Recovery"
+                       data-aj-q="My non-training movement, and when"
+                       placeholder="e.g. Sunday morning, 40 minutes round the estuary, no watch, no headphones">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">7. What&rsquo;s the one thing you&rsquo;d take out or add?</p>
+                <p class="aj-field__hint">Often it isn&rsquo;t a training session. It&rsquo;s a shift, a commute, or a commitment you agreed to without thinking.</p>
+                <input type="text" class="aj-input"
+                       data-aj="brain.move.change"
+                       data-aj-tool="Movement & Recovery"
+                       data-aj-q="The one thing I'd take out or add">
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> On nature, perspective and stress recovery: research summarised in <cite>Magness, Do Hard Things (2022), ch. 9</cite>. On the interaction of training and non-training stressors and the signs of overreaching, see the <cite>IOC consensus statement on mental health in elite athletes (Reardon et al., 2019)</cite> and standard overtraining-syndrome guidance (<cite>Meeusen et al., 2013</cite>).</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       06 — QUIET & SCREENS
+       ========================================================== -->
+  <section class="aj-sec" id="quiet">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">06</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Quiet &amp; Screens</h2>
+              <p class="aj-tool__for">Learning to be alone in your own head without immediately reaching for something.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">Why it matters</span>
+            <p>Here is an uncomfortable finding that Magness draws on: people are so unwilling to sit alone with their own thoughts that, in one famous set of studies, a substantial number chose to give themselves an electric shock rather than spend fifteen minutes doing nothing.</p>
+            <p>Most of us don&rsquo;t have that option, so we reach for a phone instead &mdash; and the average person now does it hundreds of times a day. The result is that we have almost completely lost the skill of tolerating our own company.</p>
+            <p>That matters for an athlete more than for most people, because <strong>sport routinely puts you alone with discomfort and no exit.</strong> The last 400 metres. The tunnel. The physio bed for four months. Lying awake the night before. If your only strategy for an uncomfortable inner state is to reach for a distraction, then in every moment that matters most, you are unarmed.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Distraction isn&rsquo;t the enemy</span>
+              <p>This is important and often misunderstood. Distraction is a legitimate strategy &mdash; a low-cost one that works well early, before something has picked up momentum. The best performers use it. What separates them is that they can <em>also</em> use the more demanding strategies &mdash; turning towards a sensation, reappraising it, staying with it &mdash; when the moment calls for that instead.</p>
+              <p>Novices default to distraction because when intensity gets high, it&rsquo;s all they&rsquo;ve got. Elite performers can still direct attention <em>into</em> an experience while it&rsquo;s screaming at them to look away. That capacity is built through training &mdash; and quiet is the training ground.</p>
+            </div>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+              <p><strong>This is not a lecture about screen time.</strong> The question isn&rsquo;t how many hours you&rsquo;re on your phone. It&rsquo;s whether you have <em>any</em> reps at all of being alone with your own head &mdash; and whether the reaching is a choice or a reflex.</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 5 minutes + daily reps</span>
+              <h3 class="aj-act__title">Solitude reps</h3>
+              <p class="aj-act__intro">Start absurdly small. Five minutes, once a day, no input. No phone, no music, no podcast. Just you, going for a walk or sitting still.</p>
+
+              <div class="aj-field">
+                <p class="aj-field__q">1. When do you reach for your phone without deciding to?</p>
+                <p class="aj-field__hint">These are your reflex moments. Naming them is most of the work.</p>
+                <div class="aj-chips"
+                     data-aj-chips="brain.quiet.reflex"
+                     data-aj-tool="Quiet & Screens"
+                     data-aj-q="When I reach for my phone on reflex">
+                  <button class="aj-chip">First thing on waking</button>
+                  <button class="aj-chip">Any queue or wait</button>
+                  <button class="aj-chip">In bed at night</button>
+                  <button class="aj-chip">On the bus / in the car</button>
+                  <button class="aj-chip">Between sets</button>
+                  <button class="aj-chip">Straight after a bad session</button>
+                  <button class="aj-chip">Whenever I feel a bit flat</button>
+                  <button class="aj-chip">Eating</button>
+                  <button class="aj-chip">Any gap at all</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">2. Try five minutes now.</p>
+                <p class="aj-field__hint">Press start and put the device down. Don&rsquo;t try to meditate or achieve anything. Just be there.</p>
+              </div>
+
+              <div class="aj-timer" data-aj-timer='[
+                {"phase":"Settle","secs":60,"cue":"Put the phone face down and out of reach. Sit or stand comfortably. <strong>Nothing to achieve here.</strong> Just notice you&rsquo;ve stopped."},
+                {"phase":"Notice the pull","secs":120,"cue":"At some point you&rsquo;ll get the urge to reach for something. <strong>That&rsquo;s the rep.</strong> Notice it. Name it — \"here&rsquo;s the urge to check\". Let it rise and fall without acting."},
+                {"phase":"Let it be boring","secs":120,"cue":"Boredom is fine. Restlessness is fine. Your mind wandering off is fine — that&rsquo;s what minds do. <strong>Nothing needs fixing.</strong> Just keep sitting."}
+              ]'>
+                <div class="aj-timer__clock" data-timer-clock>1:00</div>
+                <div class="aj-timer__phase" data-timer-phase>Settle</div>
+                <p class="aj-timer__cue" data-timer-cue></p>
+                <div class="aj-timer__controls">
+                  <button type="button" class="aj-btn" data-timer-start>Start</button>
+                  <button type="button" class="aj-btn aj-btn--ghost" data-timer-reset>Reset</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:24px;">
+                <p class="aj-field__q">3. What came up?</p>
+                <p class="aj-field__hint">Boredom, restlessness, a to-do list, something you&rsquo;ve been avoiding thinking about? All of it is information.</p>
+                <textarea class="aj-textarea"
+                          data-aj="brain.quiet.came"
+                          data-aj-tool="Quiet & Screens"
+                          data-aj-q="What came up in five minutes of quiet"
+                          placeholder="e.g. Twitchy for the first two minutes. Then I remembered three things I've been putting off, and it got quite peaceful after that."></textarea>
+                <span class="aj-saved" data-aj-saved="brain.quiet.came">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">4. Your daily quiet rep &mdash; when and where?</p>
+                <p class="aj-field__hint">Attach it to something that already happens: the walk to the bus, the drive home, the first five minutes after waking.</p>
+                <input type="text" class="aj-input"
+                       data-aj="brain.quiet.rep"
+                       data-aj-tool="Quiet & Screens"
+                       data-aj-q="My daily quiet rep"
+                       placeholder="e.g. The ten-minute walk from the car park to training — no headphones">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">5. One screen boundary you&rsquo;ll actually keep</p>
+                <p class="aj-field__hint">One. The one you&rsquo;d bet money on.</p>
+                <input type="text" class="aj-input"
+                       data-aj="brain.quiet.boundary"
+                       data-aj-tool="Quiet & Screens"
+                       data-aj-q="The one screen boundary I'll keep"
+                       placeholder="e.g. Phone charges in the kitchen overnight">
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> Solitude, distraction and the capacity to stay with discomfort: <cite>Magness, Do Hard Things (2022), ch. 8 &amp; 9</cite>. The electric-shock studies: <cite>Wilson et al. (2014), Just think: The challenges of the disengaged mind, Science</cite>. On the development of coping strategies from distraction to reappraisal: <cite>Sheppes &amp; Gross (2011)</cite>.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WEEKLY SCORECARD ========== -->
+  <section class="aj-sec aj-sec--alt">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">Pull it together</p>
+        <h2 class="aj-h2">Your weekly<br><em>foundations check</em></h2>
+        <p class="aj-lead">Sixty seconds, once a week. Before you conclude that your head is the problem, check the foundations underneath it.</p>
+
+        <div class="aj-act" style="margin-top:26px;">
+          <span class="aj-act__tag">Activity &middot; 1 minute weekly</span>
+          <h3 class="aj-act__title">The six-behaviour check</h3>
+          <p class="aj-act__intro">Tick the ones that have genuinely been solid this week.</p>
+
+          <div class="aj-meter">
+            <div class="aj-meter__top">
+              <span class="aj-meter__name">Foundations solid</span>
+              <span class="aj-meter__val" id="fdMeterVal">0 / 6</span>
+            </div>
+            <div class="aj-meter__track"><div class="aj-meter__fill" id="fdMeterFill"></div></div>
+          </div>
+
+          <div class="aj-check"
+               data-aj-check="brain.weekly.check"
+               data-aj-meter="fdMeterFill"
+               data-aj-meter-val="fdMeterVal"
+               data-aj-tool="Weekly foundations check"
+               data-aj-q="Foundations that were solid this week">
+            <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Sleep</b>Enough hours, roughly regular times.</div></div>
+            <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Fuel</b>Ate before and after the hard sessions.</div></div>
+            <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Hydration</b>Pale in the morning most days.</div></div>
+            <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Connection</b>Real contact with someone who isn&rsquo;t about performance.</div></div>
+            <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Recovery</b>Load and recovery roughly in balance.</div></div>
+            <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Quiet</b>Some time alone in my own head, on purpose.</div></div>
+          </div>
+
+          <div class="aj-field" style="margin-top:22px;">
+            <p class="aj-field__q">The one to work on next week</p>
+            <input type="text" class="aj-input"
+                   data-aj="brain.weekly.focus"
+                   data-aj-tool="Weekly foundations check"
+                   data-aj-q="The foundation I'm working on next week">
+          </div>
+        </div>
+
+        <div class="aj-takeaways" style="margin-top:34px;">
+          <h3>The whole page in six lines</h3>
+          <ul>
+            <li><strong>Depleted makes everything look harder than it is.</strong> And you&rsquo;ll blame yourself for it.</li>
+            <li><strong>Sleep is training.</strong> Extend it and measurable performance goes up. Nothing else on this list is as well evidenced.</li>
+            <li><strong>Under-fuelled athletes lose judgement first.</strong> Check the food history before the psychology.</li>
+            <li><strong>2% down is enough to matter</strong> &mdash; and you won&rsquo;t feel it as thirst.</li>
+            <li><strong>Connection is a health behaviour</strong>, not a luxury. Withdrawing is a struggle strategy.</li>
+            <li><strong>Training and life stress share one account.</strong> Your body doesn&rsquo;t keep separate books.</li>
+          </ul>
+        </div>
+
+        <div class="aj-nextnav">
+          <a href="grow-athlete-engaged.html">
+            <div class="aj-nextnav__dir">&larr; Previous</div>
+            <div class="aj-nextnav__title">Engaged</div>
+          </a>
+          <a href="grow-athlete-journal.html" class="aj-nextnav--end">
+            <div class="aj-nextnav__dir">Next &rarr;</div>
+            <div class="aj-nextnav__title">My Journal</div>
+          </a>
+        </div>
+
+        <div class="aj-disclaimer">
+          <p><strong>Scope note.</strong> This page covers general behavioural foundations only. It is not medical, dietetic or clinical advice, and it is not a substitute for your GP, a registered sports dietitian, or your medical team. If anything here has raised a concern &mdash; about your eating, your sleep, your mood, or your recovery &mdash; please bring it to your next session so we can point you to the right person. Free, confidential support is available 24/7 across Aotearoa: call or text <a href="tel:1737">1737</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom" style="border-top:none;">
+        <p>&copy; 2026 The Performance Act. Private athlete area.</p>
+        <div class="footer__bottom-links">
+          <a href="grow-athlete.html">Skills Journal</a>
+          <a href="grow-athlete-journal.html">My Journal</a>
+          <a href="grow-athlete.html#sources">Sources</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <button class="support-line-btn" id="supportLineBtn" aria-label="NZ support lines">
+    <span class="support-line-btn__dot" aria-hidden="true"></span>
+    Immediate Support
+  </button>
+  <div class="support-line-modal" id="supportLineModal" role="dialog" aria-modal="true" aria-labelledby="supportLineTitle" aria-hidden="true">
+    <div class="support-line-modal__backdrop"></div>
+    <div class="support-line-modal__panel">
+      <button class="support-line-modal__close" id="supportLineClose" aria-label="Close support lines">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <p class="support-line-modal__eyebrow">Aotearoa, New Zealand</p>
+      <h2 class="support-line-modal__title" id="supportLineTitle">Need immediate support?</h2>
+      <p class="support-line-modal__note">The Performance Act is a sport psychology practice, not a crisis or emergency service. If you or someone you care about needs immediate support, please reach out to one of these trusted services. They are free, confidential, and available 24&#8202;/&#8202;7.</p>
+      <ul class="support-line-modal__list" role="list">
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">1737 &mdash; Need to Talk?</p><p class="sln-resource__desc">Free call or text, any time. Trained counsellors, 24&#47;7.</p></div>
+          <a href="tel:1737" class="sln-resource__number">Call or text 1737</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Lifeline NZ</p><p class="sln-resource__desc">Crisis support and suicide prevention, 24&#47;7.</p></div>
+          <a href="tel:0800543354" class="sln-resource__number">0800 543 354</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Youthline</p><p class="sln-resource__desc">For young people. Free call or text 234, 24&#47;7.</p></div>
+          <a href="tel:0800376633" class="sln-resource__number">0800 376 633</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Suicide Crisis Helpline</p><p class="sln-resource__desc">0508 TAUTOKO. Support for those in crisis, 24&#47;7.</p></div>
+          <a href="tel:0508828865" class="sln-resource__number">0508 828 865</a>
+        </li>
+      </ul>
+      <p class="support-line-modal__footer">More resources at <a href="https://www.mentalhealth.org.nz/get-help/in-crisis" target="_blank" rel="noopener">Mental Health Foundation NZ</a> and <a href="https://www.depression.org.nz" target="_blank" rel="noopener">depression.org.nz</a>.</p>
+    </div>
+  </div>
+
+  <script src="script.js?v=5"></script>
+
+  <!-- Build the 7-night sleep log BEFORE the engine binds, so its
+       fields get autosave, accordion behaviour and progress tracking. -->
+  <script>
+  (function () {
+    'use strict';
+    var host = document.getElementById('sleepDays');
+    if (!host) return;
+    var NIGHTS = ['Night 1', 'Night 2', 'Night 3', 'Night 4', 'Night 5', 'Night 6', 'Night 7'];
+    host.innerHTML = NIGHTS.map(function (label, i) {
+      var n = i + 1;
+      return '' +
+      '<div class="aj-day">' +
+        '<button type="button" class="aj-day__trigger">' +
+          '<span class="aj-day__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>' +
+          '<span class="aj-day__label">' + label + '</span>' +
+          '<svg class="aj-day__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>' +
+        '</button>' +
+        '<div class="aj-day__panel" hidden>' +
+          '<div class="aj-day__body">' +
+            '<div class="aj-field">' +
+              '<p class="aj-field__q" style="font-size:0.88rem;">Lights out / awake, and roughly how many hours</p>' +
+              '<input type="text" class="aj-input" ' +
+                'data-aj="brain.sleep.n' + n + '.hours" ' +
+                'data-aj-tool="Sleep — 7 night log" ' +
+                'data-aj-q="' + label + ': times and hours" ' +
+                'placeholder="e.g. 22:40 to 06:30, about 7.5">' +
+            '</div>' +
+            '<div class="aj-field" style="margin-bottom:0;">' +
+              '<p class="aj-field__q" style="font-size:0.88rem;">One line: how was the next day?</p>' +
+              '<input type="text" class="aj-input" ' +
+                'data-aj="brain.sleep.n' + n + '.day" ' +
+                'data-aj-tool="Sleep — 7 night log" ' +
+                'data-aj-q="' + label + ': how the next day went" ' +
+                'placeholder="e.g. Sharp at training, flat by 3pm">' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+  })();
+  </script>
+
+  <script src="grow-athlete.js?v=1"></script>
+
+  <script>
+  /* ---------- urine colour scale + sweat calculator ---------- */
+  (function () {
+    'use strict';
+
+    /* urine colour */
+    var scale = document.getElementById('ucScale');
+    var read = document.getElementById('ucRead');
+    var storeInput = document.getElementById('ucStore');
+    if (scale && read && storeInput) {
+      var READINGS = [
+        '<strong>1&ndash;2. Well hydrated.</strong> This is where you want to be first thing. Nothing to change.',
+        '<strong>1&ndash;2. Well hydrated.</strong> This is where you want to be first thing. Nothing to change.',
+        '<strong>3. Fine.</strong> Normal, especially first thing in the morning. Keep drinking across the day.',
+        '<strong>4. Borderline.</strong> Have a drink now. If it looks like this most mornings, you&rsquo;re starting each day behind.',
+        '<strong>5&ndash;6. Dehydrated.</strong> Drink, and look at what happened yesterday &mdash; a hard session you didn&rsquo;t replace, or a long day with no bottle.',
+        '<strong>5&ndash;6. Dehydrated.</strong> Drink, and look at what happened yesterday &mdash; a hard session you didn&rsquo;t replace, or a long day with no bottle.',
+        '<strong>7&ndash;8. Significantly dehydrated.</strong> Rehydrate properly before training. If it&rsquo;s persistently this dark despite drinking well, see a doctor.',
+        '<strong>7&ndash;8. Significantly dehydrated.</strong> Rehydrate properly before training. If it&rsquo;s persistently this dark despite drinking well, see a doctor.'
+      ];
+
+      var steps = Array.prototype.slice.call(scale.querySelectorAll('.uc__step'));
+
+      function select(i, persist) {
+        steps.forEach(function (s, j) { s.setAttribute('aria-pressed', j === i ? 'true' : 'false'); });
+        read.innerHTML = READINGS[i];
+        if (persist && window.AJ) {
+          window.AJ.set('brain.hydration.colour', String(i + 1),
+                        'Hydration', 'My typical morning urine colour (1–8 scale)');
+        }
+      }
+
+      var saved = window.AJ && window.AJ.get('brain.hydration.colour');
+      if (saved) select(parseInt(saved, 10) - 1, false);
+
+      steps.forEach(function (s, i) {
+        s.addEventListener('click', function () { select(i, true); });
+      });
+    }
+
+    /* sweat rate */
+    var pre = document.getElementById('scPre');
+    var post = document.getElementById('scPost');
+    var drank = document.getElementById('scDrank');
+    var num = document.getElementById('scNum');
+    var note = document.getElementById('scNote');
+    if (!pre || !post || !num) return;
+
+    function calc() {
+      var a = parseFloat(pre.value), b = parseFloat(post.value), d = parseFloat(drank.value) || 0;
+      if (isNaN(a) || isNaN(b) || a <= 0) {
+        num.textContent = '—';
+        note.textContent = 'Enter your numbers to see your fluid loss and what to replace.';
+        return;
+      }
+      var lostKg = a - b;
+      var sweatL = lostKg + d;
+      var pct = (lostKg / a) * 100;
+      var replace = lostKg > 0 ? (lostKg * 1.375) : 0;
+
+      num.textContent = sweatL.toFixed(2) + ' L sweat';
+
+      var msg = 'You lost <strong>' + lostKg.toFixed(2) + ' kg</strong> across the session &mdash; that&rsquo;s <strong>' +
+                pct.toFixed(1) + '%</strong> of your body mass, on top of the ' + d.toFixed(1) + ' L you drank. ';
+
+      if (pct >= 2) {
+        msg += '<strong>Over 2%.</strong> That is enough to measurably impair endurance, concentration and skill. Drink more during sessions like this one, and replace about <strong>' +
+               replace.toFixed(1) + ' L</strong> over the next few hours &mdash; with some sodium alongside it.';
+      } else if (pct >= 1) {
+        msg += 'Under the 2% threshold, which is fine &mdash; but worth topping up. Replace roughly <strong>' +
+               replace.toFixed(1) + ' L</strong> over the next few hours.';
+      } else if (lostKg > 0) {
+        msg += 'Very well managed. Replace around <strong>' + replace.toFixed(1) + ' L</strong> and carry on doing whatever you did.';
+      } else {
+        msg += 'You finished heavier than you started, so you drank more than you lost. That is worth easing back on &mdash; overdrinking during long sessions carries its own risks.';
+      }
+      note.innerHTML = msg;
+    }
+
+    [pre, post, drank].forEach(function (el) {
+      el.addEventListener('input', calc);
+      el.addEventListener('aj:restored', calc);
+    });
+    calc();
+  })();
+  </script>
+</body>
+</html>

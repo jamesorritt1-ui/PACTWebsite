@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>AWARE — Present Moment &amp; Perspective | Skills Journal | The Performance Act</title>
+  <meta name="description" content="Seven skills for putting your attention where you choose, and for stepping back from the stories your mind tells about you.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=18">
+  <link rel="stylesheet" href="grow-athlete.css?v=1">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=2">
+  <style>
+    /* Aware pillar accent */
+    .aj-tool { border-left-color: var(--aware); }
+    .aj-tool__num { color: rgba(111,211,224,0.35); }
+    .aj-act { border-color: rgba(111,211,224,0.32); background: linear-gradient(165deg,#101a1c,#0c0c0c); }
+    .aj-act__tag { background: var(--aware); }
+    .aj-hero__title span { color: var(--aware); }
+    .aj-block__k, .aj-eg__k, .aj-eyebrow, .aj-label { color: var(--aware); }
+    .aj-h2 em, .aj-takeaways h3 { color: var(--aware); }
+    .aj-takeaways li::before { background: var(--aware); }
+    .aj-takeaways { border-color: rgba(111,211,224,0.3); }
+    .aj-back, .aj-hero__badge { color: var(--aware); }
+    .aj-hero__badge { border-color: rgba(111,211,224,0.4); }
+    .aj-label::before, .aj-ul li::before { background: var(--aware); }
+    .aj-eg { border-left-color: var(--aware); }
+    .aj-steps li::before { border-color: rgba(111,211,224,0.5); color: var(--aware); }
+
+    /* Zoom dial */
+    .zm { background:#0d0d0d; border:1px solid rgba(111,211,224,0.22); padding:24px 22px 26px; margin:18px 0; }
+    .zm__dial { display:flex; align-items:center; gap:16px; max-width:560px; margin:0 auto 20px; }
+    .zm__dial input[type=range] { flex:1; -webkit-appearance:none; appearance:none; height:6px; background:rgba(255,255,255,0.12); border-radius:100px; outline:none; }
+    .zm__dial input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; appearance:none; width:24px; height:24px; border-radius:50%; background:var(--aware); cursor:pointer; }
+    .zm__dial input[type=range]::-moz-range-thumb { width:24px; height:24px; border-radius:50%; background:var(--aware); cursor:pointer; border:none; }
+    .zm__end { font-family:var(--font-heading); font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); white-space:nowrap; }
+    .zm__view { border:1px dashed rgba(111,211,224,0.35); background:#0a0a0a; padding:22px; min-height:150px; text-align:center; display:flex; flex-direction:column; justify-content:center; }
+    .zm__state { font-family:var(--font-heading); font-size:1.15rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--aware); margin-bottom:10px; }
+    .zm__body { color:var(--ink); font-size:0.95rem; line-height:1.7; font-weight:300; max-width:520px; margin:0 auto; }
+    .zm__body strong { color:#fff; font-weight:600; }
+    .zm__cost { color:var(--muted); font-size:0.86rem; line-height:1.6; font-weight:300; margin-top:12px; font-style:italic; }
+
+    /* naming grid */
+    .ng { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:6px; }
+    .ng__cell { background:#0a0a0a; border:1px solid var(--line); border-top:3px solid var(--aware); padding:16px 18px; }
+    .ng__cell h5 { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--aware); margin-bottom:4px; }
+    .ng__cell p { color:var(--muted); font-size:0.82rem; line-height:1.5; font-weight:300; margin:0 0 10px; }
+    .ng__cell textarea { min-height:70px; }
+    @media (max-width:640px){ .ng { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body class="aj">
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="images/logo-horizontal.png?v=2" alt="The Performance Act" class="logo-img logo-img--header">
+      </a>
+      <nav class="header__nav" id="mainNav" aria-label="Primary">
+        <a href="grow-athlete.html" class="nav-link">SKILLS JOURNAL</a>
+        <a href="grow-athlete-open.html" class="nav-link">OPEN</a>
+        <a href="grow-athlete-aware.html" class="nav-link active">AWARE</a>
+        <a href="grow-athlete-engaged.html" class="nav-link">ENGAGED</a>
+        <a href="grow-athlete-brain.html" class="nav-link">BRAIN HEALTH</a>
+      </nav>
+      <div class="header__actions">
+        <a href="grow-athlete-journal.html" class="btn btn--primary btn--sm">My Journal</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <nav class="mobile-nav__links" aria-label="Mobile">
+      <a href="grow-athlete.html" class="mobile-nav__link">SKILLS JOURNAL HOME</a>
+      <a href="grow-athlete-open.html" class="mobile-nav__link">OPEN</a>
+      <a href="grow-athlete-aware.html" class="mobile-nav__link">AWARE</a>
+      <a href="grow-athlete-engaged.html" class="mobile-nav__link">ENGAGED</a>
+      <a href="grow-athlete-brain.html" class="mobile-nav__link">BRAIN HEALTH</a>
+      <a href="grow-athlete-journal.html" class="mobile-nav__link">MY JOURNAL</a>
+    </nav>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="aj-hero" id="top">
+    <div class="aj-hero__bg"></div>
+    <div class="container">
+      <a href="grow-athlete.html" class="aj-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Skills Journal
+      </a>
+      <span class="aj-hero__badge">Pillar two of the TriFlex</span>
+      <h1 class="aj-hero__title"><span>AWARE</span></h1>
+      <p class="aj-hero__lead"><strong>Present moment and perspective.</strong> Seven skills for putting your attention where you choose &mdash; and for stepping back from the stories your mind writes about who you are.</p>
+      <p class="aj-hero__meta"><span>7 skills</span> &middot; <span>7 activities</span> &middot; <span>The central pillar</span></p>
+      <div class="aj-toc">
+        <a href="#anchor">01 &middot; Dropping anchor</a>
+        <a href="#notice">02 &middot; Notice &amp; name</a>
+        <a href="#zoom">03 &middot; Zoom in, zoom out</a>
+        <a href="#noticing">04 &middot; The noticing self</a>
+        <a href="#documentary">05 &middot; The documentary of you</a>
+        <a href="#selftalk">06 &middot; Distanced self-talk</a>
+        <a href="#reset">07 &middot; Your reset routine</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="aj-progress">
+    <div class="container">
+      <div class="aj-progress__inner">
+        <span class="aj-progress__label">Your progress through Aware</span>
+        <div class="aj-progress__track"><div class="aj-progress__fill" id="ajProgressFill"></div></div>
+        <span class="aj-progress__count" id="ajProgressCount">0 / 0 saved</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== INTRO ========== -->
+  <section class="aj-sec">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">Before you start</p>
+        <h2 class="aj-h2">You live here.<br>There is <em>nowhere else.</em></h2>
+        <p class="aj-lead">Every ball you will ever strike, every decision you will ever make, every conversation that will ever matter &mdash; all of it happens in the present moment. There is no other venue.</p>
+        <p class="aj-p" style="margin-top:18px;">And yet most of us spend an enormous amount of time somewhere else: replaying the error from six minutes ago, or rehearsing a disaster that hasn&rsquo;t happened. Both feel productive. Neither is. When the conceptualised past or future dominates, your behaviour gets driven by old conditioning rather than by what&rsquo;s actually in front of you &mdash; so you get more of what you already did. New options are foreclosed.</p>
+        <p class="aj-p">Aware is the middle pillar for a reason. It is not just a target in its own right &mdash; it is the <strong>method that makes the other two possible</strong>. You cannot make room for a feeling you haven&rsquo;t noticed, and you cannot act on your values in a moment you&rsquo;re not present for.</p>
+
+        <div class="aj-block">
+          <span class="aj-block__k">Two capacities, not one</span>
+          <p>This pillar trains two related things. <strong>Flexible attention</strong>: putting your focus where the situation needs it, holding it there, and moving it when the situation changes. And <strong>perspective</strong>: contacting the part of you that does the noticing &mdash; a vantage point that contains your thoughts and feelings without being any of them.</p>
+        </div>
+
+        <div class="aj-why">
+          <p><strong>Why this pillar exists.</strong> In the ACT model, inflexible attention and attachment to a conceptualised self combine into the inflexibility pillar called <em>Mindless</em>. Flexible attention plus a perspective-taking sense of self is the antidote &mdash; and it is described as the central pillar of ACT&rsquo;s intervention method, because it makes deliberate change possible at all. <cite>Walser &amp; Westrup, Learning ACT (2019), ch. 1, 4 &amp; 5.</cite></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       TOOL 01 — DROPPING ANCHOR
+       ========================================================== -->
+  <section class="aj-sec aj-sec--alt" id="anchor">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">01</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Dropping Anchor &mdash; ACE</h2>
+              <p class="aj-tool__for">For: an emotional storm. When you&rsquo;re being swept along and you need to hold steady.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>You&rsquo;re sailing into harbour and a storm is coming in over the radio. You drop anchor, fast and deep. <strong>The anchor does not control the weather.</strong> It holds the boat steady until the storm passes.</p>
+            <p>That is exactly what this skill does. Three moves, thirty seconds to three minutes, run in a cycle:</p>
+
+            <ol class="aj-steps">
+              <li><strong>A &mdash; Acknowledge</strong> your thoughts and feelings. Ten to twenty seconds noticing what&rsquo;s in your head, then a slow scan head to toe. Name what you find: <em>&ldquo;here&rsquo;s a feeling of dread&rdquo;</em>, <em>&ldquo;I&rsquo;m noticing thoughts about not being ready&rdquo;</em>.</li>
+              <li><strong>C &mdash; Connect</strong> with your body. Keep acknowledging <em>and</em> move. Push your feet into the ground. Straighten your spine. Press your palms together. Roll your shoulders. Slowly, gently, deliberately.</li>
+              <li><strong>E &mdash; Engage</strong> in what you&rsquo;re doing. Widen out. Five things you can see. Three you can hear. What you can smell. Then bring your full attention back to the task in front of you.</li>
+            </ol>
+            <p>Then do it again. And again. Three or four cycles is usually enough.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why it works</span>
+              <p>Four things happen at once. You get <strong>control of your physical actions back</strong> &mdash; which is the bit that matters most, because it means you can act effectively while the storm is still raging. You <strong>reduce the influence</strong> of your thoughts and feelings, because consciously noticing them takes away much of their automatic pull. You <strong>interrupt worrying and rumination</strong>, which are the engines that keep storms going. And you <strong>refocus</strong> on the task, which is why the exercise always ends by returning to what you&rsquo;re doing.</p>
+              <p>If your pain is mild to moderate, it will often fade as you do this. Enjoy that &mdash; but never aim for it.</p>
+            </div>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+              <p><strong>This is not distraction.</strong> Distraction means drawing your attention <em>away</em> from what you don&rsquo;t want to feel. Dropping anchor does the opposite &mdash; it starts by actively turning towards it. Skip the Acknowledge step and you haven&rsquo;t got an anchor, you&rsquo;ve got another escape route. And you already have plenty of those.</p>
+            </div>
+
+            <div class="aj-eg">
+              <span class="aj-eg__k">Worked example &middot; a hockey player, 2&ndash;0 down at half time</span>
+              <p><strong>A:</strong> <em>&ldquo;Chest is tight. Head&rsquo;s doing the &lsquo;we&rsquo;ve blown this&rsquo; thing. Legs feel heavy.&rdquo;</em><br>
+              <strong>C:</strong> Both feet flat into the turf, push down. Straighten up. Roll the shoulders once.<br>
+              <strong>E:</strong> The scoreboard. The coach&rsquo;s whiteboard. The sound of the away crowd. Her stick in her hands. Then: <em>what&rsquo;s the first job in the second half?</em></p>
+              <p>Twenty-five seconds. Three cycles across the break. She still felt sick about the score. She also heard the entire team talk, which she would not have done otherwise.</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 3 minutes guided</span>
+              <h3 class="aj-act__title">Drop anchor now</h3>
+              <p class="aj-act__intro">Before you press start, spend a moment tapping into something difficult that&rsquo;s going on for you at the moment &mdash; so you&rsquo;ve got something real to work with. You can do this exercise feeling perfectly calm, but the result is much more obvious when there&rsquo;s a bit of weather about.</p>
+
+              <div class="aj-timer" data-aj-timer='[
+                {"phase":"A — Acknowledge","secs":40,"cue":"What thoughts are showing up? Now scan slowly from head to toe. What sensations are there? <strong>Name each one</strong> — \"here is…\", \"I&rsquo;m noticing…\". Not obeying, not fighting. Just acknowledging."},
+                {"phase":"C — Connect","secs":30,"cue":"Keep acknowledging <em>and</em> connect with your body. <strong>Push your feet into the floor.</strong> Straighten your spine. Press your palms together. Slowly, gently, deliberately."},
+                {"phase":"E — Engage","secs":30,"cue":"Widen out. <strong>Five things you can see. Three you can hear.</strong> What can you smell? Now bring your full attention to what you&rsquo;re doing right now."},
+                {"phase":"A — Acknowledge (2)","secs":25,"cue":"Round two. What&rsquo;s here now? Notice and name it again — thoughts, then body."},
+                {"phase":"C — Connect (2)","secs":20,"cue":"Feet down. Spine up. <strong>Move something on purpose.</strong>"},
+                {"phase":"E — Engage (2)","secs":20,"cue":"Look around. Listen. Then <strong>full attention back to the task.</strong>"},
+                {"phase":"One more cycle","secs":25,"cue":"Acknowledge → Connect → Engage, at your own pace. Finish by giving <strong>all</strong> of your attention to what&rsquo;s in front of you."}
+              ]'>
+                <div class="aj-timer__clock" data-timer-clock>0:40</div>
+                <div class="aj-timer__phase" data-timer-phase>A &mdash; Acknowledge</div>
+                <p class="aj-timer__cue" data-timer-cue></p>
+                <div class="aj-timer__controls">
+                  <button type="button" class="aj-btn" data-timer-start>Start</button>
+                  <button type="button" class="aj-btn aj-btn--ghost" data-timer-reset>Reset</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:24px;">
+                <p class="aj-field__q">What did you notice in the Acknowledge step?</p>
+                <textarea class="aj-textarea"
+                          data-aj="aware.anchor.noticed"
+                          data-aj-tool="Dropping Anchor — ACE"
+                          data-aj-q="What I noticed in the Acknowledge step"
+                          placeholder="Thoughts, feelings, sensations, urges — in the words you'd actually use."></textarea>
+                <span class="aj-saved" data-aj-saved="aware.anchor.noticed">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">Which of these happened?</p>
+                <p class="aj-field__hint">Tap all that apply. Note that &ldquo;the feelings got smaller&rdquo; isn&rsquo;t on the list &mdash; that&rsquo;s a bonus, not a measure.</p>
+                <div class="aj-chips"
+                     data-aj-chips="aware.anchor.effects"
+                     data-aj-tool="Dropping Anchor — ACE"
+                     data-aj-q="What happened when I dropped anchor">
+                  <button class="aj-chip">I could step back from my thoughts</button>
+                  <button class="aj-chip">I had more control over my body</button>
+                  <button class="aj-chip">I felt more awake / alert</button>
+                  <button class="aj-chip">The worrying stopped for a bit</button>
+                  <button class="aj-chip">I knew where I was again</button>
+                  <button class="aj-chip">Not much &mdash; yet</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">Build <em>your</em> version of the C step.</p>
+                <p class="aj-field__hint">This is the one people personalise most. What physical move can you make that nobody around you would notice? Something you could do in a huddle, on a start line, or in an exam.</p>
+                <input type="text" class="aj-input"
+                       data-aj="aware.anchor.connect"
+                       data-aj-tool="Dropping Anchor — ACE"
+                       data-aj-q="My personal 'Connect with your body' move"
+                       placeholder="e.g. Press both heels into the ground and grip the bottom of my shirt">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">Three moments this week where you&rsquo;ll use it.</p>
+                <p class="aj-field__hint">Name the actual moments. Vague plans don&rsquo;t survive contact with a real week.</p>
+                <div class="aj-builder__row" data-aj-builder="aware.anchor.when"
+                     data-aj-tool="Dropping Anchor — ACE"
+                     data-aj-q="Moments I'll drop anchor this week"
+                     data-aj-empty="Add at least three specific moments.">
+                  <input type="text" class="aj-input" placeholder="e.g. In the car before I walk into training">
+                  <button type="button" class="aj-btn" data-aj-add>Add</button>
+                  <div class="aj-builder__list" style="flex:1 1 100%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="aj-watch is-single">
+              <figure class="aj-vid">
+                <div class="aj-vid__frame" data-yt="fDmRwjBryu0">
+                  <button class="aj-vid__play" aria-label="Play: Before the Start of the Doubles Luge" style="background-image:url('https://i.ytimg.com/vi/fDmRwjBryu0/hqdefault.jpg')">
+                    <span class="aj-vid__badge">Watch</span>
+                    <span class="aj-vid__btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+                  </button>
+                </div>
+                <figcaption class="aj-vid__cap"><b>Before the Start of the Doubles Luge.</b> Two Olympians in the last minute before a run they cannot repeat. <em>Watch for:</em> what they put their attention on, and how they use their bodies to steady themselves. That is A, C and E happening in real time, without anyone calling it that.</figcaption>
+              </figure>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> Dropping anchor and the ACE formula: <cite>Harris, The Happiness Trap (2022), ch. 5</cite>. The same three-move structure underpins the ACE spine used throughout our THRIVE programme.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       TOOL 02 — NOTICE & NAME
+       ========================================================== -->
+  <section class="aj-sec" id="notice">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">02</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Notice &amp; Name</h2>
+              <p class="aj-tool__for">For: &ldquo;I don&rsquo;t know what&rsquo;s wrong, I just feel off.&rdquo;</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>The foundation skill. It sits underneath every other tool in this whole area, and it&rsquo;s two words long: <em>notice</em> what&rsquo;s showing up, and <em>name</em> it, without judging it.</p>
+            <p>The naming matters more than it sounds. There is a real difference between these two sentences:</p>
+            <div class="aj-vs">
+              <div class="aj-vs__col aj-vs__col--no">
+                <p class="aj-vs__tag">Fused</p>
+                <ul>
+                  <li>&ldquo;I&rsquo;m angry.&rdquo;</li>
+                  <li>&ldquo;I&rsquo;m a bottler.&rdquo;</li>
+                  <li>&ldquo;I&rsquo;m anxious.&rdquo;</li>
+                </ul>
+              </div>
+              <div class="aj-vs__col aj-vs__col--yes">
+                <p class="aj-vs__tag">Named</p>
+                <ul>
+                  <li>&ldquo;I&rsquo;m noticing anger.&rdquo;</li>
+                  <li>&ldquo;I&rsquo;m noticing the thought that I&rsquo;m a bottler.&rdquo;</li>
+                  <li>&ldquo;Here&rsquo;s anxiety.&rdquo;</li>
+                </ul>
+              </div>
+            </div>
+            <p>In the left column you <em>are</em> the thing. In the right column it is something passing through you. That gap &mdash; and it takes about a second to create &mdash; is where every other skill you&rsquo;ll learn gets its foothold.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why it works</span>
+              <p>Think of a classroom when the teacher walks out. Chaos. Then the teacher comes back and everyone settles &mdash; not because they were told off, but because someone is <em>watching</em>. Your awareness works the same way on your inner world. Thoughts and feelings you aren&rsquo;t consciously aware of run wild and pull you around. The moment you notice and name them, they lose a big chunk of that power.</p>
+              <p>Underneath the metaphor is a well-replicated finding: putting feelings into words engages the prefrontal cortex and dampens amygdala reactivity. This is why the very first move in almost every evidence-based emotion skill is <em>name it</em>.</p>
+              <p>Magness makes the same point from the performance side: emotions are <strong>messengers, not dictators</strong>. A signal you can&rsquo;t read is just noise that pushes you around. Accurate naming turns it into information you can use.</p>
+            </div>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+              <p><strong>Precision beats volume.</strong> &ldquo;Bad&rdquo; and &ldquo;stressed&rdquo; are not names, they&rsquo;re categories. There is a large difference between <em>dread</em>, <em>resentment</em>, <em>embarrassment</em> and <em>grief</em> &mdash; and each one calls for a different response. Athletes who can only report &ldquo;fine&rdquo; or &ldquo;not great&rdquo; are working with a two-colour palette.</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 6 minutes</span>
+              <h3 class="aj-act__title">The naming grid</h3>
+              <p class="aj-act__intro">Bring to mind a moment from the last week that didn&rsquo;t go well &mdash; or use right now, if right now is loaded. Then break it into its four parts. <strong>Most people find they&rsquo;ve been treating four separate things as one lump.</strong></p>
+
+              <div class="ng">
+                <div class="ng__cell">
+                  <h5>Thoughts</h5>
+                  <p>The words and pictures in your head. Write them as sentences.</p>
+                  <textarea class="aj-textarea"
+                            data-aj="aware.notice.thoughts"
+                            data-aj-tool="Notice &amp; Name"
+                            data-aj-q="Thoughts I noticed"
+                            placeholder="I'm noticing the thought that..."></textarea>
+                </div>
+                <div class="ng__cell">
+                  <h5>Feelings</h5>
+                  <p>Name the emotion as precisely as you can. Reach past &ldquo;bad&rdquo;.</p>
+                  <textarea class="aj-textarea"
+                            data-aj="aware.notice.feelings"
+                            data-aj-tool="Notice &amp; Name"
+                            data-aj-q="Feelings I noticed"
+                            placeholder="Here's..."></textarea>
+                </div>
+                <div class="ng__cell">
+                  <h5>Sensations</h5>
+                  <p>Where in your body, and what does it physically feel like?</p>
+                  <textarea class="aj-textarea"
+                            data-aj="aware.notice.sensations"
+                            data-aj-tool="Notice &amp; Name"
+                            data-aj-q="Sensations I noticed"
+                            placeholder="Here's tightness in..."></textarea>
+                </div>
+                <div class="ng__cell">
+                  <h5>Urges</h5>
+                  <p>What did you feel pulled to <em>do</em>? Including the things you didn&rsquo;t do.</p>
+                  <textarea class="aj-textarea"
+                            data-aj="aware.notice.urges"
+                            data-aj-tool="Notice &amp; Name"
+                            data-aj-q="Urges I noticed"
+                            placeholder="Here's an urge to..."></textarea>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">Build your emotion vocabulary.</p>
+                <p class="aj-field__hint">Tap every word that fits that moment. Then look at how many you chose &mdash; and how different they are from each other.</p>
+                <div class="aj-chips"
+                     data-aj-chips="aware.notice.vocab"
+                     data-aj-tool="Notice &amp; Name"
+                     data-aj-q="The emotions that were actually present">
+                  <button class="aj-chip">Dread</button>
+                  <button class="aj-chip">Nervous</button>
+                  <button class="aj-chip">Frustrated</button>
+                  <button class="aj-chip">Angry</button>
+                  <button class="aj-chip">Resentful</button>
+                  <button class="aj-chip">Embarrassed</button>
+                  <button class="aj-chip">Ashamed</button>
+                  <button class="aj-chip">Guilty</button>
+                  <button class="aj-chip">Disappointed</button>
+                  <button class="aj-chip">Sad</button>
+                  <button class="aj-chip">Lonely</button>
+                  <button class="aj-chip">Flat</button>
+                  <button class="aj-chip">Numb</button>
+                  <button class="aj-chip">Overwhelmed</button>
+                  <button class="aj-chip">Restless</button>
+                  <button class="aj-chip">Envious</button>
+                  <button class="aj-chip">Hurt</button>
+                  <button class="aj-chip">Relieved</button>
+                  <button class="aj-chip">Excited</button>
+                  <button class="aj-chip">Determined</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">What is the messenger telling you?</p>
+                <p class="aj-field__hint">Emotions carry information. Anger often points at a line being crossed. Anxiety at something that matters and might not go well. Sadness at loss. Envy at something you want. What&rsquo;s yours saying?</p>
+                <textarea class="aj-textarea"
+                          data-aj="aware.notice.message"
+                          data-aj-tool="Notice &amp; Name"
+                          data-aj-q="What the emotion was telling me"
+                          placeholder="e.g. The resentment is telling me I've been agreeing to extra sessions I never wanted to do."></textarea>
+                <span class="aj-saved" data-aj-saved="aware.notice.message">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+            </div>
+
+            <div class="aj-block" style="margin-top:26px;">
+              <span class="aj-block__k">Take it into the week</span>
+              <p>Three times a day &mdash; morning, mid-afternoon, night &mdash; stop for ten seconds and finish this sentence: <em>&ldquo;Right now I&rsquo;m noticing&hellip;&rdquo;</em>. That&rsquo;s it. Ten seconds, three times. Do it for a week and you will start catching things hours earlier than you used to.</p>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> Noticing and naming: <cite>Harris, The Happiness Trap (2022), ch. 5</cite>. The affect-labelling evidence: <cite>Lieberman et al. (2007), Psychological Science</cite>. Emotions as messengers, and the cost of poor emotional granularity (alexithymia): <cite>Magness, Do Hard Things (2022), ch. 6</cite>.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       TOOL 03 — ZOOM IN, ZOOM OUT
+       ========================================================== -->
+  <section class="aj-sec aj-sec--alt" id="zoom">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">03</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Zoom In, Zoom Out</h2>
+              <p class="aj-tool__for">For: tunnel vision, spiralling, or being so wide open you can&rsquo;t lock onto anything.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>Attention has a zoom lens, and under stress it defaults to <strong>narrow</strong>. That is not a fault &mdash; it&rsquo;s useful. Narrowing directs all your processing power at the thing that matters and shuts out distraction. Elite marathoners deliberately zoom right in on cadence, breathing, the burn in the quads.</p>
+            <p>The problem is staying narrow too long. Pilots landing in heavy crosswinds zoom in so hard that in one study <strong>40% missed a loud alarm going off in the cockpit</strong>. Scientists call it cognitive narrowing; pilots call it inattentional deafness. When you&rsquo;re stuck narrow, you miss signals, you stop seeing options, and &mdash; critically &mdash; rumination takes hold. One group of psychologists argue that rumination essentially <em>is</em> a narrow, inflexible focus of attention: you can&rsquo;t break away from the one thing screaming loudest.</p>
+            <p><strong>The skill is not being narrow or broad. It&rsquo;s being able to move.</strong></p>
+
+            <div class="zm" id="zmWidget">
+              <div class="zm__dial">
+                <span class="zm__end">Narrow</span>
+                <input type="range" min="0" max="4" value="2" id="zmRange" aria-label="Attention zoom">
+                <span class="zm__end">Broad</span>
+              </div>
+              <div class="zm__view">
+                <div class="zm__state" id="zmState"></div>
+                <p class="zm__body" id="zmBody"></p>
+                <p class="zm__cost" id="zmCost"></p>
+              </div>
+            </div>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why it works</span>
+              <p>Shifting your attention drags everything else with it. Narrow your focus and your thoughts and mood follow it down. Go broad &mdash; and the research is consistent here &mdash; and creativity, problem-solving and mood all lift. In one study, simply asking people to look at a whole map rather than one highlighted city measurably improved their performance on creative problem-solving straight afterwards.</p>
+              <p>That&rsquo;s why the antidote to a spiral is almost always the same: <strong>if you&rsquo;re getting narrow, counteract by going broad.</strong></p>
+            </div>
+
+            <div class="aj-applied">
+              <div class="aj-applied__col aj-applied__col--sport">
+                <h5>Zoom in when</h5>
+                <p>You&rsquo;re about to execute. The lineout call. The free throw. The last 400m. You need one thing, sharp, and everything else gone.</p>
+              </div>
+              <div class="aj-applied__col aj-applied__col--life">
+                <h5>Zoom out when</h5>
+                <p>You&rsquo;re replaying an error. You&rsquo;ve been stuck on one thought for ten minutes. You&rsquo;ve stopped seeing options. You&rsquo;re snapping at people.</p>
+              </div>
+            </div>
+
+            <div class="aj-eg">
+              <span class="aj-eg__k">Worked example &middot; a rower, 900m in</span>
+              <p>Narrow is right for the first 1500 &mdash; catch, drive, breathe, repeat. But at 900m he made a bad blade and got stuck on it: <em>that&rsquo;s the race gone, I&rsquo;ve cost us this.</em> Narrow focus, negative content, and the boat slowing while his mind chews on a stroke that has already happened.</p>
+              <p>His cue is one word &mdash; <strong>&ldquo;wide&rdquo;</strong> &mdash; and it means: lift the eyes to the far end of the course, hear the cox, feel the whole boat rather than his own handle. Two strokes wide. Then back down to narrow, on the <em>next</em> catch. He doesn&rsquo;t stay broad. He just breaks the lock.</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 7 minutes</span>
+              <h3 class="aj-act__title">Build your zoom cues</h3>
+              <p class="aj-act__intro">You need two cues: one that takes you narrow on command, and one that pulls you broad. They should be short, physical where possible, and usable in the middle of competition.</p>
+
+              <div class="aj-field">
+                <p class="aj-field__q">1. Where do you get stuck narrow?</p>
+                <p class="aj-field__hint">The situation where your world shrinks to one thing and you can&rsquo;t break out.</p>
+                <textarea class="aj-textarea"
+                          data-aj="aware.zoom.stuck"
+                          data-aj-tool="Zoom In, Zoom Out"
+                          data-aj-q="Where I get stuck narrow"
+                          placeholder="e.g. After I miss the first shot, the miss is all I can see for the next five minutes."></textarea>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">2. What does it cost you?</p>
+                <textarea class="aj-textarea"
+                          data-aj="aware.zoom.cost"
+                          data-aj-tool="Zoom In, Zoom Out"
+                          data-aj-q="What getting stuck narrow costs me"
+                          placeholder="e.g. I stop reading the game. I miss the overlap. I get called selfish and I'm not — I just can't see anyone."></textarea>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">3. Your ZOOM OUT cue</p>
+                <p class="aj-field__hint">Pick from below or write your own. It should physically widen your field of view &mdash; the eyes lead and the mind follows.</p>
+                <div class="aj-chips"
+                     data-aj-chips="aware.zoom.outcues"
+                     data-aj-tool="Zoom In, Zoom Out"
+                     data-aj-q="My zoom-out cues">
+                  <button class="aj-chip">Lift my eyes to the far end</button>
+                  <button class="aj-chip">Find the horizon / sky</button>
+                  <button class="aj-chip">Name 3 things I can hear</button>
+                  <button class="aj-chip">Scan for all my teammates</button>
+                  <button class="aj-chip">Say &ldquo;wide&rdquo;</button>
+                  <button class="aj-chip">Soften my gaze</button>
+                  <button class="aj-chip">Feel both feet on the ground</button>
+                  <button class="aj-chip">Take one slow breath out</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">4. Your ZOOM IN cue</p>
+                <p class="aj-field__hint">One thing. Physical, external, and available every time.</p>
+                <div class="aj-chips"
+                     data-aj-chips="aware.zoom.incues"
+                     data-aj-tool="Zoom In, Zoom Out"
+                     data-aj-q="My zoom-in cues">
+                  <button class="aj-chip">The seam on the ball</button>
+                  <button class="aj-chip">My breathing rhythm</button>
+                  <button class="aj-chip">The target / the spot</button>
+                  <button class="aj-chip">My hands on the grip</button>
+                  <button class="aj-chip">Cadence / stroke rate</button>
+                  <button class="aj-chip">Contact of feet on ground</button>
+                  <button class="aj-chip">One technical key</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">5. Write the drill.</p>
+                <p class="aj-field__hint">One sentence: when X happens, I go wide with ___, then straight back narrow on ___.</p>
+                <input type="text" class="aj-input"
+                       data-aj="aware.zoom.drill"
+                       data-aj-tool="Zoom In, Zoom Out"
+                       data-aj-q="My zoom drill"
+                       placeholder="When I miss, I lift my eyes to the far post, then narrow onto my next mark.">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">6. Rate your flexibility, honestly.</p>
+                <p class="aj-field__hint">0 = once I&rsquo;m narrow I&rsquo;m stuck there. 10 = I move between them at will.</p>
+                <div class="aj-slider">
+                  <input type="range" min="0" max="10" value="4"
+                         data-aj="aware.zoom.flex"
+                         data-aj-out="zmFlexVal"
+                         data-aj-tool="Zoom In, Zoom Out"
+                         data-aj-q="How flexibly I can move my attention (0–10)">
+                  <span class="aj-slider__val" id="zmFlexVal">4</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> Zooming, cognitive narrowing, and the pilots study: <cite>Magness, Do Hard Things (2022), ch. 9</cite>. On coping flexibility &mdash; the finding that the best performers switch strategies rather than owning one &mdash; see <cite>Sheppes et al. (2011), Emotion-regulation choice, Psychological Science</cite>, and the marathon-strategy work of <cite>Silva &amp; Appelbaum (1989)</cite>.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       TOOL 04 — THE NOTICING SELF
+       ========================================================== -->
+  <section class="aj-sec" id="noticing">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">04</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">The Noticing Self</h2>
+              <p class="aj-tool__for">For: when you feel like you <em>are</em> the doubt, the anger, the slump.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>There are two parts of you at work, and telling them apart changes everything.</p>
+            <p>The <strong>thinking self</strong> thinks. It plans, judges, compares, remembers, predicts, criticises and daydreams. When we say &ldquo;your mind&rdquo; in this area, this is what we mean.</p>
+            <p>The <strong>noticing self</strong> doesn&rsquo;t think at all. It only notices. It&rsquo;s the part responsible for attention and awareness &mdash; and it has been there your whole life, unchanged, watching every version of you that has ever existed.</p>
+            <p>Here&rsquo;s the sporting version. When you&rsquo;re truly locked in and the ball is coming at you, all your attention is riveted on it. That&rsquo;s the noticing self at work &mdash; you are not <em>thinking about</em> the ball, you are <em>noticing</em> it. Then a thought arrives: <em>&ldquo;don&rsquo;t drop this&rdquo;</em>. That&rsquo;s the thinking self. And you already know what happens to your hands when you start attending to that instead.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why it works</span>
+              <p>Your thinking self is a radio you cannot switch off. Not even meditation masters can turn it off, and the harder you try, the louder it plays. Mostly it broadcasts the Doom and Gloom Show: past pain, future danger, and a running commentary on everything wrong with you.</p>
+              <p>But you already know how to have a radio on in the background without listening to it. That&rsquo;s the move. <strong>Not silence &mdash; just not tuning in.</strong> If the broadcast is useful, listen and use it. If it isn&rsquo;t, let it play while you get on with what you&rsquo;re doing.</p>
+              <p>And note what this <em>isn&rsquo;t</em>: positive thinking is bringing a second radio into the room, tuned to Happy and Joyful, and turning it up to drown out the first. Try focusing on anything with two radios blaring.</p>
+            </div>
+
+            <div class="aj-eg">
+              <span class="aj-eg__k">Worked example &middot; a tennis player between points</span>
+              <p>&ldquo;My thinking self spent the whole third set telling me I&rsquo;d thrown it away. That never stopped. What changed is that I stopped treating it as a briefing and started treating it as commentary from a bloke I hadn&rsquo;t hired. It was still on. I just wasn&rsquo;t taking notes.&rdquo;</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 5 minutes</span>
+              <h3 class="aj-act__title">Meet both selves</h3>
+              <p class="aj-act__intro">A short experiment first, then the writing. <strong>Do the experiment &mdash; the whole thing falls flat if you only read about it.</strong></p>
+
+              <div class="aj-block">
+                <span class="aj-block__k">The experiment</span>
+                <ol class="aj-steps">
+                  <li>Close your eyes for about a minute (or fix them on a spot). Watch for thoughts and images, like a wildlife photographer waiting for something to come out of the undergrowth.</li>
+                  <li>If nothing comes, keep watching. Something will. And if your mind says <em>&ldquo;nothing&rsquo;s happening, this isn&rsquo;t working&rdquo;</em> &mdash; that&rsquo;s a thought. You just caught one.</li>
+                  <li>As each thought appears, notice <strong>where</strong> it seems to be. In front of you? Above? Behind? Inside your head? Moving or still? If you hear thoughts as a voice: where is the voice, and how fast does it talk?</li>
+                  <li>Open your eyes.</li>
+                </ol>
+              </div>
+
+              <div class="aj-field" style="margin-top:20px;">
+                <p class="aj-field__q">1. Where were your thoughts, and what were they doing?</p>
+                <p class="aj-field__hint">Location, speed, direction, volume. This sounds odd until you do it &mdash; then it&rsquo;s oddly specific.</p>
+                <textarea class="aj-textarea"
+                          data-aj="aware.noticing.location"
+                          data-aj-tool="The Noticing Self"
+                          data-aj-q="Where my thoughts were, and what they were doing"
+                          placeholder="e.g. Just behind my forehead, quite fast, like someone talking over the top of me."></textarea>
+                <span class="aj-saved" data-aj-saved="aware.noticing.location">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">2. Two processes were running. Describe them.</p>
+                <p class="aj-field__hint">One part was <em>producing</em> the thoughts. Another part was <em>watching</em> them appear. Did you catch both?</p>
+                <textarea class="aj-textarea"
+                          data-aj="aware.noticing.two"
+                          data-aj-tool="The Noticing Self"
+                          data-aj-q="The two processes I noticed"
+                          placeholder="e.g. There was the commentary — and there was me, sat behind it, watching the commentary turn up."></textarea>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">3. What station does your radio mostly play?</p>
+                <p class="aj-field__hint">Give it a name. Naming the station makes it much easier to spot when it comes on.</p>
+                <input type="text" class="aj-input"
+                       data-aj="aware.noticing.station"
+                       data-aj-tool="The Noticing Self"
+                       data-aj-q="What my mental radio station is called"
+                       placeholder="e.g. Radio You're-Not-Fit-Enough, broadcasting 24/7">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">4. In your sport, when is your noticing self most switched on?</p>
+                <p class="aj-field__hint">The moments when you&rsquo;re purely <em>noticing</em> rather than <em>thinking about</em>. This is what people usually mean by &ldquo;flow&rdquo;.</p>
+                <textarea class="aj-textarea"
+                          data-aj="aware.noticing.flow"
+                          data-aj-tool="The Noticing Self"
+                          data-aj-q="When my noticing self is most switched on in sport"
+                          placeholder="e.g. The first ten minutes of a game, before I start keeping score in my head."></textarea>
+                <span class="aj-saved" data-aj-saved="aware.noticing.flow">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> The thinking self / noticing self distinction and the radio metaphor: <cite>Harris, The Happiness Trap (2022), ch. 9</cite>. The underlying process is <em>self-as-context</em> &mdash; a perspective-taking sense of self &mdash; described in <cite>Walser &amp; Westrup, Learning ACT (2019), ch. 5</cite>.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       TOOL 05 — THE DOCUMENTARY OF YOU
+       ========================================================== -->
+  <section class="aj-sec aj-sec--alt" id="documentary">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">05</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">The Documentary of You</h2>
+              <p class="aj-tool__for">For: &ldquo;I&rsquo;m just not a big-game player.&rdquo; The identity stuff. The stories that feel like facts.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>Think of a documentary about a country you&rsquo;ve never been to. Brilliantly shot, three hours long, packed with detail. It is still not the country. It can&rsquo;t give you the heat, the food, the sound of the street, the people. A documentary about a place is not the place.</p>
+            <p>Your mind is the most prolific documentary maker there has ever been. It has been filming you 24 hours a day since you were born &mdash; by thirty, that&rsquo;s over a quarter of a million hours of footage. And out of all that, it keeps a fraction of one percent, cuts it into a story, and announces: <strong>&ldquo;This is you. This is who you are.&rdquo;</strong></p>
+            <p>Usually with the subtitle: <em>not good enough.</em></p>
+            <p>Now, all documentaries are biased &mdash; a one-hour TV doc is edited down from hundreds of hours for maximum dramatic effect, reflecting the view of whoever made it. Yours is no different. And the problem is not that the documentary exists. It&rsquo;s that <strong>you think you are it.</strong></p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why the usual fix doesn&rsquo;t work</span>
+              <p>The standard advice is to build high self-esteem: focus on your strengths, tell yourself you&rsquo;re good, hold that positive image tight. Most athletes have tried this. Four things go wrong.</p>
+              <ol class="aj-steps">
+                <li><strong>You can&rsquo;t convince your mind.</strong> You marshal the evidence, you nearly believe it, and your mind replies: <em>&ldquo;yeah, but deep down you know the truth.&rdquo;</em></li>
+                <li><strong>It&rsquo;s exhausting.</strong> You now have to keep proving it, forever, and there&rsquo;s a whole army of self-judgments waiting for you to slip.</li>
+                <li><strong>Affirmations don&rsquo;t land.</strong> If you don&rsquo;t believe it, saying it louder doesn&rsquo;t help. And the research is clear that positive self-talk backfires in exactly the people who need it most &mdash; those with low self-esteem to begin with. Your brain is not fooled by false bravado.</li>
+                <li><strong>Positives attract negatives.</strong> Say &ldquo;I&rsquo;m a good player&rdquo; and your mind immediately produces the counter-example. Every time.</li>
+              </ol>
+              <p>What you end up with is <em>fragile</em> self-esteem: fine while you&rsquo;re performing, catastrophic when you&rsquo;re not. It&rsquo;s extremely common in high achievers, and it drives the cycle of pressure, stress and burnout.</p>
+              <p>The alternative is not a better documentary. It&rsquo;s <strong>holding the whole thing lightly</strong> &mdash; the flattering bits as well as the brutal ones &mdash; and getting on with what matters.</p>
+            </div>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+              <p><strong>Hold the good reviews lightly too.</strong> If your mind starts running &ldquo;I&rsquo;m the best in this squad&rdquo;, that&rsquo;s the same machinery, and it comes with its own costs &mdash; overconfidence, poor preparation, and a very long fall. Thanks, mind. Noted. Back to work.</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 8 minutes</span>
+              <h3 class="aj-act__title">Your documentary, and what it left out</h3>
+              <p class="aj-act__intro">This one is uncomfortable and worth it. Take your time with the last question in particular.</p>
+
+              <div class="aj-field">
+                <p class="aj-field__q">1. What&rsquo;s the title of the documentary your mind has made about you as an athlete?</p>
+                <p class="aj-field__hint">Say it as your mind would say it. Short. Blunt.</p>
+                <input type="text" class="aj-input"
+                       data-aj="aware.doc.title"
+                       data-aj-tool="The Documentary of You"
+                       data-aj-q="The title of my mind's documentary about me"
+                       placeholder="e.g. 'Talented but Soft: The ___ Story'">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">2. Which three scenes does it always show?</p>
+                <p class="aj-field__hint">The same clips, on a loop. The moments your mind returns to as proof.</p>
+                <textarea class="aj-textarea"
+                          data-aj="aware.doc.scenes"
+                          data-aj-tool="The Documentary of You"
+                          data-aj-q="The three scenes my documentary always shows"
+                          placeholder="e.g. The penalty in 2023. The trial I froze in. The conversation with the coach in the car park."></textarea>
+                <span class="aj-saved" data-aj-saved="aware.doc.scenes">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">3. Now the honest part: what did the edit leave on the cutting-room floor?</p>
+                <p class="aj-field__hint">Not positives to argue back with &mdash; just <em>footage that exists and didn&rsquo;t make the cut</em>. The ordinary Tuesdays. The times you turned up when you didn&rsquo;t want to. The person you were with a younger teammate. Every hour that never got a scene.</p>
+                <textarea class="aj-textarea"
+                          data-aj="aware.doc.cut"
+                          data-aj-tool="The Documentary of You"
+                          data-aj-q="What the edit left out"
+                          placeholder="e.g. Four years of Tuesday nights in the rain. Every session I did with a torn hamstring. The fact I'm the one people ring."></textarea>
+                <span class="aj-saved" data-aj-saved="aware.doc.cut">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">4. When does this documentary usually start playing?</p>
+                <p class="aj-field__hint">Selection day? After a loss? When a younger player comes through? Knowing the trigger buys you time.</p>
+                <input type="text" class="aj-input"
+                       data-aj="aware.doc.trigger"
+                       data-aj-tool="The Documentary of You"
+                       data-aj-q="When my documentary usually starts playing"
+                       placeholder="e.g. The 24 hours before squad announcements">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">5. Your line for when it starts.</p>
+                <p class="aj-field__hint">Not a rebuttal &mdash; you&rsquo;ll lose that argument. Just a way of naming it and carrying on.</p>
+                <input type="text" class="aj-input"
+                       data-aj="aware.doc.line"
+                       data-aj-tool="The Documentary of You"
+                       data-aj-q="My line for when the documentary starts"
+                       placeholder="e.g. 'Here's the Soft Lad documentary again. Seen it. Not the whole tape.'">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">6. How much does the documentary decide what you do?</p>
+                <div class="aj-slider">
+                  <input type="range" min="0" max="10" value="6"
+                         data-aj="aware.doc.grip"
+                         data-aj-out="docGrip"
+                         data-aj-tool="The Documentary of You"
+                         data-aj-q="How much the documentary decides what I do (0–10)">
+                  <span class="aj-slider__val" id="docGrip">6</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> The documentary metaphor and the four problems with self-esteem: <cite>Harris, The Happiness Trap (2022), ch. 19</cite>. On positive self-talk backfiring in people with low self-esteem, and elite divers using <em>more</em> positive self-talk than qualifiers: <cite>Magness, Do Hard Things (2022), ch. 7</cite>. On attachment to the conceptualised self: <cite>Walser &amp; Westrup (2019), ch. 1</cite>.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       TOOL 06 — DISTANCED SELF-TALK
+       ========================================================== -->
+  <section class="aj-sec" id="selftalk">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">06</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Distanced Self-Talk</h2>
+              <p class="aj-tool__for">For: the spiral. When you&rsquo;re too close to it to think straight.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>&ldquo;It&rsquo;s easier to give advice to a friend than to yourself.&rdquo; Everyone knows this is true. Your mate agonises for a month over a decision you could call in four seconds.</p>
+            <p>It turns out you can manufacture that effect deliberately, and the switch is astonishingly small: <strong>change the pronoun.</strong></p>
+            <p>Instead of <em>&ldquo;I can do this&rdquo;</em> &mdash; <em>&ldquo;You can do this&rdquo;</em>. Or use your own name: <em>&ldquo;Sam, you&rsquo;ve trained for this.&rdquo;</em> First person locks you inside the experience. Second and third person put a gap between you and it.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why it works</span>
+              <p>The research here is unusually clean. In one study, six-year-olds were given a boring task with a tempting iPad nearby. Those who reflected in first person (&ldquo;am I working hard?&rdquo;) stayed on task about <strong>35%</strong> of the time. Those who used their own name managed about <strong>45%</strong>. Those who asked &ldquo;is Batman working hard?&rdquo; managed nearly <strong>60%</strong>. The further from self-immersion, the longer they persisted.</p>
+              <p>The same paradigm has been run with adults across public speaking, high-stakes decisions and distressing memories, and it holds: distanced self-talk lowers anxiety, shame and rumination, and improves performance. Experts rate the speeches as better. People make more fact-based decisions. Brain-imaging work shows reduced activity in self-referential processing when people use third-person language about negative memories.</p>
+              <p>The mechanism: a self-<em>immersed</em> perspective amplifies emotion, narrows your world, and makes you read the situation as a <strong>threat</strong>. A self-<em>distanced</em> perspective broadens it and lets you read the same situation as a <strong>challenge</strong>.</p>
+              <p>And one more useful finding: saying it <strong>out loud</strong> works better than saying it internally. External speech is a simpler, older system &mdash; it cuts through when your inner voice has stopped being listened to.</p>
+            </div>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+              <p><strong>Fair beats positive.</strong> This is not about forcing cheerfulness. As the philosopher Alain de Botton puts it, a good internal voice is like a genuinely decent judge: able to separate good from bad, but always merciful, fair, accurate about what&rsquo;s going on, and interested in helping you deal with it. The question isn&rsquo;t whether your inner voice is an optimist or a pessimist. It&rsquo;s whether it&rsquo;s fair.</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 6 minutes</span>
+              <h3 class="aj-act__title">Change the pronoun</h3>
+              <p class="aj-act__intro">Take something that&rsquo;s actually bothering you and run it through three versions. Read each one aloud if you can &mdash; that&rsquo;s part of the mechanism, not a flourish.</p>
+
+              <div class="aj-field">
+                <p class="aj-field__q">1. Version one: first person. Write it exactly as it sounds in your head.</p>
+                <p class="aj-field__hint">Don&rsquo;t tidy it. Include the swearing if that&rsquo;s what&rsquo;s in there.</p>
+                <textarea class="aj-textarea"
+                          data-aj="aware.selftalk.first"
+                          data-aj-tool="Distanced Self-Talk"
+                          data-aj-q="First-person version — how it sounds in my head"
+                          placeholder="e.g. I've completely lost it. I can't do this any more. Everyone can see I'm going backwards."></textarea>
+                <span class="aj-saved" data-aj-saved="aware.selftalk.first">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">2. Version two: rewrite it in second person &mdash; &ldquo;you&rdquo;.</p>
+                <p class="aj-field__hint">Same content. Same honesty. Just addressed <em>to</em> you rather than <em>from</em> you.</p>
+                <textarea class="aj-textarea"
+                          data-aj="aware.selftalk.second"
+                          data-aj-tool="Distanced Self-Talk"
+                          data-aj-q="Second-person version"
+                          placeholder="e.g. You've had a rough month. You're not going backwards — you're carrying an injury and no sleep."></textarea>
+                <span class="aj-saved" data-aj-saved="aware.selftalk.second">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">3. Version three: use your own name, and give yourself the advice you&rsquo;d give a mate.</p>
+                <p class="aj-field__hint">Fair, not soft. What would a decent judge say?</p>
+                <textarea class="aj-textarea"
+                          data-aj="aware.selftalk.third"
+                          data-aj-tool="Distanced Self-Talk"
+                          data-aj-q="Third-person version, using my name"
+                          placeholder="e.g. Right, [name]. Two things are true: your form is down, and you've had four hours' sleep a night for a fortnight. Fix the second one first."></textarea>
+                <span class="aj-saved" data-aj-saved="aware.selftalk.third">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">4. Which version was easiest to actually believe?</p>
+                <div class="aj-chips" data-aj-single
+                     data-aj-chips="aware.selftalk.best"
+                     data-aj-tool="Distanced Self-Talk"
+                     data-aj-q="Which version I could actually believe">
+                  <button class="aj-chip">First person (&ldquo;I&rdquo;)</button>
+                  <button class="aj-chip">Second person (&ldquo;you&rdquo;)</button>
+                  <button class="aj-chip">My own name</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">5. Your competition line.</p>
+                <p class="aj-field__hint">Six words or fewer, in second person or with your name, and something you&rsquo;d actually say. If it sounds like a poster, bin it &mdash; you won&rsquo;t believe it when it counts.</p>
+                <input type="text" class="aj-input"
+                       data-aj="aware.selftalk.cue"
+                       data-aj-tool="Distanced Self-Talk"
+                       data-aj-q="My competition self-talk line"
+                       placeholder="e.g. 'Sam — next ball. That's it.'">
+              </div>
+            </div>
+
+            <div class="aj-block" style="margin-top:26px;">
+              <span class="aj-block__k">Take it into the week</span>
+              <p>Two things. <strong>One:</strong> when you catch yourself spiralling, switch the pronoun &mdash; out loud if you&rsquo;re alone. <strong>Two:</strong> if you journal at all, try writing an entry in second or third person. The same distancing effect applies to writing, and it helps you process a hard week rather than just re-live it.</p>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> <cite>Kross et al. (2014), Self-talk as a regulatory mechanism: How you do it matters, JPSP</cite>; the Batman study, <cite>White &amp; Carlson (2016)</cite>; and the whole chapter in <cite>Magness, Do Hard Things (2022), ch. 7</cite>. On overt speech and accountability, <cite>Hayes et al.</cite>, discussed in the same chapter.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       TOOL 07 — YOUR RESET ROUTINE
+       ========================================================== -->
+  <section class="aj-sec aj-sec--alt" id="reset">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">07</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Your Reset Routine</h2>
+              <p class="aj-tool__for">For: the ten seconds after a mistake. Building all of the above into one repeatable move.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>Everything in this pillar so far has been a separate skill. This is where you weld them into one thing you can run in the ten seconds between plays &mdash; without thinking about it.</p>
+            <p>A reset has four parts, in this order:</p>
+            <ol class="aj-steps">
+              <li><strong>The release.</strong> A physical action that marks the end of the last play. Adjust the strapping, tug the sock, wipe the hands on the shorts, one hard exhale. Small, invisible to everyone else, and always the same.</li>
+              <li><strong>The name.</strong> One or two words for what just showed up. <em>&ldquo;Frustration.&rdquo; &ldquo;There&rsquo;s the Choker story.&rdquo;</em> One second. Don&rsquo;t skip it &mdash; without it this is just a fidget.</li>
+              <li><strong>The anchor.</strong> Feet into the ground. Spine up. Contact with your body.</li>
+              <li><strong>The refocus cue.</strong> One external thing to lock onto for the next play. The ball, the mark, the target, the next job.</li>
+            </ol>
+            <p>Release. Name. Anchor. Refocus. Four beats, about eight seconds.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why it works</span>
+              <p>Pre-performance and between-play routines are among the best-supported interventions in applied sport psychology &mdash; but only when they do something. A superstition is a routine with the working parts removed. This one has all four: it interrupts rumination, it names the experience (which lowers reactivity), it returns physical control, and it points attention at something external and task-relevant.</p>
+              <p>Do the same four beats every time and the sequence becomes automatic. That matters enormously, because <strong>the moment you need it most is the moment you have least capacity to construct it.</strong> Under real pressure you don&rsquo;t rise to the occasion; you fall back on what you&rsquo;ve trained.</p>
+            </div>
+
+            <div class="aj-eg">
+              <span class="aj-eg__k">Worked example &middot; three athletes, same four beats</span>
+              <p><strong>Goalkeeper, after conceding:</strong> picks up the ball and hands it to the ref (release) &middot; <em>&ldquo;anger&rdquo;</em> (name) &middot; both feet into the six-yard box, stands tall (anchor) &middot; eyes to the halfway line, calls the shape (refocus).</p>
+              <p><strong>Golfer, after a bad drive:</strong> replaces the headcover and steps off the tee (release) &middot; <em>&ldquo;here&rsquo;s the &lsquo;here we go again&rsquo; story&rdquo;</em> (name) &middot; feels the grip and the ground through the shoes (anchor) &middot; picks a target for the next shot before leaving the tee (refocus).</p>
+              <p><strong>Sprinter, after a poor start:</strong> one hard exhale, shakes the hands out (release) &middot; <em>&ldquo;panic&rdquo;</em> (name) &middot; drives the feet into the track (anchor) &middot; eyes to lane 4, the far line (refocus).</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 10 minutes + rehearsal</span>
+              <h3 class="aj-act__title">Build your reset</h3>
+              <p class="aj-act__intro">Write your four beats. Then rehearse them &mdash; at training, not in a game. A reset you&rsquo;ve only ever read is not a reset.</p>
+
+              <div class="aj-field">
+                <p class="aj-field__q">The moment this reset is for</p>
+                <p class="aj-field__hint">Be specific. Different moments may need different resets, but start with one.</p>
+                <input type="text" class="aj-input"
+                       data-aj="aware.reset.moment"
+                       data-aj-tool="Your Reset Routine"
+                       data-aj-q="The moment my reset is for"
+                       placeholder="e.g. Immediately after I give the ball away in our half">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">Beat 1 &mdash; The release</p>
+                <p class="aj-field__hint">One physical action. Small enough that nobody notices, consistent enough that your body learns it.</p>
+                <input type="text" class="aj-input"
+                       data-aj="aware.reset.release"
+                       data-aj-tool="Your Reset Routine"
+                       data-aj-q="Beat 1 — my release action"
+                       placeholder="e.g. One hard breath out and pull my sleeves down">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">Beat 2 &mdash; The name</p>
+                <p class="aj-field__hint">The one or two words you&rsquo;ll most often need. You can always change it in the moment.</p>
+                <input type="text" class="aj-input"
+                       data-aj="aware.reset.name"
+                       data-aj-tool="Your Reset Routine"
+                       data-aj-q="Beat 2 — what I'll name"
+                       placeholder="e.g. 'Frustration.' or 'There's the panic.'">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">Beat 3 &mdash; The anchor</p>
+                <p class="aj-field__hint">Contact with your body. Usually the feet.</p>
+                <input type="text" class="aj-input"
+                       data-aj="aware.reset.anchor"
+                       data-aj-tool="Your Reset Routine"
+                       data-aj-q="Beat 3 — my anchor"
+                       placeholder="e.g. Press both feet hard into the ground, stand tall">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">Beat 4 &mdash; The refocus cue</p>
+                <p class="aj-field__hint">One external, task-relevant thing. Not a feeling, not an instruction about outcome.</p>
+                <input type="text" class="aj-input"
+                       data-aj="aware.reset.refocus"
+                       data-aj-tool="Your Reset Routine"
+                       data-aj-q="Beat 4 — my refocus cue"
+                       placeholder="e.g. Find my mark and call the press">
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">Rehearsal log</p>
+                <p class="aj-field__hint">Run it at training, deliberately, after ordinary mistakes. Note how many reps you get and what needed changing.</p>
+                <textarea class="aj-textarea"
+                          data-aj="aware.reset.reps"
+                          data-aj-tool="Your Reset Routine"
+                          data-aj-q="My reset rehearsal log"
+                          placeholder="e.g. Tuesday: about 8 reps in the small-sided game. The naming felt daft at first, then stopped feeling like anything."></textarea>
+                <span class="aj-saved" data-aj-saved="aware.reset.reps">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">How automatic is it so far?</p>
+                <p class="aj-field__hint">0 = I have to consciously remember every beat. 10 = it runs itself.</p>
+                <div class="aj-slider">
+                  <input type="range" min="0" max="10" value="2"
+                         data-aj="aware.reset.automatic"
+                         data-aj-out="resetAuto"
+                         data-aj-tool="Your Reset Routine"
+                         data-aj-q="How automatic my reset is (0–10)">
+                  <span class="aj-slider__val" id="resetAuto">2</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> This routine is assembled from the skills above &mdash; dropping anchor <cite>(Harris, 2022, ch. 5)</cite>, noticing and naming <cite>(ibid., ch. 5)</cite>, and attentional zooming <cite>(Magness, 2022, ch. 9)</cite>. The pre-performance routine literature in applied sport psychology supports structured, consistent, task-focused routines over unstructured ritual.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CLOSE ========== -->
+  <section class="aj-sec">
+    <div class="container">
+      <div class="aj-wrap">
+        <div class="aj-takeaways">
+          <h3>The whole pillar in seven lines</h3>
+          <ul>
+            <li><strong>Now is the only venue.</strong> Everything that matters happens here.</li>
+            <li><strong>Anchors don&rsquo;t stop storms.</strong> They hold you steady while the storm does what storms do.</li>
+            <li><strong>Name it accurately.</strong> &ldquo;Bad&rdquo; is not a name. Precision buys you options.</li>
+            <li><strong>Stuck narrow? Go broad.</strong> Attention drags thought and mood along behind it.</li>
+            <li><strong>You are not your thinking self.</strong> You&rsquo;re the part that notices it.</li>
+            <li><strong>The documentary isn&rsquo;t you.</strong> Hold the bad reviews and the good ones equally lightly.</li>
+            <li><strong>Change the pronoun.</strong> The smallest intervention in this whole area, and one of the best evidenced.</li>
+          </ul>
+        </div>
+
+        <div class="aj-nextnav">
+          <a href="grow-athlete-open.html">
+            <div class="aj-nextnav__dir">&larr; Previous pillar</div>
+            <div class="aj-nextnav__title">Open</div>
+          </a>
+          <a href="grow-athlete-engaged.html" class="aj-nextnav--end">
+            <div class="aj-nextnav__dir">Next pillar &rarr;</div>
+            <div class="aj-nextnav__title">Engaged</div>
+          </a>
+        </div>
+
+        <div class="aj-disclaimer">
+          <p>These skills support the work we do together &mdash; they don&rsquo;t replace it, and they aren&rsquo;t therapy or a crisis service. If something here has stirred up more than you expected, bring it to your next session, or sooner. Free, confidential support is available 24/7 across Aotearoa: call or text <a href="tel:1737">1737</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom" style="border-top:none;">
+        <p>&copy; 2026 The Performance Act. Private athlete area.</p>
+        <div class="footer__bottom-links">
+          <a href="grow-athlete.html">Skills Journal</a>
+          <a href="grow-athlete-journal.html">My Journal</a>
+          <a href="grow-athlete.html#sources">Sources</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <button class="support-line-btn" id="supportLineBtn" aria-label="NZ support lines">
+    <span class="support-line-btn__dot" aria-hidden="true"></span>
+    Immediate Support
+  </button>
+  <div class="support-line-modal" id="supportLineModal" role="dialog" aria-modal="true" aria-labelledby="supportLineTitle" aria-hidden="true">
+    <div class="support-line-modal__backdrop"></div>
+    <div class="support-line-modal__panel">
+      <button class="support-line-modal__close" id="supportLineClose" aria-label="Close support lines">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <p class="support-line-modal__eyebrow">Aotearoa, New Zealand</p>
+      <h2 class="support-line-modal__title" id="supportLineTitle">Need immediate support?</h2>
+      <p class="support-line-modal__note">The Performance Act is a sport psychology practice, not a crisis or emergency service. If you or someone you care about needs immediate support, please reach out to one of these trusted services. They are free, confidential, and available 24&#8202;/&#8202;7.</p>
+      <ul class="support-line-modal__list" role="list">
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">1737 &mdash; Need to Talk?</p><p class="sln-resource__desc">Free call or text, any time. Trained counsellors, 24&#47;7.</p></div>
+          <a href="tel:1737" class="sln-resource__number">Call or text 1737</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Lifeline NZ</p><p class="sln-resource__desc">Crisis support and suicide prevention, 24&#47;7.</p></div>
+          <a href="tel:0800543354" class="sln-resource__number">0800 543 354</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Youthline</p><p class="sln-resource__desc">For young people. Free call or text 234, 24&#47;7.</p></div>
+          <a href="tel:0800376633" class="sln-resource__number">0800 376 633</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Suicide Crisis Helpline</p><p class="sln-resource__desc">0508 TAUTOKO. Support for those in crisis, 24&#47;7.</p></div>
+          <a href="tel:0508828865" class="sln-resource__number">0508 828 865</a>
+        </li>
+      </ul>
+      <p class="support-line-modal__footer">More resources at <a href="https://www.mentalhealth.org.nz/get-help/in-crisis" target="_blank" rel="noopener">Mental Health Foundation NZ</a> and <a href="https://www.depression.org.nz" target="_blank" rel="noopener">depression.org.nz</a>.</p>
+    </div>
+  </div>
+
+  <script src="script.js?v=5"></script>
+  <script src="grow-athlete.js?v=1"></script>
+
+  <script>
+  /* ---------- ZOOM DIAL ---------- */
+  (function () {
+    'use strict';
+    var range = document.getElementById('zmRange');
+    var stateEl = document.getElementById('zmState');
+    var bodyEl = document.getElementById('zmBody');
+    var costEl = document.getElementById('zmCost');
+    if (!range) return;
+
+    var STATES = [
+      {
+        state: 'Locked in',
+        body: 'All your processing power on <strong>one thing</strong>. The seam of the ball. The next stroke. This is the state elite marathoners deliberately hold for miles &mdash; and it is exactly right in the moment of execution.',
+        cost: 'Cost if you stay here: you stop hearing the alarms. 40% of pilots in one study missed a loud cockpit alert while zoomed in on a difficult landing.'
+      },
+      {
+        state: 'Narrow — and stuck',
+        body: 'Now you&rsquo;re locked onto the <strong>wrong</strong> thing: the error, the comment, the scoreboard. Your world has shrunk to whatever is shouting loudest, and you can&rsquo;t break away from it.',
+        cost: 'This is what rumination actually is &mdash; a narrow, inflexible focus of attention. The narrower it gets, the more the negative amplifies.'
+      },
+      {
+        state: 'Balanced',
+        body: 'You can see the task <strong>and</strong> the field. You&rsquo;re aware of your body, your teammates and the next job, without being fixed on any of them.',
+        cost: 'Comfortable, and usually the right place between plays — but not sharp enough for the moment of execution.'
+      },
+      {
+        state: 'Broad',
+        body: 'Wide open. You&rsquo;re reading the whole picture, seeing options, spotting the overlap before it happens. <strong>Creativity and problem-solving lift measurably in this state.</strong>',
+        cost: 'This is the antidote to a spiral. When you catch yourself narrow and stuck, this is where you go — briefly.'
+      },
+      {
+        state: 'Too broad',
+        body: 'Everything is coming in at once and none of it is landing. You&rsquo;re aware of the crowd, the weather, the coach, the score, your hamstring &mdash; and <strong>not committed to anything.</strong>',
+        cost: 'Execution suffers. From here, zoom back in on one external, task-relevant thing.'
+      }
+    ];
+
+    function paint() {
+      var s = STATES[parseInt(range.value, 10)];
+      stateEl.textContent = s.state;
+      bodyEl.innerHTML = s.body;
+      costEl.innerHTML = s.cost;
+    }
+    range.addEventListener('input', paint);
+    paint();
+  })();
+  </script>
+</body>
+</html>
