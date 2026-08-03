@@ -45,15 +45,24 @@
     remove: function (k) {
       try { localStorage.removeItem(NS + k); } catch (e) {}
     },
-    keys: function () {
+    /* Every key we own, including the private ones. */
+    allKeys: function () {
       var out = [];
       try {
         for (var i = 0; i < localStorage.length; i++) {
           var k = localStorage.key(i);
-          if (k && k.indexOf(NS) === 0 && k !== META) out.push(k.slice(NS.length));
+          if (k && k.indexOf(NS) === 0) out.push(k.slice(NS.length));
         }
       } catch (e) {}
       return out;
+    },
+    /* Journal keys only. Anything starting "__" is private working
+       data a tool keeps for itself (the DOTS diary array, the meta
+       index) — it belongs to the athlete and is deleted with
+       everything else, but it isn't a journal entry so it never
+       gets rendered, exported or counted as one. */
+    keys: function () {
+      return store.allKeys().filter(function (k) { return k.indexOf('__') !== 0; });
     }
   };
 
@@ -671,7 +680,7 @@
         'on this device. It cannot be undone.\n\nDownload a copy first if you want to keep it.\n\nDelete everything?'
       );
       if (!ok) return;
-      store.keys().forEach(function (k) { store.remove(k); });
+      store.allKeys().forEach(function (k) { store.remove(k); });
       try { localStorage.removeItem(META); } catch (e) {}
       renderJournal();
     });
@@ -742,6 +751,10 @@
     get: store.get,
     set: function (k, v, tool, q) { store.set(k, v); noteMeta(k, tool, q); updateProgress(); },
     remove: function (k) { store.remove(k); updateProgress(); },
+    /* Private working data for a tool — same device-only storage,
+       cleared by "delete everything", but kept out of the journal. */
+    getPrivate: function (name) { return store.get('__' + name); },
+    setPrivate: function (name, v) { store.set('__' + name, v); },
     esc: esc,
     refresh: updateProgress
   };

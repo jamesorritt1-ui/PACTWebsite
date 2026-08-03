@@ -52,6 +52,66 @@
     .bh__verdict strong { color:#fff; font-weight:600; }
     .bh__verdict b { color:var(--yellow); font-weight:600; }
 
+    /* ---- DOTS ---- */
+    .dt { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin:24px 0; }
+    .dt__card { background:#111; border:1px solid var(--line); border-top:4px solid var(--yellow); padding:22px 22px 20px; }
+    .dt__l { display:flex; align-items:baseline; gap:12px; margin-bottom:10px; }
+    .dt__letter { font-family:var(--font-heading); font-weight:700; font-size:2.4rem; color:var(--yellow); line-height:1; }
+    .dt__name { font-family:var(--font-heading); font-size:1.05rem; text-transform:uppercase; letter-spacing:0.04em; color:#fff; }
+    .dt__what { color:var(--ink); font-size:0.93rem; line-height:1.7; font-weight:300; margin:0 0 12px; }
+    .dt__eg { background:#0a0a0a; border-left:3px solid rgba(255,229,0,0.4); padding:12px 15px; }
+    .dt__eg p { color:var(--ink); font-size:0.87rem; line-height:1.65; font-weight:300; margin:0 0 7px; }
+    .dt__eg p:last-child { margin-bottom:0; }
+    .dt__eg b { color:#fff; font-weight:600; }
+    @media (max-width:700px){ .dt { grid-template-columns:1fr; } }
+
+    /* ---- DOTS diary ---- */
+    .dd { background:#0a0a0a; border:1px solid var(--line); padding:22px 22px 24px; margin-top:18px; }
+    .dd__grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .dd__grid .aj-field { margin-bottom:0; }
+    @media (max-width:640px){ .dd__grid { grid-template-columns:1fr; } }
+    .dd__verdicts { display:flex; flex-wrap:wrap; gap:9px; }
+    .dd__v {
+      font-family:var(--font-body); font-size:0.87rem; color:var(--ink);
+      background:#191919; border:1px solid var(--line); border-radius:100px;
+      padding:9px 16px; cursor:pointer; transition:.15s;
+    }
+    .dd__v:hover { border-color:rgba(255,229,0,0.5); }
+    .dd__v[aria-pressed="true"] { background:var(--yellow); border-color:var(--yellow); color:#000; font-weight:500; }
+    .dd__v[data-v="away"][aria-pressed="true"] { background:#c0562e; border-color:#c0562e; color:#fff; }
+    .dd__v[data-v="mixed"][aria-pressed="true"] { background:#8a7a3a; border-color:#8a7a3a; color:#fff; }
+
+    .dd__entries { margin-top:22px; }
+    .dd__entry { background:#111; border:1px solid var(--line); border-left:3px solid var(--yellow); padding:15px 17px; margin-bottom:10px; position:relative; }
+    .dd__entry--away { border-left-color:#c0562e; }
+    .dd__entry--mixed { border-left-color:#8a7a3a; }
+    .dd__entry-top { display:flex; align-items:center; gap:10px; margin-bottom:7px; flex-wrap:wrap; }
+    .dd__badge { font-family:var(--font-heading); font-size:0.62rem; letter-spacing:0.12em; text-transform:uppercase; background:var(--yellow); color:#000; padding:3px 8px; }
+    .dd__entry--away .dd__badge { background:#c0562e; color:#fff; }
+    .dd__entry--mixed .dd__badge { background:#8a7a3a; color:#fff; }
+    .dd__what { color:#fff; font-size:0.95rem; font-weight:500; flex:1; }
+    .dd__del { background:none; border:none; color:var(--muted); cursor:pointer; font-size:1.1rem; line-height:1; padding:0 3px; }
+    .dd__del:hover { color:#c0562e; }
+    .dd__line { color:var(--ink); font-size:0.87rem; line-height:1.6; font-weight:300; margin:3px 0 0; }
+    .dd__line b { color:var(--muted); font-weight:400; }
+    .dd__empty { color:var(--muted); font-size:0.9rem; font-style:italic; padding:16px 0; }
+
+    /* aggregate readout */
+    .dd__sum { margin-top:22px; padding-top:20px; border-top:1px solid var(--line); }
+    .dd__sum-t { font-family:var(--font-heading); font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--yellow); margin:0 0 14px; }
+    .dd__strat { margin-bottom:13px; }
+    .dd__strat-top { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:5px; gap:10px; }
+    .dd__strat-n { color:#fff; font-size:0.9rem; font-weight:500; }
+    .dd__strat-c { color:var(--muted); font-size:0.78rem; white-space:nowrap; }
+    .dd__bar { display:flex; height:9px; border-radius:100px; overflow:hidden; background:rgba(255,255,255,0.07); }
+    .dd__seg { display:block; height:100%; }
+    .dd__seg--toward { background:var(--yellow); }
+    .dd__seg--mixed { background:#8a7a3a; }
+    .dd__seg--away { background:#c0562e; }
+    .dd__insight { color:var(--ink); font-size:0.93rem; line-height:1.75; font-weight:300; margin:16px 0 0; }
+    .dd__insight strong { color:#fff; font-weight:600; }
+    .dd__insight b { color:var(--yellow); font-weight:600; }
+
     /* ---- Four doors compass ---- */
     .fd { background:#0d0d0d; border:1px solid rgba(255,229,0,0.22); padding:24px 22px; margin:22px 0; display:grid; grid-template-columns:220px 1fr; gap:26px; align-items:center; }
     .fd__svg { width:100%; height:auto; max-width:220px; }
@@ -114,7 +174,7 @@
       <span class="aj-hero__badge">Pillar one of the TriFlex</span>
       <h1 class="aj-hero__title"><span>OPEN</span></h1>
       <p class="aj-hero__lead"><strong>Acceptance and defusion.</strong> Six skills for the moments when what&rsquo;s going on inside you is loud &mdash; and your instinct is either to fight it or to do what it says.</p>
-      <p class="aj-hero__meta"><span>9 skills</span> &middot; <span>9 activities</span> &middot; <span>Dip in anywhere</span></p>
+      <p class="aj-hero__meta"><span>10 skills</span> &middot; <span>10 activities</span> &middot; <span>Dip in anywhere</span></p>
       <div class="aj-toc">
         <a href="#struggle">01 &middot; The struggle switch</a>
         <a href="#tame">02 &middot; Making room</a>
@@ -125,6 +185,7 @@
         <a href="#breath">07 &middot; The breath-hold</a>
         <a href="#doors">08 &middot; The four doors</a>
         <a href="#rehearsal">09 &middot; The rehearsal room</a>
+        <a href="#dots">10 &middot; DOTS</a>
       </div>
     </div>
   </section>
@@ -1475,12 +1536,353 @@
     </div>
   </section>
 
+  <!-- ==========================================================
+       TOOL 10 — DOTS
+       ========================================================== -->
+  <section class="aj-sec" id="dots">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">10</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">DOTS</h2>
+              <p class="aj-tool__for">For: spotting, in the moment, that you&rsquo;ve started moving away &mdash; before you&rsquo;ve gone a long way.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+
+            <span class="aj-block__k">What it is</span>
+            <p>Human beings have four broad ways of handling something we don&rsquo;t want to feel. Four. That&rsquo;s it &mdash; everything else is a variation.</p>
+            <p><strong>DOTS</strong> is how you remember them:</p>
+            <ul class="aj-ul">
+              <li><strong>D</strong> &mdash; Distract</li>
+              <li><strong>O</strong> &mdash; Opt out</li>
+              <li><strong>T</strong> &mdash; Time travel</li>
+              <li><strong>S</strong> &mdash; Self-sabotage</li>
+            </ul>
+            <p>Once you know the four, you can catch yourself doing one. And catching it is the entire point &mdash; because the move you can&rsquo;t see is the one that runs your week.</p>
+
+            <!-- THE WORKABILITY RULE — front and centre, before anything else -->
+            <div class="aj-act" style="margin:26px 0;">
+              <span class="aj-act__tag">Read this before the rest</span>
+              <h3 class="aj-act__title">None of these are bad</h3>
+              <p class="aj-act__intro" style="margin-bottom:14px;"><strong>This is the most important sentence on the page, and the one people get wrong.</strong> DOTS is not a list of things you should stop doing. It is not a naughty list. Every single one of these strategies is sometimes exactly the right call.</p>
+              <p class="aj-act__intro" style="margin-bottom:14px;">Distraction is <em>correct</em> when you&rsquo;re at half time and cannot afford to process the first half now. Opting out is <em>wisdom</em> when you&rsquo;ve got a stress fracture and everyone&rsquo;s telling you to play. Time travel is <em>planning and learning</em> &mdash; you cannot review a game or prepare for one without it. Even the fourth one exists because it works: it wouldn&rsquo;t have a grip on anybody if it delivered nothing.</p>
+              <p class="aj-act__intro" style="margin-bottom:0;">So the question is <strong>never</strong> &ldquo;is this a DOTS?&rdquo; The question is always <strong>&ldquo;is this working, here, for what I actually care about?&rdquo;</strong> Same behaviour, different day, different answer. That is what makes this an awareness tool and not a rulebook.</p>
+            </div>
+
+            <div class="dt">
+              <div class="dt__card">
+                <div class="dt__l"><span class="dt__letter">D</span><span class="dt__name">Distract</span></div>
+                <p class="dt__what">Putting your attention somewhere else so you don&rsquo;t have to be with what&rsquo;s here. Phone, scrolling, gaming, box sets, music, banter, keeping busy, cleaning the whole house, extra sessions, anything that fills the gap.</p>
+                <div class="dt__eg">
+                  <p><b>In sport:</b> rushing your next shot so you never have to feel the last one. Podcast on the whole drive home so the game doesn&rsquo;t get a look in.</p>
+                  <p><b>When it works:</b> at half time. Mid-race. The night before, when there is genuinely nothing useful left to think about.</p>
+                  <p><b>When it costs:</b> when it&rsquo;s three hours a night and the thing you&rsquo;re avoiding is still there in the morning, slightly bigger.</p>
+                </div>
+              </div>
+
+              <div class="dt__card">
+                <div class="dt__l"><span class="dt__letter">O</span><span class="dt__name">Opt out</span></div>
+                <p class="dt__what">Stepping back from the situation, the person or the challenge. Skipping it, pulling out, going quiet, not asking, not putting your hand up &mdash; or turning up and quietly giving less than everything so that a bad result doesn&rsquo;t really count.</p>
+                <div class="dt__eg">
+                  <p><b>In sport:</b> not asking for the ball when it&rsquo;s tight. Not going to the physio because you don&rsquo;t want to hear the answer. Eighty percent, so there&rsquo;s always an excuse available.</p>
+                  <p><b>When it works:</b> pulling out of a fixture you&rsquo;re genuinely injured for. Leaving an environment that&rsquo;s harming you. Saying no to a fourth commitment.</p>
+                  <p><b>When it costs:</b> when your world quietly shrinks, one sensible-sounding decision at a time.</p>
+                </div>
+              </div>
+
+              <div class="dt__card">
+                <div class="dt__l"><span class="dt__letter">T</span><span class="dt__name">Time travel</span></div>
+                <p class="dt__what">Leaving now and going somewhere in your head. Backwards into replaying, rehashing and regret &mdash; or forwards into worrying, rehearsing disasters, and &ldquo;once I make the squad, then I&rsquo;ll be alright.&rdquo;</p>
+                <div class="dt__eg">
+                  <p><b>In sport:</b> replaying the error for the next twenty minutes of a game you&rsquo;re still playing. Taking the penalty four hundred times in bed the night before.</p>
+                  <p><b>When it works:</b> reviewing footage on Monday. Planning your week. Learning from a mistake <em>once</em>, deliberately, with a purpose.</p>
+                  <p><b>When it costs:</b> when you&rsquo;re not learning any more, just re-feeling it. Or when the future you&rsquo;re rehearsing hasn&rsquo;t happened and mostly won&rsquo;t.</p>
+                </div>
+              </div>
+
+              <div class="dt__card">
+                <div class="dt__l"><span class="dt__letter">S</span><span class="dt__name">Self-sabotage</span></div>
+                <p class="dt__what">The things you do <em>to yourself</em> to change how you feel, that carry a real cost. Drinking, vaping, eating to numb or not eating at all, over-training, skipping recovery, using self-criticism as a motivator, starting arguments, or deciding you don&rsquo;t care before anyone can tell you you&rsquo;re not good enough.</p>
+                <div class="dt__eg">
+                  <p><b>In sport:</b> a big night out after a loss. Training through the injury so you never have to face rehab. Getting your excuse in early by not preparing properly.</p>
+                  <p><b>When it works:</b> honestly &mdash; in the short term, it does. It changes how you feel, fast. That is precisely why it sticks.</p>
+                  <p><b>When it costs:</b> almost always over time, and usually in the exact area you care most about.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why it works</span>
+              <p>Two reasons.</p>
+              <p><strong>One: it gives you a name for something that was invisible.</strong> Away moves rarely announce themselves. Nobody thinks &ldquo;I am now avoiding.&rdquo; They think <em>&ldquo;I&rsquo;ll just check my phone&rdquo;</em>, <em>&ldquo;I&rsquo;m too tired tonight&rdquo;</em>, <em>&ldquo;I&rsquo;m just being realistic&rdquo;</em>. Four categories give you something to catch it with. Athletes routinely say the useful moment isn&rsquo;t the log &mdash; it&rsquo;s the first time they hear themselves think <em>&ldquo;that&rsquo;s an O.&rdquo;</em></p>
+              <p><strong>Two: it forces the workability question.</strong> Most self-improvement hands you a list of bad habits and tells you to stop. That fails, because these behaviours are doing a job &mdash; and if you just remove them without acknowledging the job, you&rsquo;ll find a replacement inside a week. DOTS asks something more useful: <em>what did that give me, what did it cost me, and is that a trade I want to keep making?</em></p>
+              <p>This is the same workability test you met in <a href="#workability">Helpful vs True</a> and in the <a href="grow-athlete-engaged.html#choicepoint">choice point</a> &mdash; and it&rsquo;s the reason no behaviour can be listed permanently on either arrow.</p>
+            </div>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+              <p><strong>Watch for this trap.</strong> The moment athletes learn DOTS, a lot of them start using it as a stick: <em>&ldquo;there I go again, distracting, I&rsquo;m useless.&rdquo;</em> That&rsquo;s just self-criticism wearing a new acronym &mdash; and it is itself an S. Noticing is meant to be curious, not damning. If you catch yourself getting judgemental with this tool, go and do <a href="#kind">Kind Hands</a> and come back.</p>
+            </div>
+
+            <div class="aj-eg">
+              <span class="aj-eg__k">Worked example &middot; the same behaviour, twice</span>
+              <p><strong>Tuesday, 9pm.</strong> Two hours of scrolling after a rough session. Short term: numbed out, didn&rsquo;t have to think about being dropped. Cost: bed at 1am, wrecked at training Wednesday, and the dropped thing still there untouched. <strong>Verdict: away.</strong></p>
+              <p><strong>Saturday, 5pm.</strong> Twenty minutes of scrolling in the changing room before kick-off, deliberately, because there is nothing useful left to think about and he knows he over-thinks in that gap. Short term: settled. Cost: none. <strong>Verdict: toward.</strong></p>
+              <p>Identical behaviour. Same person. Same week. <strong>The behaviour was never the issue &mdash; the fit was.</strong> That&rsquo;s the whole tool in one example.</p>
+            </div>
+
+            <!-- ACTIVITY -->
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; part 1 &middot; 8 minutes</span>
+              <h3 class="aj-act__title">Map your DOTS</h3>
+              <p class="aj-act__intro">Before you can catch them you have to know which ones are yours. Everyone leans on some more than others. <strong>Tap honestly &mdash; there are no wrong answers here, only accurate and inaccurate ones.</strong></p>
+
+              <div class="aj-field">
+                <p class="aj-field__q">D &mdash; how do you distract?</p>
+                <div class="aj-chips"
+                     data-aj-chips="open.dots.d"
+                     data-aj-tool="DOTS"
+                     data-aj-q="D — How I distract">
+                  <button class="aj-chip">Phone / scrolling</button>
+                  <button class="aj-chip">Gaming</button>
+                  <button class="aj-chip">TV / box sets</button>
+                  <button class="aj-chip">Music in constantly</button>
+                  <button class="aj-chip">Keeping busy</button>
+                  <button class="aj-chip">Banter / making jokes</button>
+                  <button class="aj-chip">Extra training</button>
+                  <button class="aj-chip">Eating</button>
+                  <button class="aj-chip">Sleeping in the day</button>
+                  <button class="aj-chip">Other people&rsquo;s problems</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">O &mdash; how do you opt out?</p>
+                <div class="aj-chips"
+                     data-aj-chips="open.dots.o"
+                     data-aj-tool="DOTS"
+                     data-aj-q="O — How I opt out">
+                  <button class="aj-chip">Skip sessions</button>
+                  <button class="aj-chip">Pull out of things</button>
+                  <button class="aj-chip">Go quiet</button>
+                  <button class="aj-chip">Don&rsquo;t ask for the ball</button>
+                  <button class="aj-chip">Avoid the coach</button>
+                  <button class="aj-chip">Don&rsquo;t ask questions</button>
+                  <button class="aj-chip">Give less than everything</button>
+                  <button class="aj-chip">Cancel on people</button>
+                  <button class="aj-chip">Avoid the physio / the truth</button>
+                  <button class="aj-chip">Say I&rsquo;m fine</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">T &mdash; where do you time travel to?</p>
+                <div class="aj-chips"
+                     data-aj-chips="open.dots.t"
+                     data-aj-tool="DOTS"
+                     data-aj-q="T — Where I time travel to">
+                  <button class="aj-chip">Replaying mistakes</button>
+                  <button class="aj-chip">Rehashing old conversations</button>
+                  <button class="aj-chip">Regret about a decision</button>
+                  <button class="aj-chip">Worrying about selection</button>
+                  <button class="aj-chip">Rehearsing disasters</button>
+                  <button class="aj-chip">Over-planning</button>
+                  <button class="aj-chip">&ldquo;When I make it, then&hellip;&rdquo;</button>
+                  <button class="aj-chip">Comparing my past self</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">S &mdash; and the ones that cost you?</p>
+                <p class="aj-field__hint">This one takes more honesty than the other three. Nobody sees it but you, and there is nothing here you need to be ashamed of &mdash; every item on this list exists because it works in the short term.</p>
+                <div class="aj-chips"
+                     data-aj-chips="open.dots.s"
+                     data-aj-tool="DOTS"
+                     data-aj-q="S — Self-sabotage strategies I use">
+                  <button class="aj-chip">Drinking</button>
+                  <button class="aj-chip">Vaping / smoking</button>
+                  <button class="aj-chip">Eating to numb</button>
+                  <button class="aj-chip">Not eating</button>
+                  <button class="aj-chip">Over-training</button>
+                  <button class="aj-chip">Skipping recovery</button>
+                  <button class="aj-chip">Beating myself up</button>
+                  <button class="aj-chip">Picking fights</button>
+                  <button class="aj-chip">Pushing people away</button>
+                  <button class="aj-chip">Deciding I don&rsquo;t care</button>
+                  <button class="aj-chip">Giving up before I can fail</button>
+                  <button class="aj-chip">Training through injury</button>
+                </div>
+                <p class="aj-field__hint" style="margin-top:12px;">A few of these &mdash; anything around alcohol, eating, or training on an injury &mdash; can get past the point where a journal is the right tool. That&rsquo;s not a failure of yours and it isn&rsquo;t a reason to leave it off the list. Tick it here, then bring it to your next session, or to your GP or dietitian. This tool is for noticing; some things want a person.</p>
+              </div>
+
+              <div class="aj-field" style="margin-top:24px;">
+                <p class="aj-field__q">Which letter is your default?</p>
+                <p class="aj-field__hint">Most people have one they reach for first, automatically, before they&rsquo;ve decided anything.</p>
+                <div class="aj-chips" data-aj-single
+                     data-aj-chips="open.dots.default"
+                     data-aj-tool="DOTS"
+                     data-aj-q="My default DOTS letter">
+                  <button class="aj-chip">D &mdash; Distract</button>
+                  <button class="aj-chip">O &mdash; Opt out</button>
+                  <button class="aj-chip">T &mdash; Time travel</button>
+                  <button class="aj-chip">S &mdash; Self-sabotage</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:22px;">
+                <p class="aj-field__q">Now the fair bit: when has that default genuinely served you?</p>
+                <p class="aj-field__hint">Don&rsquo;t skip this. If you only ever record the cost, you&rsquo;ll end up fighting a part of yourself that has been trying to help &mdash; and that fight is its own away move.</p>
+                <textarea class="aj-textarea"
+                          data-aj="open.dots.served"
+                          data-aj-tool="DOTS"
+                          data-aj-q="When my default DOTS has genuinely served me"
+                          placeholder="e.g. Opting out of the summer tour when I was carrying the ankle was the single best decision I made last year."></textarea>
+                <span class="aj-saved" data-aj-saved="open.dots.served">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">And what does it cost you when it&rsquo;s running unchecked?</p>
+                <textarea class="aj-textarea"
+                          data-aj="open.dots.costs"
+                          data-aj-tool="DOTS"
+                          data-aj-q="What my default DOTS costs me when unchecked"
+                          placeholder="e.g. I've opted out of three conversations with the coach and now I genuinely don't know where I stand, which is worse than any answer he'd have given me."></textarea>
+                <span class="aj-saved" data-aj-saved="open.dots.costs">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+            </div>
+
+            <!-- THE DIARY -->
+            <div class="aj-act" style="margin-top:26px;">
+              <span class="aj-act__tag">Activity &middot; part 2 &middot; the diary</span>
+              <h3 class="aj-act__title">The DOTS diary</h3>
+              <p class="aj-act__intro">This is the part that changes things. Log a DOTS whenever you catch one &mdash; big or tiny &mdash; and run it through workability on the spot. <strong>Aim for two or three a day for a week.</strong> Small ones count and are honestly better practice than the dramatic ones.</p>
+              <p class="aj-act__intro">Keep logging the same strategies when they recur. That&rsquo;s deliberate: once you&rsquo;ve got a few entries, the tool shows you <strong>how often each one actually works for you</strong> &mdash; which is information nobody can give you but your own record.</p>
+
+              <div class="dd" id="ddWidget">
+                <div class="dd__grid">
+                  <div class="aj-field">
+                    <p class="aj-field__q" style="font-size:0.9rem;">What happened first?</p>
+                    <input type="text" class="aj-input" id="ddSit" placeholder="e.g. Got left out of the starting XV">
+                  </div>
+                  <div class="aj-field">
+                    <p class="aj-field__q" style="font-size:0.9rem;">What did you do?</p>
+                    <input type="text" class="aj-input" id="ddWhat" placeholder="e.g. Scrolled for two hours">
+                  </div>
+                </div>
+
+                <div class="aj-field" style="margin-top:14px;">
+                  <p class="aj-field__q" style="font-size:0.9rem;">Which letter?</p>
+                  <div class="dd__verdicts" id="ddLetters">
+                    <button type="button" class="dd__v" data-l="D" aria-pressed="false">D &mdash; Distract</button>
+                    <button type="button" class="dd__v" data-l="O" aria-pressed="false">O &mdash; Opt out</button>
+                    <button type="button" class="dd__v" data-l="T" aria-pressed="false">T &mdash; Time travel</button>
+                    <button type="button" class="dd__v" data-l="S" aria-pressed="false">S &mdash; Self-sabotage</button>
+                  </div>
+                </div>
+
+                <div class="dd__grid" style="margin-top:14px;">
+                  <div class="aj-field">
+                    <p class="aj-field__q" style="font-size:0.9rem;">What did it give you, short term?</p>
+                    <p class="aj-field__hint">Be generous. It gave you something.</p>
+                    <input type="text" class="aj-input" id="ddGave" placeholder="e.g. An hour of not feeling it">
+                  </div>
+                  <div class="aj-field">
+                    <p class="aj-field__q" style="font-size:0.9rem;">What did it cost, longer term?</p>
+                    <p class="aj-field__hint">Time, sleep, energy, relationships, self-respect.</p>
+                    <input type="text" class="aj-input" id="ddCost" placeholder="e.g. Bed at 1am, flat all Wednesday">
+                  </div>
+                </div>
+
+                <div class="aj-field" style="margin-top:14px;">
+                  <p class="aj-field__q" style="font-size:0.9rem;">So &mdash; in <em>this</em> instance, did it work for you?</p>
+                  <p class="aj-field__hint">Not &ldquo;is the behaviour good&rdquo;. Did it take you towards or away from the athlete and person you want to be, <em>this time</em>?</p>
+                  <div class="dd__verdicts" id="ddVerdict">
+                    <button type="button" class="dd__v" data-v="toward" aria-pressed="false">It worked &mdash; towards</button>
+                    <button type="button" class="dd__v" data-v="mixed" aria-pressed="false">Mixed</button>
+                    <button type="button" class="dd__v" data-v="away" aria-pressed="false">It didn&rsquo;t &mdash; away</button>
+                  </div>
+                </div>
+
+                <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+                  <button type="button" class="aj-btn" id="ddAdd">Add to diary</button>
+                  <span class="aj-field__hint" id="ddMsg" style="margin:0;"></span>
+                </div>
+
+                <div class="dd__entries" id="ddList"></div>
+                <div class="dd__sum" id="ddSum" hidden>
+                  <p class="dd__sum-t">What your diary is showing you</p>
+                  <div id="ddStrats"></div>
+                  <p class="dd__insight" id="ddInsight"></p>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:24px;">
+                <p class="aj-field__q">After a week &mdash; what surprised you?</p>
+                <p class="aj-field__hint">Most people are surprised by two things: how <em>often</em> it happens, and how many of them turned out to be genuinely fine.</p>
+                <textarea class="aj-textarea"
+                          data-aj="open.dots.review"
+                          data-aj-tool="DOTS"
+                          data-aj-q="What surprised me after a week of the DOTS diary"
+                          placeholder="e.g. I logged 14 in five days and I thought I'd be gutted. Actually about half of them were fine — it's specifically the late-night ones after a bad session that are costing me."></textarea>
+                <span class="aj-saved" data-aj-saved="open.dots.review">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="aj-field">
+                <p class="aj-field__q">The one you&rsquo;re going to change &mdash; and what you&rsquo;ll do instead</p>
+                <p class="aj-field__hint">One. And remember the dead person&rsquo;s rule: name a live action, not an absence. &ldquo;Stop scrolling&rdquo; isn&rsquo;t a plan; a corpse does that better than you.</p>
+                <textarea class="aj-textarea"
+                          data-aj="open.dots.swap"
+                          data-aj-tool="DOTS"
+                          data-aj-q="The one DOTS I'm changing, and what I'll do instead"
+                          placeholder="e.g. After a bad session, instead of scrolling in bed: phone in the kitchen, ten minutes of the body scan, lights out. Same discomfort, different response."></textarea>
+                <span class="aj-saved" data-aj-saved="open.dots.swap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+            </div>
+
+            <div class="aj-block" style="margin-top:26px;">
+              <span class="aj-block__k">Take it into the week</span>
+              <p>You don&rsquo;t have to change a thing. For the first week, <strong>just name them</strong> &mdash; out loud or in your head. <em>&ldquo;That&rsquo;s a D.&rdquo; &ldquo;There&rsquo;s an O.&rdquo;</em> Four letters, no verdict, no telling yourself off.</p>
+              <p>Naming is genuinely most of the work here, because a DOTS you&rsquo;ve seen has already lost some of its automatic pull. Once you can spot them reliably, <em>then</em> start asking whether each one is earning its place.</p>
+            </div>
+
+            <div class="aj-applied">
+              <div class="aj-applied__col aj-applied__col--sport">
+                <h5>In sport</h5>
+                <p>The gap between a mistake and the next play. The week after being dropped. Rehab, where opting out is a daily temptation dressed up as being sensible.</p>
+              </div>
+              <div class="aj-applied__col aj-applied__col--life">
+                <h5>In life</h5>
+                <p>Revision. A conversation you keep not having. The message you haven&rsquo;t replied to for eleven days. Sunday nights.</p>
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> DOTS is a standard ACT teaching device for the main classes of experiential avoidance, most widely used in <cite>Russ Harris&rsquo;s ACT Made Simple (2019)</cite> and <cite>The Happiness Trap (2022)</cite>. The four categories here (Distract, Opt out, Time travel, Self-sabotage) are The Performance Act&rsquo;s wording. The workability framing &mdash; that no strategy is inherently an away move &mdash; follows the functional-contextual account in <cite>Walser &amp; Westrup, Learning ACT (2019), ch. 1</cite>, and matches the choice-point principle that any action can go either way depending on the situation.</p>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== CLOSE ========== -->
-  <section class="aj-sec">
+  <section class="aj-sec aj-sec--alt">
     <div class="container">
       <div class="aj-wrap">
         <div class="aj-takeaways">
-          <h3>The whole pillar in six lines</h3>
+          <h3>The whole pillar in ten lines</h3>
           <ul>
             <li><strong>The fight is the problem.</strong> Not the nerves, the doubt or the anger &mdash; the war you wage against them.</li>
             <li><strong>There is no delete button.</strong> Anyone selling you one is selling you a struggle strategy in a nicer box.</li>
@@ -1491,6 +1893,7 @@
             <li><strong>Allowing beats gritting</strong> &mdash; and the breath-hold gives you your own data to prove it.</li>
             <li><strong>Avoiding and arguing both turn the wheel.</strong> Only allowing and advancing keep your eyes on the road.</li>
             <li><strong>Rehearse the lead-up, not just the moment.</strong> The dread is manufactured earlier than you think.</li>
+            <li><strong>DOTS aren&rsquo;t bad behaviours.</strong> They&rsquo;re your four exits &mdash; and the only honest question is whether <em>this</em> one, <em>this</em> time, took you towards the athlete you want to be.</li>
           </ul>
         </div>
 
@@ -1867,6 +2270,352 @@
         render();
       });
     });
+
+    render();
+  })();
+  </script>
+
+  <script>
+  /* ==========================================================
+     THE DOTS DIARY
+
+     Every entry is run through workability on the way in:
+     what it gave you, what it cost you, and — only then — a
+     verdict for THAT instance. Nothing is scored as good or
+     bad by the tool.
+
+     The payoff is the aggregate. Log the same strategy a few
+     times and the diary shows you its own split: "scrolling,
+     5 times — 2 towards, 3 away". That is the workability
+     lesson delivered by the athlete's own record rather than
+     by a coach's opinion, and it is the reason the tool asks
+     for the verdict per-instance instead of per-behaviour.
+     ========================================================== */
+  (function () {
+    'use strict';
+
+    var wrap = document.getElementById('ddWidget');
+    if (!wrap) return;
+
+    var AJ = window.AJ || {};
+    var esc = AJ.esc || function (s) { return String(s); };
+
+    var STORE_KEY = 'dotsdiary';
+    var MAX = 300;
+
+    var LETTERS = { D: 'Distract', O: 'Opt out', T: 'Time travel', S: 'Self-sabotage' };
+    var VERDICTS = {
+      toward: 'It worked &mdash; towards',
+      mixed:  'Mixed',
+      away:   'It didn&rsquo;t &mdash; away'
+    };
+    var VERDICTS_TXT = { toward: 'Worked - towards', mixed: 'Mixed', away: 'Away move' };
+
+    var sitEl     = document.getElementById('ddSit');
+    var whatEl    = document.getElementById('ddWhat');
+    var gaveEl    = document.getElementById('ddGave');
+    var costEl    = document.getElementById('ddCost');
+    var lettersEl = document.getElementById('ddLetters');
+    var verdictEl = document.getElementById('ddVerdict');
+    var addEl     = document.getElementById('ddAdd');
+    var msgEl     = document.getElementById('ddMsg');
+    var listEl    = document.getElementById('ddList');
+    var sumEl     = document.getElementById('ddSum');
+    var stratsEl  = document.getElementById('ddStrats');
+    var insightEl = document.getElementById('ddInsight');
+
+    /* ---------- storage ---------- */
+
+    function load() {
+      var raw = AJ.getPrivate ? AJ.getPrivate(STORE_KEY) : null;
+      if (!raw) return [];
+      try {
+        var arr = JSON.parse(raw);
+        return Object.prototype.toString.call(arr) === '[object Array]' ? arr : [];
+      } catch (e) { return []; }
+    }
+
+    function save() {
+      if (AJ.setPrivate) AJ.setPrivate(STORE_KEY, JSON.stringify(entries));
+      syncJournal();
+    }
+
+    var entries = load();
+
+    /* ---------- single-select button groups ---------- */
+
+    function group(host, attr) {
+      var btns = Array.prototype.slice.call(host.querySelectorAll('.dd__v'));
+      btns.forEach(function (b) {
+        b.addEventListener('click', function () {
+          var wasOn = b.getAttribute('aria-pressed') === 'true';
+          btns.forEach(function (o) { o.setAttribute('aria-pressed', 'false'); });
+          b.setAttribute('aria-pressed', wasOn ? 'false' : 'true');
+          msgEl.textContent = '';
+        });
+      });
+      return {
+        value: function () {
+          var on = host.querySelector('[aria-pressed="true"]');
+          return on ? on.getAttribute(attr) : '';
+        },
+        clear: function () { btns.forEach(function (o) { o.setAttribute('aria-pressed', 'false'); }); }
+      };
+    }
+
+    var letterGroup  = group(lettersEl, 'data-l');
+    var verdictGroup = group(verdictEl, 'data-v');
+
+    /* ---------- adding ---------- */
+
+    function val(el) { return (el.value || '').trim(); }
+
+    addEl.addEventListener('click', function () {
+      var e = {
+        sit:     val(sitEl),
+        what:    val(whatEl),
+        letter:  letterGroup.value(),
+        gave:    val(gaveEl),
+        cost:    val(costEl),
+        verdict: verdictGroup.value(),
+        at:      Date.now()
+      };
+
+      var missing = [];
+      if (!e.what)    missing.push('what you did');
+      if (!e.letter)  missing.push('which letter');
+      if (!e.gave)    missing.push('what it gave you');
+      if (!e.cost)    missing.push('what it cost');
+      if (!e.verdict) missing.push('your verdict');
+
+      if (missing.length) {
+        msgEl.style.color = '#c0562e';
+        msgEl.textContent = 'Still need: ' + missing.join(', ') + '.' +
+          (missing.length > 2 ? '' : ' That middle bit is the whole exercise.');
+        return;
+      }
+
+      entries.push(e);
+      if (entries.length > MAX) entries = entries.slice(-MAX);
+      save();
+
+      sitEl.value = whatEl.value = gaveEl.value = costEl.value = '';
+      letterGroup.clear();
+      verdictGroup.clear();
+      msgEl.style.color = '';
+      msgEl.textContent = 'Logged. ' + entries.length + (entries.length === 1 ? ' entry' : ' entries') + ' so far.';
+      render();
+      sitEl.focus();
+    });
+
+    /* ---------- rendering the entries ---------- */
+
+    function when(ts) {
+      try {
+        return new Date(ts).toLocaleDateString('en-NZ', { day: 'numeric', month: 'short' });
+      } catch (err) { return ''; }
+    }
+
+    function renderList() {
+      if (!entries.length) {
+        listEl.innerHTML = '<p class="dd__empty">Nothing logged yet. The next one you catch &mdash; even a two-minute one &mdash; put it in here.</p>';
+        return;
+      }
+
+      /* newest first */
+      var rows = entries.slice().sort(function (a, b) { return b.at - a.at; });
+
+      listEl.innerHTML = rows.map(function (e) {
+        var mod = e.verdict === 'away' ? ' dd__entry--away' : (e.verdict === 'mixed' ? ' dd__entry--mixed' : '');
+        return '<div class="dd__entry' + mod + '">' +
+            '<div class="dd__entry-top">' +
+              '<span class="dd__badge">' + esc(e.letter) + ' &middot; ' + esc(LETTERS[e.letter] || '') + '</span>' +
+              '<span class="dd__what">' + esc(e.what) + '</span>' +
+              '<button type="button" class="dd__del" data-at="' + e.at + '" title="Delete this entry" aria-label="Delete this entry">&times;</button>' +
+            '</div>' +
+            (e.sit ? '<p class="dd__line"><b>After:</b> ' + esc(e.sit) + '</p>' : '') +
+            '<p class="dd__line"><b>Gave me:</b> ' + esc(e.gave) + '</p>' +
+            '<p class="dd__line"><b>Cost me:</b> ' + esc(e.cost) + '</p>' +
+            '<p class="dd__line"><b>' + when(e.at) + ' &middot; verdict:</b> ' + (VERDICTS[e.verdict] || esc(e.verdict)) + '</p>' +
+          '</div>';
+      }).join('');
+
+      listEl.querySelectorAll('.dd__del').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var at = Number(b.getAttribute('data-at'));
+          entries = entries.filter(function (e) { return e.at !== at; });
+          save();
+          render();
+        });
+      });
+    }
+
+    /* ---------- the aggregate: what the diary is showing you ---------- */
+
+    /* Normalise so "Scrolled for two hours" and "scrolled for two hours."
+       count as the same strategy. Deliberately light-touch — we are not
+       trying to be clever, just to catch the obvious repeats. */
+    function normalise(s) {
+      return s.toLowerCase().replace(/[.!?,;:]+$/g, '').replace(/\s+/g, ' ').trim();
+    }
+
+    function byStrategy() {
+      var map = {};
+      entries.forEach(function (e) {
+        var k = normalise(e.what);
+        if (!map[k]) map[k] = { label: e.what, n: 0, toward: 0, mixed: 0, away: 0, letters: {} };
+        map[k].n++;
+        map[k][e.verdict]++;
+        map[k].letters[e.letter] = true;
+      });
+      return Object.keys(map).map(function (k) { return map[k]; })
+        .sort(function (a, b) { return b.n - a.n || b.away - a.away; });
+    }
+
+    function bar(s) {
+      var seg = function (kind, n) {
+        return n ? '<span class="dd__seg dd__seg--' + kind + '" style="width:' + (n / s.n * 100) + '%"></span>' : '';
+      };
+      return '<div class="dd__bar">' + seg('toward', s.toward) + seg('mixed', s.mixed) + seg('away', s.away) + '</div>';
+    }
+
+    function splitText(s) {
+      var bits = [];
+      if (s.toward) bits.push(s.toward + ' towards');
+      if (s.mixed)  bits.push(s.mixed + ' mixed');
+      if (s.away)   bits.push(s.away + ' away');
+      return bits.join(', ');
+    }
+
+    function renderSummary() {
+      if (entries.length < 2) { sumEl.hidden = true; return; }
+      sumEl.hidden = false;
+
+      var strats = byStrategy();
+
+      /* Only the repeats get a bar. A single entry drawn as a full
+         bar reads like strong evidence, and it isn't — one instance
+         tells you nothing about whether a strategy works for you. */
+      var repeats = strats.filter(function (s) { return s.n > 1; }).slice(0, 6);
+      var ones = strats.filter(function (s) { return s.n === 1; }).length;
+
+      stratsEl.innerHTML = repeats.map(function (s) {
+        return '<div class="dd__strat">' +
+            '<div class="dd__strat-top">' +
+              '<span class="dd__strat-n">' + esc(s.label) + '</span>' +
+              '<span class="dd__strat-c">&times;' + s.n + ' &nbsp;&middot;&nbsp; ' + splitText(s) + '</span>' +
+            '</div>' + bar(s) +
+          '</div>';
+      }).join('') +
+      (repeats.length
+        ? (ones ? '<p class="dd__line" style="margin-top:12px;">Plus ' + ones + ' logged once each &mdash; those need a repeat before they tell you anything.</p>' : '')
+        : '<p class="dd__line">Nothing has repeated yet &mdash; every entry so far is a one-off. ' +
+          '<b>Keep logging the same strategies when they come round again</b>, because the pattern is the point: ' +
+          'one instance tells you nothing about whether something works for you.</p>');
+
+      insightEl.innerHTML = insight(strats);
+    }
+
+    function insight(strats) {
+      var n = entries.length;
+      var tot = { toward: 0, mixed: 0, away: 0 };
+      entries.forEach(function (e) { tot[e.verdict]++; });
+
+      var out = [];
+
+      /* 1. The headline: how much of it actually worked. */
+      var worked = Math.round(tot.toward / n * 100);
+      out.push('You&rsquo;ve logged <b>' + n + '</b> DOTS. By your own verdict, <b>' + worked + '%</b> of them ' +
+               'actually took you towards something' +
+               (tot.mixed ? ', and ' + Math.round(tot.mixed / n * 100) + '% were mixed' : '') + '. ' +
+               (worked >= 30
+                 ? '<strong>That is the number most athletes are surprised by.</strong> Avoidance is not the enemy &mdash; a lot of it is doing a real job for you.'
+                 : 'Worth sitting with &mdash; but be careful you are not just marking yourself down. Re-read a few and check the verdict was about <em>direction</em>, not about whether you approve of yourself.'));
+
+      /* 2. The repeat strategy with a split result — the core lesson. */
+      var split = null, allAway = null, allToward = null, allMixed = null;
+      strats.forEach(function (s) {
+        if (s.n < 2) return;
+        /* "Split" = the same strategy landed on more than one verdict.
+           That is the finding worth leading with, so it wins over the
+           clean-sweep cases below. */
+        var kinds = (s.toward ? 1 : 0) + (s.mixed ? 1 : 0) + (s.away ? 1 : 0);
+        if (!split && kinds > 1) split = s;
+        if (!allAway && s.away === s.n) allAway = s;
+        if (!allToward && s.toward === s.n) allToward = s;
+        if (!allMixed && s.mixed === s.n) allMixed = s;
+      });
+
+      if (split) {
+        out.push('Look at <b>&ldquo;' + esc(split.label) + '&rdquo;</b>. You&rsquo;ve logged it ' + split.n + ' times &mdash; ' + splitText(split) + '. ' +
+                 '<strong>Same behaviour, different results.</strong> So the thing to change is not the behaviour. ' +
+                 'It is the <em>when</em>: what was different about the times it worked? Usually it is one of three things &mdash; how long you did it for, ' +
+                 'what you were avoiding, or whether you chose it or slid into it.');
+      } else if (allAway) {
+        out.push('<b>&ldquo;' + esc(allAway.label) + '&rdquo;</b> has gone away every single time you&rsquo;ve logged it (' + allAway.n + '/' + allAway.n + '). ' +
+                 '<strong>That is your one.</strong> Not because it is a bad thing to do &mdash; because <em>for you, so far, it has not once paid off</em>. ' +
+                 'Take it to the swap box below and give it a live replacement.');
+      } else if (allToward) {
+        out.push('<b>&ldquo;' + esc(allToward.label) + '&rdquo;</b> has worked every time you&rsquo;ve logged it (' + allToward.n + '/' + allToward.n + '). ' +
+                 '<strong>Do not cut that one.</strong> This is exactly why we do not label DOTS as bad &mdash; on your own evidence, that one is a genuine reset. ' +
+                 'Keep it, and keep an eye on whether it stays that way when the pressure goes up.');
+      } else if (allMixed) {
+        out.push('<b>&ldquo;' + esc(allMixed.label) + '&rdquo;</b> has come out mixed all ' + allMixed.n + ' times. ' +
+                 '<strong>Mixed usually means there is a line in it somewhere</strong> &mdash; a length of time, a time of day, a mood you were in when you started. ' +
+                 'Next time you log it, be specific about that in the &ldquo;what did it cost&rdquo; box and see if the line shows itself.');
+      }
+
+      /* 3. Which letter dominates. */
+      var byLetter = { D: 0, O: 0, T: 0, S: 0 };
+      entries.forEach(function (e) { if (byLetter[e.letter] !== undefined) byLetter[e.letter]++; });
+      var top = Object.keys(byLetter).sort(function (a, b) { return byLetter[b] - byLetter[a]; })[0];
+      if (byLetter[top] >= 2 && byLetter[top] / n >= 0.4) {
+        out.push('Your most common door out is <b>' + top + ' &mdash; ' + LETTERS[top] + '</b> (' + byLetter[top] + ' of ' + n + '). ' +
+                 'Knowing your default is most of the work: you cannot catch a move you have never named.');
+      }
+
+      /* 4. Volume nudge. */
+      if (n < 6) {
+        out.push('<em>Keep going. Around ten entries is where the pattern stops being a guess.</em>');
+      }
+
+      return out.join('<br><br>');
+    }
+
+    /* ---------- what goes into the printed journal ---------- */
+
+    function syncJournal() {
+      if (!AJ.set) return;
+      if (!entries.length) {
+        if (AJ.remove) AJ.remove('open.dots.diary');
+        return;
+      }
+
+      var tot = { toward: 0, mixed: 0, away: 0 };
+      entries.forEach(function (e) { tot[e.verdict]++; });
+
+      var lines = [
+        entries.length + ' logged - ' + tot.toward + ' towards, ' + tot.mixed + ' mixed, ' + tot.away + ' away.'
+      ];
+
+      byStrategy().filter(function (s) { return s.n >= 2; }).slice(0, 6).forEach(function (s) {
+        lines.push('Repeated: "' + s.label + '" x' + s.n + ' - ' + splitText(s) + '.');
+      });
+
+      lines.push('');
+      entries.slice().sort(function (a, b) { return b.at - a.at; }).forEach(function (e) {
+        lines.push(when(e.at) + ' - ' + e.letter + ' (' + (LETTERS[e.letter] || '') + ') - ' + e.what);
+        if (e.sit) lines.push('   After: ' + e.sit);
+        lines.push('   Gave me: ' + e.gave);
+        lines.push('   Cost me: ' + e.cost);
+        lines.push('   Verdict: ' + (VERDICTS_TXT[e.verdict] || e.verdict));
+        lines.push('');
+      });
+
+      AJ.set('open.dots.diary', lines.join('\n').replace(/\n+$/, ''), 'DOTS', 'My DOTS diary');
+    }
+
+    function render() { renderList(); renderSummary(); }
 
     render();
   })();
