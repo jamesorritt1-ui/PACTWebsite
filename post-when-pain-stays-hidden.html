@@ -13,12 +13,12 @@
     gtag('config', 'G-T335C5CQGF');
   </script>
   <title>When Pain Stays Hidden | The Performance Act</title>
-  <meta name="description" content="Fifty years of sport injury psychology, turned into a practical playbook for coaches and athletes: stress and recovery check-ins, early reporting, staying connected, and building a return ladder. By James Orritt.">
+  <meta name="description" content="Fifty years of sport injury psychology, turned into a practical playbook for coaches and athletes: stress and recovery check ins, early reporting, staying connected, and building a return ladder. By James Orritt.">
   <link rel="canonical" href="https://www.performance-act.com/post-when-pain-stays-hidden">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://www.performance-act.com/post-when-pain-stays-hidden">
-  <meta property="og:title" content="When Pain Stays Hidden: A Psychological Playbook for Coaches and Athletes">
-  <meta property="og:description" content="Injury is never just physical. Neither is recovery. What fifty years of sport injury psychology means for a coach on a wet Tuesday night, and for the athlete who says it is probably nothing.">
+  <meta property="og:title" content="When Pain Stays Hidden">
+  <meta property="og:description" content="Injury is never just physical. Neither is recovery. A psychological playbook for coaches and athletes, from the first &ldquo;it&rsquo;s probably nothing&rdquo; to the return ladder.">
   <meta property="og:image" content="https://www.performance-act.com/images/rugby-scrum.jpg">
   <meta property="og:site_name" content="The Performance Act">
   <meta property="og:locale" content="en_NZ">
@@ -26,15 +26,15 @@
   <meta property="article:published_time" content="2026-08-30">
   <meta property="article:section" content="Coaching">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="When Pain Stays Hidden: A Psychological Playbook for Coaches and Athletes">
-  <meta name="twitter:description" content="Injury is never just physical. Neither is recovery. A practical playbook for coaches and athletes, grounded in fifty years of research.">
+  <meta name="twitter:title" content="When Pain Stays Hidden">
+  <meta name="twitter:description" content="Injury is never just physical. Neither is recovery. A psychological playbook for coaches and athletes.">
   <meta name="twitter:image" content="https://www.performance-act.com/images/rugby-scrum.jpg">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "When Pain Stays Hidden: A Psychological Playbook for Coaches and Athletes",
-    "description": "Fifty years of research tells us sport injury is not only a tissue event. A practical playbook for coaches and athletes covering stress and recovery check-ins, early reporting, social support, and psychologically informed return to sport.",
+    "description": "Fifty years of research tells us sport injury is not only a tissue event. A practical playbook for coaches and athletes covering stress and recovery check ins, early reporting, social support, and psychologically informed return to sport.",
     "image": "https://www.performance-act.com/images/rugby-scrum.jpg",
     "datePublished": "2026-08-30",
     "dateModified": "2026-08-30",
@@ -56,277 +56,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=18">
+  <link rel="stylesheet" href="approach.css?v=3">
   <link rel="stylesheet" href="blog.css?v=1">
+  <link rel="stylesheet" href="post.css?v=1">
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
   <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png?v=2">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=2">
-
   <style>
-  /* =========================================================
-     WHEN PAIN STAYS HIDDEN — article template
-     Uses global tokens from style.css (--black/--yellow/--white/
-     --gray-900/--font-heading/--font-body)
-     ========================================================= */
-
-  /* ---- reading progress ---- */
-  .ij-progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--yellow);z-index:2000;box-shadow:0 0 14px rgba(255,229,0,.55);transition:width .1s linear;}
-
-  /* ---- hero ---- */
-  .ij-hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;padding-bottom:clamp(64px,9vw,100px);overflow:hidden;background:var(--black);}
-  .ij-hero__bg{position:absolute;inset:-8% 0;will-change:transform;}
-  .ij-hero__bg img{width:100%;height:100%;object-fit:cover;object-position:center 42%;filter:grayscale(55%) brightness(.42);}
-  .ij-hero__scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.96) 0%,rgba(0,0,0,.35) 58%,rgba(0,0,0,.6) 100%);}
-  .ij-hero__inner{position:relative;z-index:2;width:100%;}
-  .ij-hero__col{max-width:880px;}
-  .ij-back{display:inline-block;font-family:var(--font-heading);font-size:.7rem;font-weight:500;letter-spacing:.14em;color:rgba(255,255,255,.55);text-transform:uppercase;margin-bottom:24px;transition:color .25s ease;}
-  .ij-back:hover{color:var(--yellow);}
-  .ij-hero .bl-tag{position:static;display:inline-block;margin-bottom:22px;}
-  .ij-hero__title{font-family:var(--font-heading);font-size:clamp(2.3rem,5.4vw,4.4rem);font-weight:700;color:var(--white);text-transform:uppercase;line-height:1.02;margin-bottom:20px;text-wrap:balance;}
-  .ij-hero__title span{color:var(--yellow);}
-  .ij-hero__dek{font-family:var(--font-body);font-size:clamp(1rem,1.6vw,1.2rem);font-weight:300;color:rgba(255,255,255,.74);line-height:1.6;max-width:660px;margin-bottom:32px;}
-  .ij-byline{display:flex;align-items:center;gap:16px;}
-  .ij-byline img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--yellow);flex-shrink:0;}
-  .ij-byline__name{font-family:var(--font-heading);font-size:.82rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:2px;}
-  .ij-byline__meta{font-family:var(--font-body);font-size:.78rem;color:rgba(255,255,255,.5);}
-  .ij-cue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;width:40px;height:40px;border:2px solid rgba(255,229,0,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;animation:ijBounce 2.2s ease-in-out infinite;}
-  .ij-cue svg{width:18px;height:18px;}
-  @keyframes ijBounce{0%,100%{transform:translate(-50%,0);}50%{transform:translate(-50%,8px);}}
-
-  /* ---- layout ---- */
-  .ij-band{padding:clamp(56px,8vw,96px) 0;background:var(--black);}
-  .ij-band--alt{background:var(--gray-900);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);}
-  .ij-band--tight{padding:clamp(40px,5vw,60px) 0;}
-  .ij-band--tight .ij-note{margin:0;}
-  .ij-col{max-width:720px;margin:0 auto;}
-  [id]{scroll-margin-top:104px;}
-
-  /* ---- prose ---- */
-  :where(.ij-col) p{font-family:var(--font-body);font-size:1rem;font-weight:300;color:rgba(255,255,255,.72);line-height:1.85;margin-bottom:20px;}
-  .ij-col strong{color:var(--white);font-weight:500;}
-  .ij-col em{color:rgba(255,255,255,.86);}
-  .ij-col a{color:var(--yellow);text-decoration:underline;text-underline-offset:3px;}
-  .ij-col a:hover{opacity:.75;color:var(--yellow);}
-  .ij-lead{font-size:1.16rem !important;font-weight:400 !important;color:rgba(255,255,255,.88) !important;line-height:1.8 !important;border-left:3px solid var(--yellow);padding-left:24px;margin-bottom:32px !important;}
-  .ij-h2{font-family:var(--font-heading);font-size:clamp(1.4rem,3vw,1.75rem);font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:.02em;margin:56px 0 20px;}
-  .ij-h2:first-child{margin-top:0;}
-  .ij-eyebrow{font-family:var(--font-heading);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--yellow);margin-bottom:16px;}
-  .ij-rule{width:60px;height:3px;background:var(--yellow);margin:56px 0;}
-
-  /* ---- table of contents ---- */
-  .ij-toc{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.02);padding:clamp(24px,4vw,34px);margin:44px 0;}
-  .ij-toc__title{font-family:var(--font-heading);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--yellow);margin-bottom:20px;}
-  .ij-toc__list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:2px 28px;padding:0;margin:0;}
-  .ij-toc__list a{display:flex;gap:12px;align-items:baseline;padding:9px 0;font-family:var(--font-body);font-size:.93rem;font-weight:300;color:rgba(255,255,255,.72);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.06);transition:color .25s ease;}
-  .ij-toc__list a:hover{color:var(--yellow);opacity:1;}
-  .ij-toc__list a span{font-family:var(--font-heading);font-size:.7rem;letter-spacing:.1em;color:var(--yellow);flex-shrink:0;}
-
-  /* ---- manifesto band ---- */
-  .ij-manifesto{background:var(--gray-900);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:clamp(72px,11vw,140px) 0;overflow:hidden;}
-  .ij-manifesto__line{font-family:var(--font-heading);font-weight:700;text-transform:uppercase;font-size:clamp(2rem,7vw,4.4rem);line-height:.94;color:var(--yellow);margin:0 0 6px;}
-  .ij-manifesto__i1{padding-left:clamp(0px,3.4vw,60px);}
-  .ij-manifesto__i2{padding-left:clamp(0px,6.6vw,120px);}
-  .ij-manifesto__foot{font-family:var(--font-body);font-size:1rem;font-weight:300;color:rgba(255,255,255,.62);line-height:1.8;max-width:620px;margin-top:40px;}
-
-  /* ---- caution / note card ---- */
-  .ij-note{border:1px solid rgba(255,255,255,.12);border-left:4px solid rgba(255,255,255,.35);background:rgba(255,255,255,.025);padding:clamp(22px,3.5vw,30px);margin:40px 0;}
-  .ij-note__kicker{font-family:var(--font-heading);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:12px;}
-  .ij-note p:last-child{margin-bottom:0;}
-
-  /* ---- pull quote ---- */
-  .ij-quote{margin:48px 0;padding:32px 36px;border-left:4px solid var(--yellow);background:rgba(255,229,0,.03);}
-  .ij-quote p{font-family:var(--font-heading);font-size:clamp(1.15rem,2.6vw,1.4rem);font-weight:500;color:var(--white);line-height:1.45;margin:0 !important;}
-
-  /* ---- figures ---- */
-  .ij-fig{margin:48px 0;}
-  .ij-fig--bleed{margin-left:-60px;margin-right:-60px;}
-  .ij-fig img{width:100%;filter:grayscale(35%) brightness(.9);}
-  .ij-fig figcaption{font-family:var(--font-body);font-size:.78rem;font-weight:300;color:rgba(255,255,255,.38);line-height:1.7;margin-top:12px;}
-
-  /* ---- two-question compare ---- */
-  .ij-compare{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:44px 0;}
-  .ij-compare__card{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02);padding:clamp(22px,3.4vw,30px);}
-  .ij-compare__card--key{border-color:rgba(255,229,0,.35);background:rgba(255,229,0,.04);}
-  .ij-compare__label{font-family:var(--font-heading);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:14px;}
-  .ij-compare__card--key .ij-compare__label{color:var(--yellow);}
-  .ij-compare__q{font-family:var(--font-heading);font-size:clamp(1.05rem,2.2vw,1.25rem);font-weight:500;color:var(--white);line-height:1.45;margin:0 !important;}
-
-  /* ---- evidence cards ---- */
-  .ij-evidence{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:40px 0;}
-  .ij-ev{background:var(--gray-900);border:1px solid rgba(255,255,255,.07);border-top:4px solid var(--yellow);padding:clamp(24px,3.6vw,32px);display:flex;flex-direction:column;}
-  .ij-ev--soft{border-top-color:rgba(255,229,0,.35);}
-  .ij-ev__name{font-family:var(--font-heading);font-size:1.05rem;font-weight:600;color:var(--white);text-transform:uppercase;letter-spacing:.04em;margin-bottom:14px;}
-  .ij-ev__chip{display:inline-block;align-self:flex-start;font-family:var(--font-heading);font-size:.62rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:5px 11px;margin-bottom:16px;background:var(--yellow);color:var(--black);}
-  .ij-ev--soft .ij-ev__chip{background:transparent;color:rgba(255,229,0,.85);border:1px solid rgba(255,229,0,.4);}
-  .ij-ev p{font-size:.95rem !important;margin-bottom:14px !important;}
-  .ij-ev__caveat{font-size:.85rem !important;color:rgba(255,255,255,.5) !important;border-top:1px solid rgba(255,255,255,.08);padding-top:14px;margin:auto 0 0 !important;}
-
-  /* ---- scope chips ---- */
-  .ij-scope{list-style:none;padding:0;margin:32px 0;display:grid;gap:12px;}
-  .ij-scope li{display:flex;gap:14px;align-items:flex-start;border:1px solid rgba(255,255,255,.08);padding:16px 18px;font-family:var(--font-body);font-size:.93rem;font-weight:300;color:rgba(255,255,255,.7);line-height:1.65;}
-  .ij-scope li::before{content:"";flex-shrink:0;width:8px;height:8px;margin-top:8px;background:var(--yellow);}
-
-  /* ---- section opener ---- */
-  .ij-opener{background:var(--black);padding:clamp(64px,9vw,110px) 0 clamp(24px,4vw,40px);}
-  .ij-opener__kicker{font-family:var(--font-heading);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--yellow);margin-bottom:18px;}
-  .ij-opener__title{font-family:var(--font-heading);font-size:clamp(2rem,6vw,3.6rem);font-weight:700;color:var(--white);text-transform:uppercase;line-height:1;margin-bottom:22px;}
-  .ij-opener__title span{color:var(--yellow);}
-  .ij-opener__intro{font-family:var(--font-body);font-size:1.05rem;font-weight:300;color:rgba(255,255,255,.66);line-height:1.8;max-width:640px;}
-
-  /* ---- numbered plays ---- */
-  .ij-play{position:relative;padding-top:clamp(40px,6vw,64px);}
-  .ij-play__num{font-family:var(--font-heading);font-size:clamp(2.6rem,7vw,4.2rem);font-weight:700;line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(255,229,0,.42);margin-bottom:14px;}
-  .ij-play__title{font-family:var(--font-heading);font-size:clamp(1.35rem,3vw,1.7rem);font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:.02em;margin-bottom:20px;}
-
-  /* ---- generic list ---- */
-  .ij-list{padding-left:22px;margin:0 0 24px;}
-  .ij-list li{font-family:var(--font-body);font-size:1rem;font-weight:300;color:rgba(255,255,255,.72);line-height:1.8;margin-bottom:12px;}
-
-  /* ---- prompt cards ---- */
-  .ij-prompts{display:grid;gap:12px;margin:28px 0 24px;list-style:none;padding:0;}
-  .ij-prompts li{border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.02);padding:18px 20px;font-family:var(--font-heading);font-size:1.02rem;font-weight:400;color:var(--white);line-height:1.45;transition:border-color .25s ease,background .25s ease;}
-  .ij-prompts li:hover{border-color:rgba(255,229,0,.45);background:rgba(255,229,0,.04);}
-
-  /* ---- check-in widget ---- */
-  .ij-checkin{border:1px solid rgba(255,229,0,.28);background:linear-gradient(180deg,rgba(255,229,0,.05),rgba(255,229,0,0));padding:clamp(24px,4vw,36px);margin:36px 0;}
-  .ij-checkin__head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:6px;}
-  .ij-checkin__title{font-family:var(--font-heading);font-size:1.2rem;font-weight:600;color:var(--white);text-transform:uppercase;letter-spacing:.04em;}
-  .ij-checkin__badge{font-family:var(--font-heading);font-size:.6rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--black);background:var(--yellow);padding:4px 10px;}
-  .ij-checkin__sub{font-family:var(--font-body);font-size:.9rem;font-weight:300;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:26px !important;}
-  .ij-scale{border:0;padding:0;margin:0 0 20px;}
-  .ij-scale__legend{font-family:var(--font-heading);font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--yellow);padding:0;margin-bottom:4px;}
-  .ij-scale__q{font-family:var(--font-body);font-size:.9rem;font-weight:300;color:rgba(255,255,255,.6);margin-bottom:12px;}
-  .ij-scale__opts{display:flex;gap:8px;flex-wrap:wrap;}
-  .ij-scale__opts input{position:absolute;opacity:0;width:1px;height:1px;}
-  .ij-scale__opts label{cursor:pointer;min-width:52px;text-align:center;padding:11px 0;border:1px solid rgba(255,255,255,.16);font-family:var(--font-heading);font-size:1rem;font-weight:500;color:rgba(255,255,255,.75);transition:all .2s ease;flex:1 1 52px;}
-  .ij-scale__opts label:hover{border-color:rgba(255,229,0,.6);color:var(--white);}
-  .ij-scale__opts input:focus-visible + label{outline:2px solid var(--yellow);outline-offset:2px;}
-  .ij-scale__opts input:checked + label{background:var(--yellow);border-color:var(--yellow);color:var(--black);font-weight:600;}
-  .ij-checkin__out{border-top:1px solid rgba(255,255,255,.1);margin-top:26px;padding-top:22px;}
-  .ij-checkin__vals{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:18px;}
-  .ij-checkin__val{font-family:var(--font-heading);}
-  .ij-checkin__val b{display:block;font-size:1.9rem;font-weight:700;color:var(--yellow);line-height:1;}
-  .ij-checkin__val span{display:block;font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:6px;}
-  .ij-checkin__msg{font-family:var(--font-body);font-size:.95rem;font-weight:300;color:rgba(255,255,255,.75);line-height:1.75;margin:0 0 16px !important;}
-  .ij-checkin__reset{background:none;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.65);font-family:var(--font-heading);font-size:.66rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:9px 16px;cursor:pointer;transition:all .2s ease;}
-  .ij-checkin__reset:hover{border-color:var(--yellow);color:var(--yellow);}
-  .ij-checkin__foot{font-family:var(--font-body);font-size:.8rem;font-weight:300;color:rgba(255,255,255,.42);line-height:1.7;margin:20px 0 0 !important;}
-
-  /* ---- return ladder ---- */
-  .ij-ladder{list-style:none;padding:0;margin:32px 0 28px;position:relative;}
-  .ij-ladder::before{content:"";position:absolute;left:19px;top:14px;bottom:14px;width:2px;background:linear-gradient(180deg,rgba(255,229,0,.15),var(--yellow));}
-  .ij-ladder li{position:relative;padding:0 0 22px 62px;}
-  .ij-ladder li:last-child{padding-bottom:0;}
-  .ij-ladder__node{position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;border:2px solid rgba(255,229,0,.45);background:var(--black);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:.85rem;font-weight:600;color:var(--yellow);}
-  .ij-ladder li:last-child .ij-ladder__node{background:var(--yellow);color:var(--black);border-color:var(--yellow);}
-  .ij-ladder__step{font-family:var(--font-heading);font-size:1.05rem;font-weight:500;color:var(--white);text-transform:uppercase;letter-spacing:.03em;padding-top:10px;margin:0;}
-  .ij-ladder__note{font-family:var(--font-body);font-size:.9rem;font-weight:300;color:rgba(255,255,255,.55);line-height:1.7;}
-
-  /* ---- step questions ---- */
-  .ij-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:32px 0;list-style:none;padding:0;counter-reset:ijq;}
-  .ij-steps li{background:var(--gray-900);border:1px solid rgba(255,255,255,.07);border-top:3px solid var(--yellow);padding:22px 18px;font-family:var(--font-body);font-size:.92rem;font-weight:300;color:rgba(255,255,255,.75);line-height:1.6;}
-  .ij-steps li::before{counter-increment:ijq;content:counter(ijq);display:block;font-family:var(--font-heading);font-size:.7rem;font-weight:700;letter-spacing:.14em;color:var(--yellow);margin-bottom:10px;}
-
-  /* ---- three-card row ---- */
-  .ij-trio{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:32px 0;}
-  .ij-trio__card{background:var(--gray-900);border:1px solid rgba(255,255,255,.07);border-top:4px solid var(--yellow);padding:26px 22px;}
-  .ij-trio__word{font-family:var(--font-heading);font-size:1.15rem;font-weight:700;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;}
-  .ij-trio__card p{font-size:.93rem !important;margin:0 !important;line-height:1.7 !important;}
-
-  /* ---- two lanes ---- */
-  .ij-lanes{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid rgba(255,255,255,.08);margin:32px 0;}
-  .ij-lanes__head{font-family:var(--font-heading);font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:14px 20px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.08);}
-  .ij-lanes__head--a{color:rgba(255,255,255,.6);}
-  .ij-lanes__head--b{color:var(--yellow);border-left:1px solid rgba(255,255,255,.08);}
-  .ij-lanes__cell{padding:20px;font-family:var(--font-body);font-size:.95rem;font-weight:300;color:rgba(255,255,255,.72);line-height:1.7;border-bottom:1px solid rgba(255,255,255,.08);}
-  .ij-lanes__cell--b{border-left:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.85);}
-  .ij-lanes__cell:nth-last-child(-n+2){border-bottom:0;}
-
-  /* ---- sentence starters ---- */
-  .ij-sentences{list-style:none;padding:0;margin:32px 0;display:grid;gap:14px;}
-  .ij-sentences li{border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.02);padding:22px 24px;}
-  .ij-sentences b{display:block;font-family:var(--font-heading);font-size:1.05rem;font-weight:500;color:var(--white);margin-bottom:14px;}
-  .ij-sentences i{display:block;height:1px;background:repeating-linear-gradient(90deg,rgba(255,229,0,.5) 0 8px,transparent 8px 16px);}
-
-  /* ---- the small plan ---- */
-  .ij-verbs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:36px 0;}
-  .ij-verbs div{border:1px solid rgba(255,229,0,.28);padding:22px 16px;text-align:center;font-family:var(--font-heading);font-size:1rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.12em;}
-
-  /* ---- closing ---- */
-  .ij-closing{font-size:1.05rem !important;color:rgba(255,255,255,.82) !important;font-weight:400 !important;}
-  .ij-final{font-family:var(--font-heading);font-size:clamp(1.3rem,3.2vw,1.8rem);font-weight:600;color:var(--white);line-height:1.4;margin:44px 0 !important;}
-  .ij-final span{color:var(--yellow);}
-
-  /* ---- references ---- */
-  .ij-refs{margin-top:20px;}
-  .ij-refs p{font-size:.85rem !important;line-height:1.75 !important;color:#9A9A9A !important;margin-bottom:14px !important;padding-left:22px;text-indent:-22px;}
-  .ij-refs em{color:#cfcfcf;}
-  .ij-refs a{word-break:break-word;}
-
-  /* ---- author ---- */
-  .ij-author{background:var(--gray-900);padding:clamp(56px,8vw,80px) 0;border-top:1px solid rgba(255,255,255,.05);}
-  .ij-author__card{display:flex;gap:32px;align-items:center;max-width:720px;margin:0 auto;}
-  .ij-author__img{width:100px;height:100px;border-radius:50%;object-fit:cover;flex-shrink:0;filter:grayscale(100%) contrast(1.1) brightness(.9);border:2px solid rgba(255,229,0,.3);}
-  .ij-author__label{font-family:var(--font-heading);font-size:.6rem;font-weight:600;letter-spacing:.2em;color:var(--yellow);text-transform:uppercase;display:block;margin-bottom:6px;}
-  .ij-author__name{font-family:var(--font-heading);font-size:1.3rem;font-weight:700;color:var(--white);text-transform:uppercase;margin-bottom:10px;}
-  .ij-author__name small{font-family:var(--font-body);font-size:.7rem;font-weight:300;letter-spacing:.06em;color:rgba(255,255,255,.45);text-transform:none;display:block;margin-top:4px;}
-  .ij-author__bio{font-family:var(--font-body);font-size:.9rem;font-weight:300;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:12px;}
-  .ij-author__bio a{color:var(--yellow);text-decoration:underline;text-underline-offset:3px;}
-  .ij-author__link{font-family:var(--font-heading);font-size:.72rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.1em;}
-  .ij-author__link:hover{opacity:.7;color:var(--yellow);}
-
-  /* ---- related ---- */
-  .ij-related{background:var(--black);padding:clamp(56px,8vw,80px) 0 clamp(72px,10vw,100px);border-top:1px solid rgba(255,255,255,.05);}
-  .ij-related__title{font-family:var(--font-heading);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:var(--white);text-transform:uppercase;text-align:center;margin-bottom:48px;}
-  .ij-related__title span{color:var(--yellow);}
-  .ij-related__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
-
-  /* ---- responsive ---- */
-  @media (max-width:900px){
-    .ij-steps{grid-template-columns:repeat(2,1fr);}
-    .ij-verbs{grid-template-columns:repeat(2,1fr);}
-    .ij-trio{grid-template-columns:1fr;}
-    .ij-related__grid{grid-template-columns:1fr;}
-  }
-  @media (max-width:760px){
-    .ij-hero{min-height:78vh;}
-    .ij-fig--bleed{margin-left:0;margin-right:0;}
-    .ij-toc__list{grid-template-columns:1fr;}
-    .ij-compare,.ij-evidence{grid-template-columns:1fr;}
-    .ij-lanes{grid-template-columns:1fr;}
-    .ij-lanes__head--b,.ij-lanes__cell--b{border-left:0;}
-    .ij-lanes__cell:nth-last-child(-n+2){border-bottom:1px solid rgba(255,255,255,.08);}
-    .ij-lanes__cell:last-child{border-bottom:0;}
-    .ij-author__card{flex-direction:column;text-align:center;}
-    .ij-quote{padding:24px;margin:32px 0;}
-    .ij-scale__opts label{min-width:44px;flex:1 1 44px;padding:12px 0;}
-  }
-  @media (max-width:480px){
-    .ij-steps{grid-template-columns:1fr;}
-    .ij-verbs{grid-template-columns:1fr;}
-  }
-
-  /* ---- motion / print ---- */
-  @media (prefers-reduced-motion:reduce){
-    .ij-cue{animation:none;}
-    html{scroll-behavior:auto;}
-  }
-  @media print{
-    .header,.mobile-nav,.ij-progress,.ij-cue,.scroll-top,.support-line-btn,.support-line-modal,.ij-related,.footer{display:none !important;}
-    body,.ij-band,.ij-band--alt,.ij-manifesto,.ij-opener,.ij-author{background:#fff !important;}
-    .ij-col p,.ij-list li,.ij-ladder__note,.ij-scope li{color:#222 !important;}
-    .ij-h2,.ij-play__title,.ij-opener__title,.ij-ladder__step,.ij-author__name{color:#000 !important;}
-    .ij-hero{min-height:auto;padding:0 0 24px;}
-    .ij-hero__bg,.ij-hero__scrim{display:none;}
-    .ij-hero__title,.ij-hero__dek,.ij-byline__meta{color:#000 !important;}
-    .ij-fig{page-break-inside:avoid;}
-    a{color:#000 !important;}
-  }
+    .pt-article__body h3{font-family:var(--font-heading);font-size:1.15rem;font-weight:600;color:var(--white);text-transform:uppercase;letter-spacing:.03em;margin-top:44px;margin-bottom:16px;}
+    .pt-article__body h3 span{color:var(--yellow);margin-right:8px;}
+    .pt-article__body .prs-refs{margin-top:16px;}
+    .pt-article__body .prs-ref{font-size:.85rem;line-height:1.7;color:#9A9A9A;margin:0 0 12px;}
+    .pt-article__body .prs-ref em{color:#cfcfcf;}
+    .pt-article__body .prs-ref a{word-break:break-word;}
   </style>
-  <noscript><style>[data-reveal]{opacity:1 !important;transform:none !important;}</style></noscript>
 </head>
 <body>
-
-  <div class="ij-progress" id="ijProgress" aria-hidden="true"></div>
 
   <!-- ========== HEADER ========== -->
   <header class="header" id="header">
@@ -404,518 +149,232 @@
   </div>
 
 
-  <!-- ========== HERO ========== -->
-  <section class="ij-hero">
-    <div class="ij-hero__bg" id="ijHeroBg">
-      <img src="images/rugby-scrum.jpg" alt="A scrum packing down under floodlights on a wet evening pitch" width="1600" height="1067" fetchpriority="high" decoding="async">
+  <!-- ========== POST HERO ========== -->
+  <section class="pt-hero">
+    <div class="pt-hero__bg">
+      <img src="images/rugby-scrum.jpg" alt="A scrum packing down under floodlights on a wet evening pitch" width="1600" height="1067" fetchpriority="high">
+      <div class="pt-hero__overlay"></div>
     </div>
-    <div class="ij-hero__scrim"></div>
-    <div class="ij-hero__inner container">
-      <div class="ij-hero__col">
-        <a href="blog.html" class="ij-back">&larr; Back to Resources</a>
-        <div><span class="bl-tag">Coaching</span></div>
-        <h1 class="ij-hero__title">When Pain <span>Stays Hidden</span></h1>
-        <p class="ij-hero__dek">A psychological playbook for coaches and athletes. Because injury is never just physical, and neither is recovery.</p>
-        <div class="ij-byline">
-          <img src="images/james-workshop.jpg" alt="James Orritt" width="2048" height="1366" decoding="async">
-          <div>
-            <span class="ij-byline__name">James Orritt</span>
-            <span class="ij-byline__meta">Registered Clinical Psychologist &middot; 30 August 2026 &middot; 11 min read</span>
-          </div>
+    <div class="pt-hero__content container">
+      <a href="blog.html" class="pt-back">&larr; BACK TO RESOURCES</a>
+      <span class="bl-tag">COACHING</span>
+      <h1 class="pt-hero__title">When Pain Stays Hidden</h1>
+      <div class="pt-hero__meta">
+        <img src="images/james-workshop.jpg" alt="James Orritt" class="pt-hero__avatar" width="2048" height="1366">
+        <div>
+          <span class="pt-hero__author">James Orritt</span>
+          <span class="pt-hero__details">Registered Clinical Psychologist &middot; 30 August 2026 &middot; 11 min read</span>
         </div>
       </div>
     </div>
-    <div class="ij-cue" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke="#FFE500" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-    </div>
   </section>
 
-  <!-- ========== OPENING ========== -->
-  <section class="ij-band">
+  <!-- ========== POST BODY ========== -->
+  <article class="pt-article">
     <div class="container">
-      <div class="ij-col">
+      <div class="pt-article__body">
 
-        <p class="ij-lead" data-reveal>The session is nearly over when a player hangs back. They rub the same spot on their knee and say, &ldquo;It&rsquo;s probably nothing.&rdquo; The coach has cones to collect, parents are waiting, and there is no physio beside a community field on a wet Tuesday night. So everyone does what sport has quietly taught them to do: carry on and see how it feels next week.</p>
+        <p class="pt-lead">The session is nearly over when a player hangs back. They rub the same spot on their knee and say, &ldquo;It&rsquo;s probably nothing.&rdquo; The coach has cones to collect, parents are waiting, and there is no physio beside a community field on a wet Tuesday night. So everyone does what sport has quietly taught them to do: carry on and see how it feels next week.</p>
 
-        <p data-reveal>Sometimes it settles. Sometimes that moment is the beginning of a much longer story.</p>
+        <p>Sometimes it settles. Sometimes that moment is the beginning of a much longer story.</p>
 
-        <nav class="ij-toc" data-reveal aria-label="In this article">
-          <p class="ij-toc__title">In this article</p>
-          <ul class="ij-toc__list">
-            <li><a href="#the-research"><span>01</span> What fifty years of research says</a></li>
-            <li><a href="#the-toe"><span>02</span> It started with my big toe</a></li>
-            <li><a href="#the-evidence"><span>03</span> Where the evidence is strong</a></li>
-            <li><a href="#coaches"><span>04</span> What coaches can do</a></li>
-            <li><a href="#athletes"><span>05</span> What athletes can do</a></li>
-            <li><a href="#the-plan"><span>06</span> The small plan that changes things</a></li>
-          </ul>
-        </nav>
+        <p>Fifty years of research tells us that sport injury is not only a tissue event. Stress, attention, sleep, relationships, identity, fear and team culture can shape injury risk, rehabilitation and return to sport (Tranaeus et al., 2024). That does <strong>not</strong> mean injuries are &ldquo;all in your head,&rdquo; or that stress causes every injury. Psychology belongs alongside medical assessment, sensible training loads and quality rehabilitation, not in place of them.</p>
 
-      </div>
-    </div>
-  </section>
+        <h2>It started with my big toe</h2>
 
-  <!-- ========== MANIFESTO ========== -->
-  <section class="ij-manifesto" id="the-research">
-    <div class="container">
-      <p class="ij-eyebrow" data-reveal>Fifty years of research, in three words</p>
-      <h2 class="ij-manifesto__line" data-reveal>Injury risk.</h2>
-      <p class="ij-manifesto__line ij-manifesto__i1" data-reveal>Rehabilitation.</p>
-      <p class="ij-manifesto__line ij-manifesto__i2" data-reveal>Return to sport.</p>
-      <p class="ij-manifesto__foot" data-reveal>Sport injury is not only a tissue event. Stress, attention, sleep, relationships, identity, fear and team culture can shape all three (Tranaeus et al., 2024).</p>
-    </div>
-  </section>
+        <p>I still remember one incident from my own playing days that began with my big toe. Stay with me. I promise it does not get gross.</p>
 
-  <!-- ========== WHAT THIS DOES NOT MEAN ========== -->
-  <section class="ij-band ij-band--tight">
-    <div class="container">
-      <div class="ij-col">
+        <p>It was the final training session before we travelled to a national tournament: the big opportunity. I drove into the scrum machine one last time and felt a sharp pain shoot through my big toe and into my foot. By the next morning, I could hardly walk. So, what was my carefully considered plan? YouTube.</p>
 
-        <div class="ij-note" data-reveal>
-          <p class="ij-note__kicker">What this does not mean</p>
-          <p>That does <strong>not</strong> mean injuries are &ldquo;all in your head,&rdquo; or that stress causes every injury. Psychology belongs alongside medical assessment, sensible training loads and quality rehabilitation&mdash;not in place of them.</p>
-        </div>
+        <p>A few searches later and, bam, turf toe. Or, at least, that was the verdict reached by one worried young prop and an internet connection. That evening, my boots became a workshop. I shifted the 21 mm studs around, tried to work in some 18s and, God forbid, considered a few 16s. If you do not know much about rugby studs, there is far more science, and considerably more fierce seriousness, than anyone outside the front row might reasonably expect. Then I moved on to the insoles. Perhaps, I thought, I could add something rigid enough to stop the toe flexing.</p>
 
-      </div>
-    </div>
-  </section>
+        <p>As the modifications became more elaborate, the mental noise became louder. <em>What if I cannot play? What if I lose my place? What if I let everyone down?</em> Each worry produced another solitary solution. Yet the most obvious step, telling the physio or coach, barely entered my thinking. It simply did not feel as though it was on the card.</p>
 
-  <!-- ========== THE PERSONAL STORY ========== -->
-  <section class="ij-band ij-band--alt" id="the-toe">
-    <div class="container">
-      <div class="ij-col">
+        <p>Looking back, that is the part of the story that stays with me. It is not whether my YouTube diagnosis was correct or whether my stud configuration made biomechanical sense. My instinct was to hide the problem, solve it alone and protect my chance to play. I do not tell this story to grumble about the system or blame an individual coach. I tell it because it now guides me when I think about athletes in our care. When an athlete becomes remarkably resourceful at working around pain, we should not ask only, <em>&ldquo;What is the injury?&rdquo;</em> We should also ask, <em>&ldquo;What has made speaking up feel less available than managing this alone?&rdquo;</em></p>
 
-        <p class="ij-eyebrow" data-reveal>From my own playing days</p>
-        <h2 class="ij-h2" data-reveal>It started with my big toe</h2>
+        <p>Research cannot tell us that the thoughts running through my head caused that injury, and one personal story cannot establish cause and effect. It does, however, bring the research to life. Strong stress responses can affect attention, decision making and movement control, while sporting relationships and cultures can shape whether athletes share concerns or keep pushing quietly.</p>
 
-        <p data-reveal>I still remember one incident from my own playing days that began with my big toe. Stay with me&mdash;I promise it does not get gross.</p>
+        <p>Preventative stress management programmes, which use approaches such as relaxation, mindfulness, acceptance and cognitive behavioural skills, aim to give athletes more options before pressure narrows their thinking. Across a relatively small body of experimental research, these programmes have generally been associated with fewer injuries, although study quality and reporting bias limit how certain we can be (Gledhill et al., 2018; Ivarsson et al., 2017).</p>
 
-        <p data-reveal>It was the final training session before we travelled to a national tournament: the big opportunity. I drove into the scrum machine one last time and felt a sharp pain shoot through my big toe and into my foot. By the next morning, I could hardly walk. So, what was my carefully considered plan? YouTube.</p>
-
-        <p data-reveal>A few searches later and&mdash;bam&mdash;turf toe. Or, at least, that was the verdict reached by one worried young prop and an internet connection. That evening, my boots became a workshop. I shifted the 21&nbsp;mm studs around, tried to work in some 18s and, God forbid, considered a few 16s. If you do not know much about rugby studs, there is far more science&mdash;and considerably more fierce seriousness&mdash;than anyone outside the front row might reasonably expect. Then I moved on to the insoles. Perhaps, I thought, I could add something rigid enough to stop the toe flexing.</p>
-
-        <p data-reveal>As the modifications became more elaborate, the mental noise became louder. <em>What if I cannot play? What if I lose my place? What if I let everyone down?</em> Each worry produced another solitary solution. Yet the most obvious step&mdash;telling the physio or coach&mdash;barely entered my thinking. It simply did not feel as though it was on the card.</p>
-
-        <figure class="ij-fig ij-fig--bleed" data-reveal>
-          <img src="images/tangled-rope.jpg" alt="A length of red rope, tangled into a knot at one end and coiled neatly at the other" width="1600" height="1067" loading="lazy" decoding="async">
-          <figcaption>Each worry produced another solitary solution. Yet the most obvious step&mdash;telling the physio or coach&mdash;barely entered my thinking.</figcaption>
-        </figure>
-
-        <p data-reveal>Looking back, that is the part of the story that stays with me. It is not whether my YouTube diagnosis was correct or whether my stud configuration made biomechanical sense. My instinct was to hide the problem, solve it alone and protect my chance to play. I do not tell this story to grumble about the system or blame an individual coach. I tell it because it now guides me when I think about athletes in our care.</p>
-
-        <p data-reveal>When an athlete becomes remarkably resourceful at working around pain, we should not ask only one question. We should ask two.</p>
-
-        <div class="ij-compare" data-reveal>
-          <div class="ij-compare__card">
-            <p class="ij-compare__label">The question we always ask</p>
-            <p class="ij-compare__q">&ldquo;What is the injury?&rdquo;</p>
-          </div>
-          <div class="ij-compare__card ij-compare__card--key">
-            <p class="ij-compare__label">The question worth adding</p>
-            <p class="ij-compare__q">&ldquo;What has made speaking up feel less available than managing this alone?&rdquo;</p>
-          </div>
-        </div>
-
-        <p data-reveal>Research cannot tell us that the thoughts running through my head caused that injury, and one personal story cannot establish cause and effect. It does, however, bring the research to life. Strong stress responses can affect attention, decision-making and movement control, while sporting relationships and cultures can shape whether athletes share concerns or keep pushing quietly.</p>
-
-        <p data-reveal>Preventative stress-management programmes&mdash;using approaches such as relaxation, mindfulness, acceptance and cognitive-behavioural skills&mdash;aim to give athletes more options before pressure narrows their thinking. Across a relatively small body of experimental research, these programmes have generally been associated with fewer injuries, although study quality and reporting bias limit how certain we can be (Gledhill et al., 2018; Ivarsson et al., 2017).</p>
-
-        <div class="ij-quote" data-reveal>
+        <blockquote>
           <p>The practical lesson is not simply &ldquo;teach athletes to calm down.&rdquo; It is to combine psychological skills with an environment in which asking for help genuinely feels like an available move.</p>
-        </div>
+        </blockquote>
 
-      </div>
-    </div>
-  </section>
+        <h2>The boundaries around the evidence</h2>
 
-  <!-- ========== THE EVIDENCE ========== -->
-  <section class="ij-band" id="the-evidence">
-    <div class="container">
-      <div class="ij-col">
+        <p>Return to sport is harder to reduce to a single psychological protocol. Athletes return from different injuries, at different ages, into different sports and team environments. Their medical status, rehabilitation access, previous experiences, identity and fear of reinjury also vary.</p>
 
-        <h2 class="ij-h2" data-reveal>Where the evidence is strong, and where it is not</h2>
+        <p>Researchers may measure confidence, anxiety, adherence, wellbeing, return rates or performance. Strategies such as imagery, goal setting, mindfulness and cognitive behavioural support are often combined with physical rehabilitation rather than tested on their own. Studies are therefore smaller, more varied and harder to compare, making it difficult to identify exactly which psychological ingredient helped, for whom, and at what stage (Schwab Reese et al., 2012; Tranaeus et al., 2024).</p>
 
-        <p data-reveal>Return to sport is harder to reduce to a single psychological protocol. Athletes return from different injuries, at different ages, into different sports and team environments. Their medical status, rehabilitation access, previous experiences, identity and fear of reinjury also vary.</p>
+        <p>So, the difference is not &ldquo;stress management works, return to sport psychology does not.&rdquo; Stress management research currently offers a clearer pathway from intervention to outcome. Return to sport approaches are promising and clinically sensible, but the evidence is less certain and supports individualised, shared decision making rather than a universal mental protocol.</p>
 
-        <p data-reveal>Researchers may measure confidence, anxiety, adherence, wellbeing, return rates or performance&mdash;and strategies such as imagery, goal setting, mindfulness and cognitive-behavioural support are often combined with physical rehabilitation rather than tested on their own. Studies are therefore smaller, more varied and harder to compare, making it difficult to identify exactly which psychological ingredient helped, for whom, and at what stage (Schwab Reese et al., 2012; Tranaeus et al., 2024).</p>
+        <p>There are important boundaries around the evidence as a whole. The consensus focused on musculoskeletal injury and did not cover concussion. Much of the available research has involved competitive, able bodied athletes and was conducted in the Northern Hemisphere. We should use the principles thoughtfully, not pretend every finding transfers perfectly to a Year 10 netball team or senior reserve rugby side.</p>
 
-        <p data-reveal>So, the difference is not &ldquo;stress management works, return-to-sport psychology does not.&rdquo;</p>
+        <p>With that honesty in place, there is still plenty coaches and athletes can do.</p>
 
-        <div class="ij-evidence" data-reveal>
-          <div class="ij-ev">
-            <p class="ij-ev__name">Preventing injury</p>
-            <span class="ij-ev__chip">Clearer pathway</span>
-            <p>Stress-management research currently offers a clearer intervention-to-outcome pathway.</p>
-            <p class="ij-ev__caveat">Across a relatively small body of experimental research, with study quality and reporting bias limiting how certain we can be.</p>
-          </div>
-          <div class="ij-ev ij-ev--soft">
-            <p class="ij-ev__name">Returning to sport</p>
-            <span class="ij-ev__chip">Promising, less certain</span>
-            <p>Return-to-sport approaches are promising and clinically sensible, but the evidence is less certain and supports individualised, shared decision-making rather than a universal mental protocol.</p>
-            <p class="ij-ev__caveat">Smaller, more varied studies, usually combined with physical rehabilitation, so the active ingredient is hard to isolate.</p>
-          </div>
-        </div>
+        <h2>What coaches can do</h2>
 
-        <h2 class="ij-h2" data-reveal>The boundaries around all of this</h2>
+        <h3><span>1.</span> Treat recovery information as coaching information</h3>
 
-        <p data-reveal>There are important boundaries around the evidence as a whole, and they are worth naming before anyone applies it to a community or school team.</p>
+        <p>Stress responses appear to be the strongest established psychological risk factor for acute sport injury. Under stress, attention can narrow, decision making can become less reliable, muscular fatigue may increase and neuromuscular control may decline (Ivarsson et al., 2017; Tranaeus et al., 2024). That is a risk signal, not a prediction. A stressed athlete is not destined to get injured.</p>
 
-        <ul class="ij-scope" data-reveal>
-          <li>The consensus focused on musculoskeletal injury and did not cover concussion.</li>
-          <li>Much of the available research has involved competitive, able-bodied athletes.</li>
-          <li>Most of it was conducted in the Northern Hemisphere.</li>
+        <p>As an informal conversation starter, take sixty seconds before training. Ask athletes to rate three things from 1 to 5:</p>
+
+        <ul>
+          <li><strong>Stress:</strong> How much is sitting on your shoulders today?</li>
+          <li><strong>Sleep:</strong> How well did you sleep?</li>
+          <li><strong>Recovery:</strong> How ready does your body feel to train?</li>
         </ul>
 
-        <p data-reveal>We should use the principles thoughtfully, not pretend every finding transfers perfectly to a Year&nbsp;10 netball team or senior reserve rugby side.</p>
+        <p>This is not a validated screening scale or diagnostic tool. Do not turn it into amateur diagnosis, and do not punish honesty by automatically leaving an athlete out of selection. Look for change: the usually energetic athlete who reports two poor nights, exam stress and heavy legs may need a conversation or an adjusted session. The value is not the score. It is the k&#333;rero the score opens.</p>
 
-        <p data-reveal>With that honesty in place, there is still plenty coaches and athletes can do.</p>
+        <h3><span>2.</span> Make early reporting a sign of good judgement</h3>
 
-      </div>
-    </div>
-  </section>
+        <p>Research on overuse injury points to a wider system: perfectionistic concerns, obsessive passion, previous injury and ignoring bodily warning signs may combine with poor relationships between coaches and athletes, low support and cultures that normalise pain (Tranaeus et al., 2022). These are potential risk factors, not proven causes, but they should make coaches curious about the stories their environment rewards.</p>
 
-  <!-- ========== OPENER: COACHES ========== -->
-  <section class="ij-opener" id="coaches">
-    <div class="container">
-      <div class="ij-col">
-        <p class="ij-opener__kicker" data-reveal>Playbook &mdash; Part One</p>
-        <h2 class="ij-opener__title" data-reveal>What <span>Coaches</span><br>Can Do</h2>
-        <p class="ij-opener__intro" data-reveal>Four practices you can start using at the next session. None of them require a counselling qualification, and none of them replace a medical opinion.</p>
-      </div>
-    </div>
-  </section>
+        <p>If &ldquo;tough&rdquo; always means silent, athletes learn to hide useful information. Replace &ldquo;Can you push through?&rdquo; with:</p>
 
-  <section class="ij-band" style="padding-top:0;">
-    <div class="container">
-      <div class="ij-col">
-
-        <!-- PLAY 01 -->
-        <div class="ij-play" data-reveal>
-          <p class="ij-play__num">01</p>
-          <h3 class="ij-play__title">Treat recovery information as coaching information</h3>
-        </div>
-
-        <p data-reveal>Stress responses appear to be the strongest established psychological risk factor for acute sport injury. Under stress, attention can narrow, decision-making can become less reliable, muscular fatigue may increase and neuromuscular control may decline (Ivarsson et al., 2017; Tranaeus et al., 2024). That is a risk signal, not a prediction. A stressed athlete is not destined to get injured.</p>
-
-        <p data-reveal>As an informal conversation starter, try a 60-second check-in before training. Ask athletes to rate three things from 1&ndash;5. Try it yourself below.</p>
-
-        <!-- Interactive check-in -->
-        <div class="ij-checkin" data-reveal>
-          <div class="ij-checkin__head">
-            <p class="ij-checkin__title">The 60-second check-in</p>
-            <span class="ij-checkin__badge">Conversation starter</span>
-          </div>
-          <p class="ij-checkin__sub">Not a validated screening scale, and not a diagnostic tool. Nothing you enter here is stored or sent anywhere.</p>
-
-          <fieldset class="ij-scale">
-            <legend class="ij-scale__legend">Stress</legend>
-            <p class="ij-scale__q">How much is sitting on your shoulders today? <span style="color:rgba(255,255,255,.4);">(1 = very little, 5 = a great deal)</span></p>
-            <div class="ij-scale__opts">
-              <input type="radio" name="ijStress" id="ijStress1" value="1"><label for="ijStress1">1</label>
-              <input type="radio" name="ijStress" id="ijStress2" value="2"><label for="ijStress2">2</label>
-              <input type="radio" name="ijStress" id="ijStress3" value="3"><label for="ijStress3">3</label>
-              <input type="radio" name="ijStress" id="ijStress4" value="4"><label for="ijStress4">4</label>
-              <input type="radio" name="ijStress" id="ijStress5" value="5"><label for="ijStress5">5</label>
-            </div>
-          </fieldset>
-
-          <fieldset class="ij-scale">
-            <legend class="ij-scale__legend">Sleep</legend>
-            <p class="ij-scale__q">How well did you sleep? <span style="color:rgba(255,255,255,.4);">(1 = poorly, 5 = very well)</span></p>
-            <div class="ij-scale__opts">
-              <input type="radio" name="ijSleep" id="ijSleep1" value="1"><label for="ijSleep1">1</label>
-              <input type="radio" name="ijSleep" id="ijSleep2" value="2"><label for="ijSleep2">2</label>
-              <input type="radio" name="ijSleep" id="ijSleep3" value="3"><label for="ijSleep3">3</label>
-              <input type="radio" name="ijSleep" id="ijSleep4" value="4"><label for="ijSleep4">4</label>
-              <input type="radio" name="ijSleep" id="ijSleep5" value="5"><label for="ijSleep5">5</label>
-            </div>
-          </fieldset>
-
-          <fieldset class="ij-scale">
-            <legend class="ij-scale__legend">Recovery</legend>
-            <p class="ij-scale__q">How ready does your body feel to train? <span style="color:rgba(255,255,255,.4);">(1 = not at all, 5 = completely)</span></p>
-            <div class="ij-scale__opts">
-              <input type="radio" name="ijRecovery" id="ijRecovery1" value="1"><label for="ijRecovery1">1</label>
-              <input type="radio" name="ijRecovery" id="ijRecovery2" value="2"><label for="ijRecovery2">2</label>
-              <input type="radio" name="ijRecovery" id="ijRecovery3" value="3"><label for="ijRecovery3">3</label>
-              <input type="radio" name="ijRecovery" id="ijRecovery4" value="4"><label for="ijRecovery4">4</label>
-              <input type="radio" name="ijRecovery" id="ijRecovery5" value="5"><label for="ijRecovery5">5</label>
-            </div>
-          </fieldset>
-
-          <div class="ij-checkin__out" id="ijOut" hidden>
-            <div class="ij-checkin__vals">
-              <p class="ij-checkin__val"><b id="ijValStress">&ndash;</b><span>Stress</span></p>
-              <p class="ij-checkin__val"><b id="ijValSleep">&ndash;</b><span>Sleep</span></p>
-              <p class="ij-checkin__val"><b id="ijValRecovery">&ndash;</b><span>Recovery</span></p>
-            </div>
-            <p class="ij-checkin__msg" id="ijMsg" role="status"></p>
-            <button type="button" class="ij-checkin__reset" id="ijReset">Clear</button>
-          </div>
-
-          <p class="ij-checkin__foot">The value is not the score. It is the k&#333;rero the score opens.</p>
-        </div>
-
-        <p data-reveal>This is not a validated screening scale or diagnostic tool. Do not turn it into amateur diagnosis or punish honesty with automatic non-selection. Look for change: the usually energetic athlete who reports two poor nights, exam stress and heavy legs may need a conversation or an adjusted session.</p>
-
-        <!-- PLAY 02 -->
-        <div class="ij-play" data-reveal>
-          <p class="ij-play__num">02</p>
-          <h3 class="ij-play__title">Make early reporting a sign of good judgement</h3>
-        </div>
-
-        <p data-reveal>Research on overuse injury points to a wider system: perfectionistic concerns, obsessive passion, previous injury and ignoring bodily warning signs may combine with poor coach-athlete relationships, low support and cultures that normalise pain (Tranaeus et al., 2022). These are potential risk factors, not proven causes, but they should make coaches curious about the stories their environment rewards.</p>
-
-        <p data-reveal>If &ldquo;tough&rdquo; always means silent, athletes learn to hide useful information. Replace &ldquo;Can you push through?&rdquo; with:</p>
-
-        <ul class="ij-prompts" data-reveal>
+        <ul>
           <li>&ldquo;What are you noticing?&rdquo;</li>
           <li>&ldquo;How has it changed across the week?&rdquo;</li>
           <li>&ldquo;What would training smart look like today?&rdquo;</li>
         </ul>
 
-        <p data-reveal>Praise the judgement involved in speaking early. A young athlete should not have to choose between protecting their body and proving they belong.</p>
+        <p>Praise the judgement involved in speaking early. A young athlete should not have to choose between protecting their body and proving they belong.</p>
 
-        <!-- PLAY 03 -->
-        <div class="ij-play" data-reveal>
-          <p class="ij-play__num">03</p>
-          <h3 class="ij-play__title">Keep the injured athlete in the team</h3>
-        </div>
+        <h3><span>3.</span> Keep the injured athlete in the team</h3>
 
-        <p data-reveal>Injury can remove far more than playing time. Athletes may lose routine, confidence, connection and a valued part of who they are. Perceived social support is linked with better rehabilitation experiences, while lack of support from coaches and teams can make rehabilitation harder (Tranaeus et al., 2024).</p>
+        <p>Injury can remove far more than playing time. Athletes may lose routine, confidence, connection and a valued part of who they are. Perceived social support is linked with better rehabilitation experiences, while lack of support from coaches and teams can make rehabilitation harder (Tranaeus et al., 2024).</p>
 
-        <figure class="ij-fig ij-fig--bleed" data-reveal>
-          <img src="images/youth-huddle.jpg" alt="A team of young players in a huddle, arms around each other, before a game" width="1600" height="1067" loading="lazy" decoding="async">
+        <figure class="pt-figure pt-figure--wide">
+          <img src="images/workshop-squad.jpg" alt="A squad gathered together in a clubroom during a Performance Act session" width="1600" height="1067" loading="lazy">
           <figcaption>Injury can remove far more than playing time. Athletes may lose routine, confidence, connection and a valued part of who they are.</figcaption>
         </figure>
 
-        <p data-reveal>Support does not require a counselling qualification. Send the message. Include them in the team chat. Invite them to the parts of training they can safely attend. Give them a meaningful role&mdash;helping with video, leading a non-physical activity, welcoming new players&mdash;without turning them into unpaid staff. Most importantly, sometimes ask about life rather than the injury.</p>
+        <p>Support does not require a counselling qualification. Send the message. Include them in the team chat. Invite them to the parts of training they can safely attend. Give them a meaningful role, such as helping with video, leading an activity that is not physical, or welcoming new players, without turning them into unpaid staff. Most importantly, sometimes ask about life rather than the injury.</p>
 
-        <div class="ij-quote" data-reveal>
-          <p>One useful weekly question: &ldquo;What would help you feel part of the team this week?&rdquo;</p>
-        </div>
+        <p>One useful weekly question is: <strong>&ldquo;What would help you feel part of the team this week?&rdquo;</strong></p>
 
-        <!-- PLAY 04 -->
-        <div class="ij-play" data-reveal>
-          <p class="ij-play__num">04</p>
-          <h3 class="ij-play__title">Build a return ladder, not a return date</h3>
-        </div>
+        <h3><span>4.</span> Build a return ladder, not a return date</h3>
 
-        <p data-reveal>Medical clearance and psychological readiness are related, but they are not identical. Returning athletes commonly face three needs: <strong>competence</strong> (&ldquo;Can I still do this?&rdquo;), <strong>autonomy</strong> (&ldquo;Do I have a say?&rdquo;), and <strong>relatedness</strong> (&ldquo;Do I still belong?&rdquo;) (Podlog &amp; Eklund, 2007; Tranaeus et al., 2024).</p>
+        <p>Medical clearance and psychological readiness are related, but they are not identical. Returning athletes commonly face three needs: <strong>competence</strong> (&ldquo;Can I still do this?&rdquo;), <strong>autonomy</strong> (&ldquo;Do I have a say?&rdquo;), and <strong>relatedness</strong> (&ldquo;Do I still belong?&rdquo;) (Podlog &amp; Eklund, 2007; Tranaeus et al., 2024).</p>
 
-        <p data-reveal>Work with the athlete and relevant health professional to build progressively more realistic steps:</p>
+        <p>Work with the athlete and relevant health professional to build progressively more realistic steps: individual movement, controlled skill, predictable contact, chaotic training, then competition. The exact ladder depends on the injury and sport; it should never be improvised against medical advice.</p>
 
-        <ol class="ij-ladder" data-reveal>
-          <li><span class="ij-ladder__node">01</span>
-            <p class="ij-ladder__step">Individual movement</p>
-          </li>
-          <li><span class="ij-ladder__node">02</span>
-            <p class="ij-ladder__step">Controlled skill</p>
-          </li>
-          <li><span class="ij-ladder__node">03</span>
-            <p class="ij-ladder__step">Predictable contact</p>
-          </li>
-          <li><span class="ij-ladder__node">04</span>
-            <p class="ij-ladder__step">Chaotic training</p>
-          </li>
-          <li><span class="ij-ladder__node">05</span>
-            <p class="ij-ladder__step">Competition</p>
-          </li>
-        </ol>
+        <p>At each step ask:</p>
 
-        <div class="ij-note" data-reveal>
-          <p class="ij-note__kicker">A necessary caveat</p>
-          <p>The exact ladder depends on the injury and sport; it should never be improvised against medical advice.</p>
-        </div>
-
-        <p data-reveal>At each step, ask four questions:</p>
-
-        <ol class="ij-steps" data-reveal>
+        <ol>
           <li>What did your body do?</li>
           <li>What did your mind predict?</li>
           <li>What evidence did you gather?</li>
           <li>What is the next agreed step?</li>
         </ol>
 
-        <p data-reveal>This turns confidence from something the athlete must magically feel into something they can gradually learn through safe experience. If that idea is useful to you, we have written about it at length in <a href="post-confidence.html">Confidence Is Not a Feeling You Wait For</a>.</p>
+        <p>This turns confidence from something the athlete must magically feel into something they can gradually learn through safe experience. If that idea is useful to you, we have written about it at length in <a href="post-confidence.html">Confidence Is Not a Feeling You Wait For</a>.</p>
 
-      </div>
-    </div>
-  </section>
+        <h2>What athletes can do</h2>
 
-  <!-- ========== OPENER: ATHLETES ========== -->
-  <section class="ij-opener ij-band--alt" id="athletes" style="border-bottom:0;">
-    <div class="container">
-      <div class="ij-col">
-        <p class="ij-opener__kicker" data-reveal>Playbook &mdash; Part Two</p>
-        <h2 class="ij-opener__title" data-reveal>What <span>Athletes</span><br>Can Do</h2>
-        <p class="ij-opener__intro" data-reveal>Four things to take into your own week. None of them ask you to talk yourself out of what you are feeling.</p>
-      </div>
-    </div>
-  </section>
+        <h3><span>1.</span> Track patterns, not isolated bad days</h3>
 
-  <section class="ij-band ij-band--alt" style="padding-top:clamp(24px,4vw,40px);border-top:0;">
-    <div class="container">
-      <div class="ij-col">
+        <p>Stress is part of sport and life. One rough sleep or difficult school day does not mean you should stop training. But repeated changes in sleep, wellbeing and perceived recovery are useful information (Tranaeus et al., 2024).</p>
 
-        <!-- PLAY 01 -->
-        <div class="ij-play" data-reveal>
-          <p class="ij-play__num">01</p>
-          <h3 class="ij-play__title">Track patterns, not isolated bad days</h3>
-        </div>
+        <p>Use the same three ratings (stress, sleep and recovery) for two minutes each day. Add one sentence: &ldquo;What is influencing these numbers?&rdquo; After a week, look for patterns. Then share the pattern with someone who can help: your coach, parent or wh&#257;nau member, physio, doctor, or strength and conditioning coach.</p>
 
-        <p data-reveal>Stress is part of sport and life. One rough sleep or difficult school day does not mean you should stop training. But repeated changes in sleep, wellbeing and perceived recovery are useful information (Tranaeus et al., 2024).</p>
+        <p>Monitoring yourself only helps if it changes a conversation or decision. It is not another test to pass.</p>
 
-        <p data-reveal>Use the same three ratings&mdash;stress, sleep and recovery&mdash;for two minutes each day. Add one sentence: &ldquo;What is influencing these numbers?&rdquo; After a week, look for patterns. Then share the pattern with someone who can help: your coach, parent or wh&#257;nau member, physio, doctor, or strength and conditioning coach.</p>
+        <h3><span>2.</span> Separate pain from the story about pain</h3>
 
-        <div class="ij-quote" data-reveal>
-          <p>Self-monitoring only helps if it changes a conversation or decision. It is not another test to pass.</p>
-        </div>
+        <p>Pain needs appropriate medical attention. Alongside the sensation, the mind may produce stories: &ldquo;I am falling behind,&rdquo; &ldquo;Coach will replace me,&rdquo; or &ldquo;If I feel fear, I am not ready.&rdquo; Fear of reinjury and pain catastrophising can complicate recovery, while psychological interventions involving relaxation, imagery, goal setting, mindfulness and acceptance have shown encouraging rehabilitation benefits (Schwab Reese et al., 2012; Tranaeus et al., 2024).</p>
 
-        <!-- PLAY 02 -->
-        <div class="ij-play" data-reveal>
-          <p class="ij-play__num">02</p>
-          <h3 class="ij-play__title">Separate pain from the story about pain</h3>
-        </div>
+        <p>Try this simple prompt, built on acceptance: <strong>Name, Notice, Choose</strong>.</p>
 
-        <p data-reveal>Pain needs appropriate medical attention. Alongside the sensation, the mind may produce stories: &ldquo;I am falling behind,&rdquo; &ldquo;Coach will replace me,&rdquo; or &ldquo;If I feel fear, I am not ready.&rdquo; Fear of reinjury and pain catastrophising can complicate recovery, while psychological interventions involving relaxation, imagery, goal setting, mindfulness and acceptance have shown encouraging rehabilitation benefits (Schwab Reese et al., 2012; Tranaeus et al., 2024).</p>
-
-        <p data-reveal>Try this simple acceptance-based prompt: <strong>Name&ndash;Notice&ndash;Choose</strong>.</p>
-
-        <div class="ij-trio" data-reveal>
-          <div class="ij-trio__card">
-            <p class="ij-trio__word">Name</p>
-            <p>&ldquo;My mind is giving me the &lsquo;I&rsquo;ll never get back&rsquo; story.&rdquo;</p>
-          </div>
-          <div class="ij-trio__card">
-            <p class="ij-trio__word">Notice</p>
-            <p>Where do fear and tension show up in your body?</p>
-          </div>
-          <div class="ij-trio__card">
-            <p class="ij-trio__word">Choose</p>
-            <p>What is the next safe, useful action agreed within the rehabilitation plan?</p>
-          </div>
-        </div>
-
-        <p data-reveal>The aim is not to convince yourself everything is fine. It is to stop a frightening thought from becoming the only voice making decisions.</p>
-
-        <!-- PLAY 03 -->
-        <div class="ij-play" data-reveal>
-          <p class="ij-play__num">03</p>
-          <h3 class="ij-play__title">Set goals in two lanes</h3>
-        </div>
-
-        <p data-reveal>Your rehabilitation plan probably contains physical targets. Add a psychological lane.</p>
-
-        <div class="ij-lanes" data-reveal>
-          <p class="ij-lanes__head ij-lanes__head--a">Physical</p>
-          <p class="ij-lanes__head ij-lanes__head--b">Psychological</p>
-          <p class="ij-lanes__cell">Complete the agreed running progression.</p>
-          <p class="ij-lanes__cell ij-lanes__cell--b">Tell the physio when fear reaches 7/10 rather than hiding it.</p>
-          <p class="ij-lanes__cell">Rejoin controlled training.</p>
-          <p class="ij-lanes__cell ij-lanes__cell--b">Use imagery to rehearse the movement, then record what actually happened.</p>
-        </div>
-
-        <p data-reveal>Process goals, guided imagery and cognitive-behavioural approaches have shown promise during rehabilitation, although the evidence base remains modest and interventions should be matched to the individual (Schwab Reese et al., 2012; Tranaeus et al., 2024).</p>
-
-        <!-- PLAY 04 -->
-        <div class="ij-play" data-reveal>
-          <p class="ij-play__num">04</p>
-          <h3 class="ij-play__title">Communicate readiness precisely</h3>
-        </div>
-
-        <p data-reveal>&ldquo;I&rsquo;m fine&rdquo; gives your support team very little to work with. Before a return-to-sport conversation, finish these three sentences:</p>
-
-        <ul class="ij-sentences" data-reveal>
-          <li><b>My body is telling me&hellip;</b><i aria-hidden="true"></i></li>
-          <li><b>My mind is predicting&hellip;</b><i aria-hidden="true"></i></li>
-          <li><b>The support or information I need is&hellip;</b><i aria-hidden="true"></i></li>
+        <ul>
+          <li><strong>Name:</strong> &ldquo;My mind is giving me the &lsquo;I&rsquo;ll never get back&rsquo; story.&rdquo;</li>
+          <li><strong>Notice:</strong> Where do fear and tension show up in your body?</li>
+          <li><strong>Choose:</strong> What is the next safe, useful action agreed within the rehabilitation plan?</li>
         </ul>
 
-        <p data-reveal>You can be medically cleared and still nervous. You can also feel desperate to play before your body is ready. Neither feeling should be hidden, and neither should make the decision alone. Good return-to-sport decisions are shared decisions, with clear communication between the athlete, coach and qualified health professionals (Gledhill et al., 2022; Tranaeus et al., 2024).</p>
+        <p>The aim is not to convince yourself everything is fine. It is to stop a frightening thought from becoming the only voice making decisions.</p>
 
-      </div>
-    </div>
-  </section>
+        <h3><span>3.</span> Set goals in two lanes</h3>
 
-  <!-- ========== THE SMALL PLAN ========== -->
-  <section class="ij-band" id="the-plan">
-    <div class="container">
-      <div class="ij-col">
+        <p>Your rehabilitation plan probably contains physical targets. Add a psychological lane:</p>
 
-        <h2 class="ij-h2" data-reveal>The small plan that changes the injury story</h2>
+        <ul>
+          <li><strong>Physical:</strong> Complete the agreed running progression.</li>
+          <li><strong>Psychological:</strong> Tell the physio when fear reaches 7/10 rather than hiding it.</li>
+          <li><strong>Physical:</strong> Rejoin controlled training.</li>
+          <li><strong>Psychological:</strong> Use imagery to rehearse the movement, then record what actually happened.</li>
+        </ul>
 
-        <p data-reveal>Community and school teams may not have an interdisciplinary performance department. They can still create an interdisciplinary habit.</p>
+        <p>Process goals, guided imagery and cognitive behavioural approaches have shown promise during rehabilitation, although the evidence base remains modest and interventions should be matched to the individual (Schwab Reese et al., 2012; Tranaeus et al., 2024).</p>
 
-        <div class="ij-verbs" data-reveal>
-          <div>Notice</div>
-          <div>Ask</div>
-          <div>Connect</div>
-          <div>Refer</div>
-        </div>
+        <h3><span>4.</span> Communicate readiness precisely</h3>
 
-        <p data-reveal>Before the next session, agree on three things:</p>
+        <p>&ldquo;I&rsquo;m fine&rdquo; gives your support team very little to work with. Before a return to sport conversation, finish these three sentences:</p>
 
-        <ol class="ij-list" data-reveal>
-          <li>How athletes can flag a concern.</li>
-          <li>Who follows it up.</li>
-          <li>How an injured athlete stays connected.</li>
-        </ol>
+        <ul>
+          <li><strong>My body is telling me&hellip;</strong></li>
+          <li><strong>My mind is predicting&hellip;</strong></li>
+          <li><strong>The support or information I need is&hellip;</strong></li>
+        </ul>
 
-        <p data-reveal>Put it in the team chat. Tell the wh&#257;nau. Practise the conversation before the stakes are high.</p>
+        <p>You can be medically cleared and still nervous. You can also feel desperate to play before your body is ready. Neither feeling should be hidden, and neither should make the decision alone. Good return to sport decisions are shared decisions, with clear communication between the athlete, coach and qualified health professionals (Gledhill et al., 2022; Tranaeus et al., 2024).</p>
 
-        <figure class="ij-fig ij-fig--bleed" data-reveal>
-          <img src="images/river-landscape.jpg" alt="A wide braided river running between bush-lined banks in the New Zealand countryside" width="1600" height="1029" loading="lazy" decoding="async">
-          <figcaption>The strongest sporting environments do not ask athletes to choose between performance and care.</figcaption>
+        <h2>The small plan that changes the injury story</h2>
+
+        <p>Community and school teams may not have an interdisciplinary performance department. They can still create an interdisciplinary habit: notice, ask, connect and refer.</p>
+
+        <figure class="pt-figure pt-figure--wide">
+          <img src="images/workshop-coaches.jpg" alt="Coaches sitting around tables in a clubroom during a Performance Act workshop" width="1600" height="1067" loading="lazy">
+          <figcaption>Practise the conversation before the stakes are high.</figcaption>
         </figure>
 
-        <p class="ij-final" data-reveal>Because injury is never just physical. <span>Neither is recovery.</span></p>
+        <p>Before the next session, agree on three things: how athletes can flag a concern, who follows it up, and how an injured athlete stays connected. Put it in the team chat. Tell the wh&#257;nau. Practise the conversation before the stakes are high.</p>
 
-        <p data-reveal>The strongest sporting environments do not ask athletes to choose between performance and care. They understand that care is part of how people keep performing&mdash;and how they keep wanting to play.</p>
+        <p>Because injury is never just physical. Neither is recovery. The strongest sporting environments do not ask athletes to choose between performance and care. They understand that care is part of how people keep performing, and how they keep wanting to play.</p>
 
-        <div class="ij-rule" data-reveal></div>
+        <p class="pt-closing">If you are supporting an injured athlete, or you are the one quietly working around pain right now, this is exactly the sort of thing we work on. Have a look at our <a href="approach.html">Approach</a> to see how we do it, head to <a href="grow.html">GROW</a> for more on building skills that hold up under pressure, or <a href="contact.html">get in touch</a> for a k&#333;rero about where you are at.</p>
 
-        <p class="ij-closing" data-reveal>If you are supporting an injured athlete, or you are the one quietly working around pain right now, this is exactly the sort of thing we work on. Have a look at our <a href="approach.html">Approach</a> to see how we do it, head to <a href="grow.html">GROW</a> for more on building skills that hold up under pressure, or <a href="contact.html">get in touch</a> for a k&#333;rero about where you are at.</p>
-
-        <h2 class="ij-h2" data-reveal>References</h2>
-        <div class="ij-refs" data-reveal>
-          <p>Gledhill, A., Forsdyke, D., &amp; Murray, E. (2018). Psychological interventions used to reduce sports injuries: A systematic review of real-world effectiveness. <em>British Journal of Sports Medicine, 52</em>(15), 967&ndash;971. <a href="https://doi.org/10.1136/bjsports-2017-097694" target="_blank" rel="noopener">https://doi.org/10.1136/bjsports-2017-097694</a></p>
-          <p>Gledhill, A., Forsdyke, D., Goom, T., &amp; Podlog, L. W. (2022). Educate, involve and collaborate: Three strategies for clinicians to empower athletes during return to sport. <em>British Journal of Sports Medicine, 56</em>(5), 241&ndash;242. <a href="https://doi.org/10.1136/bjsports-2021-104268" target="_blank" rel="noopener">https://doi.org/10.1136/bjsports-2021-104268</a></p>
-          <p>Ivarsson, A., Johnson, U., Andersen, M. B., Tranaeus, U., Stenling, A., &amp; Lindwall, M. (2017). Psychosocial factors and sport injuries: Meta-analyses for prediction and prevention. <em>Sports Medicine, 47</em>(2), 353&ndash;365. <a href="https://doi.org/10.1007/s40279-016-0578-x" target="_blank" rel="noopener">https://doi.org/10.1007/s40279-016-0578-x</a></p>
-          <p>Podlog, L., &amp; Eklund, R. C. (2007). The psychosocial aspects of a return to sport following serious injury: A review of the literature from a self-determination perspective. <em>Psychology of Sport and Exercise, 8</em>(4), 535&ndash;566. <a href="https://doi.org/10.1016/j.psychsport.2006.07.008" target="_blank" rel="noopener">https://doi.org/10.1016/j.psychsport.2006.07.008</a></p>
-          <p>Schwab Reese, L. M., Pittsinger, R., &amp; Yang, J. (2012). Effectiveness of psychological intervention following sport injury. <em>Journal of Sport and Health Science, 1</em>(2), 71&ndash;79. <a href="https://doi.org/10.1016/j.jshs.2012.06.003" target="_blank" rel="noopener">https://doi.org/10.1016/j.jshs.2012.06.003</a></p>
-          <p>Tranaeus, U., Gledhill, A., Johnson, U., Podlog, L., Wadey, R., Wiese Bjornstal, D., &amp; Ivarsson, A. (2024). 50 years of research on the psychology of sport injury: A consensus statement. <em>Sports Medicine, 54</em>(7), 1733&ndash;1748. <a href="https://doi.org/10.1007/s40279-024-02045-w" target="_blank" rel="noopener">https://doi.org/10.1007/s40279-024-02045-w</a></p>
-          <p>Tranaeus, U., Martin, S., &amp; Ivarsson, A. (2022). Psychosocial risk factors for overuse injuries in competitive athletes: A mixed-studies systematic review. <em>Sports Medicine, 52</em>(4), 773&ndash;788. <a href="https://doi.org/10.1007/s40279-021-01597-5" target="_blank" rel="noopener">https://doi.org/10.1007/s40279-021-01597-5</a></p>
+        <h2>References</h2>
+        <div class="prs-refs">
+          <p class="prs-ref">Gledhill, A., Forsdyke, D., &amp; Murray, E. (2018). Psychological interventions used to reduce sports injuries: A systematic review of real-world effectiveness. <em>British Journal of Sports Medicine, 52</em>(15), 967&ndash;971. <a href="https://doi.org/10.1136/bjsports-2017-097694" target="_blank" rel="noopener">https://doi.org/10.1136/bjsports-2017-097694</a></p>
+          <p class="prs-ref">Gledhill, A., Forsdyke, D., Goom, T., &amp; Podlog, L. W. (2022). Educate, involve and collaborate: Three strategies for clinicians to empower athletes during return to sport. <em>British Journal of Sports Medicine, 56</em>(5), 241&ndash;242. <a href="https://doi.org/10.1136/bjsports-2021-104268" target="_blank" rel="noopener">https://doi.org/10.1136/bjsports-2021-104268</a></p>
+          <p class="prs-ref">Ivarsson, A., Johnson, U., Andersen, M. B., Tranaeus, U., Stenling, A., &amp; Lindwall, M. (2017). Psychosocial factors and sport injuries: Meta-analyses for prediction and prevention. <em>Sports Medicine, 47</em>(2), 353&ndash;365. <a href="https://doi.org/10.1007/s40279-016-0578-x" target="_blank" rel="noopener">https://doi.org/10.1007/s40279-016-0578-x</a></p>
+          <p class="prs-ref">Podlog, L., &amp; Eklund, R. C. (2007). The psychosocial aspects of a return to sport following serious injury: A review of the literature from a self-determination perspective. <em>Psychology of Sport and Exercise, 8</em>(4), 535&ndash;566. <a href="https://doi.org/10.1016/j.psychsport.2006.07.008" target="_blank" rel="noopener">https://doi.org/10.1016/j.psychsport.2006.07.008</a></p>
+          <p class="prs-ref">Schwab Reese, L. M., Pittsinger, R., &amp; Yang, J. (2012). Effectiveness of psychological intervention following sport injury. <em>Journal of Sport and Health Science, 1</em>(2), 71&ndash;79. <a href="https://doi.org/10.1016/j.jshs.2012.06.003" target="_blank" rel="noopener">https://doi.org/10.1016/j.jshs.2012.06.003</a></p>
+          <p class="prs-ref">Tranaeus, U., Gledhill, A., Johnson, U., Podlog, L., Wadey, R., Wiese Bjornstal, D., &amp; Ivarsson, A. (2024). 50 years of research on the psychology of sport injury: A consensus statement. <em>Sports Medicine, 54</em>(7), 1733&ndash;1748. <a href="https://doi.org/10.1007/s40279-024-02045-w" target="_blank" rel="noopener">https://doi.org/10.1007/s40279-024-02045-w</a></p>
+          <p class="prs-ref">Tranaeus, U., Martin, S., &amp; Ivarsson, A. (2022). Psychosocial risk factors for overuse injuries in competitive athletes: A mixed-studies systematic review. <em>Sports Medicine, 52</em>(4), 773&ndash;788. <a href="https://doi.org/10.1007/s40279-021-01597-5" target="_blank" rel="noopener">https://doi.org/10.1007/s40279-021-01597-5</a></p>
         </div>
 
       </div>
     </div>
-  </section>
+  </article>
 
-  <!-- ========== AUTHOR ========== -->
-  <section class="ij-author">
+  <!-- ========== AUTHOR BIO ========== -->
+  <section class="pt-author">
     <div class="container">
-      <div class="ij-author__card">
-        <img src="images/james-workshop.jpg" alt="James Orritt, Registered Clinical Psychologist and Co-Founder of The Performance Act" class="ij-author__img" width="2048" height="1366" loading="lazy" decoding="async">
-        <div>
-          <span class="ij-author__label">Written by</span>
-          <h3 class="ij-author__name">James Orritt <small>BSpC, BSc, PGDipClinPsyc, MSc</small></h3>
-          <p class="ij-author__bio">James is a <a href="https://www.psychologistsboard.org.nz/can-i-see-a-psychologist/the-register-of-psychologists" target="_blank" rel="noopener">Registered Clinical Psychologist</a> (NZ Psychologists Board) and co-founder of The Performance Act. He draws on nine years of competitive rugby coaching alongside his clinical training, and his research focuses on effective coaching conversations in sport.</p>
-          <a href="team.html" class="ij-author__link">View full profile &rarr;</a>
+      <div class="pt-author__card">
+        <img src="images/james-workshop.jpg" alt="James Orritt, Registered Clinical Psychologist and Cofounder of The Performance Act" class="pt-author__image" width="2048" height="1366" loading="lazy">
+        <div class="pt-author__info">
+          <span class="pt-author__label">WRITTEN BY</span>
+          <h3 class="pt-author__name">James Orritt <span class="tm-bio__quals">BSpC, BSc, PGDipClinPsyc, MSc</span></h3>
+          <p class="pt-author__bio">James is a <a href="https://www.psychologistsboard.org.nz/can-i-see-a-psychologist/the-register-of-psychologists" target="_blank" rel="noopener">Registered Clinical Psychologist</a> (NZ Psychologists Board) and cofounder of The Performance Act. He draws on nine years of competitive rugby coaching alongside his clinical training, and his research focuses on effective coaching conversations in sport.</p>
+          <a href="team.html" class="pt-author__link">View full profile &rarr;</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== RELATED ========== -->
-  <section class="ij-related">
+  <!-- ========== RELATED POSTS ========== -->
+  <section class="pt-related">
     <div class="container">
-      <h2 class="ij-related__title">MORE FROM <span>RESOURCES</span></h2>
-      <div class="ij-related__grid">
+      <h2 class="pt-related__title">MORE FROM <span>RESOURCES</span></h2>
+      <div class="pt-related__grid">
 
         <article class="bl-card">
           <div class="bl-card__image">
-            <img src="images/athletics-track.jpg" alt="A lone athlete on a running track under a cold, overcast sky" width="412" height="550" loading="lazy" decoding="async">
+            <img src="images/athletics-track.jpg" alt="A lone athlete on a running track under a cold, overcast sky" loading="lazy">
             <span class="bl-tag">MINDSET</span>
           </div>
           <div class="bl-card__body">
@@ -932,7 +391,7 @@
 
         <article class="bl-card">
           <div class="bl-card__image">
-            <img src="images/sideline-coaching.jpg" alt="A coach watching from the sideline" width="1010" height="938" loading="lazy" decoding="async">
+            <img src="images/sideline-coaching.jpg" alt="A coach watching from the sideline" loading="lazy">
             <span class="bl-tag">COACHING</span>
           </div>
           <div class="bl-card__body">
@@ -949,7 +408,7 @@
 
         <article class="bl-card">
           <div class="bl-card__image">
-            <img src="images/brain-explode.jpg" alt="Pressure and the athletic mind" width="1600" height="1068" loading="lazy" decoding="async">
+            <img src="images/brain-explode.jpg" alt="Pressure and the athletic mind" loading="lazy">
             <span class="bl-tag">MINDSET</span>
           </div>
           <div class="bl-card__body">
@@ -959,7 +418,7 @@
               <time class="bl-meta__date">17 February 2026</time>
             </div>
             <h3 class="bl-card__title">Pressure Is Not the Enemy</h3>
-            <p class="bl-card__excerpt">Drawing on challenge-and-threat research, why your racing heart might be good news, and evidence-based ways to change your relationship with pressure.</p>
+            <p class="bl-card__excerpt">Drawing on research into challenge and threat, why your racing heart might be good news, and evidence based ways to change your relationship with pressure.</p>
             <a href="post-pressure.html" class="bl-card__link">Read more &rarr;</a>
           </div>
         </article>
@@ -967,6 +426,7 @@
       </div>
     </div>
   </section>
+
   <!-- ========== FOOTER ========== -->
   <footer class="footer" id="contact">
     <div class="container">
@@ -1106,102 +566,6 @@
 
 
   <script src="script.js?v=5"></script>
-  <script>
-  (function(){
-    'use strict';
-
-    /* ---- reading progress + hero parallax ---- */
-    var progress = document.getElementById('ijProgress');
-    var heroBg   = document.getElementById('ijHeroBg');
-    var reduce   = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    function onScroll(){
-      var st = window.scrollY || document.documentElement.scrollTop;
-      var h  = document.documentElement.scrollHeight - window.innerHeight;
-      if (progress) progress.style.width = (h > 0 ? (st / h) * 100 : 0) + '%';
-      if (heroBg && !reduce && st < window.innerHeight) {
-        heroBg.style.transform = 'translateY(' + (st * 0.26) + 'px)';
-      }
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll, { passive: true });
-    onScroll();
-
-    /* ---- scroll reveal ---- */
-    var els = [].slice.call(document.querySelectorAll('[data-reveal]'));
-    if (!reduce && 'IntersectionObserver' in window) {
-      els.forEach(function(el){
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(34px)';
-        el.style.transition = 'opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1)';
-      });
-      var io = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-          if (e.isIntersecting) {
-            e.target.style.opacity = '1';
-            e.target.style.transform = 'none';
-            io.unobserve(e.target);
-          }
-        });
-      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
-      els.forEach(function(el){ io.observe(el); });
-    }
-
-    /* ---- 60-second check-in ----
-       Deliberately does not score, threshold or interpret. It reflects the
-       three numbers back and hands the reader a question to ask. Nothing is
-       stored or transmitted. */
-    var checkin = document.getElementById('ijOut');
-    if (checkin) {
-      var fields = {
-        stress:   { name: 'ijStress',   out: document.getElementById('ijValStress') },
-        sleep:    { name: 'ijSleep',    out: document.getElementById('ijValSleep') },
-        recovery: { name: 'ijRecovery', out: document.getElementById('ijValRecovery') }
-      };
-      var msg   = document.getElementById('ijMsg');
-      var reset = document.getElementById('ijReset');
-
-      function selected(name){
-        var el = document.querySelector('input[name="' + name + '"]:checked');
-        return el ? el.value : null;
-      }
-
-      function update(){
-        var answered = 0;
-        Object.keys(fields).forEach(function(key){
-          var val = selected(fields[key].name);
-          fields[key].out.textContent = val || '–';
-          if (val) answered++;
-        });
-
-        if (answered === 0) { checkin.hidden = true; return; }
-        checkin.hidden = false;
-
-        if (answered < 3) {
-          msg.textContent = 'Answer all three, then ask the question that matters: what is influencing these numbers?';
-        } else {
-          msg.textContent = 'Three numbers, sixty seconds. Now add the sentence that does the work: “What is influencing these numbers?” Note them somewhere for a week. You are not looking for a good score or a bad one — you are looking for change over time, and for the conversation it opens.';
-        }
-      }
-
-      Object.keys(fields).forEach(function(key){
-        document.querySelectorAll('input[name="' + fields[key].name + '"]').forEach(function(input){
-          input.addEventListener('change', update);
-        });
-      });
-
-      reset.addEventListener('click', function(){
-        Object.keys(fields).forEach(function(key){
-          var el = document.querySelector('input[name="' + fields[key].name + '"]:checked');
-          if (el) el.checked = false;
-        });
-        update();
-      });
-
-      update();
-    }
-  })();
-  </script>
 
 </body>
 </html>
