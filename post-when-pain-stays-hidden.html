@@ -63,6 +63,12 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png?v=2">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=2">
   <style>
+    /* Figures: aligned to the text column, cropped to a 16:9 band, and taken
+       fully to black and white so they sit with the site's card treatment. */
+    .pt-article__body .pt-figure{margin:48px 0;}
+    .pt-article__body .pt-figure img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:0;filter:grayscale(100%) contrast(1.08) brightness(.92);}
+    .pt-article__body .pt-figure figcaption{font-size:.8rem;line-height:1.6;color:rgba(255,255,255,.4);margin-top:14px;padding-left:0;border-left:2px solid rgba(255,229,0,.5);padding-left:12px;}
+    @media (max-width:640px){ .pt-article__body .pt-figure img{aspect-ratio:3/2;} }
     .pt-article__body h3{font-family:var(--font-heading);font-size:1.15rem;font-weight:600;color:var(--white);text-transform:uppercase;letter-spacing:.03em;margin-top:44px;margin-bottom:16px;}
     .pt-article__body h3 span{color:var(--yellow);margin-right:8px;}
     .pt-article__body .prs-refs{margin-top:16px;}
@@ -192,6 +198,11 @@
 
         <p>Looking back, that is the part of the story that stays with me. It is not whether my YouTube diagnosis was correct or whether my stud configuration made biomechanical sense. My instinct was to hide the problem, solve it alone and protect my chance to play. I do not tell this story to grumble about the system or blame an individual coach. I tell it because it now guides me when I think about athletes in our care. When an athlete becomes remarkably resourceful at working around pain, we should not ask only, <em>&ldquo;What is the injury?&rdquo;</em> We should also ask, <em>&ldquo;What has made speaking up feel less available than managing this alone?&rdquo;</em></p>
 
+        <figure class="pt-figure">
+          <img src="images/rowing-single.png" alt="A single sculler out on open water, rowing alone" width="1600" height="1060" loading="lazy">
+          <figcaption>My instinct was to hide the problem, solve it alone and protect my chance to play.</figcaption>
+        </figure>
+
         <p>Research cannot tell us that the thoughts running through my head caused that injury, and one personal story cannot establish cause and effect. It does, however, bring the research to life. Strong stress responses can affect attention, decision making and movement control, while sporting relationships and cultures can shape whether athletes share concerns or keep pushing quietly.</p>
 
         <p>Preventative stress management programmes, which use approaches such as relaxation, mindfulness, acceptance and cognitive behavioural skills, aim to give athletes more options before pressure narrows their thinking. Across a relatively small body of experimental research, these programmes have generally been associated with fewer injuries, although study quality and reporting bias limit how certain we can be (Gledhill et al., 2018; Ivarsson et al., 2017).</p>
@@ -245,11 +256,6 @@
         <h3><span>3.</span> Keep the injured athlete in the team</h3>
 
         <p>Injury can remove far more than playing time. Athletes may lose routine, confidence, connection and a valued part of who they are. Perceived social support is linked with better rehabilitation experiences, while lack of support from coaches and teams can make rehabilitation harder (Tranaeus et al., 2024).</p>
-
-        <figure class="pt-figure pt-figure--wide">
-          <img src="images/workshop-squad.jpg" alt="A squad gathered together in a clubroom during a Performance Act session" width="1600" height="1067" loading="lazy">
-          <figcaption>Injury can remove far more than playing time. Athletes may lose routine, confidence, connection and a valued part of who they are.</figcaption>
-        </figure>
 
         <p>Support does not require a counselling qualification. Send the message. Include them in the team chat. Invite them to the parts of training they can safely attend. Give them a meaningful role, such as helping with video, leading an activity that is not physical, or welcoming new players, without turning them into unpaid staff. Most importantly, sometimes ask about life rather than the injury.</p>
 
@@ -325,12 +331,12 @@
 
         <p>Community and school teams may not have an interdisciplinary performance department. They can still create an interdisciplinary habit: notice, ask, connect and refer.</p>
 
-        <figure class="pt-figure pt-figure--wide">
-          <img src="images/workshop-coaches.jpg" alt="Coaches sitting around tables in a clubroom during a Performance Act workshop" width="1600" height="1067" loading="lazy">
-          <figcaption>Practise the conversation before the stakes are high.</figcaption>
-        </figure>
-
         <p>Before the next session, agree on three things: how athletes can flag a concern, who follows it up, and how an injured athlete stays connected. Put it in the team chat. Tell the wh&#257;nau. Practise the conversation before the stakes are high.</p>
+
+        <figure class="pt-figure">
+          <img src="images/fern-koru.jpg" alt="A silver fern frond unfurling from a tight koru spiral" width="1600" height="1065" loading="lazy">
+          <figcaption>Notice, ask, connect and refer.</figcaption>
+        </figure>
 
         <p>Because injury is never just physical. Neither is recovery. The strongest sporting environments do not ask athletes to choose between performance and care. They understand that care is part of how people keep performing, and how they keep wanting to play.</p>
 
