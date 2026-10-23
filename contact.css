@@ -327,17 +327,87 @@
   max-width: 56ch;
 }
 
-/* Tally iframe wrapper */
-.ct-tally-wrap {
+/* Carepatron enquiry form embed */
+.ct-form-embed {
   position: relative;
-  min-height: 400px;
+  min-height: 600px;
+  border-radius: 4px;
+  overflow: hidden;
 }
 
-.ct-tally-wrap iframe {
+.ct-form-embed iframe {
+  position: relative;
+  z-index: 1;
   display: block;
   width: 100%;
-  border: none;
+  height: 1100px;
+  min-width: 0;
+  border: 0;
   background: transparent;
+}
+
+@media (max-width: 700px) {
+  .ct-form-embed iframe {
+    height: 1300px;
+  }
+}
+
+.ct-form-embed__loading {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease;
+}
+
+.ct-form-embed.is-loaded .ct-form-embed__loading {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ct-form-embed__spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-top-color: var(--black);
+  border-radius: 50%;
+  animation: ct-spin 0.8s linear infinite;
+}
+
+@keyframes ct-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ct-form-embed__spinner { animation: none; }
+}
+
+.ct-form-fallback {
+  margin: 20px 0 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.ct-form-fallback a {
+  color: var(--gray-900);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid var(--yellow);
+  padding-bottom: 1px;
+  transition: background-color 0.2s ease;
+}
+
+.ct-form-fallback a:hover,
+.ct-form-fallback a:focus-visible {
+  background-color: var(--yellow);
 }
 
 /* ---- TRUST BAR ---- */
