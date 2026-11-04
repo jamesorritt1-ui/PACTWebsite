@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T335C5CQGF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-T335C5CQGF');
+  </script>
+  <meta name="robots" content="noindex, nofollow">
+  <title>What We Paddle For | Paddle for Life | The Performance Act</title>
+  <meta name="description" content="What We Paddle For: session one resources for the Paddle for Life crews, from The Performance Act.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Caveat:wght@500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="style.css?v=18">
+  <link rel="stylesheet" href="grow.css?v=1">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=2">
+
+
+  <style>
+    /* ============================================================
+       WHAT WE PADDLE FOR — PADDLE FOR LIFE
+       GROW area for the Paddle for Life crews (session one).
+       Palette: black + TPA yellow. Scoped to .pl-root so it never
+       touches the rest of the site.
+    ============================================================ */
+    .pl-root {
+      --pl-gold:       #FFE500;
+      --pl-gold-soft:  rgba(255,229,0,0.10);
+      --pl-gold-line:  rgba(255,229,0,0.35);
+      --pl-ink:        #EDEDEA;
+      --pl-muted:      #A9A9A2;
+      --pl-card:       #121211;
+      --pl-line:       rgba(255,255,255,0.09);
+      background: #0a0a09;
+    }
+
+    /* Gate the page until the login check resolves (no flash) */
+    .pl-root { opacity: 0; transition: opacity .25s ease; }
+    .pl-root.is-ready { opacity: 1; }
+
+    /* ---------- CLUB BANNER ---------- */
+    .pl-banner { background: #111110; padding: calc(var(--header-height) + 18px) 0 18px; border-bottom: 3px solid var(--pl-gold); }
+    .pl-banner__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .pl-banner__left { display: flex; align-items: center; gap: 14px; }
+    .pl-banner__logo { height: 42px; width: auto; }
+    .pl-banner__name { font-family: var(--font-heading); font-size: 1rem; font-weight: 700; letter-spacing: 0.08em; color: #fff; text-transform: uppercase; line-height: 1.1; }
+    .pl-banner__platform { font-family: var(--font-heading); font-size: 0.62rem; letter-spacing: 0.22em; color: rgba(255,255,255,0.62); text-transform: uppercase; }
+    .pl-logout { font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; color: rgba(255,255,255,0.75); background: transparent; border: 1px solid rgba(255,255,255,0.25); padding: 9px 16px; cursor: pointer; text-transform: uppercase; transition: all .3s ease; flex-shrink: 0; }
+    .pl-logout:hover { color: #fff; border-color: rgba(255,255,255,0.6); }
+
+    /* ---------- SECTION NAV ---------- */
+    .pl-nav { background: #0b0b0a; border-bottom: 1px solid var(--pl-line); position: sticky; top: var(--header-height); z-index: 50; }
+    .pl-nav__inner { display: flex; align-items: center; gap: 2px; overflow-x: auto; scrollbar-width: none; }
+    .pl-nav__inner::-webkit-scrollbar { display: none; }
+    .pl-nav__label { font-family: var(--font-heading); font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pl-muted); padding-right: 14px; flex-shrink: 0; }
+    .pl-nav__link { font-family: var(--font-heading); font-size: 0.86rem; letter-spacing: 0.05em; text-transform: uppercase; color: #d6d6d0; text-decoration: none; padding: 15px 14px; white-space: nowrap; border-bottom: 3px solid transparent; transition: all 0.2s ease; flex-shrink: 0; }
+    .pl-nav__link:hover { color: #fff; background: rgba(255,255,255,0.03); }
+    .pl-nav__link.is-active { color: var(--pl-gold); border-bottom-color: var(--pl-gold); }
+    .pl-sec[id] { scroll-margin-top: calc(var(--header-height) + 70px); }
+
+    /* ---------- HERO ---------- */
+    .pl-hero { position: relative; overflow: hidden; background: #050505; padding: clamp(72px, 12vw, 140px) 0 clamp(60px, 9vw, 110px); }
+    .pl-hero__bg { position: absolute; inset: 0; background: url('images/river-landscape.png') center 55% / cover no-repeat; opacity: 0.32; filter: grayscale(1) contrast(1.05); }
+    .pl-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 85%, rgba(255,229,0,0.10) 0%, transparent 55%), linear-gradient(180deg, rgba(5,5,5,0.45) 0%, rgba(5,5,5,0.88) 100%); }
+    .pl-hero .container { position: relative; z-index: 2; }
+    .pl-hero__eyebrow { font-family: var(--font-heading); font-size: 0.78rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--pl-gold); margin-bottom: 18px; }
+    .pl-hero__title { font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; font-size: clamp(2.6rem, 8vw, 5.6rem); line-height: 0.96; color: #fff; margin-bottom: 24px; }
+    .pl-hero__title em { color: var(--pl-gold); font-style: normal; }
+    .pl-hero__lead { font-size: clamp(1.1rem, 2.4vw, 1.4rem); color: var(--pl-ink); max-width: 660px; line-height: 1.55; font-weight: 300; }
+    .pl-hero__lead strong { color: #fff; font-weight: 600; }
+    .pl-hero__meta { margin-top: 26px; font-size: 0.95rem; color: var(--pl-muted); }
+
+    /* ---------- GENERIC SECTION ---------- */
+    .pl-sec { padding: clamp(60px, 9vw, 104px) 0; background: #0a0a09; }
+    .pl-sec--darker { background: #050505; }
+    .pl-sec__num { font-family: var(--font-heading); font-size: 0.8rem; letter-spacing: 0.28em; color: var(--pl-gold); text-transform: uppercase; display: block; margin-bottom: 14px; }
+    .pl-sec__title { font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; font-size: clamp(1.9rem, 4.6vw, 3.1rem); line-height: 1.04; color: #fff; margin-bottom: 22px; }
+    .pl-sec__title em { color: var(--pl-gold); font-style: normal; }
+    .pl-sec__lead { font-size: 1.12rem; color: var(--pl-ink); max-width: 720px; line-height: 1.7; font-weight: 300; }
+    .pl-sec__lead + .pl-sec__lead { margin-top: 18px; }
+    .pl-sec__lead strong { color: #fff; font-weight: 600; }
+    .pl-sec__lead em { color: var(--pl-gold); font-style: normal; }
+
+    .pl-land { margin-top: 40px; border-left: 4px solid var(--pl-gold); padding: 6px 0 6px 22px; max-width: 760px; }
+    .pl-land p { font-family: var(--font-heading); text-transform: uppercase; font-weight: 600; color: #fff; font-size: clamp(1.25rem, 3vw, 1.7rem); line-height: 1.25; margin: 0; letter-spacing: 0.01em; }
+    .pl-land p em { color: var(--pl-gold); font-style: normal; }
+
+    .pl-card { background: var(--pl-card); border: 1px solid var(--pl-line); padding: 28px; }
+    .pl-card h3 { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.04em; color: #fff; font-size: 1.25rem; margin: 0 0 10px; line-height: 1.2; }
+    .pl-card p { color: var(--pl-ink); font-size: 1rem; line-height: 1.6; margin: 0 0 10px; font-weight: 300; }
+    .pl-card p:last-child { margin-bottom: 0; }
+    .pl-card strong { color: #fff; font-weight: 600; }
+    .pl-card--gold { border-top: 4px solid var(--pl-gold); }
+    .pl-card--grey { border-top: 4px solid #555; }
+    .pl-tag { font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pl-gold); display: block; margin-bottom: 10px; }
+    .pl-tag--muted { color: var(--pl-muted); }
+    .pl-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 40px; }
+    .pl-grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
+    .pl-grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 40px; }
+
+    /* ---------- 01 WHAKATAUKI ---------- */
+    .pl-wk { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items: stretch; margin-top: 10px; }
+    .pl-wk__quote { background: var(--pl-gold); color: #111; padding: clamp(28px, 4vw, 44px); }
+    .pl-wk__label { font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase; color: #111; opacity: 0.75; margin-bottom: 14px; display: block; }
+    .pl-wk__reo { font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; font-size: clamp(1.9rem, 4.6vw, 3rem); line-height: 1.02; margin: 0 0 12px; color: #111; }
+    .pl-wk__en { font-size: 1.25rem; font-weight: 600; margin: 0 0 18px; color: #111; }
+    .pl-wk__story { font-size: 1.04rem; line-height: 1.65; margin: 0; color: #1b1b1b; }
+    .pl-wk__img { background: url('images/kowhai-flowers-crop.jpg') center / cover no-repeat; min-height: 280px; filter: saturate(0.85); }
+    .pl-note { margin-top: 18px; font-size: 0.92rem; color: var(--pl-muted); line-height: 1.55; max-width: 720px; }
+
+    /* ---------- 02 PUSH AWAY LOOP ---------- */
+    .pl-loop { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr; align-items: stretch; gap: 10px; margin-top: 42px; }
+    .pl-loop__step { background: var(--pl-card); border: 1px solid var(--pl-line); border-top: 4px solid #555; padding: 22px 20px; }
+    .pl-loop__step:last-of-type { border-top-color: var(--pl-gold); }
+    .pl-loop__n { font-family: var(--font-heading); color: var(--pl-gold); font-size: 0.8rem; letter-spacing: 0.2em; margin-bottom: 8px; }
+    .pl-loop__t { font-family: var(--font-heading); text-transform: uppercase; color: #fff; font-size: 1.1rem; letter-spacing: 0.04em; margin-bottom: 6px; }
+    .pl-loop__d { font-size: 0.95rem; color: var(--pl-muted); line-height: 1.5; }
+    .pl-loop__arrow { display: flex; align-items: center; color: var(--pl-gold); }
+    .pl-loop__arrow svg { width: 22px; height: 22px; }
+    .pl-loop__again { margin-top: 14px; display: flex; align-items: center; gap: 10px; color: var(--pl-muted); font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.78rem; }
+    .pl-loop__again svg { width: 20px; height: 20px; color: var(--pl-gold); }
+
+    .pl-reveal { margin-top: 30px; background: var(--pl-card); border: 1px solid var(--pl-line); border-left: 4px solid var(--pl-gold); max-width: 780px; }
+    .pl-reveal > summary { cursor: pointer; padding: 18px 22px; font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.06em; color: #fff; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .pl-reveal > summary::-webkit-details-marker { display: none; }
+    .pl-reveal > summary::after { content: '+'; color: var(--pl-gold); font-size: 1.5rem; line-height: 1; }
+    .pl-reveal[open] > summary::after { content: '\2013'; }
+    .pl-reveal__body { padding: 0 22px 20px; }
+    .pl-reveal__body p, .pl-reveal__body li { color: var(--pl-ink); font-size: 1rem; line-height: 1.65; font-weight: 300; }
+    .pl-reveal__body ol { margin: 0; padding-left: 22px; }
+    .pl-reveal__body li { margin-bottom: 8px; }
+    .pl-reveal__body strong { color: #fff; font-weight: 600; }
+
+    /* ---------- 03 STICKY PADDLE ---------- */
+    .pl-stickies { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 36px; max-width: 900px; }
+    .pl-sticky { background: var(--pl-gold); color: #151515; font-family: 'Caveat', 'Brush Script MT', cursive; font-size: 1.55rem; line-height: 1.05; padding: 18px 18px 22px; width: 172px; min-height: 140px; box-shadow: 0 8px 20px rgba(0,0,0,0.45); }
+    .pl-sticky:nth-child(odd) { transform: rotate(-2.5deg); }
+    .pl-sticky:nth-child(even) { transform: rotate(2deg); }
+    .pl-sticky:nth-child(3n) { transform: rotate(-1deg); }
+    .pl-rounds { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 44px; }
+
+    /* ---------- 04 TRIFLEX ---------- */
+    .pl-triflex { margin-top: 36px; max-width: 900px; }
+    .pl-triflex svg { width: 100%; height: auto; display: block; }
+    .pl-triflex text { font-family: 'Oswald', 'Arial Narrow', sans-serif; font-weight: 700; letter-spacing: 0.06em; }
+
+    /* ---------- 05 FINISH LINE VS OAR ---------- */
+    .pl-icon { width: 54px; height: 54px; margin-bottom: 14px; display: block; }
+    .pl-sort { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 26px; max-width: 900px; }
+    .pl-sort details { background: var(--pl-card); border: 1px solid var(--pl-line); }
+    .pl-sort summary { cursor: pointer; padding: 18px 20px; color: #fff; font-size: 1.05rem; list-style: none; line-height: 1.4; }
+    .pl-sort summary::-webkit-details-marker { display: none; }
+    .pl-sort summary span { display: block; font-family: var(--font-heading); font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--pl-muted); margin-top: 8px; }
+    .pl-sort details[open] summary span { display: none; }
+    .pl-sort__answer { padding: 0 20px 18px; color: var(--pl-ink); font-size: 0.98rem; line-height: 1.55; font-weight: 300; }
+    .pl-sort__answer strong { color: var(--pl-gold); font-weight: 600; text-transform: uppercase; font-family: var(--font-heading); letter-spacing: 0.06em; }
+
+    /* ---------- 06 THE COIN ---------- */
+    .pl-coins { display: flex; align-items: center; justify-content: flex-start; gap: 22px; flex-wrap: wrap; margin-top: 40px; }
+    .pl-coin { width: 270px; height: 270px; border-radius: 50%; border: 6px solid var(--pl-gold); box-shadow: inset 0 0 0 10px #111110, inset 0 0 0 12px rgba(255,229,0,0.5); background: #111110; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 38px; }
+    .pl-coin__side { font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pl-gold); margin-bottom: 10px; }
+    .pl-coin__text { color: #fff; font-size: 1.05rem; line-height: 1.45; }
+    .pl-coin__turn { display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--pl-muted); font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.72rem; }
+    .pl-coin__turn svg { width: 54px; height: 30px; color: var(--pl-gold); }
+    .pl-checks { list-style: none; padding: 0; margin: 22px 0 0; max-width: 760px; }
+    .pl-checks li { position: relative; padding: 14px 0 14px 40px; border-top: 1px solid var(--pl-line); color: var(--pl-ink); font-size: 1.05rem; line-height: 1.55; }
+    .pl-checks li::before { content: ''; position: absolute; left: 0; top: 16px; width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--pl-gold); }
+    .pl-checks li::after { content: ''; position: absolute; left: 8px; top: 21px; width: 6px; height: 11px; border: solid var(--pl-gold); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+    .pl-and { margin-top: 32px; font-family: var(--font-heading); text-transform: uppercase; color: #fff; font-size: clamp(1.3rem, 3.4vw, 2rem); line-height: 1.3; }
+    .pl-and em { color: var(--pl-gold); font-style: normal; }
+    .pl-and s { color: var(--pl-muted); }
+    .pl-private { margin-top: 30px; display: flex; gap: 14px; align-items: flex-start; background: var(--pl-gold-soft); border: 1px solid var(--pl-gold-line); padding: 18px 22px; max-width: 760px; }
+    .pl-private svg { width: 22px; height: 22px; color: var(--pl-gold); flex-shrink: 0; margin-top: 2px; }
+    .pl-private p { margin: 0; color: var(--pl-ink); font-size: 1rem; line-height: 1.55; }
+    .pl-private strong { color: #fff; }
+    .pl-split { display: grid; grid-template-columns: 1fr 0.8fr; gap: 36px; align-items: center; margin-top: 40px; }
+    .pl-split__img { background: url('images/fern-koru.jpg') center / cover no-repeat; min-height: 320px; filter: grayscale(1) contrast(1.05); opacity: 0.9; }
+
+    /* ---------- 07 CREW STROKE ---------- */
+    .pl-law__n { font-family: var(--font-heading); font-size: 2.4rem; font-weight: 700; color: var(--pl-gold); line-height: 1; margin-bottom: 10px; }
+    .pl-placeholder { margin-top: 40px; border: 2px dashed var(--pl-gold-line); padding: 26px 28px; max-width: 900px; }
+    .pl-placeholder h3 { font-family: var(--font-heading); text-transform: uppercase; color: #fff; font-size: 1.3rem; margin: 0 0 8px; letter-spacing: 0.04em; }
+    .pl-placeholder p { color: var(--pl-muted); margin: 0; font-size: 1rem; line-height: 1.6; }
+
+    /* ---------- 08 MY ONE STROKE: PADDLE CARD ---------- */
+    .pl-pcard { margin-top: 40px; background: #F4F2EC; color: #141413; padding: clamp(22px, 4vw, 40px); max-width: 900px; }
+    .pl-pcard__title { font-family: var(--font-heading); text-transform: uppercase; font-size: 1.5rem; letter-spacing: 0.04em; margin: 0 0 4px; color: #141413; }
+    .pl-pcard__sub { font-size: 0.95rem; color: #55534b; margin: 0 0 22px; }
+    .pl-field { display: grid; grid-template-columns: 170px 1fr; gap: 18px; align-items: start; padding: 16px 0; border-top: 1px solid #D8D4C8; }
+    .pl-field__label { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.86rem; color: #6B5E00; padding-top: 10px; }
+    .pl-field__hint { display: block; font-family: var(--font-body); text-transform: none; letter-spacing: 0; color: #66645c; font-size: 0.82rem; margin-top: 4px; line-height: 1.4; }
+    .pl-input, .pl-textarea { width: 100%; font-family: var(--font-body); font-size: 1.05rem; color: #141413; background: #fff; border: 1px solid #C9C4B6; padding: 12px 14px; }
+    .pl-textarea { min-height: 72px; resize: vertical; }
+    .pl-input:focus, .pl-textarea:focus { outline: 3px solid rgba(255,229,0,0.8); border-color: #8a7a00; }
+    .pl-when { display: grid; grid-template-columns: auto 1fr; gap: 10px 12px; align-items: center; }
+    .pl-when span { font-size: 1rem; color: #141413; }
+    .pl-ticks { display: flex; gap: 14px; flex-wrap: wrap; padding-top: 6px; }
+    .pl-ticks label { display: inline-flex; align-items: center; gap: 8px; font-size: 1rem; cursor: pointer; }
+    .pl-ticks input { width: 24px; height: 24px; accent-color: #141413; }
+    .pl-range { width: 100%; accent-color: #141413; }
+    .pl-range-out { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; margin-left: 8px; }
+    .pl-range-msg { margin-top: 8px; font-size: 0.98rem; line-height: 1.5; padding: 10px 12px; background: #fff7c2; border-left: 4px solid #141413; }
+    .pl-pcard__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; align-items: center; }
+    .pl-btn { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-heading); font-size: 0.92rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 14px 24px; cursor: pointer; border: 2px solid #141413; background: #141413; color: #fff; transition: all .25s ease; }
+    .pl-btn:hover { background: #333; }
+    .pl-btn--ghost { background: transparent; color: #141413; }
+    .pl-btn--ghost:hover { background: rgba(0,0,0,0.06); }
+    .pl-pcard__status { font-size: 0.88rem; color: #55534b; }
+    .pl-device-note { margin-top: 14px; font-size: 0.86rem; color: #55534b; }
+
+    .pl-steps { counter-reset: s; list-style: none; padding: 0; margin: 26px 0 0; max-width: 780px; }
+    .pl-steps li { counter-increment: s; position: relative; padding: 14px 0 14px 50px; border-top: 1px solid var(--pl-line); color: var(--pl-ink); font-size: 1.05rem; line-height: 1.55; }
+    .pl-steps li::before { content: counter(s); position: absolute; left: 0; top: 12px; width: 32px; height: 32px; border-radius: 50%; background: var(--pl-gold); color: #111; font-family: var(--font-heading); font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .pl-steps strong { color: #fff; font-weight: 600; }
+
+    /* ---------- 09 UNTIL SESSION TWO ---------- */
+    .pl-arc { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; }
+    .pl-arc__item { background: var(--pl-card); border: 1px solid var(--pl-line); padding: 24px 20px; }
+    .pl-arc__item--done { border-top: 4px solid var(--pl-gold); }
+    .pl-arc__item--next { border-top: 4px solid #777; }
+    .pl-arc__n { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--pl-gold); line-height: 1; }
+    .pl-arc__pill { display: inline-block; font-family: var(--font-heading); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; background: var(--pl-gold); color: #111; padding: 3px 8px; margin-left: 8px; vertical-align: middle; }
+    .pl-arc__pill--next { background: #444; color: #fff; }
+    .pl-arc__t { font-family: var(--font-heading); text-transform: uppercase; color: #fff; font-size: 1.05rem; margin: 10px 0 6px; letter-spacing: 0.03em; line-height: 1.25; }
+    .pl-arc__d { font-size: 0.92rem; color: var(--pl-muted); line-height: 1.5; }
+
+    .pl-support { max-width: 780px; margin: 56px auto 0; text-align: center; border-top: 1px solid var(--pl-line); padding-top: 30px; }
+    .pl-support p { font-size: 0.98rem; color: var(--pl-muted); line-height: 1.65; }
+    .pl-support a { color: var(--pl-gold); }
+    .pl-support strong { color: #fff; }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 960px) {
+      .pl-loop { grid-template-columns: 1fr; }
+      .pl-loop__arrow { justify-content: center; transform: rotate(90deg); }
+      .pl-grid4, .pl-arc { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 860px) {
+      .pl-wk, .pl-grid2, .pl-grid3, .pl-rounds, .pl-split, .pl-sort { grid-template-columns: 1fr; }
+      .pl-wk__img, .pl-split__img { min-height: 220px; }
+    }
+    @media (max-width: 560px) {
+      .pl-grid4, .pl-arc { grid-template-columns: 1fr; }
+      .pl-field { grid-template-columns: 1fr; gap: 6px; }
+      .pl-field__label { padding-top: 0; }
+      .pl-sticky { width: calc(50% - 8px); font-size: 1.35rem; }
+      .pl-coin { width: 240px; height: 240px; padding: 30px; }
+      .pl-coins { justify-content: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .pl-root { transition: none; }
+    }
+
+    /* ---------- PRINT: just the Paddle Card ---------- */
+    @media print {
+      body * { visibility: hidden !important; }
+      #plCard, #plCard * { visibility: visible !important; }
+      #plCard { position: absolute; left: 0; top: 0; width: 100%; max-width: none; background: #fff; }
+      .pl-pcard__actions, .pl-device-note { display: none !important; }
+      .support-line-btn { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="images/logo-horizontal.png?v=2" alt="The Performance Act" class="logo-img logo-img--header">
+      </a>
+      <nav class="header__nav" id="mainNav">
+        <a href="index.html" class="nav-link">HOME</a>
+        <a href="approach.html" class="nav-link">APPROACH</a>
+        <a href="programs.html" class="nav-link">SUPPORT</a>
+        <a href="team.html" class="nav-link">TEAM</a>
+        <a href="blog.html" class="nav-link">RESOURCES</a>
+        <a href="contact.html" class="nav-link">CONTACT</a>
+        <a href="grow-login.html" class="nav-link nav-link--grow">GROW</a>
+      </nav>
+      <div class="header__actions">
+        <a href="contact.html" class="btn btn--outline btn--sm">GET IN TOUCH</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <nav class="mobile-nav__links">
+      <a href="index.html" class="mobile-nav__link">HOME</a>
+      <a href="approach.html" class="mobile-nav__link">APPROACH</a>
+      <a href="programs.html" class="mobile-nav__link">SUPPORT</a>
+      <a href="team.html" class="mobile-nav__link">TEAM</a>
+      <a href="blog.html" class="mobile-nav__link">RESOURCES</a>
+      <a href="contact.html" class="mobile-nav__link">CONTACT</a>
+      <a href="grow-login.html" class="mobile-nav__link" style="color:var(--yellow)">GROW</a>
+    </nav>
+  </div>
+
+  <!-- ===================================================================
+       PADDLE FOR LIFE — GROW AREA (session one: What We Paddle For)
+  =================================================================== -->
+  <div id="plApp" class="pl-root">
+
+    <!-- Club banner -->
+    <div class="pl-banner">
+      <div class="container">
+        <div class="pl-banner__inner">
+          <div class="pl-banner__left">
+            <img src="images/logo-horizontal.png?v=2" alt="The Performance Act" class="pl-banner__logo">
+            <div>
+              <div class="pl-banner__name">Paddle for Life</div>
+              <div class="pl-banner__platform">GROW &nbsp;·&nbsp; Powered by The Performance Act</div>
+            </div>
+          </div>
+          <button class="pl-logout" id="plLogout" type="button">Log Out</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section nav -->
+    <nav class="pl-nav" aria-label="Session one sections">
+      <div class="container">
+        <div class="pl-nav__inner">
+          <span class="pl-nav__label">Session one</span>
+          <a href="#whakatauki" class="pl-nav__link">Whakataukī</a>
+          <a href="#doughnut" class="pl-nav__link">Jam doughnut</a>
+          <a href="#sticky" class="pl-nav__link">Sticky paddle</a>
+          <a href="#triflex" class="pl-nav__link">Open, aware, engaged</a>
+          <a href="#oar" class="pl-nav__link">The sweep’s oar</a>
+          <a href="#coin" class="pl-nav__link">Your coin</a>
+          <a href="#crew" class="pl-nav__link">Crew stroke</a>
+          <a href="#stroke" class="pl-nav__link">My one stroke</a>
+          <a href="#next" class="pl-nav__link">Session two</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+
+      <!-- HERO -->
+      <section class="pl-hero" aria-labelledby="plTitle">
+        <div class="pl-hero__bg" aria-hidden="true"></div>
+        <div class="container">
+          <p class="pl-hero__eyebrow">GROW · Paddle for Life · Session one of four</p>
+          <h1 class="pl-hero__title" id="plTitle">What we<br><em>paddle for</em></h1>
+          <p class="pl-hero__lead"><strong>This is the home for what we did in session one.</strong> Come back to it any time before session two, to remind yourself of the tools or to share them with the paddler beside you. If you missed the night, you’re in the right place: everything is explained as you go.</p>
+          <p class="pl-hero__meta">About ten minutes to read. The Paddle Card near the end stays on your own device.</p>
+        </div>
+      </section>
+
+      <!-- 01 WHAKATAUKI -->
+      <section class="pl-sec" id="whakatauki">
+        <div class="container">
+          <span class="pl-sec__num">01 · Where we started</span>
+          <h2 class="pl-sec__title">Hold fast to<br><em>what holds you</em></h2>
+          <div class="pl-wk">
+            <div class="pl-wk__quote">
+              <span class="pl-wk__label">Whakataukī</span>
+              <p class="pl-wk__reo" lang="mi">Kia mau ki te aka matua</p>
+              <p class="pl-wk__en">Hold fast to the parent vine.</p>
+              <p class="pl-wk__story">When Tāwhaki climbed to the heavens, his grandmother Whaitiri told him to take the aka matua, the main vine, anchored and strong. Not the aka tāepa, the loose vine that hangs free and swings with every gust. He held to what was anchored, and it held him.</p>
+            </div>
+            <div class="pl-wk__img" role="img" aria-label="Kōwhai flowers against a dark background"></div>
+          </div>
+          <p class="pl-sec__lead" style="margin-top:34px;">We opened the night with this because it says what the whole session is about. <strong>What you paddle for is the aka matua.</strong> The tiredness, the nerves and the results are the wind. They will blow. The question is what you hold onto while they do.</p>
+          <p class="pl-note">Versions of the story of Tāwhaki differ between iwi and between tellers. This is one telling, offered lightly.</p>
+        </div>
+      </section>
+
+      <!-- 02 JAM DOUGHNUT -->
+      <section class="pl-sec pl-sec--darker" id="doughnut">
+        <div class="container">
+          <span class="pl-sec__num">02 · Open</span>
+          <h2 class="pl-sec__title">The harder we push,<br><em>the more it sticks</em></h2>
+          <p class="pl-sec__lead">We started with an experiment. For 30 seconds, don’t think about a hot jam doughnut: sugar on the outside, warm jam in the middle, the smell of it from the van. Every time it pops into your head, tap your knee. Most of us tapped a lot.</p>
+          <p class="pl-sec__lead">Then we tried it with something real. A cold Thursday night, you’re tired and you can’t be bothered, and you tell yourself “I’m not tired, I’m not tired.” Or nerves on the start line, and you try to talk yourself out of them. <strong>The harder we try to push a thought or a feeling away, the more it tends to stick,</strong> and the more energy the pushing takes. If we wait for tiredness or doubt to leave before we paddle, we can be waiting a long time.</p>
+
+          <div class="pl-loop" role="list" aria-label="The push away loop">
+            <div class="pl-loop__step" role="listitem"><div class="pl-loop__n">1</div><div class="pl-loop__t">It shows up</div><div class="pl-loop__d">Tired, flat, nervous, doubting.</div></div>
+            <div class="pl-loop__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
+            <div class="pl-loop__step" role="listitem"><div class="pl-loop__n">2</div><div class="pl-loop__t">We push it away</div><div class="pl-loop__d">“I’m not tired. I’m not tired.”</div></div>
+            <div class="pl-loop__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
+            <div class="pl-loop__step" role="listitem"><div class="pl-loop__n">3</div><div class="pl-loop__t">It sticks harder</div><div class="pl-loop__d">Back sooner, and louder.</div></div>
+            <div class="pl-loop__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
+            <div class="pl-loop__step" role="listitem"><div class="pl-loop__n">4</div><div class="pl-loop__t">The stroke pays</div><div class="pl-loop__d">The energy goes on the pushing, not the paddling.</div></div>
+          </div>
+          <div class="pl-loop__again"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>And round again</div>
+
+          <div class="pl-land"><p>It’s a death grip on the paddle. The harder you squeeze, <em>the quicker your arms go.</em></p></div>
+
+          <details class="pl-reveal">
+            <summary>Try the experiment again at home</summary>
+            <div class="pl-reveal__body">
+              <ol>
+                <li>Set a timer for 30 seconds.</li>
+                <li>Try as hard as you can not to think about a hot jam doughnut. Tap your knee every time it shows up.</li>
+                <li>Notice what happens the harder you try.</li>
+                <li>Now think of something that usually sticks before training, like “I can’t be bothered tonight”. What happens when you argue with it? What happens when you just notice it and get your gear on anyway?</li>
+              </ol>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 03 STICKY PADDLE -->
+      <section class="pl-sec" id="sticky">
+        <div class="container">
+          <span class="pl-sec__num">03 · Open</span>
+          <h2 class="pl-sec__title">The sticky<br><em>paddle</em></h2>
+          <p class="pl-sec__lead">We wrote down the thoughts and feelings that stick to us around paddling, one per sticky note. The ones that turn up on the drive to the river, in the third piece, on the start line. Here are the kinds of things that come up in any boat:</p>
+
+          <div class="pl-stickies" aria-label="Examples of sticky thoughts">
+            <div class="pl-sticky">I’m too tired tonight</div>
+            <div class="pl-sticky">Can’t be bothered</div>
+            <div class="pl-sticky">Everyone else is fitter than me</div>
+            <div class="pl-sticky">My shoulder won’t hold up</div>
+            <div class="pl-sticky">I’ll let the crew down</div>
+            <div class="pl-sticky">I’m too old for this</div>
+            <div class="pl-sticky">I don’t belong in this boat</div>
+          </div>
+
+          <div class="pl-rounds">
+            <div class="pl-card pl-card--grey">
+              <span class="pl-tag pl-tag--muted">Round one</span>
+              <h3>Get rid of them</h3>
+              <p>The notes went on the paddle and we tried to brush, peel and flick them all off. How did the paddling go? It didn’t. Every bit of energy went on the notes, and the stroke stopped.</p>
+            </div>
+            <div class="pl-card pl-card--gold">
+              <span class="pl-tag">Round two</span>
+              <h3>Make room</h3>
+              <p>Different plan. We stuck every note on the paddle, blade and shaft, and took a slow stroke with it. The notes were all still there. <strong>And the paddle still moved water.</strong></p>
+            </div>
+          </div>
+
+          <p class="pl-sec__lead" style="margin-top:34px;">The notes didn’t go anywhere. What changed was where our energy went. Look how many of them are the same: every paddler in the boat carries some version of these.</p>
+          <div class="pl-land"><p>The job isn’t to clear the boat. <em>It’s to make room and keep paddling.</em></p></div>
+        </div>
+      </section>
+
+      <!-- 04 TRIFLEX -->
+      <section class="pl-sec pl-sec--darker" id="triflex">
+        <div class="container">
+          <span class="pl-sec__num">04 · All three</span>
+          <h2 class="pl-sec__title">Open, aware,<br><em>engaged</em></h2>
+          <p class="pl-sec__lead">There’s a name for what we did with the paddle: <strong>psychological flexibility</strong>. In one sentence, it means having whatever shows up, noticing where you are, and still doing what matters. It has three parts, and good paddlers already do all three.</p>
+
+          <div class="pl-triflex">
+            <svg viewBox="0 0 900 340" role="img" aria-label="Three overlapping circles labelled open, aware and engaged">
+              <circle cx="250" cy="170" r="150" fill="#ffffff" fill-opacity="0.04" stroke="#EDEDEA" stroke-width="3"/>
+              <circle cx="450" cy="170" r="150" fill="#ffffff" fill-opacity="0.04" stroke="#A9A9A2" stroke-width="3"/>
+              <circle cx="650" cy="170" r="150" fill="#FFE500" fill-opacity="0.14" stroke="#FFE500" stroke-width="4"/>
+              <text x="190" y="180" text-anchor="middle" fill="#ffffff" font-size="34">OPEN</text>
+              <text x="450" y="180" text-anchor="middle" fill="#ffffff" font-size="30">AWARE</text>
+              <text x="712" y="180" text-anchor="middle" fill="#FFE500" font-size="32">ENGAGED</text>
+            </svg>
+          </div>
+
+          <div class="pl-grid3">
+            <div class="pl-card"><span class="pl-tag">Open</span><h3>Room for what shows up</h3><p>The sticky paddle. Nerves, tiredness and doubt come in the boat. We stop fighting them.</p></div>
+            <div class="pl-card"><span class="pl-tag pl-tag--muted">Aware</span><h3>Here, in this stroke</h3><p>The drum, the timing, the back in front of you. Not the last race or the finish line. Aware gets its own session later in the season.</p></div>
+            <div class="pl-card pl-card--gold"><span class="pl-tag">Engaged</span><h3>Moving toward what matters</h3><p>What you paddle for, and the small actions that show it. That was the rest of the night.</p></div>
+          </div>
+
+          <details class="pl-reveal">
+            <summary>A question to take on the water</summary>
+            <div class="pl-reveal__body">
+              <p>Which of the three comes easiest to you in the boat? And which one goes first when the pressure is on? There is no right answer. Noticing which one slips is the start of being able to bring it back.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 05 SWEEP'S OAR -->
+      <section class="pl-sec" id="oar">
+        <div class="container">
+          <span class="pl-sec__num">05 · Engaged</span>
+          <h2 class="pl-sec__title">The finish line and<br><em>the sweep’s oar</em></h2>
+          <p class="pl-sec__lead">Think about your sweep. She doesn’t move the boat; you do. But she decides where all that effort goes, and she keeps steering whether you’re leading or two lengths down.</p>
+
+          <div class="pl-grid2">
+            <div class="pl-card pl-card--grey">
+              <svg class="pl-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true"><line x1="14" y1="6" x2="14" y2="60" stroke="#A9A9A2" stroke-width="4" stroke-linecap="round"/><rect x="16" y="8" width="40" height="28" stroke="#A9A9A2" stroke-width="2.5"/><rect x="16" y="8" width="10" height="7" fill="#A9A9A2"/><rect x="36" y="8" width="10" height="7" fill="#A9A9A2"/><rect x="26" y="15" width="10" height="7" fill="#A9A9A2"/><rect x="46" y="15" width="10" height="7" fill="#A9A9A2"/><rect x="16" y="22" width="10" height="7" fill="#A9A9A2"/><rect x="36" y="22" width="10" height="7" fill="#A9A9A2"/><rect x="26" y="29" width="10" height="7" fill="#A9A9A2"/><rect x="46" y="29" width="10" height="7" fill="#A9A9A2"/></svg>
+              <span class="pl-tag pl-tag--muted">A goal</span>
+              <h3>is the finish line</h3>
+              <p>You can want it, and you should. But a bad start, a cancelled regatta or a body that says “not this season” can take it off you.</p>
+            </div>
+            <div class="pl-card pl-card--gold">
+              <svg class="pl-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true"><line x1="10" y1="8" x2="42" y2="44" stroke="#FFE500" stroke-width="4.5" stroke-linecap="round"/><path d="M38 40 L60 56 Q56 62 50 61 L34 47 Z" fill="#FFE500"/><line x1="6" y1="5" x2="16" y2="13" stroke="#FFE500" stroke-width="6" stroke-linecap="round"/></svg>
+              <span class="pl-tag">A value</span>
+              <h3>is the sweep’s oar</h3>
+              <p>How you want to paddle. You can steer by it on your best day and your worst, even on a day you’re sitting on the bank.</p>
+            </div>
+          </div>
+
+          <p class="pl-sec__lead" style="margin-top:34px;"><strong>Finish line or oar?</strong> Tap each one to check.</p>
+          <div class="pl-sort">
+            <details><summary>“Win the 200 at South Islands”<span>Tap to check</span></summary><div class="pl-sort__answer"><strong>Finish line.</strong> A great goal, and one the draw, the weather or a body can take away.</div></details>
+            <details><summary>“Pull my weight on every stroke”<span>Tap to check</span></summary><div class="pl-sort__answer"><strong>Oar.</strong> You can do this whatever the result, and whatever seat you’re in.</div></details>
+          </div>
+          <p class="pl-note">Goals still matter. The question is what you steer by when the result goes against you. That’s the aka matua again: the finish line swings with the draw, the weather and the body. The oar is anchored.</p>
+        </div>
+      </section>
+
+      <!-- 06 YOUR COIN -->
+      <section class="pl-sec pl-sec--darker" id="coin">
+        <div class="container">
+          <span class="pl-sec__num">06 · Engaged and open</span>
+          <h2 class="pl-sec__title">Your coin,<br><em>both sides</em></h2>
+
+          <div class="pl-split">
+            <div>
+              <p class="pl-sec__lead"><strong>The sweet spot.</strong> We found what we paddle for by looking at an ordinary moment, not a medal. You can do this again at home:</p>
+              <ol class="pl-steps">
+                <li>Close your eyes, or rest them on the floor.</li>
+                <li>Find one small, ordinary moment in or around the boat that felt right. Maybe the boat suddenly ran and everyone was in time. Maybe a laugh on the way down to the water.</li>
+                <li>Where are you sitting? What can you see and hear?</li>
+                <li>Now imagine you’re standing on the bank, watching yourself in that moment. <strong>What words describe the woman in that seat?</strong></li>
+              </ol>
+            </div>
+            <div class="pl-split__img" role="img" aria-label="An unfurling fern frond, in black and white"></div>
+          </div>
+
+          <div class="pl-coins">
+            <div class="pl-coin"><div class="pl-coin__side">Front · What I paddle for</div><div class="pl-coin__text">In the heat of the battle, I want to be a paddler who is…</div></div>
+            <div class="pl-coin__turn" aria-hidden="true"><svg viewBox="0 0 54 30" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22 Q27 -4 48 20"/><path d="M40 20 L48 20 L48 12"/></svg>Turn it over</div>
+            <div class="pl-coin"><div class="pl-coin__side">Back · The flip side</div><div class="pl-coin__text">What shows up because I care…</div></div>
+          </div>
+
+          <p class="pl-sec__lead" style="margin-top:36px;"><strong>Two checks for the front of your coin.</strong> If the answer to both is yes, you’ve found an oar, not a finish line.</p>
+          <ul class="pl-checks">
+            <li>Would this still matter if no one was on the bank and no times were recorded?</li>
+            <li>Could you paddle this way on a day you finish last?</li>
+          </ul>
+
+          <p class="pl-sec__lead" style="margin-top:36px;"><strong>The flip side.</strong> What we care about is usually exactly where we hurt. “I’ll let the crew down” only sticks because you care about the crew. “I’m not fit enough” sticks because you care about pulling your weight. The back of the coin holds the sticky things that come with what’s on the front.</p>
+          <div class="pl-land"><p>You can’t keep one side of a coin <em>and throw the other away.</em></p></div>
+          <p class="pl-sec__lead" style="margin-top:22px;">If you want the side that says “I paddle for my crew”, the side that says “I’m scared of letting them down” comes in the boat too. That isn’t a fault. It’s what caring costs, and it’s proof that you do.</p>
+
+          <p class="pl-and">I care about ______ <em>and</em> I notice ______</p>
+          <p class="pl-sec__lead" style="margin-top:14px;">Not <s>but</s>. “But” makes one side cancel the other. “And” lets both be true, and leaves you free to paddle.</p>
+
+          <div class="pl-private">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+            <p><strong>The back of your coin is yours alone.</strong> No one will ever ask you to read it out or share it. Keep the coin somewhere you’ll see it.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 07 CREW STROKE -->
+      <section class="pl-sec" id="crew">
+        <div class="container">
+          <span class="pl-sec__num">07 · Engaged</span>
+          <h2 class="pl-sec__title">The crew<br><em>stroke</em></h2>
+          <p class="pl-sec__lead">Values only show up in what we do. Each crew designed one small behaviour the whole boat could do at training that shows a value it shares. Then we built it to stick, using four laws adapted from James Clear’s <em>Atomic Habits</em>.</p>
+
+          <div class="pl-grid4">
+            <div class="pl-card pl-card--gold"><div class="pl-law__n">01</div><h3>Make it obvious</h3><p>“When ___ happens, we ___.” A clear cue, and a keyword the crew chooses.</p></div>
+            <div class="pl-card pl-card--gold"><div class="pl-law__n">02</div><h3>Make it attractive</h3><p>Tie it to something the crew already enjoys, like the cuppa or the walk down with the boat.</p></div>
+            <div class="pl-card pl-card--gold"><div class="pl-law__n">03</div><h3>Make it easy</h3><p>Under two minutes, and doable on a cold, tired night.</p></div>
+            <div class="pl-card pl-card--gold"><div class="pl-law__n">04</div><h3>Make it satisfying</h3><p>Name It at the trailer: two paddlers name one thing they saw someone do that fits the word.</p></div>
+          </div>
+
+          <p class="pl-sec__lead" style="margin-top:40px;"><strong>The statue test.</strong> If a statue could do it, it isn’t a behaviour. A statue can “not complain”. A statue can’t say “together” at the trailer.</p>
+          <div class="pl-grid2">
+            <div class="pl-card pl-card--grey"><span class="pl-tag pl-tag--muted">Fails the test</span><p>“We’ll always be positive.”</p><p>“Not complain.”</p></div>
+            <div class="pl-card pl-card--gold"><span class="pl-tag">Passes the test</span><p>“When we lift the boat off the trailer, someone says ‘together’ and no one carries alone.”</p></div>
+          </div>
+          <div class="pl-land"><p>What would the paddler behind you <em>actually see?</em></p></div>
+
+          <div class="pl-placeholder" id="crewStrokes">
+            <h3>Our crew strokes</h3>
+            <p>Each crew’s stroke and keyword will be added here once the club has shared the crew sheets.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 08 MY ONE STROKE -->
+      <section class="pl-sec pl-sec--darker" id="stroke">
+        <div class="container">
+          <span class="pl-sec__num">08 · Engaged</span>
+          <h2 class="pl-sec__title">My one<br><em>stroke</em></h2>
+          <p class="pl-sec__lead">The same four laws, just for you. This is the left side of your Paddle Card. If you’ve lost yours, or want a copy on your phone, fill it in here.</p>
+
+          <form class="pl-pcard" id="plCard" autocomplete="off" onsubmit="return false;">
+            <h3 class="pl-pcard__title">My Paddle Card</h3>
+            <p class="pl-pcard__sub">Paddle for Life · Session one · My one stroke</p>
+
+            <div class="pl-field">
+              <label class="pl-field__label" for="plValue">My value<span class="pl-field__hint">The word from the front of my coin</span></label>
+              <input class="pl-input" id="plValue" name="value" type="text" maxlength="80">
+            </div>
+            <div class="pl-field">
+              <div class="pl-field__label">Obvious<span class="pl-field__hint">A cue I can’t miss</span></div>
+              <div class="pl-when">
+                <label for="plWhen"><span>When I</span></label><input class="pl-input" id="plWhen" name="when" type="text" maxlength="120">
+                <label for="plWill"><span>I will</span></label><input class="pl-input" id="plWill" name="will" type="text" maxlength="160">
+              </div>
+            </div>
+            <div class="pl-field">
+              <label class="pl-field__label" for="plKeyword">Keyword<span class="pl-field__hint">On tape round my paddle, bottle or glove</span></label>
+              <input class="pl-input" id="plKeyword" name="keyword" type="text" maxlength="40">
+            </div>
+            <div class="pl-field">
+              <label class="pl-field__label" for="plPair">Attractive<span class="pl-field__hint">Who or what I pair it with</span></label>
+              <input class="pl-input" id="plPair" name="pair" type="text" maxlength="120">
+            </div>
+            <div class="pl-field">
+              <label class="pl-field__label" for="plEasy">Easy<span class="pl-field__hint">The two minute version for a bad body day</span></label>
+              <textarea class="pl-textarea" id="plEasy" name="easy" maxlength="240"></textarea>
+            </div>
+            <div class="pl-field">
+              <div class="pl-field__label">Satisfying<span class="pl-field__hint">A tick after each training</span></div>
+              <div class="pl-ticks">
+                <label><input type="checkbox" name="t1"> Training 1</label>
+                <label><input type="checkbox" name="t2"> Training 2</label>
+                <label><input type="checkbox" name="t3"> Training 3</label>
+              </div>
+            </div>
+            <div class="pl-field">
+              <label class="pl-field__label" for="plConf">How confident?<span class="pl-field__hint">Zero to ten, that I’ll do it</span></label>
+              <div>
+                <input class="pl-range" id="plConf" name="conf" type="range" min="0" max="10" step="1" value="7" aria-describedby="plConfMsg"><span class="pl-range-out" id="plConfOut">7</span>
+                <p class="pl-range-msg" id="plConfMsg" aria-live="polite">Seven or more. Take it to training.</p>
+              </div>
+            </div>
+
+            <div class="pl-pcard__actions">
+              <button class="pl-btn" type="button" id="plPrint">Print my card</button>
+              <button class="pl-btn pl-btn--ghost" type="button" id="plClear">Clear</button>
+              <span class="pl-pcard__status" id="plStatus" aria-live="polite"></span>
+            </div>
+            <p class="pl-device-note">Your card saves as you type, on this device only. Nothing is sent to The Performance Act or anyone else.</p>
+          </form>
+
+          <p class="pl-sec__lead" style="margin-top:44px;"><strong>The statue test applies here too.</strong> “Not complain” fails. “Say one encouraging thing to the paddler in front of me at the end of each piece” passes. And if your confidence is under seven, shrink the stroke until it’s a seven: smaller, easier, or more often.</p>
+
+          <h3 class="pl-sec__title" style="font-size:clamp(1.5rem,3.4vw,2.2rem);margin-top:54px;">The seat <em>behind you</em></h3>
+          <ol class="pl-steps">
+            <li><strong>Pair with the paddler who sits behind you.</strong> She’s your buddy for the next three weeks. If seats move around, pair with whoever usually sits behind you.</li>
+            <li><strong>Read each other your stroke.</strong></li>
+            <li><strong>After each of the next three trainings,</strong> take 30 seconds at the trailer: “How’s your stroke going?”</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 09 UNTIL SESSION TWO -->
+      <section class="pl-sec" id="next">
+        <div class="container">
+          <span class="pl-sec__num">09 · Until session two</span>
+          <h2 class="pl-sec__title">Keep your coin<br><em>where you’ll see it</em></h2>
+          <p class="pl-sec__lead">And take your stroke. Noticing late still counts. Session two, in about three weeks, starts with one question: <strong>how did your stroke go?</strong> Then the crew strokes become agreements the whole boat owns, with management in the room.</p>
+
+          <div class="pl-arc">
+            <div class="pl-arc__item pl-arc__item--done"><div class="pl-arc__n">1<span class="pl-arc__pill">Done</span></div><div class="pl-arc__t">What we paddle for</div><div class="pl-arc__d">What makes turning up worth it, and what competes with it.</div></div>
+            <div class="pl-arc__item pl-arc__item--next"><div class="pl-arc__n">2<span class="pl-arc__pill pl-arc__pill--next">Next</span></div><div class="pl-arc__t">From values to the way we row</div><div class="pl-arc__d">The things that are expected but never said, turned into agreements the boat owns.</div></div>
+            <div class="pl-arc__item"><div class="pl-arc__n">3</div><div class="pl-arc__t">Unhooked and steady</div><div class="pl-arc__d">The thoughts and feelings that show up in a boat, and what to do besides fight them.</div></div>
+            <div class="pl-arc__item"><div class="pl-arc__n">4</div><div class="pl-arc__t">Racing with it, and what we remember</div><div class="pl-arc__d">Taking the tools onto the water, and the rituals that carry a season.</div></div>
+          </div>
+
+          <div class="pl-land"><p>Kia mau ki te aka matua. <em>Hold fast to what you paddle for,</em> and let the wind do what it does.</p></div>
+
+          <div class="pl-support">
+            <p>If anything from the session stayed with you, talk to your club’s welfare contact, or get in touch with The Performance Act at <a href="mailto:info@performance-act.com">info@performance-act.com</a>.</p>
+            <p>If you need to talk to someone now, free call or text <strong>1737</strong> any time to talk with a trained counsellor. In an emergency, phone <strong>111</strong>.</p>
+            <p>This page is a reminder of a group session. It isn’t clinical advice and doesn’t replace support from a health professional.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div><!-- /plApp -->
+
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="siteFooter">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-grid__brand">
+          <img src="images/logo-vertical.png?v=2" alt="The Performance Act" class="logo-img logo-img--footer">
+          <p class="footer__tagline">Helping People Grow</p>
+          <p class="footer__email"><a href="mailto:info@performance-act.com">info@performance-act.com</a></p>
+        </div>
+        <div class="footer-grid__links">
+          <h4 class="footer__heading">QUICK LINKS</h4>
+          <a href="index.html#about" class="footer__link">About Us</a>
+          <a href="approach.html" class="footer__link">Our Approach</a>
+          <a href="programs.html" class="footer__link">Programs</a>
+          <a href="team.html" class="footer__link">Our Wh&#257;nau</a>
+        </div>
+        <div class="footer-grid__links">
+          <h4 class="footer__heading">GROW</h4>
+          <a href="grow.html" class="footer__link">About GROW</a>
+          <a href="grow-login.html" class="footer__link">Platform Login</a>
+        </div>
+        <div class="footer-grid__social">
+          <h4 class="footer__heading">FOLLOW US</h4>
+          <div class="social-links">
+            <a href="https://www.instagram.com/performance__act/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://www.facebook.com/ThePerformanceAct" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/performance-act-ltd/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 The Performance Act. All rights reserved. Aotearoa, New Zealand.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== NZ SUPPORT LINES ========== -->
+  <button class="support-line-btn" id="supportLineBtn" aria-label="NZ support lines">
+    <span class="support-line-btn__dot" aria-hidden="true"></span>
+    Immediate Support
+  </button>
+  <div class="support-line-modal" id="supportLineModal" role="dialog" aria-modal="true" aria-labelledby="supportLineTitle" aria-hidden="true">
+    <div class="support-line-modal__backdrop"></div>
+    <div class="support-line-modal__panel">
+      <button class="support-line-modal__close" id="supportLineClose" aria-label="Close support lines">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <p class="support-line-modal__eyebrow">Aotearoa, New Zealand</p>
+      <h2 class="support-line-modal__title" id="supportLineTitle">Need immediate support?</h2>
+      <p class="support-line-modal__note">The Performance Act is a sport psychology practice, not a crisis or emergency service. If you or someone you care about needs immediate support, please reach out to one of these trusted services below. They are free, confidential, and available 24&#8202;/&#8202;7.</p>
+      <ul class="support-line-modal__list" role="list">
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">1737 &mdash; Need to Talk?</p><p class="sln-resource__desc">Free call or text, any time. Trained counsellors, 24&#47;7.</p></div><a href="tel:1737" class="sln-resource__number">Call or text 1737</a></li>
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">Youthline</p><p class="sln-resource__desc">For young people. Free call or text 234, 24&#47;7.</p></div><a href="tel:0800376633" class="sln-resource__number">0800 376 633</a></li>
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">Lifeline NZ</p><p class="sln-resource__desc">Crisis support and suicide prevention, 24&#47;7.</p></div><a href="tel:0800543354" class="sln-resource__number">0800 543 354</a></li>
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">Healthline</p><p class="sln-resource__desc">Free health advice from trained staff, 24&#47;7.</p></div><a href="tel:0800611116" class="sln-resource__number">0800 611 116</a></li>
+      </ul>
+      <p class="support-line-modal__footer">More resources at <a href="https://www.mentalhealth.org.nz/get-help/in-crisis" target="_blank" rel="noopener">Mental Health Foundation NZ</a> and <a href="https://www.depression.org.nz" target="_blank" rel="noopener">depression.org.nz</a>.</p>
+    </div>
+  </div>
+
+
+  <script src="script.js?v=3"></script>
+  <script>
+  /* ==================================================================
+     PADDLE FOR LIFE — GROW AREA (session one)
+     100% client-side. The Paddle Card is saved only in this browser.
+  ================================================================== */
+  (function () {
+    'use strict';
+
+    /* ---- AUTH GUARD ----
+       Login lives on grow-login.html. It sets this localStorage key and
+       redirects here. Without a Paddle for Life session, go back. */
+    var LS_CLUB = 'grow_nomads_club';
+    var app = document.getElementById('plApp');
+    var club = null;
+    try { club = localStorage.getItem(LS_CLUB); } catch (e) { club = null; }
+    if (club !== 'paddle') {
+      window.location.replace('grow-login.html');
+      return;
+    }
+    app.classList.add('is-ready');
+
+    document.getElementById('plLogout').addEventListener('click', function () {
+      try {
+        localStorage.removeItem('grow_nomads_club');
+        localStorage.removeItem('grow_nomads_role');
+      } catch (e) { /* storage unavailable */ }
+      window.location.href = 'grow-login.html';
+    });
+
+    /* ---- SECTION NAV: highlight the section in view ---- */
+    var links = Array.prototype.slice.call(document.querySelectorAll('.pl-nav__link'));
+    var byId = {};
+    links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting && byId[en.target.id]) {
+            links.forEach(function (l) { l.classList.remove('is-active'); });
+            byId[en.target.id].classList.add('is-active');
+          }
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      Object.keys(byId).forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) io.observe(el);
+      });
+    }
+
+    /* ---- PADDLE CARD ---- */
+    var KEY = 'grow_paddle_card_v1';
+    var form = document.getElementById('plCard');
+    var conf = document.getElementById('plConf');
+    var confOut = document.getElementById('plConfOut');
+    var confMsg = document.getElementById('plConfMsg');
+    var status = document.getElementById('plStatus');
+    var statusTimer = null;
+
+    function confText(v) {
+      return v < 7
+        ? 'Under seven? Shrink it until it’s a seven: make it smaller, easier or more often.'
+        : 'Seven or more. Take it to training.';
+    }
+    function showConf() {
+      var v = parseInt(conf.value, 10);
+      confOut.textContent = String(v);
+      confMsg.textContent = confText(v);
+    }
+    function collect() {
+      var data = {};
+      Array.prototype.forEach.call(form.elements, function (el) {
+        if (!el.name) return;
+        data[el.name] = el.type === 'checkbox' ? el.checked : el.value;
+      });
+      return data;
+    }
+    function apply(data) {
+      Array.prototype.forEach.call(form.elements, function (el) {
+        if (!el.name || !(el.name in data)) return;
+        if (el.type === 'checkbox') el.checked = !!data[el.name];
+        else el.value = data[el.name];
+      });
+    }
+    function flash(msg) {
+      status.textContent = msg;
+      clearTimeout(statusTimer);
+      statusTimer = setTimeout(function () { status.textContent = ''; }, 2200);
+    }
+    function save() {
+      try {
+        localStorage.setItem(KEY, JSON.stringify(collect()));
+        flash('Saved on this device');
+      } catch (e) {
+        flash('Couldn’t save on this device, but you can still print it');
+      }
+    }
+
+    try {
+      var saved = localStorage.getItem(KEY);
+      if (saved) apply(JSON.parse(saved));
+    } catch (e) { /* nothing saved, or storage unavailable */ }
+    showConf();
+
+    form.addEventListener('input', function (e) {
+      if (e.target === conf) showConf();
+      save();
+    });
+    form.addEventListener('change', save);
+
+    document.getElementById('plPrint').addEventListener('click', function () { window.print(); });
+    document.getElementById('plClear').addEventListener('click', function () {
+      form.reset();
+      conf.value = 7;
+      showConf();
+      try { localStorage.removeItem(KEY); } catch (e) { /* ignore */ }
+      flash('Cleared');
+    });
+  })();
+  </script>
+</body>
+</html>
