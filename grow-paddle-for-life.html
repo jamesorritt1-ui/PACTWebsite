@@ -174,6 +174,21 @@
     .pl-sort__answer { padding: 0 20px 18px; color: var(--pl-ink); font-size: 0.98rem; line-height: 1.55; font-weight: 300; }
     .pl-sort__answer strong { color: var(--pl-gold); font-weight: 600; text-transform: uppercase; font-family: var(--font-heading); letter-spacing: 0.06em; }
 
+    /* ---------- WATCH: VIDEOS ---------- */
+    .pl-videos { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 40px; }
+    .pl-video { background: var(--pl-card); border: 1px solid var(--pl-line); border-top: 4px solid var(--pl-gold); display: flex; flex-direction: column; }
+    .pl-video__frame { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; }
+    .pl-video__frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .pl-video__body { padding: 24px 26px 26px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .pl-video__meta { font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pl-gold); }
+    .pl-video__title { font-family: var(--font-heading); text-transform: uppercase; color: #fff; font-size: 1.35rem; letter-spacing: 0.03em; line-height: 1.2; margin: 0; }
+    .pl-video__by { font-size: 0.92rem; color: var(--pl-muted); margin: 0; }
+    .pl-video__desc { color: var(--pl-ink); font-size: 1rem; line-height: 1.6; font-weight: 300; margin: 0; }
+    .pl-video__ask { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--pl-line); color: var(--pl-ink); font-size: 0.98rem; line-height: 1.55; }
+    .pl-video__ask strong { color: var(--pl-gold); font-family: var(--font-heading); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.74rem; display: block; margin-bottom: 4px; }
+    .pl-video-note { margin-top: 18px; font-size: 0.88rem; color: var(--pl-muted); }
+    @media (max-width: 860px) { .pl-videos { grid-template-columns: 1fr; } }
+
     /* ---------- 06 THE COIN ---------- */
     .pl-coins { display: flex; align-items: center; justify-content: flex-start; gap: 22px; flex-wrap: wrap; margin-top: 40px; }
     .pl-coin { width: 270px; height: 270px; border-radius: 50%; border: 6px solid var(--pl-gold); box-shadow: inset 0 0 0 10px #111110, inset 0 0 0 12px rgba(255,229,0,0.5); background: #111110; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 38px; }
@@ -349,6 +364,7 @@
           <a href="#sticky" class="pl-nav__link">Sticky paddle</a>
           <a href="#triflex" class="pl-nav__link">Open, aware, engaged</a>
           <a href="#oar" class="pl-nav__link">The sweep’s oar</a>
+          <a href="#watch" class="pl-nav__link">Watch</a>
           <a href="#coin" class="pl-nav__link">Your coin</a>
           <a href="#crew" class="pl-nav__link">Crew stroke</a>
           <a href="#stroke" class="pl-nav__link">My one stroke</a>
@@ -370,7 +386,7 @@
             <a class="pl-dl" href="resources/paddle-for-life/What_We_Paddle_For_Session_One_Pack.pdf" download="What_We_Paddle_For_Session_One_Pack.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>Download your session one pack</a>
             <span class="pl-dl-meta">PDF · 6 pages · prints on A4</span>
           </div>
-          <p class="pl-hero__meta">About ten minutes to read. The Paddle Card near the end stays on your own device.</p>
+          <p class="pl-hero__meta">About ten minutes to read, plus two short videos. The Paddle Card near the end stays on your own device.</p>
         </div>
       </section>
 
@@ -527,10 +543,49 @@
         </div>
       </section>
 
-      <!-- 06 YOUR COIN -->
-      <section class="pl-sec pl-sec--darker" id="coin">
+      <!-- 06 WATCH -->
+      <section class="pl-sec pl-sec--darker" id="watch">
         <div class="container">
-          <span class="pl-sec__num">06 · Engaged and open</span>
+          <span class="pl-sec__num">06 · Watch</span>
+          <h2 class="pl-sec__title">Values in<br><em>a few minutes</em></h2>
+          <p class="pl-sec__lead">Two short videos to watch at home, on your own or with the paddler beside you. Both are by Dr Russ Harris, author of <em>The Happiness Trap</em> and one of the best known trainers in acceptance and commitment therapy. They come at the idea we worked on in the shed from a different angle: <strong>goals are things you can win or lose, values are how you want to go about it.</strong></p>
+          <p class="pl-sec__lead">Under four minutes each. Start with video one.</p>
+
+          <div class="pl-videos">
+            <article class="pl-video">
+              <div class="pl-video__frame">
+                <iframe src="https://www.youtube-nocookie.com/embed/T-lRbuy4XtA?rel=0&amp;modestbranding=1" title="Values vs Goals, by Dr Russ Harris" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+              <div class="pl-video__body">
+                <span class="pl-video__meta">Video one · about 4 minutes</span>
+                <h3 class="pl-video__title">Values vs goals</h3>
+                <p class="pl-video__by">Dr Russ Harris</p>
+                <p class="pl-video__desc">A short animation on the difference between chasing goals and living by your values. It’s the finish line and the sweep’s oar from the night, in under four minutes.</p>
+                <p class="pl-video__ask"><strong>As you watch</strong>Which of your goals in the boat could a bad start, a cancelled regatta or a sore shoulder take off you? What would you still steer by?</p>
+              </div>
+            </article>
+
+            <article class="pl-video">
+              <div class="pl-video__frame">
+                <iframe src="https://www.youtube-nocookie.com/embed/eiPxLpYlw4I?rel=0&amp;modestbranding=1" title="The Values-Focused vs The Goals-Focused Life, by Dr Russ Harris" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+              <div class="pl-video__body">
+                <span class="pl-video__meta">Video two · about 4 minutes</span>
+                <h3 class="pl-video__title">The values focused life</h3>
+                <p class="pl-video__by">Dr Russ Harris</p>
+                <p class="pl-video__desc">Asks whether getting the next thing, the new job, the house, the result, really makes us happier, and what changes when values lead instead. Then come back to the front of your coin and see whether the words still fit.</p>
+                <p class="pl-video__ask"><strong>As you watch</strong>Picture yourself from the bank on a good day in the boat. What words describe the woman in that seat? Are they on your coin?</p>
+              </div>
+            </article>
+          </div>
+          <p class="pl-video-note">The videos play from YouTube. If one won’t load, try opening the page on another device or browser.</p>
+        </div>
+      </section>
+
+      <!-- 07 YOUR COIN -->
+      <section class="pl-sec" id="coin">
+        <div class="container">
+          <span class="pl-sec__num">07 · Engaged and open</span>
           <h2 class="pl-sec__title">Your coin,<br><em>both sides</em></h2>
 
           <div class="pl-split">
@@ -572,10 +627,10 @@
         </div>
       </section>
 
-      <!-- 07 CREW STROKE -->
-      <section class="pl-sec" id="crew">
+      <!-- 08 CREW STROKE -->
+      <section class="pl-sec pl-sec--darker" id="crew">
         <div class="container">
-          <span class="pl-sec__num">07 · Engaged</span>
+          <span class="pl-sec__num">08 · Engaged</span>
           <h2 class="pl-sec__title">The crew<br><em>stroke</em></h2>
           <p class="pl-sec__lead">Values only show up in what we do. Each crew designed one small behaviour the whole boat could do at training that shows a value it shares. Then we built it to stick, using four laws adapted from James Clear’s <em>Atomic Habits</em>.</p>
 
@@ -600,10 +655,10 @@
         </div>
       </section>
 
-      <!-- 08 MY ONE STROKE -->
-      <section class="pl-sec pl-sec--darker" id="stroke">
+      <!-- 09 MY ONE STROKE -->
+      <section class="pl-sec" id="stroke">
         <div class="container">
-          <span class="pl-sec__num">08 · Engaged</span>
+          <span class="pl-sec__num">09 · Engaged</span>
           <h2 class="pl-sec__title">My one<br><em>stroke</em></h2>
           <p class="pl-sec__lead">The same four laws, just for you. This is the left side of your Paddle Card. If you’ve lost yours, or want a copy on your phone, fill it in here.</p>
 
@@ -675,10 +730,10 @@
         </div>
       </section>
 
-      <!-- 09 UNTIL SESSION TWO -->
-      <section class="pl-sec" id="next">
+      <!-- 10 UNTIL SESSION TWO -->
+      <section class="pl-sec pl-sec--darker" id="next">
         <div class="container">
-          <span class="pl-sec__num">09 · Until session two</span>
+          <span class="pl-sec__num">10 · Until session two</span>
           <h2 class="pl-sec__title">Keep your coin<br><em>where you’ll see it</em></h2>
           <p class="pl-sec__lead">And take your stroke. Noticing late still counts. Session two, in about three weeks, starts with one question: <strong>how did your stroke go?</strong> Then the crew strokes become agreements the whole boat owns, with management in the room.</p>
 
