@@ -68,7 +68,7 @@
     .pl-sec[id] { scroll-margin-top: calc(var(--header-height) + 70px); }
 
     /* ---------- HERO ---------- */
-    .pl-hero { position: relative; overflow: hidden; background: #050505; padding: clamp(72px, 12vw, 140px) 0 clamp(60px, 9vw, 110px); }
+    .pl-hero { position: relative; overflow: hidden; background: #050505; padding: clamp(48px, 8vw, 96px) 0 clamp(60px, 9vw, 110px); }
     .pl-hero__bg { position: absolute; inset: 0; background: url('images/river-landscape.png') center 55% / cover no-repeat; opacity: 0.32; filter: grayscale(1) contrast(1.05); }
     .pl-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 85%, rgba(255,229,0,0.10) 0%, transparent 55%), linear-gradient(180deg, rgba(5,5,5,0.45) 0%, rgba(5,5,5,0.88) 100%); }
     .pl-hero .container { position: relative; z-index: 2; }
@@ -78,6 +78,16 @@
     .pl-hero__lead { font-size: clamp(1.1rem, 2.4vw, 1.4rem); color: var(--pl-ink); max-width: 660px; line-height: 1.55; font-weight: 300; }
     .pl-hero__lead strong { color: #fff; font-weight: 600; }
     .pl-hero__meta { margin-top: 26px; font-size: 0.95rem; color: var(--pl-muted); }
+
+    /* ---------- DOWNLOAD BUTTON ---------- */
+    .pl-dl { display: inline-flex; align-items: center; gap: 12px; background: var(--pl-gold); color: #111; font-family: var(--font-heading); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.98rem; padding: 16px 26px; text-decoration: none; border: 2px solid var(--pl-gold); transition: all .25s ease; }
+    .pl-dl:hover, .pl-dl:focus-visible { background: transparent; color: var(--pl-gold); }
+    .pl-dl svg { width: 20px; height: 20px; flex-shrink: 0; }
+    .pl-dl-wrap { margin-top: 26px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; }
+    .pl-dl-meta { font-size: 0.92rem; color: var(--pl-muted); }
+    .pl-dl-box { margin-top: 44px; background: var(--pl-card); border: 1px solid var(--pl-line); border-left: 4px solid var(--pl-gold); padding: 26px 28px; max-width: 900px; }
+    .pl-dl-box h3 { font-family: var(--font-heading); text-transform: uppercase; color: #fff; font-size: 1.3rem; margin: 0 0 8px; letter-spacing: 0.04em; }
+    .pl-dl-box p { color: var(--pl-ink); margin: 0 0 18px; font-size: 1rem; line-height: 1.6; font-weight: 300; }
 
     /* ---------- GENERIC SECTION ---------- */
     .pl-sec { padding: clamp(60px, 9vw, 104px) 0; background: #0a0a09; }
@@ -356,6 +366,10 @@
           <p class="pl-hero__eyebrow">GROW · Paddle for Life · Session one of four</p>
           <h1 class="pl-hero__title" id="plTitle">What we<br><em>paddle for</em></h1>
           <p class="pl-hero__lead"><strong>This is the home for what we did in session one.</strong> Come back to it any time before session two, to remind yourself of the tools or to share them with the paddler beside you. If you missed the night, you’re in the right place: everything is explained as you go.</p>
+          <div class="pl-dl-wrap">
+            <a class="pl-dl" href="resources/paddle-for-life/What_We_Paddle_For_Session_One_Pack.pdf" download="What_We_Paddle_For_Session_One_Pack.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>Download your session one pack</a>
+            <span class="pl-dl-meta">PDF · 6 pages · prints on A4</span>
+          </div>
           <p class="pl-hero__meta">About ten minutes to read. The Paddle Card near the end stays on your own device.</p>
         </div>
       </section>
@@ -643,6 +657,12 @@
             </div>
             <p class="pl-device-note">Your card saves as you type, on this device only. Nothing is sent to The Performance Act or anyone else.</p>
           </form>
+
+          <div class="pl-dl-box">
+            <h3>Prefer paper?</h3>
+            <p>Your session one pack has everything ready to print: the open, aware, engaged poster, the value words, three coins to cut out and fold, the Paddle Card, and the crew stroke sheet.</p>
+            <a class="pl-dl" href="resources/paddle-for-life/What_We_Paddle_For_Session_One_Pack.pdf" download="What_We_Paddle_For_Session_One_Pack.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>Download the pack (PDF)</a>
+          </div>
 
           <p class="pl-sec__lead" style="margin-top:44px;"><strong>The statue test applies here too.</strong> “Not complain” fails. “Say one encouraging thing to the paddler in front of me at the end of each piece” passes. And if your confidence is under seven, shrink the stroke until it’s a seven: smaller, easier, or more often.</p>
 
