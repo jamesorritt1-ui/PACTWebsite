@@ -263,6 +263,51 @@
     .pl-support a { color: var(--pl-gold); }
     .pl-support strong { color: #fff; }
 
+    /* ---------- EXTRA: SUBTITLES ACTIVITY ---------- */
+    .pl-video--wide { flex-direction: row; margin-top: 40px; max-width: 1080px; }
+    .pl-video--wide .pl-video__frame { flex: 1.35; aspect-ratio: auto; min-height: 300px; }
+    .pl-video--wide .pl-video__body { flex: 1; }
+    .pl-prep { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; max-width: 1080px; }
+    .pl-prep__item { border: 1px solid var(--pl-line); padding: 18px 20px; display: flex; gap: 14px; align-items: flex-start; }
+    .pl-prep__item svg { width: 24px; height: 24px; color: var(--pl-gold); flex-shrink: 0; margin-top: 2px; }
+    .pl-prep__item p { margin: 0; color: var(--pl-ink); font-size: 0.98rem; line-height: 1.5; }
+    .pl-prep__item strong { color: #fff; display: block; font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.9rem; margin-bottom: 2px; font-weight: 600; }
+    .pl-acts { margin-top: 56px; max-width: 1080px; }
+    .pl-act { display: grid; grid-template-columns: 64px 1fr; gap: 24px; padding: 40px 0; border-top: 1px solid var(--pl-line); }
+    .pl-act__n { font-family: var(--font-heading); font-size: 2.6rem; font-weight: 700; color: var(--pl-gold); line-height: 1; }
+    .pl-act__t { font-family: var(--font-heading); text-transform: uppercase; color: #fff; font-size: clamp(1.3rem, 2.8vw, 1.7rem); letter-spacing: 0.03em; line-height: 1.15; margin: 0 0 12px; }
+    .pl-act__body > p { color: var(--pl-ink); font-size: 1.05rem; line-height: 1.65; font-weight: 300; margin: 0 0 14px; max-width: 760px; }
+    .pl-act__body > p strong { color: #fff; font-weight: 600; }
+    .pl-act__ask { font-family: var(--font-heading); font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pl-gold); margin: 22px 0 6px; display: block; }
+    .pl-qs { list-style: none; padding: 0; margin: 0; max-width: 760px; }
+    .pl-qs li { position: relative; padding: 10px 0 10px 26px; color: var(--pl-ink); font-size: 1.02rem; line-height: 1.55; border-top: 1px solid var(--pl-line); }
+    .pl-qs li:first-child { border-top: 0; }
+    .pl-qs li::before { content: ''; position: absolute; left: 2px; top: 19px; width: 9px; height: 9px; background: var(--pl-gold); }
+    .pl-qs li strong { color: #fff; font-weight: 600; }
+    .pl-tip { margin-top: 20px; background: var(--pl-gold-soft); border-left: 4px solid var(--pl-gold); padding: 14px 18px; max-width: 760px; color: var(--pl-ink); font-size: 1rem; line-height: 1.55; }
+    .pl-tip strong { color: #fff; }
+    .pl-subs { display: flex; flex-wrap: wrap; gap: 12px; margin: 18px 0 8px; }
+    .pl-sub { font-family: 'Caveat', cursive; font-size: 1.55rem; line-height: 1.2; color: #111; background: var(--pl-gold); padding: 10px 16px 8px; transform: rotate(-1deg); }
+    .pl-sub:nth-child(even) { transform: rotate(1.2deg); background: #f4f2ec; }
+    .pl-subs-note { font-size: 0.88rem; color: var(--pl-muted); margin: 6px 0 0; }
+    .pl-act .pl-grid3 { margin-top: 22px; }
+    .pl-scenes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 22px; }
+    .pl-scene { background: var(--pl-card); border: 1px solid var(--pl-line); padding: 20px 22px; }
+    .pl-scene dt { font-family: var(--font-heading); font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--pl-muted); margin-top: 12px; }
+    .pl-scene dt:first-child { margin-top: 0; }
+    .pl-scene dd { margin: 3px 0 0; color: var(--pl-ink); font-size: 0.98rem; line-height: 1.5; }
+    .pl-scene dd.pl-scene__sub { font-family: 'Caveat', cursive; font-size: 1.45rem; color: var(--pl-gold); line-height: 1.15; }
+    .pl-subcard .pl-field { grid-template-columns: 230px 1fr; }
+    @media (max-width: 860px) {
+      .pl-video--wide { flex-direction: column; }
+      .pl-video--wide .pl-video__frame { aspect-ratio: 16 / 9; min-height: 0; flex: none; }
+      .pl-prep, .pl-scenes { grid-template-columns: 1fr; }
+      .pl-act { grid-template-columns: 1fr; gap: 8px; padding: 32px 0; }
+    }
+    @media (max-width: 560px) {
+      .pl-subcard .pl-field { grid-template-columns: 1fr; }
+    }
+
     /* ---------- RESPONSIVE ---------- */
     @media (max-width: 960px) {
       .pl-loop { grid-template-columns: 1fr; }
@@ -285,13 +330,25 @@
       .pl-root { transition: none; }
     }
 
-    /* ---------- PRINT: just the Paddle Card ---------- */
+    /* ---------- PRINT: one card on one clean sheet ---------- */
+    #plPrintArea { display: none; }
     @media print {
-      body * { visibility: hidden !important; }
-      #plCard, #plCard * { visibility: visible !important; }
-      #plCard { position: absolute; left: 0; top: 0; width: 100%; max-width: none; background: #fff; }
-      .pl-pcard__actions, .pl-device-note { display: none !important; }
-      .support-line-btn { display: none !important; }
+      @page { size: A4; margin: 16mm; }
+      html, body { background: #fff !important; }
+      body > *:not(#plPrintArea) { display: none !important; }
+      #plPrintArea { display: block !important; color: #111; font-family: 'Inter', Arial, sans-serif; }
+      #plPrintArea .pp-brand { font-size: 9pt; letter-spacing: 0.16em; text-transform: uppercase; color: #555; border-bottom: 3pt solid #FFE500; padding-bottom: 6pt; margin-bottom: 14pt; }
+      #plPrintArea .pp-title { font-family: 'Oswald', 'Arial Narrow', Arial, sans-serif; text-transform: uppercase; font-size: 24pt; margin: 0 0 2pt; letter-spacing: 0.02em; color: #111; }
+      #plPrintArea .pp-sub { font-size: 10.5pt; color: #444; margin: 0 0 14pt; }
+      #plPrintArea .pp-row { display: grid; grid-template-columns: 52mm 1fr; gap: 6mm; padding: 9pt 0; border-top: 0.6pt solid #bbb; break-inside: avoid; }
+      #plPrintArea .pp-lab { font-family: 'Oswald', 'Arial Narrow', Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.08em; font-size: 9.5pt; color: #111; }
+      #plPrintArea .pp-hint { display: block; font-family: 'Inter', Arial, sans-serif; text-transform: none; letter-spacing: 0; font-size: 8.5pt; color: #666; margin-top: 2pt; }
+      #plPrintArea .pp-line { font-size: 11.5pt; line-height: 1.45; min-height: 18pt; border-bottom: 0.6pt solid #999; padding-bottom: 2pt; margin-bottom: 6pt; white-space: pre-wrap; }
+      #plPrintArea .pp-line--tall { min-height: 36pt; }
+      #plPrintArea .pp-pre { color: #666; margin-right: 4pt; }
+      #plPrintArea .pp-ticks { display: flex; gap: 14pt; flex-wrap: wrap; font-size: 11pt; }
+      #plPrintArea .pp-box { display: inline-flex; align-items: center; justify-content: center; width: 10pt; height: 10pt; border: 1pt solid #111; margin-right: 5pt; vertical-align: -1pt; }
+      #plPrintArea .pp-foot { margin-top: 16pt; font-size: 8.5pt; color: #666; }
     }
   </style>
 </head>
@@ -369,6 +426,7 @@
           <a href="#crew" class="pl-nav__link">Crew stroke</a>
           <a href="#stroke" class="pl-nav__link">My one stroke</a>
           <a href="#next" class="pl-nav__link">Session two</a>
+          <a href="#subtitles" class="pl-nav__link">Subtitles</a>
         </div>
       </div>
     </nav>
@@ -386,7 +444,7 @@
             <a class="pl-dl" href="resources/paddle-for-life/What_We_Paddle_For_Session_One_Pack.pdf" download="What_We_Paddle_For_Session_One_Pack.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>Download your session one pack</a>
             <span class="pl-dl-meta">PDF · 6 pages · prints on A4</span>
           </div>
-          <p class="pl-hero__meta">About ten minutes to read, plus two short videos. The Paddle Card near the end stays on your own device.</p>
+          <p class="pl-hero__meta">About ten minutes to read, plus short videos and an extra reflection at the end. Anything you write here stays on your own device.</p>
         </div>
       </section>
 
@@ -746,6 +804,176 @@
 
           <div class="pl-land"><p>Kia mau ki te aka matua. <em>Hold fast to what you paddle for,</em> and let the wind do what it does.</p></div>
 
+        </div>
+      </section>
+
+      <!-- 11 EXTRA: SUBTITLES -->
+      <section class="pl-sec" id="subtitles">
+        <div class="container">
+          <span class="pl-sec__num">Extra · A reflection for home</span>
+          <h2 class="pl-sec__title">If your actions<br><em>had subtitles</em></h2>
+          <p class="pl-sec__lead">An extra activity for a quiet half hour before session two. It takes the work on your coin one step further.</p>
+          <p class="pl-sec__lead">Nobody in the boat can hear what you value. They can only see what you do. <strong>Values aren’t something we announce, they show up in our actions,</strong> and other people read them whether we mean them to or not. Most of us can name a moment when someone’s actions said something to us without a word: a coach who stayed back after training, a crew mate who waited for us on the walk down, someone who sat with us after a hard race.</p>
+          <p class="pl-sec__lead">Think of the subtitles on a film. They tell you what’s being said when you can’t hear it. This activity starts with other people’s actions and the messages we take from them, then turns to yours.</p>
+
+          <div class="pl-land"><p>If we could put subtitles under your actions in the boat, <em>what would you want them to say?</em></p></div>
+
+          <article class="pl-video pl-video--wide">
+            <div class="pl-video__frame">
+              <iframe src="https://www.youtube-nocookie.com/embed/ZRCdORJiUgU?rel=0&amp;modestbranding=1" title="Google, Year in Search 2019" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="pl-video__body">
+              <span class="pl-video__meta">Start here · about two minutes</span>
+              <h3 class="pl-video__title">Year in Search 2019</h3>
+              <p class="pl-video__by">Google</p>
+              <p class="pl-video__desc">Every December Google makes a short film from what the world searched for. In 2019, searches for heroes soared. Some are famous, like Eliud Kipchoge running the first marathon under two hours. Plenty are everyday people: teenagers catching a boy who fell from a ski lift, a young son hugging his dad after a loss at the French Open. It ends with a dedication: “To everyone using their powers to empower others.”</p>
+              <p class="pl-video__ask"><strong>As you watch</strong>Don’t try to take it all in. Just notice which moment catches you.</p>
+            </div>
+          </article>
+
+          <div class="pl-prep">
+            <div class="pl-prep__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><p><strong>Twenty to thirty minutes</strong>After the video. On your own, or with the paddler who sits behind you.</p></div>
+            <div class="pl-prep__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/></svg><p><strong>A pen and paper</strong>Or a few sticky notes. Your coin too, if it’s handy. You can also fill in step five on this page.</p></div>
+            <div class="pl-prep__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><p><strong>Yours to keep</strong>Pick two or three questions from each step, not all of them. Share only what you want to.</p></div>
+          </div>
+
+          <div class="pl-acts">
+
+            <div class="pl-act">
+              <div class="pl-act__n">1</div>
+              <div class="pl-act__body">
+                <h3 class="pl-act__t">The moment that stayed with you</h3>
+                <p>When the video finishes, sit for a few seconds before you do anything. Then choose one person or moment that stayed with you. <strong>Think about what they actually did, and what you took from it.</strong></p>
+                <p>The film moves between helping others, attempting something very hard, working together and sheer commitment. There’s no right moment to pick. What it means is up to you.</p>
+                <span class="pl-act__ask">Ask yourself</span>
+                <ul class="pl-qs">
+                  <li><strong>Which moment stayed with you, and what was it about that moment?</strong></li>
+                  <li>What did the person actually do that mattered to you?</li>
+                  <li>What did their action say, without anyone explaining it?</li>
+                  <li>What do you admire about the way they went about it?</li>
+                  <li><strong>What might your reaction tell you about what you care about?</strong></li>
+                </ul>
+                <div class="pl-tip">If your first answer is “they were amazing”, go one step further: <strong>what was it about what they did that made them amazing to me?</strong></div>
+              </div>
+            </div>
+
+            <div class="pl-act">
+              <div class="pl-act__n">2</div>
+              <div class="pl-act__body">
+                <h3 class="pl-act__t">Give that moment a subtitle</h3>
+                <p>Imagine you could write one line underneath that moment, capturing what it meant to you. <strong>It doesn’t have to be what the person intended.</strong> It’s the message you took from watching.</p>
+                <div class="pl-subs">
+                  <span class="pl-sub">You’re worth stopping for.</span>
+                  <span class="pl-sub">We can do hard things together.</span>
+                  <span class="pl-sub">I’m willing to try, even if I fall short.</span>
+                  <span class="pl-sub">What I do can help someone else.</span>
+                </div>
+                <p class="pl-subs-note">These are examples of what someone might take from the film, not lines from it.</p>
+                <p style="margin-top:18px;">Now bring it closer to home. You’ve almost certainly had a message like this from someone in your own paddling, or your own life.</p>
+                <span class="pl-act__ask">Ask yourself</span>
+                <ul class="pl-qs">
+                  <li><strong>Why does that particular message matter to you?</strong></li>
+                  <li>Where have you had a similar message from someone in the boat, the club or the rest of your life?</li>
+                  <li>What did they actually do that let you feel it?</li>
+                  <li>What difference did it make to how you went into the next stroke, the next piece or the next day?</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="pl-act">
+              <div class="pl-act__n">3</div>
+              <div class="pl-act__body">
+                <h3 class="pl-act__t">Write three subtitles of your own</h3>
+                <p>Now turn it around. You say something through your actions too: at training, in a race, on the walk down with the boat, and in how you treat yourself on a hard day. <strong>Think about what you’d like those actions to stand for,</strong> and write one subtitle for each.</p>
+                <div class="pl-grid3">
+                  <div class="pl-card pl-card--gold"><span class="pl-tag">Subtitle one</span><h3>How I paddle</h3><p>What do I want my actions to say about how I learn, train and race, and how I meet a hard piece?</p></div>
+                  <div class="pl-card pl-card--gold"><span class="pl-tag">Subtitle two</span><h3>How I treat my crew</h3><p>What do I want to say through how I treat my crew mates, our sweep and coach, and the other crews?</p></div>
+                  <div class="pl-card pl-card--gold"><span class="pl-tag">Subtitle three</span><h3>How I treat myself</h3><p>What do I want my actions to say when I struggle, make a mistake, or my body is having a hard day?</p></div>
+                </div>
+                <span class="pl-act__ask">Ask yourself</span>
+                <ul class="pl-qs">
+                  <li><strong>What would you like the paddlers around you to feel when they’re in the boat with you?</strong></li>
+                  <li>What do you want to stand for when things are going badly?</li>
+                  <li>Which of the three feels most like you?</li>
+                  <li><strong>Would it still matter if nobody noticed or praised it?</strong></li>
+                  <li>Could you live it on a day you finish last?</li>
+                </ul>
+                <p style="margin-top:22px;">Then look underneath. <strong>What value sits under that subtitle?</strong> “You belong here” might be kindness or inclusion. “I’m willing to learn” might be curiosity. Check it against the front of your coin. Is it already there? If not, does it want to be?</p>
+                <div class="pl-tip">Keep this about what you choose to do. How other people read your actions is partly out of your hands, and <strong>one hard moment doesn’t define you.</strong></div>
+              </div>
+            </div>
+
+            <div class="pl-act">
+              <div class="pl-act__n">4</div>
+              <div class="pl-act__body">
+                <h3 class="pl-act__t">Ten seconds the camera would catch</h3>
+                <p>Pick one subtitle and one real moment that could happen in the boat or on the dock. Picture the next ten seconds. <strong>What would a camera actually catch you doing?</strong> Keep it to one small action. If you’re doing this with a crew mate, talk it through, or walk it through on the dock.</p>
+                <p>Some examples, only if you need them:</p>
+                <div class="pl-scenes">
+                  <dl class="pl-scene"><dt>The moment</dt><dd>A crew mate loses the timing and apologises at the end of the piece</dd><dt>The subtitle</dt><dd class="pl-scene__sub">“You still belong in this boat.”</dd><dt>What the camera catches</dt><dd>I catch her eye, say “next one”, and give her one useful cue.</dd></dl>
+                  <dl class="pl-scene"><dt>The moment</dt><dd>I can’t get the new catch the coach is teaching</dd><dt>The subtitle</dt><dd class="pl-scene__sub">“I’m willing to learn.”</dd><dt>What the camera catches</dt><dd>I ask what to change, and try it on the very next piece.</dd></dl>
+                  <dl class="pl-scene"><dt>The moment</dt><dd>Another crew beats us</dd><dt>The subtitle</dt><dd class="pl-scene__sub">“I race with respect.”</dd><dt>What the camera catches</dt><dd>I clap them in at the dock, then turn back to my own boat.</dd></dl>
+                  <dl class="pl-scene"><dt>The moment</dt><dd>My shoulder or my energy isn’t there today</dd><dt>The subtitle</dt><dd class="pl-scene__sub">“My wellbeing matters.”</dd><dt>What the camera catches</dt><dd>I tell the coach what I need and paddle the lighter version, or sit the piece out.</dd></dl>
+                </div>
+                <span class="pl-act__ask">Ask yourself</span>
+                <ul class="pl-qs">
+                  <li>What makes that action an expression of your value?</li>
+                  <li>What thoughts, feelings or urges might make it hard?</li>
+                  <li><strong>If those feelings stayed, what small action could you still choose?</strong></li>
+                  <li>How could you show the same value a different way if the moment changed?</li>
+                </ul>
+                <div class="pl-tip">This is <strong>open, aware, engaged</strong> in ten seconds: make room for what shows up, notice where you are, then do the small thing. Dr Russ Harris describes a version of the same move as ACE: acknowledge, connect, engage.</div>
+              </div>
+            </div>
+
+            <div class="pl-act">
+              <div class="pl-act__n">5</div>
+              <div class="pl-act__body">
+                <h3 class="pl-act__t">Write the next message</h3>
+                <p>Finish by putting it into words. Fill it in on paper, or here. It saves as you type, on this device only.</p>
+
+                <form class="pl-pcard pl-subcard" id="plSub" autocomplete="off" onsubmit="return false;">
+                  <h3 class="pl-pcard__title">My subtitle</h3>
+                  <p class="pl-pcard__sub">Paddle for Life · If your actions had subtitles</p>
+                  <div class="pl-field">
+                    <label class="pl-field__label" for="plsExpress">Through my actions, I want to say…</label>
+                    <textarea class="pl-textarea" id="plsExpress" name="express" maxlength="240"></textarea>
+                  </div>
+                  <div class="pl-field">
+                    <label class="pl-field__label" for="plsWhy">This matters to me because…</label>
+                    <textarea class="pl-textarea" id="plsWhy" name="why" maxlength="240"></textarea>
+                  </div>
+                  <div class="pl-field">
+                    <label class="pl-field__label" for="plsWhen">At my next training or race, when…</label>
+                    <input class="pl-input" id="plsWhen" name="when" type="text" maxlength="160">
+                  </div>
+                  <div class="pl-field">
+                    <label class="pl-field__label" for="plsHow">I will practise this by…</label>
+                    <input class="pl-input" id="plsHow" name="how" type="text" maxlength="160">
+                  </div>
+                  <div class="pl-field">
+                    <label class="pl-field__label" for="plsReturn">If I get pulled away, I can come back by…</label>
+                    <input class="pl-input" id="plsReturn" name="back" type="text" maxlength="160">
+                  </div>
+                  <div class="pl-field">
+                    <label class="pl-field__label" for="plsWeek">One small thing this week<span class="pl-field__hint">That could help someone else feel something I valued in the video</span></label>
+                    <input class="pl-input" id="plsWeek" name="week" type="text" maxlength="160">
+                  </div>
+                  <div class="pl-pcard__actions">
+                    <button class="pl-btn" type="button" id="plsPrint">Print my subtitle</button>
+                    <button class="pl-btn pl-btn--ghost" type="button" id="plsClear">Clear</button>
+                    <span class="pl-pcard__status" id="plsStatus" aria-live="polite"></span>
+                  </div>
+                  <p class="pl-device-note">Saved on this device only. Nothing is sent to The Performance Act or anyone else.</p>
+                </form>
+
+                <div class="pl-land"><p>What is one small thing you could do this week that would help someone else <em>feel something you valued in that video?</em></p></div>
+                <p style="margin-top:24px;">Take it to your check in with the paddler behind you after training: <strong>what did you try, what did you notice, and what would you like your next action to say?</strong></p>
+              </div>
+            </div>
+
+          </div>
+
           <div class="pl-support">
             <p>If anything from the session stayed with you, talk to your club’s welfare contact, or get in touch with The Performance Act at <a href="mailto:info@performance-act.com">info@performance-act.com</a>.</p>
             <p>If you need to talk to someone now, free call or text <strong>1737</strong> any time to talk with a trained counsellor. In an emergency, phone <strong>111</strong>.</p>
@@ -934,7 +1162,41 @@
     });
     form.addEventListener('change', save);
 
-    document.getElementById('plPrint').addEventListener('click', function () { window.print(); });
+    /* ---- PRINT SHEET: a clean copy of whichever card is printed ---- */
+    function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+    var printChosen = false;
+    function buildPrint(f) {
+      var area = document.getElementById('plPrintArea');
+      if (!area) { area = document.createElement('div'); area.id = 'plPrintArea'; document.body.appendChild(area); }
+      var h = '<div class="pp-brand">The Performance Act · Paddle for Life</div>';
+      h += '<h1 class="pp-title">' + esc(f.querySelector('.pl-pcard__title').textContent) + '</h1>';
+      h += '<p class="pp-sub">' + esc(f.querySelector('.pl-pcard__sub').textContent) + '</p>';
+      Array.prototype.forEach.call(f.querySelectorAll('.pl-field'), function (row) {
+        var lab = row.querySelector('.pl-field__label').cloneNode(true);
+        var hintEl = lab.querySelector('.pl-field__hint');
+        var hint = hintEl ? hintEl.textContent : '';
+        if (hintEl) hintEl.remove();
+        var out = '', ticks = '';
+        Array.prototype.forEach.call(row.querySelectorAll('input, textarea'), function (el) {
+          if (el.type === 'checkbox') {
+            ticks += '<span><span class="pp-box">' + (el.checked ? '<svg viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10 3" fill="none" stroke="#111" stroke-width="2"/></svg>' : '') + '</span>' + esc(el.parentNode.textContent.trim()) + '</span>';
+          } else if (el.type === 'range') {
+            out += '<div class="pp-line">' + esc(el.value) + ' out of 10</div>';
+          } else {
+            var own = el.id ? row.querySelector('label[for="' + el.id + '"]') : null;
+            var pre = (own && !own.classList.contains('pl-field__label')) ? '<span class="pp-pre">' + esc(own.textContent.trim()) + '</span>' : '';
+            out += '<div class="pp-line' + (el.tagName === 'TEXTAREA' ? ' pp-line--tall' : '') + '">' + pre + esc(el.value) + '</div>';
+          }
+        });
+        if (ticks) out += '<div class="pp-ticks">' + ticks + '</div>';
+        h += '<div class="pp-row"><div class="pp-lab">' + esc(lab.textContent.trim()) + (hint ? '<span class="pp-hint">' + esc(hint) + '</span>' : '') + '</div><div>' + out + '</div></div>';
+      });
+      h += '<p class="pp-foot">Printed from your Paddle for Life GROW page. What you wrote stays on your own device.</p>';
+      area.innerHTML = h;
+    }
+    window.addEventListener('beforeprint', function () { if (!printChosen) buildPrint(form); });
+    window.addEventListener('afterprint', function () { printChosen = false; });
+    document.getElementById('plPrint').addEventListener('click', function () { buildPrint(form); printChosen = true; window.print(); });
     document.getElementById('plClear').addEventListener('click', function () {
       form.reset();
       conf.value = 7;
@@ -942,6 +1204,44 @@
       try { localStorage.removeItem(KEY); } catch (e) { /* ignore */ }
       flash('Cleared');
     });
+
+    /* ---- SUBTITLE CARD ---- */
+    (function () {
+      var SKEY = 'grow_paddle_subtitle_v1';
+      var sform = document.getElementById('plSub');
+      if (!sform) return;
+      var sstatus = document.getElementById('plsStatus');
+      var stimer = null;
+      function sflash(msg) {
+        sstatus.textContent = msg;
+        clearTimeout(stimer);
+        stimer = setTimeout(function () { sstatus.textContent = ''; }, 2200);
+      }
+      function ssave() {
+        var data = {};
+        Array.prototype.forEach.call(sform.elements, function (el) { if (el.name) data[el.name] = el.value; });
+        try { localStorage.setItem(SKEY, JSON.stringify(data)); sflash('Saved on this device'); }
+        catch (e) { sflash('Couldn’t save on this device, but you can still print it'); }
+      }
+      try {
+        var sv = localStorage.getItem(SKEY);
+        if (sv) {
+          var d = JSON.parse(sv);
+          Array.prototype.forEach.call(sform.elements, function (el) { if (el.name && el.name in d) el.value = d[el.name]; });
+        }
+      } catch (e) { /* nothing saved, or storage unavailable */ }
+      sform.addEventListener('input', ssave);
+      document.getElementById('plsPrint').addEventListener('click', function () {
+        buildPrint(sform);
+        printChosen = true;
+        window.print();
+      });
+      document.getElementById('plsClear').addEventListener('click', function () {
+        sform.reset();
+        try { localStorage.removeItem(SKEY); } catch (e) { /* ignore */ }
+        sflash('Cleared');
+      });
+    })();
   })();
   </script>
 </body>
