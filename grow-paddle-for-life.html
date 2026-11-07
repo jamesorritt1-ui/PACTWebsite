@@ -269,9 +269,27 @@
     /* ---------- 09 WHY + WORKED EXAMPLE ---------- */
     .pl-h3--lg { font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; color: #fff; font-size: clamp(1.5rem, 3.4vw, 2.2rem); line-height: 1.08; margin: 56px 0 18px; }
     .pl-h3--lg em { color: var(--pl-gold); font-style: normal; }
-    .pl-why .pl-card h3 { font-size: 1.15rem; }
-    .pl-why__say { font-family: 'Caveat', cursive; font-size: 1.45rem; color: var(--pl-gold); line-height: 1.2; margin: 0 0 10px !important; }
-    .pl-card--grey .pl-why__say { color: #cfcdc6; }
+    .pl-anchor { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 10px; align-items: stretch; margin-top: 30px; max-width: 1080px; }
+    .pl-anchor .pl-loop__step:first-child { border-top-color: #9a9a92; }
+    .pl-anchor .pl-loop__step:nth-child(3) { border-top-color: #e5cf00; }
+    .pl-anchor .pl-loop__d { color: var(--pl-ink); }
+    .pl-anchor__eg { display: block; margin-top: 10px; font-family: 'Caveat', cursive; font-size: 1.4rem; color: var(--pl-gold); line-height: 1.15; }
+    .pl-chooser .pl-card h3 { font-size: 1.1rem; }
+    .pl-chooser .pl-if { font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--pl-muted); display: block; margin-bottom: 6px; }
+    .pl-laws { display: flex; flex-wrap: wrap; gap: 8px 10px; padding-top: 4px; }
+    .pl-laws label { display: inline-flex; align-items: center; gap: 8px; font-size: 1rem; background: #fff; border: 1px solid #C9C4B6; padding: 8px 12px; cursor: pointer; }
+    .pl-laws input { width: 18px; height: 18px; accent-color: #141413; }
+    .pl-laws label:has(input:checked) { border-color: #141413; background: #fff7c2; }
+    .pl-lawhow { display: grid; grid-template-columns: auto 1fr; gap: 10px 12px; align-items: center; margin-top: 12px; }
+    .pl-lawhow span { font-size: 1rem; color: #141413; }
+    .pl-exlaws { display: flex; flex-wrap: wrap; gap: 8px; font-family: var(--font-body); font-size: 0.95rem; color: #8b887d; margin-bottom: 8px; }
+    .pl-exlaws span { border: 1px solid #D0CBBD; padding: 4px 10px; }
+    .pl-exlaws span.on { color: #141413; border: 2px solid #1f3d8f; background: #fff7c2; font-weight: 600; border-radius: 40% 55% 45% 50%; }
+    @media (max-width: 860px) {
+      .pl-anchor { grid-template-columns: 1fr; }
+      .pl-anchor .pl-loop__arrow { justify-content: center; transform: rotate(90deg); }
+      .pl-lawhow { grid-template-columns: 1fr; }
+    }
     .pl-ex { margin-top: 26px; max-width: 1080px; }
     .pl-ex__coin { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-bottom: 16px; }
     .pl-ex__coinlab { font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pl-muted); }
@@ -816,6 +834,7 @@
             <div class="pl-card pl-card--gold"><div class="pl-law__n">03</div><h3>Make it easy</h3><p>Under two minutes, and doable on a cold, tired night.</p></div>
             <div class="pl-card pl-card--gold"><div class="pl-law__n">04</div><h3>Make it satisfying</h3><p>Name It at the trailer: two paddlers name one thing they saw someone do that fits the word.</p></div>
           </div>
+          <p class="pl-sec__lead" style="margin-top:26px;"><strong>You don’t need all four.</strong> Pick the one law that fits your crew’s stroke best, depending on what’s most likely to get in the way.</p>
 
           <p class="pl-sec__lead" style="margin-top:40px;"><strong>The statue test.</strong> If a statue could do it, it isn’t a behaviour. A statue can “not complain”. A statue can’t say “together” at the trailer.</p>
           <div class="pl-grid2">
@@ -836,24 +855,35 @@
         <div class="container">
           <span class="pl-sec__num">09 · Engaged</span>
           <h2 class="pl-sec__title">My one<br><em>stroke</em></h2>
-          <p class="pl-sec__lead">The same four laws, just for you. This is the left side of the Paddle Card in your pack.</p>
+          <p class="pl-sec__lead">One small action that shows your value, taken at training. This is the left side of the Paddle Card in your pack.</p>
 
-          <h3 class="pl-h3--lg">Same action,<br><em>different why</em></h3>
-          <p class="pl-sec__lead">Plenty of you already do small things like this. You tap the bow before you launch, wait for the last paddler on the walk down, or say something to the paddler in front at the end of a piece. That’s great. <strong>This isn’t about adding more to your training. It’s about knowing why you do what you do.</strong></p>
-          <p class="pl-sec__lead">Take one small action, like tapping the bow before you launch. Three paddlers can do exactly the same thing for three different reasons:</p>
+          <h3 class="pl-h3--lg">You already have the habits.<br><em>Now find the why.</em></h3>
+          <p class="pl-sec__lead">Most of you already have plenty of small habits around training: the way you put your gloves on, tapping the bow before you launch, the walk down with the boat, the same stretch on the dock. You don’t need to invent new ones.</p>
+          <p class="pl-sec__lead">What the values work in session one gave us was <strong>time to stop and explore why.</strong> When you know the why behind a habit, it stops being something you do on autopilot and becomes a choice that points at what you paddle for. The skill isn’t the habit itself. <strong>It’s taking the time to understand why you do what you do.</strong></p>
 
-          <div class="pl-grid3 pl-why">
-            <div class="pl-card pl-card--grey"><span class="pl-tag pl-tag--muted">Habit</span><p class="pl-why__say">“I just always have.”</p><h3>On autopilot</h3><p>Nothing wrong with it, but it doesn’t ask anything of you. It tends to disappear the day the routine changes.</p></div>
-            <div class="pl-card pl-card--grey"><span class="pl-tag pl-tag--muted">Superstition</span><p class="pl-why__say">“If I don’t, we’ll have a bad race.”</p><h3>Driven by fear</h3><p>It’s about what might happen if you skip it. Miss it and the nerves get louder. The action is in charge of you.</p></div>
-            <div class="pl-card pl-card--gold"><span class="pl-tag">Value in action</span><p class="pl-why__say">“It reminds me how I want to paddle.”</p><h3>Chosen, on purpose</h3><p>It points at what you paddle for. Miss it and you can show the same value another way. You’re in charge of the action.</p></div>
+          <h3 class="pl-h3--lg">Habits as<br><em>anchors</em></h3>
+          <p class="pl-sec__lead">A habit happens at the same moment, every time. That makes it a good anchor: a built-in reminder to come back to the present, right here in this stroke, and to what you paddle for. <strong>You don’t have to remember to be present. The habit does the remembering for you.</strong></p>
+          <div class="pl-anchor" role="list" aria-label="How a habit becomes an anchor">
+            <div class="pl-loop__step" role="listitem"><div class="pl-loop__n">1 · The habit</div><div class="pl-loop__t">Something you already do</div><div class="pl-loop__d">No new routine. The moment is already built into your training.<span class="pl-anchor__eg">Tap the bow before we launch.</span></div></div>
+            <div class="pl-loop__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
+            <div class="pl-loop__step" role="listitem"><div class="pl-loop__n">2 · Aware</div><div class="pl-loop__t">Arrive</div><div class="pl-loop__d">Use it to land in this moment: your feet, your breath, the water, the paddler in front.<span class="pl-anchor__eg">One breath out. Feet on the dock.</span></div></div>
+            <div class="pl-loop__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
+            <div class="pl-loop__step" role="listitem"><div class="pl-loop__n">3 · Engaged</div><div class="pl-loop__t">Remember why</div><div class="pl-loop__d">Connect it to your value, then get on with the stroke.<span class="pl-anchor__eg">Steady.</span></div></div>
           </div>
+          <div class="pl-land"><p>The habit is the anchor. <em>The value is the why.</em></p></div>
 
-          <p class="pl-sec__lead" style="margin-top:30px;">From the bank, all three look identical. The difference is the why, and the why is what holds up when it’s cold, you’re tired, or the race doesn’t go your way. A habit can quietly fall away, and a superstition can turn on you the day you forget it. A value gives you a reason to keep going, and a way to adapt when you can’t do it the usual way.</p>
-          <p class="pl-sec__lead">That’s the real skill here. <strong>Not the action itself, but taking the time to sit with why you do what you do,</strong> so the small things you already do become a choice that points at what you paddle for.</p>
-          <div class="pl-land"><p>Same tap. Different why. <em>The skill is knowing your why.</em></p></div>
+          <h3 class="pl-h3--lg">Pick one law,<br><em>not all four</em></h3>
+          <p class="pl-sec__lead">You don’t need to use all four laws. <strong>Pick the one that fits your stroke best,</strong> depending on what’s most likely to get in the way:</p>
+          <div class="pl-grid4 pl-chooser">
+            <div class="pl-card pl-card--gold"><span class="pl-if">If you keep forgetting</span><h3>Make it obvious</h3><p>Tie it to a cue you can’t miss. A habit you already have is perfect.</p></div>
+            <div class="pl-card pl-card--gold"><span class="pl-if">If it feels like a chore</span><h3>Make it attractive</h3><p>Pair it with something or someone you enjoy, like the walk down or the cuppa.</p></div>
+            <div class="pl-card pl-card--gold"><span class="pl-if">If it’s too much on a bad day</span><h3>Make it easy</h3><p>Shrink it to the two minute version you can do on a cold, sore night.</p></div>
+            <div class="pl-card pl-card--gold"><span class="pl-if">If you do it, but it fades</span><h3>Make it satisfying</h3><p>Give it a finish: a tick, a nod, or a word at the trailer.</p></div>
+          </div>
+          <p class="pl-note">Your printed Paddle Card has a space for each law. Just fill in the one you’ve chosen.</p>
 
           <h3 class="pl-h3--lg" id="example">Here’s one<br><em>filled in</em></h3>
-          <p class="pl-sec__lead">This is the Paddle Card from your pack, filled in by an example paddler. She already tapped the bow before every launch, so she kept the tap and gave it a why.</p>
+          <p class="pl-sec__lead">This is an example paddler. She already tapped the bow before every launch. In session one she gave it a why, turned it into her anchor, and picked the one law that fits.</p>
 
           <div class="pl-ex">
             <div class="pl-ex__coin"><span class="pl-ex__coinlab">Front of her coin</span><span class="pl-ex__cointxt">In the heat of the battle, I want to be a paddler who is steady, and there for my crew.</span></div>
@@ -867,27 +897,22 @@
                 <div class="pl-exrow__why">One word from the front of her coin. Short enough to say in a single breath.</div>
               </div>
               <div class="pl-exrow">
-                <div class="pl-field__label">Obvious<span class="pl-field__hint">A cue I can’t miss</span></div>
-                <div class="pl-exrow__ans"><small>When I</small>tap the bow before we launch,<br><small>I will</small>say “steady” in my head and take one long breath out.</div>
-                <div class="pl-exrow__why">Built on something she already does, so the cue is already there. It passes the statue test: a statue can’t take a breath.</div>
+                <div class="pl-field__label">A habit I already have<span class="pl-field__hint">Something I do at training without thinking</span></div>
+                <div class="pl-exrow__ans">Tapping the bow before we launch</div>
+                <div class="pl-exrow__why">She’s done it for years without thinking about it. Nothing new to add.</div>
               </div>
               <div class="pl-exrow">
-                <div class="pl-field__label">Keyword<span class="pl-field__hint">On tape round my paddle, bottle or glove</span></div>
-                <div class="pl-exrow__ans">STEADY, on tape round my paddle shaft</div>
-                <div class="pl-exrow__why">Where she’ll see it at the catch, every stroke.</div>
+                <div class="pl-field__label">My stroke<span class="pl-field__hint">When, and what I’ll do</span></div>
+                <div class="pl-exrow__ans"><small>When I</small>tap the bow before we launch,<br><small>I will</small>take one long breath out, feel my feet on the dock, and say “steady” in my head.</div>
+                <div class="pl-exrow__why">The tap is now her anchor: a moment to arrive in this stroke, then remember why. It passes the statue test: a statue can’t take a breath.</div>
               </div>
               <div class="pl-exrow">
-                <div class="pl-field__label">Attractive<span class="pl-field__hint">Who or what I pair it with</span></div>
-                <div class="pl-exrow__ans">The walk down with the boat, and a nod to the paddler behind me after the tap</div>
-                <div class="pl-exrow__why">Tied to her favourite part of training, and to someone who’ll notice if she forgets.</div>
+                <div class="pl-field__label">The one law I’ll use<span class="pl-field__hint">Pick the one that fits</span></div>
+                <div class="pl-exrow__ans"><div class="pl-exlaws"><span class="on">Obvious</span><span>Attractive</span><span>Easy</span><span>Satisfying</span></div><small>How</small>the bow tap is my cue. I do it every time, so I can’t miss it.</div>
+                <div class="pl-exrow__why">She chose one law, the one that fits. She never forgets the tap, so it doesn’t need to be easier or more fun. It just needs to be the cue.</div>
               </div>
               <div class="pl-exrow">
-                <div class="pl-field__label">Easy<span class="pl-field__hint">The two minute version for a bad body day</span></div>
-                <div class="pl-exrow__ans">Shoulder playing up? Still tap the bow and take the breath, even if I’m sitting this one out on the dock.</div>
-                <div class="pl-exrow__why">The small version still counts. On a bad day the value is still hers to live.</div>
-              </div>
-              <div class="pl-exrow">
-                <div class="pl-field__label">Satisfying<span class="pl-field__hint">A tick after each training</span></div>
+                <div class="pl-field__label">Did I take it?<span class="pl-field__hint">A tick after each training</span></div>
                 <div class="pl-exrow__ans"><div class="pl-exticks"><span><span class="pl-exbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"/></svg></span> Training 1</span><span><span class="pl-exbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6"/></svg></span> Training 2</span><span><span class="pl-exbox"></span> Training 3</span></div></div>
                 <div class="pl-exrow__why">A tick at the trailer. Two done, one to go.</div>
               </div>
@@ -898,14 +923,14 @@
               </div>
             </div>
             <div class="pl-ex__use">
-              <h4>One tap, three tools</h4>
-              <p>Nerves on the start line? <strong>The tap and the breath bring her back to steady.</strong> That’s her coin check and her ten second reset in one. A bad result? She asks: <strong>did I paddle steady?</strong> That’s steering by the oar. And at the trailer, the paddler behind her asks how it’s going.</p>
+              <h4>How the anchor works on the day</h4>
+              <p>Nerves on the start line? <strong>The tap brings her back to her feet, her breath and this stroke,</strong> and then to steady. A bad result? She asks: <strong>did I paddle steady?</strong> One small habit she already had now does three jobs: it brings her into the moment, reminds her what she paddles for, and gives her something to check against afterwards.</p>
             </div>
-            <p class="pl-ex__note">An invented example, not anyone from the club. Your stroke can be completely different: use what you already do, or something new.</p>
+            <p class="pl-ex__note">An invented example, not anyone from the club. Your stroke can be completely different.</p>
           </div>
 
           <h3 class="pl-h3--lg">Now <em>yours</em></h3>
-          <p class="pl-sec__lead">Start with something you already do, or something new. Then ask: <strong>why does this matter to me?</strong> If you’ve lost your card, or want a copy on your phone, fill it in here.</p>
+          <p class="pl-sec__lead">Start with a habit you already have, if one fits. Ask: <strong>why does this matter to me?</strong> Then pick the one law that will help most. If you’ve lost your card, or want a copy on your phone, fill it in here.</p>
 
           <form class="pl-pcard" id="plCard" autocomplete="off" onsubmit="return false;">
             <h3 class="pl-pcard__title">My Paddle Card</h3>
@@ -916,26 +941,30 @@
               <input class="pl-input" id="plValue" name="value" type="text" maxlength="80">
             </div>
             <div class="pl-field">
-              <div class="pl-field__label">Obvious<span class="pl-field__hint">A cue I can’t miss</span></div>
+              <label class="pl-field__label" for="plHabit">A habit I already have<span class="pl-field__hint">Optional. Something I do at training without thinking</span></label>
+              <input class="pl-input" id="plHabit" name="habit" type="text" maxlength="120">
+            </div>
+            <div class="pl-field">
+              <div class="pl-field__label">My stroke<span class="pl-field__hint">When, and what I’ll do. It has to pass the statue test</span></div>
               <div class="pl-when">
                 <label for="plWhen"><span>When I</span></label><input class="pl-input" id="plWhen" name="when" type="text" maxlength="120">
                 <label for="plWill"><span>I will</span></label><input class="pl-input" id="plWill" name="will" type="text" maxlength="160">
               </div>
             </div>
             <div class="pl-field">
-              <label class="pl-field__label" for="plKeyword">Keyword<span class="pl-field__hint">On tape round my paddle, bottle or glove</span></label>
-              <input class="pl-input" id="plKeyword" name="keyword" type="text" maxlength="40">
+              <div class="pl-field__label">The one law I’ll use<span class="pl-field__hint">Pick the one that fits. You don’t need all four</span></div>
+              <div>
+                <div class="pl-laws" role="radiogroup" aria-label="The one law I’ll use">
+                  <label><input type="radio" name="law" value="obvious"> Obvious</label>
+                  <label><input type="radio" name="law" value="attractive"> Attractive</label>
+                  <label><input type="radio" name="law" value="easy"> Easy</label>
+                  <label><input type="radio" name="law" value="satisfying"> Satisfying</label>
+                </div>
+                <div class="pl-lawhow"><label for="plLawHow"><span>How</span></label><input class="pl-input" id="plLawHow" name="lawhow" type="text" maxlength="160"></div>
+              </div>
             </div>
             <div class="pl-field">
-              <label class="pl-field__label" for="plPair">Attractive<span class="pl-field__hint">Who or what I pair it with</span></label>
-              <input class="pl-input" id="plPair" name="pair" type="text" maxlength="120">
-            </div>
-            <div class="pl-field">
-              <label class="pl-field__label" for="plEasy">Easy<span class="pl-field__hint">The two minute version for a bad body day</span></label>
-              <textarea class="pl-textarea" id="plEasy" name="easy" maxlength="240"></textarea>
-            </div>
-            <div class="pl-field">
-              <div class="pl-field__label">Satisfying<span class="pl-field__hint">A tick after each training</span></div>
+              <div class="pl-field__label">Did I take it?<span class="pl-field__hint">A tick after each training</span></div>
               <div class="pl-ticks">
                 <label><input type="checkbox" name="t1"> Training 1</label>
                 <label><input type="checkbox" name="t2"> Training 2</label>
@@ -990,7 +1019,7 @@
               <div class="pl-tool__top"><span class="pl-tool__phase">Before you get in the boat</span><span class="pl-tool__time">10 seconds</span></div>
               <h3 class="pl-tool__name">The coin check</h3>
               <p class="pl-tool__when">In the car park, or while you get changed.</p>
-              <ol class="pl-tool__steps"><li>Look at your coin, or the keyword taped to your paddle.</li><li>Say your word once, in your head.</li><li>Ask: <strong>how do I want to paddle today?</strong> Pick one thing you’ll do that fits it.</li></ol>
+              <ol class="pl-tool__steps"><li>Look at your coin, or picture the word on the front of it.</li><li>Say your word once, in your head.</li><li>Ask: <strong>how do I want to paddle today?</strong> Pick one thing you’ll do that fits it.</li></ol>
               <p class="pl-tool__says">“Today I paddle for my crew. I’ll be first to the boat.”</p>
               <p class="pl-tool__from">From <a href="#coin">your coin</a> and <a href="#whakatauki">the aka matua</a></p>
             </article>
@@ -1022,7 +1051,7 @@
               <div class="pl-tool__top"><span class="pl-tool__phase">At the cue on your Paddle Card</span><span class="pl-tool__time">Under two minutes</span></div>
               <h3 class="pl-tool__name">Take your one stroke</h3>
               <p class="pl-tool__when">The moment your cue happens. Don’t wait to feel like it.</p>
-              <ol class="pl-tool__steps"><li>When the cue happens, do the stroke.</li><li>Bad body day? Do your two minute version. It still counts.</li><li>Tick it after training. Missed it? <strong>Noticing late counts.</strong> Go again next time.</li></ol>
+              <ol class="pl-tool__steps"><li>When your habit or cue comes round, let it be your anchor: arrive, remember why, then do the stroke.</li><li>Bad body day? Do a smaller version. It still counts.</li><li>Tick it after training. Missed it? <strong>Noticing late counts.</strong> Go again next time.</li></ol>
               <p class="pl-tool__says">“End of the piece. One good word for the paddler in front.”</p>
               <p class="pl-tool__from">From <a href="#stroke">my one stroke</a>. See <a href="#example">a filled in example</a></p>
             </article>
@@ -1045,7 +1074,7 @@
             <div class="pl-whn"><div class="pl-whn__if">Nerves on the start line</div><div class="pl-whn__do">Use the And sentence: “I care about my crew and I notice I’m nervous.” One long breath out, then find the drum.</div><div class="pl-whn__tool">Ten second reset</div></div>
             <div class="pl-whn"><div class="pl-whn__if">The timing falls apart and someone apologises</div><div class="pl-whn__do">Say the crew’s word, or just “next one”. Then back to the drum.</div><div class="pl-whn__tool">Ten second reset</div></div>
             <div class="pl-whn"><div class="pl-whn__if">You lose, or have a piece you’d rather forget</div><div class="pl-whn__do">Did I paddle like my word? One moment you did, one you’d like back.</div><div class="pl-whn__tool">Steer by the oar</div></div>
-            <div class="pl-whn"><div class="pl-whn__if">Your shoulder or energy isn’t there today</div><div class="pl-whn__do">Do the two minute version of your stroke, and tell the coach what you need.</div><div class="pl-whn__tool">Take your one stroke</div></div>
+            <div class="pl-whn"><div class="pl-whn__if">Your shoulder or energy isn’t there today</div><div class="pl-whn__do">Do a smaller version of your stroke, and tell the coach what you need.</div><div class="pl-whn__tool">Take your one stroke</div></div>
             <div class="pl-whn"><div class="pl-whn__if">You forgot your stroke</div><div class="pl-whn__do">Noticing late still counts. Tell the paddler behind you, and take it at the next training.</div><div class="pl-whn__tool">Name it and check in</div></div>
           </div>
 
@@ -1393,6 +1422,7 @@
       var data = {};
       Array.prototype.forEach.call(form.elements, function (el) {
         if (!el.name) return;
+        if (el.type === 'radio') { if (el.checked) data[el.name] = el.value; else if (!(el.name in data)) data[el.name] = ''; return; }
         data[el.name] = el.type === 'checkbox' ? el.checked : el.value;
       });
       return data;
@@ -1401,6 +1431,7 @@
       Array.prototype.forEach.call(form.elements, function (el) {
         if (!el.name || !(el.name in data)) return;
         if (el.type === 'checkbox') el.checked = !!data[el.name];
+        else if (el.type === 'radio') el.checked = (data[el.name] === el.value);
         else el.value = data[el.name];
       });
     }
@@ -1420,7 +1451,16 @@
 
     try {
       var saved = localStorage.getItem(KEY);
-      if (saved) apply(JSON.parse(saved));
+      if (saved) {
+        var sd = JSON.parse(saved);
+        /* cards saved before the one law layout: carry an old answer across */
+        if (!sd.law && !sd.lawhow) {
+          if (sd.keyword) { sd.law = 'obvious'; sd.lawhow = 'Keyword: ' + sd.keyword; }
+          else if (sd.pair) { sd.law = 'attractive'; sd.lawhow = sd.pair; }
+          else if (sd.easy) { sd.law = 'easy'; sd.lawhow = sd.easy; }
+        }
+        apply(sd);
+      }
     } catch (e) { /* nothing saved, or storage unavailable */ }
     showConf();
 
@@ -1447,11 +1487,12 @@
         if (hintEl) hintEl.remove();
         var out = '', ticks = '';
         Array.prototype.forEach.call(row.querySelectorAll('input, textarea'), function (el) {
-          if (el.type === 'checkbox') {
+          if (el.type === 'checkbox' || el.type === 'radio') {
             ticks += '<span><span class="pp-box">' + (el.checked ? '<svg viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10 3" fill="none" stroke="#111" stroke-width="2"/></svg>' : '') + '</span>' + esc(el.parentNode.textContent.trim()) + '</span>';
           } else if (el.type === 'range') {
             out += '<div class="pp-line">' + esc(el.value) + ' out of 10</div>';
           } else {
+            if (ticks) { out += '<div class="pp-ticks">' + ticks + '</div>'; ticks = ''; }
             var own = el.id ? row.querySelector('label[for="' + el.id + '"]') : null;
             var pre = (own && !own.classList.contains('pl-field__label')) ? '<span class="pp-pre">' + esc(own.textContent.trim()) + '</span>' : '';
             out += '<div class="pp-line' + (el.tagName === 'TEXTAREA' ? ' pp-line--tall' : '') + '">' + pre + esc(el.value) + '</div>';
