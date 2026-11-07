@@ -150,13 +150,16 @@
     .pl-reveal__body li { margin-bottom: 8px; }
     .pl-reveal__body strong { color: #fff; font-weight: 600; }
 
-    /* ---------- 03 STICKY PADDLE ---------- */
+    /* ---------- 03 THE GREEN NOTE ---------- */
     .pl-stickies { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 36px; max-width: 900px; }
     .pl-sticky { background: var(--pl-gold); color: #151515; font-family: 'Caveat', 'Brush Script MT', cursive; font-size: 1.55rem; line-height: 1.05; padding: 18px 18px 22px; width: 172px; min-height: 140px; box-shadow: 0 8px 20px rgba(0,0,0,0.45); }
     .pl-sticky:nth-child(odd) { transform: rotate(-2.5deg); }
     .pl-sticky:nth-child(even) { transform: rotate(2deg); }
     .pl-sticky:nth-child(3n) { transform: rotate(-1deg); }
     .pl-rounds { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 44px; }
+    .pl-sticky--green { background: #b6e07a; }
+    .pl-stickies-note { margin-top: 18px; font-size: 0.88rem; color: var(--pl-muted); }
+    .pl-steps-home { margin-top: 40px; }
 
     /* ---------- 04 TRIFLEX ---------- */
     .pl-triflex { margin-top: 36px; max-width: 900px; }
@@ -483,7 +486,7 @@
           <span class="pl-nav__label">Session one</span>
           <a href="#whakatauki" class="pl-nav__link">Whakataukī</a>
           <a href="#doughnut" class="pl-nav__link">Jam doughnut</a>
-          <a href="#sticky" class="pl-nav__link">Sticky paddle</a>
+          <a href="#note" class="pl-nav__link">The green note</a>
           <a href="#triflex" class="pl-nav__link">Open, aware, engaged</a>
           <a href="#oar" class="pl-nav__link">The sweep’s oar</a>
           <a href="#watch" class="pl-nav__link">Watch</a>
@@ -539,7 +542,7 @@
         <div class="container">
           <span class="pl-sec__num">02 · Open</span>
           <h2 class="pl-sec__title">The harder we push,<br><em>the more it sticks</em></h2>
-          <p class="pl-sec__lead">We started with an experiment. For 30 seconds, don’t think about a hot jam doughnut: sugar on the outside, warm jam in the middle, the smell of it from the van. Every time it pops into your head, tap your knee. Most of us tapped a lot.</p>
+          <p class="pl-sec__lead">We started with an experiment. For 30 seconds, don’t think about a hot jam doughnut: sugar on the outside, warm jam in the middle, the smell of it from the van. For most of us, it was the first thing that turned up, and it kept coming back.</p>
           <p class="pl-sec__lead">Then we tried it with something real. A cold Thursday night, you’re tired and you can’t be bothered, and you tell yourself “I’m not tired, I’m not tired.” Or nerves on the start line, and you try to talk yourself out of them. <strong>The harder we try to push a thought or a feeling away, the more it tends to stick,</strong> and the more energy the pushing takes. If we wait for tiredness or doubt to leave before we paddle, we can be waiting a long time.</p>
 
           <div class="pl-loop" role="list" aria-label="The push away loop">
@@ -560,8 +563,8 @@
             <div class="pl-reveal__body">
               <ol>
                 <li>Set a timer for 30 seconds.</li>
-                <li>Try as hard as you can not to think about a hot jam doughnut. Tap your knee every time it shows up.</li>
-                <li>Notice what happens the harder you try.</li>
+                <li>Try as hard as you can not to think about a hot jam doughnut.</li>
+                <li>Notice how often it turns up, and what happens the harder you try.</li>
                 <li>Now think of something that usually sticks before training, like “I can’t be bothered tonight”. What happens when you argue with it? What happens when you just notice it and get your gear on anyway?</li>
               </ol>
             </div>
@@ -569,38 +572,52 @@
         </div>
       </section>
 
-      <!-- 03 STICKY PADDLE -->
-      <section class="pl-sec" id="sticky">
+      <!-- 03 THE GREEN NOTE -->
+      <section class="pl-sec" id="note">
         <div class="container">
           <span class="pl-sec__num">03 · Open</span>
-          <h2 class="pl-sec__title">The sticky<br><em>paddle</em></h2>
-          <p class="pl-sec__lead">We wrote down the thoughts and feelings that stick to us around paddling, one per sticky note. The ones that turn up on the drive to the river, in the third piece, on the start line. Here are the kinds of things that come up in any boat:</p>
+          <h2 class="pl-sec__title">The green note<br><em>you wore all night</em></h2>
+          <p class="pl-sec__lead">Early in the session, each of us wrote one piece of <strong>noise</strong> we’d brought in with us on a green post-it. A frustration, a worry, something left over from the day or the week. Then we stuck it on ourselves, and it stayed there for the whole session.</p>
+          <p class="pl-sec__lead">What it said was yours. Here are the kinds of noise people tend to bring to training:</p>
 
-          <div class="pl-stickies" aria-label="Examples of sticky thoughts">
-            <div class="pl-sticky">I’m too tired tonight</div>
-            <div class="pl-sticky">Can’t be bothered</div>
-            <div class="pl-sticky">Everyone else is fitter than me</div>
-            <div class="pl-sticky">My shoulder won’t hold up</div>
-            <div class="pl-sticky">I’ll let the crew down</div>
-            <div class="pl-sticky">I’m too old for this</div>
-            <div class="pl-sticky">I don’t belong in this boat</div>
+          <div class="pl-stickies" aria-label="Examples of the kinds of noise people bring to training">
+            <div class="pl-sticky pl-sticky--green">A rough day at work</div>
+            <div class="pl-sticky pl-sticky--green">Frustrated with my shoulder</div>
+            <div class="pl-sticky pl-sticky--green">Something going on at home</div>
+            <div class="pl-sticky pl-sticky--green">Annoyed about the crew list</div>
+            <div class="pl-sticky pl-sticky--green">Too tired for this tonight</div>
+            <div class="pl-sticky pl-sticky--green">Worried about the next race</div>
           </div>
+          <p class="pl-stickies-note">Examples only. Nothing anyone wrote on the night is on this page.</p>
+
+          <p class="pl-sec__lead" style="margin-top:34px;">Then we got on with the session. Some of the time you’d have noticed the note. Some of the time you’d have forgotten it was there. Either way, you still talked, listened, laughed, found the words for your coin and built your crew stroke. <strong>The noise didn’t have to go anywhere for you to take part.</strong></p>
 
           <div class="pl-rounds">
             <div class="pl-card pl-card--grey">
-              <span class="pl-tag pl-tag--muted">Round one</span>
-              <h3>Get rid of them</h3>
-              <p>The notes went on the paddle and we tried to brush, peel and flick them all off. How did the paddling go? It didn’t. Every bit of energy went on the notes, and the stroke stopped.</p>
+              <span class="pl-tag pl-tag--muted">Getting tangled</span>
+              <h3>All eyes on the note</h3>
+              <p>Rereading it, arguing with it, trying to work it out or pull it off. Every bit of attention goes on the note, and there’s not much left for the session, the people or the stroke.</p>
             </div>
             <div class="pl-card pl-card--gold">
-              <span class="pl-tag">Round two</span>
-              <h3>Make room</h3>
-              <p>Different plan. We stuck every note on the paddle, blade and shaft, and took a slow stroke with it. The notes were all still there. <strong>And the paddle still moved water.</strong></p>
+              <span class="pl-tag">Wearing it</span>
+              <h3>Let it ride along</h3>
+              <p>It’s there. You can see it if you look down. You don’t have to like it or agree with it. <strong>And your attention goes on what you’re doing.</strong></p>
             </div>
           </div>
 
-          <p class="pl-sec__lead" style="margin-top:34px;">The notes didn’t go anywhere. What changed was where our energy went. Look how many of them are the same: every paddler in the boat carries some version of these.</p>
-          <div class="pl-land"><p>The job isn’t to clear the boat. <em>It’s to make room and keep paddling.</em></p></div>
+          <div class="pl-land"><p>You don’t have to get rid of the noise to paddle. <em>Notice it, let it ride along, and keep going.</em></p></div>
+
+          <details class="pl-reveal pl-steps-home">
+            <summary>Try it at your next training</summary>
+            <div class="pl-reveal__body">
+              <ol>
+                <li>On the way to training, notice the noise you’re bringing with you today.</li>
+                <li>Name it in a few words, as if you were writing it on the green note.</li>
+                <li>Picture the note on your sleeve. You don’t need to fix it or argue with it.</li>
+                <li>Get on with the session. Afterwards, ask yourself: how much did it actually get in the way?</li>
+              </ol>
+            </div>
+          </details>
         </div>
       </section>
 
@@ -623,7 +640,7 @@
           </div>
 
           <div class="pl-grid3">
-            <div class="pl-card"><span class="pl-tag">Open</span><h3>Room for what shows up</h3><p>The sticky paddle. Nerves, tiredness and doubt come in the boat. We stop fighting them.</p></div>
+            <div class="pl-card"><span class="pl-tag">Open</span><h3>Room for what shows up</h3><p>The green note. Noise, nerves and tiredness come in the boat. We let them ride along instead of fighting them or getting tangled in them.</p></div>
             <div class="pl-card"><span class="pl-tag pl-tag--muted">Aware</span><h3>Here, in this stroke</h3><p>The drum, the timing, the back in front of you. Not the last race or the finish line. Aware gets its own session later in the season.</p></div>
             <div class="pl-card pl-card--gold"><span class="pl-tag">Engaged</span><h3>Moving toward what matters</h3><p>What you paddle for, and the small actions that show it. That was the rest of the night.</p></div>
           </div>
@@ -878,9 +895,9 @@
               <div class="pl-tool__top"><span class="pl-tool__phase">Any time a thought sticks</span><span class="pl-tool__time">One stroke</span></div>
               <h3 class="pl-tool__name">Name it, then paddle</h3>
               <p class="pl-tool__when">On the drive down, in the third piece, on the start line.</p>
-              <ol class="pl-tool__steps"><li>Notice the note and give it a name: <strong>“there’s the too old note.”</strong></li><li>Don’t argue with it or try to flick it off.</li><li>Feel your feet on the footrest and your hands on the paddle, and take the next stroke with the note still there.</li></ol>
-              <p class="pl-tool__says">“There’s the tired note. It can come in the boat.”</p>
-              <p class="pl-tool__from">From <a href="#doughnut">the jam doughnut</a> and <a href="#sticky">the sticky paddle</a></p>
+              <ol class="pl-tool__steps"><li>Notice the noise and give it a name: <strong>“there’s the too old note.”</strong></li><li>Don’t argue with it, and don’t stop to read it over and over.</li><li>Feel your feet on the footrest and your hands on the paddle, and take the next stroke with the note still on your sleeve.</li></ol>
+              <p class="pl-tool__says">“There’s the tired note. It can ride along.”</p>
+              <p class="pl-tool__from">From <a href="#doughnut">the jam doughnut</a> and <a href="#note">the green note</a></p>
             </article>
             <article class="pl-tool">
               <div class="pl-tool__top"><span class="pl-tool__phase">When it gets hard</span><span class="pl-tool__time">10 seconds</span></div>
