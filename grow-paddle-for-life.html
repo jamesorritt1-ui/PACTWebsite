@@ -263,6 +263,47 @@
     .pl-support a { color: var(--pl-gold); }
     .pl-support strong { color: #fff; }
 
+    /* ---------- 10 TAKE IT TO TRAINING ---------- */
+    .pl-one { margin-top: 36px; background: var(--pl-gold); color: #111; padding: 22px 26px; max-width: 900px; display: flex; gap: 18px; align-items: center; }
+    .pl-one svg { width: 34px; height: 34px; flex-shrink: 0; }
+    .pl-one__tag { font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; display: block; margin-bottom: 4px; font-weight: 600; }
+    .pl-one p { margin: 0; font-family: var(--font-heading); text-transform: uppercase; font-weight: 600; font-size: clamp(1.1rem, 2.4vw, 1.35rem); line-height: 1.3; letter-spacing: 0.01em; }
+    .pl-tools { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 44px; }
+    .pl-tool { background: var(--pl-card); border: 1px solid var(--pl-line); border-top: 4px solid var(--pl-gold); padding: 26px 28px 24px; display: flex; flex-direction: column; }
+    .pl-tool__top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+    .pl-tool__phase { font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pl-gold); }
+    .pl-tool__time { font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: #111; background: #e9e7e0; padding: 3px 8px; white-space: nowrap; }
+    .pl-tool__name { font-family: var(--font-heading); text-transform: uppercase; color: #fff; font-size: 1.45rem; letter-spacing: 0.03em; line-height: 1.15; margin: 0 0 6px; }
+    .pl-tool__when { color: var(--pl-muted); font-size: 0.95rem; margin: 0 0 14px; }
+    .pl-tool__steps { list-style: none; counter-reset: st; padding: 0; margin: 0 0 16px; }
+    .pl-tool__steps li { counter-increment: st; position: relative; padding: 8px 0 8px 34px; border-top: 1px solid var(--pl-line); color: var(--pl-ink); font-size: 1rem; line-height: 1.5; }
+    .pl-tool__steps li:first-child { border-top: 0; }
+    .pl-tool__steps li::before { content: counter(st); position: absolute; left: 0; top: 8px; width: 22px; height: 22px; background: var(--pl-gold); color: #111; font-family: var(--font-heading); font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; }
+    .pl-tool__steps strong { color: #fff; font-weight: 600; }
+    .pl-tool__says { font-family: 'Caveat', cursive; font-size: 1.5rem; line-height: 1.2; color: var(--pl-gold); margin: 0 0 14px; }
+    .pl-tool__from { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--pl-line); font-size: 0.86rem; color: var(--pl-muted); }
+    .pl-tool__from a { color: var(--pl-ink); text-decoration: underline; text-decoration-color: var(--pl-gold); text-underline-offset: 3px; }
+    .pl-tool__from a:hover { color: var(--pl-gold); }
+    .pl-h3 { font-family: var(--font-heading); text-transform: uppercase; color: #fff; font-size: clamp(1.35rem, 3vw, 1.8rem); letter-spacing: 0.03em; margin: 64px 0 8px; }
+    .pl-h3 + p { color: var(--pl-ink); font-weight: 300; font-size: 1.05rem; margin: 0 0 22px; max-width: 720px; }
+    .pl-whens { border-top: 1px solid var(--pl-line); max-width: 1080px; }
+    .pl-whn { display: grid; grid-template-columns: 1fr 1.5fr 170px; gap: 24px; padding: 18px 0; border-bottom: 1px solid var(--pl-line); align-items: start; }
+    .pl-whn__if { color: #fff; font-weight: 600; font-size: 1.02rem; line-height: 1.45; }
+    .pl-whn__do { color: var(--pl-ink); font-size: 1rem; line-height: 1.55; }
+    .pl-whn__tool { font-family: var(--font-heading); font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pl-gold); }
+    .pl-whn--head { padding: 10px 0; }
+    .pl-whn--head div { font-family: var(--font-heading); font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pl-muted); font-weight: 400; }
+    .pl-toolprint { margin-top: 44px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; }
+    button.pl-dl { border: 2px solid var(--pl-gold); cursor: pointer; }
+    .pl-hero__jump { color: var(--pl-ink); font-size: 0.95rem; text-decoration: underline; text-decoration-color: var(--pl-gold); text-underline-offset: 4px; }
+    .pl-hero__jump:hover { color: var(--pl-gold); }
+    @media (max-width: 860px) {
+      .pl-tools { grid-template-columns: 1fr; }
+      .pl-whn { grid-template-columns: 1fr; gap: 6px; }
+      .pl-whn--head { display: none; }
+      .pl-one { align-items: flex-start; }
+    }
+
     /* ---------- EXTRA: SUBTITLES ACTIVITY ---------- */
     .pl-video--wide { flex-direction: row; margin-top: 40px; max-width: 1080px; }
     .pl-video--wide .pl-video__frame { flex: 1.35; aspect-ratio: auto; min-height: 300px; }
@@ -349,6 +390,30 @@
       #plPrintArea .pp-ticks { display: flex; gap: 14pt; flex-wrap: wrap; font-size: 11pt; }
       #plPrintArea .pp-box { display: inline-flex; align-items: center; justify-content: center; width: 10pt; height: 10pt; border: 1pt solid #111; margin-right: 5pt; vertical-align: -1pt; }
       #plPrintArea .pp-foot { margin-top: 16pt; font-size: 8.5pt; color: #666; }
+      #plPrintArea .pp-one { border: 1.2pt solid #111; padding: 6pt 9pt; font-size: 10pt; font-weight: 600; margin: 0 0 9pt; }
+      #plPrintArea .pp-tools { display: grid; grid-template-columns: 1fr 1fr; gap: 7pt 10pt; }
+      #plPrintArea .pp-tool { border: 0.6pt solid #999; border-top: 2.5pt solid #111; padding: 6pt 8pt; break-inside: avoid; }
+      #plPrintArea .pp-tool__ph { font-size: 7pt; letter-spacing: 0.12em; text-transform: uppercase; color: #555; }
+      #plPrintArea .pp-tool__n { font-family: 'Oswald', 'Arial Narrow', Arial, sans-serif; text-transform: uppercase; font-size: 12pt; margin: 1pt 0 3pt; }
+      #plPrintArea .pp-tool ol { margin: 0; padding-left: 13pt; font-size: 8.6pt; line-height: 1.35; }
+      #plPrintArea .pp-tool li { margin-bottom: 1.5pt; }
+      #plPrintArea .pp-tool__s { font-size: 8.5pt; font-style: italic; color: #333; margin-top: 3pt; }
+      #plPrintArea .pp-h { font-family: 'Oswald', 'Arial Narrow', Arial, sans-serif; text-transform: uppercase; font-size: 12pt; margin: 10pt 0 3pt; }
+      #plPrintArea .pp-whn { display: grid; grid-template-columns: 42mm 1fr 30mm; gap: 4mm; font-size: 8.5pt; line-height: 1.35; padding: 3.5pt 0; border-top: 0.6pt solid #bbb; break-inside: avoid; }
+      #plPrintArea .pp-whn b { font-weight: 600; }
+      #plPrintArea .pp-whn i { font-style: normal; font-size: 7.5pt; letter-spacing: 0.08em; text-transform: uppercase; color: #555; }
+      #plPrintArea.pp-pocket .pp-brand { margin-bottom: 7pt; padding-bottom: 4pt; }
+      #plPrintArea.pp-pocket .pp-title { font-size: 18pt; margin-bottom: 5pt; }
+      #plPrintArea.pp-pocket .pp-one { font-size: 9.5pt; padding: 4pt 8pt; margin-bottom: 7pt; }
+      #plPrintArea.pp-pocket .pp-tools { gap: 5pt 8pt; }
+      #plPrintArea.pp-pocket .pp-tool { padding: 4pt 7pt 5pt; }
+      #plPrintArea.pp-pocket .pp-tool__n { font-size: 11pt; margin: 0 0 2pt; }
+      #plPrintArea.pp-pocket .pp-tool ol { font-size: 8.2pt; line-height: 1.28; }
+      #plPrintArea.pp-pocket .pp-tool li { margin-bottom: 1pt; }
+      #plPrintArea.pp-pocket .pp-tool__s { font-size: 8pt; margin-top: 2pt; }
+      #plPrintArea.pp-pocket .pp-h { margin: 7pt 0 2pt; font-size: 11pt; }
+      #plPrintArea.pp-pocket .pp-whn { font-size: 8.2pt; line-height: 1.28; padding: 2.5pt 0; }
+      #plPrintArea.pp-pocket .pp-foot { margin-top: 6pt; }
     }
   </style>
 </head>
@@ -425,6 +490,7 @@
           <a href="#coin" class="pl-nav__link">Your coin</a>
           <a href="#crew" class="pl-nav__link">Crew stroke</a>
           <a href="#stroke" class="pl-nav__link">My one stroke</a>
+          <a href="#toolkit" class="pl-nav__link">At training</a>
           <a href="#next" class="pl-nav__link">Session two</a>
           <a href="#subtitles" class="pl-nav__link">Subtitles</a>
         </div>
@@ -444,6 +510,7 @@
             <a class="pl-dl" href="resources/paddle-for-life/What_We_Paddle_For_Session_One_Pack.pdf" download="What_We_Paddle_For_Session_One_Pack.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>Download your session one pack</a>
             <span class="pl-dl-meta">PDF · 6 pages · prints on A4</span>
           </div>
+          <p class="pl-hero__meta" style="margin-top:18px;"><a class="pl-hero__jump" href="#toolkit">Short on time? Jump to what to do at training.</a></p>
           <p class="pl-hero__meta">About ten minutes to read, plus short videos and an extra reflection at the end. Anything you write here stays on your own device.</p>
         </div>
       </section>
@@ -788,10 +855,91 @@
         </div>
       </section>
 
-      <!-- 10 UNTIL SESSION TWO -->
-      <section class="pl-sec pl-sec--darker" id="next">
+      <!-- 10 TAKE IT TO TRAINING -->
+      <section class="pl-sec pl-sec--darker" id="toolkit">
         <div class="container">
-          <span class="pl-sec__num">10 · Until session two</span>
+          <span class="pl-sec__num">10 · Take it to training</span>
+          <h2 class="pl-sec__title">What to do<br><em>at training</em></h2>
+          <p class="pl-sec__lead">Session one covered a lot of ideas. This is what they look like on the water. <strong>Six small tools, each one something you can actually do at your next training,</strong> whether that’s Saturday morning or a cold Thursday night. Most take under a minute, and nobody needs to know you’re using them.</p>
+          <p class="pl-sec__lead">None of them will make tiredness, nerves or doubt go away. That isn’t the job. They help you paddle the way you want to with those things in the boat.</p>
+
+          <div class="pl-one"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="0.8" fill="currentColor"/></svg><div><span class="pl-one__tag">If you only do one thing</span><p>Take your one stroke at training, then ask the paddler behind you how hers went.</p></div></div>
+
+          <div class="pl-tools">
+            <article class="pl-tool">
+              <div class="pl-tool__top"><span class="pl-tool__phase">Before you get in the boat</span><span class="pl-tool__time">10 seconds</span></div>
+              <h3 class="pl-tool__name">The coin check</h3>
+              <p class="pl-tool__when">In the car park, or while you get changed.</p>
+              <ol class="pl-tool__steps"><li>Look at your coin, or the keyword taped to your paddle.</li><li>Say your word once, in your head.</li><li>Ask: <strong>how do I want to paddle today?</strong> Pick one thing you’ll do that fits it.</li></ol>
+              <p class="pl-tool__says">“Today I paddle for my crew. I’ll be first to the boat.”</p>
+              <p class="pl-tool__from">From <a href="#coin">your coin</a> and <a href="#whakatauki">the aka matua</a></p>
+            </article>
+            <article class="pl-tool">
+              <div class="pl-tool__top"><span class="pl-tool__phase">Any time a thought sticks</span><span class="pl-tool__time">One stroke</span></div>
+              <h3 class="pl-tool__name">Name it, then paddle</h3>
+              <p class="pl-tool__when">On the drive down, in the third piece, on the start line.</p>
+              <ol class="pl-tool__steps"><li>Notice the note and give it a name: <strong>“there’s the too old note.”</strong></li><li>Don’t argue with it or try to flick it off.</li><li>Feel your feet on the footrest and your hands on the paddle, and take the next stroke with the note still there.</li></ol>
+              <p class="pl-tool__says">“There’s the tired note. It can come in the boat.”</p>
+              <p class="pl-tool__from">From <a href="#doughnut">the jam doughnut</a> and <a href="#sticky">the sticky paddle</a></p>
+            </article>
+            <article class="pl-tool">
+              <div class="pl-tool__top"><span class="pl-tool__phase">When it gets hard</span><span class="pl-tool__time">10 seconds</span></div>
+              <h3 class="pl-tool__name">The ten second reset</h3>
+              <p class="pl-tool__when">Between pieces, or straight after the timing falls apart.</p>
+              <ol class="pl-tool__steps"><li><strong>Open:</strong> one long breath out, shoulders down. Let whatever is there be there.</li><li><strong>Aware:</strong> find the drum, or the back of the paddler in front.</li><li><strong>Engaged:</strong> ask what your word looks like in the next piece, and go on the next catch.</li></ol>
+              <p class="pl-tool__says">“Breathe out. Find the drum. Next catch.”</p>
+              <p class="pl-tool__from">From <a href="#triflex">open, aware, engaged</a></p>
+            </article>
+            <article class="pl-tool">
+              <div class="pl-tool__top"><span class="pl-tool__phase">After a piece, a race or a bad result</span><span class="pl-tool__time">30 seconds</span></div>
+              <h3 class="pl-tool__name">Steer by the oar</h3>
+              <p class="pl-tool__when">When the result goes against you, or you’re replaying a bad piece on the way home.</p>
+              <ol class="pl-tool__steps"><li>Swap <strong>“did we win?”</strong> for <strong>“did I paddle like my word?”</strong></li><li>Find one moment where you did.</li><li>Find one moment you’d like back, and what you’d do instead next time.</li></ol>
+              <p class="pl-tool__says">“We came fourth. I pulled my weight right to the line.”</p>
+              <p class="pl-tool__from">From <a href="#oar">the finish line and the sweep’s oar</a></p>
+            </article>
+            <article class="pl-tool">
+              <div class="pl-tool__top"><span class="pl-tool__phase">At the cue on your Paddle Card</span><span class="pl-tool__time">Under two minutes</span></div>
+              <h3 class="pl-tool__name">Take your one stroke</h3>
+              <p class="pl-tool__when">The moment your cue happens. Don’t wait to feel like it.</p>
+              <ol class="pl-tool__steps"><li>When the cue happens, do the stroke.</li><li>Bad body day? Do your two minute version. It still counts.</li><li>Tick it after training. Missed it? <strong>Noticing late counts.</strong> Go again next time.</li></ol>
+              <p class="pl-tool__says">“End of the piece. One good word for the paddler in front.”</p>
+              <p class="pl-tool__from">From <a href="#stroke">my one stroke</a></p>
+            </article>
+            <article class="pl-tool">
+              <div class="pl-tool__top"><span class="pl-tool__phase">At the trailer</span><span class="pl-tool__time">Two minutes</span></div>
+              <h3 class="pl-tool__name">Name it and check in</h3>
+              <p class="pl-tool__when">After training, while the boat goes back on.</p>
+              <ol class="pl-tool__steps"><li><strong>Name It:</strong> two paddlers each say one thing they saw someone do that fits the crew’s word.</li><li>Turn to the paddler who sits behind you: <strong>“How’s your stroke going?”</strong></li><li>Listen. No fixing needed. Then swap.</li></ol>
+              <p class="pl-tool__says">“I saw someone wait for the last paddler on the walk up. That’s together.”</p>
+              <p class="pl-tool__from">From <a href="#crew">the crew stroke</a> and <a href="#stroke">the seat behind you</a></p>
+            </article>
+          </div>
+
+          <h3 class="pl-h3">When this happens, try this</h3>
+          <p>The moments that tend to come up in a boat, and which tool to reach for.</p>
+          <div class="pl-whens">
+            <div class="pl-whn pl-whn--head" aria-hidden="true"><div>When</div><div>Try this</div><div>Tool</div></div>
+            <div class="pl-whn"><div class="pl-whn__if">“Can’t be bothered” on the drive down</div><div class="pl-whn__do">Name it, then get your gear on anyway. You don’t have to feel like going to go.</div><div class="pl-whn__tool">Name it, then paddle</div></div>
+            <div class="pl-whn"><div class="pl-whn__if">“Everyone else is fitter than me” in the third piece</div><div class="pl-whn__do">Eyes on the back in front. Take the next stroke with the thought still there.</div><div class="pl-whn__tool">Name it, then paddle</div></div>
+            <div class="pl-whn"><div class="pl-whn__if">Nerves on the start line</div><div class="pl-whn__do">Use the And sentence: “I care about my crew and I notice I’m nervous.” One long breath out, then find the drum.</div><div class="pl-whn__tool">Ten second reset</div></div>
+            <div class="pl-whn"><div class="pl-whn__if">The timing falls apart and someone apologises</div><div class="pl-whn__do">Say the crew’s word, or just “next one”. Then back to the drum.</div><div class="pl-whn__tool">Ten second reset</div></div>
+            <div class="pl-whn"><div class="pl-whn__if">You lose, or have a piece you’d rather forget</div><div class="pl-whn__do">Did I paddle like my word? One moment you did, one you’d like back.</div><div class="pl-whn__tool">Steer by the oar</div></div>
+            <div class="pl-whn"><div class="pl-whn__if">Your shoulder or energy isn’t there today</div><div class="pl-whn__do">Do the two minute version of your stroke, and tell the coach what you need.</div><div class="pl-whn__tool">Take your one stroke</div></div>
+            <div class="pl-whn"><div class="pl-whn__if">You forgot your stroke</div><div class="pl-whn__do">Noticing late still counts. Tell the paddler behind you, and take it at the next training.</div><div class="pl-whn__tool">Name it and check in</div></div>
+          </div>
+
+          <div class="pl-toolprint">
+            <button class="pl-dl" type="button" id="plToolPrint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="1"/><path d="M6 14h12v7H6z"/></svg>Print the pocket version</button>
+            <span class="pl-dl-meta">One A4 page with all six tools. Fold it into your kit bag.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11 UNTIL SESSION TWO -->
+      <section class="pl-sec" id="next">
+        <div class="container">
+          <span class="pl-sec__num">11 · Until session two</span>
           <h2 class="pl-sec__title">Keep your coin<br><em>where you’ll see it</em></h2>
           <p class="pl-sec__lead">And take your stroke. Noticing late still counts. Session two, in about three weeks, starts with one question: <strong>how did your stroke go?</strong> Then the crew strokes become agreements the whole boat owns, with management in the room.</p>
 
@@ -807,8 +955,8 @@
         </div>
       </section>
 
-      <!-- 11 EXTRA: SUBTITLES -->
-      <section class="pl-sec" id="subtitles">
+      <!-- 12 EXTRA: SUBTITLES -->
+      <section class="pl-sec pl-sec--darker" id="subtitles">
         <div class="container">
           <span class="pl-sec__num">Extra · A reflection for home</span>
           <h2 class="pl-sec__title">If your actions<br><em>had subtitles</em></h2>
@@ -1168,6 +1316,7 @@
     function buildPrint(f) {
       var area = document.getElementById('plPrintArea');
       if (!area) { area = document.createElement('div'); area.id = 'plPrintArea'; document.body.appendChild(area); }
+      area.className = '';
       var h = '<div class="pp-brand">The Performance Act · Paddle for Life</div>';
       h += '<h1 class="pp-title">' + esc(f.querySelector('.pl-pcard__title').textContent) + '</h1>';
       h += '<p class="pp-sub">' + esc(f.querySelector('.pl-pcard__sub').textContent) + '</p>';
@@ -1204,6 +1353,35 @@
       try { localStorage.removeItem(KEY); } catch (e) { /* ignore */ }
       flash('Cleared');
     });
+
+    /* ---- POCKET TOOLKIT PRINT ---- */
+    (function () {
+      var btn = document.getElementById('plToolPrint');
+      if (!btn) return;
+      btn.addEventListener('click', function () {
+        var area = document.getElementById('plPrintArea');
+        if (!area) { area = document.createElement('div'); area.id = 'plPrintArea'; document.body.appendChild(area); }
+        area.className = 'pp-pocket';
+        var h = '<div class="pp-brand">The Performance Act · Paddle for Life · Session one</div>';
+        h += '<h1 class="pp-title">Take it to training</h1>';
+        h += '<div class="pp-one">If you only do one thing: take your one stroke at training, then ask the paddler behind you how hers went.</div>';
+        h += '<div class="pp-tools">';
+        Array.prototype.forEach.call(document.querySelectorAll('#toolkit .pl-tool'), function (t) {
+          h += '<div class="pp-tool"><div class="pp-tool__ph">' + esc(t.querySelector('.pl-tool__phase').textContent) + ' · ' + esc(t.querySelector('.pl-tool__time').textContent) + '</div>';
+          h += '<div class="pp-tool__n">' + esc(t.querySelector('.pl-tool__name').textContent) + '</div><ol>';
+          Array.prototype.forEach.call(t.querySelectorAll('.pl-tool__steps li'), function (li) { h += '<li>' + esc(li.textContent) + '</li>'; });
+          h += '</ol><div class="pp-tool__s">' + esc(t.querySelector('.pl-tool__says').textContent) + '</div></div>';
+        });
+        h += '</div><div class="pp-h">When this happens, try this</div>';
+        Array.prototype.forEach.call(document.querySelectorAll('#toolkit .pl-whn:not(.pl-whn--head)'), function (r) {
+          h += '<div class="pp-whn"><b>' + esc(r.querySelector('.pl-whn__if').textContent) + '</b><span>' + esc(r.querySelector('.pl-whn__do').textContent) + '</span><i>' + esc(r.querySelector('.pl-whn__tool').textContent) + '</i></div>';
+        });
+        h += '<p class="pp-foot">Kia mau ki te aka matua. Hold fast to what you paddle for.</p>';
+        area.innerHTML = h;
+        printChosen = true;
+        window.print();
+      });
+    })();
 
     /* ---- SUBTITLE CARD ---- */
     (function () {
