@@ -405,9 +405,11 @@
       btn.addEventListener('click', function () {
         var id = frame.getAttribute('data-yt');
         var start = frame.getAttribute('data-start');
+        var list = frame.getAttribute('data-list');   /* optional playlist */
         var ifr = document.createElement('iframe');
         ifr.src = 'https://www.youtube-nocookie.com/embed/' + id +
-                  '?autoplay=1&rel=0' + (start ? '&start=' + start : '');
+                  '?autoplay=1&rel=0' + (start ? '&start=' + start : '') +
+                  (list ? '&list=' + encodeURIComponent(list) : '');
         ifr.title = btn.getAttribute('aria-label') || 'Video';
         ifr.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
         ifr.setAttribute('allowfullscreen', '');
@@ -841,6 +843,7 @@
     start: 'GETTING STARTED',
     five: 'THE FIVE MOVES',
     prac: 'THE PRACTICE ROOM',
+    img: 'USING IMAGERY WELL',
     open: 'OPEN — Acceptance & Defusion',
     aware: 'AWARE — Present Moment & Perspective',
     engaged: 'ENGAGED — Values & Committed Action',
@@ -876,6 +879,7 @@
     start: 'Getting started',
     five: 'Five Moves',
     prac: 'Practice',
+    img: 'Imagery',
     open: 'Open',
     aware: 'Aware',
     engaged: 'Engaged',
@@ -885,7 +889,7 @@
   var jn = { filter: 'all', query: '', open: {}, built: false };
 
   function journalOrder(groups) {
-    var order = ['start', 'five', 'prac', 'open', 'aware', 'engaged', 'brain'];
+    var order = ['start', 'five', 'prac', 'img', 'open', 'aware', 'engaged', 'brain'];
     var extras = Object.keys(groups).filter(function (p) { return order.indexOf(p) === -1; });
     return order.concat(extras).filter(function (p) { return groups[p] && groups[p].length; });
   }
@@ -1063,7 +1067,7 @@
 
   function journalAsText() {
     var groups = gatherEntries();
-    var order = ['start', 'five', 'prac', 'open', 'aware', 'engaged', 'brain'];
+    var order = ['start', 'five', 'prac', 'img', 'open', 'aware', 'engaged', 'brain'];
     var extras = Object.keys(groups).filter(function (p) { return order.indexOf(p) === -1; });
     var lines = [
       'MY SKILLS JOURNAL',

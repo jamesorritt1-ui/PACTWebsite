@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T335C5CQGF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-T335C5CQGF');
+  </script>
+  <meta name="robots" content="noindex, nofollow">
+  <title>Using Imagery Well | Skills Journal | The Performance Act</title>
+  <meta name="description" content="How to use imagery well: pick your anchor moments, make them real, let the noise in, choose your cue words, write your script and practise it. With a worked example from an Olympic biathlete.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=18">
+  <link rel="stylesheet" href="grow-athlete.css?v=3">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=2">
+  <style>
+    /* step index */
+    .ix { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:30px; }
+    .ix__card { display:block; background:#111; border:1px solid var(--line); border-left:3px solid var(--yellow); padding:18px 22px; transition:.22s; }
+    .ix__card:hover { border-color:var(--yellow); transform:translateY(-3px); }
+    .ix__card--watch { border-left-color:#fff; }
+    .ix__num { font-family:var(--font-heading); font-size:0.66rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--yellow); }
+    .ix__card--watch .ix__num { color:#fff; }
+    .ix__name { font-family:var(--font-heading); font-size:1.08rem; text-transform:uppercase; color:#fff; letter-spacing:0.02em; margin:6px 0 6px; }
+    .ix__for { color:var(--ink); font-size:0.88rem; line-height:1.6; font-weight:300; margin:0; }
+    @media (max-width:680px){ .ix { grid-template-columns:1fr; } }
+
+    /* what to watch for */
+    .im-watchlist { list-style:none; counter-reset:w; margin:24px 0 0; padding:0; display:grid; gap:12px; }
+    .im-watchlist li { counter-increment:w; position:relative; background:#141414; border:1px solid var(--line); padding:16px 18px 16px 62px; color:var(--ink); font-size:0.95rem; line-height:1.65; font-weight:300; }
+    .im-watchlist li::before { content:counter(w); position:absolute; left:18px; top:14px; width:28px; height:28px; border:1px solid rgba(255,229,0,0.5); color:var(--yellow); font-family:var(--font-heading); font-size:0.9rem; display:flex; align-items:center; justify-content:center; }
+    .im-watchlist li strong { color:#fff; font-weight:600; }
+    .im-watchlist li a { color:var(--yellow); text-decoration:underline; text-underline-offset:3px; }
+    .im-step { display:inline-block; margin-left:6px; font-family:var(--font-heading); font-size:0.62rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); }
+    .aj-vid__cap a { color:var(--yellow); text-decoration:underline; text-underline-offset:3px; }
+
+    /* three columns: kinds of anchor, event length */
+    .im-three { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:20px 0 24px; }
+    .im-three__col { background:#141414; border:1px solid var(--line); border-top:3px solid var(--yellow); padding:18px 20px; }
+    .im-three__k { font-family:var(--font-heading); font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--yellow); margin:0 0 6px; }
+    .im-three__h { font-family:var(--font-heading); font-size:1.05rem; text-transform:uppercase; color:#fff; margin:0 0 8px; letter-spacing:0.02em; }
+    .im-three__col p { color:var(--ink); font-size:0.9rem; line-height:1.65; font-weight:300; margin:0; }
+    .im-three--two { grid-template-columns:repeat(2,1fr); }
+    @media (max-width:760px){ .im-three, .im-three--two { grid-template-columns:1fr; } }
+
+    /* sport examples */
+    .im-table { width:100%; border-collapse:collapse; margin:14px 0 8px; font-size:0.92rem; }
+    .im-table th, .im-table td { text-align:left; padding:12px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
+    .im-table th { font-family:var(--font-heading); font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--yellow); font-weight:500; }
+    .im-table td { color:var(--ink); font-weight:300; line-height:1.6; }
+    .im-table td:first-child { color:#fff; font-weight:500; white-space:nowrap; }
+
+    /* PETTLEP */
+    .im-pet { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:22px 0; }
+    .im-pet__item { display:flex; gap:16px; background:#141414; border:1px solid var(--line); padding:16px 18px; }
+    .im-pet__item--wide { grid-column:1 / -1; }
+    .im-pet__l { font-family:var(--font-heading); font-size:2rem; font-weight:700; color:var(--yellow); line-height:1; min-width:26px; }
+    .im-pet__item h4 { font-family:var(--font-heading); font-size:0.84rem; letter-spacing:0.08em; text-transform:uppercase; color:#fff; margin:3px 0 6px; }
+    .im-pet__item p { color:var(--ink); font-size:0.9rem; line-height:1.6; font-weight:300; margin:0; }
+    @media (max-width:680px){ .im-pet { grid-template-columns:1fr; } }
+
+    /* sense table builder (as in the Practice Room) */
+    .st { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-top:8px; }
+    .st__col { background:#0a0a0a; border:1px solid var(--line); border-top:3px solid var(--yellow); padding:14px 12px; }
+    .st__col h5 { font-family:var(--font-heading); font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--yellow); margin-bottom:8px; }
+    .st__col textarea { min-height:110px; font-size:0.9rem; }
+    @media (max-width:820px){ .st { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:520px){ .st { grid-template-columns:1fr; } }
+
+    /* try this, not that */
+    .im-swap { border:1px solid var(--line); margin:20px 0; background:#0f0f0f; }
+    .im-swap__row { display:grid; grid-template-columns:1fr 1.2fr 1.1fr; border-bottom:1px solid var(--line); }
+    .im-swap__row:last-child { border-bottom:none; }
+    .im-swap__row > div { padding:14px 16px; font-size:0.92rem; line-height:1.55; color:var(--ink); font-weight:300; }
+    .im-swap__head > div { font-family:var(--font-heading); font-size:0.64rem; letter-spacing:0.14em; text-transform:uppercase; padding-top:12px; padding-bottom:12px; color:var(--muted); }
+    .im-swap__head .im-yes { color:var(--yellow); }
+    .im-swap__moment { color:#fff !important; font-weight:500 !important; }
+    .im-swap__try { color:#fff !important; background:rgba(255,229,0,0.06); }
+    .im-swap__not { color:#8a8a8a !important; }
+    @media (max-width:640px){
+      .im-swap__row { grid-template-columns:1fr; }
+      .im-swap__head { display:none; }
+      .im-swap__row > div { padding:8px 16px; }
+      .im-swap__moment { padding-top:14px !important; }
+      .im-swap__try::before, .im-swap__not::before { content:attr(data-k); display:block; font-family:var(--font-heading); font-size:0.6rem; letter-spacing:0.14em; text-transform:uppercase; margin-bottom:3px; }
+      .im-swap__try::before { color:var(--yellow); }
+      .im-swap__not { padding-bottom:14px !important; }
+    }
+
+    /* worked script */
+    .im-script { background:#0a0a0a; border:1px solid var(--line); border-left:3px solid var(--yellow); padding:22px 24px; margin:16px 0; }
+    .im-script__label { font-family:var(--font-heading); font-size:0.66rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); margin:0 0 14px; }
+    .im-script p { color:#fff; font-size:0.98rem; line-height:1.85; font-weight:300; margin:0 0 14px; }
+    .im-script p:last-child { margin-bottom:0; }
+    .im-tag { display:inline-block; font-family:var(--font-heading); font-size:0.6rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; padding:3px 7px 2px; margin-right:4px; border-radius:2px; vertical-align:2px; line-height:1.2; color:#000; }
+    .im-tag--a { background:#6FD3E0; }
+    .im-tag--c { background:#8ED88E; }
+    .im-tag--e { background:#FF9D4D; }
+    .im-tag--cue { background:var(--yellow); }
+    .im-tag--reset { background:#fff; }
+    .im-legend { display:flex; flex-wrap:wrap; gap:8px 16px; margin:4px 0 6px; font-size:0.84rem; color:var(--muted); align-items:center; }
+
+    /* word counters and the card */
+    .im-count { display:flex; flex-wrap:wrap; align-items:center; gap:6px 12px; margin-top:8px; font-family:var(--font-heading); font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); }
+    .im-count b { font-weight:600; color:#bdbdbd; }
+    .im-count.is-in b { color:var(--yellow); }
+    .im-count.is-over b { color:#FF9D4D; }
+    .im-card { background:linear-gradient(160deg,#1b1800,#0b0b0b 60%); border:1px solid rgba(255,229,0,0.35); padding:22px 24px; margin-top:26px; }
+    .im-card__title { font-family:var(--font-heading); font-size:0.7rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--yellow); margin:0 0 16px; }
+    .im-card__row { display:grid; grid-template-columns:120px 1fr; gap:12px; padding:10px 0; border-top:1px solid var(--line); }
+    .im-card__k { font-family:var(--font-heading); font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); padding-top:3px; }
+    .im-card__v { color:#fff; font-size:0.95rem; line-height:1.65; font-weight:300; white-space:pre-line; }
+    .im-card__v.is-empty { color:#6a6a6a; font-style:italic; }
+    @media (max-width:560px){ .im-card__row { grid-template-columns:1fr; gap:4px; } }
+
+    /* dose strip */
+    .im-dose { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:22px 0; }
+    .im-dose__item { background:#141414; border:1px solid var(--line); padding:18px 18px 16px; text-align:center; }
+    .im-dose__n { font-family:var(--font-heading); font-size:2rem; font-weight:700; color:var(--yellow); line-height:1; }
+    .im-dose__u { font-family:var(--font-heading); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:#fff; margin-top:8px; }
+    .im-dose__d { color:var(--muted); font-size:0.84rem; line-height:1.5; margin-top:6px; }
+    @media (max-width:640px){ .im-dose { grid-template-columns:1fr; } }
+
+    /* troubleshooting accordion (as in the Practice Room) */
+    .tb { border:1px solid var(--line); background:#0f0f0f; margin-top:20px; }
+    .tb__item { border-bottom:1px solid var(--line); }
+    .tb__item:last-child { border-bottom:none; }
+    .tb__q { width:100%; display:flex; align-items:center; gap:14px; padding:17px 20px; background:none; border:none; cursor:pointer; text-align:left; }
+    .tb__q:hover { background:rgba(255,255,255,0.03); }
+    .tb__q span { flex:1; color:#fff; font-size:0.96rem; font-weight:400; line-height:1.5; }
+    .tb__plus { position:relative; width:18px; height:18px; flex-shrink:0; }
+    .tb__plus::before, .tb__plus::after { content:''; position:absolute; background:var(--yellow); transition:transform .3s ease, opacity .3s ease; }
+    .tb__plus::before { top:8px; left:0; width:18px; height:2px; }
+    .tb__plus::after { left:8px; top:0; width:2px; height:18px; }
+    .tb__q[aria-expanded="true"] .tb__plus::after { transform:rotate(90deg); opacity:0; }
+    .tb__a[hidden] { display:none; }
+    .tb__a { padding:0 20px 20px 52px; }
+    .tb__a p { color:var(--ink); font-size:0.94rem; line-height:1.75; font-weight:300; margin:0 0 12px; }
+    .tb__a p:last-child { margin-bottom:0; }
+    .tb__a p strong { color:#fff; font-weight:600; }
+    .tb__a a { color:var(--yellow); text-decoration:underline; text-underline-offset:3px; }
+    @media (max-width:600px){ .tb__a { padding-left:20px; } }
+  </style>
+</head>
+<body class="aj">
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="images/logo-horizontal.png?v=2" alt="The Performance Act" class="logo-img logo-img--header">
+      </a>
+      <nav class="header__nav" id="mainNav" aria-label="Primary">
+        <a href="grow-athlete.html" class="nav-link">SKILLS JOURNAL</a>
+        <a href="grow-athlete-fivemoves.html" class="nav-link">FIVE MOVES</a>
+        <a href="grow-athlete-practice.html" class="nav-link">PRACTICE</a>
+        <a href="grow-athlete-imagery.html" class="nav-link active">IMAGERY</a>
+        <a href="grow-athlete-open.html" class="nav-link">OPEN</a>
+        <a href="grow-athlete-aware.html" class="nav-link">AWARE</a>
+        <a href="grow-athlete-engaged.html" class="nav-link">ENGAGED</a>
+      </nav>
+      <div class="header__actions">
+        <a href="grow-athlete-journal.html" class="btn btn--primary btn--sm">My Journal</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <nav class="mobile-nav__links" aria-label="Mobile">
+      <a href="grow-athlete.html" class="mobile-nav__link">SKILLS JOURNAL HOME</a>
+      <a href="grow-athlete-fivemoves.html" class="mobile-nav__link">THE FIVE MOVES</a>
+      <a href="grow-athlete-practice.html" class="mobile-nav__link">THE PRACTICE ROOM</a>
+      <a href="grow-athlete-imagery.html" class="mobile-nav__link">USING IMAGERY WELL</a>
+      <a href="grow-athlete-open.html" class="mobile-nav__link">OPEN</a>
+      <a href="grow-athlete-aware.html" class="mobile-nav__link">AWARE</a>
+      <a href="grow-athlete-engaged.html" class="mobile-nav__link">ENGAGED</a>
+      <a href="grow-athlete-brain.html" class="mobile-nav__link">BRAIN HEALTH</a>
+      <a href="grow-athlete-journal.html" class="mobile-nav__link">MY JOURNAL</a>
+    </nav>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="aj-hero" id="top">
+    <div class="aj-hero__bg"></div>
+    <div class="container">
+      <a href="grow-athlete.html" class="aj-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Skills Journal
+      </a>
+      <span class="aj-hero__badge">Performance skill &middot; Imagery</span>
+      <h1 class="aj-hero__title">USING IMAGERY<br><span>WELL</span></h1>
+      <p class="aj-hero__lead"><strong>Rehearse the moments that matter, not the whole game.</strong> Imagery is practice you do in your head, using your senses, your body and your words. This page takes you from picking the right moment to a script you can run in twenty seconds on the day.</p>
+      <p class="aj-hero__meta"><span>7 steps</span> &middot; <span>Anchor moments, a script and a cue</span> &middot; <span>Worked example: an Olympic biathlete</span></p>
+    </div>
+  </section>
+
+  <div class="aj-progress">
+    <div class="container">
+      <div class="aj-progress__inner">
+        <span class="aj-progress__label">Your progress through Using Imagery Well</span>
+        <div class="aj-progress__track"><div class="aj-progress__fill" id="ajProgressFill"></div></div>
+        <span class="aj-progress__count" id="ajProgressCount">0 / 0 saved</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== READ THIS FIRST ========== -->
+  <section class="aj-sec">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">Read this first</p>
+        <h2 class="aj-h2">Pick the moment,<br><em>not the movie.</em></h2>
+        <p class="aj-lead">Imagery means running a skill or a moment in your mind, with as much of the real thing as you can bring: what you see, hear and feel, the pressure, and the words you say to yourself.</p>
+        <p class="aj-p" style="margin-top:18px;">Most athletes who try it sit down and attempt to picture the whole game or race. It usually goes one of two ways. Everything goes perfectly, like a highlight reel, or the mind drifts off somewhere around the second quarter. Neither trains much. <strong>Good imagery is short, specific and honest.</strong> One moment that matters, run the way it really happens, with a plan for what you do when the doubt turns up.</p>
+
+        <div class="aj-block">
+          <span class="aj-block__k">Does it actually work?</span>
+          <p>A large review of imagery studies in sport found a medium sized benefit on average. It helped performance, and it also helped motivation and how athletes felt. Imagery added to physical practice did better than physical practice alone, and more intensive imagery training tended to do better than lighter versions.</p>
+          <p>So it earns its place, but <strong>as part of your training, not instead of it.</strong> And how you do it matters. That is what the seven steps below are for.</p>
+        </div>
+
+        <div class="aj-warn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+          <p><strong>Is it a moment you dread?</strong> If just thinking about it brings up a lot of fear, start in <a href="grow-athlete-open.html#rehearsal" style="color:var(--yellow);text-decoration:underline;text-underline-offset:3px;">the Rehearsal Room</a> on the Open page. That tool is built for taking the charge out of a dreaded moment. Once it has come down, come back here and rehearse how you want to perform it.</p>
+        </div>
+
+        <div class="ix">
+          <a href="#watch" class="ix__card ix__card--watch">
+            <div class="ix__num">Watch first &middot; 2 minutes</div>
+            <div class="ix__name">A Biathlete&rsquo;s Bow and Arrow</div>
+            <p class="ix__for">What good imagery looks like inside an Olympian&rsquo;s head.</p>
+          </a>
+          <a href="#anchor" class="ix__card">
+            <div class="ix__num">Step 01</div>
+            <div class="ix__name">Pick Your Anchor Moments</div>
+            <p class="ix__for">Starts, big moments and your first action after a mistake.</p>
+          </a>
+          <a href="#real" class="ix__card">
+            <div class="ix__num">Step 02</div>
+            <div class="ix__name">Make It Real</div>
+            <p class="ix__for">PETTLEP and your senses. The closer to the real thing, the better.</p>
+          </a>
+          <a href="#noise" class="ix__card">
+            <div class="ix__num">Step 03</div>
+            <div class="ix__name">Let the Noise In</div>
+            <p class="ix__for">Write the doubt into the script, and practise ACE inside the moment.</p>
+          </a>
+          <a href="#cues" class="ix__card">
+            <div class="ix__num">Step 04</div>
+            <div class="ix__name">Choose Your Words</div>
+            <p class="ix__for">Cue words that tell your body what to do, not what to avoid.</p>
+          </a>
+          <a href="#script" class="ix__card">
+            <div class="ix__num">Step 05</div>
+            <div class="ix__name">Write Your Script</div>
+            <p class="ix__for">A full version to build the picture and a short one for the day.</p>
+          </a>
+          <a href="#practise" class="ix__card">
+            <div class="ix__num">Step 06</div>
+            <div class="ix__name">Practise and Build</div>
+            <p class="ix__for">Three short sessions a week, layered up over time.</p>
+          </a>
+          <a href="#review" class="ix__card">
+            <div class="ix__num">Step 07</div>
+            <div class="ix__name">Review and Refine</div>
+            <p class="ix__for">What the real performance tells you to change.</p>
+          </a>
+        </div>
+
+        <div class="aj-why">
+          <p><strong>Source.</strong> On the overall evidence, <cite>Simonsmeier, Andronie, Buecker &amp; Frank (2021), The effects of imagery interventions in sports: a meta-analysis, International Review of Sport and Exercise Psychology</cite>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WATCH FIRST ========== -->
+  <section class="aj-sec aj-sec--alt" id="watch">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">Worked example &middot; watch first</p>
+        <h2 class="aj-h2">One moment.<br><em>One picture.</em></h2>
+        <p class="aj-lead">Before the how, here is what imagery can look like inside a real athlete&rsquo;s head. This short animated film from The New York Times follows US biathlete Lowell Bailey.</p>
+        <p class="aj-p" style="margin-top:16px;">Biathlon mixes cross country skiing with rifle shooting. You race hard on skis, then have to settle enough to hit a small target. It is a sport where the pressure builds inside the race itself, which makes it a good place to see imagery doing its job.</p>
+
+        <div class="aj-watch is-single">
+          <figure class="aj-vid">
+            <div class="aj-vid__frame" data-yt="uzpOFOjbkBw" data-list="PL4CGYNsoW2iCjVujnUKcMwQwqwc_KLPI2">
+              <button class="aj-vid__play" aria-label="Play: How to Conquer an Olympic Biathlon" style="background-image:url('https://i.ytimg.com/vi/uzpOFOjbkBw/hqdefault.jpg')">
+                <span class="aj-vid__badge">Watch &middot; 2 min</span>
+                <span class="aj-vid__btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+              </button>
+            </div>
+            <figcaption class="aj-vid__cap"><b>How to Conquer an Olympic Biathlon.</b> The New York Times, from <em>Inside an Olympic Athlete&rsquo;s Mind</em>. The player includes the playlist it comes from, so you can keep watching other athletes. <a href="https://www.youtube.com/watch?v=uzpOFOjbkBw&amp;list=PL4CGYNsoW2iCjVujnUKcMwQwqwc_KLPI2" target="_blank" rel="noopener">Open on YouTube</a></figcaption>
+          </figure>
+        </div>
+
+        <span class="aj-block__k" style="display:block;margin-top:30px;">What to watch for</span>
+        <p class="aj-p">The film&rsquo;s own summary describes it simply. As the pressure builds, Bailey wonders, &ldquo;Can I do this?&rdquo; Then he looks at the snow ahead and imagines himself as a bow with an arrow drawn, ready to accelerate. In those few seconds you can see most of this page at work.</p>
+        <ol class="im-watchlist">
+          <li><strong>A moment, not the whole race.</strong> The imagery is tied to one point: when the pressure starts to build. That is an anchor moment. <a href="#anchor">Step 01</a></li>
+          <li><strong>The doubt shows up, and stays in the picture.</strong> &ldquo;Can I do this?&rdquo; Nobody edits the thought out or argues with it. It is part of the real moment, so it is part of the imagery. That is the Acknowledge in ACE. <a href="#noise">Step 03</a></li>
+          <li><strong>He looks at the snow ahead.</strong> His attention goes outside, to something real and right in front of him, in the direction he is going. That is Connect, and it points him at the job rather than at the worry. <a href="#noise">Step 03</a></li>
+          <li><strong>He becomes a bow with an arrow drawn.</strong> One picture that holds the posture, the stored energy and the intent to go. That is a cue. It does the same job as cue words, just with an image instead. That is Engage. <a href="#cues">Step 04</a></li>
+        </ol>
+
+        <div class="aj-eg">
+          <span class="aj-eg__k">Why it is a good example</span>
+          <p>Look at how little there is. One moment, one honest thought, one place to look, one picture. It doesn&rsquo;t promise him a result and it doesn&rsquo;t pretend the pressure isn&rsquo;t there. It gives him something to do with it.</p>
+          <p>We&rsquo;ve built this breakdown from the film&rsquo;s own description. Watch it yourself and notice what else you pick up: what he sees, what he feels, and how fast it all happens.</p>
+        </div>
+
+        <div class="aj-act">
+          <span class="aj-act__tag">Activity &middot; 3 minutes</span>
+          <h3 class="aj-act__title">Find your bow and arrow</h3>
+          <p class="aj-act__intro">Pick a moment in your sport where the pressure builds. Don&rsquo;t worry about getting it perfect. You will come back to this in Steps 01 and 04.</p>
+          <div class="aj-field">
+            <p class="aj-field__q">1. The moment in your sport where the pressure builds</p>
+            <input type="text" class="aj-input"
+                   data-aj="img.watch.moment"
+                   data-aj-tool="Watch first: a biathlete&#39;s bow and arrow"
+                   data-aj-q="The moment in my sport where the pressure builds"
+                   placeholder="e.g. Standing over a conversion from out wide">
+          </div>
+          <div class="aj-field">
+            <p class="aj-field__q">2. Where would you look to Connect, the way he looks at the snow ahead?</p>
+            <p class="aj-field__hint">Something real, outside you, and ideally in the direction you are about to go.</p>
+            <input type="text" class="aj-input"
+                   data-aj="img.watch.look"
+                   data-aj-tool="Watch first: a biathlete&#39;s bow and arrow"
+                   data-aj-q="Where I would look to Connect"
+                   placeholder="e.g. The middle of the posts, then the ball">
+          </div>
+          <div class="aj-field">
+            <p class="aj-field__q">3. If you had one picture for how you want to move in that moment, what would it be?</p>
+            <p class="aj-field__hint">It should capture the feel, not the technique. A sprinter might use a coiled spring. A goal kicker might use a pendulum. A shooter in netball might use a fountain.</p>
+            <textarea class="aj-textarea"
+                      data-aj="img.watch.picture"
+                      data-aj-tool="Watch first: a biathlete&#39;s bow and arrow"
+                      data-aj-q="My one picture for how I want to move"
+                      placeholder="e.g. A pendulum. Smooth back, smooth through, no snatching."></textarea>
+            <span class="aj-saved" data-aj-saved="img.watch.picture">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 01 — ANCHOR MOMENTS ========== -->
+  <section class="aj-sec" id="anchor">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">01</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Pick Your Anchor Moments</h2>
+              <p class="aj-tool__for">Stop trying to picture the whole performance. Pick the few moments that set everything else up.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+            <span class="aj-block__k">What an anchor moment is</span>
+            <p>An anchor moment is a short, important point that comes round every time you compete. You can rehearse it properly, at real speed, in detail. Get these right and the rest of the performance has something to hang off. They come in three kinds.</p>
+
+            <div class="im-three">
+              <div class="im-three__col">
+                <p class="im-three__k">Kind 1</p>
+                <h4 class="im-three__h">Starts</h4>
+                <p>Your first action. The gun, the whistle, the first touch, the first serve, the first tee shot. A clear first action gives everything after it a place to start from.</p>
+              </div>
+              <div class="im-three__col">
+                <p class="im-three__k">Kind 2</p>
+                <h4 class="im-three__h">Big moments</h4>
+                <p>The kick at goal, the putt, the penalty, the last 200 metres. The points where the pressure piles up and the outcome feels close.</p>
+              </div>
+              <div class="im-three__col">
+                <p class="im-three__k">Kind 3</p>
+                <h4 class="im-three__h">After a mistake</h4>
+                <p>Your first action after an error. Almost nobody rehearses this one, and it often decides what the next five minutes look like.</p>
+              </div>
+            </div>
+
+            <span class="aj-block__k">Size it to your sport</span>
+            <p>How much you script depends on how long your event is. A 100 metre sprint and a marathon need very different plans.</p>
+            <div class="im-three">
+              <div class="im-three__col">
+                <p class="im-three__k">Under a minute</p>
+                <h4 class="im-three__h">The whole event</h4>
+                <p>A 100 metre sprint, a vault, a single run. It is short enough to rehearse from start to finish at real speed.</p>
+              </div>
+              <div class="im-three__col">
+                <p class="im-three__k">A few minutes</p>
+                <h4 class="im-three__h">The start plus 2 to 3 key points</h4>
+                <p>A 1500 metre race, a floor routine, a heat in the pool. Script the start, then the two or three points that decide it.</p>
+              </div>
+              <div class="im-three__col">
+                <p class="im-three__k">A full game or a long event</p>
+                <h4 class="im-three__h">2 to 3 anchors</h4>
+                <p>Rugby, football, netball, a marathon. Pick two or three anchors and give each its own short script.</p>
+              </div>
+            </div>
+
+            <div class="aj-eg">
+              <span class="aj-eg__k">What that looks like in different sports</span>
+              <table class="im-table">
+                <thead><tr><th>Sport</th><th>Possible anchors</th></tr></thead>
+                <tbody>
+                  <tr><td>Marathon</td><td>The start, the hard patch, the last 2 km</td></tr>
+                  <tr><td>Rugby</td><td>The kick off, a goal kick, your first action after an error</td></tr>
+                  <tr><td>Football</td><td>Your first touch, a penalty, your first action after a turnover</td></tr>
+                  <tr><td>Golf</td><td>The first tee shot, a putt, the next shot after a bad hole</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 5 minutes</span>
+              <h3 class="aj-act__title">Choose your anchors</h3>
+              <div class="aj-field">
+                <p class="aj-field__q">1. How long is your event?</p>
+                <div class="aj-chips" data-aj-chips="img.anchor.length" data-aj-single
+                     data-aj-tool="Pick your anchor moments"
+                     data-aj-q="How long my event is">
+                  <button class="aj-chip">Under a minute</button>
+                  <button class="aj-chip">A few minutes</button>
+                  <button class="aj-chip">A full game or a long event</button>
+                </div>
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">2. Your anchor moments</p>
+                <p class="aj-field__hint">Two or three is plenty. Try to include a start, a big moment and your first action after a mistake.</p>
+                <div class="aj-builder__row" data-aj-builder="img.anchor.list"
+                     data-aj-tool="Pick your anchor moments"
+                     data-aj-q="My anchor moments"
+                     data-aj-empty="Add two or three anchor moments.">
+                  <input type="text" class="aj-input" placeholder="e.g. My first carry after the kick off">
+                  <button type="button" class="aj-btn" data-aj-add>Add</button>
+                  <div class="aj-builder__list" style="flex:1 1 100%;"></div>
+                </div>
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">3. The one you will script first, and why</p>
+                <textarea class="aj-textarea"
+                          data-aj="img.anchor.first"
+                          data-aj-tool="Pick your anchor moments"
+                          data-aj-q="The anchor I will script first, and why"
+                          placeholder="e.g. After a dropped ball. I tend to go quiet for ten minutes and my next carry is half hearted."></textarea>
+                <span class="aj-saved" data-aj-saved="img.anchor.first">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> Practitioner guidance from our work with athletes. On matching imagery to the real task and its timing, see <cite>Holmes &amp; Collins (2001), the PETTLEP model, Journal of Applied Sport Psychology</cite>.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 02 — MAKE IT REAL ========== -->
+  <section class="aj-sec aj-sec--alt" id="real">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">02</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Make It Real</h2>
+              <p class="aj-tool__for">The closer your imagery is to the real thing, the more of it carries over.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+            <span class="aj-block__k">PETTLEP: a checklist for real</span>
+            <p>Imagery works best when it shares as much as possible with the actual performance. Researchers Paul Holmes and Dave Collins turned that idea into a seven part checklist called PETTLEP. You don&rsquo;t need every letter every time. Use it to spot what your imagery is missing.</p>
+
+            <div class="im-pet">
+              <div class="im-pet__item"><span class="im-pet__l">P</span><div><h4>Physical</h4><p>Stand in your stance, wear your kit, hold the ball, club or stick. Let your body join in.</p></div></div>
+              <div class="im-pet__item"><span class="im-pet__l">E</span><div><h4>Environment</h4><p>Picture the actual venue. If you can, go there first, or look at photos or footage of it.</p></div></div>
+              <div class="im-pet__item"><span class="im-pet__l">T</span><div><h4>Task</h4><p>The real skill at your level, with the thoughts and focus you would actually have. Not someone else&rsquo;s highlight reel.</p></div></div>
+              <div class="im-pet__item"><span class="im-pet__l">T</span><div><h4>Timing</h4><p>Real speed, most of the time. Slow it down only to learn a part, then bring it back up to speed.</p></div></div>
+              <div class="im-pet__item"><span class="im-pet__l">L</span><div><h4>Learning</h4><p>Update the script as your skill and your role change. A script that never changes goes stale.</p></div></div>
+              <div class="im-pet__item"><span class="im-pet__l">E</span><div><h4>Emotion</h4><p>Bring in the nerves, the noise and what is at stake. Calm and perfect isn&rsquo;t what you will meet on the day.</p></div></div>
+              <div class="im-pet__item im-pet__item--wide"><span class="im-pet__l">P</span><div><h4>Perspective</h4><p>Through your own eyes, or like a camera watching you. Try both. Many athletes find their own eyes best for timing and feel, and the camera view useful for checking shape and position.</p></div></div>
+            </div>
+
+            <span class="aj-block__k">Then go beyond pictures</span>
+            <p>&ldquo;Visualisation&rdquo; makes it sound like a film, but the strongest imagery uses every sense. What can you <strong>see</strong>, <strong>hear</strong>, <strong>feel in your body</strong>, <strong>touch</strong>, even smell? And what do you feel emotionally?</p>
+            <p>Some athletes hardly &ldquo;see&rdquo; anything when they do imagery, and that is fine. Lead with the sense that comes most easily, often the feel of the movement or the sound of the venue, and add the others one at a time.</p>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 10 minutes, once</span>
+              <h3 class="aj-act__title">Build the picture for your first anchor</h3>
+              <p class="aj-act__intro">Close your eyes and step into your anchor moment for thirty seconds. Then write down what was there under each heading. Short notes are fine. These become the raw material for your script.</p>
+              <div class="st">
+                <div class="st__col">
+                  <h5>I see</h5>
+                  <textarea class="aj-textarea" data-aj="img.real.see" data-aj-tool="Make it real" data-aj-q="In my anchor moment I see" placeholder="Posts, the line, the crowd behind the dead ball line"></textarea>
+                </div>
+                <div class="st__col">
+                  <h5>I hear</h5>
+                  <textarea class="aj-textarea" data-aj="img.real.hear" data-aj-tool="Make it real" data-aj-q="In my anchor moment I hear" placeholder="Crowd going quiet, the ref, my own breath"></textarea>
+                </div>
+                <div class="st__col">
+                  <h5>My body feels</h5>
+                  <textarea class="aj-textarea" data-aj="img.real.body" data-aj-tool="Make it real" data-aj-q="In my anchor moment my body feels" placeholder="Heavy legs, heart going, tight shoulders"></textarea>
+                </div>
+                <div class="st__col">
+                  <h5>I touch</h5>
+                  <textarea class="aj-textarea" data-aj="img.real.touch" data-aj-tool="Make it real" data-aj-q="In my anchor moment I touch" placeholder="Seams of the ball, grass under my studs"></textarea>
+                </div>
+                <div class="st__col">
+                  <h5>I feel</h5>
+                  <textarea class="aj-textarea" data-aj="img.real.emotion" data-aj-tool="Make it real" data-aj-q="In my anchor moment I feel (emotion)" placeholder="Nervous, a bit excited, worried about last week"></textarea>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:24px;">
+                <p class="aj-field__q">PETTLEP check: what will your imagery include?</p>
+                <p class="aj-field__hint">Tick what you can realistically build in. Four or five is a good start.</p>
+                <div class="aj-meter">
+                  <div class="aj-meter__top">
+                    <span class="aj-meter__name">PETTLEP elements in place</span>
+                    <span class="aj-meter__val" id="petMeterVal">0 / 7</span>
+                  </div>
+                  <div class="aj-meter__track"><div class="aj-meter__fill" id="petMeterFill"></div></div>
+                </div>
+                <div class="aj-check"
+                     data-aj-check="img.real.pettlep"
+                     data-aj-meter="petMeterFill"
+                     data-aj-meter-val="petMeterVal"
+                     data-aj-tool="Make it real"
+                     data-aj-q="PETTLEP elements my imagery will include">
+                  <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Physical</b>I will do it in my stance, in kit, holding my gear.</div></div>
+                  <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Environment</b>I know what the venue looks and sounds like.</div></div>
+                  <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Task</b>It is my skill, at my level, with my real focus.</div></div>
+                  <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Timing</b>I run it at real speed most of the time.</div></div>
+                  <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Learning</b>I will update it as I improve.</div></div>
+                  <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Emotion</b>The nerves and the stakes are in it.</div></div>
+                  <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Perspective</b>I have tried both views and know which suits this moment.</div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> <cite>Holmes &amp; Collins (2001), the PETTLEP approach to motor imagery, Journal of Applied Sport Psychology</cite>. On adding senses and detail one layer at a time, <cite>Cumming et al. (2017), layered stimulus response training, Journal of Sport Psychology in Action</cite>.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 03 — LET THE NOISE IN ========== -->
+  <section class="aj-sec" id="noise">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">03</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Let the Noise In</h2>
+              <p class="aj-tool__for">Don&rsquo;t script the perfect day. Script the real one, and practise what you do when the doubt shows up.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+            <span class="aj-block__k">Why a perfect script lets you down</span>
+            <p>Most imagery scripts are spotless. Nothing goes wrong and nobody is nervous. Then the real day arrives with sweaty palms and a loud thought about last time, and the script has nothing to say about it.</p>
+            <p><strong>Mental noise is normal.</strong> Doubt, nerves and old memories turn up for good athletes too. The aim isn&rsquo;t to get rid of them. The aim is to have practised what you do when they arrive. So write them in.</p>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+              <p><strong>Don&rsquo;t write &ldquo;I feel no nerves&rdquo; or &ldquo;don&rsquo;t miss&rdquo;.</strong> Trying hard not to think about something can make it more likely, especially under pressure. In one study, people putting a golf ball who were told not to overshoot it were more likely to overshoot when their minds were busy with something else. Give your mind something to do instead.</p>
+            </div>
+
+            <span class="aj-block__k">ACE inside the moment</span>
+            <p>This is the same ACE you learned in <a href="grow-athlete-aware.html#anchor" style="color:var(--yellow);text-decoration:underline;text-underline-offset:3px;">Dropping Anchor</a>, shrunk down to a few seconds and placed inside your anchor moment.</p>
+            <ol class="aj-steps">
+              <li><strong>A, Acknowledge.</strong> Name what is there, briefly and without arguing. &ldquo;There&rsquo;s the worry.&rdquo; &ldquo;There&rsquo;s that memory.&rdquo;</li>
+              <li><strong>C, Connect.</strong> Come back to your body and where you are. Feet into the floor, one breath out, eyes on something real.</li>
+              <li><strong>E, Engage.</strong> Back to the job, with your cue. &ldquo;High and soft.&rdquo; &ldquo;Next job.&rdquo;</li>
+            </ol>
+
+            <div class="aj-eg">
+              <span class="aj-eg__k">In a script it sounds like this</span>
+              <p>From Mia&rsquo;s script in Step 05. Mia is a fictional basketballer.</p>
+              <p><em>&ldquo;A thought shows up: I missed this exact shot in the first half. There&rsquo;s that memory. I press my feet into the floor and let one slow breath out.&rdquo;</em></p>
+              <p>The thought is there. It gets named in three words. Then her attention goes to her feet and her breath, and from there to the job.</p>
+            </div>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 5 minutes</span>
+              <h3 class="aj-act__title">Plan your ACE for this moment</h3>
+              <div class="aj-field">
+                <p class="aj-field__q">1. The thought or feeling that usually turns up at this moment</p>
+                <p class="aj-field__hint">Be honest. The more accurate this is, the more useful the rehearsal.</p>
+                <textarea class="aj-textarea"
+                          data-aj="img.noise.thought"
+                          data-aj-tool="Let the noise in"
+                          data-aj-q="The thought or feeling that turns up at my anchor moment"
+                          placeholder="e.g. 'You always shank these from the left.' Tight stomach."></textarea>
+                <span class="aj-saved" data-aj-saved="img.noise.thought">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">2. Acknowledge: the few words you will use to name it</p>
+                <input type="text" class="aj-input"
+                       data-aj="img.noise.acknowledge"
+                       data-aj-tool="Let the noise in"
+                       data-aj-q="How I will acknowledge it"
+                       placeholder="e.g. There's the left side story.">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">3. Connect: your body move</p>
+                <input type="text" class="aj-input"
+                       data-aj="img.noise.connect"
+                       data-aj-tool="Let the noise in"
+                       data-aj-q="How I will connect"
+                       placeholder="e.g. Feel my plant foot, one long breath out">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">4. Engage: the first thing you will do</p>
+                <input type="text" class="aj-input"
+                       data-aj="img.noise.engage"
+                       data-aj-tool="Let the noise in"
+                       data-aj-q="How I will engage"
+                       placeholder="e.g. Eyes on the sweet spot, start my steps back">
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> On ironic errors, <cite>Wegner, Ansfield &amp; Pilloff (1998), The putt and the pendulum: ironic effects of the mental control of action, Psychological Science</cite>. ACE is adapted from <cite>Harris, The Happiness Trap (2022)</cite>.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 04 — CHOOSE YOUR WORDS ========== -->
+  <section class="aj-sec aj-sec--alt" id="cues">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">04</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Choose Your Words</h2>
+              <p class="aj-tool__for">A few words that tell your body what to do, at the exact point it needs telling.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+            <span class="aj-block__k">Words that work</span>
+            <p>Cue words are the short phrases you say to yourself inside the moment. Good ones are simple and point you somewhere. Unhelpful ones are usually warnings, lectures or insults.</p>
+            <ol class="aj-steps">
+              <li><strong>Say what to do.</strong> Not what to avoid. Your body needs a direction, not a ban.</li>
+              <li><strong>Point at the target or the result.</strong> &ldquo;Through the ball&rdquo; usually works better than a list of body parts. Focusing on the effect you want, out in the world, tends to keep the movement smooth.</li>
+              <li><strong>Fit the job.</strong> Fine, precise skills like a putt, a shot or a kick suit technical cues. Effort and endurance moments suit drive cues like &ldquo;Go now&rdquo; or &ldquo;Strong&rdquo;.</li>
+              <li><strong>Stay short and yours.</strong> One to three words, in language you would actually use. A picture can work too, like Bailey&rsquo;s bow and arrow.</li>
+            </ol>
+
+            <span class="aj-block__k" style="display:block;margin-top:26px;">Try this, not that</span>
+            <div class="im-swap">
+              <div class="im-swap__row im-swap__head">
+                <div>The moment</div>
+                <div class="im-yes">Try this</div>
+                <div>Not that</div>
+              </div>
+              <div class="im-swap__row">
+                <div class="im-swap__moment">A shot, kick or putt</div>
+                <div class="im-swap__try" data-k="Try this">&ldquo;High and soft.&rdquo; &ldquo;Through the ball.&rdquo;</div>
+                <div class="im-swap__not" data-k="Not that">&ldquo;Don&rsquo;t miss.&rdquo;</div>
+              </div>
+              <div class="im-swap__row">
+                <div class="im-swap__moment">Too many thoughts</div>
+                <div class="im-swap__try" data-k="Try this">&ldquo;Smooth.&rdquo; &ldquo;Up and through.&rdquo;</div>
+                <div class="im-swap__not" data-k="Not that">&ldquo;Knees, elbow, wrist, follow through.&rdquo;</div>
+              </div>
+              <div class="im-swap__row">
+                <div class="im-swap__moment">After a mistake</div>
+                <div class="im-swap__try" data-k="Try this">&ldquo;Next play.&rdquo; &ldquo;Next job.&rdquo;</div>
+                <div class="im-swap__not" data-k="Not that">&ldquo;You idiot.&rdquo;</div>
+              </div>
+              <div class="im-swap__row">
+                <div class="im-swap__moment">When nerves show up</div>
+                <div class="im-swap__try" data-k="Try this">&ldquo;There&rsquo;s the worry.&rdquo; &ldquo;Feet, breath, cue.&rdquo;</div>
+                <div class="im-swap__not" data-k="Not that">&ldquo;Calm down.&rdquo;</div>
+              </div>
+            </div>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 5 minutes</span>
+              <h3 class="aj-act__title">Build and test your cues</h3>
+              <div class="aj-field">
+                <p class="aj-field__q">1. Your cue words for this anchor moment</p>
+                <p class="aj-field__hint">One for the action itself is enough to start. Add one for after a mistake if this anchor needs it.</p>
+                <div class="aj-builder__row" data-aj-builder="img.cues.list"
+                     data-aj-tool="Choose your words"
+                     data-aj-q="My cue words"
+                     data-aj-empty="Add one to three cues.">
+                  <input type="text" class="aj-input" placeholder="e.g. Through the ball">
+                  <button type="button" class="aj-btn" data-aj-add>Add</button>
+                  <div class="aj-builder__list" style="flex:1 1 100%;"></div>
+                </div>
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">2. Test your main cue. Does it&hellip;</p>
+                <div class="aj-check"
+                     data-aj-check="img.cues.test"
+                     data-aj-tool="Choose your words"
+                     data-aj-q="My main cue passes these tests">
+                  <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Say what to do</b>No &ldquo;don&rsquo;t&rdquo;, no warnings.</div></div>
+                  <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Point at the target or result</b>Somewhere out in the world, not a body part checklist.</div></div>
+                  <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Fit the job</b>Technical for fine skills, drive for effort.</div></div>
+                  <div class="aj-check__row"><div class="aj-check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="aj-check__text"><b>Stay short and mine</b>Three words or fewer, in my own language.</div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> On matching self talk to the task, <cite>Hatzigeorgiadis, Zourbanos, Galanis &amp; Theodorakis (2011), Self-talk and sports performance: a meta-analysis, Perspectives on Psychological Science</cite>. On building cues that point outside the body, <cite>Winkelman, The Language of Coaching (2020)</cite>.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 05 — WRITE YOUR SCRIPT ========== -->
+  <section class="aj-sec" id="script">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">05</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Write Your Script</h2>
+              <p class="aj-tool__for">Two versions of the same moment: a full one that builds the picture, and a short one you can run anywhere.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+            <span class="aj-block__k">Two versions</span>
+            <div class="im-three im-three--two">
+              <div class="im-three__col">
+                <p class="im-three__k">Full script &middot; 250 to 350 words</p>
+                <h4 class="im-three__h">Builds the picture</h4>
+                <p>First person, present tense, every sense, the noise and your ACE. Read it slowly once a session, or record it in your own voice and listen.</p>
+              </div>
+              <div class="im-three__col">
+                <p class="im-three__k">Short version &middot; 40 to 80 words</p>
+                <h4 class="im-three__h">The one you use</h4>
+                <p>The same moment at game speed, cut down to the key beats. Run it 10 to 20 times a session, and in the warm up on the day.</p>
+              </div>
+            </div>
+
+            <span class="aj-block__k">How to build it</span>
+            <ol class="aj-steps">
+              <li><strong>Set the scene.</strong> Where you are, the score or the stakes, what is about to happen.</li>
+              <li><strong>Bring in the senses.</strong> Use your notes from Step 02. What you see, hear, feel and touch.</li>
+              <li><strong>Let the noise in.</strong> The thought or feeling that turns up, and your ACE from Step 03.</li>
+              <li><strong>The action, with your cues.</strong> Place each cue at the point the movement needs it, from Step 04.</li>
+              <li><strong>Finish with the next job.</strong> Whatever happened, what you do next. Don&rsquo;t script the result. Script what you do.</li>
+            </ol>
+
+            <div class="aj-eg">
+              <span class="aj-eg__k">Worked example &middot; Mia, a fictional basketballer</span>
+              <p>Mia is made up, and this is how an athlete might write their own full script. The labels show where her cues and ACE steps sit. She leaves them out when she reads it.</p>
+              <div class="im-legend">
+                <span><span class="im-tag im-tag--a">Acknowledge</span></span>
+                <span><span class="im-tag im-tag--c">Connect</span></span>
+                <span><span class="im-tag im-tag--e">Engage</span></span>
+                <span><span class="im-tag im-tag--cue">Cue</span></span>
+                <span><span class="im-tag im-tag--reset">Reset</span></span>
+              </div>
+              <div class="im-script">
+                <p class="im-script__label">Mia&rsquo;s full script &middot; about 250 words</p>
+                <p>Fourth quarter, we&rsquo;re down by two with forty seconds left. I jog to the left corner and set my toes just behind the line. The gym is loud. Shoes squeak, the bench is on its feet and someone in the crowd is yelling. The lights bounce off the floor. My palms are sweaty, so I wipe them on my shorts, and I can feel my heart thumping in my chest.</p>
+                <p>A thought shows up: I missed this exact shot in the first half. <span class="im-tag im-tag--a">Acknowledge</span> There&rsquo;s that memory. <span class="im-tag im-tag--c">Connect</span> I press my feet into the floor and let one slow breath out. I&rsquo;m here to be the teammate who&rsquo;s ready when the ball comes, whatever the score.</p>
+                <p>Our guard drives baseline and I stay on the balls of my feet, eyes on her. Her eyes find me. <span class="im-tag im-tag--cue">Cue</span> &lsquo;Ready hands.&rsquo; I show her a target, low and wide. The pass pops into my pocket and my fingers find the seams. My knees are already bending.</p>
+                <p>Another thought: don&rsquo;t miss. <span class="im-tag im-tag--a">Acknowledge</span> There&rsquo;s the worry. It can come too. <span class="im-tag im-tag--e">Engage</span> &lsquo;High and soft.&rsquo; My legs push up through the floor, my elbow stays under the ball and my wrist snaps through. I feel the ball roll off my fingertips. <span class="im-tag im-tag--cue">Cue</span> &lsquo;Hold it.&rsquo; My follow through stays high, fingers pointing at the rim, and I watch the ball arc up towards the back of the ring.</p>
+                <p><span class="im-tag im-tag--reset">Reset</span> &lsquo;Next job.&rsquo; Whatever the scoreboard says, I sprint back on defence, find my number and call the switch. Hands up, talking, ready for the next play.</p>
+              </div>
+              <div class="im-script">
+                <p class="im-script__label">Mia&rsquo;s short version &middot; about 50 words</p>
+                <p>Left corner, toes behind the line. Loud gym, sweaty palms, heart thumping. There&rsquo;s that memory, there&rsquo;s the worry. Feet into the floor, one breath out. Ready hands. Catch in my pocket, fingers on the seams. High and soft. Legs, elbow, wrist. Hold it. Next job, sprint back and find my number.</p>
+              </div>
+              <p><strong>Notice what Mia never imagines:</strong> the ball going in. The script stops at the ball in the air and moves straight to her next job. She is rehearsing what she can control, so the script still works on the nights the shot misses.</p>
+            </div>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 20 minutes</span>
+              <h3 class="aj-act__title">Write both versions</h3>
+              <p class="aj-act__intro">Write the full script first, then cut it down. Read the full one out loud once before you call it done. If a line doesn&rsquo;t sound like you, change it.</p>
+              <div class="aj-field">
+                <p class="aj-field__q">1. My full script</p>
+                <p class="aj-field__hint">First person, present tense. Set the scene, the senses, the noise and your ACE, the action with your cues, then the next job.</p>
+                <textarea class="aj-textarea" id="imFull" style="min-height:260px;"
+                          data-aj="img.script.full"
+                          data-aj-tool="Write your script"
+                          data-aj-q="My full imagery script"
+                          placeholder="Start where you are standing, just before the moment..."></textarea>
+                <div class="im-count" data-im-count="imFull" data-min="250" data-max="350"><b>0 words</b><span>Aim for 250 to 350</span></div>
+                <span class="aj-saved" data-aj-saved="img.script.full">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">2. My short version</p>
+                <p class="aj-field__hint">Keep the key beats: the scene in a few words, the noise named, your connect move, your cues, the next job.</p>
+                <textarea class="aj-textarea" id="imShort" style="min-height:120px;"
+                          data-aj="img.script.short"
+                          data-aj-tool="Write your script"
+                          data-aj-q="My short version"
+                          placeholder="e.g. Out wide, wind in my face. There's the left side story. Plant foot, breath out. Eyes on the sweet spot. Through the ball. Next job, chase the kick off."></textarea>
+                <div class="im-count" data-im-count="imShort" data-min="40" data-max="80"><b>0 words</b><span>Aim for 40 to 80</span></div>
+                <span class="aj-saved" data-aj-saved="img.script.short">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+
+              <div class="im-card" aria-live="polite">
+                <p class="im-card__title">Your imagery card</p>
+                <div class="im-card__row"><span class="im-card__k">Anchor</span><span class="im-card__v" data-im-card="anchor"></span></div>
+                <div class="im-card__row"><span class="im-card__k">The noise</span><span class="im-card__v" data-im-card="noise"></span></div>
+                <div class="im-card__row"><span class="im-card__k">Cues</span><span class="im-card__v" data-im-card="cues"></span></div>
+                <div class="im-card__row"><span class="im-card__k">Short version</span><span class="im-card__v" data-im-card="short"></span></div>
+              </div>
+              <p class="aj-field__hint" style="margin-top:10px;">This card fills in from your answers above. Screenshot it and keep it in your phone or your kit bag.</p>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> Script structure adapted from the PETTLEP approach, <cite>Holmes &amp; Collins (2001)</cite>, and layered imagery training, <cite>Cumming et al. (2017)</cite>. Script lengths are our practice guidance: long enough for real detail, short enough to read in a couple of minutes.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 06 — PRACTISE AND BUILD ========== -->
+  <section class="aj-sec aj-sec--alt" id="practise">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">06</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Practise and Build</h2>
+              <p class="aj-tool__for">Little and often. A script you run three times a week beats a perfect one in a drawer.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+            <span class="aj-block__k">How much</span>
+            <div class="im-dose">
+              <div class="im-dose__item"><div class="im-dose__n">3</div><div class="im-dose__u">Sessions a week</div><div class="im-dose__d">Spread across the week, not crammed.</div></div>
+              <div class="im-dose__item"><div class="im-dose__n">10&ndash;15</div><div class="im-dose__u">Minutes a session</div><div class="im-dose__d">Long enough for real reps.</div></div>
+              <div class="im-dose__item"><div class="im-dose__n">10&ndash;20</div><div class="im-dose__u">Short version reps</div><div class="im-dose__d">After one read of the full script.</div></div>
+            </div>
+            <p>This lines up with the research. A review of 133 imagery training studies found people practised, on average, about three times a week for around 17 minutes a session. In a basketball study, 13 and 18 minute sessions improved free throws more than 8 minute sessions did. The shorter sessions still helped compared with no imagery at all. They just helped less.</p>
+
+            <span class="aj-block__k">Build it in layers</span>
+            <ol class="aj-steps">
+              <li><strong>Weeks 1 and 2: make it clear.</strong> A quiet spot, your stance, your kit. Add one sense at a time until the moment feels real and you can run it the way you mean to.</li>
+              <li><strong>From week 3: add pressure.</strong> Run it with crowd noise playing, straight after a hard set while you are still breathing hard, or right before a real rep at training. Make the noise in your script louder.</li>
+              <li><strong>Then: use it on the day.</strong> The short version in your warm up, and in the seconds before your anchor moment.</li>
+            </ol>
+
+            <div class="aj-eg">
+              <span class="aj-eg__k">Where to fit it</span>
+              <p>Attach it to training rather than adding another job to your day. Straight after a session, while the feel of the skill is fresh, is a good slot. So is the five minutes before training starts. The short version fits anywhere: the bus, the queue, the walk to the car.</p>
+              <p>Same idea as the Practice Room: <a href="grow-athlete-practice.html" style="color:var(--yellow);text-decoration:underline;text-underline-offset:3px;">build it in, don&rsquo;t fit it in</a>.</p>
+            </div>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; a 12 minute session</span>
+              <h3 class="aj-act__title">Run a session, then log it</h3>
+              <div class="aj-timer" data-aj-timer='[
+                {"phase":"Set up","secs":60,"cue":"Stand in your stance, in kit if you can. <strong>Settle into the venue.</strong>"},
+                {"phase":"Full script","secs":180,"cue":"Read or listen once, slowly. <strong>Every sense, the noise, your ACE.</strong>"},
+                {"phase":"Short version","secs":420,"cue":"Run it at game speed, 10 to 20 times. <strong>Short pause between each rep.</strong>"},
+                {"phase":"Rate it","secs":60,"cue":"How clear was it? How well could you run it the way you meant to? <strong>Log it below.</strong>"}
+              ]'>
+                <div class="aj-timer__clock" data-timer-clock>1:00</div>
+                <div class="aj-timer__phase" data-timer-phase>Set up</div>
+                <p class="aj-timer__cue" data-timer-cue></p>
+                <div class="aj-timer__controls">
+                  <button type="button" class="aj-btn" data-timer-start>Start</button>
+                  <button type="button" class="aj-btn aj-btn--ghost" data-timer-reset>Reset</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:24px;">
+                <p class="aj-field__q">Two weeks of sessions</p>
+                <p class="aj-field__hint">Tap a session to open it. Rate clarity and control out of 10. Clarity is how real it felt. Control is how well you could run it the way you meant to.</p>
+                <div id="imDays"></div>
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> <cite>Schuster et al. (2011), Best practice for motor imagery, BMC Medicine</cite>; <cite>Itoh, Morris &amp; Spittle (2023), Examining duration in the imagery dose-response relationship, Journal of Imagery Research in Sport and Physical Activity</cite>; on building in layers, <cite>Cumming et al. (2017)</cite>.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 07 — REVIEW AND REFINE ========== -->
+  <section class="aj-sec" id="review">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">07</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Review and Refine</h2>
+              <p class="aj-tool__for">Your script is a draft. Real performances tell you what to change.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+            <span class="aj-block__k">After you compete</span>
+            <p>Within a day or two, while it is fresh, look back at your anchor moment. Not at the result. At what happened in the moment itself.</p>
+            <ol class="aj-steps">
+              <li><strong>Did the moment go the way you rehearsed it?</strong> Where did it match, and where did it surprise you?</li>
+              <li><strong>Did your cue come when you needed it?</strong> On time, late, or not at all?</li>
+              <li><strong>What showed up that wasn&rsquo;t in your script?</strong> A thought, a sound, a situation you hadn&rsquo;t pictured.</li>
+            </ol>
+            <p>Then change one thing in the script. That is the L in PETTLEP: the script learns as you do. One change at a time keeps it yours and keeps it short.</p>
+
+            <span class="aj-block__k" style="display:block;margin-top:26px;">When imagery goes wrong</span>
+            <div class="tb">
+              <div class="tb__item">
+                <button class="tb__q" aria-expanded="false"><span>&ldquo;I keep missing in my head.&rdquo;</span><span class="tb__plus"></span></button>
+                <div class="tb__a" hidden>
+                  <p>Very common, and it isn&rsquo;t a sign of anything bad. Don&rsquo;t fight it. Acknowledge it like any other noise, then rewind a few seconds and run that part again, slowly first, then at real speed.</p>
+                  <p>If it keeps happening and comes with a lot of dread, the moment may need some work in <a href="grow-athlete-open.html#rehearsal">the Rehearsal Room</a> first. Bring it to a session too.</p>
+                </div>
+              </div>
+              <div class="tb__item">
+                <button class="tb__q" aria-expanded="false"><span>&ldquo;I can&rsquo;t really see anything.&rdquo;</span><span class="tb__plus"></span></button>
+                <div class="tb__a" hidden>
+                  <p>Plenty of athletes don&rsquo;t get clear pictures, and they can still use imagery well. Lead with the sense that is strongest for you, often the feel of the movement or the sound of the venue.</p>
+                  <p>Then add one layer at a time. Photos or footage of the venue help with the visual side, and so does doing your imagery straight after a real rep.</p>
+                </div>
+              </div>
+              <div class="tb__item">
+                <button class="tb__q" aria-expanded="false"><span>&ldquo;It plays in slow motion.&rdquo;</span><span class="tb__plus"></span></button>
+                <div class="tb__a" hidden>
+                  <p>Slow is useful for learning one part of a skill. Most of your reps should still be at real speed, because that is the speed you will perform at.</p>
+                  <p>A simple check: time the real movement, then time your imagery of it. If the imagery takes twice as long, speed it up.</p>
+                </div>
+              </div>
+              <div class="tb__item">
+                <button class="tb__q" aria-expanded="false"><span>&ldquo;It makes me more nervous.&rdquo;</span><span class="tb__plus"></span></button>
+                <div class="tb__a" hidden>
+                  <p>Some nerves are the point. Your script should feel a bit like the real thing, and the real thing comes with nerves. Use your Connect move and keep going.</p>
+                  <p>If it climbs a long way, shorten the session, keep your eyes open, and go back to the clarity layer before adding pressure again. If it stays high, talk to us about it.</p>
+                </div>
+              </div>
+              <div class="tb__item">
+                <button class="tb__q" aria-expanded="false"><span>&ldquo;My mind drifts off, or I fall asleep.&rdquo;</span><span class="tb__plus"></span></button>
+                <div class="tb__a" hidden>
+                  <p>Lying in bed is a great place to sleep and a poor place for imagery. Do it standing or sitting up, in your stance if you can, with your gear in your hands. That is the Physical in PETTLEP doing its job.</p>
+                  <p>And when your mind drifts, notice it and come back. Like the Practice Room says, the returning is the rep.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 5 minutes after each event</span>
+              <h3 class="aj-act__title">Review your anchor moment</h3>
+              <div class="aj-field">
+                <p class="aj-field__q">1. The event, and the anchor moment you are reviewing</p>
+                <input type="text" class="aj-input"
+                       data-aj="img.review.event"
+                       data-aj-tool="Review and refine"
+                       data-aj-q="The event and anchor moment I reviewed"
+                       placeholder="e.g. Club final, my first kick at goal">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">2. Did your cue come when you needed it?</p>
+                <div class="aj-chips" data-aj-chips="img.review.cue" data-aj-single
+                     data-aj-tool="Review and refine"
+                     data-aj-q="Did my cue come when I needed it?">
+                  <button class="aj-chip">Yes, right on time</button>
+                  <button class="aj-chip">Late</button>
+                  <button class="aj-chip">Not at all</button>
+                  <button class="aj-chip">Something else came instead</button>
+                </div>
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">3. What happened in the moment, and what showed up that wasn&rsquo;t in your script?</p>
+                <textarea class="aj-textarea"
+                          data-aj="img.review.happened"
+                          data-aj-tool="Review and refine"
+                          data-aj-q="What happened, and what showed up that wasn't in my script"
+                          placeholder="e.g. The wind was much stronger than I'd pictured. The 'left side' thought came, I named it, but I rushed my steps back."></textarea>
+                <span class="aj-saved" data-aj-saved="img.review.happened">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">4. One change to your script</p>
+                <input type="text" class="aj-input"
+                       data-aj="img.review.change"
+                       data-aj-tool="Review and refine"
+                       data-aj-q="One change to my script"
+                       placeholder="e.g. Add the wind, and add 'slow steps' as a cue before 'through the ball'">
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> The Learning element of PETTLEP, <cite>Holmes &amp; Collins (2001)</cite>. Troubleshooting adapted from layered imagery training, <cite>Cumming et al. (2017)</cite>, and our practice with athletes.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CLOSE ========== -->
+  <section class="aj-sec aj-sec--alt">
+    <div class="container">
+      <div class="aj-wrap">
+        <div class="aj-takeaways">
+          <h3>Using imagery well in seven lines</h3>
+          <ul>
+            <li><strong>Pick the moment, not the movie.</strong> Starts, big moments and your first action after a mistake.</li>
+            <li><strong>Make it real.</strong> Your stance, your venue, real speed, every sense.</li>
+            <li><strong>Let the noise in.</strong> Script the doubt, then practise ACE inside the moment.</li>
+            <li><strong>Say what to do.</strong> Short cues that point at the target, not warnings.</li>
+            <li><strong>Two versions.</strong> A full script to build it, a short one to use it.</li>
+            <li><strong>Three times a week, 10 to 15 minutes.</strong> Clear first, then add pressure.</li>
+            <li><strong>Script what you do, not the result.</strong> Then let each real performance improve the script.</li>
+          </ul>
+        </div>
+
+        <div class="aj-nextnav">
+          <a href="grow-athlete-practice.html">
+            <div class="aj-nextnav__dir">&larr; Previous</div>
+            <div class="aj-nextnav__title">The Practice Room</div>
+          </a>
+          <a href="grow-athlete-open.html#rehearsal" class="aj-nextnav--end">
+            <div class="aj-nextnav__dir">For moments you dread &rarr;</div>
+            <div class="aj-nextnav__title">The Rehearsal Room</div>
+          </a>
+        </div>
+
+        <div class="aj-disclaimer">
+          <p>These skills support the work we do together. They don&rsquo;t replace it, and they aren&rsquo;t therapy or a crisis service. If imagery brings up more than you expected, stop, and bring it to your next session or sooner. Free, confidential support is available 24/7 across Aotearoa: call or text <a href="tel:1737">1737</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom" style="border-top:none;">
+        <p>&copy; 2026 The Performance Act. Private athlete area.</p>
+        <div class="footer__bottom-links">
+          <a href="grow-athlete.html">Skills Journal</a>
+          <a href="grow-athlete-journal.html">My Journal</a>
+          <a href="grow-athlete.html#sources">Sources</a>
+          <a href="grow-login.html" data-aj-logout>Log out</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <button class="support-line-btn" id="supportLineBtn" aria-label="NZ support lines">
+    <span class="support-line-btn__dot" aria-hidden="true"></span>
+    Immediate Support
+  </button>
+  <div class="support-line-modal" id="supportLineModal" role="dialog" aria-modal="true" aria-labelledby="supportLineTitle" aria-hidden="true">
+    <div class="support-line-modal__backdrop"></div>
+    <div class="support-line-modal__panel">
+      <button class="support-line-modal__close" id="supportLineClose" aria-label="Close support lines">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <p class="support-line-modal__eyebrow">Aotearoa, New Zealand</p>
+      <h2 class="support-line-modal__title" id="supportLineTitle">Need immediate support?</h2>
+      <p class="support-line-modal__note">The Performance Act is a sport psychology practice, not a crisis or emergency service. If you or someone you care about needs immediate support, please reach out to one of these trusted services. They are free, confidential, and available 24&#8202;/&#8202;7.</p>
+      <ul class="support-line-modal__list" role="list">
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">1737 &mdash; Need to Talk?</p><p class="sln-resource__desc">Free call or text, any time. Trained counsellors, 24&#47;7.</p></div>
+          <a href="tel:1737" class="sln-resource__number">Call or text 1737</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Lifeline NZ</p><p class="sln-resource__desc">Crisis support and suicide prevention, 24&#47;7.</p></div>
+          <a href="tel:0800543354" class="sln-resource__number">0800 543 354</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Youthline</p><p class="sln-resource__desc">For young people. Free call or text 234, 24&#47;7.</p></div>
+          <a href="tel:0800376633" class="sln-resource__number">0800 376 633</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Suicide Crisis Helpline</p><p class="sln-resource__desc">0508 TAUTOKO. Support for those in crisis, 24&#47;7.</p></div>
+          <a href="tel:0508828865" class="sln-resource__number">0508 828 865</a>
+        </li>
+      </ul>
+      <p class="support-line-modal__footer">More resources at <a href="https://www.mentalhealth.org.nz/get-help/in-crisis" target="_blank" rel="noopener">Mental Health Foundation NZ</a> and <a href="https://www.depression.org.nz" target="_blank" rel="noopener">depression.org.nz</a>.</p>
+    </div>
+  </div>
+
+  <script src="script.js?v=5"></script>
+
+  <!-- Build the session log before the engine binds -->
+  <script>
+  (function () {
+    'use strict';
+    var host = document.getElementById('imDays');
+    if (!host) return;
+    var SESSIONS = ['Session 1','Session 2','Session 3','Session 4','Session 5','Session 6'];
+    host.innerHTML = SESSIONS.map(function (label, i) {
+      var n = i + 1;
+      return '' +
+      '<div class="aj-day">' +
+        '<button type="button" class="aj-day__trigger">' +
+          '<span class="aj-day__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>' +
+          '<span class="aj-day__label">' + label + '</span>' +
+          '<svg class="aj-day__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>' +
+        '</button>' +
+        '<div class="aj-day__panel" hidden>' +
+          '<div class="aj-day__body">' +
+            '<div class="aj-field">' +
+              '<p class="aj-field__q" style="font-size:0.88rem;">What did you run, and for how long?</p>' +
+              '<input type="text" class="aj-input" ' +
+                'data-aj="img.log.s' + n + '.what" ' +
+                'data-aj-tool="Imagery session log" ' +
+                'data-aj-q="' + label + ': what I ran" ' +
+                'placeholder="e.g. Full script once, short version x15, 12 minutes after training">' +
+            '</div>' +
+            '<div class="aj-field" style="margin-bottom:0;">' +
+              '<p class="aj-field__q" style="font-size:0.88rem;">Clarity and control out of 10, and one thing you noticed</p>' +
+              '<input type="text" class="aj-input" ' +
+                'data-aj="img.log.s' + n + '.rating" ' +
+                'data-aj-tool="Imagery session log" ' +
+                'data-aj-q="' + label + ': clarity, control, one thing I noticed" ' +
+                'placeholder="e.g. Clarity 6, control 8. The crowd noise is still blurry.">' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+  })();
+  </script>
+
+  <script src="grow-athlete.js?v=3"></script>
+
+  <script>
+  /* troubleshooting accordion */
+  (function () {
+    'use strict';
+    document.querySelectorAll('.tb__item').forEach(function (item) {
+      var q = item.querySelector('.tb__q');
+      var a = item.querySelector('.tb__a');
+      if (!q || !a) return;
+      q.addEventListener('click', function () {
+        var open = q.getAttribute('aria-expanded') === 'true';
+        q.setAttribute('aria-expanded', open ? 'false' : 'true');
+        a.hidden = open;
+      });
+    });
+  })();
+
+  /* word counters for the two script versions */
+  (function () {
+    'use strict';
+    function words(s) {
+      s = (s || '').trim();
+      return s ? s.split(/\s+/).length : 0;
+    }
+    document.querySelectorAll('[data-im-count]').forEach(function (out) {
+      var field = document.getElementById(out.getAttribute('data-im-count'));
+      if (!field) return;
+      var min = parseInt(out.getAttribute('data-min'), 10);
+      var max = parseInt(out.getAttribute('data-max'), 10);
+      var b = out.querySelector('b');
+      function paint() {
+        var n = words(field.value);
+        b.textContent = n + (n === 1 ? ' word' : ' words');
+        out.classList.toggle('is-in', n >= min && n <= max);
+        out.classList.toggle('is-over', n > max);
+      }
+      field.addEventListener('input', paint);
+      field.addEventListener('aj:restored', paint);
+      paint();
+      setTimeout(paint, 300);
+    });
+  })();
+
+  /* the imagery card: pulls the athlete's own answers together */
+  (function () {
+    'use strict';
+    var NS = 'pact_aj_v1_';
+    function read(k) {
+      try { return localStorage.getItem(NS + k) || ''; } catch (e) { return ''; }
+    }
+    var SOURCES = {
+      anchor: function () {
+        /* That answer also asks "why", so keep just the first sentence. */
+        var first = read('img.anchor.first').split(/[.!?\n]/)[0];
+        if (first.trim()) return first;
+        var list = read('img.anchor.list');
+        return list ? list.split('|').join(' / ') : read('img.watch.moment');
+      },
+      noise: function () {
+        var a = read('img.noise.acknowledge');
+        var c = read('img.noise.connect');
+        var t = read('img.noise.thought');
+        if (a || c) return [a, c].filter(Boolean).join('\n');
+        return t;
+      },
+      cues: function () {
+        var list = read('img.cues.list');
+        return list ? list.split('|').join(' / ') : '';
+      },
+      short: function () { return read('img.script.short'); }
+    };
+    var EMPTY = {
+      anchor: 'Step 01 fills this in.',
+      noise: 'Step 03 fills this in.',
+      cues: 'Step 04 fills this in.',
+      short: 'Your short version fills this in.'
+    };
+    var cells = document.querySelectorAll('[data-im-card]');
+    if (!cells.length) return;
+    function paint() {
+      cells.forEach(function (cell) {
+        var k = cell.getAttribute('data-im-card');
+        var v = (SOURCES[k] ? SOURCES[k]() : '').trim();
+        cell.textContent = v || EMPTY[k];
+        cell.classList.toggle('is-empty', !v);
+      });
+    }
+    /* The engine saves on input and on clicks inside builders, so
+       repaint just after either. */
+    document.addEventListener('input', function () { setTimeout(paint, 450); });
+    document.addEventListener('click', function () { setTimeout(paint, 60); });
+    document.addEventListener('keyup', function (e) { if (e.key === 'Enter') setTimeout(paint, 60); });
+    paint();
+    setTimeout(paint, 300);
+  })();
+  </script>
+</body>
+</html>
