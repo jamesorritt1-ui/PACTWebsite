@@ -57,6 +57,20 @@
     .pl-logout { font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; color: rgba(255,255,255,0.75); background: transparent; border: 1px solid rgba(255,255,255,0.25); padding: 9px 16px; cursor: pointer; text-transform: uppercase; transition: all .3s ease; flex-shrink: 0; }
     .pl-logout:hover { color: #fff; border-color: rgba(255,255,255,0.6); }
 
+
+    /* ---------- SESSION SWITCHER ---------- */
+    .pl-sessions { background: #0b0b0a; border-bottom: 1px solid var(--pl-line); }
+    .pl-sessions__inner { display: flex; gap: 8px; padding: 12px 0; overflow-x: auto; scrollbar-width: none; }
+    .pl-sessions__inner::-webkit-scrollbar { display: none; }
+    .pl-sessions__tab { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-heading); font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; color: #d6d6d0; text-decoration: none; padding: 8px 14px; border: 1px solid var(--pl-line); white-space: nowrap; transition: all .2s ease; }
+    .pl-sessions__tab span { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; border: 1px solid var(--pl-gold-line); color: var(--pl-gold); font-size: 0.75rem; }
+    .pl-sessions__tab:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+    .pl-sessions__tab.is-current { color: #111; background: var(--pl-gold); border-color: var(--pl-gold); }
+    .pl-sessions__tab.is-current span { background: #111; color: var(--pl-gold); border-color: #111; }
+    .pl-newsession { margin-top: 26px; display: inline-flex; align-items: center; gap: 12px; border: 1px solid var(--pl-gold-line); background: var(--pl-gold-soft); padding: 12px 18px; color: #fff; text-decoration: none; font-size: 1rem; }
+    .pl-newsession strong { color: var(--pl-gold); font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+    .pl-newsession:hover { border-color: var(--pl-gold); }
+
     /* ---------- SECTION NAV ---------- */
     .pl-nav { background: #0b0b0a; border-bottom: 1px solid var(--pl-line); position: sticky; top: var(--header-height); z-index: 50; }
     .pl-nav__inner { display: flex; align-items: center; gap: 2px; overflow-x: auto; scrollbar-width: none; }
@@ -531,6 +545,16 @@
       </div>
     </div>
 
+    <!-- Session switcher -->
+    <div class="pl-sessions">
+      <div class="container">
+        <div class="pl-sessions__inner" role="navigation" aria-label="Sessions">
+          <a class="pl-sessions__tab is-current" href="grow-paddle-for-life.html" aria-current="page"><span>1</span>What we paddle for</a>
+          <a class="pl-sessions__tab" href="grow-paddle-for-life-session-two.html"><span>2</span>Noise in the boat</a>
+        </div>
+      </div>
+    </div>
+
     <!-- Section nav -->
     <nav class="pl-nav" aria-label="Session one sections">
       <div class="container">
@@ -565,6 +589,7 @@
             <a class="pl-dl" href="resources/paddle-for-life/What_We_Paddle_For_Session_One_Pack.pdf" download="What_We_Paddle_For_Session_One_Pack.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>Download your session one pack</a>
             <span class="pl-dl-meta">PDF · 6 pages · prints on A4</span>
           </div>
+          <a class="pl-newsession" href="grow-paddle-for-life-session-two.html"><strong>New</strong> Session two, Noise in the Boat, is up. Take a look &rarr;</a>
           <p class="pl-hero__meta" style="margin-top:18px;"><a class="pl-hero__jump" href="#toolkit">Short on time? Jump to what to do at training.</a></p>
           <p class="pl-hero__meta">Read it all in about twenty minutes, or dip in where you need to. Anything you write on this page stays on your own device.</p>
         </div>
@@ -1096,7 +1121,7 @@
 
           <div class="pl-arc">
             <div class="pl-arc__item pl-arc__item--done"><div class="pl-arc__n">1<span class="pl-arc__pill">Done</span></div><div class="pl-arc__t">What we paddle for</div><div class="pl-arc__d">What makes turning up worth it, and what competes with it.</div></div>
-            <div class="pl-arc__item pl-arc__item--next"><div class="pl-arc__n">2<span class="pl-arc__pill pl-arc__pill--next">Next</span></div><div class="pl-arc__t">From values to the way we row</div><div class="pl-arc__d">The things that are expected but never said, turned into agreements the boat owns.</div></div>
+            <a class="pl-arc__item pl-arc__item--done" href="grow-paddle-for-life-session-two.html" style="text-decoration:none;"><div class="pl-arc__n">2<span class="pl-arc__pill">Done</span></div><div class="pl-arc__t">Noise in the boat</div><div class="pl-arc__d">Unhooking from the noise, ACE, and turning values into clear crew actions. Open session two &rarr;</div></a>
             <div class="pl-arc__item"><div class="pl-arc__n">3</div><div class="pl-arc__t">Unhooked and steady</div><div class="pl-arc__d">The thoughts and feelings that show up in a boat, and what to do besides fight them.</div></div>
             <div class="pl-arc__item"><div class="pl-arc__n">4</div><div class="pl-arc__t">Racing with it, and what we remember</div><div class="pl-arc__d">Taking the tools onto the water, and the rituals that carry a season.</div></div>
           </div>
