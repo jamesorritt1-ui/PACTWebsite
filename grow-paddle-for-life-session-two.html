@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T335C5CQGF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-T335C5CQGF');
+  </script>
+  <meta name="robots" content="noindex, nofollow">
+  <title>Noise in the Boat | Paddle for Life | The Performance Act</title>
+  <meta name="description" content="Noise in the Boat: session two resources for the Paddle for Life crews, from The Performance Act.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Caveat:wght@500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="style.css?v=18">
+  <link rel="stylesheet" href="grow.css?v=1">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=2">
+
+
+  <style>
+    /* ============================================================
+       WHAT WE PADDLE FOR — PADDLE FOR LIFE
+       GROW area for the Paddle for Life crews (session two).
+       Palette: black + TPA yellow. Scoped to .pl-root so it never
+       touches the rest of the site.
+    ============================================================ */
+    .pl-root {
+      --pl-gold:       #FFE500;
+      --pl-gold-soft:  rgba(255,229,0,0.10);
+      --pl-gold-line:  rgba(255,229,0,0.35);
+      --pl-ink:        #EDEDEA;
+      --pl-muted:      #A9A9A2;
+      --pl-card:       #121211;
+      --pl-line:       rgba(255,255,255,0.09);
+      background: #0a0a09;
+    }
+
+    /* Gate the page until the login check resolves (no flash) */
+    .pl-root { opacity: 0; transition: opacity .25s ease; }
+    .pl-root.is-ready { opacity: 1; }
+
+    /* ---------- CLUB BANNER ---------- */
+    .pl-banner { background: #111110; padding: calc(var(--header-height) + 18px) 0 18px; border-bottom: 3px solid var(--pl-gold); }
+    .pl-banner__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .pl-banner__left { display: flex; align-items: center; gap: 14px; }
+    .pl-banner__logo { height: 42px; width: auto; }
+    .pl-banner__name { font-family: var(--font-heading); font-size: 1rem; font-weight: 700; letter-spacing: 0.08em; color: #fff; text-transform: uppercase; line-height: 1.1; }
+    .pl-banner__platform { font-family: var(--font-heading); font-size: 0.62rem; letter-spacing: 0.22em; color: rgba(255,255,255,0.62); text-transform: uppercase; }
+    .pl-logout { font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; color: rgba(255,255,255,0.75); background: transparent; border: 1px solid rgba(255,255,255,0.25); padding: 9px 16px; cursor: pointer; text-transform: uppercase; transition: all .3s ease; flex-shrink: 0; }
+    .pl-logout:hover { color: #fff; border-color: rgba(255,255,255,0.6); }
+
+    /* ---------- SECTION NAV ---------- */
+    .pl-nav { background: #0b0b0a; border-bottom: 1px solid var(--pl-line); position: sticky; top: var(--header-height); z-index: 50; }
+    .pl-nav__inner { display: flex; align-items: center; gap: 2px; overflow-x: auto; scrollbar-width: none; }
+    .pl-nav__inner::-webkit-scrollbar { display: none; }
+    .pl-nav__label { font-family: var(--font-heading); font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pl-muted); padding-right: 14px; flex-shrink: 0; }
+    .pl-nav__link { font-family: var(--font-heading); font-size: 0.86rem; letter-spacing: 0.05em; text-transform: uppercase; color: #d6d6d0; text-decoration: none; padding: 15px 14px; white-space: nowrap; border-bottom: 3px solid transparent; transition: all 0.2s ease; flex-shrink: 0; }
+    .pl-nav__link:hover { color: #fff; background: rgba(255,255,255,0.03); }
+    .pl-nav__link.is-active { color: var(--pl-gold); border-bottom-color: var(--pl-gold); }
+    .pl-sec[id] { scroll-margin-top: calc(var(--header-height) + 70px); }
+
+    /* ---------- HERO ---------- */
+    .pl-hero { position: relative; overflow: hidden; background: #050505; padding: clamp(48px, 8vw, 96px) 0 clamp(60px, 9vw, 110px); }
+    .pl-hero__bg { position: absolute; inset: 0; background: url('images/river-landscape.png') center 55% / cover no-repeat; opacity: 0.32; filter: grayscale(1) contrast(1.05); }
+    .pl-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 85%, rgba(255,229,0,0.10) 0%, transparent 55%), linear-gradient(180deg, rgba(5,5,5,0.45) 0%, rgba(5,5,5,0.88) 100%); }
+    .pl-hero .container { position: relative; z-index: 2; }
+    .pl-hero__eyebrow { font-family: var(--font-heading); font-size: 0.78rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--pl-gold); margin-bottom: 18px; }
+    .pl-hero__title { font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; font-size: clamp(2.6rem, 8vw, 5.6rem); line-height: 0.96; color: #fff; margin-bottom: 24px; }
+    .pl-hero__title em { color: var(--pl-gold); font-style: normal; }
+    .pl-hero__lead { font-size: clamp(1.1rem, 2.4vw, 1.4rem); color: var(--pl-ink); max-width: 660px; line-height: 1.55; font-weight: 300; }
+    .pl-hero__lead strong { color: #fff; font-weight: 600; }
+    .pl-hero__meta { margin-top: 26px; font-size: 0.95rem; color: var(--pl-muted); }
+
+    /* ---------- DOWNLOAD BUTTON ---------- */
+    .pl-dl { display: inline-flex; align-items: center; gap: 12px; background: var(--pl-gold); color: #111; font-family: var(--font-heading); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.98rem; padding: 16px 26px; text-decoration: none; border: 2px solid var(--pl-gold); transition: all .25s ease; }
+    .pl-dl:hover, .pl-dl:focus-visible { background: transparent; color: var(--pl-gold); }
+    .pl-dl svg { width: 20px; height: 20px; flex-shrink: 0; }
+    .pl-dl-wrap { margin-top: 26px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; }
+    .pl-dl-meta { font-size: 0.92rem; color: var(--pl-muted); }
+    .pl-dl-box { margin-top: 44px; background: var(--pl-card); border: 1px solid var(--pl-line); border-left: 4px solid var(--pl-gold); padding: 26px 28px; max-width: 900px; }
+    .pl-dl-box h3 { font-family: var(--font-heading); text-transform: uppercase; color: #fff; font-size: 1.3rem; margin: 0 0 8px; letter-spacing: 0.04em; }
+    .pl-dl-box p { color: var(--pl-ink); margin: 0 0 18px; font-size: 1rem; line-height: 1.6; font-weight: 300; }
+
+    /* ---------- GENERIC SECTION ---------- */
+    .pl-sec { padding: clamp(60px, 9vw, 104px) 0; background: #0a0a09; }
+    .pl-sec--darker { background: #050505; }
+    .pl-sec__num { font-family: var(--font-heading); font-size: 0.8rem; letter-spacing: 0.28em; color: var(--pl-gold); text-transform: uppercase; display: block; margin-bottom: 14px; }
+    .pl-sec__title { font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; font-size: clamp(1.9rem, 4.6vw, 3.1rem); line-height: 1.04; color: #fff; margin-bottom: 22px; }
+    .pl-sec__title em { color: var(--pl-gold); font-style: normal; }
+    .pl-sec__lead { font-size: 1.12rem; color: var(--pl-ink); max-width: 720px; line-height: 1.7; font-weight: 300; }
+    .pl-sec__lead + .pl-sec__lead { margin-top: 18px; }
+    .pl-sec__lead strong { color: #fff; font-weight: 600; }
+    .pl-sec__lead em { color: var(--pl-gold); font-style: normal; }
+
+    .pl-land { margin-top: 40px; border-left: 4px solid var(--pl-gold); padding: 6px 0 6px 22px; max-width: 760px; }
+    .pl-land p { font-family: var(--font-heading); text-transform: uppercase; font-weight: 600; color: #fff; font-size: clamp(1.25rem, 3vw, 1.7rem); line-height: 1.25; margin: 0; letter-spacing: 0.01em; }
+    .pl-land p em { color: var(--pl-gold); font-style: normal; }
+
+    .pl-card { background: var(--pl-card); border: 1px solid var(--pl-line); padding: 28px; }
+    .pl-card h3 { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.04em; color: #fff; font-size: 1.25rem; margin: 0 0 10px; line-height: 1.2; }
+    .pl-card p { color: var(--pl-ink); font-size: 1rem; line-height: 1.6; margin: 0 0 10px; font-weight: 300; }
+    .pl-card p:last-child { margin-bottom: 0; }
+    .pl-card strong { color: #fff; font-weight: 600; }
+    .pl-card--gold { border-top: 4px solid var(--pl-gold); }
+    .pl-card--grey { border-top: 4px solid #555; }
+    .pl-tag { font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pl-gold); display: block; margin-bottom: 10px; }
+    .pl-tag--muted { color: var(--pl-muted); }
+    .pl-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 40px; }
+    .pl-grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
+    .pl-grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 40px; }
+
+    /* ---------- 01 WHAKATAUKI ---------- */
+    .pl-wk { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items: stretch; margin-top: 10px; }
+    .pl-wk__quote { background: var(--pl-gold); color: #111; padding: clamp(28px, 4vw, 44px); }
+    .pl-wk__label { font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase; color: #111; opacity: 0.75; margin-bottom: 14px; display: block; }
+    .pl-wk__reo { font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; font-size: clamp(1.9rem, 4.6vw, 3rem); line-height: 1.02; margin: 0 0 12px; color: #111; }
+    .pl-wk__en { font-size: 1.25rem; font-weight: 600; margin: 0 0 18px; color: #111; }
+    .pl-wk__story { font-size: 1.04rem; line-height: 1.65; margin: 0; color: #1b1b1b; }
+    .pl-wk__img { background: url('images/kowhai-flowers-crop.jpg') center / cover no-repeat; min-height: 280px; filter: saturate(0.85); }
+    .pl-note { margin-top: 18px; font-size: 0.92rem; color: var(--pl-muted); line-height: 1.55; max-width: 720px; }
+
+    /* ---------- 02 PUSH AWAY LOOP ---------- */
+    .pl-loop { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr; align-items: stretch; gap: 10px; margin-top: 42px; }
+    .pl-loop__step { background: var(--pl-card); border: 1px solid var(--pl-line); border-top: 4px solid #555; padding: 22px 20px; }
+    .pl-loop__step:last-of-type { border-top-color: var(--pl-gold); }
+    .pl-loop__n { font-family: var(--font-heading); color: var(--pl-gold); font-size: 0.8rem; letter-spacing: 0.2em; margin-bottom: 8px; }
+    .pl-loop__t { font-family: var(--font-heading); text-transform: uppercase; color: #fff; font-size: 1.1rem; letter-spacing: 0.04em; margin-bottom: 6px; }
+    .pl-loop__d { font-size: 0.95rem; color: var(--pl-muted); line-height: 1.5; }
+    .pl-loop__arrow { display: flex; align-items: center; color: var(--pl-gold); }
+    .pl-loop__arrow svg { width: 22px; height: 22px; }
+    .pl-loop__again { margin-top: 14px; display: flex; align-items: center; gap: 10px; color: var(--pl-muted); font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.78rem; }
+    .pl-loop__again svg { width: 20px; height: 20px; color: var(--pl-gold); }
+
+    .pl-reveal { margin-top: 30px; background: var(--pl-card); border: 1px solid var(--pl-line); border-left: 4px solid var(--pl-gold); max-width: 780px; }
+    .pl-reveal > summary { cursor: pointer; padding: 18px 22px; font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.06em; color: #fff; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .pl-reveal > summary::-webkit-details-marker { display: none; }
+    .pl-reveal > summary::after { content: '+'; color: var(--pl-gold); font-size: 1.5rem; line-height: 1; }
+    .pl-reveal[open] > summary::after { content: '\2013'; }
+    .pl-reveal__body { padding: 0 22px 20px; }
+    .pl-reveal__body p, .pl-reveal__body li { color: var(--pl-ink); font-size: 1rem; line-height: 1.65; font-weight: 300; }
+    .pl-reveal__body ol { margin: 0; padding-left: 22px; }
+    .pl-reveal__body li { margin-bottom: 8px; }
+    .pl-reveal__body strong { color: #fff; font-weight: 600; }
+
+    /* ---------- 03 THE GREEN NOTE ---------- */
+    .pl-stickies { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 36px; max-width: 900px; }
+    .pl-sticky { background: var(--pl-gold); color: #151515; font-family: 'Caveat', 'Brush Script MT', cursive; font-size: 1.55rem; line-height: 1.05; padding: 18px 18px 22px; width: 172px; min-height: 140px; box-shadow: 0 8px 20px rgba(0,0,0,0.45); }
+    .pl-sticky:nth-child(odd) { transform: rotate(-2.5deg); }
+    .pl-sticky:nth-child(even) { transform: rotate(2deg); }
+    .pl-sticky:nth-child(3n) { transform: rotate(-1deg); }
+    .pl-rounds { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 44px; }
+    .pl-sticky--green { background: #b6e07a; }
+    .pl-stickies-note { margin-top: 18px; font-size: 0.88rem; color: var(--pl-muted); }
+    .pl-steps-home { margin-top: 40px; }
+
+    /* ---------- 04 TRIFLEX ---------- */
+    .pl-triflex { margin-top: 36px; max-width: 900px; }
+    .pl-triflex svg { width: 100%; height: auto; display: block; }
+    .pl-triflex text { font-family: 'Oswald', 'Arial Narrow', sans-serif; font-weight: 700; letter-spacing: 0.06em; }
+
+    /* ---------- 05 FINISH LINE VS OAR ---------- */
+    .pl-icon { width: 54px; height: 54px; margin-bottom: 14px; display: block; }
+    .pl-sort { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 26px; max-width: 900px; }
+    .pl-sort details { background: var(--pl-card); border: 1px solid var(--pl-line); }
+    .pl-sort summary { cursor: pointer; padding: 18px 20px; color: #fff; font-size: 1.05rem; list-style: none; line-height: 1.4; }
+    .pl-sort summary::-webkit-details-marker { display: none; }
+    .pl-sort summary span { display: block; font-family: var(--font-heading); font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--pl-muted); margin-top: 8px; }
+    .pl-sort details[open] summary span { display: none; }
+    .pl-sort__answer { padding: 0 20px 18px; color: var(--pl-ink); font-size: 0.98rem; line-height: 1.55; font-weight: 300; }
+    .pl-sort__answer strong { color: var(--pl-gold); font-weight: 600; text-transform: uppercase; font-family: var(--font-heading); letter-spacing: 0.06em; }
+
+    /* ---------- WATCH: VIDEOS ---------- */
+    .pl-videos { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 40px; }
+    .pl-video { background: var(--pl-card); border: 1px solid var(--pl-line); border-top: 4px solid var(--pl-gold); display: flex; flex-direction: column; }
+    .pl-video__frame { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; }
+    .pl-video__frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .pl-video__body { padding: 24px 26px 26px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .pl-video__meta { font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pl-gold); }
+    .pl-video__title { font-family: var(--font-heading); text-transform: uppercase; color: #fff; font-size: 1.35rem; letter-spacing: 0.03em; line-height: 1.2; margin: 0; }
+    .pl-video__by { font-size: 0.92rem; color: var(--pl-muted); margin: 0; }
+    .pl-video__desc { color: var(--pl-ink); font-size: 1rem; line-height: 1.6; font-weight: 300; margin: 0; }
+    .pl-video__ask { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--pl-line); color: var(--pl-ink); font-size: 0.98rem; line-height: 1.55; }
+    .pl-video__ask strong { color: var(--pl-gold); font-family: var(--font-heading); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.74rem; display: block; margin-bottom: 4px; }
+    .pl-video-note { margin-top: 18px; font-size: 0.88rem; color: var(--pl-muted); }
+    @media (max-width: 860px) { .pl-videos { grid-template-columns: 1fr; } }
+
+    /* ---------- 06 THE COIN ---------- */
+    .pl-coins { display: flex; align-items: center; justify-content: flex-start; gap: 22px; flex-wrap: wrap; margin-top: 40px; }
+    .pl-coin { width: 270px; height: 270px; border-radius: 50%; border: 6px solid var(--pl-gold); box-shadow: inset 0 0 0 10px #111110, inset 0 0 0 12px rgba(255,229,0,0.5); background: #111110; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 38px; }
+    .pl-coin__side { font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pl-gold); margin-bottom: 10px; }
+    .pl-coin__text { color: #fff; font-size: 1.05rem; line-height: 1.45; }
+    .pl-coin__turn { display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--pl-muted); font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.72rem; }
+    .pl-coin__turn svg { width: 54px; height: 30px; color: var(--pl-gold); }
+    .pl-checks { list-style: none; padding: 0; margin: 22px 0 0; max-width: 760px; }
+    .pl-checks li { position: relative; padding: 14px 0 14px 40px; border-top: 1px solid var(--pl-line); color: var(--pl-ink); font-size: 1.05rem; line-height: 1.55; }
+    .pl-checks li::before { content: ''; position: absolute; left: 0; top: 16px; width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--pl-gold); }
+    .pl-checks li::after { content: ''; position: absolute; left: 8px; top: 21px; width: 6px; height: 11px; border: solid var(--pl-gold); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+    .pl-and { margin-top: 32px; font-family: var(--font-heading); text-transform: uppercase; color: #fff; font-size: clamp(1.3rem, 3.4vw, 2rem); line-height: 1.3; }
+    .pl-and em { color: var(--pl-gold); font-style: normal; }
+    .pl-and s { color: var(--pl-muted); }
+    .pl-private { margin-top: 30px; display: flex; gap: 14px; align-items: flex-start; background: var(--pl-gold-soft); border: 1px solid var(--pl-gold-line); padding: 18px 22px; max-width: 760px; }
+    .pl-private svg { width: 22px; height: 22px; color: var(--pl-gold); flex-shrink: 0; margin-top: 2px; }
+    .pl-private p { margin: 0; color: var(--pl-ink); font-size: 1rem; line-height: 1.55; }
+    .pl-private strong { color: #fff; }
+    .pl-split { display: grid; grid-template-columns: 1fr 0.8fr; gap: 36px; align-items: center; margin-top: 40px; }
+    .pl-split__img { background: url('images/fern-koru.jpg') center / cover no-repeat; min-height: 320px; filter: grayscale(1) contrast(1.05); opacity: 0.9; }
+
+    /* ---------- 07 CREW STROKE ---------- */
+    .pl-law__n { font-family: var(--font-heading); font-size: 2.4rem; font-weight: 700; color: var(--pl-gold); line-height: 1; margin-bottom: 10px; }
+    .pl-placeholder { margin-top: 40px; border: 2px dashed var(--pl-gold-line); padding: 26px 28px; max-width: 900px; }
+    .pl-placeholder h3 { font-family: var(--font-heading); text-transform: uppercase; color: #fff; font-size: 1.3rem; margin: 0 0 8px; letter-spacing: 0.04em; }
+    .pl-placeholder p { color: var(--pl-muted); margin: 0; font-size: 1rem; line-height: 1.6; }
+
+    /* ---------- 08 MY ONE STROKE: PADDLE CARD ---------- */
+    .pl-pcard { margin-top: 40px; background: #F4F2EC; color: #141413; padding: clamp(22px, 4vw, 40px); max-width: 900px; }
+    .pl-pcard__title { font-family: var(--font-heading); text-transform: uppercase; font-size: 1.5rem; letter-spacing: 0.04em; margin: 0 0 4px; color: #141413; }
+    .pl-pcard__sub { font-size: 0.95rem; color: #55534b; margin: 0 0 22px; }
+    .pl-field { display: grid; grid-template-columns: 170px 1fr; gap: 18px; align-items: start; padding: 16px 0; border-top: 1px solid #D8D4C8; }
+    .pl-field__label { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.86rem; color: #6B5E00; padding-top: 10px; }
+    .pl-field__hint { display: block; font-family: var(--font-body); text-transform: none; letter-spacing: 0; color: #66645c; font-size: 0.82rem; margin-top: 4px; line-height: 1.4; }
+    .pl-input, .pl-textarea { width: 100%; font-family: var(--font-body); font-size: 1.05rem; color: #141413; background: #fff; border: 1px solid #C9C4B6; padding: 12px 14px; }
+    .pl-textarea { min-height: 72px; resize: vertical; }
+    .pl-input:focus, .pl-textarea:focus { outline: 3px solid rgba(255,229,0,0.8); border-color: #8a7a00; }
+    .pl-when { display: grid; grid-template-columns: auto 1fr; gap: 10px 12px; align-items: center; }
+    .pl-when span { font-size: 1rem; color: #141413; }
+    .pl-ticks { display: flex; gap: 14px; flex-wrap: wrap; padding-top: 6px; }
+    .pl-ticks label { display: inline-flex; align-items: center; gap: 8px; font-size: 1rem; cursor: pointer; }
+    .pl-ticks input { width: 24px; height: 24px; accent-color: #141413; }
+    .pl-range { width: 100%; accent-color: #141413; }
+    .pl-range-out { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; margin-left: 8px; }
+    .pl-range-msg { margin-top: 8px; font-size: 0.98rem; line-height: 1.5; padding: 10px 12px; background: #fff7c2; border-left: 4px solid #141413; }
+    .pl-pcard__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; align-items: center; }
+    .pl-btn { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-heading); font-size: 0.92rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 14px 24px; cursor: pointer; border: 2px solid #141413; background: #141413; color: #fff; transition: all .25s ease; }
+    .pl-btn:hover { background: #333; }
+    .pl-btn--ghost { background: transparent; color: #141413; }
+    .pl-btn--ghost:hover { background: rgba(0,0,0,0.06); }
+    .pl-pcard__status { font-size: 0.88rem; color: #55534b; }
+    .pl-device-note { margin-top: 14px; font-size: 0.86rem; color: #55534b; }
+
+    .pl-steps { counter-reset: s; list-style: none; padding: 0; margin: 26px 0 0; max-width: 780px; }
+    .pl-steps li { counter-increment: s; position: relative; padding: 14px 0 14px 50px; border-top: 1px solid var(--pl-line); color: var(--pl-ink); font-size: 1.05rem; line-height: 1.55; }
+    .pl-steps li::before { content: counter(s); position: absolute; left: 0; top: 12px; width: 32px; height: 32px; border-radius: 50%; background: var(--pl-gold); color: #111; font-family: var(--font-heading); font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .pl-steps strong { color: #fff; font-weight: 600; }
+
+    /* ---------- 09 UNTIL SESSION TWO ---------- */
+    .pl-arc { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; }
+    .pl-arc__item { background: var(--pl-card); border: 1px solid var(--pl-line); padding: 24px 20px; }
+    .pl-arc__item--done { border-top: 4px solid var(--pl-gold); }
+    .pl-arc__item--next { border-top: 4px solid #777; }
+    .pl-arc__n { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--pl-gold); line-height: 1; }
+    .pl-arc__pill { display: inline-block; font-family: var(--font-heading); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; background: var(--pl-gold); color: #111; padding: 3px 8px; margin-left: 8px; vertical-align: middle; }
+    .pl-arc__pill--next { background: #444; color: #fff; }
+    .pl-arc__t { font-family: var(--font-heading); text-transform: uppercase; color: #fff; font-size: 1.05rem; margin: 10px 0 6px; letter-spacing: 0.03em; line-height: 1.25; }
+    .pl-arc__d { font-size: 0.92rem; color: var(--pl-muted); line-height: 1.5; }
+
+    .pl-support { max-width: 780px; margin: 56px auto 0; text-align: center; border-top: 1px solid var(--pl-line); padding-top: 30px; }
+    .pl-support p { font-size: 0.98rem; color: var(--pl-muted); line-height: 1.65; }
+    .pl-support a { color: var(--pl-gold); }
+    .pl-support strong { color: #fff; }
+
+    /* ---------- 09 WHY + WORKED EXAMPLE ---------- */
+    .pl-h3--lg { font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; color: #fff; font-size: clamp(1.5rem, 3.4vw, 2.2rem); line-height: 1.08; margin: 56px 0 18px; }
+    .pl-h3--lg em { color: var(--pl-gold); font-style: normal; }
+    .pl-anchor { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 10px; align-items: stretch; margin-top: 30px; max-width: 1080px; }
+    .pl-anchor .pl-loop__step:first-child { border-top-color: #9a9a92; }
+    .pl-anchor .pl-loop__step:nth-child(3) { border-top-color: #e5cf00; }
+    .pl-anchor .pl-loop__d { color: var(--pl-ink); }
+    .pl-anchor__eg { display: block; margin-top: 10px; font-family: 'Caveat', cursive; font-size: 1.4rem; color: var(--pl-gold); line-height: 1.15; }
+    .pl-chooser .pl-card h3 { font-size: 1.1rem; }
+    .pl-chooser .pl-if { font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--pl-muted); display: block; margin-bottom: 6px; }
+    .pl-laws { display: flex; flex-wrap: wrap; gap: 8px 10px; padding-top: 4px; }
+    .pl-laws label { display: inline-flex; align-items: center; gap: 8px; font-size: 1rem; background: #fff; border: 1px solid #C9C4B6; padding: 8px 12px; cursor: pointer; }
+    .pl-laws input { width: 18px; height: 18px; accent-color: #141413; }
+    .pl-laws label:has(input:checked) { border-color: #141413; background: #fff7c2; }
+    .pl-lawhow { display: grid; grid-template-columns: auto 1fr; gap: 10px 12px; align-items: center; margin-top: 12px; }
+    .pl-lawhow span { font-size: 1rem; color: #141413; }
+    .pl-exlaws { display: flex; flex-wrap: wrap; gap: 8px; font-family: var(--font-body); font-size: 0.95rem; color: #8b887d; margin-bottom: 8px; }
+    .pl-exlaws span { border: 1px solid #D0CBBD; padding: 4px 10px; }
+    .pl-exlaws span.on { color: #141413; border: 2px solid #1f3d8f; background: #fff7c2; font-weight: 600; border-radius: 40% 55% 45% 50%; }
+    @media (max-width: 860px) {
+      .pl-anchor { grid-template-columns: 1fr; }
+      .pl-anchor .pl-loop__arrow { justify-content: center; transform: rotate(90deg); }
+      .pl-lawhow { grid-template-columns: 1fr; }
+    }
+    .pl-ex { margin-top: 26px; max-width: 1080px; }
+    .pl-ex__coin { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-bottom: 16px; }
+    .pl-ex__coinlab { font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pl-muted); }
+    .pl-ex__cointxt { font-family: 'Caveat', cursive; font-size: 1.6rem; color: #111; background: var(--pl-gold); padding: 8px 18px 6px; border-radius: 8px; line-height: 1.2; }
+    .pl-excard { background: #F4F2EC; color: #141413; padding: clamp(22px, 4vw, 40px); position: relative; }
+    .pl-excard__stamp { position: absolute; top: 18px; right: 20px; font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: #8a7a00; border: 2px solid #c9b800; padding: 4px 10px; transform: rotate(3deg); }
+    .pl-exrow { display: grid; grid-template-columns: 170px 1fr 270px; gap: 22px; padding: 14px 0; border-top: 1px solid #D8D4C8; align-items: start; }
+    .pl-exrow .pl-field__label { padding-top: 6px; }
+    .pl-exrow__ans { font-family: 'Caveat', cursive; font-size: 1.65rem; color: #1f3d8f; line-height: 1.2; }
+    .pl-exrow__ans small { font-family: var(--font-body); font-size: 0.95rem; color: #141413; margin-right: 6px; }
+    .pl-exrow__why { font-size: 0.9rem; color: #45433b; border-left: 3px solid #e5cf00; padding-left: 12px; line-height: 1.5; }
+    .pl-exticks { display: flex; gap: 16px; flex-wrap: wrap; font-family: var(--font-body); font-size: 1rem; color: #141413; padding-top: 4px; }
+    .pl-exticks span { display: inline-flex; align-items: center; gap: 8px; }
+    .pl-exbox { width: 22px; height: 22px; border: 2px solid #141413; display: inline-flex; align-items: center; justify-content: center; }
+    .pl-exbox svg { width: 18px; height: 18px; color: #1f3d8f; }
+    .pl-exscale { display: flex; gap: 4px; margin-top: 8px; }
+    .pl-exscale i { width: 22px; height: 10px; background: #D8D4C8; }
+    .pl-exscale i.on { background: #141413; }
+    .pl-ex__use { margin-top: 26px; background: var(--pl-card); border: 1px solid var(--pl-line); border-left: 4px solid var(--pl-gold); padding: 22px 26px; }
+    .pl-ex__use h4 { font-family: var(--font-heading); text-transform: uppercase; color: #fff; letter-spacing: 0.04em; font-size: 1.1rem; margin: 0 0 8px; }
+    .pl-ex__use p { color: var(--pl-ink); margin: 0; line-height: 1.65; font-weight: 300; }
+    .pl-ex__use strong { color: #fff; font-weight: 600; }
+    .pl-ex__note { margin-top: 12px; font-size: 0.86rem; color: var(--pl-muted); }
+    @media (max-width: 860px) {
+      .pl-exrow { grid-template-columns: 1fr; gap: 6px; }
+      .pl-excard__stamp { position: static; display: inline-block; margin-bottom: 12px; }
+    }
+
+    /* ---------- 10 TAKE IT TO TRAINING ---------- */
+    .pl-one { margin-top: 36px; background: var(--pl-gold); color: #111; padding: 22px 26px; max-width: 900px; display: flex; gap: 18px; align-items: center; }
+    .pl-one svg { width: 34px; height: 34px; flex-shrink: 0; }
+    .pl-one__tag { font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; display: block; margin-bottom: 4px; font-weight: 600; }
+    .pl-one p { margin: 0; font-family: var(--font-heading); text-transform: uppercase; font-weight: 600; font-size: clamp(1.1rem, 2.4vw, 1.35rem); line-height: 1.3; letter-spacing: 0.01em; }
+    .pl-tools { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 44px; }
+    .pl-tool { background: var(--pl-card); border: 1px solid var(--pl-line); border-top: 4px solid var(--pl-gold); padding: 26px 28px 24px; display: flex; flex-direction: column; }
+    .pl-tool__top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+    .pl-tool__phase { font-family: var(--font-heading); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pl-gold); }
+    .pl-tool__time { font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: #111; background: #e9e7e0; padding: 3px 8px; white-space: nowrap; }
+    .pl-tool__name { font-family: var(--font-heading); text-transform: uppercase; color: #fff; font-size: 1.45rem; letter-spacing: 0.03em; line-height: 1.15; margin: 0 0 6px; }
+    .pl-tool__when { color: var(--pl-muted); font-size: 0.95rem; margin: 0 0 14px; }
+    .pl-tool__steps { list-style: none; counter-reset: st; padding: 0; margin: 0 0 16px; }
+    .pl-tool__steps li { counter-increment: st; position: relative; padding: 8px 0 8px 34px; border-top: 1px solid var(--pl-line); color: var(--pl-ink); font-size: 1rem; line-height: 1.5; }
+    .pl-tool__steps li:first-child { border-top: 0; }
+    .pl-tool__steps li::before { content: counter(st); position: absolute; left: 0; top: 8px; width: 22px; height: 22px; background: var(--pl-gold); color: #111; font-family: var(--font-heading); font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; }
+    .pl-tool__steps strong { color: #fff; font-weight: 600; }
+    .pl-tool__says { font-family: 'Caveat', cursive; font-size: 1.5rem; line-height: 1.2; color: var(--pl-gold); margin: 0 0 14px; }
+    .pl-tool__from { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--pl-line); font-size: 0.86rem; color: var(--pl-muted); }
+    .pl-tool__from a { color: var(--pl-ink); text-decoration: underline; text-decoration-color: var(--pl-gold); text-underline-offset: 3px; }
+    .pl-tool__from a:hover { color: var(--pl-gold); }
+    .pl-h3 { font-family: var(--font-heading); text-transform: uppercase; color: #fff; font-size: clamp(1.35rem, 3vw, 1.8rem); letter-spacing: 0.03em; margin: 64px 0 8px; }
+    .pl-h3 + p { color: var(--pl-ink); font-weight: 300; font-size: 1.05rem; margin: 0 0 22px; max-width: 720px; }
+    .pl-whens { border-top: 1px solid var(--pl-line); max-width: 1080px; }
+    .pl-whn { display: grid; grid-template-columns: 1fr 1.5fr 170px; gap: 24px; padding: 18px 0; border-bottom: 1px solid var(--pl-line); align-items: start; }
+    .pl-whn__if { color: #fff; font-weight: 600; font-size: 1.02rem; line-height: 1.45; }
+    .pl-whn__do { color: var(--pl-ink); font-size: 1rem; line-height: 1.55; }
+    .pl-whn__tool { font-family: var(--font-heading); font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pl-gold); }
+    .pl-whn--head { padding: 10px 0; }
+    .pl-whn--head div { font-family: var(--font-heading); font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pl-muted); font-weight: 400; }
+    .pl-toolprint { margin-top: 44px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; }
+    button.pl-dl { border: 2px solid var(--pl-gold); cursor: pointer; }
+    .pl-hero__jump { color: var(--pl-ink); font-size: 0.95rem; text-decoration: underline; text-decoration-color: var(--pl-gold); text-underline-offset: 4px; }
+    .pl-hero__jump:hover { color: var(--pl-gold); }
+    @media (max-width: 860px) {
+      .pl-tools { grid-template-columns: 1fr; }
+      .pl-whn { grid-template-columns: 1fr; gap: 6px; }
+      .pl-whn--head { display: none; }
+      .pl-one { align-items: flex-start; }
+    }
+
+    /* ---------- EXTRA: SUBTITLES ACTIVITY ---------- */
+    .pl-video--wide { flex-direction: row; margin-top: 40px; max-width: 1080px; }
+    .pl-video--wide .pl-video__frame { flex: 1.35; aspect-ratio: auto; min-height: 300px; }
+    .pl-video--wide .pl-video__body { flex: 1; }
+    .pl-prep { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; max-width: 1080px; }
+    .pl-prep__item { border: 1px solid var(--pl-line); padding: 18px 20px; display: flex; gap: 14px; align-items: flex-start; }
+    .pl-prep__item svg { width: 24px; height: 24px; color: var(--pl-gold); flex-shrink: 0; margin-top: 2px; }
+    .pl-prep__item p { margin: 0; color: var(--pl-ink); font-size: 0.98rem; line-height: 1.5; }
+    .pl-prep__item strong { color: #fff; display: block; font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.9rem; margin-bottom: 2px; font-weight: 600; }
+    .pl-acts { margin-top: 56px; max-width: 1080px; }
+    .pl-act { display: grid; grid-template-columns: 64px 1fr; gap: 24px; padding: 40px 0; border-top: 1px solid var(--pl-line); }
+    .pl-act__n { font-family: var(--font-heading); font-size: 2.6rem; font-weight: 700; color: var(--pl-gold); line-height: 1; }
+    .pl-act__t { font-family: var(--font-heading); text-transform: uppercase; color: #fff; font-size: clamp(1.3rem, 2.8vw, 1.7rem); letter-spacing: 0.03em; line-height: 1.15; margin: 0 0 12px; }
+    .pl-act__body > p { color: var(--pl-ink); font-size: 1.05rem; line-height: 1.65; font-weight: 300; margin: 0 0 14px; max-width: 760px; }
+    .pl-act__body > p strong { color: #fff; font-weight: 600; }
+    .pl-act__ask { font-family: var(--font-heading); font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pl-gold); margin: 22px 0 6px; display: block; }
+    .pl-qs { list-style: none; padding: 0; margin: 0; max-width: 760px; }
+    .pl-qs li { position: relative; padding: 10px 0 10px 26px; color: var(--pl-ink); font-size: 1.02rem; line-height: 1.55; border-top: 1px solid var(--pl-line); }
+    .pl-qs li:first-child { border-top: 0; }
+    .pl-qs li::before { content: ''; position: absolute; left: 2px; top: 19px; width: 9px; height: 9px; background: var(--pl-gold); }
+    .pl-qs li strong { color: #fff; font-weight: 600; }
+    .pl-tip { margin-top: 20px; background: var(--pl-gold-soft); border-left: 4px solid var(--pl-gold); padding: 14px 18px; max-width: 760px; color: var(--pl-ink); font-size: 1rem; line-height: 1.55; }
+    .pl-tip strong { color: #fff; }
+    .pl-subs { display: flex; flex-wrap: wrap; gap: 12px; margin: 18px 0 8px; }
+    .pl-sub { font-family: 'Caveat', cursive; font-size: 1.55rem; line-height: 1.2; color: #111; background: var(--pl-gold); padding: 10px 16px 8px; transform: rotate(-1deg); }
+    .pl-sub:nth-child(even) { transform: rotate(1.2deg); background: #f4f2ec; }
+    .pl-subs-note { font-size: 0.88rem; color: var(--pl-muted); margin: 6px 0 0; }
+    .pl-act .pl-grid3 { margin-top: 22px; }
+    .pl-scenes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 22px; }
+    .pl-scene { background: var(--pl-card); border: 1px solid var(--pl-line); padding: 20px 22px; }
+    .pl-scene dt { font-family: var(--font-heading); font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--pl-muted); margin-top: 12px; }
+    .pl-scene dt:first-child { margin-top: 0; }
+    .pl-scene dd { margin: 3px 0 0; color: var(--pl-ink); font-size: 0.98rem; line-height: 1.5; }
+    .pl-scene dd.pl-scene__sub { font-family: 'Caveat', cursive; font-size: 1.45rem; color: var(--pl-gold); line-height: 1.15; }
+    .pl-subcard .pl-field { grid-template-columns: 230px 1fr; }
+    @media (max-width: 860px) {
+      .pl-video--wide { flex-direction: column; }
+      .pl-video--wide .pl-video__frame { aspect-ratio: 16 / 9; min-height: 0; flex: none; }
+      .pl-prep, .pl-scenes { grid-template-columns: 1fr; }
+      .pl-act { grid-template-columns: 1fr; gap: 8px; padding: 32px 0; }
+    }
+    @media (max-width: 560px) {
+      .pl-subcard .pl-field { grid-template-columns: 1fr; }
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 960px) {
+      .pl-loop { grid-template-columns: 1fr; }
+      .pl-loop__arrow { justify-content: center; transform: rotate(90deg); }
+      .pl-grid4, .pl-arc { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 860px) {
+      .pl-wk, .pl-grid2, .pl-grid3, .pl-rounds, .pl-split, .pl-sort { grid-template-columns: 1fr; }
+      .pl-wk__img, .pl-split__img { min-height: 220px; }
+    }
+    @media (max-width: 560px) {
+      .pl-grid4, .pl-arc { grid-template-columns: 1fr; }
+      .pl-field { grid-template-columns: 1fr; gap: 6px; }
+      .pl-field__label { padding-top: 0; }
+      .pl-sticky { width: calc(50% - 8px); font-size: 1.35rem; }
+      .pl-coin { width: 240px; height: 240px; padding: 30px; }
+      .pl-coins { justify-content: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .pl-root { transition: none; }
+    }
+
+    /* ---------- PRINT: one card on one clean sheet ---------- */
+    #plPrintArea { display: none; }
+    @media print {
+      @page { size: A4; margin: 16mm; }
+      html, body { background: #fff !important; }
+      body > *:not(#plPrintArea) { display: none !important; }
+      #plPrintArea { display: block !important; color: #111; font-family: 'Inter', Arial, sans-serif; }
+      #plPrintArea .pp-brand { font-size: 9pt; letter-spacing: 0.16em; text-transform: uppercase; color: #555; border-bottom: 3pt solid #FFE500; padding-bottom: 6pt; margin-bottom: 14pt; }
+      #plPrintArea .pp-title { font-family: 'Oswald', 'Arial Narrow', Arial, sans-serif; text-transform: uppercase; font-size: 24pt; margin: 0 0 2pt; letter-spacing: 0.02em; color: #111; }
+      #plPrintArea .pp-sub { font-size: 10.5pt; color: #444; margin: 0 0 14pt; }
+      #plPrintArea .pp-row { display: grid; grid-template-columns: 52mm 1fr; gap: 6mm; padding: 9pt 0; border-top: 0.6pt solid #bbb; break-inside: avoid; }
+      #plPrintArea .pp-lab { font-family: 'Oswald', 'Arial Narrow', Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.08em; font-size: 9.5pt; color: #111; }
+      #plPrintArea .pp-hint { display: block; font-family: 'Inter', Arial, sans-serif; text-transform: none; letter-spacing: 0; font-size: 8.5pt; color: #666; margin-top: 2pt; }
+      #plPrintArea .pp-line { font-size: 11.5pt; line-height: 1.45; min-height: 18pt; border-bottom: 0.6pt solid #999; padding-bottom: 2pt; margin-bottom: 6pt; white-space: pre-wrap; }
+      #plPrintArea .pp-line--tall { min-height: 36pt; }
+      #plPrintArea .pp-pre { color: #666; margin-right: 4pt; }
+      #plPrintArea .pp-ticks { display: flex; gap: 14pt; flex-wrap: wrap; font-size: 11pt; }
+      #plPrintArea .pp-box { display: inline-flex; align-items: center; justify-content: center; width: 10pt; height: 10pt; border: 1pt solid #111; margin-right: 5pt; vertical-align: -1pt; }
+      #plPrintArea .pp-foot { margin-top: 16pt; font-size: 8.5pt; color: #666; }
+      #plPrintArea .pp-one { border: 1.2pt solid #111; padding: 6pt 9pt; font-size: 10pt; font-weight: 600; margin: 0 0 9pt; }
+      #plPrintArea .pp-tools { display: grid; grid-template-columns: 1fr 1fr; gap: 7pt 10pt; }
+      #plPrintArea .pp-tool { border: 0.6pt solid #999; border-top: 2.5pt solid #111; padding: 6pt 8pt; break-inside: avoid; }
+      #plPrintArea .pp-tool__ph { font-size: 7pt; letter-spacing: 0.12em; text-transform: uppercase; color: #555; }
+      #plPrintArea .pp-tool__n { font-family: 'Oswald', 'Arial Narrow', Arial, sans-serif; text-transform: uppercase; font-size: 12pt; margin: 1pt 0 3pt; }
+      #plPrintArea .pp-tool ol { margin: 0; padding-left: 13pt; font-size: 8.6pt; line-height: 1.35; }
+      #plPrintArea .pp-tool li { margin-bottom: 1.5pt; }
+      #plPrintArea .pp-tool__s { font-size: 8.5pt; font-style: italic; color: #333; margin-top: 3pt; }
+      #plPrintArea .pp-h { font-family: 'Oswald', 'Arial Narrow', Arial, sans-serif; text-transform: uppercase; font-size: 12pt; margin: 10pt 0 3pt; }
+      #plPrintArea .pp-whn { display: grid; grid-template-columns: 42mm 1fr 30mm; gap: 4mm; font-size: 8.5pt; line-height: 1.35; padding: 3.5pt 0; border-top: 0.6pt solid #bbb; break-inside: avoid; }
+      #plPrintArea .pp-whn b { font-weight: 600; }
+      #plPrintArea .pp-whn i { font-style: normal; font-size: 7.5pt; letter-spacing: 0.08em; text-transform: uppercase; color: #555; }
+      #plPrintArea.pp-pocket .pp-brand { margin-bottom: 7pt; padding-bottom: 4pt; }
+      #plPrintArea.pp-pocket .pp-title { font-size: 18pt; margin-bottom: 5pt; }
+      #plPrintArea.pp-pocket .pp-one { font-size: 9.5pt; padding: 4pt 8pt; margin-bottom: 7pt; }
+      #plPrintArea.pp-pocket .pp-tools { gap: 5pt 8pt; }
+      #plPrintArea.pp-pocket .pp-tool { padding: 4pt 7pt 5pt; }
+      #plPrintArea.pp-pocket .pp-tool__n { font-size: 11pt; margin: 0 0 2pt; }
+      #plPrintArea.pp-pocket .pp-tool ol { font-size: 8.2pt; line-height: 1.28; }
+      #plPrintArea.pp-pocket .pp-tool li { margin-bottom: 1pt; }
+      #plPrintArea.pp-pocket .pp-tool__s { font-size: 8pt; margin-top: 2pt; }
+      #plPrintArea.pp-pocket .pp-h { margin: 7pt 0 2pt; font-size: 11pt; }
+      #plPrintArea.pp-pocket .pp-whn { font-size: 8.2pt; line-height: 1.28; padding: 2.5pt 0; }
+      #plPrintArea.pp-pocket .pp-foot { margin-top: 6pt; }
+    }
+
+    /* ============================================================
+       SESSION TWO ADDITIONS (Noise in the Boat)
+    ============================================================ */
+    .pl-sessions { background: #0b0b0a; border-bottom: 1px solid var(--pl-line); }
+    .pl-sessions__inner { display: flex; gap: 8px; padding: 12px 0; overflow-x: auto; scrollbar-width: none; }
+    .pl-sessions__inner::-webkit-scrollbar { display: none; }
+    .pl-sessions__tab { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-heading); font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; color: #d6d6d0; text-decoration: none; padding: 8px 14px; border: 1px solid var(--pl-line); white-space: nowrap; transition: all .2s ease; }
+    .pl-sessions__tab span { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; border: 1px solid var(--pl-gold-line); color: var(--pl-gold); font-size: 0.75rem; }
+    .pl-sessions__tab:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+    .pl-sessions__tab.is-current { color: #111; background: var(--pl-gold); border-color: var(--pl-gold); }
+    .pl-sessions__tab.is-current span { background: #111; color: var(--pl-gold); border-color: #111; }
+    .pl-inline { color: var(--pl-gold); text-decoration: underline; text-underline-offset: 3px; }
+    .pl-why { margin-top: 44px; background: var(--pl-card); border: 1px solid var(--pl-line); border-left: 4px solid var(--pl-gold); padding: 24px 28px; max-width: 900px; }
+    .pl-why h3 { font-family: var(--font-heading); text-transform: uppercase; color: #fff; font-size: 1.2rem; letter-spacing: 0.04em; margin: 0 0 10px; }
+    .pl-why p { color: var(--pl-ink); margin: 0; font-size: 1.04rem; line-height: 1.7; font-weight: 300; }
+    .pl-why strong { color: #fff; font-weight: 600; }
+    .pl-mini { margin: 6px 0 0; padding-left: 18px; }
+    .pl-mini li { color: var(--pl-ink); font-size: 1rem; line-height: 1.6; font-weight: 300; }
+    .pl-loop--noise .pl-loop__n { text-transform: uppercase; }
+    .pl-ace { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; max-width: 1080px; }
+    .pl-ace__col { background: var(--pl-card); border: 1px solid var(--pl-line); border-top: 4px solid var(--pl-gold); padding: 26px; }
+    .pl-ace__l { font-family: var(--font-heading); font-weight: 700; font-size: 3.4rem; line-height: 1; color: var(--pl-gold); }
+    .pl-ace__t { font-family: var(--font-heading); text-transform: uppercase; color: #fff; font-size: 1.3rem; letter-spacing: 0.05em; margin: 8px 0 10px; }
+    .pl-ace__col p { color: var(--pl-ink); font-size: 1rem; line-height: 1.6; font-weight: 300; margin: 0 0 12px; }
+    .pl-ace__eg { font-family: 'Caveat', cursive; font-size: 1.5rem; color: var(--pl-gold); line-height: 1.15; }
+    .pl-warn { margin-top: 30px; display: flex; gap: 16px; align-items: flex-start; background: var(--pl-gold); color: #111; padding: 22px 26px; max-width: 900px; }
+    .pl-warn svg { width: 30px; height: 30px; flex-shrink: 0; }
+    .pl-warn p { margin: 0; font-size: 1.04rem; line-height: 1.55; }
+    .pl-warn .pl-warn__h { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; font-size: 0.9rem; margin-bottom: 4px; }
+    .pl-shapes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 36px; max-width: 1080px; }
+    .pl-shape { background: var(--pl-card); border: 1px solid var(--pl-line); border-top: 4px solid var(--pl-gold); padding: 22px 24px; }
+    .pl-shape__top { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+    .pl-shape__top .pl-tool__time { align-self: flex-start; }
+    .pl-shape dl { display: grid; grid-template-columns: 26px 1fr; gap: 10px 10px; margin: 0; }
+    .pl-shape dt { font-family: var(--font-heading); font-weight: 700; color: var(--pl-gold); font-size: 1.2rem; line-height: 1.3; }
+    .pl-shape dd { margin: 0; color: var(--pl-ink); font-size: 0.98rem; line-height: 1.5; }
+    .pl-ladder { margin-top: 26px; max-width: 900px; border-top: 1px solid var(--pl-line); }
+    .pl-ladder__row { display: grid; grid-template-columns: 220px 1fr; gap: 22px; padding: 16px 0; border-bottom: 1px solid var(--pl-line); align-items: baseline; }
+    .pl-ladder__lab { font-family: var(--font-heading); font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--pl-muted); }
+    .pl-ladder__val { color: var(--pl-ink); font-size: 1.06rem; line-height: 1.55; }
+    .pl-ladder__val--big { font-family: var(--font-heading); text-transform: uppercase; color: var(--pl-gold); font-size: 1.6rem; letter-spacing: 0.04em; }
+    @media (max-width: 860px) {
+      .pl-ace, .pl-shapes { grid-template-columns: 1fr; }
+      .pl-ladder__row { grid-template-columns: 1fr; gap: 4px; }
+    }
+
+    /* ---------- UX PASS: progress, checks, timer, recap ---------- */
+    html.pl-big { font-size: 112.5%; }
+    .pl-banner__btns { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+    .pl-textsize sup { font-size: 0.6em; }
+    .pl-textsize[aria-pressed="true"] { color: #111; background: var(--pl-gold); border-color: var(--pl-gold); }
+    .pl-readbar { height: 3px; background: transparent; }
+    .pl-readbar span { display: block; height: 100%; width: 0; background: var(--pl-gold); transition: width .1s linear; }
+    .pl-outcomes { margin-top: 28px; max-width: 660px; border-left: 3px solid var(--pl-gold); padding: 4px 0 4px 18px; }
+    .pl-outcomes__h { font-family: var(--font-heading); font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pl-gold); margin: 0 0 8px; }
+    .pl-outcomes ul { margin: 0; padding-left: 18px; }
+    .pl-outcomes li { color: var(--pl-ink); font-size: 1.04rem; line-height: 1.55; margin-bottom: 4px; }
+    .pl-progress { margin-top: 30px; max-width: 660px; background: rgba(10,10,9,0.75); border: 1px solid var(--pl-line); padding: 20px 22px; }
+    .pl-progress__top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px 16px; margin-bottom: 10px; }
+    .pl-progress__label { color: #fff; font-size: 1rem; }
+    .pl-progress__label strong { color: var(--pl-gold); }
+    .pl-progress__time { color: var(--pl-muted); font-size: 0.92rem; }
+    .pl-progress__bar { height: 8px; background: rgba(255,255,255,0.08); }
+    .pl-progress__bar span { display: block; height: 100%; width: 0; background: var(--pl-gold); transition: width .4s ease; }
+    .pl-resume { margin-top: 18px; }
+    .pl-chip { display: inline-flex; align-items: center; gap: 6px; margin: -4px 0 16px; font-family: var(--font-heading); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--pl-muted); border: 1px solid var(--pl-line); padding: 4px 10px; }
+    .pl-chip svg { width: 13px; height: 13px; color: var(--pl-gold); }
+    .pl-sec__num + .pl-chip { display: flex; width: max-content; }
+    .pl-stepfoot { margin-top: 56px; padding-top: 26px; border-top: 1px solid var(--pl-line); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 20px; max-width: 1080px; }
+    .pl-donebtn { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-heading); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 13px 20px; cursor: pointer; background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.35); transition: all .2s ease; }
+    .pl-donebtn:hover { border-color: var(--pl-gold); }
+    .pl-donebtn__box { width: 20px; height: 20px; border: 2px solid currentColor; display: inline-flex; align-items: center; justify-content: center; }
+    .pl-donebtn__box svg { width: 14px; height: 14px; opacity: 0; }
+    .pl-donebtn[aria-pressed="true"] { background: var(--pl-gold); color: #111; border-color: var(--pl-gold); }
+    .pl-donebtn[aria-pressed="true"] .pl-donebtn__box svg { opacity: 1; }
+    .pl-nextlink { color: var(--pl-ink); text-decoration: none; font-size: 1rem; display: inline-flex; align-items: center; gap: 10px; }
+    .pl-nextlink span { font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--pl-muted); }
+    .pl-nextlink strong { color: #fff; font-weight: 600; border-bottom: 2px solid var(--pl-gold); padding-bottom: 2px; }
+    .pl-nextlink:hover strong { color: var(--pl-gold); }
+    .pl-nav__link.is-done::after { content: '\2713'; color: var(--pl-gold); margin-left: 6px; font-size: 0.8em; }
+    .pl-bridge { margin-top: 26px; max-width: 900px; border-top: 1px solid var(--pl-line); }
+    .pl-bridge__row { display: grid; grid-template-columns: 150px 30px 170px 1fr; gap: 14px; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--pl-line); }
+    .pl-bridge__from, .pl-bridge__to { font-family: var(--font-heading); text-transform: uppercase; font-size: 1.15rem; letter-spacing: 0.04em; color: var(--pl-muted); line-height: 1.2; }
+    .pl-bridge__to { color: var(--pl-gold); }
+    .pl-bridge__from span, .pl-bridge__to span { display: block; font-size: 0.62rem; letter-spacing: 0.18em; color: var(--pl-muted); margin-bottom: 2px; }
+    .pl-bridge__arrow { color: var(--pl-gold); font-size: 1.4rem; }
+    .pl-bridge__d { color: var(--pl-ink); font-size: 1rem; line-height: 1.5; }
+    .pl-timer { margin-top: 22px; max-width: 520px; }
+    .pl-timer__bar { margin-top: 14px; height: 8px; background: rgba(255,255,255,0.08); }
+    .pl-timer__bar span { display: block; height: 100%; width: 0; background: var(--pl-gold); }
+    .pl-timer__msg { margin-top: 10px; color: var(--pl-ink); font-size: 1rem; min-height: 1.5em; }
+    .pl-quiz { margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 900px; }
+    .pl-quiz__q { background: var(--pl-card); border: 1px solid var(--pl-line); padding: 18px 20px; }
+    .pl-quiz__q > p:first-child { color: #fff; font-size: 1.05rem; line-height: 1.4; margin: 0 0 12px; }
+    .pl-quiz__opts { display: flex; gap: 8px; }
+    .pl-quiz__opts button { width: 48px; height: 44px; font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: #fff; background: transparent; border: 2px solid rgba(255,255,255,0.3); cursor: pointer; transition: all .15s ease; }
+    .pl-quiz__opts button:hover { border-color: var(--pl-gold); }
+    .pl-quiz__opts button.is-right { background: var(--pl-gold); color: #111; border-color: var(--pl-gold); }
+    .pl-quiz__opts button.is-try { border-color: #777; color: #888; }
+    .pl-quiz__fb { margin: 10px 0 0; font-size: 0.95rem; line-height: 1.5; color: var(--pl-ink); min-height: 0; }
+    .pl-quiz__fb strong { color: var(--pl-gold); }
+    .pl-act__do { color: #fff !important; font-weight: 400 !important; }
+    .pl-act__body .pl-act__ask { margin-top: 4px; }
+    .pl-ev { margin-top: 12px; max-width: 760px; }
+    .pl-ev summary { cursor: pointer; font-family: var(--font-heading); font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--pl-muted); list-style: none; display: inline-flex; align-items: center; gap: 8px; }
+    .pl-ev summary::-webkit-details-marker { display: none; }
+    .pl-ev summary::before { content: '+'; color: var(--pl-gold); font-size: 1.2rem; line-height: 1; }
+    .pl-ev[open] summary::before { content: '\2013'; }
+    .pl-ev p { margin: 10px 0 0; color: var(--pl-muted); font-size: 0.98rem; line-height: 1.6; border-left: 2px solid var(--pl-line); padding-left: 14px; }
+    .pl-recap { margin: 10px 0 34px; background: var(--pl-gold); color: #111; padding: 24px 28px; max-width: 900px; }
+    .pl-recap__h { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 600; margin: 0 0 10px; }
+    .pl-recap ol { margin: 0; padding-left: 22px; }
+    .pl-recap li { font-size: 1.08rem; line-height: 1.5; margin-bottom: 6px; }
+    .pl-sort details[open] { border-color: var(--pl-gold-line); }
+    a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--pl-gold); outline-offset: 3px; }
+    @media (max-width: 860px) {
+      .pl-quiz { grid-template-columns: 1fr; }
+      .pl-bridge__row { grid-template-columns: 1fr 24px 1fr; }
+      .pl-bridge__d { grid-column: 1 / -1; }
+      .pl-banner__inner { align-items: flex-start; }
+    }
+    @media (max-width: 560px) {
+      .pl-banner__name { font-size: 0.9rem; }
+      .pl-textsize { padding: 9px 12px; }
+      .pl-textsize__lbl { display: none; }
+      .pl-banner__btns { flex-wrap: nowrap; }
+      .pl-sessions__inner { flex-wrap: wrap; }
+      .pl-stepfoot { flex-direction: column; align-items: flex-start; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .pl-progress__bar span, .pl-readbar span { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="images/logo-horizontal.png?v=2" alt="The Performance Act" class="logo-img logo-img--header">
+      </a>
+      <nav class="header__nav" id="mainNav">
+        <a href="index.html" class="nav-link">HOME</a>
+        <a href="approach.html" class="nav-link">APPROACH</a>
+        <a href="programs.html" class="nav-link">SUPPORT</a>
+        <a href="team.html" class="nav-link">TEAM</a>
+        <a href="blog.html" class="nav-link">RESOURCES</a>
+        <a href="contact.html" class="nav-link">CONTACT</a>
+        <a href="grow-login.html" class="nav-link nav-link--grow">GROW</a>
+      </nav>
+      <div class="header__actions">
+        <a href="contact.html" class="btn btn--outline btn--sm">GET IN TOUCH</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <nav class="mobile-nav__links">
+      <a href="index.html" class="mobile-nav__link">HOME</a>
+      <a href="approach.html" class="mobile-nav__link">APPROACH</a>
+      <a href="programs.html" class="mobile-nav__link">SUPPORT</a>
+      <a href="team.html" class="mobile-nav__link">TEAM</a>
+      <a href="blog.html" class="mobile-nav__link">RESOURCES</a>
+      <a href="contact.html" class="mobile-nav__link">CONTACT</a>
+      <a href="grow-login.html" class="mobile-nav__link" style="color:var(--yellow)">GROW</a>
+    </nav>
+  </div>
+
+
+  <!-- ===================================================================
+       PADDLE FOR LIFE — GROW AREA (session two: Noise in the Boat)
+  =================================================================== -->
+  <div id="plApp" class="pl-root">
+
+    <!-- Club banner -->
+    <div class="pl-banner">
+      <div class="container">
+        <div class="pl-banner__inner">
+          <div class="pl-banner__left">
+            <img src="images/logo-horizontal.png?v=2" alt="The Performance Act" class="pl-banner__logo">
+            <div>
+              <div class="pl-banner__name">Paddle for Life</div>
+              <div class="pl-banner__platform">GROW &nbsp;·&nbsp; Powered by The Performance Act</div>
+            </div>
+          </div>
+          <div class="pl-banner__btns">
+            <button class="pl-logout pl-textsize" id="plTextSize" type="button" aria-pressed="false" aria-label="Larger text"><span aria-hidden="true">A<sup>+</sup></span><span class="pl-textsize__lbl"> Larger text</span></button>
+            <button class="pl-logout" id="plLogout" type="button">Log Out</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Session switcher -->
+    <div class="pl-sessions">
+      <div class="container">
+        <div class="pl-sessions__inner" role="navigation" aria-label="Sessions">
+          <a class="pl-sessions__tab" href="grow-paddle-for-life.html"><span>1</span>What we paddle for</a>
+          <a class="pl-sessions__tab is-current" href="grow-paddle-for-life-session-two.html" aria-current="page"><span>2</span>Noise in the boat</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section nav -->
+    <nav class="pl-nav" aria-label="Session two sections">
+      <div class="container">
+        <div class="pl-nav__inner">
+          <span class="pl-nav__label">Session two</span>
+          <a href="#picked-up" class="pl-nav__link">From last time</a>
+          <a href="#quicksand" class="pl-nav__link">Quicksand</a>
+          <a href="#thoughts" class="pl-nav__link">Not just your thoughts</a>
+          <a href="#reflect" class="pl-nav__link">Reflect</a>
+          <a href="#noise" class="pl-nav__link">What noise is</a>
+          <a href="#ace" class="pl-nav__link">ACE</a>
+          <a href="#acknowledge" class="pl-nav__link">Acknowledge</a>
+          <a href="#connect" class="pl-nav__link">Connect</a>
+          <a href="#engage" class="pl-nav__link">Engage</a>
+          <a href="#behaviours" class="pl-nav__link">Anchors to actions</a>
+          <a href="#crews" class="pl-nav__link">Strong crews</a>
+          <a href="#myace" class="pl-nav__link">My ACE</a>
+          <a href="#next" class="pl-nav__link">Session three</a>
+        </div>
+      </div>
+      <div class="pl-readbar" aria-hidden="true"><span id="plReadbar"></span></div>
+    </nav>
+
+    <main>
+
+      <!-- HERO -->
+      <section class="pl-hero" aria-labelledby="plTitle">
+        <div class="pl-hero__bg" aria-hidden="true"></div>
+        <div class="container">
+          <p class="pl-hero__eyebrow">GROW · Paddle for Life · Session two of four</p>
+          <h1 class="pl-hero__title" id="plTitle">Noise in<br><em>the boat</em></h1>
+          <p class="pl-hero__lead"><strong>Session one was about what you paddle for. Session two was about what to do when the noise shows up anyway.</strong> This page holds the ideas and tools from the night, so you can come back to them, try them at training, and share them with the paddler beside you.</p>
+          <div class="pl-outcomes">
+            <p class="pl-outcomes__h">By the end of this page you’ll be able to</p>
+            <ul>
+              <li>Notice when you’re hooked by a thought or feeling, and unhook a little</li>
+              <li>Use ACE in a way that fits you, in seconds or in minutes</li>
+              <li>Turn what the crew values into clear actions everyone can see</li>
+            </ul>
+          </div>
+          <div class="pl-progress" id="plProgress">
+            <div class="pl-progress__top">
+              <span class="pl-progress__label"><strong id="plProgCount">0</strong> of <span id="plProgTotal">13</span> sections done</span>
+              <span class="pl-progress__time">About 35 minutes all up · best in a few short sittings</span>
+            </div>
+            <div class="pl-progress__bar"><span id="plProgFill"></span></div>
+            <a class="pl-dl pl-resume" id="plResume" href="#picked-up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg><span id="plResumeTxt">Start with a quick look back</span></a>
+          </div>
+          <p class="pl-hero__meta">Tick off each section as you go, and this page will remember where you’re up to. <a class="pl-hero__jump" href="#myace">Short on time? Jump to your own ACE.</a> Anything you write here stays on your own device.</p>
+        </div>
+      </section>
+
+      <!-- 01 FROM LAST TIME -->
+      <section class="pl-sec" id="picked-up" data-time="3 min">
+        <div class="container">
+          <span class="pl-sec__num">01 · From last time</span>
+          <h2 class="pl-sec__title">The wind<br><em>keeps blowing</em></h2>
+          <p class="pl-sec__lead">We started with some kōrero about the last few weeks: the strokes you’d been trying, what stuck, and what slipped. All of it was useful, including the bits that didn’t go to plan.</p>
+          <p class="pl-sec__lead">Last time, the aka matua was what you paddle for, and the wind was the tiredness, nerves and frustration that come along with it. <strong>This session was about the wind.</strong> Not how to make it stop, but how to keep hold of the vine while it blows.</p>
+
+          <h3 class="pl-h3--lg">Quick look<br><em>back</em></h3>
+          <p class="pl-sec__lead">Before you read on, see what you remember. Have a guess first, then tap to check. Pulling it back out of your head is what makes it stick.</p>
+          <div class="pl-sort">
+            <details><summary>What goes on the front of your coin?<span>Have a guess, then tap</span></summary><div class="pl-sort__answer"><strong>What you paddle for.</strong> The paddler you want to be in the heat of the battle. The back holds what shows up because you care, and it stays yours.</div></details>
+            <details><summary>Finish line or sweep’s oar: which one can you steer by on a day you finish last?<span>Have a guess, then tap</span></summary><div class="pl-sort__answer"><strong>The oar.</strong> Goals matter, but a value goes with you whatever the result.</div></details>
+            <details><summary>The green note you wore all night. Did you have to take it off to join in?<span>Have a guess, then tap</span></summary><div class="pl-sort__answer"><strong>No.</strong> It came along all session, and you still did everything. Session two picks up right there.</div></details>
+            <details><summary>Open, aware, engaged. Which one is about noticing where you are?<span>Have a guess, then tap</span></summary><div class="pl-sort__answer"><strong>Aware.</strong> Open is making room for what shows up. Engaged is doing what matters.</div></details>
+          </div>
+
+          <h3 class="pl-h3--lg">How the two<br><em>sessions connect</em></h3>
+          <p class="pl-sec__lead">Session one gave you three circles to aim for. Session two turns them into something you can do in the moment, called ACE.</p>
+          <div class="pl-bridge" role="list">
+            <div class="pl-bridge__row" role="listitem"><div class="pl-bridge__from"><span>Session one</span>Open</div><div class="pl-bridge__arrow" aria-hidden="true">&rarr;</div><div class="pl-bridge__to"><span>Session two</span>Acknowledge</div><div class="pl-bridge__d">Make room for the noise by noticing and naming it.</div></div>
+            <div class="pl-bridge__row" role="listitem"><div class="pl-bridge__from"><span>Session one</span>Aware</div><div class="pl-bridge__arrow" aria-hidden="true">&rarr;</div><div class="pl-bridge__to"><span>Session two</span>Connect</div><div class="pl-bridge__d">Come back to your body and this stroke.</div></div>
+            <div class="pl-bridge__row" role="listitem"><div class="pl-bridge__from"><span>Session one</span>Engaged</div><div class="pl-bridge__arrow" aria-hidden="true">&rarr;</div><div class="pl-bridge__to"><span>Session two</span>Engage</div><div class="pl-bridge__d">One small move toward what’s on the front of your coin.</div></div>
+          </div>
+          <p class="pl-note">Want the full refresher? <a class="pl-inline" href="grow-paddle-for-life.html">Session one is all still here.</a></p>
+        </div>
+      </section>
+
+      <!-- 02 QUICKSAND -->
+      <section class="pl-sec pl-sec--darker" id="quicksand" data-time="2 min">
+        <div class="container">
+          <span class="pl-sec__num">02 · Open</span>
+          <h2 class="pl-sec__title">The more we wriggle,<br><em>the deeper we go</em></h2>
+          <p class="pl-sec__lead">We came back to the jam doughnut. Try not to think about one, and it turns up straight away. Most of us know this from real life too: the harder we try not to think about a bad race or a niggle in the shoulder, the more often it pops back into our heads.</p>
+          <p class="pl-sec__lead">That’s when we tend to get into a fight with ourselves. We argue with the thought, try to talk ourselves out of the feeling, or try to distract ourselves from it. It’s a bit like quicksand. <strong>The more you thrash about to get free, the further in you sink.</strong> Even distraction can turn into its own kind of noise, because part of your mind is busy checking whether the thing you’re avoiding has gone yet.</p>
+
+          <div class="pl-loop" role="list" aria-label="The quicksand loop">
+            <div class="pl-loop__step" role="listitem"><div class="pl-loop__n">1</div><div class="pl-loop__t">It turns up</div><div class="pl-loop__d">A thought, a feeling, a memory of the last race.</div></div>
+            <div class="pl-loop__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
+            <div class="pl-loop__step" role="listitem"><div class="pl-loop__n">2</div><div class="pl-loop__t">We fight it</div><div class="pl-loop__d">Argue with it, push it down, try to think about anything else.</div></div>
+            <div class="pl-loop__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
+            <div class="pl-loop__step" role="listitem"><div class="pl-loop__n">3</div><div class="pl-loop__t">We sink</div><div class="pl-loop__d">It comes back louder, and the fight takes our attention.</div></div>
+            <div class="pl-loop__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
+            <div class="pl-loop__step" role="listitem"><div class="pl-loop__n">4</div><div class="pl-loop__t">The boat misses out</div><div class="pl-loop__d">Less of us left for the stroke, the timing and the crew.</div></div>
+          </div>
+
+          <div class="pl-land"><p>In quicksand, the way out is to stop thrashing, <em>spread out and make room.</em></p></div>
+        </div>
+      </section>
+
+      <!-- 03 NOT JUST YOUR THOUGHTS -->
+      <section class="pl-sec" id="thoughts" data-time="3 min · try it">
+        <div class="container">
+          <span class="pl-sec__num">03 · Open</span>
+          <h2 class="pl-sec__title">You are more than<br><em>your thoughts</em></h2>
+          <p class="pl-sec__lead">Our minds are always talking. Most of the time that’s helpful. The trouble starts when we treat every thought or feeling as the truth, as a fact about us, or as an order we have to follow. In ACT this is called <strong>fusion</strong>: we’re so tangled up with the thought that we can’t see anything else. “I’m too slow.” “I’ll let the crew down.” “This is hopeless.” When we’re fused, these stop sounding like thoughts and start sounding like the way things are.</p>
+          <p class="pl-sec__lead"><strong>Defusion</strong>, or unhooking, is stepping back half a pace so you can see the thought for what it is: words and pictures your mind is offering you. The thought might still be there. It just isn’t running the boat.</p>
+
+          <div class="pl-grid2">
+            <div class="pl-card pl-card--grey">
+              <span class="pl-tag pl-tag--muted">Fused</span>
+              <h3>The thought is the truth</h3>
+              <p>It feels like a fact. It fills your view, decides how you feel, and usually decides what you do next.</p>
+            </div>
+            <div class="pl-card pl-card--gold">
+              <span class="pl-tag">Unhooked</span>
+              <h3>The thought is a thought</h3>
+              <p>You can notice it, hold it a little more lightly, and still choose what you do with your next stroke.</p>
+            </div>
+          </div>
+
+          <h3 class="pl-h3--lg">Hands as<br><em>thoughts</em></h3>
+          <p class="pl-sec__lead">We tried this one in the room. It’s worth doing again at home, because the point lands in your body rather than your head.</p>
+          <ol class="pl-steps">
+            <li>Hold both hands up close in front of your face, palms towards you. <strong>These are your thoughts.</strong> “I can’t be bothered tonight.” “Everyone’s fitter than me.”</li>
+            <li>Now try to look around the room, or imagine finding the timing in the boat. Notice how much you can actually see.</li>
+            <li>Slowly lower your hands until they rest in your lap.</li>
+            <li>Your hands haven’t gone anywhere. <strong>What can you see now?</strong></li>
+          </ol>
+          <p class="pl-note">If a shoulder is sore, use one hand, keep it low, or simply picture it.</p>
+
+          <div class="pl-land"><p>Unhooking doesn’t get rid of our thoughts. <em>It gets them out of our eyes, so we can see the boat.</em></p></div>
+
+          <h3 class="pl-h3--lg">Hooked or<br><em>unhooked?</em></h3>
+          <p class="pl-sec__lead">Same thought, said two ways. Which one is unhooked? Tap to check.</p>
+          <div class="pl-sort">
+            <details><summary>“I’m useless at starts.”<span>Hooked or unhooked?</span></summary><div class="pl-sort__answer"><strong>Hooked.</strong> It sounds like a fact about you.</div></details>
+            <details><summary>“My mind’s telling me I’m useless at starts again.”<span>Hooked or unhooked?</span></summary><div class="pl-sort__answer"><strong>Unhooked.</strong> Same words, but now you’re noticing them.</div></details>
+            <details><summary>“I can’t go tonight, I’m too tired.”<span>Hooked or unhooked?</span></summary><div class="pl-sort__answer"><strong>Hooked.</strong> The feeling is making the decision.</div></details>
+            <details><summary>“Tired is here. I’ll get my gear on anyway.”<span>Hooked or unhooked?</span></summary><div class="pl-sort__answer"><strong>Unhooked.</strong> Tired comes along, and you still choose.</div></details>
+          </div>
+
+          <div class="pl-why">
+            <h3>Why bother with the metaphors?</h3>
+            <p>Some of these exercises can feel a bit funny or silly, and that’s fine. Laughing at them is part of how they work. But each one has a real point underneath it. When we give ourselves a little space between us and our thoughts, feelings and emotions, we get a chance to see the situation more clearly, to stay connected with the people we love, and to be present for the moments that turn into memories that last a lifetime. On the water, in the tent, and well beyond the boat.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 REFLECT -->
+      <section class="pl-sec pl-sec--darker" id="reflect" data-time="4 min · reflect">
+        <div class="container">
+          <span class="pl-sec__num">04 · A reflection to take home</span>
+          <h2 class="pl-sec__title">When a feeling<br><em>took the paddle</em></h2>
+          <p class="pl-sec__lead">In the session we asked you to think of one moment where a feeling or a thought took over for a while. It doesn’t need to be dramatic, and it doesn’t need to be about paddling. A moment in the boat, at work, at home or on the drive somewhere. Bring that one moment to mind, then sit with these questions.</p>
+          <ul class="pl-qs" style="margin-top:22px;">
+            <li><strong>When you were hooked by it,</strong> what did it take away from you in that moment? What did you miss, or stop doing?</li>
+            <li><strong>What did it pull you to do?</strong> What was the urge?</li>
+            <li><strong>What would it have been like</strong> to have just a little more space with that thought or feeling, without needing it to go away?</li>
+            <li><strong>With that space,</strong> what might you have done, or who might you have been, instead?</li>
+          </ul>
+          <p class="pl-tip">There are no right answers here, and nobody else needs to see them. <strong>Noticing is the skill.</strong> If you’d like to write it down, use the card below. It saves only on this device.</p>
+
+          <form class="pl-pcard" id="plReflect" autocomplete="off" onsubmit="return false;">
+            <h3 class="pl-pcard__title">My moment</h3>
+            <p class="pl-pcard__sub">One moment where a thought or feeling took over. Private to you.</p>
+            <div class="pl-field">
+              <label class="pl-field__label" for="prMoment">The moment<span class="pl-field__hint">What happened, in a line or two.</span></label>
+              <textarea class="pl-textarea" id="prMoment" name="moment" maxlength="300"></textarea>
+            </div>
+            <div class="pl-field">
+              <label class="pl-field__label" for="prShowed">What showed up<span class="pl-field__hint">Thoughts, feelings, what you noticed in your body.</span></label>
+              <textarea class="pl-textarea" id="prShowed" name="showed" maxlength="300"></textarea>
+            </div>
+            <div class="pl-field">
+              <label class="pl-field__label" for="prTook">It took away<span class="pl-field__hint">What did being hooked cost you?</span></label>
+              <textarea class="pl-textarea" id="prTook" name="took" maxlength="300"></textarea>
+            </div>
+            <div class="pl-field">
+              <label class="pl-field__label" for="prSpace">With more space<span class="pl-field__hint">What might have been different?</span></label>
+              <textarea class="pl-textarea" id="prSpace" name="space" maxlength="300"></textarea>
+            </div>
+            <div class="pl-pcard__actions">
+              <button class="pl-btn" type="button" data-print>Print my reflection</button>
+              <button class="pl-btn pl-btn--ghost" type="button" data-clear>Clear</button>
+              <span class="pl-pcard__status" aria-live="polite"></span>
+            </div>
+            <p class="pl-device-note">Saved in this browser only. Nothing is sent anywhere.</p>
+          </form>
+        </div>
+      </section>
+
+      <!-- 05 WHAT NOISE IS -->
+      <section class="pl-sec" id="noise" data-time="3 min">
+        <div class="container">
+          <span class="pl-sec__num">05 · Aware</span>
+          <h2 class="pl-sec__title">What mental<br><em>noise actually is</em></h2>
+          <p class="pl-sec__lead">Next we each brought to mind a really frustrating situation, the kind that comes up again and again. Then we pulled it apart. Mental noise isn’t one thing. It’s a mix of what our mind says, what we feel, and what happens in our body. And almost always, it comes with a push to do something.</p>
+
+          <div class="pl-loop pl-loop--noise" role="list" aria-label="How noise builds">
+            <div class="pl-loop__step" role="listitem"><div class="pl-loop__n">Situation</div><div class="pl-loop__t">Something happens</div><div class="pl-loop__d">The timing falls apart. Someone’s late. A bad piece.</div></div>
+            <div class="pl-loop__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
+            <div class="pl-loop__step" role="listitem"><div class="pl-loop__n">Noise</div><div class="pl-loop__t">Thoughts, emotions, feelings</div><div class="pl-loop__d">“Not again.” Frustration. A tight jaw, hot face, heavy arms.</div></div>
+            <div class="pl-loop__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
+            <div class="pl-loop__step" role="listitem"><div class="pl-loop__n">Urge</div><div class="pl-loop__t">A pull to act</div><div class="pl-loop__d">Snap at someone, go quiet, give up on the piece, stay home next time.</div></div>
+            <div class="pl-loop__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
+            <div class="pl-loop__step pl-loop__step--gold" role="listitem"><div class="pl-loop__n">Choice</div><div class="pl-loop__t">What we do</div><div class="pl-loop__d">This is the part we can work with.</div></div>
+          </div>
+
+          <h3 class="pl-h3--lg">Can we control<br><em>all the noise?</em></h3>
+          <p class="pl-sec__lead">Some of it, a little. There are things we can do across our week that turn the volume up or down. When we’re well fuelled, drinking enough water and getting decent sleep, the noise tends to be a bit quieter and easier to work with. When we’re running on empty, it gets louder. Looking after your brain health is worth doing.</p>
+          <p class="pl-sec__lead">But some noise just turns up. Frustration, nerves and worry will still pop up sometimes, however well we’ve slept and eaten. That isn’t a sign anything has gone wrong. It’s being a person in a boat.</p>
+
+          <div class="pl-grid2">
+            <div class="pl-card pl-card--grey">
+              <span class="pl-tag pl-tag--muted">Turns the volume</span>
+              <h3>Things that influence the noise</h3>
+              <ul class="pl-mini">
+                <li>Sleep and rest</li>
+                <li>Food and water before training</li>
+                <li>How much else is on your plate this week</li>
+              </ul>
+              <p style="margin-top:12px;">Worth looking after. They won’t switch the noise off.</p>
+            </div>
+            <div class="pl-card pl-card--gold">
+              <span class="pl-tag">In our hands, in the moment</span>
+              <h3>What we do with the urge</h3>
+              <ul class="pl-mini">
+                <li>Noticing the noise and naming it</li>
+                <li>Coming back to this stroke</li>
+                <li>Choosing the next action that fits what matters</li>
+              </ul>
+              <p style="margin-top:12px;">This is where ACE comes in.</p>
+            </div>
+          </div>
+
+          <div class="pl-land"><p>We can’t always choose the noise. <em>We can get better at choosing what we do while it’s there.</em></p></div>
+        </div>
+      </section>
+
+      <!-- 06 ACE -->
+      <section class="pl-sec pl-sec--darker" id="ace" data-time="2 min">
+        <div class="container">
+          <span class="pl-sec__num">06 · Open, aware, engaged in the moment</span>
+          <h2 class="pl-sec__title">Acknowledge,<br><em>connect, engage</em></h2>
+          <p class="pl-sec__lead">ACE is how open, aware and engaged from session one turns into something you can actually do when the noise turns up. It draws on Russ Harris’s “dropping anchor” practice from ACT. An anchor doesn’t stop the storm. It keeps the boat steady while the storm does what it does.</p>
+
+          <div class="pl-ace">
+            <div class="pl-ace__col">
+              <div class="pl-ace__l">A</div>
+              <div class="pl-ace__t">Acknowledge</div>
+              <p>Notice what’s here and name it. Make a little space between you and it.</p>
+              <span class="pl-ace__eg">“Steve’s in the room.”</span>
+            </div>
+            <div class="pl-ace__col">
+              <div class="pl-ace__l">C</div>
+              <div class="pl-ace__t">Connect</div>
+              <p>Come back into your body and this moment. Feet, hands, breath, what you can see and hear.</p>
+              <span class="pl-ace__eg">“Feet in the footbrace.”</span>
+            </div>
+            <div class="pl-ace__col">
+              <div class="pl-ace__l">E</div>
+              <div class="pl-ace__t">Engage</div>
+              <p>Bring your attention to what you’re doing, and take one small step toward what matters.</p>
+              <span class="pl-ace__eg">“Next catch, with the crew.”</span>
+            </div>
+          </div>
+
+          <div class="pl-why">
+            <h3>ACE is a shape, not a script</h3>
+            <p>There’s no single right way to do it. <strong>How you use ACE will change depending on the situation and on you.</strong> Some people move through it in about five seconds a step. Others spend a couple of minutes in each part. In the middle of a race it might be three strokes long. Before a big day it might be a few quiet minutes. Under each part there are different tools, and you get to pick the ones that suit you. You’ll see some of those choices below.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 07 ACKNOWLEDGE -->
+      <section class="pl-sec" id="acknowledge" data-time="4 min · try it">
+        <div class="container">
+          <span class="pl-sec__num">07 · A for acknowledge</span>
+          <h2 class="pl-sec__title">When Steve<br><em>walks in the room</em></h2>
+          <p class="pl-sec__lead">We went back to that frustrating situation and gave the urge a character. In the room, we called him Steve. When Steve walks in, he brings the frustration and the anger with him, and he’s usually pushing us toward something we wouldn’t choose on a calmer day. Steve can be anyone you like. Some people give theirs a silly name, a voice, an outfit, or a place they like to sit in the boat.</p>
+
+          <div class="pl-grid2">
+            <div class="pl-card pl-card--grey">
+              <span class="pl-tag pl-tag--muted">In it</span>
+              <h3>“I am angry.”</h3>
+              <p>Say it out loud. The anger is all of you. There’s no gap between you and the feeling, so the feeling tends to do the deciding.</p>
+            </div>
+            <div class="pl-card pl-card--gold">
+              <span class="pl-tag">Noticing it</span>
+              <h3>“Steve’s in the room.”</h3>
+              <p>Now say this one. The anger is still there. But you’ve stepped back half a pace, and you’re the one noticing Steve. That little gap is where the choice lives.</p>
+            </div>
+          </div>
+          <p class="pl-sec__lead" style="margin-top:30px;">That’s the whole point of acknowledging. It isn’t pretending the feeling isn’t there, and it isn’t telling yourself off for having it. <strong>It’s seeing it clearly enough that you can decide what happens next.</strong></p>
+
+          <h3 class="pl-h3--lg">Milk, milk,<br><em>milk</em></h3>
+          <p class="pl-sec__lead">We also tried a very old exercise, first described by the psychologist Edward Titchener more than a hundred years ago. It shows that thoughts are made of words, and words can lose their grip.</p>
+          <ol class="pl-steps">
+            <li>Say the word <strong>milk</strong> once. Notice what comes to mind: cold, white, a cuppa, the fridge.</li>
+            <li>Now say it out loud, over and over, as fast as you can, for 30 seconds.</li>
+            <li>Notice what happens to the word. For most people it turns into a funny sound and the meaning drains away.</li>
+            <li>Try it with a word that sticks for you, like <strong>tired</strong> or <strong>slow</strong>. Does it have the same grip afterwards?</li>
+          </ol>
+          <div class="pl-timer" id="plTimer">
+            <button class="pl-dl pl-timer__btn" type="button" id="plTimerBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2"/><path d="M9 2h6"/></svg><span id="plTimerTxt">Start a 30 second timer</span></button>
+            <div class="pl-timer__bar" aria-hidden="true"><span id="plTimerFill"></span></div>
+            <p class="pl-timer__msg" id="plTimerMsg" aria-live="polite"></p>
+          </div>
+          <p class="pl-note">Research on this word repetition exercise has found it can reduce how believable and upsetting a sticky thought feels, at least in the short term (Masuda and colleagues, 2004). Keep the word light. You don’t need to practise it with anything heavy.</p>
+
+          <h3 class="pl-h3--lg">Pick the tool<br><em>that works for you</em></h3>
+          <p class="pl-sec__lead">Acknowledging can look different for different people, and that’s exactly how it should be. <strong>You get to decide which tool helps you make space.</strong> Try each one a few times before you settle.</p>
+          <div class="pl-grid3">
+            <div class="pl-card pl-card--gold">
+              <span class="pl-tag">Option one</span>
+              <h3>Give it a character</h3>
+              <p>Name your Steve. “Here’s Steve again.” Said kindly, a bit like spotting someone you know across the car park.</p>
+            </div>
+            <div class="pl-card pl-card--gold">
+              <span class="pl-tag">Option two</span>
+              <h3>Word repetition</h3>
+              <p>Take the sticky word and say it quickly, out loud or in your head, until it’s just a sound. Good for off the water.</p>
+            </div>
+            <div class="pl-card pl-card--gold">
+              <span class="pl-tag">Option three</span>
+              <h3>Simply notice it</h3>
+              <p>“I’m noticing I’m having the thought that I’m too slow.” Or just “frustration’s here.” Quiet, quick, and nobody needs to know.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 08 CONNECT -->
+      <section class="pl-sec pl-sec--darker" id="connect" data-time="3 min">
+        <div class="container">
+          <span class="pl-sec__num">08 · C for connect</span>
+          <h2 class="pl-sec__title">Back into<br><em>this stroke</em></h2>
+          <p class="pl-sec__lead">Once you’ve acknowledged what’s here, connect brings you back into your body and into this moment. When Steve has hold of us, we’re usually somewhere else: replaying the last race or worrying about the next one. Connect brings us back to the only stroke we can actually paddle, which is this one.</p>
+
+          <h3 class="pl-h3--lg">Why we don’t<br><em>skip straight to connect</em></h3>
+          <p class="pl-sec__lead">Plenty of us already have connect skills. A slow breath, a stretch, focusing on something else. So why bother with acknowledge first? Two reasons.</p>
+          <div class="pl-grid2">
+            <div class="pl-card pl-card--gold">
+              <span class="pl-tag">Reason one</span>
+              <h3>Naming it brings the thinking brain online</h3>
+              <p>Putting a feeling into words seems to help settle the alarm. In one well known brain imaging study, labelling an emotion was linked with more activity in the front of the brain, the prefrontal cortex, and less in the amygdala, which responds to threat (Lieberman and colleagues, 2007). Acknowledging gets the part of you that plans and chooses back in the boat.</p>
+            </div>
+            <div class="pl-card pl-card--gold">
+              <span class="pl-tag">Reason two</span>
+              <h3>It’s about how the skill is used</h3>
+              <p>This one matters most. <strong>If we use a breathing or grounding skill to try to get rid of the noise, it often backfires.</strong> We breathe, check whether the frustration has gone, find it hasn’t, and now we’re frustrated that the breathing didn’t work. That’s the quicksand again. Acknowledging first means we’ve already made room for the noise, so connect is about coming back to the moment, not making the feeling disappear.</p>
+            </div>
+          </div>
+
+          <div class="pl-warn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><path d="M12 16.5v.01"/></svg>
+            <div>
+              <p class="pl-warn__h">The test for any connect skill</p>
+              <p>Ask yourself: <strong>am I doing this to get rid of the feeling, or to come back to what I’m doing?</strong> The same breath can be either. Only the second one tends to help.</p>
+            </div>
+          </div>
+
+          <h3 class="pl-h3--lg">Anchors that are<br><em>already in the boat</em></h3>
+          <p class="pl-sec__lead">We finished this part by thinking about connect skills that would work for each of us in the moment. None of these need anything extra. They’re there every training.</p>
+          <div class="pl-grid4">
+            <div class="pl-card"><span class="pl-tag">Feet</span><p>Push into the footbrace. Feel the boat under you.</p></div>
+            <div class="pl-card"><span class="pl-tag">Hands</span><p>Feel the shaft in your grip. A gentle squeeze, then soften.</p></div>
+            <div class="pl-card"><span class="pl-tag">Breath</span><p>Notice one breath out on the recovery. No need to change it.</p></div>
+            <div class="pl-card"><span class="pl-tag">Eyes and ears</span><p>The drum, the back in front of you, the sound of the water.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 09 ENGAGE -->
+      <section class="pl-sec" id="engage" data-time="3 min · quick check">
+        <div class="container">
+          <span class="pl-sec__num">09 · E for engage</span>
+          <h2 class="pl-sec__title">One small move<br><em>toward what matters</em></h2>
+          <p class="pl-sec__lead">Engage is where we bring our attention to what we’re doing and take a step that fits what we care about, with Steve still riding along if he wants to. This is where your coin from session one comes back in. What does the front of it look like in the next stroke, the next minute, or the next conversation?</p>
+          <p class="pl-sec__lead">And like the rest of ACE, it bends to fit the moment. Here are three ways it might look.</p>
+
+          <div class="pl-shapes">
+            <div class="pl-shape">
+              <div class="pl-shape__top"><span class="pl-tool__phase">In the car before training</span><span class="pl-tool__time">About 10 seconds a step</span></div>
+              <dl>
+                <dt>A</dt><dd>Notice how you’re feeling today. “Tired. A bit flat.”</dd>
+                <dt>C</dt><dd>Hands on the steering wheel, feet on the floor, one breath out.</dd>
+                <dt>E</dt><dd>Set one intention for the session. “Tonight I’ll be steady for the paddler behind me.”</dd>
+              </dl>
+            </div>
+            <div class="pl-shape">
+              <div class="pl-shape__top"><span class="pl-tool__phase">Mid piece, when it falls apart</span><span class="pl-tool__time">Three strokes</span></div>
+              <dl>
+                <dt>A</dt><dd>“Steve’s here.”</dd>
+                <dt>C</dt><dd>Feet in the footbrace. Find the drum.</dd>
+                <dt>E</dt><dd>Next catch, in time with the crew.</dd>
+              </dl>
+            </div>
+            <div class="pl-shape">
+              <div class="pl-shape__top"><span class="pl-tool__phase">Before a race or a hard conversation</span><span class="pl-tool__time">A couple of minutes</span></div>
+              <dl>
+                <dt>A</dt><dd>Sit with what’s there. Name the nerves, the doubt, the excitement.</dd>
+                <dt>C</dt><dd>A few slow breaths. Notice three things you can see and two you can hear.</dd>
+                <dt>E</dt><dd>Bring your crew’s values to mind, and pick what you’ll do first.</dd>
+              </dl>
+            </div>
+          </div>
+
+          <div class="pl-land"><p>ACE isn’t a hard drill to get right. <em>It’s a way of steering that you shape to the day.</em></p></div>
+
+          <h3 class="pl-h3--lg">Quick check:<br><em>which part of ACE?</em></h3>
+          <p class="pl-sec__lead">Pick A, C or E for each one. Some could fit more than one, and that’s fine. It’s the noticing that counts.</p>
+          <div class="pl-quiz" id="plQuiz">
+            <div class="pl-quiz__q" data-a="A" data-why="Naming who’s turned up is acknowledging."><p>“Here’s Steve again.”</p><div class="pl-quiz__opts"><button type="button">A</button><button type="button">C</button><button type="button">E</button></div><p class="pl-quiz__fb" aria-live="polite"></p></div>
+            <div class="pl-quiz__q" data-a="C" data-why="Your feet and the boat bring you back to this moment."><p>Pressing your feet into the footbrace.</p><div class="pl-quiz__opts"><button type="button">A</button><button type="button">C</button><button type="button">E</button></div><p class="pl-quiz__fb" aria-live="polite"></p></div>
+            <div class="pl-quiz__q" data-a="E" data-why="An intention points you toward what matters."><p>Setting one intention in the car before training.</p><div class="pl-quiz__opts"><button type="button">A</button><button type="button">C</button><button type="button">E</button></div><p class="pl-quiz__fb" aria-live="polite"></p></div>
+            <div class="pl-quiz__q" data-a="A" data-why="Saying a sticky word until it’s just a sound is a way of making room for it."><p>Saying “tired” fast until it’s just a sound.</p><div class="pl-quiz__opts"><button type="button">A</button><button type="button">C</button><button type="button">E</button></div><p class="pl-quiz__fb" aria-live="polite"></p></div>
+            <div class="pl-quiz__q" data-a="C" data-why="Sounds in the boat are an anchor to right now."><p>Listening for the drum.</p><div class="pl-quiz__opts"><button type="button">A</button><button type="button">C</button><button type="button">E</button></div><p class="pl-quiz__fb" aria-live="polite"></p></div>
+            <div class="pl-quiz__q" data-a="E" data-why="Doing something that fits the crew’s values is engaging."><p>Being first to help carry the boat down.</p><div class="pl-quiz__opts"><button type="button">A</button><button type="button">C</button><button type="button">E</button></div><p class="pl-quiz__fb" aria-live="polite"></p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 ANCHORS TO ACTIONS -->
+      <section class="pl-sec pl-sec--darker" id="behaviours" data-time="3 min">
+        <div class="container">
+          <span class="pl-sec__num">10 · Engaged, as a crew</span>
+          <h2 class="pl-sec__title">Anchors need<br><em>clear actions</em></h2>
+          <p class="pl-sec__lead">To finish, we split into two groups and each took a situation that often causes frustration for the crew. Then we worked out what we’d actually do about it.</p>
+          <p class="pl-sec__lead">Here’s why that step matters. An anchor helps a boat hold steady through a storm, but only if it’s actually attached to something. Last session we explored what’s important to us. Values on their own can feel a bit floaty. <strong>The gap is often between knowing what matters and knowing what that looks like on a Thursday night or on race day.</strong> Clear behaviours close that gap. They’re what the crew can see, practise, and count on.</p>
+
+          <h3 class="pl-h3--lg">One we worked<br><em>through together</em></h3>
+          <div class="pl-ladder">
+            <div class="pl-ladder__row">
+              <div class="pl-ladder__lab">The frustration</div>
+              <div class="pl-ladder__val">Time management. Not knowing where to be or when, especially on race day.</div>
+            </div>
+            <div class="pl-ladder__row">
+              <div class="pl-ladder__lab">What it means to us</div>
+              <div class="pl-ladder__val">Being on time is one of the ways we show we’re one crew.</div>
+            </div>
+            <div class="pl-ladder__row">
+              <div class="pl-ladder__lab">The value underneath</div>
+              <div class="pl-ladder__val pl-ladder__val--big">Togetherness</div>
+            </div>
+            <div class="pl-ladder__row">
+              <div class="pl-ladder__lab">The crew behaviour</div>
+              <div class="pl-ladder__val">A clear time schedule goes up in the tent on race day, so everyone knows where they need to be and when.</div>
+            </div>
+            <div class="pl-ladder__row">
+              <div class="pl-ladder__lab">What each paddler does</div>
+              <div class="pl-ladder__val">Spend a good couple of minutes actually reading it when you arrive, so you know your times.</div>
+            </div>
+          </div>
+          <p class="pl-note">Small and specific on purpose. Anyone walking into the tent could see whether it’s happening.</p>
+
+          <h3 class="pl-h3--lg">Build your<br><em>own crew action</em></h3>
+          <p class="pl-sec__lead">Use this for the second example from the night, or for anything else that keeps tripping the crew up. It’s handy for whoever is leading the conversation.</p>
+          <form class="pl-pcard" id="plCrew" autocomplete="off" onsubmit="return false;">
+            <h3 class="pl-pcard__title">Our crew action</h3>
+            <p class="pl-pcard__sub">From a frustration, to a value, to something the whole boat can see.</p>
+            <div class="pl-field">
+              <label class="pl-field__label" for="pcFrust">The frustration<span class="pl-field__hint">What keeps coming up?</span></label>
+              <input class="pl-input" id="pcFrust" name="frust" type="text" maxlength="160">
+            </div>
+            <div class="pl-field">
+              <label class="pl-field__label" for="pcValue">The value underneath<span class="pl-field__hint">What does it show we care about?</span></label>
+              <input class="pl-input" id="pcValue" name="value" type="text" maxlength="80">
+            </div>
+            <div class="pl-field">
+              <label class="pl-field__label" for="pcCrew">The crew behaviour<span class="pl-field__hint">What would someone actually see?</span></label>
+              <textarea class="pl-textarea" id="pcCrew" name="crew" maxlength="240"></textarea>
+            </div>
+            <div class="pl-field">
+              <label class="pl-field__label" for="pcEach">What each paddler does<span class="pl-field__hint">Small enough to do on a tired night.</span></label>
+              <input class="pl-input" id="pcEach" name="each" type="text" maxlength="160">
+            </div>
+            <div class="pl-field">
+              <label class="pl-field__label" for="pcLead">Who leads it<span class="pl-field__hint">One or two people the crew agrees on.</span></label>
+              <input class="pl-input" id="pcLead" name="lead" type="text" maxlength="120">
+            </div>
+            <div class="pl-field">
+              <label class="pl-field__label" for="pcSlip">If it slips, we<span class="pl-field__hint">Start small. See the pointers below.</span></label>
+              <textarea class="pl-textarea" id="pcSlip" name="slip" maxlength="240"></textarea>
+            </div>
+            <div class="pl-pcard__actions">
+              <button class="pl-btn" type="button" data-print>Print our crew action</button>
+              <button class="pl-btn pl-btn--ghost" type="button" data-clear>Clear</button>
+              <span class="pl-pcard__status" aria-live="polite"></span>
+            </div>
+            <p class="pl-device-note">Saved in this browser only. Nothing is sent anywhere.</p>
+          </form>
+        </div>
+      </section>
+
+      <!-- 11 STRONG CREWS -->
+      <section class="pl-sec" id="crews" data-time="3 min">
+        <div class="container">
+          <span class="pl-sec__num">11 · What the research says about strong crews</span>
+          <h2 class="pl-sec__title">Clear on what,<br><em>who, and what if</em></h2>
+          <p class="pl-sec__lead">A behaviour only holds if people know what’s expected, someone keeps it alive, and the crew knows what happens when it doesn’t go to plan. None of that needs to be heavy. Here’s what the evidence suggests, in plain terms.</p>
+
+          <div class="pl-acts">
+            <div class="pl-act">
+              <div class="pl-act__n">1</div>
+              <div class="pl-act__body">
+                <h3 class="pl-act__t">Make expectations clear and visible</h3>
+                <span class="pl-act__ask">For our crew</span>
+                <p class="pl-act__do">Write the agreement down and put it where the crew will see it, like the schedule in the tent.</p>
+                <details class="pl-ev"><summary>What the research says</summary><p>Research on sport teams has found that when people are unsure what’s expected of them, or what happens if they don’t do it, they tend to feel less satisfied in their role (Eys and colleagues, 2003; Beauchamp and colleagues, 2005). Unspoken expectations are where frustration grows.</p></details>
+              </div>
+            </div>
+            <div class="pl-act">
+              <div class="pl-act__n">2</div>
+              <div class="pl-act__body">
+                <h3 class="pl-act__t">Share the leading</h3>
+                <span class="pl-act__ask">For our crew</span>
+                <p class="pl-act__do">Ask who’s naturally good at keeping each agreement going, and invite them to lead it. It doesn’t all have to sit with the captain or the coach.</p>
+                <details class="pl-ev"><summary>What the research says</summary><p>Studies of sports teams describe four kinds of athlete leader: task (on the water), motivational (lifting energy), social (looking after people) and external (the link to the club and organisers). The captain is rarely the best at all four, and teams where athletes rate their peer leadership highly tend to work better together (Fransen and colleagues, 2014, 2017).</p></details>
+              </div>
+            </div>
+            <div class="pl-act">
+              <div class="pl-act__n">3</div>
+              <div class="pl-act__body">
+                <h3 class="pl-act__t">Decide it together</h3>
+                <span class="pl-act__ask">For our crew</span>
+                <p class="pl-act__do">Build agreements as a crew, the way we did in groups on the night. People keep agreements they helped make.</p>
+                <details class="pl-ev"><summary>What the research says</summary><p>The Prosocial approach, developed by Paul Atkins, David Sloan Wilson and Steven Hayes, builds on Elinor Ostrom’s Nobel prize winning work on how groups manage shared things fairly. Two of its core principles are a shared sense of identity and purpose, and fair, inclusive decision making (Atkins, Wilson and Hayes, 2019).</p></details>
+              </div>
+            </div>
+            <div class="pl-act">
+              <div class="pl-act__n">4</div>
+              <div class="pl-act__body">
+                <h3 class="pl-act__t">Keep an eye on it, lightly</h3>
+                <span class="pl-act__ask">For our crew</span>
+                <p class="pl-act__do">A quick “how did the schedule work today?” at the debrief. Not policing, just noticing, and a good time to notice when it went well too.</p>
+                <details class="pl-ev"><summary>What the research says</summary><p>Another Prosocial principle is that groups check in on how their agreed behaviours are going (Atkins, Wilson and Hayes, 2019).</p></details>
+              </div>
+            </div>
+            <div class="pl-act">
+              <div class="pl-act__n">5</div>
+              <div class="pl-act__body">
+                <h3 class="pl-act__t">When it isn’t met, start small and stay kind</h3>
+                <span class="pl-act__ask">For our crew</span>
+                <ul class="pl-qs" style="margin-top:4px;"><li><strong>First, a friendly reminder.</strong> Most slips are someone being busy, tired or unsure, not someone who doesn’t care.</li><li><strong>If it keeps happening,</strong> a quiet chat, curious rather than critical: “What got in the way?” Often the agreement needs tweaking, not the person.</li><li><strong>If it’s a pattern across the crew,</strong> bring it back to the group and review the agreement together.</li><li><strong>Talk about the behaviour, not the person.</strong> Then come back to the value it serves: we do this because we’re one crew.</li></ul>
+                <details class="pl-ev"><summary>What the research says</summary><p>Ostrom’s work found that groups do best when responses to a slip are graduated: start gentle, and only step up if it keeps happening. Things also go better when there’s a quick and fair way to sort out disagreements before they fester (Atkins, Wilson and Hayes, 2019; Wilson and colleagues, 2020).</p></details>
+              </div>
+            </div>
+            <div class="pl-act">
+              <div class="pl-act__n">6</div>
+              <div class="pl-act__body">
+                <h3 class="pl-act__t">Shape it as when, then</h3>
+                <span class="pl-act__ask">For our crew</span>
+                <p class="pl-act__do">“When we arrive at the tent, we read the schedule.” The cue is built in, so nobody has to remember to remember.</p>
+                <details class="pl-ev"><summary>What the research says</summary><p>Plans written as “when this happens, we do that” are one of the most consistently supported tools in behaviour change research, and make it much more likely that a good intention turns into action (Gollwitzer and Sheeran, 2006).</p></details>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12 MY ACE -->
+      <section class="pl-sec pl-sec--darker" id="myace" data-time="4 min · your card">
+        <div class="container">
+          <span class="pl-sec__num">12 · Take it to training</span>
+          <h2 class="pl-sec__title">My<br><em>ACE</em></h2>
+          <div class="pl-recap">
+            <p class="pl-recap__h">Three things to take with you</p>
+            <ol>
+              <li><strong>The noise isn’t the problem.</strong> Fighting it is what pulls us under.</li>
+              <li><strong>ACE is yours to shape.</strong> Seconds or minutes, with the tools that suit you.</li>
+              <li><strong>Values need actions.</strong> Clear, visible, shared, and kind when they slip.</li>
+            </ol>
+          </div>
+          <p class="pl-sec__lead">Now put your own version together. Choose the tools that fit you, and one place you’ll try it this week. Then tell the paddler who sits behind you.</p>
+
+          <form class="pl-pcard" id="plAce" autocomplete="off" onsubmit="return false;">
+            <h3 class="pl-pcard__title">My ACE</h3>
+            <p class="pl-pcard__sub">Your character, your anchor, your next move.</p>
+            <div class="pl-field">
+              <label class="pl-field__label" for="paName">My Steve<span class="pl-field__hint">Your character’s name, if you’re using one.</span></label>
+              <input class="pl-input" id="paName" name="name" type="text" maxlength="60">
+            </div>
+            <div class="pl-field">
+              <label class="pl-field__label" for="paSays">They usually say<span class="pl-field__hint">Their favourite line, and what they want you to do.</span></label>
+              <textarea class="pl-textarea" id="paSays" name="says" maxlength="240"></textarea>
+            </div>
+            <div class="pl-field">
+              <span class="pl-field__label">Acknowledge<span class="pl-field__hint">The tool that suits me.</span></span>
+              <div class="pl-ticks" role="radiogroup" aria-label="Acknowledge tool">
+                <label><input type="radio" name="tool" value="character"> Name the character</label>
+                <label><input type="radio" name="tool" value="words"> Word repetition</label>
+                <label><input type="radio" name="tool" value="notice"> Just notice it</label>
+              </div>
+            </div>
+            <div class="pl-field">
+              <label class="pl-field__label" for="paConnect">Connect<span class="pl-field__hint">My anchor in the boat.</span></label>
+              <input class="pl-input" id="paConnect" name="connect" type="text" maxlength="120">
+            </div>
+            <div class="pl-field">
+              <label class="pl-field__label" for="paEngage">Engage<span class="pl-field__hint">One small move toward what matters.</span></label>
+              <input class="pl-input" id="paEngage" name="engage" type="text" maxlength="160">
+            </div>
+            <div class="pl-field">
+              <label class="pl-field__label" for="paWhere">Where I’ll try it<span class="pl-field__hint">In the car, at warm up, mid piece.</span></label>
+              <input class="pl-input" id="paWhere" name="where" type="text" maxlength="120">
+            </div>
+            <div class="pl-pcard__actions">
+              <button class="pl-btn" type="button" data-print>Print my ACE</button>
+              <button class="pl-btn pl-btn--ghost" type="button" data-clear>Clear</button>
+              <span class="pl-pcard__status" aria-live="polite"></span>
+            </div>
+            <p class="pl-device-note">Saved in this browser only. Nothing is sent anywhere.</p>
+          </form>
+        </div>
+      </section>
+
+      <!-- 13 NEXT -->
+      <section class="pl-sec" id="next" data-time="1 min">
+        <div class="container">
+          <span class="pl-sec__num">13 · What’s next</span>
+          <h2 class="pl-sec__title">Between now and<br><em>session three</em></h2>
+          <p class="pl-sec__lead">Three small things before we meet again. Try your ACE at least once each training, in whatever shape fits the moment. Notice when your Steve walks in, and what you did. And if your crew has agreed an action, give it a go and see how it lands. <strong>Noticing late still counts.</strong></p>
+
+          <div class="pl-arc">
+            <div class="pl-arc__item pl-arc__item--done"><div class="pl-arc__n">1<span class="pl-arc__pill">Done</span></div><div class="pl-arc__t">What we paddle for</div><div class="pl-arc__d">What makes turning up worth it, and what competes with it.</div></div>
+            <div class="pl-arc__item pl-arc__item--done"><div class="pl-arc__n">2<span class="pl-arc__pill">Done</span></div><div class="pl-arc__t">Noise in the boat</div><div class="pl-arc__d">Unhooking from the noise, ACE, and turning values into clear crew actions.</div></div>
+            <div class="pl-arc__item pl-arc__item--next"><div class="pl-arc__n">3<span class="pl-arc__pill pl-arc__pill--next">Next</span></div><div class="pl-arc__t">Session three</div><div class="pl-arc__d">Building on the crew actions and how we talk to each other when things slip.</div></div>
+            <div class="pl-arc__item"><div class="pl-arc__n">4</div><div class="pl-arc__t">Session four</div><div class="pl-arc__d">Taking it all onto the water for race day.</div></div>
+          </div>
+
+          <div class="pl-land"><p>Kia mau ki te aka matua. <em>The wind will keep blowing.</em> Hold fast to what this crew stands for.</p></div>
+
+          <details class="pl-reveal" style="margin-top:48px;">
+            <summary>Where these ideas come from</summary>
+            <div class="pl-reveal__body">
+              <ol>
+                <li>Atkins, P. W. B., Wilson, D. S., &amp; Hayes, S. C. (2019). <em>Prosocial: Using evolutionary science to build productive, equitable, and collaborative groups.</em> Context Press.</li>
+                <li>Beauchamp, M. R., Bray, S. R., Eys, M. A., &amp; Carron, A. V. (2005). Multidimensional role ambiguity and role satisfaction: A prospective examination using interdependent sport teams. <em>Journal of Applied Social Psychology, 35</em>(12), 2560–2576.</li>
+                <li>Eys, M. A., Carron, A. V., Beauchamp, M. R., &amp; Bray, S. R. (2003). Role ambiguity in sport teams. <em>Journal of Sport and Exercise Psychology, 25</em>(4), 534–550.</li>
+                <li>Fransen, K., Vanbeselaere, N., De Cuyper, B., Vande Broek, G., &amp; Boen, F. (2014). The myth of the team captain as principal leader: Extending the athlete leadership classification within sport teams. <em>Journal of Sports Sciences, 32</em>(14), 1389–1397.</li>
+                <li>Fransen, K., Haslam, S. A., Mallett, C. J., Steffens, N. K., Peters, K., &amp; Boen, F. (2017). Is perceived athlete leadership quality related to team effectiveness? A comparison of three professional sports teams. <em>Journal of Science and Medicine in Sport, 20</em>(8), 800–806.</li>
+                <li>Gollwitzer, P. M., &amp; Sheeran, P. (2006). Implementation intentions and goal achievement: A meta‑analysis of effects and processes. <em>Advances in Experimental Social Psychology, 38</em>, 69–119.</li>
+                <li>Harris, R. (2019). <em>ACT made simple</em> (2nd ed.). New Harbinger. Source of the “dropping anchor” practice that ACE draws on.</li>
+                <li>Lieberman, M. D., Eisenberger, N. I., Crockett, M. J., Tom, S. M., Pfeifer, J. H., &amp; Way, B. M. (2007). Putting feelings into words: Affect labeling disrupts amygdala activity in response to affective stimuli. <em>Psychological Science, 18</em>(5), 421–428.</li>
+                <li>Masuda, A., Hayes, S. C., Sackett, C. F., &amp; Twohig, M. P. (2004). Cognitive defusion and self‑relevant negative thoughts: Examining the impact of a ninety year old technique. <em>Behaviour Research and Therapy, 42</em>(4), 477–485.</li>
+                <li>Wegner, D. M., Schneider, D. J., Carter, S. R., &amp; White, T. L. (1987). Paradoxical effects of thought suppression. <em>Journal of Personality and Social Psychology, 53</em>(1), 5–13.</li>
+                <li>Wilson, D. S., Philip, M. M., MacDonald, I. F., Atkins, P. W. B., &amp; Kniffin, K. M. (2020). Core design principles for nurturing organization‑level selection. <em>Scientific Reports, 10</em>, 13989.</li>
+              </ol>
+            </div>
+          </details>
+
+          <div class="pl-support">
+            <p>If anything from the session stayed with you, talk to your club’s welfare contact, or get in touch with The Performance Act at <a href="mailto:info@performance-act.com">info@performance-act.com</a>.</p>
+            <p>If you need to talk to someone now, free call or text <strong>1737</strong> any time to talk with a trained counsellor. In an emergency, phone <strong>111</strong>.</p>
+            <p>This page is a reminder of a group session. It isn’t clinical advice and doesn’t replace support from a health professional.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div><!-- /plApp -->
+
+
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="siteFooter">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-grid__brand">
+          <img src="images/logo-vertical.png?v=2" alt="The Performance Act" class="logo-img logo-img--footer">
+          <p class="footer__tagline">Helping People Grow</p>
+          <p class="footer__email"><a href="mailto:info@performance-act.com">info@performance-act.com</a></p>
+        </div>
+        <div class="footer-grid__links">
+          <h4 class="footer__heading">QUICK LINKS</h4>
+          <a href="index.html#about" class="footer__link">About Us</a>
+          <a href="approach.html" class="footer__link">Our Approach</a>
+          <a href="programs.html" class="footer__link">Programs</a>
+          <a href="team.html" class="footer__link">Our Wh&#257;nau</a>
+        </div>
+        <div class="footer-grid__links">
+          <h4 class="footer__heading">GROW</h4>
+          <a href="grow.html" class="footer__link">About GROW</a>
+          <a href="grow-login.html" class="footer__link">Platform Login</a>
+        </div>
+        <div class="footer-grid__social">
+          <h4 class="footer__heading">FOLLOW US</h4>
+          <div class="social-links">
+            <a href="https://www.instagram.com/performance__act/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://www.facebook.com/ThePerformanceAct" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/performance-act-ltd/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 The Performance Act. All rights reserved. Aotearoa, New Zealand.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== NZ SUPPORT LINES ========== -->
+  <button class="support-line-btn" id="supportLineBtn" aria-label="NZ support lines">
+    <span class="support-line-btn__dot" aria-hidden="true"></span>
+    Immediate Support
+  </button>
+  <div class="support-line-modal" id="supportLineModal" role="dialog" aria-modal="true" aria-labelledby="supportLineTitle" aria-hidden="true">
+    <div class="support-line-modal__backdrop"></div>
+    <div class="support-line-modal__panel">
+      <button class="support-line-modal__close" id="supportLineClose" aria-label="Close support lines">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <p class="support-line-modal__eyebrow">Aotearoa, New Zealand</p>
+      <h2 class="support-line-modal__title" id="supportLineTitle">Need immediate support?</h2>
+      <p class="support-line-modal__note">The Performance Act is a sport psychology practice, not a crisis or emergency service. If you or someone you care about needs immediate support, please reach out to one of these trusted services below. They are free, confidential, and available 24&#8202;/&#8202;7.</p>
+      <ul class="support-line-modal__list" role="list">
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">1737 &mdash; Need to Talk?</p><p class="sln-resource__desc">Free call or text, any time. Trained counsellors, 24&#47;7.</p></div><a href="tel:1737" class="sln-resource__number">Call or text 1737</a></li>
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">Youthline</p><p class="sln-resource__desc">For young people. Free call or text 234, 24&#47;7.</p></div><a href="tel:0800376633" class="sln-resource__number">0800 376 633</a></li>
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">Lifeline NZ</p><p class="sln-resource__desc">Crisis support and suicide prevention, 24&#47;7.</p></div><a href="tel:0800543354" class="sln-resource__number">0800 543 354</a></li>
+        <li class="sln-resource"><div class="sln-resource__info"><p class="sln-resource__name">Healthline</p><p class="sln-resource__desc">Free health advice from trained staff, 24&#47;7.</p></div><a href="tel:0800611116" class="sln-resource__number">0800 611 116</a></li>
+      </ul>
+      <p class="support-line-modal__footer">More resources at <a href="https://www.mentalhealth.org.nz/get-help/in-crisis" target="_blank" rel="noopener">Mental Health Foundation NZ</a> and <a href="https://www.depression.org.nz" target="_blank" rel="noopener">depression.org.nz</a>.</p>
+    </div>
+  </div>
+
+
+
+  <script src="script.js?v=3"></script>
+  <script>
+  /* ==================================================================
+     PADDLE FOR LIFE — GROW AREA (session two)
+     100% client-side. Cards are saved only in this browser.
+  ================================================================== */
+  (function () {
+    'use strict';
+
+    /* ---- AUTH GUARD (same session key as grow-login.html) ---- */
+    var LS_CLUB = 'grow_nomads_club';
+    var app = document.getElementById('plApp');
+    var club = null;
+    try { club = localStorage.getItem(LS_CLUB); } catch (e) { club = null; }
+    if (club !== 'paddle') {
+      window.location.replace('grow-login.html');
+      return;
+    }
+    app.classList.add('is-ready');
+
+    document.getElementById('plLogout').addEventListener('click', function () {
+      try {
+        localStorage.removeItem('grow_nomads_club');
+        localStorage.removeItem('grow_nomads_role');
+      } catch (e) { /* storage unavailable */ }
+      window.location.href = 'grow-login.html';
+    });
+
+    /* ---- SECTION NAV: highlight the section in view ---- */
+    var links = Array.prototype.slice.call(document.querySelectorAll('.pl-nav__link'));
+    var byId = {};
+    links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting && byId[en.target.id]) {
+            links.forEach(function (l) { l.classList.remove('is-active'); });
+            byId[en.target.id].classList.add('is-active');
+          }
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      Object.keys(byId).forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) io.observe(el);
+      });
+    }
+
+
+    /* ---- LARGER TEXT ---- */
+    (function () {
+      var btn = document.getElementById('plTextSize');
+      var KEY = 'grow_paddle_textsize';
+      function set(on) {
+        document.documentElement.classList.toggle('pl-big', on);
+        btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      }
+      try { set(localStorage.getItem(KEY) === '1'); } catch (e) { /* ignore */ }
+      btn.addEventListener('click', function () {
+        var on = btn.getAttribute('aria-pressed') !== 'true';
+        set(on);
+        try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) { /* ignore */ }
+      });
+    })();
+
+    /* ---- READING BAR ---- */
+    (function () {
+      var bar = document.getElementById('plReadbar');
+      var tick = false;
+      function upd() {
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? Math.min(100, (window.scrollY / h) * 100) : 0) + '%';
+        tick = false;
+      }
+      window.addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(upd); } }, { passive: true });
+      upd();
+    })();
+
+    /* ---- SECTIONS: time chips, done buttons, next links, progress ---- */
+    (function () {
+      var DKEY = 'grow_paddle_s2_done_v1';
+      var secs = Array.prototype.slice.call(document.querySelectorAll('.pl-sec[data-time]'));
+      var done = {};
+      try { done = JSON.parse(localStorage.getItem(DKEY) || '{}') || {}; } catch (e) { done = {}; }
+      var clock = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+      var tickSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>';
+      function label(id) { return byId[id] ? byId[id].textContent.trim() : id; }
+
+      secs.forEach(function (sec, i) {
+        var num = sec.querySelector('.pl-sec__num');
+        if (num) {
+          var chip = document.createElement('span');
+          chip.className = 'pl-chip';
+          chip.innerHTML = clock + sec.getAttribute('data-time');
+          num.insertAdjacentElement('afterend', chip);
+        }
+        var foot = document.createElement('div');
+        foot.className = 'pl-stepfoot';
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'pl-donebtn';
+        b.setAttribute('data-sec', sec.id);
+        b.innerHTML = '<span class="pl-donebtn__box">' + tickSvg + '</span><span class="pl-donebtn__t"></span>';
+        foot.appendChild(b);
+        var nxt = secs[i + 1];
+        var a = document.createElement('a');
+        a.className = 'pl-nextlink';
+        if (nxt) { a.href = '#' + nxt.id; a.innerHTML = '<span>Next</span><strong>' + label(nxt.id) + '</strong> &rarr;'; }
+        else { a.href = '#plTitle'; a.innerHTML = '<span>All done</span><strong>Back to the top</strong> &uarr;'; }
+        foot.appendChild(a);
+        sec.querySelector('.container').appendChild(foot);
+        b.addEventListener('click', function () {
+          done[sec.id] = !done[sec.id];
+          try { localStorage.setItem(DKEY, JSON.stringify(done)); } catch (e) { /* ignore */ }
+          render();
+          if (done[sec.id] && nxt) {
+            setTimeout(function () { nxt.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); }, 250);
+          }
+        });
+      });
+
+      function render() {
+        var n = 0, first = null;
+        secs.forEach(function (sec) {
+          var d = !!done[sec.id];
+          if (d) n++; else if (!first) first = sec;
+          var b = sec.querySelector('.pl-donebtn');
+          b.setAttribute('aria-pressed', d ? 'true' : 'false');
+          b.querySelector('.pl-donebtn__t').textContent = d ? 'Done' : 'Mark as done';
+          if (byId[sec.id]) byId[sec.id].classList.toggle('is-done', d);
+        });
+        document.getElementById('plProgCount').textContent = n;
+        document.getElementById('plProgTotal').textContent = secs.length;
+        document.getElementById('plProgFill').style.width = (n / secs.length * 100) + '%';
+        var r = document.getElementById('plResume'), rt = document.getElementById('plResumeTxt');
+        if (n === 0) { r.href = '#' + secs[0].id; rt.textContent = 'Start with a quick look back'; }
+        else if (first) { r.href = '#' + first.id; rt.textContent = 'Pick up where you left off: ' + label(first.id); }
+        else { r.href = '#myace'; rt.textContent = 'All done. Revisit your ACE'; }
+      }
+      render();
+    })();
+
+    /* ---- 30 SECOND TIMER (milk, milk, milk) ---- */
+    (function () {
+      var btn = document.getElementById('plTimerBtn');
+      if (!btn) return;
+      var txt = document.getElementById('plTimerTxt'), fill = document.getElementById('plTimerFill'), msg = document.getElementById('plTimerMsg');
+      var t = null, start = 0, DUR = 30000;
+      function stop(finished) {
+        clearInterval(t); t = null;
+        txt.textContent = finished ? 'Go again' : 'Start a 30 second timer';
+        if (finished) { fill.style.width = '100%'; msg.textContent = 'Time. What happened to the word?'; }
+        else { fill.style.width = '0'; msg.textContent = ''; }
+      }
+      btn.addEventListener('click', function () {
+        if (t) { stop(false); return; }
+        start = Date.now();
+        txt.textContent = 'Stop';
+        msg.textContent = 'Go. Milk, milk, milk…';
+        t = setInterval(function () {
+          var e = Date.now() - start;
+          fill.style.width = Math.min(100, e / DUR * 100) + '%';
+          if (e >= DUR) stop(true);
+        }, 100);
+      });
+    })();
+
+    /* ---- ACE QUICK CHECK ---- */
+    Array.prototype.forEach.call(document.querySelectorAll('.pl-quiz__q'), function (q) {
+      var fb = q.querySelector('.pl-quiz__fb');
+      Array.prototype.forEach.call(q.querySelectorAll('button'), function (b) {
+        b.setAttribute('aria-label', 'Answer ' + b.textContent);
+        b.addEventListener('click', function () {
+          var right = b.textContent === q.getAttribute('data-a');
+          if (right) {
+            q.querySelectorAll('button').forEach(function (x) { x.classList.remove('is-try'); });
+            b.classList.add('is-right');
+            fb.innerHTML = '<strong>Yes.</strong> ' + q.getAttribute('data-why');
+          } else {
+            b.classList.add('is-try');
+            fb.textContent = 'Could be. Have another go: which part fits best?';
+          }
+        });
+      });
+    });
+
+    /* ---- PRINT SHEET: a clean copy of whichever card is printed ---- */
+    function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+    function buildPrint(f) {
+      var area = document.getElementById('plPrintArea');
+      if (!area) { area = document.createElement('div'); area.id = 'plPrintArea'; document.body.appendChild(area); }
+      area.className = '';
+      var h = '<div class="pp-brand">The Performance Act · Paddle for Life · Session two</div>';
+      h += '<h1 class="pp-title">' + esc(f.querySelector('.pl-pcard__title').textContent) + '</h1>';
+      h += '<p class="pp-sub">' + esc(f.querySelector('.pl-pcard__sub').textContent) + '</p>';
+      Array.prototype.forEach.call(f.querySelectorAll('.pl-field'), function (row) {
+        var lab = row.querySelector('.pl-field__label').cloneNode(true);
+        var hintEl = lab.querySelector('.pl-field__hint');
+        var hint = hintEl ? hintEl.textContent : '';
+        if (hintEl) hintEl.remove();
+        var out = '', ticks = '';
+        Array.prototype.forEach.call(row.querySelectorAll('input, textarea'), function (el) {
+          if (el.type === 'checkbox' || el.type === 'radio') {
+            ticks += '<span><span class="pp-box">' + (el.checked ? '<svg viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10 3" fill="none" stroke="#111" stroke-width="2"/></svg>' : '') + '</span>' + esc(el.parentNode.textContent.trim()) + '</span>';
+          } else {
+            out += '<div class="pp-line' + (el.tagName === 'TEXTAREA' ? ' pp-line--tall' : '') + '">' + esc(el.value) + '</div>';
+          }
+        });
+        if (ticks) out += '<div class="pp-ticks">' + ticks + '</div>';
+        h += '<div class="pp-row"><div class="pp-lab">' + esc(lab.textContent.trim()) + (hint ? '<span class="pp-hint">' + esc(hint) + '</span>' : '') + '</div><div>' + out + '</div></div>';
+      });
+      h += '<p class="pp-foot">Printed from your Paddle for Life GROW page. What you wrote stays on your own device.</p>';
+      area.innerHTML = h;
+    }
+
+    /* ---- CARDS: save on this device, print, clear ---- */
+    var lastForm = null;
+    function setupCard(id, key) {
+      var form = document.getElementById(id);
+      if (!form) return;
+      var status = form.querySelector('.pl-pcard__status');
+      var timer = null;
+      function flash(msg) {
+        status.textContent = msg;
+        clearTimeout(timer);
+        timer = setTimeout(function () { status.textContent = ''; }, 2200);
+      }
+      function collect() {
+        var data = {};
+        Array.prototype.forEach.call(form.elements, function (el) {
+          if (!el.name) return;
+          if (el.type === 'radio') { if (el.checked) data[el.name] = el.value; else if (!(el.name in data)) data[el.name] = ''; return; }
+          data[el.name] = el.type === 'checkbox' ? el.checked : el.value;
+        });
+        return data;
+      }
+      function save() {
+        try { localStorage.setItem(key, JSON.stringify(collect())); flash('Saved on this device'); }
+        catch (e) { flash('Couldn’t save on this device, but you can still print it'); }
+      }
+      try {
+        var saved = localStorage.getItem(key);
+        if (saved) {
+          var d = JSON.parse(saved);
+          Array.prototype.forEach.call(form.elements, function (el) {
+            if (!el.name || !(el.name in d)) return;
+            if (el.type === 'checkbox') el.checked = !!d[el.name];
+            else if (el.type === 'radio') el.checked = (d[el.name] === el.value);
+            else el.value = d[el.name];
+          });
+        }
+      } catch (e) { /* nothing saved, or storage unavailable */ }
+      form.addEventListener('input', save);
+      form.addEventListener('change', save);
+      form.addEventListener('focusin', function () { lastForm = form; });
+      form.querySelector('[data-print]').addEventListener('click', function () { buildPrint(form); lastForm = form; window.print(); });
+      form.querySelector('[data-clear]').addEventListener('click', function () {
+        form.reset();
+        try { localStorage.removeItem(key); } catch (e) { /* ignore */ }
+        flash('Cleared');
+      });
+    }
+    setupCard('plReflect', 'grow_paddle_s2_reflect_v1');
+    setupCard('plCrew', 'grow_paddle_s2_crew_v1');
+    setupCard('plAce', 'grow_paddle_s2_ace_v1');
+
+    /* Browser print (Ctrl+P): print the card last used, or My ACE */
+    window.addEventListener('beforeprint', function () {
+      var area = document.getElementById('plPrintArea');
+      if (!area || !area.innerHTML) buildPrint(lastForm || document.getElementById('plAce'));
+    });
+    window.addEventListener('afterprint', function () {
+      var area = document.getElementById('plPrintArea');
+      if (area) area.innerHTML = '';
+    });
+  })();
+  </script>
+</body>
+</html>
