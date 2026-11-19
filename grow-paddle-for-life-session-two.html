@@ -516,6 +516,93 @@
       .pl-ace, .pl-shapes { grid-template-columns: 1fr; }
       .pl-ladder__row { grid-template-columns: 1fr; gap: 4px; }
     }
+
+    /* ---------- UX PASS: progress, checks, timer, recap ---------- */
+    html.pl-big { font-size: 112.5%; }
+    .pl-banner__btns { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+    .pl-textsize sup { font-size: 0.6em; }
+    .pl-textsize[aria-pressed="true"] { color: #111; background: var(--pl-gold); border-color: var(--pl-gold); }
+    .pl-readbar { height: 3px; background: transparent; }
+    .pl-readbar span { display: block; height: 100%; width: 0; background: var(--pl-gold); transition: width .1s linear; }
+    .pl-outcomes { margin-top: 28px; max-width: 660px; border-left: 3px solid var(--pl-gold); padding: 4px 0 4px 18px; }
+    .pl-outcomes__h { font-family: var(--font-heading); font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pl-gold); margin: 0 0 8px; }
+    .pl-outcomes ul { margin: 0; padding-left: 18px; }
+    .pl-outcomes li { color: var(--pl-ink); font-size: 1.04rem; line-height: 1.55; margin-bottom: 4px; }
+    .pl-progress { margin-top: 30px; max-width: 660px; background: rgba(10,10,9,0.75); border: 1px solid var(--pl-line); padding: 20px 22px; }
+    .pl-progress__top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px 16px; margin-bottom: 10px; }
+    .pl-progress__label { color: #fff; font-size: 1rem; }
+    .pl-progress__label strong { color: var(--pl-gold); }
+    .pl-progress__time { color: var(--pl-muted); font-size: 0.92rem; }
+    .pl-progress__bar { height: 8px; background: rgba(255,255,255,0.08); }
+    .pl-progress__bar span { display: block; height: 100%; width: 0; background: var(--pl-gold); transition: width .4s ease; }
+    .pl-resume { margin-top: 18px; }
+    .pl-chip { display: inline-flex; align-items: center; gap: 6px; margin: -4px 0 16px; font-family: var(--font-heading); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--pl-muted); border: 1px solid var(--pl-line); padding: 4px 10px; }
+    .pl-chip svg { width: 13px; height: 13px; color: var(--pl-gold); }
+    .pl-sec__num + .pl-chip { display: flex; width: max-content; }
+    .pl-stepfoot { margin-top: 56px; padding-top: 26px; border-top: 1px solid var(--pl-line); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 20px; max-width: 1080px; }
+    .pl-donebtn { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-heading); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 13px 20px; cursor: pointer; background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.35); transition: all .2s ease; }
+    .pl-donebtn:hover { border-color: var(--pl-gold); }
+    .pl-donebtn__box { width: 20px; height: 20px; border: 2px solid currentColor; display: inline-flex; align-items: center; justify-content: center; }
+    .pl-donebtn__box svg { width: 14px; height: 14px; opacity: 0; }
+    .pl-donebtn[aria-pressed="true"] { background: var(--pl-gold); color: #111; border-color: var(--pl-gold); }
+    .pl-donebtn[aria-pressed="true"] .pl-donebtn__box svg { opacity: 1; }
+    .pl-nextlink { color: var(--pl-ink); text-decoration: none; font-size: 1rem; display: inline-flex; align-items: center; gap: 10px; }
+    .pl-nextlink span { font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--pl-muted); }
+    .pl-nextlink strong { color: #fff; font-weight: 600; border-bottom: 2px solid var(--pl-gold); padding-bottom: 2px; }
+    .pl-nextlink:hover strong { color: var(--pl-gold); }
+    .pl-nav__link.is-done::after { content: '\2713'; color: var(--pl-gold); margin-left: 6px; font-size: 0.8em; }
+    .pl-bridge { margin-top: 26px; max-width: 900px; border-top: 1px solid var(--pl-line); }
+    .pl-bridge__row { display: grid; grid-template-columns: 150px 30px 170px 1fr; gap: 14px; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--pl-line); }
+    .pl-bridge__from, .pl-bridge__to { font-family: var(--font-heading); text-transform: uppercase; font-size: 1.15rem; letter-spacing: 0.04em; color: var(--pl-muted); line-height: 1.2; }
+    .pl-bridge__to { color: var(--pl-gold); }
+    .pl-bridge__from span, .pl-bridge__to span { display: block; font-size: 0.62rem; letter-spacing: 0.18em; color: var(--pl-muted); margin-bottom: 2px; }
+    .pl-bridge__arrow { color: var(--pl-gold); font-size: 1.4rem; }
+    .pl-bridge__d { color: var(--pl-ink); font-size: 1rem; line-height: 1.5; }
+    .pl-timer { margin-top: 22px; max-width: 520px; }
+    .pl-timer__bar { margin-top: 14px; height: 8px; background: rgba(255,255,255,0.08); }
+    .pl-timer__bar span { display: block; height: 100%; width: 0; background: var(--pl-gold); }
+    .pl-timer__msg { margin-top: 10px; color: var(--pl-ink); font-size: 1rem; min-height: 1.5em; }
+    .pl-quiz { margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 900px; }
+    .pl-quiz__q { background: var(--pl-card); border: 1px solid var(--pl-line); padding: 18px 20px; }
+    .pl-quiz__q > p:first-child { color: #fff; font-size: 1.05rem; line-height: 1.4; margin: 0 0 12px; }
+    .pl-quiz__opts { display: flex; gap: 8px; }
+    .pl-quiz__opts button { width: 48px; height: 44px; font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: #fff; background: transparent; border: 2px solid rgba(255,255,255,0.3); cursor: pointer; transition: all .15s ease; }
+    .pl-quiz__opts button:hover { border-color: var(--pl-gold); }
+    .pl-quiz__opts button.is-right { background: var(--pl-gold); color: #111; border-color: var(--pl-gold); }
+    .pl-quiz__opts button.is-try { border-color: #777; color: #888; }
+    .pl-quiz__fb { margin: 10px 0 0; font-size: 0.95rem; line-height: 1.5; color: var(--pl-ink); min-height: 0; }
+    .pl-quiz__fb strong { color: var(--pl-gold); }
+    .pl-act__do { color: #fff !important; font-weight: 400 !important; }
+    .pl-act__body .pl-act__ask { margin-top: 4px; }
+    .pl-ev { margin-top: 12px; max-width: 760px; }
+    .pl-ev summary { cursor: pointer; font-family: var(--font-heading); font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--pl-muted); list-style: none; display: inline-flex; align-items: center; gap: 8px; }
+    .pl-ev summary::-webkit-details-marker { display: none; }
+    .pl-ev summary::before { content: '+'; color: var(--pl-gold); font-size: 1.2rem; line-height: 1; }
+    .pl-ev[open] summary::before { content: '\2013'; }
+    .pl-ev p { margin: 10px 0 0; color: var(--pl-muted); font-size: 0.98rem; line-height: 1.6; border-left: 2px solid var(--pl-line); padding-left: 14px; }
+    .pl-recap { margin: 10px 0 34px; background: var(--pl-gold); color: #111; padding: 24px 28px; max-width: 900px; }
+    .pl-recap__h { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; font-weight: 600; margin: 0 0 10px; }
+    .pl-recap ol { margin: 0; padding-left: 22px; }
+    .pl-recap li { font-size: 1.08rem; line-height: 1.5; margin-bottom: 6px; }
+    .pl-sort details[open] { border-color: var(--pl-gold-line); }
+    a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--pl-gold); outline-offset: 3px; }
+    @media (max-width: 860px) {
+      .pl-quiz { grid-template-columns: 1fr; }
+      .pl-bridge__row { grid-template-columns: 1fr 24px 1fr; }
+      .pl-bridge__d { grid-column: 1 / -1; }
+      .pl-banner__inner { align-items: flex-start; }
+    }
+    @media (max-width: 560px) {
+      .pl-banner__name { font-size: 0.9rem; }
+      .pl-textsize { padding: 9px 12px; }
+      .pl-textsize__lbl { display: none; }
+      .pl-banner__btns { flex-wrap: nowrap; }
+      .pl-sessions__inner { flex-wrap: wrap; }
+      .pl-stepfoot { flex-direction: column; align-items: flex-start; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .pl-progress__bar span, .pl-readbar span { transition: none; }
+    }
   </style>
 </head>
 <body>
@@ -573,7 +660,10 @@
               <div class="pl-banner__platform">GROW &nbsp;·&nbsp; Powered by The Performance Act</div>
             </div>
           </div>
-          <button class="pl-logout" id="plLogout" type="button">Log Out</button>
+          <div class="pl-banner__btns">
+            <button class="pl-logout pl-textsize" id="plTextSize" type="button" aria-pressed="false" aria-label="Larger text"><span aria-hidden="true">A<sup>+</sup></span><span class="pl-textsize__lbl"> Larger text</span></button>
+            <button class="pl-logout" id="plLogout" type="button">Log Out</button>
+          </div>
         </div>
       </div>
     </div>
@@ -593,6 +683,7 @@
       <div class="container">
         <div class="pl-nav__inner">
           <span class="pl-nav__label">Session two</span>
+          <a href="#picked-up" class="pl-nav__link">From last time</a>
           <a href="#quicksand" class="pl-nav__link">Quicksand</a>
           <a href="#thoughts" class="pl-nav__link">Not just your thoughts</a>
           <a href="#reflect" class="pl-nav__link">Reflect</a>
@@ -607,6 +698,7 @@
           <a href="#next" class="pl-nav__link">Session three</a>
         </div>
       </div>
+      <div class="pl-readbar" aria-hidden="true"><span id="plReadbar"></span></div>
     </nav>
 
     <main>
@@ -618,23 +710,56 @@
           <p class="pl-hero__eyebrow">GROW · Paddle for Life · Session two of four</p>
           <h1 class="pl-hero__title" id="plTitle">Noise in<br><em>the boat</em></h1>
           <p class="pl-hero__lead"><strong>Session one was about what you paddle for. Session two was about what to do when the noise shows up anyway.</strong> This page holds the ideas and tools from the night, so you can come back to them, try them at training, and share them with the paddler beside you.</p>
-          <p class="pl-hero__meta" style="margin-top:22px;"><a class="pl-hero__jump" href="#myace">Short on time? Jump to your own ACE.</a></p>
-          <p class="pl-hero__meta">Read it all in about twenty minutes, or dip in where you need to. Anything you write on this page stays on your own device.</p>
+          <div class="pl-outcomes">
+            <p class="pl-outcomes__h">By the end of this page you’ll be able to</p>
+            <ul>
+              <li>Notice when you’re hooked by a thought or feeling, and unhook a little</li>
+              <li>Use ACE in a way that fits you, in seconds or in minutes</li>
+              <li>Turn what the crew values into clear actions everyone can see</li>
+            </ul>
+          </div>
+          <div class="pl-progress" id="plProgress">
+            <div class="pl-progress__top">
+              <span class="pl-progress__label"><strong id="plProgCount">0</strong> of <span id="plProgTotal">13</span> sections done</span>
+              <span class="pl-progress__time">About 35 minutes all up · best in a few short sittings</span>
+            </div>
+            <div class="pl-progress__bar"><span id="plProgFill"></span></div>
+            <a class="pl-dl pl-resume" id="plResume" href="#picked-up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg><span id="plResumeTxt">Start with a quick look back</span></a>
+          </div>
+          <p class="pl-hero__meta">Tick off each section as you go, and this page will remember where you’re up to. <a class="pl-hero__jump" href="#myace">Short on time? Jump to your own ACE.</a> Anything you write here stays on your own device.</p>
         </div>
       </section>
 
-      <!-- 01 WHERE WE PICKED UP -->
-      <section class="pl-sec" id="picked-up">
+      <!-- 01 FROM LAST TIME -->
+      <section class="pl-sec" id="picked-up" data-time="3 min">
         <div class="container">
-          <span class="pl-sec__num">01 · Where we picked up</span>
+          <span class="pl-sec__num">01 · From last time</span>
           <h2 class="pl-sec__title">The wind<br><em>keeps blowing</em></h2>
-          <p class="pl-sec__lead">We started with some kōrero about how the last few weeks had gone: the strokes you’d been trying, what had stuck with you, and what had slipped. All of it was useful, including the bits that didn’t go to plan.</p>
-          <p class="pl-sec__lead">Last time, the aka matua was what you paddle for, and the wind was the tiredness, nerves and frustration that come along with it. This session was about the wind. <strong>Not how to make it stop, but how to keep hold of the vine while it blows.</strong> If you want a refresher on your coin, your stroke or open, aware and engaged, <a class="pl-inline" href="grow-paddle-for-life.html">session one is all still here</a>.</p>
+          <p class="pl-sec__lead">We started with some kōrero about the last few weeks: the strokes you’d been trying, what stuck, and what slipped. All of it was useful, including the bits that didn’t go to plan.</p>
+          <p class="pl-sec__lead">Last time, the aka matua was what you paddle for, and the wind was the tiredness, nerves and frustration that come along with it. <strong>This session was about the wind.</strong> Not how to make it stop, but how to keep hold of the vine while it blows.</p>
+
+          <h3 class="pl-h3--lg">Quick look<br><em>back</em></h3>
+          <p class="pl-sec__lead">Before you read on, see what you remember. Have a guess first, then tap to check. Pulling it back out of your head is what makes it stick.</p>
+          <div class="pl-sort">
+            <details><summary>What goes on the front of your coin?<span>Have a guess, then tap</span></summary><div class="pl-sort__answer"><strong>What you paddle for.</strong> The paddler you want to be in the heat of the battle. The back holds what shows up because you care, and it stays yours.</div></details>
+            <details><summary>Finish line or sweep’s oar: which one can you steer by on a day you finish last?<span>Have a guess, then tap</span></summary><div class="pl-sort__answer"><strong>The oar.</strong> Goals matter, but a value goes with you whatever the result.</div></details>
+            <details><summary>The green note you wore all night. Did you have to take it off to join in?<span>Have a guess, then tap</span></summary><div class="pl-sort__answer"><strong>No.</strong> It came along all session, and you still did everything. Session two picks up right there.</div></details>
+            <details><summary>Open, aware, engaged. Which one is about noticing where you are?<span>Have a guess, then tap</span></summary><div class="pl-sort__answer"><strong>Aware.</strong> Open is making room for what shows up. Engaged is doing what matters.</div></details>
+          </div>
+
+          <h3 class="pl-h3--lg">How the two<br><em>sessions connect</em></h3>
+          <p class="pl-sec__lead">Session one gave you three circles to aim for. Session two turns them into something you can do in the moment, called ACE.</p>
+          <div class="pl-bridge" role="list">
+            <div class="pl-bridge__row" role="listitem"><div class="pl-bridge__from"><span>Session one</span>Open</div><div class="pl-bridge__arrow" aria-hidden="true">&rarr;</div><div class="pl-bridge__to"><span>Session two</span>Acknowledge</div><div class="pl-bridge__d">Make room for the noise by noticing and naming it.</div></div>
+            <div class="pl-bridge__row" role="listitem"><div class="pl-bridge__from"><span>Session one</span>Aware</div><div class="pl-bridge__arrow" aria-hidden="true">&rarr;</div><div class="pl-bridge__to"><span>Session two</span>Connect</div><div class="pl-bridge__d">Come back to your body and this stroke.</div></div>
+            <div class="pl-bridge__row" role="listitem"><div class="pl-bridge__from"><span>Session one</span>Engaged</div><div class="pl-bridge__arrow" aria-hidden="true">&rarr;</div><div class="pl-bridge__to"><span>Session two</span>Engage</div><div class="pl-bridge__d">One small move toward what’s on the front of your coin.</div></div>
+          </div>
+          <p class="pl-note">Want the full refresher? <a class="pl-inline" href="grow-paddle-for-life.html">Session one is all still here.</a></p>
         </div>
       </section>
 
       <!-- 02 QUICKSAND -->
-      <section class="pl-sec pl-sec--darker" id="quicksand">
+      <section class="pl-sec pl-sec--darker" id="quicksand" data-time="2 min">
         <div class="container">
           <span class="pl-sec__num">02 · Open</span>
           <h2 class="pl-sec__title">The more we wriggle,<br><em>the deeper we go</em></h2>
@@ -656,7 +781,7 @@
       </section>
 
       <!-- 03 NOT JUST YOUR THOUGHTS -->
-      <section class="pl-sec" id="thoughts">
+      <section class="pl-sec" id="thoughts" data-time="3 min · try it">
         <div class="container">
           <span class="pl-sec__num">03 · Open</span>
           <h2 class="pl-sec__title">You are more than<br><em>your thoughts</em></h2>
@@ -688,6 +813,15 @@
 
           <div class="pl-land"><p>Unhooking doesn’t get rid of our thoughts. <em>It gets them out of our eyes, so we can see the boat.</em></p></div>
 
+          <h3 class="pl-h3--lg">Hooked or<br><em>unhooked?</em></h3>
+          <p class="pl-sec__lead">Same thought, said two ways. Which one is unhooked? Tap to check.</p>
+          <div class="pl-sort">
+            <details><summary>“I’m useless at starts.”<span>Hooked or unhooked?</span></summary><div class="pl-sort__answer"><strong>Hooked.</strong> It sounds like a fact about you.</div></details>
+            <details><summary>“My mind’s telling me I’m useless at starts again.”<span>Hooked or unhooked?</span></summary><div class="pl-sort__answer"><strong>Unhooked.</strong> Same words, but now you’re noticing them.</div></details>
+            <details><summary>“I can’t go tonight, I’m too tired.”<span>Hooked or unhooked?</span></summary><div class="pl-sort__answer"><strong>Hooked.</strong> The feeling is making the decision.</div></details>
+            <details><summary>“Tired is here. I’ll get my gear on anyway.”<span>Hooked or unhooked?</span></summary><div class="pl-sort__answer"><strong>Unhooked.</strong> Tired comes along, and you still choose.</div></details>
+          </div>
+
           <div class="pl-why">
             <h3>Why bother with the metaphors?</h3>
             <p>Some of these exercises can feel a bit funny or silly, and that’s fine. Laughing at them is part of how they work. But each one has a real point underneath it. When we give ourselves a little space between us and our thoughts, feelings and emotions, we get a chance to see the situation more clearly, to stay connected with the people we love, and to be present for the moments that turn into memories that last a lifetime. On the water, in the tent, and well beyond the boat.</p>
@@ -696,7 +830,7 @@
       </section>
 
       <!-- 04 REFLECT -->
-      <section class="pl-sec pl-sec--darker" id="reflect">
+      <section class="pl-sec pl-sec--darker" id="reflect" data-time="4 min · reflect">
         <div class="container">
           <span class="pl-sec__num">04 · A reflection to take home</span>
           <h2 class="pl-sec__title">When a feeling<br><em>took the paddle</em></h2>
@@ -739,7 +873,7 @@
       </section>
 
       <!-- 05 WHAT NOISE IS -->
-      <section class="pl-sec" id="noise">
+      <section class="pl-sec" id="noise" data-time="3 min">
         <div class="container">
           <span class="pl-sec__num">05 · Aware</span>
           <h2 class="pl-sec__title">What mental<br><em>noise actually is</em></h2>
@@ -787,7 +921,7 @@
       </section>
 
       <!-- 06 ACE -->
-      <section class="pl-sec pl-sec--darker" id="ace">
+      <section class="pl-sec pl-sec--darker" id="ace" data-time="2 min">
         <div class="container">
           <span class="pl-sec__num">06 · Open, aware, engaged in the moment</span>
           <h2 class="pl-sec__title">Acknowledge,<br><em>connect, engage</em></h2>
@@ -822,7 +956,7 @@
       </section>
 
       <!-- 07 ACKNOWLEDGE -->
-      <section class="pl-sec" id="acknowledge">
+      <section class="pl-sec" id="acknowledge" data-time="4 min · try it">
         <div class="container">
           <span class="pl-sec__num">07 · A for acknowledge</span>
           <h2 class="pl-sec__title">When Steve<br><em>walks in the room</em></h2>
@@ -850,6 +984,11 @@
             <li>Notice what happens to the word. For most people it turns into a funny sound and the meaning drains away.</li>
             <li>Try it with a word that sticks for you, like <strong>tired</strong> or <strong>slow</strong>. Does it have the same grip afterwards?</li>
           </ol>
+          <div class="pl-timer" id="plTimer">
+            <button class="pl-dl pl-timer__btn" type="button" id="plTimerBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2"/><path d="M9 2h6"/></svg><span id="plTimerTxt">Start a 30 second timer</span></button>
+            <div class="pl-timer__bar" aria-hidden="true"><span id="plTimerFill"></span></div>
+            <p class="pl-timer__msg" id="plTimerMsg" aria-live="polite"></p>
+          </div>
           <p class="pl-note">Research on this word repetition exercise has found it can reduce how believable and upsetting a sticky thought feels, at least in the short term (Masuda and colleagues, 2004). Keep the word light. You don’t need to practise it with anything heavy.</p>
 
           <h3 class="pl-h3--lg">Pick the tool<br><em>that works for you</em></h3>
@@ -875,7 +1014,7 @@
       </section>
 
       <!-- 08 CONNECT -->
-      <section class="pl-sec pl-sec--darker" id="connect">
+      <section class="pl-sec pl-sec--darker" id="connect" data-time="3 min">
         <div class="container">
           <span class="pl-sec__num">08 · C for connect</span>
           <h2 class="pl-sec__title">Back into<br><em>this stroke</em></h2>
@@ -916,7 +1055,7 @@
       </section>
 
       <!-- 09 ENGAGE -->
-      <section class="pl-sec" id="engage">
+      <section class="pl-sec" id="engage" data-time="3 min · quick check">
         <div class="container">
           <span class="pl-sec__num">09 · E for engage</span>
           <h2 class="pl-sec__title">One small move<br><em>toward what matters</em></h2>
@@ -951,11 +1090,22 @@
           </div>
 
           <div class="pl-land"><p>ACE isn’t a hard drill to get right. <em>It’s a way of steering that you shape to the day.</em></p></div>
+
+          <h3 class="pl-h3--lg">Quick check:<br><em>which part of ACE?</em></h3>
+          <p class="pl-sec__lead">Pick A, C or E for each one. Some could fit more than one, and that’s fine. It’s the noticing that counts.</p>
+          <div class="pl-quiz" id="plQuiz">
+            <div class="pl-quiz__q" data-a="A" data-why="Naming who’s turned up is acknowledging."><p>“Here’s Steve again.”</p><div class="pl-quiz__opts"><button type="button">A</button><button type="button">C</button><button type="button">E</button></div><p class="pl-quiz__fb" aria-live="polite"></p></div>
+            <div class="pl-quiz__q" data-a="C" data-why="Your feet and the boat bring you back to this moment."><p>Pressing your feet into the footbrace.</p><div class="pl-quiz__opts"><button type="button">A</button><button type="button">C</button><button type="button">E</button></div><p class="pl-quiz__fb" aria-live="polite"></p></div>
+            <div class="pl-quiz__q" data-a="E" data-why="An intention points you toward what matters."><p>Setting one intention in the car before training.</p><div class="pl-quiz__opts"><button type="button">A</button><button type="button">C</button><button type="button">E</button></div><p class="pl-quiz__fb" aria-live="polite"></p></div>
+            <div class="pl-quiz__q" data-a="A" data-why="Saying a sticky word until it’s just a sound is a way of making room for it."><p>Saying “tired” fast until it’s just a sound.</p><div class="pl-quiz__opts"><button type="button">A</button><button type="button">C</button><button type="button">E</button></div><p class="pl-quiz__fb" aria-live="polite"></p></div>
+            <div class="pl-quiz__q" data-a="C" data-why="Sounds in the boat are an anchor to right now."><p>Listening for the drum.</p><div class="pl-quiz__opts"><button type="button">A</button><button type="button">C</button><button type="button">E</button></div><p class="pl-quiz__fb" aria-live="polite"></p></div>
+            <div class="pl-quiz__q" data-a="E" data-why="Doing something that fits the crew’s values is engaging."><p>Being first to help carry the boat down.</p><div class="pl-quiz__opts"><button type="button">A</button><button type="button">C</button><button type="button">E</button></div><p class="pl-quiz__fb" aria-live="polite"></p></div>
+          </div>
         </div>
       </section>
 
       <!-- 10 ANCHORS TO ACTIONS -->
-      <section class="pl-sec pl-sec--darker" id="behaviours">
+      <section class="pl-sec pl-sec--darker" id="behaviours" data-time="3 min">
         <div class="container">
           <span class="pl-sec__num">10 · Engaged, as a crew</span>
           <h2 class="pl-sec__title">Anchors need<br><em>clear actions</em></h2>
@@ -1027,7 +1177,7 @@
       </section>
 
       <!-- 11 STRONG CREWS -->
-      <section class="pl-sec" id="crews">
+      <section class="pl-sec" id="crews" data-time="3 min">
         <div class="container">
           <span class="pl-sec__num">11 · What the research says about strong crews</span>
           <h2 class="pl-sec__title">Clear on what,<br><em>who, and what if</em></h2>
@@ -1038,48 +1188,54 @@
               <div class="pl-act__n">1</div>
               <div class="pl-act__body">
                 <h3 class="pl-act__t">Make expectations clear and visible</h3>
-                <p>Research on sport teams has found that when people are unsure what’s expected of them, or what happens if they don’t do it, they tend to feel less satisfied in their role (Eys and colleagues, 2003; Beauchamp and colleagues, 2005). Unspoken expectations are where frustration grows. Write the agreement down and put it where the crew will see it, like the schedule in the tent.</p>
+                <span class="pl-act__ask">For our crew</span>
+                <p class="pl-act__do">Write the agreement down and put it where the crew will see it, like the schedule in the tent.</p>
+                <details class="pl-ev"><summary>What the research says</summary><p>Research on sport teams has found that when people are unsure what’s expected of them, or what happens if they don’t do it, they tend to feel less satisfied in their role (Eys and colleagues, 2003; Beauchamp and colleagues, 2005). Unspoken expectations are where frustration grows.</p></details>
               </div>
             </div>
             <div class="pl-act">
               <div class="pl-act__n">2</div>
               <div class="pl-act__body">
                 <h3 class="pl-act__t">Share the leading</h3>
-                <p>Leadership in teams doesn’t have to sit with one person. Studies of sports teams describe four kinds of athlete leader: task (on the water), motivational (lifting energy), social (looking after people) and external (the link to the club and organisers). The captain is rarely the best at all four, and teams where athletes rate their peer leadership highly tend to work better together (Fransen and colleagues, 2014, 2017). Ask who’s naturally good at keeping each agreement going, and invite them to lead it.</p>
+                <span class="pl-act__ask">For our crew</span>
+                <p class="pl-act__do">Ask who’s naturally good at keeping each agreement going, and invite them to lead it. It doesn’t all have to sit with the captain or the coach.</p>
+                <details class="pl-ev"><summary>What the research says</summary><p>Studies of sports teams describe four kinds of athlete leader: task (on the water), motivational (lifting energy), social (looking after people) and external (the link to the club and organisers). The captain is rarely the best at all four, and teams where athletes rate their peer leadership highly tend to work better together (Fransen and colleagues, 2014, 2017).</p></details>
               </div>
             </div>
             <div class="pl-act">
               <div class="pl-act__n">3</div>
               <div class="pl-act__body">
                 <h3 class="pl-act__t">Decide it together</h3>
-                <p>The Prosocial approach, developed by Paul Atkins, David Sloan Wilson and Steven Hayes, builds on Elinor Ostrom’s Nobel prize winning work on how groups manage shared things fairly. Two of its core principles are a shared sense of identity and purpose, and fair, inclusive decision making (Atkins, Wilson and Hayes, 2019). People keep agreements they helped make. Which is exactly why the crew built these actions in groups, rather than being handed them.</p>
+                <span class="pl-act__ask">For our crew</span>
+                <p class="pl-act__do">Build agreements as a crew, the way we did in groups on the night. People keep agreements they helped make.</p>
+                <details class="pl-ev"><summary>What the research says</summary><p>The Prosocial approach, developed by Paul Atkins, David Sloan Wilson and Steven Hayes, builds on Elinor Ostrom’s Nobel prize winning work on how groups manage shared things fairly. Two of its core principles are a shared sense of identity and purpose, and fair, inclusive decision making (Atkins, Wilson and Hayes, 2019).</p></details>
               </div>
             </div>
             <div class="pl-act">
               <div class="pl-act__n">4</div>
               <div class="pl-act__body">
                 <h3 class="pl-act__t">Keep an eye on it, lightly</h3>
-                <p>Another Prosocial principle is that groups check in on how their agreed behaviours are going. Not policing, just noticing. A quick “how did the schedule work today?” at the debrief does the job, and it’s a good time to notice when it went well, too.</p>
+                <span class="pl-act__ask">For our crew</span>
+                <p class="pl-act__do">A quick “how did the schedule work today?” at the debrief. Not policing, just noticing, and a good time to notice when it went well too.</p>
+                <details class="pl-ev"><summary>What the research says</summary><p>Another Prosocial principle is that groups check in on how their agreed behaviours are going (Atkins, Wilson and Hayes, 2019).</p></details>
               </div>
             </div>
             <div class="pl-act">
               <div class="pl-act__n">5</div>
               <div class="pl-act__body">
                 <h3 class="pl-act__t">When it isn’t met, start small and stay kind</h3>
-                <p>Ostrom’s work found that groups do best when responses to a slip are graduated: start gentle, and only step up if it keeps happening. Things also go better when there’s a quick and fair way to sort out disagreements before they fester (Atkins, Wilson and Hayes, 2019; Wilson and colleagues, 2020). For a crew, that might look like this:</p>
-                <ul class="pl-qs" style="margin-top:6px;">
-                  <li><strong>First, a friendly reminder.</strong> Most slips are someone being busy, tired or unsure, not someone who doesn’t care.</li>
-                  <li><strong>If it keeps happening,</strong> a quiet chat, curious rather than critical: “What got in the way?” Often the agreement needs tweaking, not the person.</li>
-                  <li><strong>If it’s a crew wide pattern,</strong> bring it back to the group and review the agreement together.</li>
-                  <li><strong>Talk about the behaviour, not the person.</strong> Then come back to the value it serves: we do this because we’re one crew.</li>
-                </ul>
+                <span class="pl-act__ask">For our crew</span>
+                <ul class="pl-qs" style="margin-top:4px;"><li><strong>First, a friendly reminder.</strong> Most slips are someone being busy, tired or unsure, not someone who doesn’t care.</li><li><strong>If it keeps happening,</strong> a quiet chat, curious rather than critical: “What got in the way?” Often the agreement needs tweaking, not the person.</li><li><strong>If it’s a pattern across the crew,</strong> bring it back to the group and review the agreement together.</li><li><strong>Talk about the behaviour, not the person.</strong> Then come back to the value it serves: we do this because we’re one crew.</li></ul>
+                <details class="pl-ev"><summary>What the research says</summary><p>Ostrom’s work found that groups do best when responses to a slip are graduated: start gentle, and only step up if it keeps happening. Things also go better when there’s a quick and fair way to sort out disagreements before they fester (Atkins, Wilson and Hayes, 2019; Wilson and colleagues, 2020).</p></details>
               </div>
             </div>
             <div class="pl-act">
               <div class="pl-act__n">6</div>
               <div class="pl-act__body">
                 <h3 class="pl-act__t">Shape it as when, then</h3>
-                <p>Plans written as “when this happens, we do that” are one of the most consistently supported tools in behaviour change research. They make it much more likely that a good intention actually turns into action (Gollwitzer and Sheeran, 2006). “When we arrive at the tent, we read the schedule.” Simple, and it works because the cue is built in.</p>
+                <span class="pl-act__ask">For our crew</span>
+                <p class="pl-act__do">“When we arrive at the tent, we read the schedule.” The cue is built in, so nobody has to remember to remember.</p>
+                <details class="pl-ev"><summary>What the research says</summary><p>Plans written as “when this happens, we do that” are one of the most consistently supported tools in behaviour change research, and make it much more likely that a good intention turns into action (Gollwitzer and Sheeran, 2006).</p></details>
               </div>
             </div>
           </div>
@@ -1087,11 +1243,19 @@
       </section>
 
       <!-- 12 MY ACE -->
-      <section class="pl-sec pl-sec--darker" id="myace">
+      <section class="pl-sec pl-sec--darker" id="myace" data-time="4 min · your card">
         <div class="container">
           <span class="pl-sec__num">12 · Take it to training</span>
           <h2 class="pl-sec__title">My<br><em>ACE</em></h2>
-          <p class="pl-sec__lead">Put your own version of tonight together. Choose the tools that fit you, and one place you’ll try it this week. Then tell the paddler who sits behind you.</p>
+          <div class="pl-recap">
+            <p class="pl-recap__h">Three things to take with you</p>
+            <ol>
+              <li><strong>The noise isn’t the problem.</strong> Fighting it is what pulls us under.</li>
+              <li><strong>ACE is yours to shape.</strong> Seconds or minutes, with the tools that suit you.</li>
+              <li><strong>Values need actions.</strong> Clear, visible, shared, and kind when they slip.</li>
+            </ol>
+          </div>
+          <p class="pl-sec__lead">Now put your own version together. Choose the tools that fit you, and one place you’ll try it this week. Then tell the paddler who sits behind you.</p>
 
           <form class="pl-pcard" id="plAce" autocomplete="off" onsubmit="return false;">
             <h3 class="pl-pcard__title">My ACE</h3>
@@ -1135,7 +1299,7 @@
       </section>
 
       <!-- 13 NEXT -->
-      <section class="pl-sec" id="next">
+      <section class="pl-sec" id="next" data-time="1 min">
         <div class="container">
           <span class="pl-sec__num">13 · What’s next</span>
           <h2 class="pl-sec__title">Between now and<br><em>session three</em></h2>
@@ -1296,6 +1460,144 @@
         if (el) io.observe(el);
       });
     }
+
+
+    /* ---- LARGER TEXT ---- */
+    (function () {
+      var btn = document.getElementById('plTextSize');
+      var KEY = 'grow_paddle_textsize';
+      function set(on) {
+        document.documentElement.classList.toggle('pl-big', on);
+        btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      }
+      try { set(localStorage.getItem(KEY) === '1'); } catch (e) { /* ignore */ }
+      btn.addEventListener('click', function () {
+        var on = btn.getAttribute('aria-pressed') !== 'true';
+        set(on);
+        try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) { /* ignore */ }
+      });
+    })();
+
+    /* ---- READING BAR ---- */
+    (function () {
+      var bar = document.getElementById('plReadbar');
+      var tick = false;
+      function upd() {
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? Math.min(100, (window.scrollY / h) * 100) : 0) + '%';
+        tick = false;
+      }
+      window.addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(upd); } }, { passive: true });
+      upd();
+    })();
+
+    /* ---- SECTIONS: time chips, done buttons, next links, progress ---- */
+    (function () {
+      var DKEY = 'grow_paddle_s2_done_v1';
+      var secs = Array.prototype.slice.call(document.querySelectorAll('.pl-sec[data-time]'));
+      var done = {};
+      try { done = JSON.parse(localStorage.getItem(DKEY) || '{}') || {}; } catch (e) { done = {}; }
+      var clock = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+      var tickSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>';
+      function label(id) { return byId[id] ? byId[id].textContent.trim() : id; }
+
+      secs.forEach(function (sec, i) {
+        var num = sec.querySelector('.pl-sec__num');
+        if (num) {
+          var chip = document.createElement('span');
+          chip.className = 'pl-chip';
+          chip.innerHTML = clock + sec.getAttribute('data-time');
+          num.insertAdjacentElement('afterend', chip);
+        }
+        var foot = document.createElement('div');
+        foot.className = 'pl-stepfoot';
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'pl-donebtn';
+        b.setAttribute('data-sec', sec.id);
+        b.innerHTML = '<span class="pl-donebtn__box">' + tickSvg + '</span><span class="pl-donebtn__t"></span>';
+        foot.appendChild(b);
+        var nxt = secs[i + 1];
+        var a = document.createElement('a');
+        a.className = 'pl-nextlink';
+        if (nxt) { a.href = '#' + nxt.id; a.innerHTML = '<span>Next</span><strong>' + label(nxt.id) + '</strong> &rarr;'; }
+        else { a.href = '#plTitle'; a.innerHTML = '<span>All done</span><strong>Back to the top</strong> &uarr;'; }
+        foot.appendChild(a);
+        sec.querySelector('.container').appendChild(foot);
+        b.addEventListener('click', function () {
+          done[sec.id] = !done[sec.id];
+          try { localStorage.setItem(DKEY, JSON.stringify(done)); } catch (e) { /* ignore */ }
+          render();
+          if (done[sec.id] && nxt) {
+            setTimeout(function () { nxt.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); }, 250);
+          }
+        });
+      });
+
+      function render() {
+        var n = 0, first = null;
+        secs.forEach(function (sec) {
+          var d = !!done[sec.id];
+          if (d) n++; else if (!first) first = sec;
+          var b = sec.querySelector('.pl-donebtn');
+          b.setAttribute('aria-pressed', d ? 'true' : 'false');
+          b.querySelector('.pl-donebtn__t').textContent = d ? 'Done' : 'Mark as done';
+          if (byId[sec.id]) byId[sec.id].classList.toggle('is-done', d);
+        });
+        document.getElementById('plProgCount').textContent = n;
+        document.getElementById('plProgTotal').textContent = secs.length;
+        document.getElementById('plProgFill').style.width = (n / secs.length * 100) + '%';
+        var r = document.getElementById('plResume'), rt = document.getElementById('plResumeTxt');
+        if (n === 0) { r.href = '#' + secs[0].id; rt.textContent = 'Start with a quick look back'; }
+        else if (first) { r.href = '#' + first.id; rt.textContent = 'Pick up where you left off: ' + label(first.id); }
+        else { r.href = '#myace'; rt.textContent = 'All done. Revisit your ACE'; }
+      }
+      render();
+    })();
+
+    /* ---- 30 SECOND TIMER (milk, milk, milk) ---- */
+    (function () {
+      var btn = document.getElementById('plTimerBtn');
+      if (!btn) return;
+      var txt = document.getElementById('plTimerTxt'), fill = document.getElementById('plTimerFill'), msg = document.getElementById('plTimerMsg');
+      var t = null, start = 0, DUR = 30000;
+      function stop(finished) {
+        clearInterval(t); t = null;
+        txt.textContent = finished ? 'Go again' : 'Start a 30 second timer';
+        if (finished) { fill.style.width = '100%'; msg.textContent = 'Time. What happened to the word?'; }
+        else { fill.style.width = '0'; msg.textContent = ''; }
+      }
+      btn.addEventListener('click', function () {
+        if (t) { stop(false); return; }
+        start = Date.now();
+        txt.textContent = 'Stop';
+        msg.textContent = 'Go. Milk, milk, milk…';
+        t = setInterval(function () {
+          var e = Date.now() - start;
+          fill.style.width = Math.min(100, e / DUR * 100) + '%';
+          if (e >= DUR) stop(true);
+        }, 100);
+      });
+    })();
+
+    /* ---- ACE QUICK CHECK ---- */
+    Array.prototype.forEach.call(document.querySelectorAll('.pl-quiz__q'), function (q) {
+      var fb = q.querySelector('.pl-quiz__fb');
+      Array.prototype.forEach.call(q.querySelectorAll('button'), function (b) {
+        b.setAttribute('aria-label', 'Answer ' + b.textContent);
+        b.addEventListener('click', function () {
+          var right = b.textContent === q.getAttribute('data-a');
+          if (right) {
+            q.querySelectorAll('button').forEach(function (x) { x.classList.remove('is-try'); });
+            b.classList.add('is-right');
+            fb.innerHTML = '<strong>Yes.</strong> ' + q.getAttribute('data-why');
+          } else {
+            b.classList.add('is-try');
+            fb.textContent = 'Could be. Have another go: which part fits best?';
+          }
+        });
+      });
+    });
 
     /* ---- PRINT SHEET: a clean copy of whichever card is printed ---- */
     function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
