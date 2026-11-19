@@ -7,33 +7,38 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- MOBILE NAV TOGGLE ---------- */
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
-  const mobileLinks = mobileNav.querySelectorAll('.mobile-nav__link, .mobile-nav__sublink, .mobile-nav__actions .btn');
 
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    mobileNav.classList.toggle('active');
-    document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
-  });
+  if (hamburger && mobileNav) {
+    const mobileLinks = mobileNav.querySelectorAll('.mobile-nav__link, .mobile-nav__sublink, .mobile-nav__actions .btn');
 
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('active');
-      mobileNav.classList.remove('active');
-      document.body.style.overflow = '';
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('active');
+      document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
     });
-  });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileNav.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+  }
 
   /* ---------- HEADER SCROLL EFFECT ---------- */
   const header = document.getElementById('header');
 
-  window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-    if (currentScroll > 100) {
-      header.style.backgroundColor = 'rgba(0, 0, 0, 0.97)';
-    } else {
-      header.style.backgroundColor = 'rgba(0, 0, 0, 0.92)';
-    }
-  }, { passive: true });
+  if (header) {
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+      if (currentScroll > 100) {
+        header.style.backgroundColor = 'rgba(0, 0, 0, 0.97)';
+      } else {
+        header.style.backgroundColor = 'rgba(0, 0, 0, 0.92)';
+      }
+    }, { passive: true });
+  }
 
   /* ---------- ACTIVE NAV LINK HIGHLIGHT ---------- */
   const sections = document.querySelectorAll('section[id]');
@@ -132,7 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!target) return;
 
       e.preventDefault();
-      const headerHeight = document.getElementById('header').offsetHeight;
+      const headerEl = document.getElementById('header');
+      const headerHeight = headerEl ? headerEl.offsetHeight : 0;
       const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
 
       window.scrollTo({
@@ -186,6 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
     stats.forEach(stat => {
       const target = parseInt(stat.dataset.count, 10);
       const numberEl = stat.querySelector('.stat__number');
+      if (!numberEl || isNaN(target)) return;
       const suffix = numberEl.textContent.includes('+') ? '+' : '';
       let current = 0;
       const increment = target / 40;
