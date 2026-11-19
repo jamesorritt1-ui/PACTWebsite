@@ -54,6 +54,9 @@
       letter-spacing: 0.2em; text-transform: uppercase;
       color: var(--gray-600); text-decoration: none; transition: color 0.2s;
     }
+    .cs-backrow { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .cs-logout { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #fff; background: transparent; border: 1px solid rgba(255,255,255,0.35); padding: 8px 14px; cursor: pointer; transition: all 0.2s; }
+    .cs-logout:hover { color: var(--club); border-color: var(--club); }
     .cs-back:hover { color: var(--club); }
     .cs-back svg { width: 14px; height: 14px; stroke: currentColor; }
 
@@ -613,11 +616,12 @@
   <main>
 
     <!-- Back nav -->
-    <div class="container">
+    <div class="container cs-backrow">
       <a href="grow-login.html" class="cs-back">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
         Back to Coach Hub
       </a>
+      <button type="button" class="cs-logout" data-grow-logout>Log Out</button>
     </div>
 
     <!-- ═══════════════════════════════════════
@@ -1919,5 +1923,6 @@
       });
     });
   </script>
+<script src="grow-logout.js" defer></script>
 </body>
 </html>

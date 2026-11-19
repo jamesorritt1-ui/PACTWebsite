@@ -603,6 +603,20 @@
     @media (prefers-reduced-motion: reduce) {
       .pl-progress__bar span, .pl-readbar span { transition: none; }
     }
+
+    /* ---------- NAV CLARITY: session tabs + section menu ---------- */
+    .pl-sessions__tab--soon { color: var(--pl-muted); border-style: dashed; cursor: default; }
+    .pl-sessions__tab--soon span { border-color: var(--pl-line); color: var(--pl-muted); }
+    .pl-sessions__tab--soon:hover { color: var(--pl-muted); border-color: var(--pl-line); }
+    .pl-sessions__tab small { font-size: 0.68rem; letter-spacing: 0.14em; opacity: 0.85; }
+    .pl-nav__inner.has-more-r { -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 64px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 64px), transparent); }
+    .pl-nav__inner.has-more-l { -webkit-mask-image: linear-gradient(to left, #000 calc(100% - 64px), transparent); mask-image: linear-gradient(to left, #000 calc(100% - 64px), transparent); }
+    .pl-nav__inner.has-more-l.has-more-r { -webkit-mask-image: linear-gradient(to right, transparent, #000 64px, #000 calc(100% - 64px), transparent); mask-image: linear-gradient(to right, transparent, #000 64px, #000 calc(100% - 64px), transparent); }
+    @media (max-width: 560px) {
+      .pl-sessions__inner { display: grid !important; grid-template-columns: 1fr 1fr; gap: 8px; }
+      .pl-sessions__tab { white-space: normal; font-size: 0.74rem; letter-spacing: 0.06em; padding: 8px 10px; gap: 8px; line-height: 1.25; }
+      .pl-sessions__tab span { flex-shrink: 0; }
+    }
   </style>
 </head>
 <body>
@@ -674,6 +688,8 @@
         <div class="pl-sessions__inner" role="navigation" aria-label="Sessions">
           <a class="pl-sessions__tab" href="grow-paddle-for-life.html"><span>1</span>What we paddle for</a>
           <a class="pl-sessions__tab is-current" href="grow-paddle-for-life-session-two.html" aria-current="page"><span>2</span>Noise in the boat</a>
+          <span class="pl-sessions__tab pl-sessions__tab--soon" aria-disabled="true"><span>3</span><small>Coming soon</small></span>
+          <span class="pl-sessions__tab pl-sessions__tab--soon" aria-disabled="true"><span>4</span><small>Coming soon</small></span>
         </div>
       </div>
     </div>
@@ -1689,6 +1705,32 @@
       if (area) area.innerHTML = '';
     });
   })();
+  </script>
+  <script>
+    /* Section menu: keep the highlighted section in view and show a fade where there's more to scroll */
+    (function () {
+      var bar = document.querySelector('.pl-nav__inner');
+      if (!bar) return;
+      function edges() {
+        var max = bar.scrollWidth - bar.clientWidth;
+        bar.classList.toggle('has-more-l', bar.scrollLeft > 4);
+        bar.classList.toggle('has-more-r', max - bar.scrollLeft > 4);
+      }
+      bar.addEventListener('scroll', edges, { passive: true });
+      window.addEventListener('resize', edges);
+      edges();
+      if ('MutationObserver' in window) {
+        new MutationObserver(function (muts) {
+          muts.forEach(function (m) {
+            var el = m.target;
+            if (el.classList && el.classList.contains('is-active')) {
+              var left = el.offsetLeft - (bar.clientWidth - el.offsetWidth) / 2;
+              bar.scrollTo({ left: Math.max(0, left), behavior: 'auto' });
+            }
+          });
+        }).observe(bar, { subtree: true, attributes: true, attributeFilter: ['class'] });
+      }
+    })();
   </script>
 </body>
 </html>
