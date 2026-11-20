@@ -293,3 +293,57 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+/* =========================================================
+   ENQUIRY TRACKING (Google Analytics 4)
+   The enquiry form is a Carepatron embed on another domain, so the
+   site can't see a submission directly. These events are the closest
+   signals we can measure:
+     contact_click        a link to the contact page was clicked
+     enquiry_form_start   someone clicked into the embedded form
+     enquiry_form_open    the form was opened in a new tab
+     email_click          the email address was clicked
+   Mark enquiry_form_start, enquiry_form_open and email_click as key
+   events in GA4 (Admin > Events). Helpline and phone links are
+   deliberately not tracked.
+   ========================================================= */
+(function () {
+  function track(name, params) {
+    if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+  }
+
+  function placement(el) {
+    if (el.closest('.header')) return 'header';
+    if (el.closest('.mobile-nav')) return 'mobile_nav';
+    if (el.closest('.footer')) return 'footer';
+    return 'page';
+  }
+
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest ? e.target.closest('a[href]') : null;
+    if (!link) return;
+    var href = link.getAttribute('href') || '';
+    var params = {
+      link_location: placement(link),
+      link_text: (link.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 100)
+    };
+    if (href.indexOf('mailto:') === 0) {
+      track('email_click', params);
+    } else if (href.indexOf('form.carepatron.com') !== -1) {
+      track('enquiry_form_open', params);
+    } else if (/^(?:https:\/\/www\.performance-act\.com)?\/contact(?:[#?]|$)/.test(href)) {
+      track('contact_click', params);
+    }
+  });
+
+  // Clicking into a cross-origin iframe moves focus out of this window,
+  // which is the only signal available that someone started the form.
+  var started = false;
+  window.addEventListener('blur', function () {
+    var active = document.activeElement;
+    if (started || !active || active.tagName !== 'IFRAME') return;
+    if (!active.closest('[data-form-embed]')) return;
+    started = true;
+    track('enquiry_form_start', { form_name: 'carepatron_enquiry' });
+  });
+})();

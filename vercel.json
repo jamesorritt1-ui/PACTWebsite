@@ -2,11 +2,34 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/grow-nomads", "destination": "/grow-login", "permanent": true },
-    { "source": "/grow-nomads.html", "destination": "/grow-login", "permanent": true },
+    {
+      "source": "/grow-nomads",
+      "destination": "/grow-login",
+      "permanent": true
+    },
+    {
+      "source": "/grow-nomads.html",
+      "destination": "/grow-login",
+      "permanent": true
+    },
+    {
+      "source": "/post",
+      "destination": "/post-effective-coaching-conversations",
+      "permanent": true
+    },
+    {
+      "source": "/post.html",
+      "destination": "/post-effective-coaching-conversations",
+      "permanent": true
+    },
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "^performance-act\\.com$" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "^performance-act\\.com$"
+        }
+      ],
       "destination": "https://www.performance-act.com/:path*",
       "permanent": true
     }
@@ -15,11 +38,35 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
+    },
+    {
+      "source": "/grow-:page",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
       ]
     }
   ]

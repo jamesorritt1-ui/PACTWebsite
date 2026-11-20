@@ -824,3 +824,139 @@
   width: 14px;
   height: 14px;
 }
+
+/* Section anchors (linked from articles) clear the fixed header */
+.sp-section[id] {
+  scroll-margin-top: 100px;
+}
+
+/* -----------------------------------------------------
+   10. DETAIL PAGE: FURTHER READING
+   ----------------------------------------------------- */
+.sp-reading {
+  padding: 70px 0;
+  background: #f7f7f5;
+}
+
+.sp-reading__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.sp-reading__eyebrow {
+  display: inline-block;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--black);
+  margin-bottom: 12px;
+  padding: 5px 10px;
+  background: var(--yellow);
+  border-radius: 2px;
+}
+
+.sp-reading__title {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--gray-900);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.sp-reading__all {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gray-900);
+  text-decoration: none;
+  border-bottom: 2px solid var(--yellow);
+  padding-bottom: 2px;
+}
+
+.sp-reading__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1000px) {
+  .sp-reading__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .sp-reading {
+    padding: 56px 0;
+  }
+  .sp-reading__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* .sp-read follows .sp-section so it overrides the class the reveal script adds */
+.sp-read {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 22px;
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 3px solid var(--yellow);
+  border-radius: 3px;
+  color: var(--gray-900);
+  text-decoration: none;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.sp-read:hover,
+.sp-read:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.sp-read__tag {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gray-900);
+  opacity: 0.6;
+  margin-bottom: 10px;
+}
+
+.sp-read__title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+}
+
+.sp-read__text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0 0 16px;
+  opacity: 0.8;
+  flex: 1;
+}
+
+.sp-read__more {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}

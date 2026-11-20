@@ -683,6 +683,17 @@
   margin: 0 0 14px 0;
 }
 
+.ap-faq-item__a p a {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--yellow);
+}
+
+.ap-faq-item__a p a:hover {
+  color: var(--yellow);
+}
+
 .ap-faq-item__a p:last-child {
   margin-bottom: 0;
 }
