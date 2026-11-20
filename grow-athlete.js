@@ -1155,7 +1155,7 @@
         GROW_SESSION_KEYS.forEach(function (k) {
           try { localStorage.removeItem(k); } catch (err) {}
         });
-        window.location.href = 'grow-login.html';
+        window.location.href = '/grow-login';
       });
     });
   }

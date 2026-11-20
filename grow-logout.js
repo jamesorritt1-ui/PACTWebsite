@@ -9,7 +9,7 @@
     ['grow_nomads_club', 'grow_nomads_role'].forEach(function (k) {
       try { localStorage.removeItem(k); } catch (err) { /* ignore */ }
     });
-    window.location.href = 'grow-login.html';
+    window.location.href = '/grow-login';
   }
   function bind() {
     Array.prototype.forEach.call(document.querySelectorAll('[data-grow-logout]'), function (el) {
