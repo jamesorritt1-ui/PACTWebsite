@@ -826,6 +826,10 @@
   gap: 24px;
 }
 
+.rt-team__list--single {
+  grid-template-columns: minmax(0, 560px);
+}
+
 .rt-person {
   display: grid;
   grid-template-columns: 112px minmax(0, 1fr);
