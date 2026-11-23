@@ -1,8 +1,7 @@
 /* =========================================================
-   THE PERFORMANCE ACT — HOMEPAGE EFFECTS · home.js v1
+   THE PERFORMANCE ACT — HOMEPAGE EFFECTS · home.js v2
    1. Photo reveals and heading fade-ups as sections arrive
    2. Hero photo slowly zooms and darkens as you scroll
-   3. Word band moves with the scroll (no auto-play)
    4. "Psychology, applied in sport" photo drifts (parallax)
    5. Scroll progress line (fallback where CSS can't do it)
    6. Photo panels open the matching "Who we support" tab
@@ -67,7 +66,6 @@
   /* ---------- 2-5. Scroll-linked effects (one rAF loop) ---------- */
   var hero = document.querySelector('[data-hm-hero]');
   var heroBg = hero ? hero.querySelector('.hero__bg') : null;
-  var ticker = document.querySelector('[data-hm-ticker]');
   var applied = document.querySelector('.hm-applied');
   var progressEl = document.querySelector('.hm-progress');
   var cssProgress = window.CSS && CSS.supports && CSS.supports('animation-timeline: scroll()');
@@ -83,15 +81,6 @@
       var p = Math.min(1, Math.max(0, y / h));
       hero.style.setProperty('--hm-hero-p', p.toFixed(3));
       heroBg.style.transform = 'translateY(' + (y * 0.25).toFixed(1) + 'px) scale(' + (1 + p * 0.08).toFixed(4) + ')';
-    }
-
-    if (ticker) {
-      var r = ticker.getBoundingClientRect();
-      if (r.bottom > -200 && r.top < vh + 200) {
-        var third = ticker.scrollWidth / 3;
-        var shift = ((vh - r.top) * 0.45) % third;
-        ticker.style.transform = 'translate3d(' + (-shift).toFixed(1) + 'px,0,0)';
-      }
     }
 
     if (applied) {

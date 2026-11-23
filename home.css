@@ -1,6 +1,6 @@
 /* =========================================================
    THE PERFORMANCE ACT — HOMEPAGE
-   home.css v1 · loaded only by index.html (body.home), prefix .hm-
+   home.css v2 · loaded only by index.html (body.home), prefix .hm-
    Editorial layout, photo-led sections and scroll effects.
    Every effect switches off for prefers-reduced-motion.
    ========================================================= */
@@ -314,44 +314,6 @@
 
 .hm-about .btn {
   margin-top: 10px;
-}
-
-/* ---------- Word band that moves with the scroll ---------- */
-.hm-ticker {
-  background: var(--black);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  overflow: hidden;
-  padding: 26px 0;
-}
-
-.hm-ticker__track {
-  display: flex;
-  align-items: center;
-  gap: 34px;
-  width: max-content;
-  will-change: transform;
-}
-
-.hm-ticker span {
-  font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 5vw, 4rem);
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: 0.04em;
-  color: var(--white);
-  white-space: nowrap;
-}
-
-.hm-ticker span.is-outline {
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.55);
-}
-
-.hm-ticker i {
-  flex: 0 0 auto;
-  width: 12px;
-  height: 12px;
-  background: var(--yellow);
 }
 
 /* ---------- Network linework motif (from the logo's brain lines) ---------- */
@@ -892,19 +854,6 @@
 
   .hm-head__num {
     font-size: clamp(4rem, 22vw, 5.5rem);
-  }
-
-  .hm-ticker {
-    padding: 18px 0;
-  }
-
-  .hm-ticker__track {
-    gap: 22px;
-  }
-
-  .hm-ticker i {
-    width: 9px;
-    height: 9px;
   }
 
   .hm-progress {
