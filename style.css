@@ -320,7 +320,15 @@ img {
   border: none;
   cursor: pointer;
   padding: 0;
+  position: relative;
   z-index: 1001;
+}
+
+/* Extends the tap area to 44 x 44px; the icon itself stays 32px */
+.hamburger::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
 }
 
 .hamburger span {
@@ -1360,7 +1368,7 @@ img {
 .footer__reach {
   margin-top: 14px;
   font-size: 0.78rem;
-  color: var(--gray-700);
+  color: var(--gray-500);
   line-height: 1.55;
   max-width: 260px;
 }
@@ -1371,14 +1379,15 @@ img {
   font-weight: 600;
   letter-spacing: 0.15em;
   color: var(--yellow);
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 
 .footer__link {
   display: block;
   font-size: 0.9rem;
+  line-height: 1.6;
   color: var(--gray-300);
-  margin-bottom: 10px;
+  padding: 11px 0;
   transition: color 0.3s ease;
 }
 
@@ -1410,8 +1419,8 @@ img {
 }
 
 .social-link {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border: 1px solid var(--gray-700);
   display: flex;
   align-items: center;
@@ -1454,6 +1463,8 @@ img {
 }
 
 .footer__bottom-links a {
+  display: inline-block;
+  padding: 12px 0;
   font-size: 0.85rem;
   color: var(--gray-500);
   transition: color 0.3s ease;
@@ -1524,12 +1535,15 @@ img {
   justify-content: center;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.35s ease;
+  visibility: hidden;           /* keeps the closed modal out of the tab order */
+  transition: opacity 0.35s ease, visibility 0s linear 0.35s;
 }
 
 .support-line-modal.is-open {
   pointer-events: all;
   opacity: 1;
+  visibility: visible;
+  transition: opacity 0.35s ease;
 }
 
 .support-line-modal__backdrop {
@@ -1741,6 +1755,7 @@ img {
   height: 48px;
   background-color: var(--yellow);
   border: none;
+  box-shadow: 0 0 0 2px var(--black);   /* stays visible over yellow sections */
   cursor: pointer;
   display: flex;
   align-items: center;

@@ -17,9 +17,10 @@
 .page-hero__bg {
   position: absolute;
   inset: 0;
-  background-image: url('images/hero-field.webp');
+  background-image: url('images/hero-field.jpg');   /* was hero-field.webp, which doesn't exist (404) */
   background-size: cover;
   background-position: center 30%;
+  filter: grayscale(100%);
 }
 
 .page-hero__overlay {
@@ -36,6 +37,7 @@
 .page-hero__content {
   position: relative;
   z-index: 2;
+  min-width: 0;           /* lets the hero shrink to the screen instead of being pushed wider by a long word */
 }
 
 .page-hero__eyebrow {
@@ -780,6 +782,16 @@
     min-height: 70vh;
     padding-bottom: 72px;
   }
+}
+
+/* Phones: scale page titles to the screen so long words (RESOURCES, INDIVIDUAL) never run off the edge */
+@media (max-width: 640px) {
+  .page-hero__title {
+    font-size: clamp(2.6rem, 15vw, 5rem);
+  }
+}
+
+@media (max-width: 768px) {
 
   .ap-alongside-grid {
     grid-template-columns: 1fr;

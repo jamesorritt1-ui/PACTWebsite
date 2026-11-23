@@ -119,7 +119,7 @@
 .bl-meta__read {
   font-family: var(--font-body);
   font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.62);
 }
 
 .bl-featured__title {

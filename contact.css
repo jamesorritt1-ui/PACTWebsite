@@ -21,6 +21,13 @@
   }
 }
 
+/* Small phones: keep "A CONVERSATION." on screen */
+@media (max-width: 400px) {
+  .ct-hero__title {
+    font-size: clamp(2.2rem, 11vw, 3rem) !important;
+  }
+}
+
 /* ---- MAIN GRID WRAPPER ---- */
 .ct-main {
   background: #f5f4f0;
@@ -240,7 +247,7 @@
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #d64545;
+  color: #c93a3a;
   margin: 0 0 8px;
 }
 
@@ -269,7 +276,7 @@
 }
 
 .ct-callout__btn:hover {
-  color: #d64545;
+  color: #c93a3a;
   border-color: #d64545;
 }
 
