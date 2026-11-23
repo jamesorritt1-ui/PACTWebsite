@@ -1,7 +1,7 @@
 /* =========================================================
    PERFORMANCE ACT - Global Styles
    Color Palette: Black (#000), Yellow (#FFE500), White (#FFF)
-   Typography: Oswald (headings), Inter (body)
+   Typography: Barlow Semi Condensed (headings), Figtree (body), Barlow (numbers)
    ========================================================= */
 
 /* ---------- RESET & BASE ---------- */
@@ -24,8 +24,8 @@
   --gray-800: #333333;
   --gray-900: #1A1A1A;
 
-  --font-heading: 'Oswald', 'Arial Narrow', sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Barlow Semi Condensed', 'Arial Narrow', sans-serif;
+  --font-body: 'Figtree', -apple-system, BlinkMacSystemFont, sans-serif;
 
   --header-height: 80px;
   --container-max: 1280px;
@@ -112,9 +112,9 @@ img {
 .btn {
   display: inline-block;
   font-family: var(--font-heading);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.95rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 14px 32px;
   border: 2px solid transparent;
@@ -262,7 +262,7 @@ img {
   font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
   color: var(--white);
   position: relative;
   padding: 4px 0;
@@ -620,7 +620,7 @@ img {
   font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.2em;
   color: var(--black);
   margin-top: 8px;
 }
@@ -1377,7 +1377,7 @@ img {
   font-family: var(--font-heading);
   font-size: 0.9rem;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.2em;
   color: var(--yellow);
   margin-bottom: 8px;
 }
@@ -1492,7 +1492,7 @@ img {
   color: var(--black);
   border: 2px solid var(--black);
   border-radius: 999px;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Semi Condensed', sans-serif;
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 1.5px;
@@ -1610,7 +1610,7 @@ img {
 
 /* Modal header */
 .support-line-modal__eyebrow {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Semi Condensed', sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 3px;
@@ -1624,7 +1624,7 @@ img {
 }
 
 .support-line-modal__title {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Semi Condensed', sans-serif;
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 1.2;
@@ -1634,7 +1634,7 @@ img {
 }
 
 .support-line-modal__note {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Figtree', sans-serif;
   font-size: 0.92rem;
   line-height: 1.6;
   color: rgba(0,0,0,0.65);
@@ -1678,7 +1678,7 @@ img {
 }
 
 .sln-resource__name {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Semi Condensed', sans-serif;
   font-size: 1rem;
   font-weight: 600;
   color: var(--gray-900);
@@ -1688,7 +1688,7 @@ img {
 }
 
 .sln-resource__desc {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Figtree', sans-serif;
   font-size: 0.82rem;
   color: rgba(0,0,0,0.58);
   margin: 0;
@@ -1696,7 +1696,7 @@ img {
 }
 
 .sln-resource__number {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Semi Condensed', sans-serif;
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--black);
@@ -1718,7 +1718,7 @@ img {
   margin-top: 22px;
   padding-top: 16px;
   border-top: 1px solid rgba(0,0,0,0.08);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Figtree', sans-serif;
   font-size: 0.82rem;
   color: rgba(0,0,0,0.5);
   line-height: 1.5;
@@ -2117,4 +2117,11 @@ img {
 .mobile-nav__link, .mobile-nav__group-toggle {
   text-align: center;
   font-size: clamp(1.5rem, 6vw, 2rem);
+}
+
+/* Numbers: stats and step numbers in Barlow (DIN-inspired) so data reads as precise */
+body .stat__number, body .rt-stat__big, body .ct-step__num, body .rt-step__num,
+body .rt-card__num, body .rt-toc__num, body .pillar-card__num {
+  font-family: 'Barlow', var(--font-heading);
+  font-variant-numeric: tabular-nums;
 }

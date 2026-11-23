@@ -96,7 +96,7 @@
 }
 
 .ct-info__kicker {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Semi Condensed', sans-serif;
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.3em;
@@ -106,7 +106,7 @@
 }
 
 .ct-info__title {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Semi Condensed', sans-serif;
   font-size: 1.9rem;
   font-weight: 700;
   line-height: 1.1;
@@ -116,7 +116,7 @@
 }
 
 .ct-info__lead {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Figtree', sans-serif;
   font-size: 0.95rem;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.72);
@@ -160,7 +160,7 @@
 }
 
 .ct-detail__label {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Semi Condensed', sans-serif;
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.22em;
@@ -169,7 +169,7 @@
 }
 
 .ct-detail__value {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Figtree', sans-serif;
   font-size: 0.94rem;
   color: rgba(255, 255, 255, 0.92);
   line-height: 1.55;
@@ -196,7 +196,7 @@
 }
 
 .ct-info__sociallabel {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Semi Condensed', sans-serif;
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.22em;
@@ -242,7 +242,7 @@
 }
 
 .ct-callout__kicker {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Semi Condensed', sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.2em;
@@ -252,7 +252,7 @@
 }
 
 .ct-callout__text {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Figtree', sans-serif;
   font-size: 0.88rem;
   line-height: 1.6;
   color: rgba(0, 0, 0, 0.68);
@@ -263,7 +263,7 @@
   background: none;
   border: none;
   padding: 0;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Semi Condensed', sans-serif;
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -303,7 +303,7 @@
 
 .ct-form-panel__step {
   display: inline-block;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Semi Condensed', sans-serif;
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.28em;
@@ -316,7 +316,7 @@
 }
 
 .ct-form-panel__title {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Semi Condensed', sans-serif;
   font-size: 1.7rem;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -326,7 +326,7 @@
 }
 
 .ct-form-panel__sub {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Figtree', sans-serif;
   font-size: 0.95rem;
   line-height: 1.65;
   color: rgba(0, 0, 0, 0.6);
@@ -367,7 +367,7 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Figtree', sans-serif;
   font-size: 0.9rem;
   color: rgba(0, 0, 0, 0.5);
   transition: opacity 0.3s ease;
@@ -397,7 +397,7 @@
 
 .ct-form-fallback {
   margin: 20px 0 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Figtree', sans-serif;
   font-size: 0.85rem;
   line-height: 1.6;
   color: rgba(0, 0, 0, 0.55);
@@ -431,7 +431,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Figtree', sans-serif;
   font-size: 0.82rem;
   color: rgba(0, 0, 0, 0.55);
 }
@@ -462,7 +462,7 @@
 
 .ct-expect__eyebrow {
   display: inline-block;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Semi Condensed', sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.3em;
@@ -472,7 +472,7 @@
 }
 
 .ct-expect__title {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Semi Condensed', sans-serif;
   font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: 700;
   line-height: 1.1;
@@ -482,7 +482,7 @@
 }
 
 .ct-expect__lead {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Figtree', sans-serif;
   font-size: 1rem;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.68);
@@ -524,7 +524,7 @@
 
 .ct-step__num {
   display: inline-block;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Semi Condensed', sans-serif;
   font-size: 2.4rem;
   font-weight: 700;
   color: var(--yellow);
@@ -534,7 +534,7 @@
 }
 
 .ct-step__title {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Semi Condensed', sans-serif;
   font-size: 1.15rem;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -544,7 +544,7 @@
 }
 
 .ct-step__text {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Figtree', sans-serif;
   font-size: 0.92rem;
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.7);
