@@ -111,7 +111,7 @@
     .privacy-toc__item--sub a {
       font-size: 0.78rem;
       padding-left: 14px;
-      color: var(--gray-700);
+      color: var(--gray-500);
     }
 
     .privacy-toc__item--sub a:hover,
@@ -499,7 +499,7 @@
       font-size: 0.72rem;
       font-weight: 600;
       letter-spacing: 0.15em;
-      color: var(--gray-700);
+      color: var(--gray-500);
       text-transform: uppercase;
     }
 
@@ -572,11 +572,11 @@
       font-family: var(--font-heading);
       font-size: 0.78rem;
       letter-spacing: 0.1em;
-      color: var(--gray-700);
+      color: var(--gray-500);
     }
 
     .privacy-version-bar span strong {
-      color: var(--gray-500);
+      color: var(--gray-300);
     }
 
     /* Mobile TOC toggle */
