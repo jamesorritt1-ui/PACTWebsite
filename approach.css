@@ -294,11 +294,11 @@
 }
 
 .ap-alongside-card--dim {
-  opacity: 0.42;
+  opacity: 0.8;
 }
 
 .ap-alongside-card--dim:hover {
-  opacity: 0.6;
+  opacity: 0.9;
 }
 
 .ap-alongside-card--active {
@@ -329,7 +329,7 @@
 }
 
 .ap-alongside-card--dim .ap-alongside-card__marker {
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .ap-alongside-card--active .ap-alongside-card__marker {
@@ -468,7 +468,7 @@
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.72);
   margin-bottom: 14px;
 }
 
@@ -476,7 +476,7 @@
   font-family: var(--font-heading);
   font-size: clamp(1.8rem, 4.5vw, 3.4rem);
   font-weight: 700;
-  color: rgba(0, 0, 0, 0.28);
+  color: rgba(0, 0, 0, 0.5);
   text-transform: uppercase;
   text-decoration: line-through;
   text-decoration-color: rgba(0,0,0,0.4);
@@ -799,7 +799,7 @@
   }
 
   .ap-alongside-card--dim {
-    opacity: 0.72;
+    opacity: 0.82;
   }
 
   .ap-alongside-card--active::after {

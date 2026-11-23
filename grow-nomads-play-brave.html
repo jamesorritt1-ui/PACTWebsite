@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=Barlow:wght@600;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20">
+  <link rel="stylesheet" href="style.css?v=21">
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
 
   <style>
@@ -30,6 +30,8 @@
       --club-dark:   #092970;
       --club-light:  #1A52B0;
       --club-accent: #C8102E;
+      --club-accent-text: #F04A5E;   /* club red, lightened for text on black (AA) */
+      --club-text: #6E9CF0;          /* club blue, lightened for text on black (AA) */
       --correct:     #22c55e;
       --wrong:       #e63b2e;
     }
@@ -89,14 +91,14 @@
     .at-hero__eyebrow {
       font-family: var(--font-heading); font-size: 0.68rem; font-weight: 600;
       letter-spacing: 0.28em; text-transform: uppercase;
-      color: var(--club-accent); margin-bottom: 16px; display: block;
+      color: var(--club-accent-text); margin-bottom: 16px; display: block;
     }
     .at-hero__title {
       font-family: var(--font-heading); font-size: clamp(3.5rem, 10vw, 8rem);
       font-weight: 700; line-height: 0.9; color: var(--white);
       text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 24px;
     }
-    .at-hero__title em { color: var(--club-accent); font-style: normal; display: block; }
+    .at-hero__title em { color: var(--club-accent-text); font-style: normal; display: block; }
     .at-hero__sub {
       font-size: 1.05rem; color: var(--gray-500); line-height: 1.7;
       max-width: 560px; border-left: 2px solid var(--club-accent); padding-left: 20px;
@@ -110,7 +112,7 @@
       padding: 6px 14px; border: 1px solid rgba(255,255,255,0.12); color: var(--gray-500);
     }
     .at-hero__tag--red {
-      border-color: var(--club-accent); color: var(--club-accent); background: rgba(200,16,46,0.08);
+      border-color: var(--club-accent); color: var(--club-accent-text); background: rgba(200,16,46,0.08);
     }
 
     /* ---------- SECTIONS ---------- */
@@ -131,7 +133,7 @@
       font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 700; color: var(--white); text-transform: uppercase; line-height: 1.05;
     }
-    .at-sec-title em { color: var(--club-accent); font-style: normal; }
+    .at-sec-title em { color: var(--club-accent-text); font-style: normal; }
 
     .at-lead {
       font-family: var(--font-heading); font-size: clamp(1.2rem, 2.5vw, 1.6rem);
@@ -142,7 +144,7 @@
       max-width: 680px;
     }
     .at-body strong { color: var(--white); }
-    .at-body em { color: var(--club-accent); font-style: normal; }
+    .at-body em { color: var(--club-accent-text); font-style: normal; }
 
     /* ---------- VALUES SELECTOR ---------- */
     .at-values-intro {
@@ -172,7 +174,7 @@
       letter-spacing: 0.1em; text-transform: uppercase;
       color: var(--gray-500); margin-top: 8px; margin-bottom: 20px;
     }
-    .at-values-count span { color: var(--club-accent); }
+    .at-values-count span { color: var(--club-accent-text); }
     .at-values-reveal {
       display: none; padding: 24px 28px;
       border-left: 3px solid var(--club-accent); background: rgba(200,16,46,0.04);
@@ -198,10 +200,10 @@
     }
     .at-quote-tap {
       font-family: var(--font-heading); font-size: 0.62rem; font-weight: 600;
-      letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-700);
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-500);
       display: flex; align-items: center; gap: 8px; transition: color 0.3s;
     }
-    .at-quote-card:not(.is-revealed):hover .at-quote-tap { color: var(--club-accent); }
+    .at-quote-card:not(.is-revealed):hover .at-quote-tap { color: var(--club-accent-text); }
     .at-quote-tap::before {
       content: ''; display: inline-block; width: 16px; height: 16px;
       background: rgba(200,16,46,0.2); border: 1px solid rgba(200,16,46,0.4);
@@ -211,7 +213,7 @@
       display: none;
       font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700;
       letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--club-accent); padding-top: 16px;
+      color: var(--club-accent-text); padding-top: 16px;
       border-top: 1px solid rgba(255,255,255,0.06);
     }
     .at-quote-card.is-revealed .at-quote-tap { display: none; }
@@ -235,8 +237,8 @@
       font-family: var(--font-heading); font-size: 0.62rem; letter-spacing: 0.2em;
       text-transform: uppercase; margin-bottom: 16px; display: block;
     }
-    .at-val-col--feeling .at-val-col__head { color: rgba(230,59,46,0.8); }
-    .at-val-col--action .at-val-col__head { color: var(--club-accent); }
+    .at-val-col--feeling .at-val-col__head { color: #F26B5F; }
+    .at-val-col--action .at-val-col__head { color: var(--club-accent-text); }
     .at-val-col ul {
       list-style: none; padding: 0; margin: 0;
       display: flex; flex-direction: column; gap: 8px;
@@ -257,7 +259,7 @@
     .at-scenario-badge {
       font-family: var(--font-heading); font-size: 0.62rem; font-weight: 600;
       letter-spacing: 0.25em; text-transform: uppercase;
-      color: var(--club-accent); margin-bottom: 20px; display: block;
+      color: var(--club-accent-text); margin-bottom: 20px; display: block;
     }
     .at-scenario-quote {
       font-size: 1.05rem; color: var(--white); line-height: 1.7;
@@ -323,7 +325,7 @@
     }
     .at-anchor-example__label {
       font-family: var(--font-heading); font-size: 0.62rem; font-weight: 600;
-      letter-spacing: 0.25em; text-transform: uppercase; color: var(--club); margin-bottom: 20px; display: block;
+      letter-spacing: 0.25em; text-transform: uppercase; color: var(--club-text); margin-bottom: 20px; display: block;
     }
     .at-anchor-steps {
       display: flex; flex-direction: column; gap: 16px; margin-top: 16px;
@@ -333,7 +335,7 @@
     }
     .at-anchor-step__num {
       font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700;
-      color: var(--club); line-height: 1; flex-shrink: 0; width: 28px;
+      color: var(--club-text); line-height: 1; flex-shrink: 0; width: 28px;
     }
     .at-anchor-step__text { font-size: 0.95rem; color: var(--gray-300); line-height: 1.65; }
     .at-anchor-step__text strong { color: var(--white); }
@@ -351,7 +353,7 @@
     .at-anchor-field { margin-bottom: 24px; }
     .at-anchor-label {
       font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600;
-      letter-spacing: 0.2em; text-transform: uppercase; color: var(--club);
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--club-text);
       display: block; margin-bottom: 8px;
     }
     .at-anchor-input {
@@ -361,14 +363,14 @@
       outline: none; transition: border-color 0.3s; box-sizing: border-box;
     }
     .at-anchor-input:focus { border-color: var(--club); }
-    .at-anchor-input::placeholder { color: var(--gray-700); }
+    .at-anchor-input::placeholder { color: var(--gray-500); }
     .at-anchor-preview {
       display: none; margin-top: 20px; padding: 20px 24px;
       border-left: 3px solid var(--club); background: rgba(14,58,132,0.06);
     }
     .at-anchor-preview.is-visible { display: block; animation: fadeIn 0.4s ease; }
     .at-anchor-preview p { font-size: 0.95rem; color: var(--white); line-height: 1.65; }
-    .at-anchor-preview span { color: var(--club); font-weight: 600; }
+    .at-anchor-preview span { color: var(--club-text); font-weight: 600; }
     .at-anchor-build-btn {
       font-family: var(--font-heading); font-size: 0.82rem; font-weight: 700;
       letter-spacing: 0.12em; text-transform: uppercase;
@@ -388,7 +390,7 @@
     }
     .at-video-label {
       font-family: var(--font-heading); font-size: 0.65rem; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--club); margin-bottom: 10px; display: block;
+      text-transform: uppercase; color: var(--club-text); margin-bottom: 10px; display: block;
     }
 
     /* ---------- QUIZ SYSTEM ---------- */
@@ -428,11 +430,11 @@
     }
     .at-quiz__opt[disabled] { cursor: default; }
     .at-quiz__opt.is-correct { border-color: var(--correct); background: rgba(34,197,94,0.07); color: var(--white); }
-    .at-quiz__opt.is-wrong { border-color: var(--wrong); background: rgba(230,59,46,0.07); color: var(--gray-700); }
+    .at-quiz__opt.is-wrong { border-color: var(--wrong); background: rgba(230,59,46,0.07); color: var(--gray-500); }
     .at-quiz__opt.is-highlight { border-color: var(--correct); background: rgba(34,197,94,0.07); color: var(--white); }
     .at-opt-letter {
       font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700;
-      letter-spacing: 0.1em; color: var(--gray-700); flex-shrink: 0; width: 22px; margin-top: 1px;
+      letter-spacing: 0.1em; color: var(--gray-500); flex-shrink: 0; width: 22px; margin-top: 1px;
     }
     .at-quiz__opt.is-correct .at-opt-letter,
     .at-quiz__opt.is-highlight .at-opt-letter { color: var(--correct); }
@@ -468,7 +470,7 @@
     .at-insight.is-visible { display: block; animation: fadeIn 0.4s ease; }
     .at-insight__label {
       font-family: var(--font-heading); font-size: 0.62rem; letter-spacing: 0.25em;
-      text-transform: uppercase; color: var(--club-accent); margin-bottom: 10px; display: block;
+      text-transform: uppercase; color: var(--club-accent-text); margin-bottom: 10px; display: block;
     }
     .at-insight p { font-size: 0.92rem; color: var(--gray-300); line-height: 1.8; }
     .at-insight strong { color: var(--white); }
@@ -483,7 +485,7 @@
       line-height: 1.1; margin-bottom: 16px;
     }
     .at-brave-wall__sub {
-      font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.65;
+      font-size: 1rem; color: #fff; line-height: 1.65;
     }
 
     /* ---------- PAGE END CTA ---------- */
@@ -493,7 +495,7 @@
     }
     .at-page-end__badge {
       font-family: var(--font-heading); font-size: 0.68rem; font-weight: 600;
-      letter-spacing: 0.25em; text-transform: uppercase; color: var(--club-accent);
+      letter-spacing: 0.25em; text-transform: uppercase; color: var(--club-accent-text);
       margin-bottom: 16px; display: block;
     }
     .at-page-end__title {

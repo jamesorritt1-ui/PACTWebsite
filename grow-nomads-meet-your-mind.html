@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=Barlow:wght@600;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20">
+  <link rel="stylesheet" href="style.css?v=21">
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
 
   <style>
@@ -30,6 +30,8 @@
       --club-dark:   #092970;
       --club-light:  #1A52B0;
       --club-accent: #C8102E;
+      --club-accent-text: #F04A5E;   /* club red, lightened for text on black (AA) */
+      --club-text: #6E9CF0;          /* club blue, lightened for text on black (AA) */
       --correct:     #22c55e;
       --wrong:       #e63b2e;
     }
@@ -89,14 +91,14 @@
     .at-hero__eyebrow {
       font-family: var(--font-heading); font-size: 0.68rem; font-weight: 600;
       letter-spacing: 0.28em; text-transform: uppercase;
-      color: var(--club); margin-bottom: 16px; display: block;
+      color: var(--club-text); margin-bottom: 16px; display: block;
     }
     .at-hero__title {
       font-family: var(--font-heading); font-size: clamp(3.5rem, 10vw, 8rem);
       font-weight: 700; line-height: 0.9; color: var(--white);
       text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 24px;
     }
-    .at-hero__title em { color: var(--club); font-style: normal; display: block; }
+    .at-hero__title em { color: var(--club-text); font-style: normal; display: block; }
     .at-hero__sub {
       font-size: 1.05rem; color: var(--gray-500); line-height: 1.7;
       max-width: 560px; border-left: 2px solid var(--club); padding-left: 20px;
@@ -110,7 +112,7 @@
       padding: 6px 14px; border: 1px solid rgba(255,255,255,0.12); color: var(--gray-500);
     }
     .at-hero__tag--blue {
-      border-color: var(--club); color: var(--club); background: rgba(14,58,132,0.1);
+      border-color: var(--club); color: var(--club-text); background: rgba(14,58,132,0.1);
     }
 
     /* ---------- SECTIONS ---------- */
@@ -131,7 +133,7 @@
       font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 700; color: var(--white); text-transform: uppercase; line-height: 1.05;
     }
-    .at-sec-title em { color: var(--club); font-style: normal; }
+    .at-sec-title em { color: var(--club-text); font-style: normal; }
 
     .at-lead {
       font-family: var(--font-heading); font-size: clamp(1.2rem, 2.5vw, 1.6rem);
@@ -142,7 +144,7 @@
       max-width: 680px;
     }
     .at-body strong { color: var(--white); }
-    .at-body em { color: var(--club); font-style: normal; }
+    .at-body em { color: var(--club-text); font-style: normal; }
 
     /* ---------- VIDEO EMBED ---------- */
     .at-video-wrap {
@@ -154,7 +156,7 @@
     }
     .at-video-label {
       font-family: var(--font-heading); font-size: 0.65rem; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--club); margin-bottom: 10px; display: block;
+      text-transform: uppercase; color: var(--club-text); margin-bottom: 10px; display: block;
     }
 
     /* ---------- PINK ELEPHANT CHALLENGE ---------- */
@@ -166,7 +168,7 @@
       font-size: 1rem; color: var(--gray-300); line-height: 1.7; margin-bottom: 8px;
     }
     .at-elephant__prompt strong { color: var(--white); }
-    .at-elephant__prompt em { color: var(--club); font-style: normal; }
+    .at-elephant__prompt em { color: var(--club-text); font-style: normal; }
     .at-elephant__detail {
       font-size: 0.88rem; color: var(--gray-500); margin-bottom: 32px; font-style: italic;
     }
@@ -183,7 +185,7 @@
     .at-countdown.is-active { display: block; }
     .at-countdown__num {
       font-family: var(--font-heading); font-size: 6rem; font-weight: 700;
-      color: var(--club); line-height: 1; margin-bottom: 8px;
+      color: var(--club-text); line-height: 1; margin-bottom: 8px;
       animation: at-pulse 1s ease-in-out infinite;
     }
     @keyframes at-pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
@@ -216,7 +218,7 @@
       letter-spacing: 0.1em; text-transform: uppercase;
       color: var(--gray-500); margin-top: 8px; margin-bottom: 20px;
     }
-    .at-noise-count span { color: var(--club); }
+    .at-noise-count span { color: var(--club-text); }
     .at-noise-reveal {
       display: none; padding: 20px 24px;
       border-left: 3px solid var(--club); background: rgba(14,58,132,0.06);
@@ -236,7 +238,7 @@
     .at-ace-step.is-active { display: block; }
     .at-ace-letter {
       font-family: var(--font-heading); font-size: 5rem; font-weight: 700;
-      color: var(--club); line-height: 1; margin-bottom: 8px;
+      color: var(--club-text); line-height: 1; margin-bottom: 8px;
     }
     .at-ace-word {
       font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700;
@@ -286,7 +288,7 @@
     .at-scenario-badge {
       font-family: var(--font-heading); font-size: 0.62rem; font-weight: 600;
       letter-spacing: 0.25em; text-transform: uppercase;
-      color: var(--club-accent); margin-bottom: 16px; display: block;
+      color: var(--club-accent-text); margin-bottom: 16px; display: block;
     }
     .at-scenario-text {
       font-size: 1rem; color: var(--white); line-height: 1.7;
@@ -334,11 +336,11 @@
     }
     .at-quiz__opt[disabled] { cursor: default; }
     .at-quiz__opt.is-correct { border-color: var(--correct); background: rgba(34,197,94,0.07); color: var(--white); }
-    .at-quiz__opt.is-wrong { border-color: var(--wrong); background: rgba(230,59,46,0.07); color: var(--gray-700); }
+    .at-quiz__opt.is-wrong { border-color: var(--wrong); background: rgba(230,59,46,0.07); color: var(--gray-500); }
     .at-quiz__opt.is-highlight { border-color: var(--correct); background: rgba(34,197,94,0.07); color: var(--white); }
     .at-opt-letter {
       font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700;
-      letter-spacing: 0.1em; color: var(--gray-700); flex-shrink: 0; width: 22px; margin-top: 1px;
+      letter-spacing: 0.1em; color: var(--gray-500); flex-shrink: 0; width: 22px; margin-top: 1px;
     }
     .at-quiz__opt.is-correct .at-opt-letter,
     .at-quiz__opt.is-highlight .at-opt-letter { color: var(--correct); }
@@ -374,7 +376,7 @@
     .at-insight.is-visible { display: block; animation: fadeIn 0.4s ease; }
     .at-insight__label {
       font-family: var(--font-heading); font-size: 0.62rem; letter-spacing: 0.25em;
-      text-transform: uppercase; color: var(--club); margin-bottom: 10px; display: block;
+      text-transform: uppercase; color: var(--club-text); margin-bottom: 10px; display: block;
     }
     .at-insight p { font-size: 0.92rem; color: var(--gray-300); line-height: 1.8; }
     .at-insight strong { color: var(--white); }
@@ -386,7 +388,7 @@
     }
     .at-next__label {
       font-family: var(--font-heading); font-size: 0.62rem; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--gray-700); margin-bottom: 8px; display: block;
+      text-transform: uppercase; color: var(--gray-500); margin-bottom: 8px; display: block;
     }
     .at-next__text { font-size: 0.88rem; color: var(--gray-500); margin-bottom: 20px; }
 
@@ -397,7 +399,7 @@
     }
     .at-page-end__badge {
       font-family: var(--font-heading); font-size: 0.68rem; font-weight: 600;
-      letter-spacing: 0.25em; text-transform: uppercase; color: var(--club);
+      letter-spacing: 0.25em; text-transform: uppercase; color: var(--club-text);
       margin-bottom: 16px; display: block;
     }
     .at-page-end__title {
@@ -599,7 +601,7 @@
           <p style="font-size:0.82rem;color:var(--gray-500);margin-top:8px;">The thought is driving.</p>
         </div>
         <div style="background:rgba(14,58,132,0.06);border:1px solid rgba(14,58,132,0.25);padding:28px 24px;">
-          <span style="font-family:var(--font-heading);font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--club);display:block;margin-bottom:12px;">DEFUSED — you HAVE the thought</span>
+          <span style="font-family:var(--font-heading);font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color: var(--club-text);display:block;margin-bottom:12px;">DEFUSED — you HAVE the thought</span>
           <p style="font-size:1rem;color:var(--white);line-height:1.6;font-style:italic;">"I'm noticing the thought that I'm going to mess this up."</p>
           <p style="font-size:0.82rem;color:var(--gray-500);margin-top:8px;">You're still in the driver's seat.</p>
         </div>

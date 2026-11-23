@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=Barlow:wght@600;700&family=Figtree:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=Barlow:wght@600;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
-  <link rel="stylesheet" href="style.css?v=20">
+  <link rel="stylesheet" href="style.css?v=21">
   <link rel="icon" type="image/png" sizes="512x512" href="favicon.png?v=2">
 
   <style>
@@ -31,6 +31,8 @@
       --club-dark:   #092970;
       --club-light:  #1A52B0;
       --club-accent: #C8102E;
+      --club-accent-text: #F04A5E;   /* club red, lightened for text on black (AA) */
+      --club-text: #6E9CF0;          /* club blue, lightened for text on black (AA) */
     }
 
     /* Progress bar */
@@ -53,8 +55,8 @@
     }
     .cs-backrow { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
     .cs-logout { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #fff; background: transparent; border: 1px solid rgba(255,255,255,0.35); padding: 8px 14px; cursor: pointer; transition: all 0.2s; }
-    .cs-logout:hover { color: var(--club); border-color: var(--club); }
-    .cs-back:hover { color: var(--club); }
+    .cs-logout:hover { color: var(--club-text); border-color: var(--club); }
+    .cs-back:hover { color: var(--club-text); }
     .cs-back svg { width: 14px; height: 14px; stroke: currentColor; }
 
     /* Hero */
@@ -71,7 +73,7 @@
     }
     .cs-hero__session {
       font-family: var(--font-heading); font-size: 0.6rem; font-weight: 700;
-      letter-spacing: 0.3em; text-transform: uppercase; color: var(--club-accent);
+      letter-spacing: 0.3em; text-transform: uppercase; color: var(--club-accent-text);
       margin-bottom: 12px; display: block;
     }
     .cs-hero__title {
@@ -116,14 +118,14 @@
       cursor: pointer; white-space: nowrap; transition: all 0.2s;
     }
     .cs-nav__btn:hover { color: var(--white); }
-    .cs-nav__btn.is-active { color: var(--club); border-bottom-color: var(--club); }
+    .cs-nav__btn.is-active { color: var(--club-text); border-bottom-color: var(--club); }
 
     /* Sections */
     .cs-section { padding: 64px 0 72px; }
     .cs-section--alt { background: rgba(255,255,255,0.015); }
     .cs-section__eyebrow {
       font-family: var(--font-heading); font-size: 0.58rem; font-weight: 700;
-      letter-spacing: 0.28em; text-transform: uppercase; color: var(--club-accent);
+      letter-spacing: 0.28em; text-transform: uppercase; color: var(--club-accent-text);
       margin-bottom: 10px; display: block;
     }
     .cs-section__title {
@@ -131,7 +133,7 @@
       font-weight: 800; color: var(--white); text-transform: uppercase;
       line-height: 1.05; margin-bottom: 14px;
     }
-    .cs-section__title em { color: var(--club); font-style: normal; }
+    .cs-section__title em { color: var(--club-text); font-style: normal; }
     .cs-section__intro {
       font-size: 0.9rem; color: var(--gray-400); line-height: 1.8; max-width: 620px;
       margin-bottom: 36px;
@@ -145,7 +147,7 @@
     }
     .pt-bigidea p { font-size: 0.95rem; color: var(--gray-300); line-height: 1.85; }
     .pt-bigidea strong { color: #fff; }
-    .pt-bigidea em { color: var(--club-accent); font-style: italic; }
+    .pt-bigidea em { color: var(--club-accent-text); font-style: italic; }
 
     /* Stat cards (the research) */
     .pt-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 32px; }
@@ -158,14 +160,14 @@
       font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800;
       color: #fff; line-height: 1; margin-bottom: 14px;
     }
-    .pt-stat__kicker span { color: var(--club-accent); }
+    .pt-stat__kicker span { color: var(--club-accent-text); }
     .pt-stat__title {
       font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700;
       text-transform: uppercase; letter-spacing: 0.05em; color: #fff; margin-bottom: 10px;
     }
     .pt-stat__desc { font-size: 0.85rem; color: var(--gray-400); line-height: 1.7; }
     .pt-stat__src {
-      font-size: 0.7rem; color: var(--club-light); margin-top: 12px;
+      font-size: 0.7rem; color: var(--club-text); margin-top: 12px;
       font-family: var(--font-heading); letter-spacing: 0.08em;
     }
 
@@ -180,7 +182,7 @@
     @media (max-width: 620px) { .pt-need { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); } .pt-need:last-child { border-bottom: none; } }
     .pt-need__word {
       font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 0.06em; color: var(--club-light); margin-bottom: 6px;
+      text-transform: uppercase; letter-spacing: 0.06em; color: var(--club-text); margin-bottom: 6px;
     }
     .pt-need__desc { font-size: 0.82rem; color: var(--gray-400); line-height: 1.65; }
 
@@ -211,12 +213,12 @@
     .pt-fw-step__l {
       font-family: var(--font-heading); font-size: 1.1rem; font-weight: 800;
       width: 26px; flex-shrink: 0; line-height: 1.2;
-      color: var(--club-light);
+      color: var(--club-text);
     }
     .pt-fw-step__c strong { display: block; font-size: 0.85rem; color: #fff; font-family: var(--font-heading); letter-spacing: 0.03em; text-transform: uppercase; margin-bottom: 3px; }
     .pt-fw-step__c p { font-size: 0.82rem; color: var(--gray-400); line-height: 1.6; margin-bottom: 6px; }
     .pt-fw-step__eg {
-      font-size: 0.82rem; color: var(--club-light); font-style: italic;
+      font-size: 0.82rem; color: var(--club-text); font-style: italic;
       background: rgba(14,58,132,0.1); padding: 6px 12px; border-left: 2px solid var(--club);
       display: block;
     }
@@ -262,9 +264,9 @@
     .pt-pac-step--C { border-left-color: var(--club-accent); }
     .pt-pac-step__badge {
       font-family: var(--font-heading); font-size: 1.3rem; font-weight: 800;
-      color: var(--club-light); width: 24px; flex-shrink: 0; line-height: 1.1;
+      color: var(--club-text); width: 24px; flex-shrink: 0; line-height: 1.1;
     }
-    .pt-pac-step--C .pt-pac-step__badge { color: var(--club-accent); }
+    .pt-pac-step--C .pt-pac-step__badge { color: var(--club-accent-text); }
     .pt-pac-step__label {
       font-family: var(--font-heading); font-size: 0.62rem; font-weight: 700;
       letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray-600); margin-bottom: 6px;
@@ -286,7 +288,7 @@
     }
     .pt-ace-card__l {
       font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800;
-      color: var(--club-light); line-height: 1; margin-bottom: 8px;
+      color: var(--club-text); line-height: 1; margin-bottom: 8px;
     }
     .pt-ace-card h4 { font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #fff; margin-bottom: 6px; }
     .pt-ace-card p { font-size: 0.8rem; color: var(--gray-400); line-height: 1.6; }
@@ -309,7 +311,7 @@
     .pt-ace-dial__n { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; color: #fff; line-height: 1; }
     .pt-ace-dial__lbl { font-size: 0.6rem; color: var(--gray-600); letter-spacing: 0.18em; text-transform: uppercase; margin-top: 2px; }
     .pt-ace-ctl { flex: 1; }
-    .pt-ace-ctl__phase { font-family: var(--font-heading); font-size: 1.05rem; font-weight: 600; color: var(--club-light); min-height: 28px; margin-bottom: 16px; line-height: 1.4; }
+    .pt-ace-ctl__phase { font-family: var(--font-heading); font-size: 1.05rem; font-weight: 600; color: var(--club-text); min-height: 28px; margin-bottom: 16px; line-height: 1.4; }
     .pt-ace-btns { display: flex; gap: 10px; }
     @media (max-width: 560px) { .pt-ace-btns { justify-content: center; } }
     .pt-btn {
@@ -351,7 +353,7 @@
       margin-top: 22px; padding: 18px 22px; background: rgba(200,16,46,0.07);
       border-left: 3px solid var(--club-accent);
     }
-    .pt-powerline__lbl { font-family: var(--font-heading); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--club-accent); margin-bottom: 8px; display: block; }
+    .pt-powerline__lbl { font-family: var(--font-heading); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--club-accent-text); margin-bottom: 8px; display: block; }
     .pt-powerline p { font-size: 0.85rem; color: var(--gray-300); line-height: 1.7; }
     .pt-powerline em { color: #fff; font-style: italic; font-size: 1.05rem; }
 
@@ -363,7 +365,7 @@
       padding: 14px 18px; font-family: var(--font-heading); font-size: 0.7rem; font-weight: 700;
       letter-spacing: 0.1em; text-transform: uppercase;
     }
-    .pt-flip-col--praise .pt-flip-col__head { background: rgba(200,16,46,0.1); color: var(--club-accent); border-bottom: 1px solid rgba(200,16,46,0.2); }
+    .pt-flip-col--praise .pt-flip-col__head { background: rgba(200,16,46,0.1); color: var(--club-accent-text); border-bottom: 1px solid rgba(200,16,46,0.2); }
     .pt-flip-col--affirm .pt-flip-col__head { background: rgba(34,197,94,0.1); color: #22c55e; border-bottom: 1px solid rgba(34,197,94,0.2); }
     .pt-flip-col__body { padding: 16px 18px; }
     .pt-flip-line { font-size: 0.85rem; font-style: italic; line-height: 1.5; padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.04); color: var(--gray-300); }
@@ -387,32 +389,32 @@
       background: rgba(200,16,46,0.07); border-left: 3px solid var(--club-accent);
       padding: 14px 18px; margin-bottom: 24px; font-size: 0.88rem; color: #fff; line-height: 1.6;
     }
-    .pt-golden strong { color: var(--club-accent); }
+    .pt-golden strong { color: var(--club-accent-text); }
     .pt-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 8px; }
     @media (max-width: 640px) { .pt-2col { grid-template-columns: 1fr; gap: 24px; } }
     .pt-minihdr {
       font-family: var(--font-heading); font-size: 0.6rem; font-weight: 700;
-      letter-spacing: 0.16em; text-transform: uppercase; color: var(--club-light); margin-bottom: 12px;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--club-text); margin-bottom: 12px;
     }
     .pt-list { list-style: none; }
     .pt-list li {
       position: relative; padding: 9px 0 9px 22px; font-size: 0.85rem; color: var(--gray-300);
       line-height: 1.6; border-bottom: 1px solid rgba(255,255,255,0.04);
     }
-    .pt-list li::before { content: '→'; position: absolute; left: 0; color: var(--club-light); font-weight: 700; }
+    .pt-list li::before { content: '→'; position: absolute; left: 0; color: var(--club-text); font-weight: 700; }
     .pt-list strong { color: #fff; }
-    .pt-list em { color: var(--club-light); font-style: italic; }
+    .pt-list em { color: var(--club-text); font-style: italic; }
     .pt-script {
       background: linear-gradient(120deg, var(--club-dark), #0c1e4a);
       padding: 22px 26px; margin-top: 22px;
     }
-    .pt-script__lbl { font-family: var(--font-heading); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--club-accent); margin-bottom: 10px; display: block; }
+    .pt-script__lbl { font-family: var(--font-heading); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--club-accent-text); margin-bottom: 10px; display: block; }
     .pt-script p { font-size: 0.95rem; color: #fff; font-style: italic; line-height: 1.6; }
     .pt-except {
       margin-top: 20px; background: rgba(200,16,46,0.06); border: 1px solid rgba(200,16,46,0.2);
       padding: 16px 20px;
     }
-    .pt-except strong { color: var(--club-accent); font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 6px; }
+    .pt-except strong { color: var(--club-accent-text); font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 6px; }
     .pt-except p { font-size: 0.82rem; color: var(--gray-400); line-height: 1.65; }
 
     /* Rough patch — five ways */
@@ -432,21 +434,21 @@
     .pt-warn {
       background: rgba(200,16,46,0.05); border: 1px solid rgba(200,16,46,0.2); padding: 26px 28px;
     }
-    .pt-warn h4 { font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--club-accent); margin-bottom: 16px; }
+    .pt-warn h4 { font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--club-accent-text); margin-bottom: 16px; }
     .pt-warn ul { list-style: none; }
     .pt-warn li { position: relative; padding: 9px 0 9px 24px; font-size: 0.84rem; color: var(--gray-300); line-height: 1.6; border-bottom: 1px solid rgba(200,16,46,0.1); }
     .pt-warn li:last-child { border-bottom: none; }
-    .pt-warn li::before { content: '!'; position: absolute; left: 0; width: 16px; height: 16px; background: rgba(200,16,46,0.2); color: var(--club-accent); font-family: var(--font-heading); font-weight: 800; font-size: 0.7rem; display: flex; align-items: center; justify-content: center; top: 10px; }
+    .pt-warn li::before { content: '!'; position: absolute; left: 0; width: 16px; height: 16px; background: rgba(200,16,46,0.2); color: var(--club-accent-text); font-family: var(--font-heading); font-weight: 800; font-size: 0.7rem; display: flex; align-items: center; justify-content: center; top: 10px; }
     .pt-support { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .pt-sup { background: var(--gray-900); border: 1px solid rgba(255,255,255,0.06); padding: 18px 18px; }
-    .pt-sup h5 { font-family: var(--font-heading); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--club-light); margin-bottom: 6px; }
+    .pt-sup h5 { font-family: var(--font-heading); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--club-text); margin-bottom: 6px; }
     .pt-sup p { font-size: 0.78rem; color: var(--gray-400); line-height: 1.55; }
 
     /* Reflection */
     .cs-reflect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     @media (max-width: 580px) { .cs-reflect-grid { grid-template-columns: 1fr; } }
     .cs-reflect-item { display: flex; flex-direction: column; gap: 10px; }
-    .cs-reflect-label { font-family: var(--font-heading); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--club); }
+    .cs-reflect-label { font-family: var(--font-heading); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--club-text); }
     .cs-reflect-q { font-size: 0.84rem; color: var(--gray-400); line-height: 1.7; }
     .cs-reflect-textarea {
       width: 100%; min-height: 96px; resize: vertical;
@@ -455,7 +457,7 @@
       line-height: 1.6; padding: 14px 16px; outline: none; transition: border-color 0.2s;
     }
     .cs-reflect-textarea:focus { border-color: rgba(14,58,132,0.5); }
-    .cs-reflect-textarea::placeholder { color: var(--gray-700); }
+    .cs-reflect-textarea::placeholder { color: var(--gray-500); }
 
     /* One small thing */
     .pt-onething {
@@ -547,9 +549,9 @@
     .pt-sci-map { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 8px 0 30px; }
     @media (max-width: 720px) { .pt-sci-map { grid-template-columns: 1fr; } }
     .pt-sci-card { background: var(--gray-900); border: 1px solid rgba(255,255,255,0.07); border-top: 3px solid var(--club); padding: 20px 22px; }
-    .pt-sci-card__l { font-family: var(--font-heading); font-size: 1.9rem; font-weight: 800; color: var(--club-light); line-height: 1; }
+    .pt-sci-card__l { font-family: var(--font-heading); font-size: 1.9rem; font-weight: 800; color: var(--club-text); line-height: 1; }
     .pt-sci-card__step { font-family: var(--font-heading); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; margin: 8px 0 3px; }
-    .pt-sci-card__proc { font-size: 0.74rem; color: var(--club-accent); font-style: italic; margin-bottom: 10px; }
+    .pt-sci-card__proc { font-size: 0.74rem; color: var(--club-accent-text); font-style: italic; margin-bottom: 10px; }
     .pt-sci-card p { font-size: 0.83rem; color: var(--gray-400); line-height: 1.65; }
 
     /* Dropping Anchor interactive */
@@ -565,10 +567,10 @@
     .pt-anchor__reset { flex: 0 0 auto; min-width: 0; padding: 13px 18px; background: transparent; border: 1px solid rgba(255,255,255,0.15); color: var(--gray-500); font-size: 1rem; cursor: pointer; transition: all 0.2s; }
     .pt-anchor__reset:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
     .pt-anchor__panel { padding: 4px 20px 22px; }
-    .pt-anchor__panel-step { font-family: var(--font-heading); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--club-light); margin-bottom: 7px; }
+    .pt-anchor__panel-step { font-family: var(--font-heading); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--club-text); margin-bottom: 7px; }
     .pt-anchor__panel-text { font-size: 0.9rem; color: var(--gray-300); line-height: 1.7; }
     .pt-anchor__panel-text strong { color: #fff; }
-    .pt-anchor__panel-text em { color: var(--club-light); font-style: italic; }
+    .pt-anchor__panel-text em { color: var(--club-text); font-style: italic; }
 
     /* SVG scene animation */
     #pt-boat { transform-box: fill-box; transform-origin: 50% 92%; animation: ptRock 3.2s ease-in-out infinite; }
@@ -599,7 +601,7 @@
     .pt-refs ol { list-style: none; counter-reset: ptref; }
     .pt-refs li { counter-increment: ptref; position: relative; padding: 7px 0 7px 28px; font-size: 0.77rem; color: var(--gray-500); line-height: 1.6; border-bottom: 1px solid rgba(255,255,255,0.04); }
     .pt-refs li:last-child { border-bottom: none; }
-    .pt-refs li::before { content: counter(ptref); position: absolute; left: 0; top: 7px; width: 18px; height: 18px; border-radius: 50%; background: rgba(14,58,132,0.25); color: var(--club-light); font-family: var(--font-heading); font-size: 0.62rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .pt-refs li::before { content: counter(ptref); position: absolute; left: 0; top: 7px; width: 18px; height: 18px; border-radius: 50%; background: rgba(14,58,132,0.25); color: var(--club-text); font-family: var(--font-heading); font-size: 0.62rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
     .pt-refs em { color: var(--gray-400); font-style: italic; }
 
     /* Embedded video */
@@ -632,10 +634,10 @@
     .pt-res-card__body { flex: 1; min-width: 0; }
     .pt-res-card__cat {
       font-family: var(--font-heading); font-size: 0.56rem; font-weight: 700;
-      letter-spacing: 0.2em; text-transform: uppercase; color: var(--club-light);
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--club-text);
       margin-bottom: 8px; display: block;
     }
-    .pt-res-card--read .pt-res-card__cat { color: var(--club-accent); }
+    .pt-res-card--read .pt-res-card__cat { color: var(--club-accent-text); }
     .pt-res-card__title {
       font-family: var(--font-heading); font-size: 0.98rem; font-weight: 700;
       color: #fff; line-height: 1.25; margin-bottom: 6px;
@@ -645,9 +647,9 @@
     .pt-res-card__cta {
       display: inline-flex; align-items: center; gap: 7px;
       font-family: var(--font-heading); font-size: 0.64rem; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase; color: var(--club-light);
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--club-text);
     }
-    .pt-res-card--read .pt-res-card__cta { color: var(--club-accent); }
+    .pt-res-card--read .pt-res-card__cta { color: var(--club-accent-text); }
     .pt-res-card__cta svg { width: 13px; height: 13px; stroke: currentColor; fill: none; transition: transform 0.2s; }
     .pt-res-card:hover .pt-res-card__cta svg { transform: translate(2px, -2px); }
     .pt-res-note {
@@ -665,9 +667,9 @@
       font-family: var(--font-heading); font-size: 0.68rem; font-weight: 700;
       letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-500); transition: color 0.2s;
     }
-    .cs-footer-link:hover { color: var(--club); }
+    .cs-footer-link:hover { color: var(--club-text); }
     .cs-footer-link svg { width: 14px; height: 14px; stroke: currentColor; flex-shrink: 0; }
-    .cs-footer-link--next { color: var(--club); }
+    .cs-footer-link--next { color: var(--club-text); }
     .cs-footer-link--next:hover { color: var(--white); }
 
     @keyframes csFadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
@@ -888,7 +890,7 @@
             </div>
           </div>
           <div class="pt-tool__body">
-            <select class="pt-select" id="pacSelect">
+            <select class="pt-select" id="pacSelect" aria-label="Pick a situation for your PAC script">
               <option value="">— Choose a scenario —</option>
               <option value="loss">After a tough loss or bad performance</option>
               <option value="nerves">Pre-game nerves</option>
@@ -966,7 +968,7 @@
       <div class="container">
         <span class="cs-section__eyebrow">For Your Own Sideline Nerves</span>
         <h2 class="cs-section__title">ACE —<br>your trackside <em>reset</em></h2>
-        <p class="cs-section__intro">You can't parent your child's feelings until you can hold your own. ACE is a three-step reset you can run trackside, in your head, in about thirty seconds. The mindset: we don't control our feelings — we control how we show up. Especially on game week. <em style="color:var(--club-light);font-style:italic;">(Acceptance &amp; Commitment Training; Harris)</em></p>
+        <p class="cs-section__intro">You can't parent your child's feelings until you can hold your own. ACE is a three-step reset you can run trackside, in your head, in about thirty seconds. The mindset: we don't control our feelings — we control how we show up. Especially on game week. <em style="color: var(--club-text);font-style:italic;">(Acceptance &amp; Commitment Training; Harris)</em></p>
 
         <div class="pt-ace-grid">
           <div class="pt-ace-card" id="aceCard0">
