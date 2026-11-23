@@ -4,7 +4,8 @@
    2. GA4 click events: book_korero, download_guide
    3. Keyboard access for diagrams that scroll sideways
    4. "View helplines" button opens the existing support modal
-      (plus 4b: confirms the guide opened in a new tab)
+      (plus 4b: confirms the guide opened in a new tab,
+       4c: share button)
    No dependencies. Safe to load with defer.
    ========================================================= */
 (function () {
@@ -119,6 +120,30 @@
     status.textContent = '';
     setTimeout(function () { status.textContent = 'The guide has opened in a new tab.'; }, 60);
   });
+
+  /* ---------- 4c. "Send it to a teammate or coach" ----------
+     Uses the phone's own share sheet where available, otherwise copies
+     the page link. The shared link is tagged so GA4 shows shares. */
+  var shareBtn = document.querySelector('[data-share]');
+  if (shareBtn) {
+    var shareUrl = 'https://www.performance-act.com/pre-performance-routine?utm_source=share&utm_medium=referral&utm_campaign=routine_guide';
+    var shareStatus = shareBtn.closest('[data-dl-scope]') && shareBtn.closest('[data-dl-scope]').querySelector('.rt-dl-status');
+    var say = function (msg) {
+      if (!shareStatus) return;
+      shareStatus.textContent = '';
+      setTimeout(function () { shareStatus.textContent = msg; }, 60);
+    };
+    shareBtn.addEventListener('click', function () {
+      if (typeof window.gtag === 'function') window.gtag('event', 'share_guide', { link_location: 'process' });
+      if (navigator.share) {
+        navigator.share({ title: 'Build Your Pre-Performance Routine: a free athlete guide', url: shareUrl }).catch(function () {});
+      } else if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(shareUrl).then(function () { say('Link copied. Paste it anywhere to share.'); }, function () { say(shareUrl); });
+      } else {
+        say(shareUrl);
+      }
+    });
+  }
 
   /* ---------- 4. "View helplines" opens the existing support modal ---------- */
   var helplineButtons = document.querySelectorAll('[data-open-support]');
