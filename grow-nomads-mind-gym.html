@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=Barlow:wght@600;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20">
+  <link rel="stylesheet" href="style.css?v=21">
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
 
   <style>
@@ -30,6 +30,8 @@
       --club-dark:   #092970;
       --club-light:  #1A52B0;
       --club-accent: #C8102E;
+      --club-accent-text: #F04A5E;   /* club red, lightened for text on black (AA) */
+      --club-text: #6E9CF0;          /* club blue, lightened for text on black (AA) */
       --correct:     #22c55e;
       --wrong:       #e63b2e;
     }
@@ -79,14 +81,14 @@
     .at-hero__eyebrow {
       font-family: var(--font-heading); font-size: 0.68rem; font-weight: 600;
       letter-spacing: 0.28em; text-transform: uppercase;
-      color: var(--club); margin-bottom: 16px; display: block;
+      color: var(--club-text); margin-bottom: 16px; display: block;
     }
     .at-hero__title {
       font-family: var(--font-heading); font-size: clamp(3.5rem, 10vw, 8rem);
       font-weight: 700; line-height: 0.9; color: var(--white);
       text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 24px;
     }
-    .at-hero__title em { color: var(--club); font-style: normal; display: block; }
+    .at-hero__title em { color: var(--club-text); font-style: normal; display: block; }
     .at-hero__sub {
       font-size: 1.05rem; color: var(--gray-500); line-height: 1.7;
       max-width: 560px; border-left: 2px solid var(--club); padding-left: 20px;
@@ -97,7 +99,7 @@
       letter-spacing: 0.18em; text-transform: uppercase;
       padding: 6px 14px; border: 1px solid rgba(255,255,255,0.12); color: var(--gray-500);
     }
-    .at-hero__tag--blue { border-color: var(--club); color: var(--club); background: rgba(14,58,132,0.1); }
+    .at-hero__tag--blue { border-color: var(--club); color: var(--club-text); background: rgba(14,58,132,0.1); }
 
     /* ---------- STATION NAV ---------- */
     .mg-station-nav {
@@ -109,14 +111,14 @@
     }
     .mg-station-pill {
       font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600;
-      letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-700);
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-500);
       padding: 14px 20px; border-right: 1px solid rgba(255,255,255,0.05);
       text-decoration: none; transition: all 0.25s ease; white-space: nowrap;
       display: flex; align-items: center; gap: 8px;
     }
     .mg-station-pill:hover { color: var(--white); background: rgba(255,255,255,0.03); }
     .mg-station-pill__num {
-      font-size: 0.55rem; color: var(--club); background: rgba(14,58,132,0.15);
+      font-size: 0.55rem; color: var(--club-text); background: rgba(14,58,132,0.15);
       padding: 2px 6px; border-radius: 2px;
     }
 
@@ -133,11 +135,11 @@
       font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 700; color: var(--white); text-transform: uppercase; line-height: 1.05;
     }
-    .at-sec-title em { color: var(--club); font-style: normal; }
+    .at-sec-title em { color: var(--club-text); font-style: normal; }
     .at-station-badge {
       display: inline-flex; align-items: center; gap: 10px;
       font-family: var(--font-heading); font-size: 0.62rem; font-weight: 600;
-      letter-spacing: 0.22em; text-transform: uppercase; color: var(--club);
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--club-text);
       margin-bottom: 32px;
     }
     .at-station-badge::before {
@@ -152,7 +154,7 @@
       max-width: 680px;
     }
     .at-body strong { color: var(--white); }
-    .at-body em { color: var(--club); font-style: normal; }
+    .at-body em { color: var(--club-text); font-style: normal; }
 
     /* ---------- DEFUSION LAB ---------- */
     .mg-defusion-wrap { margin: 40px 0; }
@@ -162,7 +164,7 @@
     .mg-defusion-field { flex: 1; }
     .mg-defusion-label {
       font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600;
-      letter-spacing: 0.2em; text-transform: uppercase; color: var(--club);
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--club-text);
       display: block; margin-bottom: 8px;
     }
     .mg-defusion-input {
@@ -172,7 +174,7 @@
       outline: none; transition: border-color 0.3s; box-sizing: border-box;
     }
     .mg-defusion-input:focus { border-color: var(--club); }
-    .mg-defusion-input::placeholder { color: var(--gray-700); }
+    .mg-defusion-input::placeholder { color: var(--gray-500); }
     .mg-defuse-btn {
       font-family: var(--font-heading); font-size: 0.78rem; font-weight: 700;
       letter-spacing: 0.1em; text-transform: uppercase;
@@ -189,7 +191,7 @@
     }
     .mg-defusion-fused__label {
       font-family: var(--font-heading); font-size: 0.58rem; letter-spacing: 0.2em;
-      text-transform: uppercase; color: rgba(230,59,46,0.8); margin-bottom: 6px; display: block;
+      text-transform: uppercase; color: #F26B5F; margin-bottom: 6px; display: block;
     }
     .mg-defusion-fused p { font-size: 0.95rem; color: var(--gray-300); font-style: italic; }
     .mg-defusion-defused {
@@ -198,7 +200,7 @@
     }
     .mg-defusion-defused__label {
       font-family: var(--font-heading); font-size: 0.58rem; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--club); margin-bottom: 6px; display: block;
+      text-transform: uppercase; color: var(--club-text); margin-bottom: 6px; display: block;
     }
     .mg-defusion-defused p { font-size: 0.95rem; color: var(--white); font-style: italic; font-weight: 500; }
     .mg-defusion-note { font-size: 0.82rem; color: var(--gray-500); margin-top: 10px; line-height: 1.6; }
@@ -227,7 +229,7 @@
     }
     .mg-breath-label {
       font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase; color: var(--club);
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--club-text);
     }
     .mg-breath-instruction {
       font-family: var(--font-heading); font-size: 1rem; font-weight: 600;
@@ -236,7 +238,7 @@
     }
     .mg-breath-count {
       font-family: var(--font-heading); font-size: 2rem; font-weight: 700;
-      color: var(--club); line-height: 1;
+      color: var(--club-text); line-height: 1;
     }
     .mg-breath-hint { font-size: 0.88rem; color: var(--gray-500); margin-bottom: 28px; }
     .mg-breath-start {
@@ -247,7 +249,7 @@
     }
     .mg-breath-start:hover { background: var(--club-dark); }
     .mg-breath-start.is-running { background: transparent; color: var(--gray-500); border-color: rgba(255,255,255,0.1); cursor: default; }
-    .mg-breath-done { display: none; font-size: 0.92rem; color: var(--club); margin-top: 16px; font-style: italic; }
+    .mg-breath-done { display: none; font-size: 0.92rem; color: var(--club-text); margin-top: 16px; font-style: italic; }
     .mg-breath-done.is-visible { display: block; animation: fadeIn 0.5s ease; }
 
     /* ---------- OBSERVER CARDS ---------- */
@@ -269,9 +271,9 @@
     }
     .mg-observer-card__tap {
       font-family: var(--font-heading); font-size: 0.6rem; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--gray-700); transition: color 0.3s;
+      text-transform: uppercase; color: var(--gray-500); transition: color 0.3s;
     }
-    .mg-observer-card:hover .mg-observer-card__tap { color: var(--club); }
+    .mg-observer-card:hover .mg-observer-card__tap { color: var(--club-text); }
     .mg-observer-card__a {
       display: none; margin-top: 16px; padding-top: 16px;
       border-top: 1px solid rgba(255,255,255,0.05);
@@ -293,7 +295,7 @@
     .mg-accept-item__text strong { color: var(--white); }
     .mg-accept-label {
       font-family: var(--font-heading); font-size: 0.6rem; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--gray-700); margin-bottom: 10px; display: block;
+      text-transform: uppercase; color: var(--gray-500); margin-bottom: 10px; display: block;
     }
     .mg-accept-slider {
       width: 100%; accent-color: var(--club); cursor: pointer; height: 4px;
@@ -301,7 +303,7 @@
     .mg-accept-scale {
       display: flex; justify-content: space-between;
       font-family: var(--font-heading); font-size: 0.58rem; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--gray-700); margin-top: 6px;
+      text-transform: uppercase; color: var(--gray-500); margin-top: 6px;
     }
     .mg-accept-response {
       display: none; margin-top: 14px; padding: 14px 18px;
@@ -334,7 +336,7 @@
     .mg-ace-challenge__scenario { font-size: 0.92rem; color: var(--white); line-height: 1.55; flex: 1; }
     .mg-ace-challenge__toggle {
       font-family: var(--font-heading); font-size: 0.6rem; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--club); flex-shrink: 0; white-space: nowrap;
+      text-transform: uppercase; color: var(--club-text); flex-shrink: 0; white-space: nowrap;
     }
     .mg-ace-challenge__body {
       max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
@@ -346,7 +348,7 @@
     .mg-ace-step-row { display: flex; gap: 14px; margin-top: 20px; }
     .mg-ace-step-letter {
       font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700;
-      color: var(--club); line-height: 1; flex-shrink: 0; width: 32px;
+      color: var(--club-text); line-height: 1; flex-shrink: 0; width: 32px;
     }
     .mg-ace-step-detail { flex: 1; }
     .mg-ace-step-word {
@@ -388,11 +390,11 @@
     .at-quiz__opt:hover:not([disabled]) { border-color: rgba(14,58,132,0.4); background: rgba(14,58,132,0.06); }
     .at-quiz__opt[disabled] { cursor: default; }
     .at-quiz__opt.is-correct { border-color: var(--correct); background: rgba(34,197,94,0.07); color: var(--white); }
-    .at-quiz__opt.is-wrong { border-color: var(--wrong); background: rgba(230,59,46,0.07); color: var(--gray-700); }
+    .at-quiz__opt.is-wrong { border-color: var(--wrong); background: rgba(230,59,46,0.07); color: var(--gray-500); }
     .at-quiz__opt.is-highlight { border-color: var(--correct); background: rgba(34,197,94,0.07); color: var(--white); }
     .at-opt-letter {
       font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700;
-      letter-spacing: 0.1em; color: var(--gray-700); flex-shrink: 0; width: 22px; margin-top: 1px;
+      letter-spacing: 0.1em; color: var(--gray-500); flex-shrink: 0; width: 22px; margin-top: 1px;
     }
     .at-quiz__opt.is-correct .at-opt-letter,
     .at-quiz__opt.is-highlight .at-opt-letter { color: var(--correct); }
@@ -421,7 +423,7 @@
     .at-insight.is-visible { display: block; animation: fadeIn 0.4s ease; }
     .at-insight__label {
       font-family: var(--font-heading); font-size: 0.62rem; letter-spacing: 0.25em;
-      text-transform: uppercase; color: var(--club); margin-bottom: 10px; display: block;
+      text-transform: uppercase; color: var(--club-text); margin-bottom: 10px; display: block;
     }
     .at-insight p { font-size: 0.92rem; color: var(--gray-300); line-height: 1.8; }
     .at-insight strong { color: var(--white); }
@@ -433,7 +435,7 @@
     }
     .at-page-end__badge {
       font-family: var(--font-heading); font-size: 0.68rem; font-weight: 600;
-      letter-spacing: 0.25em; text-transform: uppercase; color: var(--club);
+      letter-spacing: 0.25em; text-transform: uppercase; color: var(--club-text);
       margin-bottom: 16px; display: block;
     }
     .at-page-end__title {
@@ -455,7 +457,7 @@
     .at-video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
     .at-video-label {
       font-family: var(--font-heading); font-size: 0.65rem; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--club); margin-bottom: 10px; display: block;
+      text-transform: uppercase; color: var(--club-text); margin-bottom: 10px; display: block;
     }
 
     /* ---------- RESPONSIVE ---------- */
@@ -623,19 +625,19 @@
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin:40px 0;">
         <div style="background:rgba(14,58,132,0.07);border:1px solid rgba(14,58,132,0.2);padding:28px 24px;">
-          <div style="font-family:var(--font-heading);font-size:2rem;font-weight:700;color:var(--club);margin-bottom:8px;">⚓</div>
-          <div style="font-family:var(--font-heading);font-size:0.75rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--club);margin-bottom:10px;">The Anchor Word</div>
-          <p style="font-size:0.88rem;color:var(--gray-300);line-height:1.65;">One value. One word. The version of yourself you're choosing to embody — regardless of the feeling.<br><em style="color:var(--club);font-style:normal;">Examples: Brave · Resilient · Committed · Honest</em></p>
+          <div style="font-family:var(--font-heading);font-size:2rem;font-weight:700;color: var(--club-text);margin-bottom:8px;">⚓</div>
+          <div style="font-family:var(--font-heading);font-size:0.75rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color: var(--club-text);margin-bottom:10px;">The Anchor Word</div>
+          <p style="font-size:0.88rem;color:var(--gray-300);line-height:1.65;">One value. One word. The version of yourself you're choosing to embody — regardless of the feeling.<br><em style="color: var(--club-text);font-style:normal;">Examples: Brave · Resilient · Committed · Honest</em></p>
         </div>
         <div style="background:rgba(14,58,132,0.07);border:1px solid rgba(14,58,132,0.2);padding:28px 24px;">
-          <div style="font-family:var(--font-heading);font-size:2rem;font-weight:700;color:var(--club);margin-bottom:8px;">🌡️</div>
-          <div style="font-family:var(--font-heading);font-size:0.75rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--club);margin-bottom:10px;">The Weather Check</div>
-          <p style="font-size:0.88rem;color:var(--gray-300);line-height:1.65;">A one-second body scan. What's here? Name it — nerves, frustration, doubt — without judgment. You're the weather forecaster, not the storm.<br><em style="color:var(--club);font-style:normal;">"I'm noticing nerves — that's all."</em></p>
+          <div style="font-family:var(--font-heading);font-size:2rem;font-weight:700;color: var(--club-text);margin-bottom:8px;">🌡️</div>
+          <div style="font-family:var(--font-heading);font-size:0.75rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color: var(--club-text);margin-bottom:10px;">The Weather Check</div>
+          <p style="font-size:0.88rem;color:var(--gray-300);line-height:1.65;">A one-second body scan. What's here? Name it — nerves, frustration, doubt — without judgment. You're the weather forecaster, not the storm.<br><em style="color: var(--club-text);font-style:normal;">"I'm noticing nerves — that's all."</em></p>
         </div>
         <div style="background:rgba(14,58,132,0.07);border:1px solid rgba(14,58,132,0.2);padding:28px 24px;">
-          <div style="font-family:var(--font-heading);font-size:2rem;font-weight:700;color:var(--club);margin-bottom:8px;">🔗</div>
-          <div style="font-family:var(--font-heading);font-size:0.75rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--club);margin-bottom:10px;">The Physical Cue</div>
-          <p style="font-size:0.88rem;color:var(--gray-300);line-height:1.65;">A subtle body action — touch, grip, breath — that links to your anchor word through repetition. Invisible to everyone else. Everything to you.<br><em style="color:var(--club);font-style:normal;">Examples: wrist touch · jersey grip · exhale</em></p>
+          <div style="font-family:var(--font-heading);font-size:2rem;font-weight:700;color: var(--club-text);margin-bottom:8px;">🔗</div>
+          <div style="font-family:var(--font-heading);font-size:0.75rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color: var(--club-text);margin-bottom:10px;">The Physical Cue</div>
+          <p style="font-size:0.88rem;color:var(--gray-300);line-height:1.65;">A subtle body action — touch, grip, breath — that links to your anchor word through repetition. Invisible to everyone else. Everything to you.<br><em style="color: var(--club-text);font-style:normal;">Examples: wrist touch · jersey grip · exhale</em></p>
         </div>
       </div>
 
@@ -798,7 +800,7 @@
         <div class="mg-accept-item">
           <p class="mg-accept-item__text">You're feeling <strong>genuinely nervous</strong> before the biggest game of the season. Instead of trying to calm down, you decide to let the nerves be there — and play with them present.</p>
           <span class="mg-accept-label">How hard would this acceptance feel? (1 = easy, 10 = very hard)</span>
-          <input type="range" class="mg-accept-slider" id="acc1slider" min="1" max="10" value="5">
+          <input type="range" class="mg-accept-slider" id="acc1slider" aria-label="How hard would this acceptance feel? 1 is easy, 10 is very hard" min="1" max="10" value="5">
           <div class="mg-accept-scale"><span>1 — Easy</span><span>10 — Very Hard</span></div>
           <button class="mg-accept-submit" id="acc1btn">See the ACT perspective</button>
           <div class="mg-accept-response" id="acc1resp">
@@ -808,7 +810,7 @@
         <div class="mg-accept-item">
           <p class="mg-accept-item__text">You've just made a bad mistake. You feel <strong>embarrassed and frustrated</strong>. Instead of trying to push those feelings away quickly, you let yourself fully feel them — for 10 seconds — and then move.</p>
           <span class="mg-accept-label">How hard would this acceptance feel? (1 = easy, 10 = very hard)</span>
-          <input type="range" class="mg-accept-slider" id="acc2slider" min="1" max="10" value="5">
+          <input type="range" class="mg-accept-slider" id="acc2slider" aria-label="How hard would this acceptance feel? 1 is easy, 10 is very hard" min="1" max="10" value="5">
           <div class="mg-accept-scale"><span>1 — Easy</span><span>10 — Very Hard</span></div>
           <button class="mg-accept-submit" id="acc2btn">See the ACT perspective</button>
           <div class="mg-accept-response" id="acc2resp">
@@ -818,7 +820,7 @@
         <div class="mg-accept-item">
           <p class="mg-accept-item__text">Your team lost and you played poorly. You feel <strong>disappointed and a bit ashamed</strong>. A teammate asks how you are. Instead of saying "I'm fine," you say: "Yeah, I'm pretty disappointed with how I played."</p>
           <span class="mg-accept-label">How hard would this acceptance feel? (1 = easy, 10 = very hard)</span>
-          <input type="range" class="mg-accept-slider" id="acc3slider" min="1" max="10" value="5">
+          <input type="range" class="mg-accept-slider" id="acc3slider" aria-label="How hard would this acceptance feel? 1 is easy, 10 is very hard" min="1" max="10" value="5">
           <div class="mg-accept-scale"><span>1 — Easy</span><span>10 — Very Hard</span></div>
           <button class="mg-accept-submit" id="acc3btn">See the ACT perspective</button>
           <div class="mg-accept-response" id="acc3resp">

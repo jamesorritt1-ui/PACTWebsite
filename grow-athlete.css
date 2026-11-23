@@ -254,7 +254,7 @@
 .aj-tool__head { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 18px; }
 .aj-tool__num {
   flex-shrink: 0; font-family: var(--font-heading); font-weight: 700;
-  font-size: 1.9rem; line-height: 1; color: rgba(255,229,0,0.35); width: 46px;
+  font-size: 1.9rem; line-height: 1; color: rgba(255,229,0,0.75); width: 46px;
 }
 .aj-tool__titles { flex: 1; }
 .aj-tool__name {
@@ -659,7 +659,7 @@
   border-left: 4px solid var(--yellow); padding: 20px 24px;
 }
 .aj-disclaimer p { color: var(--muted); font-size: 0.86rem; line-height: 1.65; margin: 0; }
-.aj-disclaimer a { color: var(--yellow); }
+.aj-disclaimer a { color: var(--yellow); text-decoration: underline; text-underline-offset: 3px; }
 
 /* section nav between toolkits */
 .aj-nextnav { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 22px; }

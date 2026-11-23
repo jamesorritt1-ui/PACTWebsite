@@ -1200,3 +1200,27 @@
     refresh: updateProgress
   };
 })();
+
+/* ---------- Accessible labels for journal fields ----------
+   Each .aj-field shows its question in .aj-field__q. Link any input,
+   slider or textarea inside it to that question (aria-labelledby) when it
+   doesn't already have a label, so screen readers announce the question. */
+(function () {
+  function labelFields() {
+    var n = 0;
+    document.querySelectorAll('.aj-field').forEach(function (field) {
+      var q = field.querySelector('.aj-field__q');
+      if (!q) return;
+      if (!q.id) q.id = 'aj-q-' + (++n) + '-' + Math.random().toString(36).slice(2, 7);
+      field.querySelectorAll('input, textarea, select').forEach(function (el) {
+        if (el.type === 'hidden') return;
+        if (el.getAttribute('aria-label') || el.getAttribute('aria-labelledby')) return;
+        if (el.id && document.querySelector('label[for="' + el.id + '"]')) return;
+        if (el.closest('label')) return;
+        el.setAttribute('aria-labelledby', q.id);
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', labelFields);
+  else labelFields();
+})();

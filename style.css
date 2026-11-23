@@ -57,6 +57,14 @@ img {
   display: block;
 }
 
+/* Buttons and form fields don't inherit the page font by default */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
 /* ---------- UTILITY ---------- */
 .container {
   max-width: var(--container-max);

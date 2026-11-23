@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=Barlow:wght@600;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20">
+  <link rel="stylesheet" href="style.css?v=21">
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
 
   <style>
@@ -26,6 +26,8 @@
       --club-dark:   #092970;
       --club-light:  #1A52B0;
       --club-accent: #C8102E;
+      --club-accent-text: #F04A5E;   /* club red, lightened for text on black (AA) */
+      --club-text: #6E9CF0;          /* club blue, lightened for text on black (AA) */
     }
 
     /* Progress bar */
@@ -48,8 +50,8 @@
     }
     .cs-backrow { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
     .cs-logout { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #fff; background: transparent; border: 1px solid rgba(255,255,255,0.35); padding: 8px 14px; cursor: pointer; transition: all 0.2s; }
-    .cs-logout:hover { color: var(--club); border-color: var(--club); }
-    .cs-back:hover { color: var(--club); }
+    .cs-logout:hover { color: var(--club-text); border-color: var(--club); }
+    .cs-back:hover { color: var(--club-text); }
     .cs-back svg { width: 14px; height: 14px; stroke: currentColor; }
 
     /* Hero */
@@ -66,7 +68,7 @@
     }
     .cs-hero__session {
       font-family: var(--font-heading); font-size: 0.6rem; font-weight: 700;
-      letter-spacing: 0.3em; text-transform: uppercase; color: var(--club-accent);
+      letter-spacing: 0.3em; text-transform: uppercase; color: var(--club-accent-text);
       margin-bottom: 12px; display: block;
     }
     .cs-hero__title {
@@ -101,14 +103,14 @@
       cursor: pointer; white-space: nowrap; transition: all 0.2s;
     }
     .cs-nav__btn:hover { color: var(--white); }
-    .cs-nav__btn.is-active { color: var(--club-accent); border-bottom-color: var(--club-accent); }
+    .cs-nav__btn.is-active { color: var(--club-accent-text); border-bottom-color: var(--club-accent); }
 
     /* Sections */
     .cs-section { padding: 64px 0 72px; }
     .cs-section--alt { background: rgba(255,255,255,0.015); }
     .cs-section__eyebrow {
       font-family: var(--font-heading); font-size: 0.58rem; font-weight: 700;
-      letter-spacing: 0.28em; text-transform: uppercase; color: var(--club-accent);
+      letter-spacing: 0.28em; text-transform: uppercase; color: var(--club-accent-text);
       margin-bottom: 10px; display: block;
     }
     .cs-section__title {
@@ -130,7 +132,7 @@
     .cs-timeline-item:last-child { border-bottom: none; }
     .cs-timeline-num {
       font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700;
-      letter-spacing: 0.1em; color: var(--club-accent); min-width: 52px; padding-top: 2px;
+      letter-spacing: 0.1em; color: var(--club-accent-text); min-width: 52px; padding-top: 2px;
     }
     .cs-timeline-content { flex: 1; }
     .cs-timeline-label {
@@ -139,7 +141,7 @@
     }
     .cs-timeline-text { font-size: 0.86rem; color: var(--gray-400); line-height: 1.7; }
     .cs-timeline-text strong { color: var(--white); }
-    .cs-timeline-text em { color: var(--club-accent); font-style: normal; }
+    .cs-timeline-text em { color: var(--club-accent-text); font-style: normal; }
 
     /* Anchor visual */
     .cs-anchor-grid {
@@ -157,7 +159,7 @@
       margin-bottom: 4px;
     }
     .cs-anchor-part__sub {
-      font-size: 0.7rem; color: var(--club-accent); text-transform: uppercase;
+      font-size: 0.7rem; color: var(--club-accent-text); text-transform: uppercase;
       letter-spacing: 0.12em; font-family: var(--font-heading); font-weight: 700;
       margin-bottom: 12px; display: block;
     }
@@ -172,7 +174,7 @@
     }
     .cs-cue__label {
       font-family: var(--font-heading); font-size: 0.56rem; font-weight: 700;
-      letter-spacing: 0.2em; text-transform: uppercase; color: var(--club);
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--club-text);
       margin-bottom: 8px; display: block;
     }
     .cs-cue p { font-size: 0.86rem; color: var(--white); line-height: 1.5; font-style: italic; }
@@ -183,7 +185,7 @@
       font-family: var(--font-heading); font-size: 0.62rem; font-weight: 700;
       letter-spacing: 0.12em; text-transform: uppercase;
       padding: 8px 14px; border: 1px solid rgba(200,16,46,0.3);
-      color: rgba(200,16,46,0.8); background: rgba(200,16,46,0.05);
+      color: var(--club-accent-text); background: rgba(200,16,46,0.05);
     }
 
     /* Halftime stepper */
@@ -207,7 +209,7 @@
     .cs-ht-step__main { flex: 1; padding: 20px 22px; }
     .cs-ht-step__time {
       font-family: var(--font-heading); font-size: 0.6rem; font-weight: 700;
-      letter-spacing: 0.2em; text-transform: uppercase; color: var(--club-accent);
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--club-accent-text);
       margin-bottom: 4px; display: block;
     }
     .cs-ht-step__title {
@@ -221,7 +223,7 @@
     .cs-ht-step__detail p { font-size: 0.86rem; color: var(--gray-300); line-height: 1.8; margin-bottom: 10px; }
     .cs-ht-step__detail p:last-child { margin-bottom: 0; }
     .cs-ht-step__detail strong { color: var(--white); }
-    .cs-ht-step__detail em { color: var(--club); font-style: italic; }
+    .cs-ht-step__detail em { color: var(--club-text); font-style: italic; }
 
     /* Sideline ACE */
     .cs-sideline-ace {
@@ -230,14 +232,14 @@
     }
     .cs-sideline-ace__label {
       font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700;
-      letter-spacing: 0.2em; text-transform: uppercase; color: var(--club);
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--club-text);
       margin-bottom: 20px; display: block;
     }
     .cs-sideline-ace__row { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
     .cs-sideline-ace__row:last-child { margin-bottom: 0; }
     .cs-sideline-ace__letter {
       font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800;
-      color: var(--club); width: 28px; flex-shrink: 0;
+      color: var(--club-text); width: 28px; flex-shrink: 0;
     }
     .cs-sideline-ace__text { font-size: 0.86rem; color: var(--gray-300); line-height: 1.7; }
     .cs-sideline-ace__text strong { color: var(--white); }
@@ -254,14 +256,14 @@
       letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px; display: block;
     }
     .cs-dodont__col--do .cs-dodont__head { color: #22c55e; }
-    .cs-dodont__col--dont .cs-dodont__head { color: var(--club-accent); }
+    .cs-dodont__col--dont .cs-dodont__head { color: var(--club-accent-text); }
     .cs-dodont__col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
     .cs-dodont__col ul li {
       display: flex; gap: 10px; align-items: flex-start;
       font-size: 0.84rem; color: var(--gray-300); line-height: 1.6;
     }
     .cs-dodont__col--do ul li::before { content: '✓'; color: #22c55e; flex-shrink: 0; margin-top: 1px; font-weight: 700; }
-    .cs-dodont__col--dont ul li::before { content: '✕'; color: var(--club-accent); flex-shrink: 0; margin-top: 1px; font-weight: 700; }
+    .cs-dodont__col--dont ul li::before { content: '✕'; color: var(--club-accent-text); flex-shrink: 0; margin-top: 1px; font-weight: 700; }
 
     /* Training drills */
     .cs-drills { display: flex; flex-direction: column; gap: 0; }
@@ -270,19 +272,19 @@
     .cs-drill__head { display: flex; align-items: center; gap: 16px; padding: 20px 22px; transition: background 0.2s; }
     .cs-drill__head:hover { background: rgba(255,255,255,0.025); }
     .cs-drill.is-open .cs-drill__head { background: rgba(200,16,46,0.06); }
-    .cs-drill__num { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700; color: var(--club-accent); width: 22px; flex-shrink: 0; }
+    .cs-drill__num { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700; color: var(--club-accent-text); width: 22px; flex-shrink: 0; }
     .cs-drill__info { flex: 1; }
     .cs-drill__name { font-family: var(--font-heading); font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--white); margin-bottom: 2px; }
     .cs-drill__skill { font-size: 0.72rem; color: var(--gray-600); font-style: italic; }
-    .cs-drill__toggle { color: var(--gray-700); transition: transform 0.25s; font-size: 0.8rem; }
-    .cs-drill.is-open .cs-drill__toggle { transform: rotate(180deg); color: var(--club-accent); }
+    .cs-drill__toggle { color: var(--gray-500); transition: transform 0.25s; font-size: 0.8rem; }
+    .cs-drill.is-open .cs-drill__toggle { transform: rotate(180deg); color: var(--club-accent-text); }
     .cs-drill__body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
     .cs-drill.is-open .cs-drill__body { max-height: 400px; }
     .cs-drill__content { padding: 0 22px 22px; }
     .cs-drill__content p { font-size: 0.86rem; color: var(--gray-300); line-height: 1.75; margin-bottom: 8px; }
     .cs-drill__content p:last-child { margin-bottom: 0; }
     .cs-drill__content strong { color: var(--white); }
-    .cs-drill__content em { color: var(--club-accent); font-style: italic; }
+    .cs-drill__content em { color: var(--club-accent-text); font-style: italic; }
 
     /* Reflect */
     .cs-reflect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -290,7 +292,7 @@
     .cs-reflect-item { display: flex; flex-direction: column; gap: 10px; }
     .cs-reflect-label {
       font-family: var(--font-heading); font-size: 0.6rem; font-weight: 700;
-      letter-spacing: 0.22em; text-transform: uppercase; color: var(--club-accent);
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--club-accent-text);
     }
     .cs-reflect-q { font-size: 0.84rem; color: var(--gray-400); line-height: 1.7; }
     .cs-reflect-textarea {
@@ -300,7 +302,7 @@
       line-height: 1.6; padding: 14px 16px; outline: none; transition: border-color 0.2s;
     }
     .cs-reflect-textarea:focus { border-color: rgba(200,16,46,0.4); }
-    .cs-reflect-textarea::placeholder { color: var(--gray-700); }
+    .cs-reflect-textarea::placeholder { color: var(--gray-500); }
 
     /* Footer nav */
     .cs-footer-nav {
@@ -314,9 +316,9 @@
       letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-500);
       transition: color 0.2s;
     }
-    .cs-footer-link:hover { color: var(--club-accent); }
+    .cs-footer-link:hover { color: var(--club-accent-text); }
     .cs-footer-link svg { width: 14px; height: 14px; stroke: currentColor; flex-shrink: 0; }
-    .cs-footer-link--prev:hover { color: var(--club); }
+    .cs-footer-link--prev:hover { color: var(--club-text); }
   </style>
 </head>
 <body>

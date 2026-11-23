@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=Barlow:wght@600;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20">
+  <link rel="stylesheet" href="style.css?v=21">
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
 
   <style>
@@ -26,6 +26,8 @@
       --club-dark:   #092970;
       --club-light:  #1A52B0;
       --club-accent: #C8102E;
+      --club-accent-text: #F04A5E;   /* club red, lightened for text on black (AA) */
+      --club-text: #6E9CF0;          /* club blue, lightened for text on black (AA) */
       --session-col: #0E3A84;
     }
 
@@ -49,8 +51,8 @@
     }
     .cs-backrow { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
     .cs-logout { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #fff; background: transparent; border: 1px solid rgba(255,255,255,0.35); padding: 8px 14px; cursor: pointer; transition: all 0.2s; }
-    .cs-logout:hover { color: var(--club); border-color: var(--club); }
-    .cs-back:hover { color: var(--club); }
+    .cs-logout:hover { color: var(--club-text); border-color: var(--club); }
+    .cs-back:hover { color: var(--club-text); }
     .cs-back svg { width: 14px; height: 14px; stroke: currentColor; }
 
     /* Hero */
@@ -67,7 +69,7 @@
     }
     .cs-hero__session {
       font-family: var(--font-heading); font-size: 0.6rem; font-weight: 700;
-      letter-spacing: 0.3em; text-transform: uppercase; color: var(--club-accent);
+      letter-spacing: 0.3em; text-transform: uppercase; color: var(--club-accent-text);
       margin-bottom: 12px; display: block;
     }
     .cs-hero__title {
@@ -104,14 +106,14 @@
       cursor: pointer; white-space: nowrap; transition: all 0.2s;
     }
     .cs-nav__btn:hover { color: var(--white); }
-    .cs-nav__btn.is-active { color: var(--club); border-bottom-color: var(--club); }
+    .cs-nav__btn.is-active { color: var(--club-text); border-bottom-color: var(--club); }
 
     /* Sections */
     .cs-section { padding: 64px 0 72px; }
     .cs-section--alt { background: rgba(255,255,255,0.015); }
     .cs-section__eyebrow {
       font-family: var(--font-heading); font-size: 0.58rem; font-weight: 700;
-      letter-spacing: 0.28em; text-transform: uppercase; color: var(--club-accent);
+      letter-spacing: 0.28em; text-transform: uppercase; color: var(--club-accent-text);
       margin-bottom: 10px; display: block;
     }
     .cs-section__title {
@@ -133,7 +135,7 @@
     .cs-timeline-item:last-child { border-bottom: none; }
     .cs-timeline-num {
       font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700;
-      letter-spacing: 0.1em; color: var(--club);
+      letter-spacing: 0.1em; color: var(--club-text);
       min-width: 52px; padding-top: 2px;
     }
     .cs-timeline-content { flex: 1; }
@@ -144,7 +146,7 @@
     }
     .cs-timeline-text { font-size: 0.86rem; color: var(--gray-400); line-height: 1.7; }
     .cs-timeline-text strong { color: var(--white); }
-    .cs-timeline-text em { color: var(--club-accent); font-style: normal; }
+    .cs-timeline-text em { color: var(--club-accent-text); font-style: normal; }
 
     /* ACE Accordion */
     .cs-ace { display: flex; flex-direction: column; gap: 0; margin: 8px 0; }
@@ -161,7 +163,7 @@
     .cs-ace-card.is-open .cs-ace-card__head { background: rgba(14,58,132,0.08); }
     .cs-ace-card__letter {
       font-family: var(--font-heading); font-size: 2rem; font-weight: 800;
-      color: var(--club); width: 40px; flex-shrink: 0; line-height: 1;
+      color: var(--club-text); width: 40px; flex-shrink: 0; line-height: 1;
     }
     .cs-ace-card__meta { flex: 1; }
     .cs-ace-card__word {
@@ -170,8 +172,8 @@
       margin-bottom: 3px;
     }
     .cs-ace-card__cue { font-size: 0.78rem; color: var(--gray-600); font-style: italic; }
-    .cs-ace-card__toggle { color: var(--gray-700); transition: transform 0.25s; font-size: 0.8rem; }
-    .cs-ace-card.is-open .cs-ace-card__toggle { transform: rotate(180deg); color: var(--club); }
+    .cs-ace-card__toggle { color: var(--gray-500); transition: transform 0.25s; font-size: 0.8rem; }
+    .cs-ace-card.is-open .cs-ace-card__toggle { transform: rotate(180deg); color: var(--club-text); }
     .cs-ace-card__body {
       max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
     }
@@ -185,7 +187,7 @@
     }
     .cs-ace-card__coach-label {
       font-family: var(--font-heading); font-size: 0.55rem; font-weight: 700;
-      letter-spacing: 0.2em; text-transform: uppercase; color: var(--club);
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--club-text);
       margin-bottom: 8px; display: block;
     }
     .cs-ace-card__coach p { font-size: 0.84rem; color: var(--gray-300); line-height: 1.7; }
@@ -207,7 +209,7 @@
       letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 10px; display: block;
     }
     .cs-emo-col--validate .cs-emo-col__label { color: #22c55e; }
-    .cs-emo-col--name .cs-emo-col__label { color: var(--club); }
+    .cs-emo-col--name .cs-emo-col__label { color: var(--club-text); }
     .cs-emo-col p { font-size: 0.86rem; color: var(--gray-300); line-height: 1.75; }
     .cs-emo-col em { color: var(--white); font-style: italic; }
 
@@ -245,7 +247,7 @@
     .cs-drill.is-open .cs-drill__head { background: rgba(14,58,132,0.07); }
     .cs-drill__num {
       font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700;
-      color: var(--club-accent); width: 22px; flex-shrink: 0;
+      color: var(--club-accent-text); width: 22px; flex-shrink: 0;
     }
     .cs-drill__info { flex: 1; }
     .cs-drill__name {
@@ -253,15 +255,15 @@
       text-transform: uppercase; letter-spacing: 0.06em; color: var(--white); margin-bottom: 2px;
     }
     .cs-drill__skill { font-size: 0.72rem; color: var(--gray-600); font-style: italic; }
-    .cs-drill__toggle { color: var(--gray-700); transition: transform 0.25s; font-size: 0.8rem; }
-    .cs-drill.is-open .cs-drill__toggle { transform: rotate(180deg); color: var(--club); }
+    .cs-drill__toggle { color: var(--gray-500); transition: transform 0.25s; font-size: 0.8rem; }
+    .cs-drill.is-open .cs-drill__toggle { transform: rotate(180deg); color: var(--club-text); }
     .cs-drill__body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
     .cs-drill.is-open .cs-drill__body { max-height: 400px; }
     .cs-drill__content { padding: 0 22px 22px; }
     .cs-drill__content p { font-size: 0.86rem; color: var(--gray-300); line-height: 1.75; margin-bottom: 8px; }
     .cs-drill__content p:last-child { margin-bottom: 0; }
     .cs-drill__content strong { color: var(--white); }
-    .cs-drill__content em { color: var(--club); font-style: italic; }
+    .cs-drill__content em { color: var(--club-text); font-style: italic; }
 
     /* Reflect section */
     .cs-reflect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -269,7 +271,7 @@
     .cs-reflect-item { display: flex; flex-direction: column; gap: 10px; }
     .cs-reflect-label {
       font-family: var(--font-heading); font-size: 0.6rem; font-weight: 700;
-      letter-spacing: 0.22em; text-transform: uppercase; color: var(--club);
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--club-text);
     }
     .cs-reflect-q { font-size: 0.84rem; color: var(--gray-400); line-height: 1.7; }
     .cs-reflect-textarea {
@@ -280,7 +282,7 @@
       transition: border-color 0.2s;
     }
     .cs-reflect-textarea:focus { border-color: rgba(14,58,132,0.5); }
-    .cs-reflect-textarea::placeholder { color: var(--gray-700); }
+    .cs-reflect-textarea::placeholder { color: var(--gray-500); }
 
     /* Sideline ACE */
     .cs-sideline-ace {
@@ -289,14 +291,14 @@
     }
     .cs-sideline-ace__label {
       font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700;
-      letter-spacing: 0.2em; text-transform: uppercase; color: var(--club);
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--club-text);
       margin-bottom: 20px; display: block;
     }
     .cs-sideline-ace__row { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
     .cs-sideline-ace__row:last-child { margin-bottom: 0; }
     .cs-sideline-ace__letter {
       font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800;
-      color: var(--club); width: 28px; flex-shrink: 0;
+      color: var(--club-text); width: 28px; flex-shrink: 0;
     }
     .cs-sideline-ace__text { font-size: 0.86rem; color: var(--gray-300); line-height: 1.7; }
     .cs-sideline-ace__text strong { color: var(--white); }
@@ -314,7 +316,7 @@
       letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px; display: block;
     }
     .cs-dodont__col--do .cs-dodont__head { color: #22c55e; }
-    .cs-dodont__col--dont .cs-dodont__head { color: var(--club-accent); }
+    .cs-dodont__col--dont .cs-dodont__head { color: var(--club-accent-text); }
     .cs-dodont__col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
     .cs-dodont__col ul li {
       display: flex; gap: 10px; align-items: flex-start;
@@ -324,7 +326,7 @@
       flex-shrink: 0; margin-top: 3px; font-size: 0.7rem; font-weight: 700;
     }
     .cs-dodont__col--do ul li::before { content: '✓'; color: #22c55e; }
-    .cs-dodont__col--dont ul li::before { content: '✕'; color: var(--club-accent); }
+    .cs-dodont__col--dont ul li::before { content: '✕'; color: var(--club-accent-text); }
 
     /* Page footer nav */
     .cs-footer-nav {
@@ -338,9 +340,9 @@
       letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-500);
       transition: color 0.2s;
     }
-    .cs-footer-link:hover { color: var(--club); }
+    .cs-footer-link:hover { color: var(--club-text); }
     .cs-footer-link svg { width: 14px; height: 14px; stroke: currentColor; flex-shrink: 0; }
-    .cs-footer-link--next { color: var(--club); }
+    .cs-footer-link--next { color: var(--club-text); }
     .cs-footer-link--next:hover { color: var(--white); }
 
     @keyframes csFadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
