@@ -11,8 +11,24 @@
 /* ---- CATEGORY FILTERS ---- */
 .bl-filters {
   background: var(--black);
-  padding: 40px 0 0;
+  padding: 56px 0 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* "BLOG" heading: mirrors the FREE GUIDES heading above it */
+.bl-blog-head {
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--yellow);
+}
+
+.bl-blog-head__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: var(--white);
 }
 
 .bl-filters__bar {
