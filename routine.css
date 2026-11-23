@@ -674,6 +674,86 @@
   color: var(--yellow);
 }
 
+/* ---------- 5b. Guide block: credit, look inside, share ---------- */
+.rt-download__by {
+  font-size: 0.9rem;
+  color: var(--gray-300);
+  margin: -14px 0 26px;
+}
+
+.rt-inside {
+  list-style: none;
+  margin: 0 0 30px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 560px;
+}
+
+.rt-inside__page {
+  display: block;
+  color: var(--gray-300);
+}
+
+.rt-inside__page img {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 14px 30px -16px rgba(0, 0, 0, 0.9);
+  transition: transform 0.3s ease;
+}
+
+.rt-inside__page:hover img {
+  transform: translateY(-4px);
+}
+
+.rt-inside__cap {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.rt-inside__page:hover .rt-inside__cap {
+  color: var(--yellow);
+}
+
+.rt-download__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 24px;
+}
+
+.rt-share {
+  min-height: 44px;
+  padding: 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--yellow);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  cursor: pointer;
+}
+
+.rt-share:hover {
+  color: var(--white);
+  border-bottom-color: var(--white);
+}
+
+.rt-download__note {
+  margin: 16px 0 0;
+  font-size: 0.88rem;
+  color: var(--gray-300);
+}
+
 /* ---------- 6. WANT HELP BUILDING YOURS? ---------- */
 .rt-help__grid {
   margin-top: 52px;
@@ -1145,6 +1225,15 @@
 
   .rt-toc {
     grid-template-columns: 1fr;
+  }
+
+  .rt-inside {
+    gap: 10px;
+  }
+
+  .rt-inside__cap {
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
   }
 
   .rt-person {
