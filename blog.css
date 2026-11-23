@@ -1,6 +1,6 @@
 /* =========================================================
    THE PERFORMANCE ACT — BLOG / INSIGHTS PAGE
-   blog.css v1
+   blog.css v2
    ========================================================= */
 
 /* ---- COMPACT HERO ---- */
@@ -305,6 +305,144 @@
 
 .bl-newsletter__input:focus {
   border-color: var(--yellow);
+}
+
+/* ---- FREE GUIDES (downloads; a yellow band so they read differently from articles) ---- */
+.bl-guides {
+  background: var(--yellow);
+  padding: 56px 0 64px;
+}
+
+.bl-guides__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--black);
+}
+
+.bl-guides__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--black);
+  line-height: 1;
+}
+
+.bl-guides__kicker {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
+.bl-guide__card {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+  background: var(--black);
+  padding: 36px 40px;
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.18);
+}
+
+.bl-guide__cover {
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.bl-guide__card:hover .bl-guide__cover {
+  transform: translateY(-4px) rotate(-1deg);
+}
+
+.bl-guide__cover img {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 18px 40px -18px rgba(0, 0, 0, 0.9);
+}
+
+.bl-guide__meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.bl-guide__tag {
+  display: inline-block;
+  background: var(--yellow);
+  color: var(--black);
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  padding: 5px 12px;
+  text-transform: uppercase;
+}
+
+.bl-guide__format {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.bl-guide__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.bl-guide__excerpt {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+  max-width: 62ch;
+  margin-bottom: 22px;
+}
+
+.bl-guide__btn {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.bl-guide__btn:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .bl-guides {
+    padding: 40px 0 48px;
+  }
+
+  .bl-guide__card {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 24px 20px;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.18);
+  }
+
+  .bl-guide__cover {
+    max-width: 120px;
+  }
+
+  .bl-guide__excerpt {
+    font-size: 0.88rem;
+  }
 }
 
 /* ---- RESPONSIVE ---- */

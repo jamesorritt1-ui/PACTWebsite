@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 262" role="img" aria-label="Timeline of a routine. The noise runs above the whole routine. The routine moves through settle, see it, point your attention, then go. If your attention drifts to the noise, notice it, let it be there and come back to the next piece. The routine keeps the same order and rhythm every attempt. A short version uses one piece then goes, for when you are rushed or interrupted.">
+    <defs>
+      <marker id="bK" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#000"/></marker>
+      <marker id="bG" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#777"/></marker>
+    </defs>
+    <!-- row labels -->
+    <g font-family="Oswald, 'Arial Narrow', sans-serif" font-weight="600" font-size="11" letter-spacing="1.4" fill="#000">
+      <text x="0" y="40">THE NOISE</text>
+      <text x="0" y="123">YOUR</text><text x="0" y="137">ROUTINE</text>
+      <text x="0" y="221">SHORT</text><text x="0" y="235">VERSION</text>
+    </g>
+    <!-- noise band -->
+    <rect x="96" y="8" width="584" height="54" fill="#F4F4F1"/>
+    <path d="M100 38 Q 130 24 160 38 Q 190 52 220 38 Q 250 24 280 38 Q 310 52 340 38 Q 370 24 400 38 Q 430 52 460 38 Q 490 24 520 38 Q 550 52 580 38 Q 610 24 640 38 Q 658 52 676 38" fill="none" stroke="#9A9A94" stroke-width="1.6"/>
+    <g font-family="Inter, Arial, sans-serif" font-style="italic" font-size="9.5" fill="#555">
+      <text x="118" y="20">“Don’t miss this”</text>
+      <text x="246" y="58">racing heart</text>
+      <text x="352" y="20">the crowd</text>
+      <text x="470" y="58">the last mistake</text>
+      <text x="592" y="20">“What if …”</text>
+    </g>
+    <!-- drift arrow -->
+    <path d="M500 62 C 504 74, 484 82, 476 93" fill="none" stroke="#777" stroke-width="1.3" stroke-dasharray="3 3" marker-end="url(#bG)"/>
+    <text x="466" y="80" text-anchor="end" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#000"><tspan font-weight="600">Drifted to the noise?</tspan> Notice it, let it be there, come back to the next piece.</text>
+    <!-- routine blocks -->
+    <g font-family="Inter, Arial, sans-serif" text-anchor="middle">
+      <rect x="100" y="96" width="122" height="60" fill="#fff" stroke="#000" stroke-width="1.2"/>
+      <text x="161" y="120" font-family="Oswald, 'Arial Narrow', sans-serif" font-weight="700" font-size="13" letter-spacing="1" fill="#000">SETTLE</text>
+      <text x="161" y="138" font-size="9.5" fill="#444">breath or same move</text>
+      <rect x="252" y="96" width="122" height="60" fill="#fff" stroke="#000" stroke-width="1.2"/>
+      <text x="313" y="120" font-family="Oswald, 'Arial Narrow', sans-serif" font-weight="700" font-size="13" letter-spacing="1" fill="#000">SEE IT</text>
+      <text x="313" y="138" font-size="9.5" fill="#444">picture the result</text>
+      <rect x="404" y="96" width="122" height="60" fill="#fff" stroke="#000" stroke-width="1.2"/>
+      <text x="465" y="120" font-family="Oswald, 'Arial Narrow', sans-serif" font-weight="700" font-size="13" letter-spacing="1" fill="#000">POINT ATTENTION</text>
+      <text x="465" y="138" font-size="9.5" fill="#444">cue word, eyes on target</text>
+      <rect x="556" y="96" width="122" height="60" fill="#FFE500"/>
+      <text x="617" y="120" font-family="Oswald, 'Arial Narrow', sans-serif" font-weight="700" font-size="13" letter-spacing="1" fill="#000">GO</text>
+      <text x="617" y="138" font-size="9.5" fill="#000">commit to your focus</text>
+    </g>
+    <g stroke="#000" stroke-width="1.4" fill="none">
+      <line x1="224" y1="126" x2="248" y2="126" marker-end="url(#bK)"/>
+      <line x1="376" y1="126" x2="400" y2="126" marker-end="url(#bK)"/>
+      <line x1="528" y1="126" x2="552" y2="126" marker-end="url(#bK)"/>
+    </g>
+    <!-- rhythm bracket -->
+    <path d="M100 166 V172 H678 V166" fill="none" stroke="#000" stroke-width="1"/>
+    <rect x="270" y="165" width="238" height="16" fill="#fff"/>
+    <text x="389" y="177" text-anchor="middle" font-family="Oswald, 'Arial Narrow', sans-serif" font-weight="500" font-size="10" letter-spacing="1.4" fill="#000">SAME ORDER, SAME RHYTHM, EVERY ATTEMPT</text>
+    <!-- short version -->
+    <rect x="100" y="200" width="122" height="44" fill="#fff" stroke="#000" stroke-width="1.2"/>
+    <text x="161" y="219" text-anchor="middle" font-family="Oswald, 'Arial Narrow', sans-serif" font-weight="700" font-size="12" letter-spacing="1" fill="#000">ONE PIECE</text>
+    <text x="161" y="234" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#444">e.g. one breath</text>
+    <line x1="224" y1="222" x2="552" y2="222" stroke="#000" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#bK)"/>
+    <rect x="292" y="213" width="194" height="18" fill="#fff"/>
+    <text x="389" y="226" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-style="italic" font-size="9.5" fill="#000">for when you’re rushed or interrupted</text>
+    <rect x="556" y="200" width="122" height="44" fill="#FFE500"/>
+    <text x="617" y="219" text-anchor="middle" font-family="Oswald, 'Arial Narrow', sans-serif" font-weight="700" font-size="12" letter-spacing="1" fill="#000">GO</text>
+    <text x="617" y="234" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#000">same focus</text>
+  </svg>
