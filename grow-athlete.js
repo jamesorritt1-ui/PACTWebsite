@@ -841,6 +841,7 @@
 
   var PILLAR_NAMES = {
     start: 'GETTING STARTED',
+    ace: 'YOUR ACE ROUTINE',
     five: 'THE FIVE MOVES',
     prac: 'THE PRACTICE ROOM',
     img: 'USING IMAGERY WELL',
@@ -877,6 +878,7 @@
 
   var PILLAR_SHORT = {
     start: 'Getting started',
+    ace: 'ACE routine',
     five: 'Five Moves',
     prac: 'Practice',
     img: 'Imagery',
@@ -889,7 +891,7 @@
   var jn = { filter: 'all', query: '', open: {}, built: false };
 
   function journalOrder(groups) {
-    var order = ['start', 'five', 'prac', 'img', 'open', 'aware', 'engaged', 'brain'];
+    var order = ['start', 'ace', 'five', 'prac', 'img', 'open', 'aware', 'engaged', 'brain'];
     var extras = Object.keys(groups).filter(function (p) { return order.indexOf(p) === -1; });
     return order.concat(extras).filter(function (p) { return groups[p] && groups[p].length; });
   }
@@ -1067,7 +1069,7 @@
 
   function journalAsText() {
     var groups = gatherEntries();
-    var order = ['start', 'five', 'prac', 'img', 'open', 'aware', 'engaged', 'brain'];
+    var order = ['start', 'ace', 'five', 'prac', 'img', 'open', 'aware', 'engaged', 'brain'];
     var extras = Object.keys(groups).filter(function (p) { return order.indexOf(p) === -1; });
     var lines = [
       'MY SKILLS JOURNAL',

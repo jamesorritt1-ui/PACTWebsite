@@ -1,0 +1,1797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T335C5CQGF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-T335C5CQGF');
+  </script>
+  <meta name="robots" content="noindex, nofollow">
+  <title>Building Your Full ACE Routine | Skills Journal | The Performance Act</title>
+  <meta name="description" content="Acknowledge, Connect, Engage: one routine you can run in one breath, forty seconds or ten minutes. Why each move matters, how to size it to the moment, six Olympic athletes doing it, and a routine you build yourself.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=Barlow:wght@600;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=21">
+  <link rel="stylesheet" href="grow-athlete.css?v=5">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=2">
+  <style>
+    body.aj { --ace-a:#6FD3E0; --ace-c:#8ED88E; --ace-e:#FF9D4D; }
+
+    /* section index */
+    .ix { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:30px; }
+    .ix__card { display:block; background:#111; border:1px solid var(--line); border-left:3px solid var(--yellow); padding:18px 22px; transition:.22s; }
+    .ix__card:hover { border-color:var(--yellow); transform:translateY(-3px); }
+    .ix__card--watch { border-left-color:#fff; }
+    .ix__card--staff { border-left-color:var(--muted); }
+    .ix__num { font-family:var(--font-heading); font-size:0.66rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--yellow); }
+    .ix__card--watch .ix__num { color:#fff; }
+    .ix__card--staff .ix__num { color:var(--muted); }
+    .ix__name { font-family:var(--font-heading); font-size:1.08rem; text-transform:uppercase; color:#fff; letter-spacing:0.02em; margin:6px 0 6px; }
+    .ix__for { color:var(--ink); font-size:0.88rem; line-height:1.6; font-weight:300; margin:0; }
+    @media (max-width:680px){ .ix { grid-template-columns:1fr; } }
+
+    /* A / C / E tags */
+    .ace-tag { display:inline-block; font-family:var(--font-heading); font-size:0.6rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; padding:3px 7px 2px; margin-right:6px; border-radius:2px; vertical-align:2px; line-height:1.2; color:#000; }
+    .ace-tag--a { background:var(--ace-a); }
+    .ace-tag--c { background:var(--ace-c); }
+    .ace-tag--e { background:var(--ace-e); }
+    .ace-tag--go { background:var(--yellow); }
+    .ace-tag--all { background:#fff; }
+    .aj-tool__body a.ace-link, .aj-p a, .aj-lead a, .ace-map a, .ace-move a, .ace-dial a, .aj-eg a, .aj-block a, .aj-warn a, .ace-rows a { color:var(--yellow); text-decoration:underline; text-underline-offset:3px; }
+
+    /* the three moves, side by side */
+    .ace-map { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:26px 0; }
+    .ace-map__col { background:#141414; border:1px solid var(--line); border-top:3px solid var(--ace-a); padding:20px 20px 18px; }
+    .ace-map__col--c { border-top-color:var(--ace-c); }
+    .ace-map__col--e { border-top-color:var(--ace-e); }
+    .ace-map__l { font-family:var(--font-heading); font-size:2.6rem; font-weight:800; line-height:1; color:var(--ace-a); }
+    .ace-map__col--c .ace-map__l { color:var(--ace-c); }
+    .ace-map__col--e .ace-map__l { color:var(--ace-e); }
+    .ace-map__name { font-family:var(--font-heading); text-transform:uppercase; color:#fff; font-size:1.1rem; letter-spacing:0.04em; margin:6px 0 2px; }
+    .ace-map__k { font-family:var(--font-heading); font-size:0.64rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin:0 0 10px; }
+    .ace-map__col p { color:var(--ink); font-size:0.9rem; line-height:1.65; font-weight:300; margin:0 0 10px; }
+    .ace-map__col p:last-child { margin-bottom:0; }
+    .ace-map__links { font-size:0.82rem !important; }
+    @media (max-width:760px){ .ace-map { grid-template-columns:1fr; } }
+
+    /* one card per move */
+    .ace-move { border:1px solid var(--line); border-left:4px solid var(--ace-a); background:#0f0f0f; margin:22px 0; }
+    .ace-move--c { border-left-color:var(--ace-c); }
+    .ace-move--e { border-left-color:var(--ace-e); }
+    .ace-move__head { display:flex; align-items:center; gap:18px; padding:18px 22px; border-bottom:1px solid var(--line); }
+    .ace-move__l { font-family:var(--font-heading); font-size:2.8rem; font-weight:800; line-height:1; color:var(--ace-a); min-width:36px; }
+    .ace-move--c .ace-move__l { color:var(--ace-c); }
+    .ace-move--e .ace-move__l { color:var(--ace-e); }
+    .ace-move__name { font-family:var(--font-heading); text-transform:uppercase; color:#fff; font-size:1.25rem; letter-spacing:0.04em; margin:0; }
+    .ace-move__job { color:var(--ink); font-size:0.95rem; line-height:1.55; margin:4px 0 0; font-weight:300; }
+    .ace-move__grid { display:grid; grid-template-columns:1fr 1fr; }
+    .ace-move__cell { padding:16px 22px 18px; border-bottom:1px solid var(--line); }
+    .ace-move__cell--l { border-right:1px solid var(--line); }
+    .ace-move__cell--wide { grid-column:1 / -1; border-right:none !important; border-bottom:none; }
+    .ace-move__cell .ace-move__k { font-family:var(--font-heading); font-size:0.64rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin:0 0 8px; }
+    .ace-move__cell p { color:var(--ink); font-size:0.92rem; line-height:1.7; font-weight:300; margin:0 0 10px; }
+    .ace-move__cell p:last-child { margin-bottom:0; }
+    .ace-move__cell p strong { color:#fff; font-weight:600; }
+    .ace-move__cell ul { list-style:none; margin:0; padding:0; }
+    .ace-move__cell li { position:relative; padding:4px 0 4px 18px; color:var(--ink); font-size:0.92rem; line-height:1.6; font-weight:300; }
+    .ace-move__cell li::before { content:''; position:absolute; left:0; top:15px; width:9px; height:2px; background:var(--ace-a); }
+    .ace-move--c .ace-move__cell li::before { background:var(--ace-c); }
+    .ace-move--e .ace-move__cell li::before { background:var(--ace-e); }
+    .ace-move__cell li em { color:#fff; font-style:normal; }
+    @media (max-width:680px){
+      .ace-move__grid { grid-template-columns:1fr; }
+      .ace-move__cell--l { border-right:none; }
+      .ace-move__head { padding:16px 18px; }
+      .ace-move__cell { padding:14px 18px 16px; }
+    }
+
+    /* the dial */
+    .ace-dial { display:grid; gap:12px; margin:24px 0; }
+    .ace-dial__row { display:grid; grid-template-columns:180px 1fr; gap:20px; background:#141414; border:1px solid var(--line); padding:20px 22px; }
+    .ace-dial__n { font-family:var(--font-heading); font-size:0.64rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--yellow); }
+    .ace-dial__speed { font-family:var(--font-heading); text-transform:uppercase; color:#fff; font-size:1.2rem; letter-spacing:0.03em; margin:4px 0 2px; line-height:1.1; }
+    .ace-dial__time { font-family:'Barlow', var(--font-heading); font-weight:700; color:var(--ink); font-size:0.95rem; }
+    .ace-dial__bar { display:flex; min-width:84px; height:26px; margin:2px 0 14px; border-radius:2px; overflow:hidden; gap:2px; }
+    .ace-dial__bar span { display:flex; align-items:center; justify-content:center; font-family:var(--font-heading); font-size:0.66rem; font-weight:700; letter-spacing:0.1em; color:#000; }
+    .ace-dial__bar .a { background:var(--ace-a); }
+    .ace-dial__bar .c { background:var(--ace-c); }
+    .ace-dial__bar .e { background:var(--ace-e); }
+    .ace-dial__row p { color:var(--ink); font-size:0.92rem; line-height:1.65; font-weight:300; margin:0 0 8px; }
+    .ace-dial__row p strong { color:#fff; font-weight:600; }
+    .ace-dial__see { font-size:0.84rem !important; color:var(--muted) !important; margin-bottom:0 !important; }
+    @media (max-width:640px){ .ace-dial__row { grid-template-columns:1fr; gap:10px; padding:18px; } }
+
+    /* rows that turn into cards on a phone (films, sports, language) */
+    .ace-rows { border:1px solid var(--line); margin:20px 0; background:#0f0f0f; }
+    .ace-rows__row { display:grid; border-bottom:1px solid var(--line); }
+    .ace-rows__row:last-child { border-bottom:none; }
+    .ace-rows--films .ace-rows__row { grid-template-columns:1.3fr 1fr 1.6fr; }
+    .ace-rows--sports .ace-rows__row { grid-template-columns:0.9fr 1fr 1.25fr 1fr 1fr; }
+    .ace-rows--say .ace-rows__row { grid-template-columns:1fr 1fr; }
+    .ace-rows__row > div { padding:13px 15px; font-size:0.88rem; line-height:1.55; color:var(--ink); font-weight:300; }
+    .ace-rows__head > div { font-family:var(--font-heading); font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--yellow); padding-top:12px; padding-bottom:12px; }
+    .ace-rows__row > div:first-child { color:#fff; font-weight:500; }
+    .ace-rows--say .ace-rows__row > div:first-child { background:rgba(255,229,0,0.06); }
+    .ace-rows--say .ace-rows__row > div:last-child { color:#8a8a8a; }
+    @media (max-width:760px){
+      .ace-rows--films .ace-rows__row, .ace-rows--sports .ace-rows__row, .ace-rows--say .ace-rows__row { grid-template-columns:1fr; }
+      .ace-rows__head { display:none !important; }
+      .ace-rows__row > div { padding:6px 16px; }
+      .ace-rows__row > div:first-child { padding-top:14px; }
+      .ace-rows__row > div:last-child { padding-bottom:14px; }
+      .ace-rows__row > div[data-k]::before { content:attr(data-k); display:block; font-family:var(--font-heading); font-size:0.6rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--yellow); margin-bottom:2px; }
+    }
+
+    /* the 40 second line */
+    .ace-line { display:grid; grid-template-columns:1fr 1fr 1.2fr 0.95fr; gap:4px; margin:24px 0 10px; }
+    .ace-line__seg { background:#141414; border:1px solid var(--line); border-top:4px solid var(--ace-a); padding:14px 14px 16px; }
+    .ace-line__seg--c { border-top-color:var(--ace-c); }
+    .ace-line__seg--e { border-top-color:var(--ace-e); }
+    .ace-line__seg--go { border-top-color:var(--yellow); }
+    .ace-line__t { font-family:'Barlow', var(--font-heading); font-weight:700; color:#fff; font-size:0.95rem; }
+    .ace-line__k { font-family:var(--font-heading); font-size:0.64rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ace-a); margin:2px 0 8px; }
+    .ace-line__seg--c .ace-line__k { color:var(--ace-c); }
+    .ace-line__seg--e .ace-line__k { color:var(--ace-e); }
+    .ace-line__seg--go .ace-line__k { color:var(--yellow); }
+    .ace-line__seg p { color:var(--ink); font-size:0.86rem; line-height:1.6; font-weight:300; margin:0; }
+    @media (max-width:820px){ .ace-line { grid-template-columns:1fr 1fr; } }
+    @media (max-width:480px){ .ace-line { grid-template-columns:1fr; } }
+
+    /* the 10 minute phases */
+    .ace-phases { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:24px 0 10px; }
+    .ace-phase { background:#141414; border:1px solid var(--line); border-left:4px solid var(--ace-a); padding:18px 20px; }
+    .ace-phase--c { border-left-color:var(--ace-c); }
+    .ace-phase--e { border-left-color:var(--ace-e); }
+    .ace-phase--go { border-left-color:var(--yellow); }
+    .ace-phase__t { font-family:'Barlow', var(--font-heading); font-weight:700; color:var(--muted); font-size:0.86rem; }
+    .ace-phase__h { font-family:var(--font-heading); text-transform:uppercase; color:#fff; font-size:1.05rem; letter-spacing:0.03em; margin:3px 0 8px; }
+    .ace-phase p { color:var(--ink); font-size:0.9rem; line-height:1.68; font-weight:300; margin:0 0 8px; }
+    .ace-phase p:last-child { margin-bottom:0; }
+    .ace-phase p strong { color:#fff; font-weight:600; }
+    @media (max-width:700px){ .ace-phases { grid-template-columns:1fr; } }
+
+    /* worked examples with tags */
+    .ace-eg p { line-height:1.75; }
+    .ace-eg__line { display:block; margin:7px 0; }
+
+    /* the films */
+    .ace-films { display:grid; grid-template-columns:1fr 1fr; gap:30px 22px; margin:28px 0 10px; }
+    .ace-films .aj-vid__cap a { color:var(--yellow); text-decoration:underline; text-underline-offset:3px; }
+    .aj-vid__badge--a { background:var(--ace-a); }
+    .aj-vid__badge--c { background:var(--ace-c); }
+    .aj-vid__badge--e { background:var(--ace-e); }
+    .aj-vid__badge--all { background:#fff; }
+    .ace-film__k { font-family:var(--font-heading); font-size:0.64rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin:12px 0 0; }
+    @media (max-width:760px){ .ace-films { grid-template-columns:1fr; } }
+
+    /* stages of practice */
+    .ace-stages { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:22px 0; }
+    .ace-stage { background:#141414; border:1px solid var(--line); border-top:3px solid var(--yellow); padding:16px 16px 18px; }
+    .ace-stage__n { font-family:var(--font-heading); font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--yellow); }
+    .ace-stage__h { font-family:var(--font-heading); text-transform:uppercase; color:#fff; font-size:1rem; margin:4px 0 8px; letter-spacing:0.03em; }
+    .ace-stage p { color:var(--ink); font-size:0.86rem; line-height:1.6; font-weight:300; margin:0; }
+    @media (max-width:860px){ .ace-stages { grid-template-columns:1fr 1fr; } }
+    @media (max-width:520px){ .ace-stages { grid-template-columns:1fr; } }
+
+    /* the routine card */
+    .ace-card { background:linear-gradient(160deg,#1b1800,#0b0b0b 60%); border:1px solid rgba(255,229,0,0.35); padding:22px 24px; margin-top:26px; }
+    .ace-card__title { font-family:var(--font-heading); font-size:0.7rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--yellow); margin:0 0 4px; }
+    .ace-card__sub { color:var(--muted); font-size:0.84rem; margin:0 0 14px; }
+    .ace-card__row { display:grid; grid-template-columns:130px 1fr; gap:12px; padding:10px 0; border-top:1px solid var(--line); }
+    .ace-card__k { font-family:var(--font-heading); font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); padding-top:3px; }
+    .ace-card__k b { font-weight:700; }
+    .ace-card__k--a b { color:var(--ace-a); }
+    .ace-card__k--c b { color:var(--ace-c); }
+    .ace-card__k--e b { color:var(--ace-e); }
+    .ace-card__v { color:#fff; font-size:0.95rem; line-height:1.65; font-weight:300; white-space:pre-line; }
+    .ace-card__v.is-empty { color:#6a6a6a; font-style:italic; }
+    .ace-card__foot { color:#fff; font-style:italic; font-size:0.95rem; margin:12px 0 0; padding-top:12px; border-top:1px solid var(--line); }
+    @media (max-width:560px){ .ace-card__row { grid-template-columns:1fr; gap:4px; } }
+
+    /* accordions: troubleshooting and staff notes */
+    .tb { border:1px solid var(--line); background:#0f0f0f; margin-top:20px; }
+    .tb__item { border-bottom:1px solid var(--line); }
+    .tb__item:last-child { border-bottom:none; }
+    .tb__q { width:100%; display:flex; align-items:center; gap:14px; padding:17px 20px; background:none; border:none; cursor:pointer; text-align:left; }
+    .tb__q:hover { background:rgba(255,255,255,0.03); }
+    .tb__q span { flex:1; color:#fff; font-size:0.96rem; font-weight:400; line-height:1.5; }
+    .tb__plus { position:relative; width:18px; height:18px; flex:0 0 18px !important; }
+    .tb__plus::before, .tb__plus::after { content:''; position:absolute; background:var(--yellow); transition:transform .3s ease, opacity .3s ease; }
+    .tb__plus::before { top:8px; left:0; width:18px; height:2px; }
+    .tb__plus::after { left:8px; top:0; width:2px; height:18px; }
+    .tb__q[aria-expanded="true"] .tb__plus::after { transform:rotate(90deg); opacity:0; }
+    .tb__a[hidden] { display:none; }
+    .tb__a { padding:0 20px 20px 52px; }
+    .tb__a p { color:var(--ink); font-size:0.94rem; line-height:1.75; font-weight:300; margin:0 0 12px; }
+    .tb__a p:last-child { margin-bottom:0; }
+    .tb__a p strong, .tb__a li strong { color:#fff; font-weight:600; }
+    .tb__a ul, .tb__a ol { margin:0 0 12px; padding-left:20px; }
+    .tb__a li { color:var(--ink); font-size:0.93rem; line-height:1.7; font-weight:300; padding:3px 0; }
+    .tb__a a { color:var(--yellow); text-decoration:underline; text-underline-offset:3px; }
+    .tb__a .ace-rows { margin:6px 0 14px; }
+    @media (max-width:600px){ .tb__a { padding-left:20px; } }
+
+    .ace-staff-badge { display:inline-block; font-family:var(--font-heading); font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase; color:#000; background:#fff; padding:4px 9px; margin-bottom:16px; }
+  </style>
+</head>
+<body class="aj">
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="/" class="header__logo">
+        <img src="images/logo-horizontal.png?v=2" alt="The Performance Act" class="logo-img logo-img--header">
+      </a>
+      <nav class="header__nav" id="mainNav" aria-label="Primary">
+        <a href="/grow-athlete" class="nav-link">SKILLS JOURNAL</a>
+        <a href="/grow-athlete-ace" class="nav-link active">ACE</a>
+        <a href="/grow-athlete-fivemoves" class="nav-link">FIVE MOVES</a>
+        <a href="/grow-athlete-practice" class="nav-link">PRACTICE</a>
+        <a href="/grow-athlete-imagery" class="nav-link">IMAGERY</a>
+        <a href="/grow-athlete-open" class="nav-link">OPEN</a>
+        <a href="/grow-athlete-aware" class="nav-link">AWARE</a>
+        <a href="/grow-athlete-engaged" class="nav-link">ENGAGED</a>
+      </nav>
+      <div class="header__actions">
+        <a href="/grow-login" class="btn btn--outline btn--sm" data-aj-logout>Log out</a>
+        <a href="/grow-athlete-journal" class="btn btn--primary btn--sm">My Journal</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <nav class="mobile-nav__links" aria-label="Mobile">
+      <a href="/grow-athlete" class="mobile-nav__link">SKILLS JOURNAL HOME</a>
+      <a href="/grow-athlete-ace" class="mobile-nav__link">YOUR ACE ROUTINE</a>
+      <a href="/grow-athlete-fivemoves" class="mobile-nav__link">THE FIVE MOVES</a>
+      <a href="/grow-athlete-practice" class="mobile-nav__link">THE PRACTICE ROOM</a>
+      <a href="/grow-athlete-imagery" class="mobile-nav__link">USING IMAGERY WELL</a>
+      <a href="/grow-athlete-open" class="mobile-nav__link">OPEN</a>
+      <a href="/grow-athlete-aware" class="mobile-nav__link">AWARE</a>
+      <a href="/grow-athlete-engaged" class="mobile-nav__link">ENGAGED</a>
+      <a href="/grow-athlete-brain" class="mobile-nav__link">BRAIN HEALTH</a>
+      <a href="/grow-athlete-journal" class="mobile-nav__link">MY JOURNAL</a>
+      <a href="/grow-login" class="mobile-nav__link" data-aj-logout>LOG OUT</a>
+    </nav>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="aj-hero" id="top">
+    <div class="aj-hero__bg"></div>
+    <div class="container">
+      <a href="/grow-athlete" class="aj-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Skills Journal
+      </a>
+      <span class="aj-hero__badge">Pull it together &middot; ACE</span>
+      <h1 class="aj-hero__title">BUILDING YOUR<br><span>FULL ACE ROUTINE</span></h1>
+      <p class="aj-hero__lead"><strong>Three moves. Any amount of time.</strong> ACE is the skill that ties your whole Skills Journal together. This page shows you how to run it in one breath on a start line, in forty seconds between plays, and across ten minutes in the changing room, so it&rsquo;s ready whenever the noise turns up.</p>
+      <p class="aj-hero__meta"><span>3 moves</span> &middot; <span>4 speeds</span> &middot; <span>6 Olympic athletes</span> &middot; <span>Build your own routine</span></p>
+    </div>
+  </section>
+
+  <div class="aj-progress">
+    <div class="container">
+      <div class="aj-progress__inner">
+        <span class="aj-progress__label">Your progress through your ACE routine</span>
+        <div class="aj-progress__track"><div class="aj-progress__fill" id="ajProgressFill"></div></div>
+        <span class="aj-progress__count" id="ajProgressCount">0 / 0 saved</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== READ THIS FIRST ========== -->
+  <section class="aj-sec" id="intro">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">Read this first</p>
+        <h2 class="aj-h2">One routine.<br><em>Every moment.</em></h2>
+        <p class="aj-lead">You&rsquo;ve probably met ACE already. This is the page where it stops being three separate skills and becomes your routine.</p>
+        <p class="aj-p" style="margin-top:18px;">ACE stands for <strong>Acknowledge, Connect, Engage</strong>. Acknowledge what&rsquo;s showing up inside you. Connect with your body and the place you&rsquo;re in. Engage with the job in front of you. Three moves, always in that order.</p>
+        <p class="aj-p">What makes it so useful is that it stretches. The same three moves can take one breath on a start line or ten minutes in a changing room. Short gaps get a short ACE. Long build ups get a long one. Because the moves never change, whatever length you need on the day, your body and brain already know the shape.</p>
+
+        <div class="aj-block">
+          <span class="aj-block__k">Why one routine instead of ten tools?</span>
+          <p class="aj-p">Under pressure, your brain doesn&rsquo;t go searching through a library. It grabs whatever is most practised. Ten tools you half know will mostly stay on the shelf. One routine you&rsquo;ve run hundreds of times is there when you need it.</p>
+          <p class="aj-p">So think of ACE as the frame, and the rest of your Skills Journal as what goes inside it. The skills in <strong>Open</strong> give your Acknowledge its words. The skills in <strong>Aware</strong> and the Practice Room give your Connect its moves. Your values, cue words and imagery from <strong>Engaged</strong> and Using Imagery Well give your Engage its direction.</p>
+        </div>
+
+        <div class="ace-map">
+          <div class="ace-map__col">
+            <div class="ace-map__l">A</div>
+            <div class="ace-map__name">Acknowledge</div>
+            <p class="ace-map__k">Trained in Open</p>
+            <p>Notice and name what&rsquo;s here: thoughts, feelings, body, urges. Without fighting it and without obeying it.</p>
+            <p class="ace-map__links"><a href="/grow-athlete-aware#notice">Notice &amp; name</a> &middot; <a href="/grow-athlete-open#unhook">Unhooking</a> &middot; <a href="/grow-athlete-open#tame">TAME it</a></p>
+          </div>
+          <div class="ace-map__col ace-map__col--c">
+            <div class="ace-map__l">C</div>
+            <div class="ace-map__name">Connect</div>
+            <p class="ace-map__k">Trained in Aware</p>
+            <p>Land in your body and in the place you&rsquo;re actually in. Feet, hands, eyes, breath.</p>
+            <p class="ace-map__links"><a href="/grow-athlete-practice#check">The 9 second check</a> &middot; <a href="/grow-athlete-practice#cpr">CPR under pressure</a> &middot; <a href="/grow-athlete-practice#anchors">Visual anchors</a></p>
+          </div>
+          <div class="ace-map__col ace-map__col--e">
+            <div class="ace-map__l">E</div>
+            <div class="ace-map__name">Engage</div>
+            <p class="ace-map__k">Trained in Engaged</p>
+            <p>Point your attention at the next job, with your values leading. Cue word, target, go.</p>
+            <p class="ace-map__links"><a href="/grow-athlete-engaged#values">Your values</a> &middot; <a href="/grow-athlete-imagery#cues">Cue words</a> &middot; <a href="/grow-athlete-engaged#process">Process over podium</a></p>
+          </div>
+        </div>
+
+        <div class="aj-warn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+          <p><strong>An anchor, not an off switch.</strong> ACE is not a way to make nerves, doubt or anger disappear. Sometimes they do shrink while you run it. Enjoy that, but don&rsquo;t chase it. The job of ACE is to give your attention somewhere to come back to, so you can do the next thing well <em>with</em> the noise still there. If you judge ACE by whether you feel calm, you&rsquo;ll decide it has failed on exactly the days you need it most.</p>
+        </div>
+
+        <div class="aj-block">
+          <span class="aj-block__k">Does it actually work?</span>
+          <p class="aj-p">Routines before performance have solid research behind them. A review that pooled studies across fifteen sports found athletes performed better once they had learned a routine, including under pressure. That held for beginners and elite athletes, younger and older athletes, and for simple and detailed routines alike.</p>
+          <p class="aj-p">Mindfulness and acceptance approaches, the family ACE comes from, also show promising effects on performance in sport, though the researchers are honest that we still need more high quality trials. The fair summary: <strong>a practised routine helps, practising it matters more than the exact ingredients, and ACE gives you one built to work with nerves rather than against them.</strong></p>
+        </div>
+
+        <div class="ix">
+          <a href="#watch" class="ix__card ix__card--watch">
+            <div class="ix__num">Watch first &middot; 2 to 3 minutes each</div>
+            <div class="ix__name">Six Olympians, Six Versions</div>
+            <p class="ix__for">Short films from inside athletes&rsquo; heads, and what to look for in each.</p>
+          </a>
+          <a href="#moves" class="ix__card">
+            <div class="ix__num">01</div>
+            <div class="ix__name">The Three Moves</div>
+            <p class="ix__for">What each move is for, how it sounds, and the traps.</p>
+          </a>
+          <a href="#dial" class="ix__card">
+            <div class="ix__num">02</div>
+            <div class="ix__name">The ACE Dial</div>
+            <p class="ix__for">One breath, 40 seconds, a few minutes, ten minutes.</p>
+          </a>
+          <a href="#forty" class="ix__card">
+            <div class="ix__num">03</div>
+            <div class="ix__name">The 40 Second ACE</div>
+            <p class="ix__for">For the gaps between plays and after mistakes. With a timer.</p>
+          </a>
+          <a href="#ten" class="ix__card">
+            <div class="ix__num">04</div>
+            <div class="ix__name">The 10 Minute ACE</div>
+            <p class="ix__for">For the changing room, the bus or the night before. With a timer.</p>
+          </a>
+          <a href="#build" class="ix__card">
+            <div class="ix__num">05</div>
+            <div class="ix__name">Build Your Routine</div>
+            <p class="ix__for">Hook it to moments you already have, and make your card.</p>
+          </a>
+          <a href="#practise" class="ix__card">
+            <div class="ix__num">06</div>
+            <div class="ix__name">Practise It</div>
+            <p class="ix__for">Learn it, shrink it, pressure it, play it. Plus a rep log.</p>
+          </a>
+          <a href="#trouble" class="ix__card">
+            <div class="ix__num">07</div>
+            <div class="ix__name">When It Doesn&rsquo;t Go to Plan</div>
+            <p class="ix__for">Still nervous, forgot, no time, felt silly. What to do.</p>
+          </a>
+          <a href="#staff" class="ix__card ix__card--staff">
+            <div class="ix__num">For staff and coaches</div>
+            <div class="ix__name">Teaching ACE Well</div>
+            <p class="ix__for">How we teach it, the non negotiables, and using the films.</p>
+          </a>
+        </div>
+
+        <div class="aj-why">
+          <p><strong>Sources.</strong> <cite>Rupprecht, Tran &amp; Gr&ouml;pel (2021), The effectiveness of pre-performance routines in sports: a meta-analysis</cite>. <cite>Noetel, Ciarrochi, Van Zanden &amp; Lonsdale (2019), Mindfulness and acceptance approaches to sporting performance enhancement: a systematic review</cite>. <cite>Reinebo et al. (2023), Effects of psychological interventions to enhance athletic performance, Sports Medicine</cite>. ACE is adapted with credit from Russ Harris&rsquo;s dropping anchor in <cite>The Happiness Trap (2022)</cite>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WATCH ========== -->
+  <section class="aj-sec aj-sec--alt" id="watch">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">Worked examples &middot; watch first</p>
+        <h2 class="aj-h2">Six Olympians.<br><em>Six versions of ACE.</em></h2>
+        <p class="aj-lead">These short animated films from The New York Times go inside the heads of six winter athletes in the minutes and seconds before they compete. Nobody in them calls it ACE. Watch closely and you&rsquo;ll see all three moves, at very different speeds.</p>
+        <p class="aj-p" style="margin-top:16px;">Each one is two to three minutes. You don&rsquo;t need to watch all six at once. Start with whichever is closest to your sport or your situation, then come back for the rest. We&rsquo;ve written the notes from each film&rsquo;s own description, so watch it yourself and notice what else you pick up. They&rsquo;re in order from the shortest ACE to the longest.</p>
+      </div>
+
+      <div class="aj-wrap">
+        <div class="ace-films">
+
+          <figure class="aj-vid" id="film-deibold">
+            <div class="aj-vid__frame" data-yt="9ebzllKOmoA">
+              <button class="aj-vid__play" aria-label="Play: How Alex Deibold Prepares for a Snowboard Race" style="background-image:url('https://i.ytimg.com/vi/9ebzllKOmoA/hqdefault.jpg')">
+                <span class="aj-vid__badge aj-vid__badge--e">One breath &middot; Engage</span>
+                <span class="aj-vid__btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+              </button>
+            </div>
+            <p class="ace-film__k">Snowboard cross &middot; 2:53</p>
+            <figcaption class="aj-vid__cap"><b>How Alex Deibold Prepares for a Snowboard Race.</b> He used to wax other riders&rsquo; boards for a living, and ended up with an Olympic bronze. Before a run he pictures one big, deep breath out, and then he&rsquo;s gone. <em>Watch for:</em> how much one breath can carry once it has been practised. This is the shortest ACE there is: the whole routine squeezed into a single exhale that means <strong style="color:#fff;">go</strong>.</figcaption>
+          </figure>
+
+          <figure class="aj-vid" id="film-bailey">
+            <div class="aj-vid__frame" data-yt="uzpOFOjbkBw">
+              <button class="aj-vid__play" aria-label="Play: How to Conquer an Olympic Biathlon" style="background-image:url('https://i.ytimg.com/vi/uzpOFOjbkBw/hqdefault.jpg')">
+                <span class="aj-vid__badge aj-vid__badge--all">Seconds &middot; All three</span>
+                <span class="aj-vid__btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+              </button>
+            </div>
+            <p class="ace-film__k">Biathlon &middot; 2:18</p>
+            <figcaption class="aj-vid__cap"><b>How to Conquer an Olympic Biathlon.</b> As the pressure builds mid race, Lowell Bailey wonders, &ldquo;Can I do this?&rdquo; He looks at the snow ahead and pictures himself as a bow with an arrow drawn. <em>Watch for:</em> all three moves in a few seconds. <strong style="color:#fff;">A</strong>, the doubt gets named and left in. <strong style="color:#fff;">C</strong>, his eyes go to the snow ahead. <strong style="color:#fff;">E</strong>, one picture tells his body what to do.</figcaption>
+          </figure>
+
+          <figure class="aj-vid" id="film-hubbell">
+            <div class="aj-vid__frame" data-yt="hA4qANybq7w">
+              <button class="aj-vid__play" aria-label="Play: Before Her Blades Scratch the Ice" style="background-image:url('https://i.ytimg.com/vi/hA4qANybq7w/hqdefault.jpg')">
+                <span class="aj-vid__badge aj-vid__badge--a">Minutes &middot; Acknowledge</span>
+                <span class="aj-vid__btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+              </button>
+            </div>
+            <p class="ace-film__k">Ice dance &middot; 2:14</p>
+            <figcaption class="aj-vid__cap"><b>Before Her Blades Scratch the Ice.</b> As Madison Hubbell laces her skates for what feels like the millionth time, she pictures her dance. A voice in her head reminds her she might fall. Then the announcers call her name. <em>Watch for:</em> she doesn&rsquo;t wait for that voice to go quiet before she goes. That&rsquo;s Acknowledge. The thought is allowed in the room. It just doesn&rsquo;t get a vote.</figcaption>
+          </figure>
+
+          <figure class="aj-vid" id="film-luge">
+            <div class="aj-vid__frame" data-yt="fDmRwjBryu0">
+              <button class="aj-vid__play" aria-label="Play: Before the Start of the Doubles Luge" style="background-image:url('https://i.ytimg.com/vi/fDmRwjBryu0/hqdefault.jpg')">
+                <span class="aj-vid__badge aj-vid__badge--c">The last minute &middot; Connect</span>
+                <span class="aj-vid__btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+              </button>
+            </div>
+            <p class="ace-film__k">Doubles luge &middot; 2:07</p>
+            <figcaption class="aj-vid__cap"><b>Before the Start of the Doubles Luge.</b> When the nerves come, Matt Mortensen and Jayson Terdiman think of a waterfall that nothing can interrupt. They look at the track. Then a line from a rap song tells them it&rsquo;s crunch time. <em>Watch for:</em> the order. Nerves arrive and get a picture instead of a fight. Eyes go to the track, something real right in front of them. One shared line points them at the job. A, C and E, run by two people at once.</figcaption>
+          </figure>
+
+          <figure class="aj-vid" id="film-huckaby">
+            <div class="aj-vid__frame" data-yt="BOvqn5Du41M">
+              <button class="aj-vid__play" aria-label="Play: How Brenna Huckaby Conquers a Snowboard Course" style="background-image:url('https://i.ytimg.com/vi/BOvqn5Du41M/hqdefault.jpg')">
+                <span class="aj-vid__badge aj-vid__badge--c">Start gate &middot; Connect</span>
+                <span class="aj-vid__btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+              </button>
+            </div>
+            <p class="ace-film__k">Para snowboard &middot; 2:00</p>
+            <figcaption class="aj-vid__cap"><b>How Brenna Huckaby Conquers a Snowboard Course.</b> Off the course, she&rsquo;s missing a leg. In her snowboard pants, she&rsquo;s just Brenna. At the start gate she looks down the course she has memorised, and when her heart races she takes herself home: the smell of Cajun cooking and the sound of her mum&rsquo;s voice. <em>Watch for:</em> Connect through the senses. Most of you will Connect through what&rsquo;s right there, like your feet, breath and eyes. Brenna shows it can also carry home and wh&#257;nau with it. The test is that it brings her back to the course, not away from it.</figcaption>
+          </figure>
+
+          <figure class="aj-vid" id="film-bjornsen">
+            <div class="aj-vid__frame" data-yt="pZf24MEemKI">
+              <button class="aj-vid__play" aria-label="Play: Before She Skis the Cross-Country Course" style="background-image:url('https://i.ytimg.com/vi/pZf24MEemKI/hqdefault.jpg')">
+                <span class="aj-vid__badge">The night before &middot; Full ACE</span>
+                <span class="aj-vid__btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+              </button>
+            </div>
+            <p class="ace-film__k">Cross country skiing &middot; 3:01</p>
+            <figcaption class="aj-vid__cap"><b>Before She Skis the Cross Country Course.</b> The night before a race, Sadie Bjornsen relaxes her muscles and works her brain. She hears the countdown timer beeping and imagines herself as a bird flying up the hills. <em>Watch for:</em> the long version. She doesn&rsquo;t leave it all to race morning. Body first, then the start rehearsed in her head, then one picture for how she wants to climb. That way the short version on the start line has something behind it.</figcaption>
+          </figure>
+
+        </div>
+
+        <span class="aj-block__k" style="display:block;margin-top:26px;">Which film shows what</span>
+        <div class="ace-rows ace-rows--films">
+          <div class="ace-rows__row ace-rows__head">
+            <div>Film</div><div>Speed</div><div>Best example of</div>
+          </div>
+          <div class="ace-rows__row">
+            <div><a href="#film-deibold">Alex Deibold</a> &middot; snowboard cross</div>
+            <div data-k="Speed">One breath</div>
+            <div data-k="Best example of">Engage. A single breath out as the go signal.</div>
+          </div>
+          <div class="ace-rows__row">
+            <div><a href="#film-bailey">Lowell Bailey</a> &middot; biathlon</div>
+            <div data-k="Speed">A few seconds, mid race</div>
+            <div data-k="Best example of">All three moves in one go.</div>
+          </div>
+          <div class="ace-rows__row">
+            <div><a href="#film-hubbell">Madison Hubbell</a> &middot; ice dance</div>
+            <div data-k="Speed">The minutes before</div>
+            <div data-k="Best example of">Acknowledge. The &ldquo;you might fall&rdquo; voice is allowed in.</div>
+          </div>
+          <div class="ace-rows__row">
+            <div><a href="#film-luge">Mortensen &amp; Terdiman</a> &middot; doubles luge</div>
+            <div data-k="Speed">The last minute</div>
+            <div data-k="Best example of">Connect, and a cue shared by two people.</div>
+          </div>
+          <div class="ace-rows__row">
+            <div><a href="#film-huckaby">Brenna Huckaby</a> &middot; para snowboard</div>
+            <div data-k="Speed">Start gate</div>
+            <div data-k="Best example of">Connect through the senses, and who she is.</div>
+          </div>
+          <div class="ace-rows__row">
+            <div><a href="#film-bjornsen">Sadie Bjornsen</a> &middot; cross country</div>
+            <div data-k="Speed">The night before</div>
+            <div data-k="Best example of">The full, long ACE that loads the short one.</div>
+          </div>
+        </div>
+
+        <div class="aj-act">
+          <span class="aj-act__tag">Activity &middot; 5 minutes</span>
+          <h3 class="aj-act__title">Spot the ACE</h3>
+          <p class="aj-act__intro">Pick one film, ideally the one closest to your sport. Watch it once just to enjoy it, then a second time looking for the three moves.</p>
+          <div class="aj-field">
+            <p class="aj-field__q">Which film did you watch?</p>
+            <div class="aj-chips" data-aj-single
+                 data-aj-chips="ace.watch.film"
+                 data-aj-tool="Watch: six Olympians"
+                 data-aj-q="The film I watched">
+              <button class="aj-chip">Alex Deibold</button>
+              <button class="aj-chip">Lowell Bailey</button>
+              <button class="aj-chip">Madison Hubbell</button>
+              <button class="aj-chip">The luge pair</button>
+              <button class="aj-chip">Brenna Huckaby</button>
+              <button class="aj-chip">Sadie Bjornsen</button>
+            </div>
+          </div>
+          <div class="aj-field">
+            <p class="aj-field__q"><span class="ace-tag ace-tag--a">A</span>What showed up for them, and how did they handle it?</p>
+            <input type="text" class="aj-input"
+                   data-aj="ace.watch.a"
+                   data-aj-tool="Watch: six Olympians"
+                   data-aj-q="What showed up for them (Acknowledge)"
+                   placeholder="e.g. The thought that she might fall. She let it be there.">
+          </div>
+          <div class="aj-field">
+            <p class="aj-field__q"><span class="ace-tag ace-tag--c">C</span>How did they come back to their body or where they were?</p>
+            <input type="text" class="aj-input"
+                   data-aj="ace.watch.c"
+                   data-aj-tool="Watch: six Olympians"
+                   data-aj-q="How they connected (Connect)"
+                   placeholder="e.g. Eyes on the track">
+          </div>
+          <div class="aj-field">
+            <p class="aj-field__q"><span class="ace-tag ace-tag--e">E</span>What pointed them at the job?</p>
+            <input type="text" class="aj-input"
+                   data-aj="ace.watch.e"
+                   data-aj-tool="Watch: six Olympians"
+                   data-aj-q="What pointed them at the job (Engage)"
+                   placeholder="e.g. A bow with an arrow drawn">
+          </div>
+          <div class="aj-field">
+            <p class="aj-field__q">One thing you&rsquo;d steal for your own routine</p>
+            <textarea class="aj-textarea"
+                      data-aj="ace.watch.steal"
+                      data-aj-tool="Watch: six Olympians"
+                      data-aj-q="One thing I'd steal for my own routine"
+                      placeholder="e.g. Using one picture instead of a list of technical cues."></textarea>
+            <span class="aj-saved" data-aj-saved="ace.watch.steal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 01 THE THREE MOVES ========== -->
+  <section class="aj-sec" id="moves">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">01</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">The Three Moves</h2>
+              <p class="aj-tool__for">What each move is for, how it sounds, and the traps that turn it into something else.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+            <span class="aj-block__k">One job each</span>
+            <p>Each move has one job. If you know the job, you can make the move fit any sport, any length of time and any kind of day.</p>
+
+            <!-- A -->
+            <div class="ace-move">
+              <div class="ace-move__head">
+                <div class="ace-move__l">A</div>
+                <div>
+                  <h3 class="ace-move__name">Acknowledge</h3>
+                  <p class="ace-move__job">Notice what&rsquo;s here and name it, in a few words, without arguing.</p>
+                </div>
+              </div>
+              <div class="ace-move__grid">
+                <div class="ace-move__cell ace-move__cell--wide" style="border-bottom:1px solid var(--line);">
+                  <p class="ace-move__k">Why we do it</p>
+                  <p>You can&rsquo;t steer around something you haven&rsquo;t noticed. When thoughts and feelings go unnamed, they run things from backstage: tight shoulders, rushed decisions, playing it safe, going quiet. Naming them turns them from orders into information.</p>
+                  <p>There&rsquo;s good brain research behind this. Putting a feeling into words takes a little heat out of the brain&rsquo;s alarm system. And trying hard <em>not</em> to think about something tends to make it come back louder. <strong>This is also the step that stops ACE becoming another way of running from the hard stuff.</strong> Skip it and you haven&rsquo;t got an anchor, you&rsquo;ve got another escape route.</p>
+                </div>
+                <div class="ace-move__cell ace-move__cell--l">
+                  <p class="ace-move__k">What it sounds like</p>
+                  <ul>
+                    <li><em>&ldquo;There&rsquo;s the &lsquo;don&rsquo;t stuff this up&rsquo; thought.&rdquo;</em></li>
+                    <li><em>&ldquo;Heart&rsquo;s going. Hands are sweaty.&rdquo;</em></li>
+                    <li><em>&ldquo;Frustrated about that call. Fair enough.&rdquo;</em></li>
+                    <li><em>&ldquo;Noticing the urge to hide.&rdquo;</em></li>
+                    <li><em>&ldquo;Hello, old story.&rdquo;</em></li>
+                  </ul>
+                </div>
+                <div class="ace-move__cell">
+                  <p class="ace-move__k">Watch out for</p>
+                  <ul>
+                    <li>Arguing with it. &ldquo;I&rsquo;m not nervous, I&rsquo;m fine.&rdquo;</li>
+                    <li>Lecturing yourself about it.</li>
+                    <li>Turning the name into a judgement. &ldquo;I&rsquo;m so weak for feeling this.&rdquo;</li>
+                    <li>Taking ten seconds when you&rsquo;ve only got two.</li>
+                  </ul>
+                </div>
+                <div class="ace-move__cell ace-move__cell--wide">
+                  <p class="ace-move__k">Smallest version</p>
+                  <p>One word. &ldquo;Nerves.&rdquo; &ldquo;Story.&rdquo; &ldquo;Angry.&rdquo; Or just a nod to yourself that says <em>there it is</em>.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- C -->
+            <div class="ace-move ace-move--c">
+              <div class="ace-move__head">
+                <div class="ace-move__l">C</div>
+                <div>
+                  <h3 class="ace-move__name">Connect</h3>
+                  <p class="ace-move__job">Land in your body and in the place you&rsquo;re actually in.</p>
+                </div>
+              </div>
+              <div class="ace-move__grid">
+                <div class="ace-move__cell ace-move__cell--wide" style="border-bottom:1px solid var(--line);">
+                  <p class="ace-move__k">Why we do it</p>
+                  <p>Your thoughts can be in last week&rsquo;s game or next week&rsquo;s selection. Your body is always right here, right now. Coming back to it gives you something steady to stand on while the noise carries on. It also hands you back the one thing you can always control under pressure: <strong>what your arms and legs actually do.</strong></p>
+                  <p>A slow breath out that&rsquo;s longer than the breath in can take some of the edge off a revving body. Treat that as a bonus. The main point is to land, not to force calm.</p>
+                </div>
+                <div class="ace-move__cell ace-move__cell--l">
+                  <p class="ace-move__k">What it looks like</p>
+                  <ul>
+                    <li>Press your feet into the ground, or your toes into your boots.</li>
+                    <li>Feel your grip on the stick, bat, ball, racquet or oar.</li>
+                    <li>One slow breath out, longer than the breath in.</li>
+                    <li>Eyes on one fixed, real thing: the seam of the ball, a line on the court, the top of the posts.</li>
+                    <li>Long version: five things you can see, three you can hear.</li>
+                  </ul>
+                </div>
+                <div class="ace-move__cell">
+                  <p class="ace-move__k">Watch out for</p>
+                  <ul>
+                    <li>Using it to force calm. &ldquo;Breathe. Breathe. Why isn&rsquo;t this working?&rdquo;</li>
+                    <li>Making it so big your teammates think you&rsquo;re having a moment. Nobody needs to see it.</li>
+                    <li>Closing your eyes in a fast game.</li>
+                    <li>If focusing on your breath makes you feel worse, skip it. Feet, hands and eyes work just as well.</li>
+                  </ul>
+                </div>
+                <div class="ace-move__cell ace-move__cell--wide">
+                  <p class="ace-move__k">Smallest version</p>
+                  <p>One breath out, or press your heels down. Two seconds.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- E -->
+            <div class="ace-move ace-move--e">
+              <div class="ace-move__head">
+                <div class="ace-move__l">E</div>
+                <div>
+                  <h3 class="ace-move__name">Engage</h3>
+                  <p class="ace-move__job">Point your attention at the next job, with your values leading, and commit.</p>
+                </div>
+              </div>
+              <div class="ace-move__grid">
+                <div class="ace-move__cell ace-move__cell--wide" style="border-bottom:1px solid var(--line);">
+                  <p class="ace-move__k">Why we do it</p>
+                  <p>ACE always finishes on the task, because that&rsquo;s the whole point of it. Attention aimed outward, at a target, a space or the effect you want, tends to keep movement smooth. A list of body parts, or a &ldquo;don&rsquo;t miss&rdquo;, tends to make it tight.</p>
+                  <p>Picking <strong>the next job</strong>, rather than the scoreboard or the result, keeps you in the part of the game you can actually affect. In the long version, your values come in too: who you want to be out there today, whatever the score.</p>
+                </div>
+                <div class="ace-move__cell ace-move__cell--l">
+                  <p class="ace-move__k">What it sounds like</p>
+                  <ul>
+                    <li><em>&ldquo;Next job.&rdquo;</em></li>
+                    <li><em>&ldquo;Through the ball.&rdquo;</em> <em>&ldquo;Hit the space.&rdquo;</em></li>
+                    <li><em>&ldquo;Strong and long.&rdquo;</em> <em>&ldquo;Talk early.&rdquo;</em></li>
+                    <li>A picture, like Lowell Bailey&rsquo;s bow and arrow.</li>
+                    <li>Long version: a value word for the day. &ldquo;Brave.&rdquo; &ldquo;Relentless.&rdquo; &ldquo;Connected.&rdquo;</li>
+                  </ul>
+                </div>
+                <div class="ace-move__cell">
+                  <p class="ace-move__k">Watch out for</p>
+                  <ul>
+                    <li>An outcome instead of an action. &ldquo;Win this point.&rdquo;</li>
+                    <li>A technique lecture. &ldquo;Elbow up, wrist firm, follow through, weight forward.&rdquo;</li>
+                    <li>&ldquo;Don&rsquo;t&rdquo; cues. Your body needs a direction, not a ban.</li>
+                    <li>Engaging with the scoreboard instead of the ball.</li>
+                  </ul>
+                </div>
+                <div class="ace-move__cell ace-move__cell--wide">
+                  <p class="ace-move__k">Smallest version</p>
+                  <p>One word or one picture, then go.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why the order matters</span>
+              <ol class="aj-steps">
+                <li><strong>A before C.</strong> If you skip Acknowledge and go straight to breathing or focusing, you&rsquo;re really trying to push the feeling away. That usually makes it louder. Noticing it first takes away a lot of its pull.</li>
+                <li><strong>C before E.</strong> It&rsquo;s hard to aim your attention from a body that&rsquo;s spinning. Landing first gives Engage a steady place to launch from.</li>
+                <li><strong>Always finish on E.</strong> An ACE that ends on Acknowledge leaves you sitting with the feeling. An ACE that ends on Engage leaves you doing the next thing.</li>
+              </ol>
+              <p style="margin-top:12px;">And if the noise grabs you again a few seconds later? Run it again. <strong>Every time you notice you&rsquo;ve drifted and come back, that&rsquo;s a rep, not a failure.</strong></p>
+            </div>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 5 minutes</span>
+              <h3 class="aj-act__title">Your three moves, first draft</h3>
+              <p class="aj-act__intro">Don&rsquo;t overthink these. You&rsquo;ll test them at training and change them. They should be short, in your own words, and something you could actually do in your sport.</p>
+              <div class="aj-field">
+                <p class="aj-field__q"><span class="ace-tag ace-tag--a">A</span>The few words you&rsquo;ll use to name what shows up</p>
+                <input type="text" class="aj-input"
+                       data-aj="ace.moves.a"
+                       data-aj-tool="The three moves"
+                       data-aj-q="My Acknowledge words"
+                       placeholder="e.g. There's the story. Nerves, hello.">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q"><span class="ace-tag ace-tag--c">C</span>Your Connect move</p>
+                <p class="aj-field__hint">Small enough that nobody around you would notice. Something you could do in a huddle, on a start line, or at the top of your mark.</p>
+                <input type="text" class="aj-input"
+                       data-aj="ace.moves.c"
+                       data-aj-tool="The three moves"
+                       data-aj-q="My Connect move"
+                       placeholder="e.g. Heels down, one long breath out, eyes on the seam of the ball">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q"><span class="ace-tag ace-tag--e">E</span>Your cue word or picture</p>
+                <input type="text" class="aj-input"
+                       data-aj="ace.moves.e"
+                       data-aj-tool="The three moves"
+                       data-aj-q="My Engage cue"
+                       placeholder="e.g. Next job. Or: bow and arrow.">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">Which move feels hardest for you right now?</p>
+                <p class="aj-field__hint">Whichever you pick is the one to practise most. Acknowledge: try <a href="/grow-athlete-aware#notice" style="color:var(--yellow);">Notice &amp; name</a>. Connect: try <a href="/grow-athlete-practice#check" style="color:var(--yellow);">the 9 second check</a>. Engage: try <a href="/grow-athlete-imagery#cues" style="color:var(--yellow);">Choose your words</a>.</p>
+                <div class="aj-chips" data-aj-single
+                     data-aj-chips="ace.moves.hardest"
+                     data-aj-tool="The three moves"
+                     data-aj-q="The move that feels hardest right now">
+                  <button class="aj-chip">Acknowledge</button>
+                  <button class="aj-chip">Connect</button>
+                  <button class="aj-chip">Engage</button>
+                  <button class="aj-chip">Not sure yet</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> ACE and dropping anchor: <cite>Harris, The Happiness Trap (2022)</cite>. Naming feelings: <cite>Lieberman et al. (2007), Putting feelings into words, Psychological Science</cite>. Why pushing thoughts away backfires: <cite>Wenzlaff &amp; Wegner (2000), Thought suppression, Annual Review of Psychology</cite>. Outward focus: <cite>Wulf (2013), Attentional focus and motor learning: a review of 15 years</cite>. Matching cues to the task: <cite>Hatzigeorgiadis et al. (2011), Self-talk and sports performance: a meta-analysis</cite>. Long breaths out: <cite>Balban et al. (2023), Brief structured respiration practices, Cell Reports Medicine</cite>.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 02 THE ACE DIAL ========== -->
+  <section class="aj-sec aj-sec--alt" id="dial">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">02</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">The ACE Dial</h2>
+              <p class="aj-tool__for">Same three moves, four speeds. Match the length of your ACE to the time you&rsquo;ve actually got.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+            <span class="aj-block__k">One skill, four tempos</span>
+            <p>Think about how you learned any skill at training. You did it slowly first, then at game speed, then under pressure. ACE works the same way. <strong>You train the long version so the short version works.</strong> The short one is just the long one with the volume turned down.</p>
+
+            <div class="ace-dial">
+              <div class="ace-dial__row">
+                <div>
+                  <div class="ace-dial__n">Speed 1</div>
+                  <div class="ace-dial__speed">One breath</div>
+                  <div class="ace-dial__time">2 to 5 seconds</div>
+                </div>
+                <div>
+                  <div class="ace-dial__bar" aria-hidden="true" style="width:22%"><span class="a" style="flex:2">A</span><span class="c" style="flex:3">C</span><span class="e" style="flex:5">E</span></div>
+                  <p><strong>When:</strong> mid play, on the start line, the moment before you serve, kick, shoot or push off.</p>
+                  <p><strong>How:</strong> one breath out that carries A and C together (<em>there it is, I&rsquo;m here</em>), then your cue, then go.</p>
+                  <p class="ace-dial__see">See it: <a href="#film-deibold">Alex Deibold</a></p>
+                </div>
+              </div>
+              <div class="ace-dial__row">
+                <div>
+                  <div class="ace-dial__n">Speed 2</div>
+                  <div class="ace-dial__speed">Short ACE</div>
+                  <div class="ace-dial__time">10 to 40 seconds</div>
+                </div>
+                <div>
+                  <div class="ace-dial__bar" aria-hidden="true" style="width:48%"><span class="a" style="flex:25">A</span><span class="c" style="flex:25">C</span><span class="e" style="flex:50">E</span></div>
+                  <p><strong>When:</strong> between points, between plays, walking back after a mistake, the bowler&rsquo;s walk back, before a free throw, waiting for a lineout call or a penalty corner.</p>
+                  <p><strong>How:</strong> a few words to name it, one body move, eyes on something real, then the next job and your cue.</p>
+                  <p class="ace-dial__see">See it: <a href="#film-bailey">Lowell Bailey</a> &middot; <a href="#forty">Tool 03 walks you through it</a></p>
+                </div>
+              </div>
+              <div class="ace-dial__row">
+                <div>
+                  <div class="ace-dial__n">Speed 3</div>
+                  <div class="ace-dial__speed">Reset ACE</div>
+                  <div class="ace-dial__time">1 to 3 minutes</div>
+                </div>
+                <div>
+                  <div class="ace-dial__bar" aria-hidden="true" style="width:74%"><span class="a" style="flex:30">A</span><span class="c" style="flex:30">C</span><span class="e" style="flex:40">E</span></div>
+                  <p><strong>When:</strong> half time, quarter time, drinks, the sin bin, an injury stoppage, a timeout, between heats, rounds or races.</p>
+                  <p><strong>How:</strong> a proper check in, two or three rounds of Connect, then reset your plan for the next block: first job, cue, value word.</p>
+                  <p class="ace-dial__see">See it: <a href="#film-hubbell">Madison Hubbell</a> &middot; <a href="#film-luge">the luge pair</a> &middot; the guided timer in <a href="/grow-athlete-aware#anchor">Dropping Anchor</a> is this speed</p>
+                </div>
+              </div>
+              <div class="ace-dial__row">
+                <div>
+                  <div class="ace-dial__n">Speed 4</div>
+                  <div class="ace-dial__speed">Full ACE</div>
+                  <div class="ace-dial__time">5 to 10 minutes</div>
+                </div>
+                <div>
+                  <div class="ace-dial__bar" aria-hidden="true" style="width:100%"><span class="a" style="flex:25">A</span><span class="c" style="flex:25">C</span><span class="e" style="flex:50">E</span></div>
+                  <p><strong>When:</strong> the changing room before you go out, the bus or car on the way, the call room, the warm up, the night before.</p>
+                  <p><strong>How:</strong> a full check in, a full landing in your body, then rehearse your first few jobs and your plan for when the noise turns up. Finish by running your short and one breath versions, so they&rsquo;re loaded.</p>
+                  <p class="ace-dial__see">See it: <a href="#film-bjornsen">Sadie Bjornsen</a> &middot; <a href="#ten">Tool 04 walks you through it</a></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="aj-block">
+              <span class="aj-block__k">What changes as you turn the dial</span>
+              <ol class="aj-steps">
+                <li><strong>How much you name.</strong> One word at one breath. A full check in of thoughts, feelings, body and urges at ten minutes.</li>
+                <li><strong>How wide you go.</strong> A short ACE stays narrow: your feet, the ball. A long ACE widens out to the whole room, then narrows back down to the job.</li>
+                <li><strong>How much you plan.</strong> A short ACE picks the next job. A long ACE rehearses your first few jobs and what you&rsquo;ll do after your first mistake.</li>
+              </ol>
+              <p style="margin-top:12px;"><strong>What never changes:</strong> the order, and finishing on E.</p>
+            </div>
+
+            <span class="aj-block__k" style="display:block;margin-top:26px;">Where each speed lives in your sport</span>
+            <div class="ace-rows ace-rows--sports">
+              <div class="ace-rows__row ace-rows__head">
+                <div>Sport</div><div>One breath</div><div>Short ACE (10 to 40 s)</div><div>Reset ACE (1 to 3 min)</div><div>Full ACE (5 to 10 min)</div>
+              </div>
+              <div class="ace-rows__row">
+                <div>Rugby</div>
+                <div data-k="One breath">Before the goal kick or the next carry</div>
+                <div data-k="Short ACE">Behind the posts after conceding, waiting on a lineout call</div>
+                <div data-k="Reset ACE">Half time, sin bin, injury stoppage</div>
+                <div data-k="Full ACE">Changing room before kick off</div>
+              </div>
+              <div class="ace-rows__row">
+                <div>Netball</div>
+                <div data-k="One breath">Before you shoot</div>
+                <div data-k="Short ACE">After a missed shot or turnover, before the next centre</div>
+                <div data-k="Reset ACE">Quarter and half time</div>
+                <div data-k="Full ACE">Changing room, before warm up</div>
+              </div>
+              <div class="ace-rows__row">
+                <div>Football</div>
+                <div data-k="One breath">Over a free kick or corner</div>
+                <div data-k="Short ACE">After conceding, during a stoppage, before a penalty</div>
+                <div data-k="Reset ACE">Half time, a long injury break</div>
+                <div data-k="Full ACE">Changing room before kick off</div>
+              </div>
+              <div class="ace-rows__row">
+                <div>Cricket</div>
+                <div data-k="One breath">As the bowler turns (batting), at the top of your mark (bowling)</div>
+                <div data-k="Short ACE">Between balls, the walk back to your mark</div>
+                <div data-k="Reset ACE">Drinks, end of an over after a big one</div>
+                <div data-k="Full ACE">Padded up waiting to bat, before the innings</div>
+              </div>
+              <div class="ace-rows__row">
+                <div>Tennis, volleyball</div>
+                <div data-k="One breath">Before the serve or return</div>
+                <div data-k="Short ACE">Between points or rallies</div>
+                <div data-k="Reset ACE">Change of ends, between sets</div>
+                <div data-k="Full ACE">Before the match</div>
+              </div>
+              <div class="ace-rows__row">
+                <div>Swimming, athletics, rowing</div>
+                <div data-k="One breath">On the blocks, set, the start</div>
+                <div data-k="Short ACE">Behind the blocks, on the start line, sitting ready</div>
+                <div data-k="Reset ACE">Between heats and the final</div>
+                <div data-k="Full ACE">Call room, warm up, the night before</div>
+              </div>
+              <div class="ace-rows__row">
+                <div>Golf</div>
+                <div data-k="One breath">Over the ball</div>
+                <div data-k="Short ACE">Your pre shot routine, the walk to your ball</div>
+                <div data-k="Reset ACE">After a bad hole, walking to the next tee</div>
+                <div data-k="Full ACE">Before the round</div>
+              </div>
+            </div>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 4 minutes</span>
+              <h3 class="aj-act__title">Set your dial</h3>
+              <p class="aj-act__intro">For each speed, name a real moment in your sport where it fits. If your sport isn&rsquo;t in the table, use the closest one as a guide.</p>
+              <div class="aj-field">
+                <p class="aj-field__q">Speed 1 &middot; One breath. Where?</p>
+                <input type="text" class="aj-input" data-aj="ace.dial.breath" data-aj-tool="The ACE dial" data-aj-q="Where my one breath ACE fits" placeholder="e.g. Standing over a conversion, just before I start my run up">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">Speed 2 &middot; Short ACE (10 to 40 seconds). Where?</p>
+                <input type="text" class="aj-input" data-aj="ace.dial.short" data-aj-tool="The ACE dial" data-aj-q="Where my short ACE fits" placeholder="e.g. Walking back to my mark after being hit for four">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">Speed 3 &middot; Reset ACE (1 to 3 minutes). Where?</p>
+                <input type="text" class="aj-input" data-aj="ace.dial.reset" data-aj-tool="The ACE dial" data-aj-q="Where my reset ACE fits" placeholder="e.g. Half time, while the coach is getting set up">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">Speed 4 &middot; Full ACE (5 to 10 minutes). Where?</p>
+                <input type="text" class="aj-input" data-aj="ace.dial.full" data-aj-tool="The ACE dial" data-aj-q="Where my full ACE fits" placeholder="e.g. On the bus to the game, headphones in">
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 03 THE 40 SECOND ACE ========== -->
+  <section class="aj-sec" id="forty">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">03</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">The 40 Second ACE</h2>
+              <p class="aj-tool__for">For the gaps between plays: after a mistake, between points, during a stoppage. Forty seconds is plenty.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+            <span class="aj-block__k">What it is</span>
+            <p>Most sports are full of short gaps. Ten seconds here, thirty seconds there. Those gaps matter more than they look, because they&rsquo;re where the last play either gets left behind or gets carried into the next one. The 40 second ACE is a reset that fits into almost any of them.</p>
+
+            <div class="ace-line">
+              <div class="ace-line__seg">
+                <div class="ace-line__t">0 to 10 s</div>
+                <div class="ace-line__k">A &middot; Acknowledge</div>
+                <p>Let it land, then name it. React if you need to: a breath, a shake of the head. Then a few words. &ldquo;That&rsquo;s the miss.&rdquo; &ldquo;Angry. Fair enough.&rdquo;</p>
+              </div>
+              <div class="ace-line__seg ace-line__seg--c">
+                <div class="ace-line__t">10 to 20 s</div>
+                <div class="ace-line__k">C &middot; Connect</div>
+                <p>Feet into the ground. One long breath out. Eyes on something fixed and real. Something with your hands: regrip, adjust your gloves, straighten your strings.</p>
+              </div>
+              <div class="ace-line__seg ace-line__seg--e">
+                <div class="ace-line__t">20 to 35 s</div>
+                <div class="ace-line__k">E &middot; Engage</div>
+                <p>Look up and out. What&rsquo;s happening? Where&rsquo;s the space? What&rsquo;s the next job? Say your cue: &ldquo;Next job.&rdquo; &ldquo;Talk early.&rdquo; &ldquo;Hit the target.&rdquo;</p>
+              </div>
+              <div class="ace-line__seg ace-line__seg--go">
+                <div class="ace-line__t">35 to 40 s</div>
+                <div class="ace-line__k">Go</div>
+                <p>Commit. Shoulders back, eyes on the job. If the noise comes back as you go, let it come along.</p>
+              </div>
+            </div>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+              <p><strong>Got less time? Squash it.</strong> Fifteen seconds: name it in one word, one breath out, cue, go. Five seconds: one breath that says <em>there it is</em>, then your cue. Lose the time, keep the order.</p>
+            </div>
+
+            <div class="aj-eg ace-eg">
+              <span class="aj-eg__k">Worked example &middot; after a mistake &middot; rugby</span>
+              <p>Tama is 17 and plays on the wing for his club&rsquo;s under 18s. Tama is made up, but this moment isn&rsquo;t. He has just shot out of the defensive line, missed the tackle, and watched them score. He has about forty seconds behind the posts while the conversion is lined up.</p>
+              <p>
+                <span class="ace-eg__line"><span class="ace-tag ace-tag--a">A</span><em>&ldquo;That&rsquo;s on me. Here&rsquo;s the &lsquo;you&rsquo;ve cost us&rsquo; story.&rdquo;</em> Heavy chest.</span>
+                <span class="ace-eg__line"><span class="ace-tag ace-tag--c">C</span>Hands on knees for one breath out, then stands tall. Presses his studs into the grass. Eyes on the halfway line.</span>
+                <span class="ace-eg__line"><span class="ace-tag ace-tag--e">E</span><em>&ldquo;Next job: chase the kick off, stay connected to my inside man.&rdquo;</em> Cue: <em>&ldquo;Square and patient.&rdquo;</em></span>
+              </p>
+              <p>He still feels gutted. He also makes his next tackle, because his attention is on it and not on the replay.</p>
+            </div>
+
+            <div class="aj-eg ace-eg">
+              <span class="aj-eg__k">Worked example &middot; between points &middot; tennis</span>
+              <p>Aroha is 19 and plays for her university. She&rsquo;s made up too. She&rsquo;s just been broken to go down 4 to 5, and she has the twenty five seconds between points before she receives.</p>
+              <p>
+                <span class="ace-eg__line"><span class="ace-tag ace-tag--a">A</span><em>&ldquo;Nerves. And the &lsquo;you always fold here&rsquo; thought.&rdquo;</em></span>
+                <span class="ace-eg__line"><span class="ace-tag ace-tag--c">C</span>Turns her back to the net, walks to the back fence, straightens her strings, one slow breath out.</span>
+                <span class="ace-eg__line"><span class="ace-tag ace-tag--e">E</span><em>&ldquo;Return deep, through the middle. Move first.&rdquo;</em> Bounces on her toes. Go.</span>
+              </p>
+            </div>
+
+            <div class="aj-eg ace-eg">
+              <span class="aj-eg__k">Worked example &middot; the walk back &middot; cricket</span>
+              <p>Sam is 21, bowls seam for his club&rsquo;s premier side, and is also made up. He&rsquo;s just been hit for four. The walk back to his mark takes about twenty five seconds.</p>
+              <p>
+                <span class="ace-eg__line"><span class="ace-tag ace-tag--a">A</span><em>&ldquo;Annoyed. Urge to bowl it quicker and shorter.&rdquo;</em></span>
+                <span class="ace-eg__line"><span class="ace-tag ace-tag--c">C</span>Rubs the ball on his trousers, feels the seam, one long breath out as he turns at his mark.</span>
+                <span class="ace-eg__line"><span class="ace-tag ace-tag--e">E</span>Eyes on the top of off stump. Cue: <em>&ldquo;Hit the hard length.&rdquo;</em> Runs in.</span>
+              </p>
+              <p>Notice he named the <em>urge</em>. Urges are often the most useful thing to catch, because they&rsquo;re what turns one bad ball into a bad over.</p>
+            </div>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; guided &middot; 40 seconds</span>
+              <h3 class="aj-act__title">Run the 40 second ACE</h3>
+              <p class="aj-act__intro">Bring a recent mistake to mind first, so there&rsquo;s something real to work with. Then press start and follow the prompts. Run it three times in a row. It gets smoother every time.</p>
+              <div class="aj-timer" data-aj-timer='[
+                {"phase":"A · Acknowledge","secs":10,"cue":"Let it land. What&rsquo;s here? <strong>Name it in a few words.</strong> A thought, a feeling, an urge. No arguing."},
+                {"phase":"C · Connect","secs":10,"cue":"<strong>Feet into the ground.</strong> One long breath out. Eyes on one fixed, real thing. Grip something."},
+                {"phase":"E · Engage","secs":15,"cue":"Look up and out. <strong>What&rsquo;s the next job?</strong> Say your cue word to yourself."},
+                {"phase":"Go","secs":5,"cue":"Commit. <strong>Shoulders back, eyes on the job.</strong> The noise can come along."}
+              ]'>
+                <div class="aj-timer__clock" data-timer-clock>0:10</div>
+                <div class="aj-timer__phase" data-timer-phase>A &middot; Acknowledge</div>
+                <p class="aj-timer__cue" data-timer-cue></p>
+                <div class="aj-timer__controls">
+                  <button type="button" class="aj-btn" data-timer-start>Start</button>
+                  <button type="button" class="aj-btn aj-btn--ghost" data-timer-reset>Reset</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:26px;">
+                <p class="aj-field__q">The moment</p>
+                <p class="aj-field__hint">One real gap in your sport where you usually carry the last play into the next one.</p>
+                <input type="text" class="aj-input" data-aj="ace.forty.moment" data-aj-tool="The 40 second ACE" data-aj-q="The moment I'll use my 40 second ACE" placeholder="e.g. After a turnover, before the next centre pass">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q"><span class="ace-tag ace-tag--a">A</span>What usually shows up there, and the words you&rsquo;ll use to name it</p>
+                <textarea class="aj-textarea" data-aj="ace.forty.a" data-aj-tool="The 40 second ACE" data-aj-q="What shows up, and how I'll name it" placeholder="e.g. The 'here we go again' thought, hot face. I'll say: 'There's the again story.'"></textarea>
+                <span class="aj-saved" data-aj-saved="ace.forty.a">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q"><span class="ace-tag ace-tag--c">C</span>Your body move, and where your eyes go</p>
+                <input type="text" class="aj-input" data-aj="ace.forty.c" data-aj-tool="The 40 second ACE" data-aj-q="My body move and where my eyes go" placeholder="e.g. Hands on hips, long breath out, eyes on the centre circle">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q"><span class="ace-tag ace-tag--e">E</span>The next job, and your cue</p>
+                <input type="text" class="aj-input" data-aj="ace.forty.e" data-aj-tool="The 40 second ACE" data-aj-q="The next job and my cue" placeholder="e.g. Next job: front up my player. Cue: 'Win the space.'">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">Your squashed version, for when you&rsquo;ve only got ten seconds</p>
+                <input type="text" class="aj-input" data-aj="ace.forty.squash" data-aj-tool="The 40 second ACE" data-aj-q="My squashed 10 second version" placeholder="e.g. 'Story.' Breath out. 'Win the space.'">
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 04 THE 10 MINUTE ACE ========== -->
+  <section class="aj-sec aj-sec--alt" id="ten">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">04</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">The 10 Minute ACE</h2>
+              <p class="aj-tool__for">For the changing room, the bus, the call room or the night before. The long version that loads the short ones.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+            <span class="aj-block__k">What it is</span>
+            <p>The changing room is one of the noisiest places in sport. Music, banter, nerves, the coach&rsquo;s talk, studs on concrete, and your own head running through everything that could go wrong. Most athletes either try to block it all out or get swept along by it. The 10 minute ACE is a third option: an unhurried run through all three moves, so you walk out landed and pointed at your first job.</p>
+
+            <div class="aj-block">
+              <span class="aj-block__k">Why bother with a long one?</span>
+              <p>Two reasons. First, it&rsquo;s a proper landing before a big moment, at the time when the build up is loudest. Second, <strong>it&rsquo;s practice.</strong> Every time you run the long version, you&rsquo;re rehearsing the exact moves your 40 second and one breath versions are made of. That&rsquo;s what Sadie Bjornsen is doing the night before her race.</p>
+            </div>
+
+            <div class="ace-phases">
+              <div class="ace-phase">
+                <div class="ace-phase__t">0:00 to 2:30</div>
+                <div class="ace-phase__h"><span class="ace-tag ace-tag--a">A</span>Check in</div>
+                <p>Sit somewhere you can stay for a few minutes: your spot on the bench, a bus seat, headphones on or off. Go through the four things that show up and name each one.</p>
+                <p><strong>Thoughts:</strong> what&rsquo;s your mind saying about today? <strong>Feelings:</strong> as precisely as you can. <strong>Body:</strong> a slow scan, head to toe. <strong>Urges:</strong> to talk, to hide, to check your phone, to go to the toilet again.</p>
+                <p>Make a little room for the ones you don&rsquo;t like. You&rsquo;re not trying to change any of it yet.</p>
+              </div>
+              <div class="ace-phase ace-phase--c">
+                <div class="ace-phase__t">2:30 to 5:00</div>
+                <div class="ace-phase__h"><span class="ace-tag ace-tag--c">C</span>Land</div>
+                <p>Feet flat. Feel the bench under you. A few slow breaths with long breaths out. If breathing work suits you, try two short breaths in through the nose and one long sigh out.</p>
+                <p>Press, stretch or roll something. Then widen: five things you can see, three you can hear, what you can feel on your skin. Notice the room as it is, noisy and all.</p>
+              </div>
+              <div class="ace-phase ace-phase--e">
+                <div class="ace-phase__t">5:00 to 8:30</div>
+                <div class="ace-phase__h"><span class="ace-tag ace-tag--e">E</span>Point</div>
+                <p>Three questions. <strong>Who do I want to be out there today?</strong> One or two value words. <strong>What&rsquo;s my first job?</strong> Your first touch, tackle, serve or fifty metres. <strong>What will I do after my first mistake?</strong> Because there will be one.</p>
+                <p>Then run your first two or three anchor moments in your head, at real speed, with the noise written in and your ACE inside each one. <a href="/grow-athlete-imagery#noise" class="ace-link">Using Imagery Well</a> shows you how.</p>
+              </div>
+              <div class="ace-phase ace-phase--go">
+                <div class="ace-phase__t">8:30 to 10:00</div>
+                <div class="ace-phase__h"><span class="ace-tag ace-tag--go">Go</span>Load the short ones</div>
+                <p>Run your 40 second ACE once, then your one breath ACE three times. Stand up. Rejoin the team, the warm up or the call room.</p>
+                <p>You&rsquo;re not trying to hold on to how you feel right now. You&rsquo;ve just loaded the routine you&rsquo;ll use when you need it.</p>
+              </div>
+            </div>
+
+            <span class="aj-block__k" style="display:block;margin-top:26px;">Fitting it into a real changing room</span>
+            <ol class="aj-steps">
+              <li><strong>You don&rsquo;t need silence.</strong> Headphones, a towel over your head, or just looking at your boots all work. Nobody needs to know what you&rsquo;re doing.</li>
+              <li><strong>Split it around the team.</strong> Do A and C before the team talk, and E after it. Team rituals like a huddle, a haka or the captain&rsquo;s last word make great Engage moments.</li>
+              <li><strong>Short on time?</strong> Run it at five minutes: one minute each for A and C, two for E, one to load the short versions.</li>
+              <li><strong>Individual sport?</strong> The call room, the car park, the start hut or the bike on the trainer all work. Same shape.</li>
+              <li><strong>The night before?</strong> Run it in bed, the way Sadie Bjornsen does, then let it go and sleep. Keep it under ten minutes so it doesn&rsquo;t turn into overthinking.</li>
+            </ol>
+
+            <div class="aj-eg ace-eg">
+              <span class="aj-eg__k">Worked example &middot; a final &middot; netball</span>
+              <p>Mere is 18 and plays goal attack. She&rsquo;s made up, and so is the final, but the changing room will feel familiar. She has about ten minutes before warm up.</p>
+              <p>
+                <span class="ace-eg__line"><span class="ace-tag ace-tag--a">A</span><strong style="color:#fff;">Two and a half minutes.</strong> Thoughts: <em>&ldquo;Their keeper is huge.&rdquo; &ldquo;Don&rsquo;t let the team down.&rdquo;</em> Feelings: excited and scared at the same time. Body: butterflies, legs a bit jelly. Urges: another toilet trip, check her phone. <em>&ldquo;OK. That&rsquo;s all here. Makes sense. It&rsquo;s a final.&rdquo;</em></span>
+                <span class="ace-eg__line"><span class="ace-tag ace-tag--c">C</span><strong style="color:#fff;">Two and a half minutes.</strong> Feet flat on the concrete, back against the wall. Three slow breaths out. Five things she can see: her bag, a teammate retaping, the whiteboard, the light, her shoes. Three sounds: the music, a whistle outside, someone laughing.</span>
+                <span class="ace-eg__line"><span class="ace-tag ace-tag--e">E</span><strong style="color:#fff;">Three and a half minutes.</strong> Value: <em>brave</em>. First job: drive hard off the first centre and present early. After her first mistake: <em>&ldquo;Next ball,&rdquo;</em> hands up, call for it. Then she runs the first centre pass, a shot under pressure and a turnover against her in her head, with the &ldquo;don&rsquo;t let them down&rdquo; thought showing up in each one.</span>
+                <span class="ace-eg__line"><span class="ace-tag ace-tag--go">Go</span><strong style="color:#fff;">A minute and a half.</strong> Her 40 second ACE for after a missed shot, once. Three one breath ACEs: breath out, <em>&ldquo;up and soft.&rdquo;</em> Stands up for the huddle.</span>
+              </p>
+              <p>She walks out nervous. She also walks out with a plan for the nerves.</p>
+            </div>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; guided &middot; 10 minutes</span>
+              <h3 class="aj-act__title">Run the 10 minute ACE</h3>
+              <p class="aj-act__intro">Try it first somewhere calm, like your room or the bus home, so you know the shape before you use it on game day. Think of an upcoming game or event as you go, so there&rsquo;s something real to work with.</p>
+              <div class="aj-timer" data-aj-timer='[
+                {"phase":"A · Thoughts","secs":50,"cue":"Settle in. <strong>What is your mind saying about the game?</strong> Name each thought as it comes: &ldquo;there&rsquo;s the thought that…&rdquo;"},
+                {"phase":"A · Feelings","secs":40,"cue":"<strong>What are you feeling?</strong> As precisely as you can. More than one feeling at once is normal."},
+                {"phase":"A · Body","secs":40,"cue":"A slow scan from your head to your feet. <strong>Name what you find:</strong> tight, buzzing, heavy, warm."},
+                {"phase":"A · Urges","secs":20,"cue":"<strong>What do you feel like doing?</strong> Name it. Then make a little room for all of it."},
+                {"phase":"C · Feet and breath","secs":60,"cue":"<strong>Feet flat.</strong> Feel what you&rsquo;re sitting on. Slow breaths, with the breath out longer than the breath in."},
+                {"phase":"C · Move","secs":30,"cue":"<strong>Press, stretch or roll something.</strong> Slowly and on purpose. Notice you&rsquo;re in charge of your body."},
+                {"phase":"C · Widen","secs":60,"cue":"<strong>Five things you can see. Three you can hear.</strong> What can you feel on your skin? The room as it is."},
+                {"phase":"E · Values","secs":40,"cue":"<strong>Who do you want to be out there today?</strong> One or two words."},
+                {"phase":"E · First job","secs":40,"cue":"<strong>What&rsquo;s your first job?</strong> First touch, first tackle, first serve, first fifty metres. See yourself doing it."},
+                {"phase":"E · After a mistake","secs":30,"cue":"There will be one. <strong>What&rsquo;s your first action after it?</strong>"},
+                {"phase":"E · Rehearse","secs":100,"cue":"Run two or three anchor moments in your head at real speed. <strong>Let the noise show up in them,</strong> and run your ACE inside each one."},
+                {"phase":"Load · 40 seconds","secs":40,"cue":"Run your 40 second ACE once: <strong>name it, land, next job, go.</strong>"},
+                {"phase":"Load · One breath","secs":30,"cue":"Three one breath ACEs. <strong>Breath out. Cue. Go.</strong> Breath out. Cue. Go."},
+                {"phase":"Stand up","secs":20,"cue":"Stand. <strong>Eyes up.</strong> Rejoin the room. You&rsquo;re loaded."}
+              ]'>
+                <div class="aj-timer__clock" data-timer-clock>0:50</div>
+                <div class="aj-timer__phase" data-timer-phase>A &middot; Thoughts</div>
+                <p class="aj-timer__cue" data-timer-cue></p>
+                <div class="aj-timer__controls">
+                  <button type="button" class="aj-btn" data-timer-start>Start</button>
+                  <button type="button" class="aj-btn aj-btn--ghost" data-timer-reset>Reset</button>
+                </div>
+              </div>
+
+              <div class="aj-field" style="margin-top:26px;">
+                <p class="aj-field__q">Where and when you&rsquo;ll run it on game day</p>
+                <input type="text" class="aj-input" data-aj="ace.ten.where" data-aj-tool="The 10 minute ACE" data-aj-q="Where and when I'll run my full ACE" placeholder="e.g. On the bus, the last ten minutes before we arrive">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q"><span class="ace-tag ace-tag--a">A</span>What usually shows up before a big game</p>
+                <textarea class="aj-textarea" data-aj="ace.ten.a" data-aj-tool="The 10 minute ACE" data-aj-q="What usually shows up before a big game" placeholder="Thoughts, feelings, body, urges. In the words you'd actually use."></textarea>
+                <span class="aj-saved" data-aj-saved="ace.ten.a">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q"><span class="ace-tag ace-tag--c">C</span>How you&rsquo;ll land</p>
+                <input type="text" class="aj-input" data-aj="ace.ten.c" data-aj-tool="The 10 minute ACE" data-aj-q="How I'll land (Connect)" placeholder="e.g. Back against the wall, feet flat, long breaths out, then five things I can see">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q"><span class="ace-tag ace-tag--e">E</span>Your value word or words for game day</p>
+                <input type="text" class="aj-input" data-aj="ace.ten.value" data-aj-tool="The 10 minute ACE" data-aj-q="My value word for game day" placeholder="e.g. Brave. Connected.">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q"><span class="ace-tag ace-tag--e">E</span>Your first job</p>
+                <input type="text" class="aj-input" data-aj="ace.ten.first" data-aj-tool="The 10 minute ACE" data-aj-q="My first job" placeholder="e.g. Win my first contact, low and hard">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q"><span class="ace-tag ace-tag--e">E</span>What you&rsquo;ll do after your first mistake</p>
+                <input type="text" class="aj-input" data-aj="ace.ten.mistake" data-aj-tool="The 10 minute ACE" data-aj-q="What I'll do after my first mistake" placeholder="e.g. 'Next ball.' Hands up and call for it.">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">What&rsquo;s already in your pre game that ACE could sit inside?</p>
+                <p class="aj-field__hint">Tap all that apply. It&rsquo;s much easier to add ACE to something that already happens than to start something new.</p>
+                <div class="aj-chips"
+                     data-aj-chips="ace.ten.fits"
+                     data-aj-tool="The 10 minute ACE"
+                     data-aj-q="Parts of my pre game that ACE can sit inside">
+                  <button class="aj-chip">Bus or car ride</button>
+                  <button class="aj-chip">Headphones and music</button>
+                  <button class="aj-chip">Strapping or taping</button>
+                  <button class="aj-chip">Boots or shoes on</button>
+                  <button class="aj-chip">Warm up</button>
+                  <button class="aj-chip">Team talk</button>
+                  <button class="aj-chip">Team huddle or haka</button>
+                  <button class="aj-chip">Call room</button>
+                  <button class="aj-chip">The night before</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 05 BUILD YOUR ROUTINE ========== -->
+  <section class="aj-sec" id="build">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">05</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Build Your Routine</h2>
+              <p class="aj-tool__for">Hook each speed to a moment that already happens, and pull it all into one card.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+            <span class="aj-block__k">Hook it to something that already happens</span>
+            <p>The best routine in the world is useless if you forget to run it. Habits stick when they&rsquo;re obvious and easy, so tie each speed of ACE to a moment that already happens every time: retying your laces, walking back to your mark, adjusting your cap, chalking up, drying your hands, the half time whistle. The moment becomes the reminder.</p>
+
+            <ol class="aj-steps">
+              <li><strong>Choose a trigger for each speed.</strong> Something that happens every game, whether you&rsquo;re playing well or badly.</li>
+              <li><strong>Keep the words short and yours.</strong> If you wouldn&rsquo;t say it out loud to a teammate, don&rsquo;t say it to yourself.</li>
+              <li><strong>Make the body part invisible.</strong> If someone filmed you, they shouldn&rsquo;t be able to spot it.</li>
+              <li><strong>Finish on E.</strong> Always.</li>
+              <li><strong>Test it at training this week,</strong> then change whatever didn&rsquo;t fit.</li>
+            </ol>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 5 minutes</span>
+              <h3 class="aj-act__title">Pick your triggers</h3>
+              <div class="aj-field">
+                <p class="aj-field__q">The trigger for your one breath ACE</p>
+                <input type="text" class="aj-input" data-aj="ace.build.t1" data-aj-tool="Build your routine" data-aj-q="Trigger for my one breath ACE" placeholder="e.g. When I step onto the blocks">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">The trigger for your 40 second ACE</p>
+                <input type="text" class="aj-input" data-aj="ace.build.t40" data-aj-tool="Build your routine" data-aj-q="Trigger for my 40 second ACE" placeholder="e.g. Every time I walk back to my mark">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">The trigger for your reset ACE</p>
+                <input type="text" class="aj-input" data-aj="ace.build.treset" data-aj-tool="Build your routine" data-aj-q="Trigger for my reset ACE" placeholder="e.g. The half time whistle">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">One line to remind you what ACE is for</p>
+                <input type="text" class="aj-input" data-aj="ace.build.why" data-aj-tool="Build your routine" data-aj-q="What ACE is for, in my words" placeholder="e.g. It's not about feeling calm. It's about doing the next job.">
+              </div>
+
+              <div class="ace-card" aria-live="polite">
+                <p class="ace-card__title">My ACE routine</p>
+                <p class="ace-card__sub">This fills in from your answers on this page. Screenshot it and keep it on your phone or in your kit bag.</p>
+                <div class="ace-card__row"><div class="ace-card__k ace-card__k--a"><b>A</b> &middot; my words</div><div class="ace-card__v" data-ace-card="a"></div></div>
+                <div class="ace-card__row"><div class="ace-card__k ace-card__k--c"><b>C</b> &middot; my move</div><div class="ace-card__v" data-ace-card="c"></div></div>
+                <div class="ace-card__row"><div class="ace-card__k ace-card__k--e"><b>E</b> &middot; my cue</div><div class="ace-card__v" data-ace-card="e"></div></div>
+                <div class="ace-card__row"><div class="ace-card__k">One breath</div><div class="ace-card__v" data-ace-card="breath"></div></div>
+                <div class="ace-card__row"><div class="ace-card__k">40 seconds</div><div class="ace-card__v" data-ace-card="forty"></div></div>
+                <div class="ace-card__row"><div class="ace-card__k">Reset</div><div class="ace-card__v" data-ace-card="reset"></div></div>
+                <div class="ace-card__row"><div class="ace-card__k">Full ACE</div><div class="ace-card__v" data-ace-card="full"></div></div>
+                <div class="ace-card__row"><div class="ace-card__k">Value</div><div class="ace-card__v" data-ace-card="value"></div></div>
+                <div class="ace-card__row"><div class="ace-card__k">First job</div><div class="ace-card__v" data-ace-card="first"></div></div>
+                <div class="ace-card__row"><div class="ace-card__k">After a mistake</div><div class="ace-card__v" data-ace-card="mistake"></div></div>
+                <p class="ace-card__foot" data-ace-card="why"></p>
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> Making habits obvious and easy, and stacking a new habit onto one you already have: <cite>Clear, Atomic Habits (2018)</cite>.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 06 PRACTISE IT ========== -->
+  <section class="aj-sec aj-sec--alt" id="practise">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">06</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">Practise It</h2>
+              <p class="aj-tool__for">Practise it when you don&rsquo;t need it, so it&rsquo;s there when you do.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+            <span class="aj-block__k">Build it like any other skill</span>
+            <p>A routine you&rsquo;ve only read about won&rsquo;t show up under pressure. In one study, experienced basketballers practised free throws for five weeks, some under pressure and some without. Only the group who practised under pressure kept their accuracy when they were tested under pressure later. So build ACE the way you&rsquo;d build any skill: slowly first, then at speed, then with some heat on it.</p>
+
+            <div class="ace-stages">
+              <div class="ace-stage">
+                <div class="ace-stage__n">Stage 1 &middot; week 1</div>
+                <div class="ace-stage__h">Learn it</div>
+                <p>One full ACE a day somewhere calm. In bed, on the bus. Use the 10 minute timer above.</p>
+              </div>
+              <div class="ace-stage">
+                <div class="ace-stage__n">Stage 2 &middot; week 2</div>
+                <div class="ace-stage__h">Shrink it</div>
+                <p>Keep the daily full ACE, and add ten short ACEs at every training, hooked to natural gaps: drinks, between reps, walking back.</p>
+              </div>
+              <div class="ace-stage">
+                <div class="ace-stage__n">Stage 3 &middot; week 3</div>
+                <div class="ace-stage__h">Pressure it</div>
+                <p>Run it straight after mistakes at training, and in drills with something on the line: a score, a forfeit, people watching. Ask your coach for a few pressure reps.</p>
+              </div>
+              <div class="ace-stage">
+                <div class="ace-stage__n">Stage 4 &middot; week 4 on</div>
+                <div class="ace-stage__h">Play it</div>
+                <p>Use it in competition. After each game, a two minute review: where did I use it, what showed up, what helped, what will I change?</p>
+              </div>
+            </div>
+
+            <div class="aj-warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+              <p><strong>The rep is the return.</strong> Your attention will wander off during ACE, sometimes after two seconds. That isn&rsquo;t you doing it wrong. Noticing that it wandered and bringing it back is the exact skill you&rsquo;re training. A session full of wandering and returning is a good session.</p>
+            </div>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; ongoing</span>
+              <h3 class="aj-act__title">Your rep log</h3>
+              <p class="aj-act__intro">Log six reps over the next two weeks. A mix of speeds is ideal. Bring this to your next session.</p>
+              <div class="aj-field">
+                <p class="aj-field__hint">Tap a rep to open it. &ldquo;Got back to the job&rdquo; is out of 10: how well you got back to what you were doing, not how calm you felt.</p>
+                <div id="aceReps"></div>
+              </div>
+            </div>
+
+            <div class="aj-act">
+              <span class="aj-act__tag">Activity &middot; 2 minutes after a game</span>
+              <h3 class="aj-act__title">The after game review</h3>
+              <div class="aj-field">
+                <p class="aj-field__q">Where did you use ACE, and which speed?</p>
+                <input type="text" class="aj-input" data-aj="ace.review.where" data-aj-tool="The after game review" data-aj-q="Where I used ACE, and which speed" placeholder="e.g. Short ACE after my second turnover. Full ACE on the bus.">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">Where did you need it and not use it?</p>
+                <input type="text" class="aj-input" data-aj="ace.review.missed" data-aj-tool="The after game review" data-aj-q="Where I needed ACE and didn't use it" placeholder="e.g. After the yellow card. I stewed on it for ten minutes.">
+              </div>
+              <div class="aj-field">
+                <p class="aj-field__q">One change for next time</p>
+                <textarea class="aj-textarea" data-aj="ace.review.change" data-aj-tool="The after game review" data-aj-q="One change for next time" placeholder="e.g. Hook the short ACE to the ref's whistle after a stoppage."></textarea>
+                <span class="aj-saved" data-aj-saved="ace.review.change">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+                </span>
+              </div>
+            </div>
+
+            <div class="aj-why">
+              <p><strong>Source.</strong> <cite>Oudejans &amp; Pijpers (2009), Training with anxiety has a positive effect on expert perceptual-motor performance under pressure, Quarterly Journal of Experimental Psychology</cite>. On wandering and returning as the rep: <cite>Wolf &amp; Serpa, A Clinician&rsquo;s Guide to Teaching Mindfulness (2015)</cite>.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 07 TROUBLESHOOTING ========== -->
+  <section class="aj-sec" id="trouble">
+    <div class="container">
+      <div class="aj-wrap">
+        <article class="aj-tool">
+          <div class="aj-tool__head">
+            <div class="aj-tool__num">07</div>
+            <div class="aj-tool__titles">
+              <h2 class="aj-tool__name">When It Doesn&rsquo;t Go to Plan</h2>
+              <p class="aj-tool__for">The things athletes most often tell us, and what to do about each one.</p>
+            </div>
+          </div>
+          <div class="aj-tool__body">
+            <p>Every one of these is normal. None of them means ACE isn&rsquo;t for you.</p>
+            <div class="tb">
+              <div class="tb__item">
+                <button class="tb__q" aria-expanded="false"><span>&ldquo;I did ACE and I was still nervous.&rdquo;</span><span class="tb__plus"></span></button>
+                <div class="tb__a" hidden>
+                  <p>That&rsquo;s ACE working. It was never meant to switch the nerves off. The question to ask is: <strong>did I get back to the job?</strong> If you did, even for a moment, that&rsquo;s a win.</p>
+                  <p>Nerves before something that matters are a sign that it matters. Most good performances happen with some nerves in the room.</p>
+                </div>
+              </div>
+              <div class="tb__item">
+                <button class="tb__q" aria-expanded="false"><span>&ldquo;I forgot to use it when it mattered.&rdquo;</span><span class="tb__plus"></span></button>
+                <div class="tb__a" hidden>
+                  <p>Very common in the first few weeks. Under pressure we fall back on whatever is most practised, and ACE isn&rsquo;t there yet. Two fixes.</p>
+                  <p><strong>Hook it to a trigger</strong> that happens every game (Tool 05). And <strong>get more reps at training</strong>, especially after mistakes (Tool 06). Then add a review after each game so you catch the moments you missed.</p>
+                </div>
+              </div>
+              <div class="tb__item">
+                <button class="tb__q" aria-expanded="false"><span>&ldquo;There wasn&rsquo;t time.&rdquo;</span><span class="tb__plus"></span></button>
+                <div class="tb__a" hidden>
+                  <p>Turn the dial down. If there are five seconds, use the one breath version. If there&rsquo;s no time at all, because the ball is already coming back at you, just do E: <strong>next job.</strong> Then run a proper ACE at the next gap.</p>
+                </div>
+              </div>
+              <div class="tb__item">
+                <button class="tb__q" aria-expanded="false"><span>&ldquo;My mind went straight back to the mistake.&rdquo;</span><span class="tb__plus"></span></button>
+                <div class="tb__a" hidden>
+                  <p>Of course it did. Minds are built to replay things that went wrong. You don&rsquo;t need to stop it happening. <strong>Notice it, name it, and come back again.</strong> Five returns in a minute is five reps.</p>
+                  <p>If one mistake keeps replaying for days, bring it to a session. <a href="/grow-athlete-aware#replay">The reaction replay</a> on the Aware page can help too.</p>
+                </div>
+              </div>
+              <div class="tb__item">
+                <button class="tb__q" aria-expanded="false"><span>&ldquo;I feel stupid doing it in front of my team.&rdquo;</span><span class="tb__plus"></span></button>
+                <div class="tb__a" hidden>
+                  <p>Make it invisible. Nobody needs to see you Acknowledge: it happens in your head. Your Connect move can be pressing your toes into your boots or regripping your stick. Your cue word stays silent. A good ACE looks like nothing at all from the outside.</p>
+                  <p>And plenty of the athletes you look up to are doing something similar. You just can&rsquo;t see it either.</p>
+                </div>
+              </div>
+              <div class="tb__item">
+                <button class="tb__q" aria-expanded="false"><span>&ldquo;Focusing on my breathing makes me feel worse.&rdquo;</span><span class="tb__plus"></span></button>
+                <div class="tb__a" hidden>
+                  <p>That happens for some people, and it&rsquo;s worth listening to. Drop the breath from your Connect step completely. Use your feet, your hands, or your eyes on something fixed outside you. Connect is about landing, and there are lots of ways to land.</p>
+                  <p>If paying attention to your body in general brings up a lot of distress, let your practitioner know, and we&rsquo;ll find a version that works for you.</p>
+                </div>
+              </div>
+              <div class="tb__item">
+                <button class="tb__q" aria-expanded="false"><span>&ldquo;If I don&rsquo;t do my routine exactly right, I can&rsquo;t play.&rdquo;</span><span class="tb__plus"></span></button>
+                <div class="tb__a" hidden>
+                  <p>That&rsquo;s the routine starting to run you, and it&rsquo;s worth catching early. A routine is there to serve you, not to be completed perfectly. Practise it flexibly on purpose: sometimes skip straight to E, sometimes swap your Connect move, sometimes get interrupted halfway and go anyway.</p>
+                  <p>If you&rsquo;re adding steps over time, or feel you must finish it before you&rsquo;re allowed to start, talk to us about it.</p>
+                </div>
+              </div>
+              <div class="tb__item">
+                <button class="tb__q" aria-expanded="false"><span>&ldquo;I can&rsquo;t work out what I&rsquo;m feeling.&rdquo;</span><span class="tb__plus"></span></button>
+                <div class="tb__a" hidden>
+                  <p>&ldquo;Something&rsquo;s here&rdquo; is a perfectly good Acknowledge. You can get more precise over time. <a href="/grow-athlete-aware#notice">Notice &amp; name</a> has a naming grid that splits a moment into thoughts, feelings, body and urges, which makes it much easier.</p>
+                </div>
+              </div>
+              <div class="tb__item">
+                <button class="tb__q" aria-expanded="false"><span>&ldquo;It helps in sport, but things outside sport are getting heavy.&rdquo;</span><span class="tb__plus"></span></button>
+                <div class="tb__a" hidden>
+                  <p>ACE works off the field too: before an exam, a hard conversation, or at 2am when your head won&rsquo;t stop. But it isn&rsquo;t meant to carry everything on its own. If life is feeling heavy, <strong>bring it to your next session or get in touch sooner.</strong> If you need to talk to someone right now, you can call or text <a href="tel:1737">1737</a> any time to reach a trained counsellor, free.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOR STAFF AND COACHES ========== -->
+  <section class="aj-sec aj-sec--alt" id="staff">
+    <div class="container">
+      <div class="aj-wrap">
+        <span class="ace-staff-badge">For TPA practitioners and coaches</span>
+        <h2 class="aj-h2">Teaching ACE<br><em>well</em></h2>
+        <p class="aj-lead">Athletes, you&rsquo;re welcome to read this too. It&rsquo;s how we think about teaching ACE, so there are no secrets in here.</p>
+        <p class="aj-p" style="margin-top:16px;">This section is for the people teaching and supporting ACE: TPA practitioners, and coaches who work alongside us. Open whichever part you need.</p>
+
+        <div class="tb">
+          <div class="tb__item">
+            <button class="tb__q" aria-expanded="false"><span>Where this page fits in the work</span><span class="tb__plus"></span></button>
+            <div class="tb__a" hidden>
+              <p>Our first sessions are about formulation, with ACE introduced lightly. This page comes after that. <strong>Send it once the athlete has felt ACE in session at least once,</strong> not as first session homework. It&rsquo;s the bridge between the toolkits (Open, Aware, Engaged) and the athlete&rsquo;s actual competition routine.</p>
+              <p>A typical order:</p>
+              <ol>
+                <li>Introduce ACE in session using a real recent moment from their sport.</li>
+                <li>Set the <strong>Watch</strong> section and <strong>Tool 01</strong> between sessions.</li>
+                <li>Next session: <strong>Tool 02</strong>, then Tool 03 or Tool 04, whichever suits their sport and where the difficulty shows up (in play, or in the build up).</li>
+                <li>Build <strong>Tool 05</strong> together in session, so the words and moves are genuinely theirs.</li>
+                <li><strong>Tools 06 and 07</strong> as the reps start. Review the rep log and the after game review each session.</li>
+              </ol>
+              <p>ACE is the towards move side of the work. DOTS (Distract, Opt out, Time travel, Self sabotage) helps athletes spot their away moves. The two sit naturally together on a choice point.</p>
+            </div>
+          </div>
+
+          <div class="tb__item">
+            <button class="tb__q" aria-expanded="false"><span>The five non negotiables</span><span class="tb__plus"></span></button>
+            <div class="tb__a" hidden>
+              <p>However you adapt ACE for an athlete, keep these five intact. They&rsquo;re what make it ACE rather than a relaxation routine.</p>
+              <ol>
+                <li><strong>Acknowledge comes first and is never skipped.</strong> Without it, ACE drifts into suppression or distraction.</li>
+                <li><strong>Success is measured by workability, not calm.</strong> &ldquo;Did you get back to the job?&rdquo; rather than &ldquo;Did it make the nerves go?&rdquo;</li>
+                <li><strong>It always finishes on Engage:</strong> the next action, with a cue or a value.</li>
+                <li><strong>The moves are the same at every speed.</strong> Only the dose changes.</li>
+                <li><strong>The words, moves and cues belong to the athlete,</strong> in their own language.</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="tb__item">
+            <button class="tb__q" aria-expanded="false"><span>How to teach each move in session</span><span class="tb__plus"></span></button>
+            <div class="tb__a" hidden>
+              <p><strong>Acknowledge.</strong> Use the naming grid (thoughts, feelings, body, urges). Model the language: &ldquo;I&rsquo;m noticing&hellip;&rdquo;, &ldquo;here&rsquo;s&hellip;&rdquo;. Coach precision over volume. Watch for the athlete debating the thought or seeking reassurance about it. Both are ways of not quite acknowledging.</p>
+              <p><strong>Connect.</strong> Offer a menu (feet, hands, eyes, equipment, breath) and let the athlete choose. Then shape it smaller until it&rsquo;s invisible in their sport. <strong>Default to external options</strong> (eyes, feet, equipment) for athletes with a trauma history, panic, or anyone for whom internal body focus raises distress.</p>
+              <p><strong>Engage.</strong> Cue words should be short, action based and pointed outward, and matched to the task: more technical for fine skills like a kick or a putt, more drive based for effort and endurance. Check the cue isn&rsquo;t a hidden &ldquo;don&rsquo;t&rdquo;. In the long version, link it to the athlete&rsquo;s values.</p>
+              <p><strong>Practise it live, with noise.</strong> Have the athlete run ACE while you add noise: recall their last mistake, count down out loud, put a pretend scoreboard on, then have them stand up and perform a skill. A rep in a calm room is not the same as a rep with noise in it.</p>
+            </div>
+          </div>
+
+          <div class="tb__item">
+            <button class="tb__q" aria-expanded="false"><span>Using the six films</span><span class="tb__plus"></span></button>
+            <div class="tb__a" hidden>
+              <p>Each film is two to three minutes, short enough to watch together in session. Pick the one that fits the conversation you want to have.</p>
+              <div class="ace-rows ace-rows--films">
+                <div class="ace-rows__row ace-rows__head"><div>Film</div><div>Best for</div><div>Use it when</div></div>
+                <div class="ace-rows__row"><div>Alex Deibold</div><div data-k="Best for">The one breath version</div><div data-k="Use it when">The athlete says there&rsquo;s no time for a routine in their sport.</div></div>
+                <div class="ace-rows__row"><div>Lowell Bailey</div><div data-k="Best for">All three moves in one go</div><div data-k="Use it when">Introducing ACE for the first time, or with endurance athletes who hit pressure mid event.</div></div>
+                <div class="ace-rows__row"><div>Madison Hubbell</div><div data-k="Best for">Acknowledge</div><div data-k="Use it when">The athlete waits to feel ready, or argues with their doubt.</div></div>
+                <div class="ace-rows__row"><div>The luge pair</div><div data-k="Best for">Connect, and shared cues</div><div data-k="Use it when">Working with pairs, crews or teams, or building a shared cue.</div></div>
+                <div class="ace-rows__row"><div>Brenna Huckaby</div><div data-k="Best for">Connect through the senses</div><div data-k="Use it when">Exploring identity and belonging, and the line between a Connect move and a Distract move. The test is whether it brings her back to the course.</div></div>
+                <div class="ace-rows__row"><div>Sadie Bjornsen</div><div data-k="Best for">The full, long ACE</div><div data-k="Use it when">The athlete leaves everything to game morning, or needs a night before routine.</div></div>
+              </div>
+              <p>Good questions after any film: <strong>What did they do with the nerves? Which move did you see most clearly? What would your version look like?</strong></p>
+            </div>
+          </div>
+
+          <div class="tb__item">
+            <button class="tb__q" aria-expanded="false"><span>Language: try this, not that</span><span class="tb__plus"></span></button>
+            <div class="tb__a" hidden>
+              <div class="ace-rows ace-rows--say">
+                <div class="ace-rows__row ace-rows__head"><div>Try this</div><div>Not that</div></div>
+                <div class="ace-rows__row"><div>&ldquo;What showed up for you in that moment?&rdquo;</div><div data-k="Not that">&ldquo;Why did you do that?&rdquo;</div></div>
+                <div class="ace-rows__row"><div>&ldquo;Did you get back to the job?&rdquo;</div><div data-k="Not that">&ldquo;Did it calm you down?&rdquo;</div></div>
+                <div class="ace-rows__row"><div>&ldquo;Name it, then next job.&rdquo;</div><div data-k="Not that">&ldquo;Stop thinking about it.&rdquo;</div></div>
+                <div class="ace-rows__row"><div>&ldquo;Make some room for the nerves.&rdquo;</div><div data-k="Not that">&ldquo;Don&rsquo;t be nervous.&rdquo;</div></div>
+                <div class="ace-rows__row"><div>&ldquo;Let&rsquo;s make that move smaller.&rdquo;</div><div data-k="Not that">&ldquo;You look weird doing that.&rdquo;</div></div>
+                <div class="ace-rows__row"><div>&ldquo;What would a towards move have looked like?&rdquo;</div><div data-k="Not that">&ldquo;You need to be mentally tougher.&rdquo;</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tb__item">
+            <button class="tb__q" aria-expanded="false"><span>For coaches at training</span><span class="tb__plus"></span></button>
+            <div class="tb__a" hidden>
+              <ul>
+                <li><strong>Leave gaps in drills</strong> and let athletes use them. A few seconds between reps is enough for a short ACE.</li>
+                <li><strong>Add pressure reps</strong> once athletes have the basics: a score, a consequence, being watched. That&rsquo;s where the routine gets tested.</li>
+                <li><strong>Don&rsquo;t police it.</strong> Asking &ldquo;did you do your ACE?&rdquo; in front of the team straight after an error adds pressure. Ask privately, later, and with curiosity.</li>
+                <li><strong>Team versions work.</strong> A captain&rsquo;s call word after conceding can act as a shared Engage cue, like the luge pair&rsquo;s lyric.</li>
+                <li><strong>Your own ACE matters.</strong> Athletes read the sideline. A coach who can name their frustration and get back to the job is the best demonstration there is.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tb__item">
+            <button class="tb__q" aria-expanded="false"><span>When ACE is being used in an unworkable way</span><span class="tb__plus"></span></button>
+            <div class="tb__a" hidden>
+              <ul>
+                <li><strong>Rigid ritual.</strong> The athlete can&rsquo;t perform if the routine is interrupted, or keeps adding steps. Work on flexibility: deliberately vary it, and practise skipping straight to Engage.</li>
+                <li><strong>ACE as avoidance.</strong> Connect is used to escape (eyes always shut, always leaving the room, always in their headphones). Check the function with the DOTS lens.</li>
+                <li><strong>Chasing calm.</strong> The athlete says ACE has &ldquo;stopped working&rdquo;. This is usually the off switch trap. Go back to workability.</li>
+                <li><strong>Bigger than sport.</strong> Low mood, sleep or eating changes, distress outside sport, or any safety concern: step out of performance mode and follow our clinical and safety processes.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CARRY THIS ========== -->
+  <section class="aj-sec">
+    <div class="container">
+      <div class="aj-wrap">
+        <div class="aj-takeaways">
+          <h3>Your ACE routine in seven lines</h3>
+          <ul>
+            <li><strong>Three moves, always in this order.</strong> Acknowledge, Connect, Engage.</li>
+            <li><strong>An anchor, not an off switch.</strong> Judge it by whether you got back to the job, not by how calm you felt.</li>
+            <li><strong>Never skip A.</strong> Naming it is what stops ACE becoming another escape route.</li>
+            <li><strong>Make C small and yours.</strong> Feet, hands, eyes or breath. Nobody needs to see it.</li>
+            <li><strong>Always finish on E.</strong> Next job, cue word, go.</li>
+            <li><strong>One routine, four speeds.</strong> One breath, forty seconds, a few minutes, ten minutes.</li>
+            <li><strong>Train it long so it works short.</strong> Practise it when you don&rsquo;t need it.</li>
+          </ul>
+        </div>
+
+        <div class="aj-nextnav">
+          <a href="/grow-athlete-aware#anchor">
+            <div class="aj-nextnav__dir">&larr; Where ACE started</div>
+            <div class="aj-nextnav__title">Dropping Anchor</div>
+          </a>
+          <a href="/grow-athlete-imagery#noise" class="aj-nextnav--end">
+            <div class="aj-nextnav__dir">Rehearse it in your head &rarr;</div>
+            <div class="aj-nextnav__title">Using Imagery Well</div>
+          </a>
+        </div>
+
+        <details class="aj-refs">
+          <summary>Sources for this page</summary>
+          <ol>
+            <li>Harris, R. (2022). <em>The Happiness Trap: How to Stop Struggling and Start Living</em> (2nd ed.). Shambhala. The source of dropping anchor and the ACE formula.</li>
+            <li>Hegarty, J., &amp; Huelsmann, C. (2020). <em>ACT in Sport: Improve Performance through Mindfulness, Acceptance, and Commitment</em>. Dark River. ACT applied to sport, by two Aotearoa clinical psychologists.</li>
+            <li>Rupprecht, A. G. O., Tran, U. S., &amp; Gr&ouml;pel, P. (2021). The effectiveness of pre-performance routines in sports: A meta-analysis. <em>International Review of Sport and Exercise Psychology</em>. https://doi.org/10.1080/1750984X.2021.1944271</li>
+            <li>Noetel, M., Ciarrochi, J., Van Zanden, B., &amp; Lonsdale, C. (2019). Mindfulness and acceptance approaches to sporting performance enhancement: A systematic review. <em>International Review of Sport and Exercise Psychology, 12</em>(1), 139&ndash;175.</li>
+            <li>Reinebo, G., Alfonsson, S., Jansson-Fr&ouml;jmark, M., Rozental, A., &amp; Lundgren, T. (2023). Effects of psychological interventions to enhance athletic performance: A systematic review and meta-analysis. <em>Sports Medicine</em>. https://doi.org/10.1007/s40279-023-01931-z</li>
+            <li>Lieberman, M. D., et al. (2007). Putting feelings into words: Affect labeling disrupts amygdala activity in response to affective stimuli. <em>Psychological Science, 18</em>(5), 421&ndash;428.</li>
+            <li>Wenzlaff, R. M., &amp; Wegner, D. M. (2000). Thought suppression. <em>Annual Review of Psychology, 51</em>, 59&ndash;91.</li>
+            <li>Wulf, G. (2013). Attentional focus and motor learning: A review of 15 years. <em>International Review of Sport and Exercise Psychology, 6</em>(1), 77&ndash;104.</li>
+            <li>Hatzigeorgiadis, A., Zourbanos, N., Galanis, E., &amp; Theodorakis, Y. (2011). Self-talk and sports performance: A meta-analysis. <em>Perspectives on Psychological Science, 6</em>(4), 348&ndash;356.</li>
+            <li>Balban, M. Y., et al. (2023). Brief structured respiration practices enhance mood and reduce physiological arousal. <em>Cell Reports Medicine, 4</em>(1), 100895.</li>
+            <li>Oudejans, R. R. D., &amp; Pijpers, J. R. (2009). Training with anxiety has a positive effect on expert perceptual-motor performance under pressure. <em>Quarterly Journal of Experimental Psychology, 62</em>(8), 1631&ndash;1647.</li>
+            <li>Wolf, C., &amp; Serpa, J. G. (2015). <em>A Clinician&rsquo;s Guide to Teaching Mindfulness</em>. New Harbinger.</li>
+            <li>Clear, J. (2018). <em>Atomic Habits</em>. Avery.</li>
+            <li>The New York Times (2018). <em>Inside an Olympic Athlete&rsquo;s Mind</em> [animated video series]. YouTube.</li>
+          </ol>
+        </details>
+
+        <div class="aj-disclaimer">
+          <p>These skills support the work we do together. They don&rsquo;t replace it, and they aren&rsquo;t therapy or a crisis service. If something here brings up more than you expected, bring it to your next session or contact us sooner. Free, confidential support is available 24/7 across Aotearoa: call or text <a href="tel:1737">1737</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom" style="border-top:none;">
+        <p>&copy; 2026 The Performance Act. Private athlete area.</p>
+        <div class="footer__bottom-links">
+          <a href="/grow-athlete">Skills Journal</a>
+          <a href="/grow-athlete-journal">My Journal</a>
+          <a href="/grow-athlete#sources">Sources</a>
+          <a href="/grow-login" data-aj-logout>Log out</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <button class="support-line-btn" id="supportLineBtn" aria-label="NZ support lines">
+    <span class="support-line-btn__dot" aria-hidden="true"></span>
+    Immediate Support
+  </button>
+  <div class="support-line-modal" id="supportLineModal" role="dialog" aria-modal="true" aria-labelledby="supportLineTitle" aria-hidden="true">
+    <div class="support-line-modal__backdrop"></div>
+    <div class="support-line-modal__panel">
+      <button class="support-line-modal__close" id="supportLineClose" aria-label="Close support lines">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <p class="support-line-modal__eyebrow">Aotearoa, New Zealand</p>
+      <h2 class="support-line-modal__title" id="supportLineTitle">Need immediate support?</h2>
+      <p class="support-line-modal__note">The Performance Act is a sport psychology practice, not a crisis or emergency service. If you or someone you care about needs immediate support, please reach out to one of these trusted services. They are free, confidential, and available 24&#8202;/&#8202;7.</p>
+      <ul class="support-line-modal__list" role="list">
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">1737 &mdash; Need to Talk?</p><p class="sln-resource__desc">Free call or text, any time. Trained counsellors, 24&#47;7.</p></div>
+          <a href="tel:1737" class="sln-resource__number">Call or text 1737</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Lifeline NZ</p><p class="sln-resource__desc">Crisis support and suicide prevention, 24&#47;7.</p></div>
+          <a href="tel:0800543354" class="sln-resource__number">0800 543 354</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Youthline</p><p class="sln-resource__desc">For young people. Free call or text 234, 24&#47;7.</p></div>
+          <a href="tel:0800376633" class="sln-resource__number">0800 376 633</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Suicide Crisis Helpline</p><p class="sln-resource__desc">0508 TAUTOKO. Support for those in crisis, 24&#47;7.</p></div>
+          <a href="tel:0508828865" class="sln-resource__number">0508 828 865</a>
+        </li>
+      </ul>
+      <p class="support-line-modal__footer">More resources at <a href="https://www.mentalhealth.org.nz/get-help/in-crisis" target="_blank" rel="noopener">Mental Health Foundation NZ</a> and <a href="https://www.depression.org.nz" target="_blank" rel="noopener">depression.org.nz</a>.</p>
+    </div>
+  </div>
+
+  <script src="script.js?v=5"></script>
+
+  <!-- Build the rep log before the engine binds -->
+  <script>
+  (function () {
+    'use strict';
+    var host = document.getElementById('aceReps');
+    if (!host) return;
+    var REPS = ['Rep 1','Rep 2','Rep 3','Rep 4','Rep 5','Rep 6'];
+    host.innerHTML = REPS.map(function (label, i) {
+      var n = i + 1;
+      return '' +
+      '<div class="aj-day">' +
+        '<button type="button" class="aj-day__trigger">' +
+          '<span class="aj-day__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>' +
+          '<span class="aj-day__label">' + label + '</span>' +
+          '<svg class="aj-day__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>' +
+        '</button>' +
+        '<div class="aj-day__panel" hidden>' +
+          '<div class="aj-day__body">' +
+            '<div class="aj-field">' +
+              '<p class="aj-field__q" style="font-size:0.88rem;">Where, and which speed?</p>' +
+              '<input type="text" class="aj-input" ' +
+                'data-aj="ace.log.r' + n + '.what" ' +
+                'data-aj-tool="ACE rep log" ' +
+                'data-aj-q="' + label + ': where, and which speed" ' +
+                'placeholder="e.g. Short ACE at training, after a dropped catch">' +
+            '</div>' +
+            '<div class="aj-field" style="margin-bottom:0;">' +
+              '<p class="aj-field__q" style="font-size:0.88rem;">What showed up, and how well did you get back to the job (out of 10)?</p>' +
+              '<input type="text" class="aj-input" ' +
+                'data-aj="ace.log.r' + n + '.rating" ' +
+                'data-aj-tool="ACE rep log" ' +
+                'data-aj-q="' + label + ': what showed up, got back to the job /10" ' +
+                'placeholder="e.g. Embarrassed, hot face. 7. Took two goes to get back.">' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+  })();
+  </script>
+
+  <script src="grow-athlete.js?v=5"></script>
+
+  <script>
+  /* accordions: troubleshooting and staff notes */
+  (function () {
+    'use strict';
+    document.querySelectorAll('.tb__item').forEach(function (item) {
+      var q = item.querySelector('.tb__q');
+      var a = item.querySelector('.tb__a');
+      if (!q || !a) return;
+      q.addEventListener('click', function () {
+        var open = q.getAttribute('aria-expanded') === 'true';
+        q.setAttribute('aria-expanded', open ? 'false' : 'true');
+        a.hidden = open;
+      });
+    });
+  })();
+
+  /* the routine card: pulls the athlete's own answers together */
+  (function () {
+    'use strict';
+    var NS = 'pact_aj_v1_';
+    function read(k) {
+      try { return (localStorage.getItem(NS + k) || '').trim(); } catch (e) { return ''; }
+    }
+    function first() {
+      for (var i = 0; i < arguments.length; i++) {
+        var v = read(arguments[i]);
+        if (v) return v;
+      }
+      return '';
+    }
+    function pair(a, b) {
+      return [a, b].filter(Boolean).join('\n');
+    }
+    var SOURCES = {
+      a: function () { return first('ace.moves.a', 'ace.forty.a'); },
+      c: function () { return first('ace.moves.c', 'ace.forty.c', 'ace.ten.c'); },
+      e: function () { return first('ace.moves.e', 'ace.forty.e'); },
+      breath: function () { return first('ace.build.t1', 'ace.dial.breath'); },
+      forty: function () {
+        return pair(first('ace.build.t40', 'ace.forty.moment', 'ace.dial.short'), read('ace.forty.squash') ? 'Squashed: ' + read('ace.forty.squash') : '');
+      },
+      reset: function () { return first('ace.build.treset', 'ace.dial.reset'); },
+      full: function () { return first('ace.ten.where', 'ace.dial.full'); },
+      value: function () { return read('ace.ten.value'); },
+      first: function () { return read('ace.ten.first'); },
+      mistake: function () { return read('ace.ten.mistake'); },
+      why: function () { return read('ace.build.why'); }
+    };
+    var EMPTY = {
+      a: 'Tool 01 fills this in.',
+      c: 'Tool 01 fills this in.',
+      e: 'Tool 01 fills this in.',
+      breath: 'Your one breath trigger goes here.',
+      forty: 'Tool 03 fills this in.',
+      reset: 'Your reset trigger goes here.',
+      full: 'Tool 04 fills this in.',
+      value: 'Tool 04 fills this in.',
+      first: 'Tool 04 fills this in.',
+      mistake: 'Tool 04 fills this in.',
+      why: 'Your one line about what ACE is for goes here.'
+    };
+    var cells = document.querySelectorAll('[data-ace-card]');
+    if (!cells.length) return;
+    function paint() {
+      cells.forEach(function (cell) {
+        var k = cell.getAttribute('data-ace-card');
+        var v = (SOURCES[k] ? SOURCES[k]() : '').trim();
+        cell.textContent = v || EMPTY[k];
+        cell.classList.toggle('is-empty', !v);
+      });
+    }
+    /* The engine saves on input (after a short pause) and on chip
+       clicks, so repaint just after either. */
+    document.addEventListener('input', function () { setTimeout(paint, 450); });
+    document.addEventListener('click', function () { setTimeout(paint, 60); });
+    document.addEventListener('keyup', function (e) { if (e.key === 'Enter') setTimeout(paint, 60); });
+    paint();
+    setTimeout(paint, 300);
+  })();
+  </script>
+</body>
+</html>
