@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=Barlow:wght@600;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=21">
-  <link rel="stylesheet" href="grow-athlete.css?v=4">
+  <link rel="stylesheet" href="grow-athlete.css?v=5">
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=2">
 </head>
@@ -67,6 +67,7 @@
   <div class="mobile-nav" id="mobileNav">
     <nav class="mobile-nav__links" aria-label="Mobile">
       <a href="/grow-athlete" class="mobile-nav__link">SKILLS JOURNAL HOME</a>
+      <a href="/grow-athlete-ace" class="mobile-nav__link">YOUR ACE ROUTINE</a>
       <a href="/grow-athlete-fivemoves" class="mobile-nav__link">THE FIVE MOVES</a>
       <a href="/grow-athlete-practice" class="mobile-nav__link">THE PRACTICE ROOM</a>
       <a href="/grow-athlete-imagery" class="mobile-nav__link">USING IMAGERY WELL</a>
@@ -91,7 +92,7 @@
       <h1 class="aj-hero__title">YOUR SKILLS<br><span>JOURNAL</span></h1>
       <p class="aj-hero__lead"><strong>Everything we work on together, in one place.</strong> Not a course to get through &mdash; a library to raid. Come here when something is hard, find the skill that fits, do the activity, and bring what you write back into our next session.</p>
       <p class="aj-hero__meta">
-        <span>The Five Moves</span> &middot; <span>4 toolkits</span> &middot; <span>35 skills + 8 practices</span> &middot; <span>Imagery, step by step</span> &middot; <span>An activity for every one</span>
+        <span>Your ACE routine</span> &middot; <span>The Five Moves</span> &middot; <span>4 toolkits</span> &middot; <span>35 skills + 8 practices</span> &middot; <span>Imagery, step by step</span> &middot; <span>An activity for every one</span>
       </p>
       <div class="aj-hero__actions">
         <a href="#areas" class="btn btn--primary btn--lg">Choose an area</a>
@@ -176,6 +177,7 @@
           <span class="aj-eg__k">And the 30-second version: ACE</span>
           <p><strong>A &mdash; Acknowledge</strong> what&rsquo;s showing up. <strong>C &mdash; Connect</strong> with your body. <strong>E &mdash; Engage</strong> in what you&rsquo;re doing.</p>
           <p>Three moves that map straight onto the three pillars. You can run them on the start line, in the sin bin, before a hard conversation, or at 2am when your head won&rsquo;t stop. One skill set, every arena. (Adapted with credit from Russ Harris&rsquo;s &ldquo;dropping anchor&rdquo;.)</p>
+          <p><a href="/grow-athlete-ace" style="color:var(--yellow);text-decoration:underline;text-underline-offset:3px;font-weight:600;">Build your full ACE routine, from one breath to ten minutes &rarr;</a></p>
         </div>
         <p class="aj-p">If you have been through <strong>THRIVE</strong>, this will look familiar &mdash; it is the same spine. The difference is that THRIVE is a nine-week programme you work through in order. This is not. This is a library you dip into, in whatever order your season and your sessions demand.</p>
       </div>
@@ -211,6 +213,18 @@
                 <option value="grow-athlete-practice.html#scan">The sitting body scan</option>
                 <option value="grow-athlete-practice.html#warmup">The mindful warm-up</option>
                 <option value="grow-athlete-practice.html#trouble">When practice goes badly</option>
+              </optgroup>
+              <optgroup label="YOUR ACE ROUTINE">
+                <option value="grow-athlete-ace.html">Building your full ACE routine</option>
+                <option value="grow-athlete-ace.html#watch">Watch: six athletes, six versions of ACE</option>
+                <option value="grow-athlete-ace.html#moves">The three moves, and why each matters</option>
+                <option value="grow-athlete-ace.html#dial">The ACE dial: four speeds</option>
+                <option value="grow-athlete-ace.html#forty">The 40 second ACE</option>
+                <option value="grow-athlete-ace.html#ten">The 10 minute ACE</option>
+                <option value="grow-athlete-ace.html#build">Build your routine</option>
+                <option value="grow-athlete-ace.html#practise">Practise it</option>
+                <option value="grow-athlete-ace.html#trouble">When it doesn&rsquo;t go to plan</option>
+                <option value="grow-athlete-ace.html#staff">For staff and coaches: teaching ACE well</option>
               </optgroup>
               <optgroup label="PERFORMANCE SKILLS">
                 <option value="grow-athlete-imagery.html">Using imagery well &mdash; all 7 steps</option>
@@ -279,7 +293,7 @@
         <div class="aj-jump__go">
           <button type="submit" class="aj-btn" data-aj-jump-go>Go &rarr;</button>
         </div>
-        <p class="aj-jump__note">Not sure? <strong>Start with the Five Moves</strong> &mdash; it will tell you which pillar you need. Otherwise: <strong>if something is bothering you right now</strong>, Open. <strong>If you can&rsquo;t focus</strong>, Aware. <strong>If you feel flat or directionless</strong>, Engaged. <strong>If you&rsquo;re running on empty</strong>, Brain Health. <strong>If you want to rehearse a big moment</strong>, Using Imagery Well.</p>
+        <p class="aj-jump__note">Not sure? <strong>Start with the Five Moves</strong> &mdash; it will tell you which pillar you need. Otherwise: <strong>if something is bothering you right now</strong>, Open. <strong>If you can&rsquo;t focus</strong>, Aware. <strong>If you feel flat or directionless</strong>, Engaged. <strong>If you&rsquo;re running on empty</strong>, Brain Health. <strong>If you want to rehearse a big moment</strong>, Using Imagery Well. <strong>If you want one routine that pulls it all together</strong>, Your ACE Routine.</p>
       </form>
 
       <!-- Start-here pair: the star tool and the practice library -->
@@ -314,6 +328,32 @@
               <li>When practice goes badly</li>
             </ul>
             <span class="aj-pillar__cta">Open the practice room
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Pull it together: the full ACE routine -->
+      <div class="aj-wrap--wide" style="margin-top:20px;">
+        <div class="aj-pillars aj-pillars--one">
+
+          <a href="/grow-athlete-ace" class="aj-pillar aj-pillar--wide aj-pillar--ace">
+            <div class="aj-pillar__word">Your ACE Routine</div>
+            <div class="aj-pillar__sub">Pull it together &middot; one breath to ten minutes &middot; six Olympic and Paralympic athletes on film</div>
+            <p class="aj-pillar__desc"><strong style="color:#fff;">Acknowledge. Connect. Engage.</strong> The routine that ties every toolkit together. Why each move matters, how to size it to the moment you&rsquo;ve got, a 40 second reset for between plays, a 10 minute version for the changing room, and a routine card you build yourself.</p>
+            <ul class="aj-pillar__tools">
+              <li>Watch: six athletes, six versions</li>
+              <li>The three moves, and why</li>
+              <li>The ACE dial: four speeds</li>
+              <li>The 40 second ACE</li>
+              <li>The 10 minute ACE</li>
+              <li>Build your routine</li>
+              <li>Practise it</li>
+              <li>For staff and coaches</li>
+            </ul>
+            <span class="aj-pillar__cta">Build your routine
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </span>
           </a>
@@ -549,7 +589,7 @@
       <div class="aj-wrap">
         <p class="aj-eyebrow">Watch</p>
         <h2 class="aj-h2">The library</h2>
-        <p class="aj-lead">Short, worth your time, and each one tied to a skill in here. Nothing loads until you press play. More sit inside the individual toolkits, next to the skill they belong to.</p>
+        <p class="aj-lead">Short, worth your time, and each one tied to a skill in here. Nothing loads until you press play. More sit inside the individual toolkits, next to the skill they belong to, and <a href="/grow-athlete-ace#watch" style="color:var(--yellow);text-decoration:underline;text-underline-offset:3px;">six short films of Olympic and Paralympic athletes running their own version of ACE</a> are on Your ACE Routine.</p>
 
         <div class="aj-watch" style="margin-top:28px;">
           <figure class="aj-vid">
@@ -689,6 +729,20 @@
           </ol>
         </details>
 
+        <details class="aj-refs">
+          <summary>Research behind Your ACE Routine</summary>
+          <ol>
+            <li>Rupprecht, A. G. O., Tran, U. S., &amp; Gr&ouml;pel, P. (2021). The effectiveness of pre-performance routines in sports: A meta-analysis. <em>International Review of Sport and Exercise Psychology</em>. Routines help, under pressure too, across ages and skill levels.</li>
+            <li>Noetel, M., Ciarrochi, J., Van Zanden, B., &amp; Lonsdale, C. (2019). Mindfulness and acceptance approaches to sporting performance enhancement: A systematic review. <em>International Review of Sport and Exercise Psychology, 12</em>(1), 139&ndash;175.</li>
+            <li>Reinebo, G., et al. (2023). Effects of psychological interventions to enhance athletic performance: A systematic review and meta-analysis. <em>Sports Medicine</em>.</li>
+            <li>Wulf, G. (2013). Attentional focus and motor learning: A review of 15 years. <em>International Review of Sport and Exercise Psychology, 6</em>(1), 77&ndash;104. Why Engage points outward.</li>
+            <li>Balban, M. Y., et al. (2023). Brief structured respiration practices enhance mood and reduce physiological arousal. <em>Cell Reports Medicine, 4</em>(1), 100895. Long breaths out.</li>
+            <li>Oudejans, R. R. D., &amp; Pijpers, J. R. (2009). Training with anxiety has a positive effect on expert perceptual-motor performance under pressure. <em>Quarterly Journal of Experimental Psychology, 62</em>(8), 1631&ndash;1647. Why we practise ACE under pressure.</li>
+            <li>Clear, J. (2018). <em>Atomic Habits</em>. Avery. Hooking ACE to moments that already happen.</li>
+            <li>The New York Times (2018). <em>Inside an Olympic Athlete&rsquo;s Mind</em> [animated video series]. The six films on the ACE page.</li>
+          </ol>
+        </details>
+
         <div class="aj-disclaimer">
           <p><strong>An important note.</strong> This area supports the work we do together face to face &mdash; it does not replace it, and it is not therapy or a crisis service. If things feel heavy, bring it to your next session or contact us sooner. If you need help right now, the <em>Immediate Support</em> button on this page lists free, confidential services available 24/7 across Aotearoa. Call or text <a href="tel:1737">1737</a> any time to speak to a trained counsellor.</p>
         </div>
@@ -707,6 +761,7 @@
         </div>
         <div class="footer-grid__links">
           <h4 class="footer__heading">YOUR TOOLKITS</h4>
+          <a href="/grow-athlete-ace" class="footer__link">Your ACE Routine</a>
           <a href="/grow-athlete-open" class="footer__link">Open</a>
           <a href="/grow-athlete-aware" class="footer__link">Aware</a>
           <a href="/grow-athlete-engaged" class="footer__link">Engaged</a>
@@ -778,6 +833,6 @@
   </div>
 
   <script src="script.js?v=5"></script>
-  <script src="grow-athlete.js?v=4"></script>
+  <script src="grow-athlete.js?v=5"></script>
 </body>
 </html>
