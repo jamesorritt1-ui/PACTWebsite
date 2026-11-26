@@ -844,6 +844,7 @@
     ace: 'YOUR ACE ROUTINE',
     five: 'THE FIVE MOVES',
     prac: 'THE PRACTICE ROOM',
+    reps: 'THREE GOOD REPS',
     img: 'USING IMAGERY WELL',
     open: 'OPEN — Acceptance & Defusion',
     aware: 'AWARE — Present Moment & Perspective',
@@ -869,11 +870,24 @@
       });
     });
     Object.keys(out).forEach(function (p) {
-      out[p].sort(function (a, b) {
+      out[p].sort(p === 'reps' ? byRepsDate : function (a, b) {
         return (a.tool || '').localeCompare(b.tool || '') || a.key.localeCompare(b.key);
       });
     });
     return out;
+  }
+
+  /* Three Good Reps keeps one entry per day (reps.YYYY-MM-DD.field) and
+     one Sunday look back per week (reps.wYYYY-MM-DD.field, keyed to the
+     Sunday). Newest first, the look back after that Sunday's reps, and
+     the fields in the order they appear on the page. */
+  function byRepsDate(a, b) {
+    var pa = a.key.split('.'), pb = b.key.split('.');
+    var da = (pa[1] || '').replace(/^w/, ''), db = (pb[1] || '').replace(/^w/, '');
+    if (da !== db) return da < db ? 1 : -1;
+    var wa = (pa[1] || '').charAt(0) === 'w' ? 1 : 0, wb = (pb[1] || '').charAt(0) === 'w' ? 1 : 0;
+    if (wa !== wb) return wa - wb;
+    return a.key.localeCompare(b.key);
   }
 
   var PILLAR_SHORT = {
@@ -881,6 +895,7 @@
     ace: 'ACE routine',
     five: 'Five Moves',
     prac: 'Practice',
+    reps: 'Good reps',
     img: 'Imagery',
     open: 'Open',
     aware: 'Aware',
@@ -891,7 +906,7 @@
   var jn = { filter: 'all', query: '', open: {}, built: false };
 
   function journalOrder(groups) {
-    var order = ['start', 'ace', 'five', 'prac', 'img', 'open', 'aware', 'engaged', 'brain'];
+    var order = ['start', 'ace', 'five', 'prac', 'reps', 'img', 'open', 'aware', 'engaged', 'brain'];
     var extras = Object.keys(groups).filter(function (p) { return order.indexOf(p) === -1; });
     return order.concat(extras).filter(function (p) { return groups[p] && groups[p].length; });
   }
@@ -1069,7 +1084,7 @@
 
   function journalAsText() {
     var groups = gatherEntries();
-    var order = ['start', 'ace', 'five', 'prac', 'img', 'open', 'aware', 'engaged', 'brain'];
+    var order = ['start', 'ace', 'five', 'prac', 'reps', 'img', 'open', 'aware', 'engaged', 'brain'];
     var extras = Object.keys(groups).filter(function (p) { return order.indexOf(p) === -1; });
     var lines = [
       'MY SKILLS JOURNAL',

@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T335C5CQGF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-T335C5CQGF');
+  </script>
+  <meta name="robots" content="noindex, nofollow">
+  <title>Three Good Reps | Skills Journal | The Performance Act</title>
+  <meta name="description" content="A ten minute daily practice that trains your attention to notice what went right. Three reps a day: one you would want to see again, one you did anyway, and one thing you were given. Then savour one.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=Barlow:wght@600;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=21">
+  <link rel="stylesheet" href="grow-athlete.css?v=6">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=2">
+  <style>
+    /* The three reps each carry a colour: yellow for the rep you'd see
+       again, orange (Engaged) for the rep you did anyway, green for what
+       you were given. Savouring uses the Aware teal. */
+    body.aj { --rep-again:#FFE500; --rep-anyway:#FF9D4D; --rep-given:#8ED88E; --rep-savour:#6FD3E0; }
+
+    .aj-tool__body a, .aj-p a, .aj-lead a, .aj-eg a, .aj-block a, .aj-warn a, .gr-step a, .tb__a a, .gr-reveal a { color:var(--yellow); text-decoration:underline; text-underline-offset:3px; }
+
+    /* section index */
+    .ix { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:30px; }
+    .ix__card { display:block; background:#111; border:1px solid var(--line); border-left:3px solid var(--yellow); padding:18px 22px; transition:.22s; }
+    .ix__card:hover { border-color:var(--yellow); transform:translateY(-3px); }
+    .ix__card--watch { border-left-color:#fff; }
+    .ix__num { font-family:var(--font-heading); font-size:0.66rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--yellow); }
+    .ix__card--watch .ix__num { color:#fff; }
+    .ix__name { font-family:var(--font-heading); font-size:1.08rem; text-transform:uppercase; color:#fff; letter-spacing:0.02em; margin:6px 0 6px; }
+    .ix__for { color:var(--ink); font-size:0.88rem; line-height:1.6; font-weight:300; margin:0; }
+    @media (max-width:680px){ .ix { grid-template-columns:1fr; } }
+
+    /* the three reps at a glance */
+    .gr-three { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:26px 0; }
+    .gr-three__col { background:#141414; border:1px solid var(--line); border-top:3px solid var(--rep-again); padding:20px 20px 18px; }
+    .gr-three__col--anyway { border-top-color:var(--rep-anyway); }
+    .gr-three__col--given { border-top-color:var(--rep-given); }
+    .gr-three__n { font-family:var(--font-heading); font-size:2.4rem; font-weight:800; line-height:1; color:var(--rep-again); }
+    .gr-three__col--anyway .gr-three__n { color:var(--rep-anyway); }
+    .gr-three__col--given .gr-three__n { color:var(--rep-given); }
+    .gr-three__name { font-family:var(--font-heading); text-transform:uppercase; color:#fff; font-size:1.05rem; letter-spacing:0.04em; margin:6px 0 2px; }
+    .gr-three__k { font-family:var(--font-heading); font-size:0.64rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin:0 0 10px; }
+    .gr-three__col p { color:var(--ink); font-size:0.9rem; line-height:1.65; font-weight:300; margin:0; }
+    .gr-three__savour { grid-column:1 / -1; background:#101a1c; border:1px solid rgba(111,211,224,0.3); border-left:3px solid var(--rep-savour); padding:16px 20px; }
+    .gr-three__savour p { color:var(--ink); font-size:0.92rem; line-height:1.65; font-weight:300; margin:0; }
+    .gr-three__savour strong { color:var(--rep-savour); font-family:var(--font-heading); text-transform:uppercase; letter-spacing:0.06em; font-weight:700; margin-right:6px; }
+    @media (max-width:760px){ .gr-three { grid-template-columns:1fr; } }
+
+    /* watch first */
+    .gr-task { display:flex; gap:16px; align-items:flex-start; background:#141414; border:1px solid var(--line); border-left:3px solid #fff; padding:18px 20px; margin:24px 0 20px; max-width:640px; }
+    .gr-task__n { font-family:var(--font-heading); font-size:2rem; font-weight:800; line-height:1; color:#fff; }
+    .gr-task p { color:var(--ink); font-size:0.95rem; line-height:1.65; font-weight:300; margin:0 0 6px; }
+    .gr-task p:last-child { margin-bottom:0; }
+    .gr-task p strong { color:#fff; font-weight:600; }
+    .gr-reveal-btn { margin-top:22px; }
+    .gr-reveal { margin-top:26px; }
+    .gr-reveal[hidden], .gr-reveal-btn[hidden], .gr-noscroll[hidden], .gr-date__today[hidden] { display:none !important; }
+    .gr-noscroll { color:var(--muted); font-size:0.86rem; margin:14px 0 0; font-style:italic; }
+
+    /* four rules */
+    .gr-rules { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:22px 0; }
+    .gr-rule { background:#141414; border:1px solid var(--line); padding:18px 20px; }
+    .gr-rule__n { font-family:var(--font-heading); font-size:0.64rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--yellow); }
+    .gr-rule__h { font-family:var(--font-heading); text-transform:uppercase; color:#fff; font-size:1.02rem; letter-spacing:0.03em; margin:4px 0 8px; }
+    .gr-rule p { color:var(--ink); font-size:0.9rem; line-height:1.65; font-weight:300; margin:0; }
+    .gr-rule p em { color:#fff; font-style:normal; }
+    @media (max-width:680px){ .gr-rules { grid-template-columns:1fr; } }
+
+    /* the day bar */
+    .gr-date { display:flex; align-items:center; justify-content:space-between; gap:14px; border:1px solid var(--line); background:#0f0f0f; padding:14px 16px; margin:6px 0 22px; }
+    .gr-date__mid { text-align:center; flex:1; }
+    .gr-date__k { font-family:var(--font-heading); font-size:0.64rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--yellow); }
+    .gr-date__v { font-family:var(--font-heading); text-transform:uppercase; color:#fff; font-size:1.15rem; letter-spacing:0.03em; margin-top:2px; }
+    .gr-date__nav { font-family:var(--font-heading); font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink); text-decoration:none; padding:8px 10px; border:1px solid var(--line); white-space:nowrap; transition:.2s; }
+    .gr-date__nav:hover { border-color:var(--yellow); color:#fff; }
+    .gr-date__nav[aria-disabled="true"] { visibility:hidden; }
+    .gr-date__today { display:inline-block; margin-top:6px; font-size:0.8rem; color:var(--muted); }
+    .gr-date__today a { color:var(--yellow); text-decoration:underline; text-underline-offset:3px; }
+    @media (max-width:560px){
+      .gr-date { flex-wrap:wrap; }
+      .gr-date__mid { order:-1; flex:1 1 100%; }
+      .gr-date__nav { flex:1; text-align:center; }
+    }
+
+    /* the five steps */
+    .gr-step { border:1px solid var(--line); border-left:4px solid #fff; background:#0f0f0f; padding:20px 22px 6px; margin:0 0 16px; }
+    .gr-step--again { border-left-color:var(--rep-again); }
+    .gr-step--anyway { border-left-color:var(--rep-anyway); }
+    .gr-step--given { border-left-color:var(--rep-given); }
+    .gr-step--savour { border-left-color:var(--rep-savour); }
+    .gr-step__head { display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:12px; }
+    .gr-step__n { font-family:var(--font-heading); font-size:0.66rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); }
+    .gr-step__name { font-family:var(--font-heading); text-transform:uppercase; color:#fff; font-size:1.12rem; letter-spacing:0.04em; margin:0; }
+    .gr-step--again .gr-step__name { color:var(--rep-again); }
+    .gr-step--anyway .gr-step__name { color:var(--rep-anyway); }
+    .gr-step--given .gr-step__name { color:var(--rep-given); }
+    .gr-step--savour .gr-step__name { color:var(--rep-savour); }
+    .gr-step .aj-field__q { font-size:0.95rem; }
+    .gr-step--anyway .aj-chip[aria-pressed="true"] { background:var(--rep-anyway); border-color:var(--rep-anyway); }
+    .gr-step--given .aj-chip[aria-pressed="true"] { background:var(--rep-given); border-color:var(--rep-given); }
+    .gr-step--savour .aj-chip[aria-pressed="true"] { background:var(--rep-savour); border-color:var(--rep-savour); }
+    .gr-step--savour .aj-timer__clock, .gr-step--savour .aj-timer__cue strong { color:var(--rep-savour); }
+    .gr-step--savour .aj-btn { background:var(--rep-savour); border-color:var(--rep-savour); }
+    .gr-step--savour .aj-btn--ghost { background:transparent; border-color:rgba(255,255,255,0.35); color:var(--ink); }
+
+    /* evidence */
+    .gr-count { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:22px 0 18px; }
+    .gr-count__cell { background:#141414; border:1px solid var(--line); padding:18px 18px 16px; text-align:center; }
+    .gr-count__v { font-family:'Barlow', var(--font-heading); font-weight:700; font-size:2.3rem; line-height:1; color:#fff; }
+    .gr-count__cell--again .gr-count__v { color:var(--rep-again); }
+    .gr-count__cell--anyway .gr-count__v { color:var(--rep-anyway); }
+    .gr-count__cell--given .gr-count__v { color:var(--rep-given); }
+    .gr-count__k { font-family:var(--font-heading); font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-top:8px; }
+    .gr-total { color:var(--ink); font-size:0.95rem; line-height:1.6; font-weight:300; margin:0 0 16px; }
+    .gr-total strong { color:#fff; font-weight:600; }
+    @media (max-width:520px){ .gr-count { grid-template-columns:1fr; } .gr-count__cell { display:flex; align-items:center; gap:14px; text-align:left; } .gr-count__k { margin-top:0; } }
+
+    .gr-hist { border:1px solid var(--line); border-bottom:none; background:#0f0f0f; }
+    .gr-hist:last-child { border-bottom:1px solid var(--line); }
+    .gr-hist summary { list-style:none; cursor:pointer; display:flex; align-items:center; gap:12px; padding:14px 18px; }
+    .gr-hist summary::-webkit-details-marker { display:none; }
+    .gr-hist summary:hover { background:rgba(255,255,255,0.03); }
+    .gr-hist__day { flex:1; font-family:var(--font-heading); text-transform:uppercase; letter-spacing:0.05em; color:#fff; font-size:0.92rem; }
+    .gr-hist__day small { font-family:var(--font-body); text-transform:none; letter-spacing:0; color:var(--muted); font-size:0.8rem; margin-left:8px; }
+    .gr-dots { display:inline-flex; gap:5px; }
+    .gr-dots span { width:9px; height:9px; border-radius:50%; border:1.5px solid #444; }
+    .gr-dots .is-again { background:var(--rep-again); border-color:var(--rep-again); }
+    .gr-dots .is-anyway { background:var(--rep-anyway); border-color:var(--rep-anyway); }
+    .gr-dots .is-given { background:var(--rep-given); border-color:var(--rep-given); }
+    .gr-hist__chev { width:16px; height:16px; color:var(--muted); transition:transform .2s; }
+    .gr-hist[open] .gr-hist__chev { transform:rotate(180deg); }
+    .gr-hist__body { padding:2px 18px 16px; }
+    .gr-hist__row { display:grid; grid-template-columns:150px 1fr; gap:12px; padding:8px 0; border-top:1px solid var(--line); }
+    .gr-hist__k { font-family:var(--font-heading); font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); padding-top:3px; }
+    .gr-hist__k--again { color:var(--rep-again); }
+    .gr-hist__k--anyway { color:var(--rep-anyway); }
+    .gr-hist__k--given { color:var(--rep-given); }
+    .gr-hist__k--savour { color:var(--rep-savour); }
+    .gr-hist__v { color:var(--ink); font-size:0.92rem; line-height:1.6; font-weight:300; white-space:pre-line; }
+    .gr-hist__v em { color:var(--muted); font-style:normal; }
+    .gr-hist__edit { margin:12px 0 0; font-size:0.84rem; }
+    .gr-hist__edit a { color:var(--yellow); text-decoration:underline; text-underline-offset:3px; }
+    .gr-empty { color:var(--muted); font-size:0.92rem; line-height:1.6; border:1px dashed #333; padding:18px 20px; margin:0; }
+    @media (max-width:560px){ .gr-hist__row { grid-template-columns:1fr; gap:2px; } }
+
+    /* this week, read back */
+    .gr-week { border:1px solid var(--line); background:#0f0f0f; margin:18px 0 22px; }
+    .gr-week__day { display:grid; grid-template-columns:96px 1fr; gap:14px; padding:12px 16px; border-bottom:1px solid var(--line); }
+    .gr-week__day:last-child { border-bottom:none; }
+    .gr-week__d { font-family:var(--font-heading); text-transform:uppercase; letter-spacing:0.06em; font-size:0.8rem; color:#fff; padding-top:2px; }
+    .gr-week__d small { display:block; color:var(--muted); font-family:var(--font-body); text-transform:none; letter-spacing:0; font-size:0.76rem; }
+    .gr-week__list { list-style:none; margin:0; padding:0; }
+    .gr-week__list li { position:relative; padding:3px 0 3px 16px; color:var(--ink); font-size:0.88rem; line-height:1.55; font-weight:300; }
+    .gr-week__list li::before { content:''; position:absolute; left:0; top:11px; width:8px; height:8px; border-radius:50%; background:var(--rep-again); }
+    .gr-week__list li.is-anyway::before { background:var(--rep-anyway); }
+    .gr-week__list li.is-given::before { background:var(--rep-given); }
+    .gr-week__none { color:#666; font-size:0.86rem; font-style:italic; }
+    @media (max-width:520px){ .gr-week__day { grid-template-columns:1fr; gap:4px; } }
+
+    /* accordions: troubleshooting */
+    .tb { border:1px solid var(--line); background:#0f0f0f; margin-top:20px; }
+    .tb__item { border-bottom:1px solid var(--line); }
+    .tb__item:last-child { border-bottom:none; }
+    .tb__q { width:100%; display:flex; align-items:center; gap:14px; padding:17px 20px; background:none; border:none; cursor:pointer; text-align:left; }
+    .tb__q:hover { background:rgba(255,255,255,0.03); }
+    .tb__q span { flex:1; color:#fff; font-size:0.96rem; font-weight:400; line-height:1.5; }
+    .tb__plus { position:relative; width:18px; height:18px; flex:0 0 18px !important; }
+    .tb__plus::before, .tb__plus::after { content:''; position:absolute; background:var(--yellow); transition:transform .3s ease, opacity .3s ease; }
+    .tb__plus::before { top:8px; left:0; width:18px; height:2px; }
+    .tb__plus::after { left:8px; top:0; width:2px; height:18px; }
+    .tb__q[aria-expanded="true"] .tb__plus::after { transform:rotate(90deg); opacity:0; }
+    .tb__a[hidden] { display:none; }
+    .tb__a { padding:0 20px 20px 52px; }
+    .tb__a p { color:var(--ink); font-size:0.94rem; line-height:1.75; font-weight:300; margin:0 0 12px; }
+    .tb__a p:last-child { margin-bottom:0; }
+    .tb__a p strong { color:#fff; font-weight:600; }
+    @media (max-width:600px){ .tb__a { padding-left:20px; } }
+  </style>
+</head>
+<body class="aj">
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="/" class="header__logo">
+        <img src="images/logo-horizontal.png?v=2" alt="The Performance Act" class="logo-img logo-img--header">
+      </a>
+      <nav class="header__nav" id="mainNav" aria-label="Primary">
+        <a href="/grow-athlete" class="nav-link">SKILLS JOURNAL</a>
+        <a href="/grow-athlete-ace" class="nav-link">ACE</a>
+        <a href="/grow-athlete-fivemoves" class="nav-link">FIVE MOVES</a>
+        <a href="/grow-athlete-practice" class="nav-link">PRACTICE</a>
+        <a href="/grow-athlete-reps" class="nav-link active">GOOD REPS</a>
+        <a href="/grow-athlete-imagery" class="nav-link">IMAGERY</a>
+        <a href="/grow-athlete-open" class="nav-link">OPEN</a>
+        <a href="/grow-athlete-aware" class="nav-link">AWARE</a>
+        <a href="/grow-athlete-engaged" class="nav-link">ENGAGED</a>
+      </nav>
+      <div class="header__actions">
+        <a href="/grow-login" class="btn btn--outline btn--sm" data-aj-logout>Log out</a>
+        <a href="/grow-athlete-journal" class="btn btn--primary btn--sm">My Journal</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <nav class="mobile-nav__links" aria-label="Mobile">
+      <a href="/grow-athlete" class="mobile-nav__link">SKILLS JOURNAL HOME</a>
+      <a href="/grow-athlete-ace" class="mobile-nav__link">YOUR ACE ROUTINE</a>
+      <a href="/grow-athlete-fivemoves" class="mobile-nav__link">THE FIVE MOVES</a>
+      <a href="/grow-athlete-practice" class="mobile-nav__link">THE PRACTICE ROOM</a>
+      <a href="/grow-athlete-reps" class="mobile-nav__link">THREE GOOD REPS</a>
+      <a href="/grow-athlete-imagery" class="mobile-nav__link">USING IMAGERY WELL</a>
+      <a href="/grow-athlete-open" class="mobile-nav__link">OPEN</a>
+      <a href="/grow-athlete-aware" class="mobile-nav__link">AWARE</a>
+      <a href="/grow-athlete-engaged" class="mobile-nav__link">ENGAGED</a>
+      <a href="/grow-athlete-brain" class="mobile-nav__link">BRAIN HEALTH</a>
+      <a href="/grow-athlete-journal" class="mobile-nav__link">MY JOURNAL</a>
+      <a href="/grow-login" class="mobile-nav__link" data-aj-logout>LOG OUT</a>
+    </nav>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="aj-hero" id="top">
+    <div class="aj-hero__bg"></div>
+    <div class="container">
+      <a href="/grow-athlete" class="aj-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Skills Journal
+      </a>
+      <span class="aj-hero__badge">Daily practice &middot; ten minutes</span>
+      <h1 class="aj-hero__title">THREE GOOD<br><span>REPS</span></h1>
+      <p class="aj-hero__lead"><strong>Ten minutes at the end of your day.</strong> One rep you&rsquo;d want to see again, one rep you did anyway, and one thing you were given. Then you savour one of them. It isn&rsquo;t positive thinking. It&rsquo;s training your attention to notice what actually went right, and keeping an honest record of it.</p>
+      <p class="aj-hero__meta"><span>3 reps a day</span> &middot; <span>10 minutes</span> &middot; <span>A Sunday look back</span> &middot; <span>Builds a record of your own evidence</span></p>
+    </div>
+  </section>
+
+  <div class="aj-progress">
+    <div class="container">
+      <div class="aj-progress__inner">
+        <span class="aj-progress__label">Your reps for this day</span>
+        <div class="aj-progress__track"><div class="aj-progress__fill" id="ajProgressFill"></div></div>
+        <span class="aj-progress__count" id="ajProgressCount">0 / 0 saved</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== WATCH FIRST ========== -->
+  <section class="aj-sec" id="watch">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">Watch this first &middot; under two minutes</p>
+        <h2 class="aj-h2">Before you read<br><em>anything else.</em></h2>
+        <p class="aj-lead">This page starts with a short test of your attention. It only works if you do it before you read on, so do it now.</p>
+
+        <div class="gr-task">
+          <div class="gr-task__n">1</div>
+          <div>
+            <p><strong>Count how many times the players wearing white pass the basketball.</strong></p>
+            <p>Keep a careful count. Watch it once, full screen if you can, and don&rsquo;t pause it. When it finishes, come back here.</p>
+          </div>
+        </div>
+
+        <div class="aj-watch is-single">
+          <figure class="aj-vid" id="film">
+            <div class="aj-vid__frame" data-yt="IGQmdoK_ZfY">
+              <button class="aj-vid__play" aria-label="Play: The Monkey Business Illusion, by Daniel Simons" style="background-image:url('https://i.ytimg.com/vi/IGQmdoK_ZfY/hqdefault.jpg')">
+                <span class="aj-vid__badge">Watch &middot; count the passes</span>
+                <span class="aj-vid__btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+              </button>
+            </div>
+            <figcaption class="aj-vid__cap"><b>The Monkey Business Illusion.</b> Daniel Simons, University of Illinois. 1 minute 42 seconds. <em>Your job:</em> count the passes made by the players in white.</figcaption>
+          </figure>
+        </div>
+
+        <button type="button" class="aj-btn gr-reveal-btn" id="grRevealBtn" aria-expanded="false" aria-controls="grReveal">I&rsquo;ve watched it. Show me what it means</button>
+        <p class="gr-noscroll">No spoilers until you press that.</p>
+
+        <div class="gr-reveal" id="grReveal" hidden>
+          <h3 class="aj-h3" style="margin-top:0;">What just happened</h3>
+          <p class="aj-p">Most people get the count right. A lot of people also miss things that happened right in front of them.</p>
+          <p class="aj-p">In the original version of this experiment, about half of the people watching never saw the gorilla walk into the middle of the game, stop, and beat its chest. In this newer version, plenty of people who already knew about the gorilla did spot it, and then missed the curtain changing colour and a player in black walking off the court. Knowing there was a trick didn&rsquo;t help them see the rest.</p>
+          <p class="aj-p">That isn&rsquo;t a flaw in you. It&rsquo;s how attention works. <strong>Attention is a spotlight, not a floodlight.</strong> Whatever it&rsquo;s pointed at gets seen in detail. A lot of what it isn&rsquo;t pointed at doesn&rsquo;t get seen at all.</p>
+
+          <div class="aj-block">
+            <span class="aj-block__k">Now swap the basketball for your day</span>
+            <p>If your attention is always counting the passes that the &ldquo;not good enough&rdquo; voice cares about (the dropped ball, the missed shot, what you should have done better, what still needs fixing) it gets very good at seeing those. It&rsquo;s been trained to.</p>
+            <p>Meanwhile the good stuff walks straight through the middle of your day, beats its chest and walks off unseen. The drill where something finally clicked. The pass you made under pressure. The mate who picked you up after training. It all happened. You just weren&rsquo;t counting it.</p>
+            <p><strong>Counting passes isn&rsquo;t wrong.</strong> Athletes need to look at what went wrong, and your coach will make sure you do. The problem is when it&rsquo;s the only thing your attention ever counts. Three Good Reps is ten minutes a day of deliberately looking for the gorilla.</p>
+          </div>
+
+          <div class="aj-eg">
+            <span class="aj-eg__k">Linked skill</span>
+            <p>Being stuck narrow on one thing is a pattern you&rsquo;ve met before. <a href="/grow-athlete-aware#zoom">Zoom in, zoom out</a> in the Aware toolkit is about moving your attention on purpose. This page is a daily version of zooming out, aimed at the part of your day you usually miss.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section class="aj-sec aj-sec--alt" id="how">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">How it works</p>
+        <h2 class="aj-h2">Three reps.<br><em>One savoured.</em></h2>
+        <p class="aj-lead">At the end of each day, or after training, you write down three things. Each one trains your attention to catch something it usually misses.</p>
+
+        <div class="gr-three">
+          <div class="gr-three__col">
+            <div class="gr-three__n">1</div>
+            <div class="gr-three__name">A rep I&rsquo;d want to see again</div>
+            <p class="gr-three__k">Builds belief from evidence</p>
+            <p>One thing you did today that you&rsquo;d want on the highlights reel. Described as what you did, like a clip, not who you are.</p>
+          </div>
+          <div class="gr-three__col gr-three__col--anyway">
+            <div class="gr-three__n">2</div>
+            <div class="gr-three__name">A rep I did anyway</div>
+            <p class="gr-three__k">Doing it with the noise there</p>
+            <p>One thing you did while nerves, doubt or tiredness were still there. You name the noise, then the action.</p>
+          </div>
+          <div class="gr-three__col gr-three__col--given">
+            <div class="gr-three__n">3</div>
+            <div class="gr-three__name">Something I was given</div>
+            <p class="gr-three__k">Gratitude, made specific</p>
+            <p>One person or thing that made today better, and what exactly they did.</p>
+          </div>
+          <div class="gr-three__savour">
+            <p><strong>Then savour one.</strong>Pick one of the three and replay it for a minute. Where you were, what you could see and hear, what it felt like in your body. Let it land before you move on.</p>
+          </div>
+        </div>
+
+        <div class="aj-warn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+          <p><strong>This is not positive thinking.</strong> You&rsquo;re not telling yourself you&rsquo;re great, and you&rsquo;re not pretending the hard stuff didn&rsquo;t happen. Your mind wouldn&rsquo;t buy it anyway (that&rsquo;s <a href="/grow-athlete-aware#documentary">The Documentary of You</a>). You&rsquo;re keeping an honest record of what you actually did. Confidence that rests on evidence of what you did, especially what you did while the doubt was loud, holds up far better than confidence that rests on feeling good or on what other people say.</p>
+        </div>
+
+        <h3 class="aj-h3">Four rules</h3>
+        <div class="gr-rules">
+          <div class="gr-rule">
+            <div class="gr-rule__n">Rule 1</div>
+            <div class="gr-rule__h">The bar is low on purpose</div>
+            <p>If it happened and it helped, it counts. <em>&ldquo;I turned up&rdquo;</em> is a rep. When the bar for &ldquo;good&rdquo; is set too high, you almost never see yourself succeed, and confidence drops along with it.</p>
+          </div>
+          <div class="gr-rule">
+            <div class="gr-rule__n">Rule 2</div>
+            <div class="gr-rule__h">What you did, not who you are</div>
+            <p><em>&ldquo;I kept calling for the ball after my first drop&rdquo;</em>, not <em>&ldquo;I&rsquo;m a strong player.&rdquo;</em> Actions are evidence you can repeat. Labels fall over the first time you have a bad day.</p>
+          </div>
+          <div class="gr-rule">
+            <div class="gr-rule__n">Rule 3</div>
+            <div class="gr-rule__h">It isn&rsquo;t a positivity test</div>
+            <p>Hard stuff can sit right next to your reps. A rubbish day with one honest rep in it is a good entry.</p>
+          </div>
+          <div class="gr-rule">
+            <div class="gr-rule__n">Rule 4</div>
+            <div class="gr-rule__h">No streaks</div>
+            <p>Miss a day and nothing is lost. There&rsquo;s nothing to keep alive. Just pick it up tonight.</p>
+          </div>
+        </div>
+
+        <div class="aj-block">
+          <span class="aj-block__k">Why it works</span>
+          <p><strong>Your own successes are the strongest source of self belief there is.</strong> Belief that you can do something (self efficacy) grows mainly from evidence that you&rsquo;ve done it, and most of that evidence goes unnoticed unless you look for it.</p>
+          <p><strong>Noticing good attempts helps you learn.</strong> In motor learning experiments, people who got feedback after their better attempts learned more, and felt more capable, than people who got it after their worst ones. When the bar for a good attempt was set too high, people hardly ever saw themselves succeed, and both their confidence and their learning dropped. That&rsquo;s why the bar on this page is low.</p>
+          <p><strong>Wording matters.</strong> Children praised for what they had just done (good kicks) handled a later setback better than children praised for who they were (a great player). That&rsquo;s rule 2.</p>
+          <p><strong>Your past self is the fairest comparison.</strong> Seeing your own improvement over time helped people learn and eased their nerves. That&rsquo;s what the Sunday look back is for.</p>
+          <p><strong>Gratitude is good for you.</strong> Writing down what you&rsquo;re grateful for has been linked with better wellbeing and better sleep, and researchers have started to link gratitude with mental toughness as well. To be honest, there isn&rsquo;t yet good evidence that it lifts performance directly. It&rsquo;s here because it&rsquo;s good for you and for the people around you.</p>
+          <p><strong>Ten minutes, daily.</strong> Short daily practice is the kind athletes actually stick with.</p>
+          <p style="color:var(--muted);font-size:0.9rem;">Most of this research comes from skill learning and wellbeing studies, not from this exact exercise. It&rsquo;s a well grounded bet, not a promise.</p>
+        </div>
+
+        <div class="ix">
+          <a href="#today" class="ix__card">
+            <div class="ix__num">Every day &middot; 10 minutes</div>
+            <div class="ix__name">Today&rsquo;s Three Reps</div>
+            <p class="ix__for">Land, three reps, then savour one. With a one minute timer.</p>
+          </a>
+          <a href="#evidence" class="ix__card">
+            <div class="ix__num">Builds up as you go</div>
+            <div class="ix__name">Your Evidence</div>
+            <p class="ix__for">Every rep you&rsquo;ve banked, day by day. No streaks.</p>
+          </a>
+          <a href="#sunday" class="ix__card">
+            <div class="ix__num">Once a week &middot; 5 minutes</div>
+            <div class="ix__name">The Sunday Look Back</div>
+            <p class="ix__for">Read your week back and compare yourself with you.</p>
+          </a>
+          <a href="#trouble" class="ix__card">
+            <div class="ix__num">When it&rsquo;s hard</div>
+            <div class="ix__name">When It Doesn&rsquo;t Go to Plan</div>
+            <p class="ix__for">Can&rsquo;t think of anything, feels fake, missed a week.</p>
+          </a>
+        </div>
+
+        <div class="aj-why">
+          <p><strong>Sources.</strong> <cite>Bandura (1997), Self-efficacy: The exercise of control</cite>. <cite>Chiviacowsky (2021), The motivational role of feedback in motor learning, in Bertollo, Filho &amp; Terry (Eds.), Advancements in Mental Skills Training</cite>, drawing on <cite>Chiviacowsky &amp; Wulf (2007)</cite>, <cite>Chiviacowsky, Wulf &amp; Lewthwaite (2012)</cite> and <cite>Chiviacowsky &amp; Drews (2014)</cite>. <cite>Emmons &amp; McCullough (2003)</cite>. <cite>Guerrero, Martin &amp; Prokesova (2021)</cite> and <cite>Cowden, Crust, Tibbert &amp; Jackman (2021)</cite> in the same book. On short daily practice: <cite>Fournier (2021), Mindfulness and mental preparation</cite>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TODAY ========== -->
+  <section class="aj-sec" id="today">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">Every day &middot; ten minutes</p>
+        <h2 class="aj-h2">Today&rsquo;s<br><em>three reps.</em></h2>
+        <p class="aj-lead">Do it at the same time each day so it becomes part of the day rather than one more job. After training, on the bus home, or just before bed all work.</p>
+
+        <div class="aj-act">
+          <span class="aj-act__tag">Activity &middot; about 10 minutes</span>
+          <h3 class="aj-act__title">Your three good reps</h3>
+          <p class="aj-act__intro">Everything saves as you type, on this device only. Forgot yesterday? Use <strong>Previous day</strong> to fill it in.</p>
+
+          <div class="gr-date">
+            <a class="gr-date__nav" id="grPrev" href="#today">&larr; Previous day</a>
+            <div class="gr-date__mid">
+              <div class="gr-date__k" id="grDateK">Today</div>
+              <div class="gr-date__v" id="grDateV">&nbsp;</div>
+              <span class="gr-date__today" id="grBackToday" hidden><a href="/grow-athlete-reps#today">Back to today</a></span>
+            </div>
+            <a class="gr-date__nav" id="grNext" href="#today">Next day &rarr;</a>
+          </div>
+
+          <!-- Step 1 -->
+          <div class="gr-step">
+            <div class="gr-step__head"><span class="gr-step__n">Step 1 &middot; 30 seconds</span><h4 class="gr-step__name">Land</h4></div>
+            <div class="aj-field">
+              <p class="aj-field__q">Right now I&rsquo;m noticing&hellip;</p>
+              <p class="aj-field__hint">One line. Thoughts, feelings, body. You&rsquo;re checking in, not fixing anything.</p>
+              <input type="text" class="aj-input" data-gr="a_land" data-gr-q="Right now I'm noticing" placeholder="e.g. Tired legs. Still a bit annoyed about the team list. Glad the day is done.">
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="gr-step gr-step--again">
+            <div class="gr-step__head"><span class="gr-step__n">Step 2 &middot; 2 minutes</span><h4 class="gr-step__name">A rep I&rsquo;d want to see again</h4></div>
+            <div class="aj-field">
+              <p class="aj-field__q">One thing you did today that you&rsquo;d want to see again.</p>
+              <p class="aj-field__hint">In sport or anywhere else. Describe what you did, specifically, as if you were describing a clip. Small is fine.</p>
+              <textarea class="aj-textarea" data-gr="b_again" data-gr-q="A rep I'd want to see again" placeholder="e.g. Called for the ball twice in the second half instead of hiding on the wing."></textarea>
+              <span class="aj-saved" data-gr-saved="b_again">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+              </span>
+            </div>
+            <div class="aj-field">
+              <p class="aj-field__q">What did it take?</p>
+              <p class="aj-field__hint">An effort, a decision, a skill, a habit. This is the part that builds belief, because it&rsquo;s yours to repeat.</p>
+              <input type="text" class="aj-input" data-gr="c_took" data-gr-q="What it took" placeholder="e.g. Deciding at half time I'd rather be wrong out loud than invisible.">
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="gr-step gr-step--anyway">
+            <div class="gr-step__head"><span class="gr-step__n">Step 3 &middot; 2 minutes</span><h4 class="gr-step__name">A rep I did anyway</h4></div>
+            <div class="aj-field">
+              <p class="aj-field__q">What noise was there?</p>
+              <p class="aj-field__hint">Name it the way you would in ACE. Nerves, doubt, tiredness, the &ldquo;not good enough&rdquo; story.</p>
+              <input type="text" class="aj-input" data-gr="d_noise" data-gr-q="The noise that was there" placeholder="e.g. Doubt. The 'everyone's going to see you're off the pace' story.">
+            </div>
+            <div class="aj-field">
+              <p class="aj-field__q">What did you do anyway?</p>
+              <p class="aj-field__hint">On a bad day, this is usually the rep with the most in it. Doing the thing with the noise still there is exactly what this whole Skills Journal trains.</p>
+              <textarea class="aj-textarea" data-gr="e_anyway" data-gr-q="What I did anyway" placeholder="e.g. Went first in the sprint drill even though I was sure I'd come last."></textarea>
+              <span class="aj-saved" data-gr-saved="e_anyway">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+              </span>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="gr-step gr-step--given">
+            <div class="gr-step__head"><span class="gr-step__n">Step 4 &middot; 2 minutes</span><h4 class="gr-step__name">Something I was given</h4></div>
+            <div class="aj-field">
+              <p class="aj-field__q">One person or thing that made today better, and what they did.</p>
+              <p class="aj-field__hint">Be specific about what they actually did. A coach, a teammate, a parent, a stranger, your body, the weather.</p>
+              <textarea class="aj-textarea" data-gr="f_given" data-gr-q="Something I was given" placeholder="e.g. Mum drove me to training and didn't ask about the game. Exactly what I needed."></textarea>
+              <span class="aj-saved" data-gr-saved="f_given">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+              </span>
+            </div>
+            <div class="aj-field">
+              <p class="aj-field__q">Will you tell them?</p>
+              <p class="aj-field__hint">Once a week, tell the person. It usually means more to them than you&rsquo;d expect.</p>
+              <div class="aj-chips" data-aj-single data-gr-chips="g_tell" data-gr-q="Telling them">
+                <button type="button" class="aj-chip">Already told them</button>
+                <button type="button" class="aj-chip">I&rsquo;ll tell them this week</button>
+                <button type="button" class="aj-chip">Just for me</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="gr-step gr-step--savour">
+            <div class="gr-step__head"><span class="gr-step__n">Step 5 &middot; 1 to 2 minutes</span><h4 class="gr-step__name">Savour one</h4></div>
+            <div class="aj-field">
+              <p class="aj-field__q">Which one will you savour?</p>
+              <div class="aj-chips" data-aj-single data-gr-chips="h_savour" data-gr-q="The one I savoured">
+                <button type="button" class="aj-chip">The rep I&rsquo;d see again</button>
+                <button type="button" class="aj-chip">The rep I did anyway</button>
+                <button type="button" class="aj-chip">What I was given</button>
+              </div>
+            </div>
+            <div class="aj-timer" data-aj-timer='[
+              {"phase":"Find it","secs":20,"cue":"Go back to the moment just before it. <strong>Where were you? Who was there?</strong>"},
+              {"phase":"Fill it in","secs":20,"cue":"<strong>What could you see, hear and feel?</strong> Your hands, your feet, the air, the sound around you."},
+              {"phase":"Stay with it","secs":20,"cue":"Let it be good for a few more seconds. <strong>Notice the urge to move on, and stay anyway.</strong>"}
+            ]'>
+              <div class="aj-timer__clock" data-timer-clock>0:20</div>
+              <div class="aj-timer__phase" data-timer-phase>Find it</div>
+              <p class="aj-timer__cue" data-timer-cue></p>
+              <div class="aj-timer__controls">
+                <button type="button" class="aj-btn" data-timer-start>Start</button>
+                <button type="button" class="aj-btn aj-btn--ghost" data-timer-reset>Reset</button>
+              </div>
+            </div>
+            <div class="aj-field" style="margin-top:20px;">
+              <p class="aj-field__q">What did you notice when you stayed with it?</p>
+              <input type="text" class="aj-input" data-gr="i_noticed" data-gr-q="What I noticed when I stayed with it" placeholder="e.g. I could actually feel the ball leave my hand. Hadn't thought about that all day.">
+            </div>
+          </div>
+
+          <p class="aj-p" style="margin:18px 0 0;font-size:0.9rem;color:var(--muted);">That&rsquo;s it for today. Your reps show up below and in <a href="/grow-athlete-journal">My Journal</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EVIDENCE ========== -->
+  <section class="aj-sec aj-sec--alt" id="evidence">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">Builds up as you go</p>
+        <h2 class="aj-h2">Your<br><em>evidence.</em></h2>
+        <p class="aj-lead">Every rep you log lands here. On the days your mind says you never do anything right, this is the footage it left out.</p>
+
+        <div class="gr-count" aria-live="polite">
+          <div class="gr-count__cell gr-count__cell--again"><div class="gr-count__v" id="grCountAgain">0</div><div class="gr-count__k">Reps you&rsquo;d see again</div></div>
+          <div class="gr-count__cell gr-count__cell--anyway"><div class="gr-count__v" id="grCountAnyway">0</div><div class="gr-count__k">Reps you did anyway</div></div>
+          <div class="gr-count__cell gr-count__cell--given"><div class="gr-count__v" id="grCountGiven">0</div><div class="gr-count__k">Things you were given</div></div>
+        </div>
+        <p class="gr-total" id="grTotal"></p>
+        <div id="grHistory"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SUNDAY LOOK BACK ========== -->
+  <section class="aj-sec" id="sunday">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">Once a week &middot; five minutes</p>
+        <h2 class="aj-h2">The Sunday<br><em>look back.</em></h2>
+        <p class="aj-lead">Once a week, read your week back. You&rsquo;re looking for patterns and progress, and the only person you&rsquo;re comparing yourself with is you.</p>
+        <p class="aj-p" style="margin-top:16px;">Sunday works for most people. If your week ends on a different day, do it then.</p>
+
+        <div class="aj-act">
+          <span class="aj-act__tag">Activity &middot; 5 minutes, weekly</span>
+          <h3 class="aj-act__title" id="grWeekTitle">Your week</h3>
+          <p class="aj-act__intro">Read these first. Slowly.</p>
+          <div class="gr-week" id="grWeek"></div>
+
+          <div class="aj-field">
+            <p class="aj-field__q">Which rep from this week do you want to keep?</p>
+            <p class="aj-field__hint">The one you&rsquo;d want to remember on a hard day.</p>
+            <textarea class="aj-textarea" data-grw="a_keep" data-gr-q="The rep from this week I want to keep" data-aj-notrack placeholder="e.g. Tuesday. Going first in the sprint drill. I keep coming back to it."></textarea>
+            <span class="aj-saved" data-grw-saved="a_keep">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+            </span>
+          </div>
+          <div class="aj-field">
+            <p class="aj-field__q">What&rsquo;s one thing you&rsquo;re doing now that you weren&rsquo;t four weeks ago?</p>
+            <p class="aj-field__hint">Compare yourself with you a month ago, not with anyone else. Seeing your own progress over time is one of the steadiest sources of confidence there is.</p>
+            <textarea class="aj-textarea" data-grw="b_better" data-gr-q="Something I'm doing now that I wasn't four weeks ago" data-aj-notrack placeholder="e.g. Speaking up in the huddle. A month ago I'd have just nodded."></textarea>
+            <span class="aj-saved" data-grw-saved="b_better">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+            </span>
+          </div>
+          <div class="aj-field">
+            <p class="aj-field__q">What kept turning up in your &ldquo;did anyway&rdquo; reps? What does that say about what matters to you?</p>
+            <p class="aj-field__hint">The things you keep doing despite the noise usually point at your values. If you want to go further, try <a href="/grow-athlete-engaged#values" style="color:var(--yellow);text-decoration:underline;text-underline-offset:3px;">Finding your values</a>.</p>
+            <textarea class="aj-textarea" data-grw="c_pattern" data-gr-q="What my 'did anyway' reps say about what matters to me" data-aj-notrack placeholder="e.g. Going first, over and over. Being brave in front of the group matters to me more than being perfect."></textarea>
+            <span class="aj-saved" data-grw-saved="c_pattern">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TROUBLESHOOTING ========== -->
+  <section class="aj-sec aj-sec--alt" id="trouble">
+    <div class="container">
+      <div class="aj-wrap">
+        <p class="aj-eyebrow">When it&rsquo;s hard</p>
+        <h2 class="aj-h2">When it doesn&rsquo;t<br><em>go to plan.</em></h2>
+        <p class="aj-lead">Nearly everyone hits one of these in the first fortnight. None of them mean you&rsquo;re doing it wrong.</p>
+
+        <div class="tb">
+          <div class="tb__item">
+            <button type="button" class="tb__q" aria-expanded="false"><span class="tb__plus" aria-hidden="true"></span><span>&ldquo;I can&rsquo;t think of anything.&rdquo;</span></button>
+            <div class="tb__a" hidden>
+              <p>That&rsquo;s your attention doing what it&rsquo;s been trained to do: counting passes. It gets easier within a week or two, because you start noticing reps during the day so you can write them down later.</p>
+              <p>For now, <strong>lower the bar further</strong>. You got out of bed. You turned up. You finished the session. Then walk back through your day in order, from waking up to now, and stop at the first thing that counts. The rep you did anyway is often hiding in the worst part of the day.</p>
+            </div>
+          </div>
+          <div class="tb__item">
+            <button type="button" class="tb__q" aria-expanded="false"><span class="tb__plus" aria-hidden="true"></span><span>&ldquo;It feels fake, or a bit cringe.&rdquo;</span></button>
+            <div class="tb__a" hidden>
+              <p>Fair enough. But you&rsquo;re not telling yourself you&rsquo;re brilliant. You&rsquo;re writing down something that happened. If it happened, it isn&rsquo;t fake.</p>
+              <p>If a rep reads like a poster, rewrite it as a clip: <strong>who, where, and what you actually did</strong>. &ldquo;I&rsquo;m a good teammate&rdquo; feels fake. &ldquo;I stayed back ten minutes to feed Sam balls&rdquo; doesn&rsquo;t.</p>
+            </div>
+          </div>
+          <div class="tb__item">
+            <button type="button" class="tb__q" aria-expanded="false"><span class="tb__plus" aria-hidden="true"></span><span>&ldquo;I keep writing about what went wrong.&rdquo;</span></button>
+            <div class="tb__a" hidden>
+              <p>Of course you do. That&rsquo;s the spotlight going back to where it usually sits. Notice it and name it (&ldquo;there&rsquo;s the not good enough story&rdquo;), then go looking for one rep anyway.</p>
+              <p>If the day was genuinely awful, do <a href="/grow-athlete-open#kind">Kind Hands and the Teammate Test</a> first. Then come back for one rep. Just one is a full entry.</p>
+            </div>
+          </div>
+          <div class="tb__item">
+            <button type="button" class="tb__q" aria-expanded="false"><span class="tb__plus" aria-hidden="true"></span><span>&ldquo;I missed a few days.&rdquo;</span></button>
+            <div class="tb__a" hidden>
+              <p>No streaks, remember. Nothing was lost and there&rsquo;s nothing to catch up on. Start again tonight.</p>
+              <p>If you keep forgetting, hook it to something that already happens every day: taking your boots off, plugging your phone in, brushing your teeth. Make it easy to start.</p>
+            </div>
+          </div>
+          <div class="tb__item">
+            <button type="button" class="tb__q" aria-expanded="false"><span class="tb__plus" aria-hidden="true"></span><span>&ldquo;Shouldn&rsquo;t I be focusing on what I need to fix?&rdquo;</span></button>
+            <div class="tb__a" hidden>
+              <p>Yes, and you will. Reviewing mistakes is part of getting better, and you and your coach will keep doing it. This doesn&rsquo;t replace that. It adds the half of the picture that usually gets missed.</p>
+              <p>Athletes who only ever review what went wrong tend to end up with an accurate list of faults and very little belief they can fix them. Seeing what you&rsquo;re already doing well is what gives you the confidence to go after the rest.</p>
+            </div>
+          </div>
+          <div class="tb__item">
+            <button type="button" class="tb__q" aria-expanded="false"><span class="tb__plus" aria-hidden="true"></span><span>&ldquo;Isn&rsquo;t this just a gratitude journal?&rdquo;</span></button>
+            <div class="tb__a" hidden>
+              <p>Partly. One of the three is gratitude. The other two are about <strong>what you did</strong>, which is what builds belief in yourself, and one of those is specifically about what you did while the noise was there. That&rsquo;s the part that comes straight from the rest of your Skills Journal: you don&rsquo;t need to feel ready to act, and acting is what builds the confidence.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CARRY THIS ========== -->
+  <section class="aj-sec">
+    <div class="container">
+      <div class="aj-wrap">
+        <div class="aj-takeaways">
+          <h3>Three Good Reps in six lines</h3>
+          <ul>
+            <li><strong>Attention is a spotlight.</strong> Whatever it counts, it sees.</li>
+            <li><strong>Look for the gorilla on purpose.</strong> Three reps, one savoured, ten minutes.</li>
+            <li><strong>What you did, not who you are.</strong> Write it like a clip.</li>
+            <li><strong>The bar is low on purpose.</strong> &ldquo;I turned up&rdquo; counts.</li>
+            <li><strong>The rep you did anyway</strong> is the one that builds the most.</li>
+            <li><strong>No streaks.</strong> Miss a day, pick it up tonight.</li>
+          </ul>
+        </div>
+
+        <div class="aj-nextnav">
+          <a href="/grow-athlete-aware#zoom">
+            <div class="aj-nextnav__dir">&larr; Moving your attention</div>
+            <div class="aj-nextnav__title">Zoom In, Zoom Out</div>
+          </a>
+          <a href="/grow-athlete-engaged#process" class="aj-nextnav--end">
+            <div class="aj-nextnav__dir">Get off the helicopter &rarr;</div>
+            <div class="aj-nextnav__title">Process Over Podium</div>
+          </a>
+        </div>
+
+        <details class="aj-refs">
+          <summary>Sources for this page</summary>
+          <ol>
+            <li>Simons, D. J., &amp; Chabris, C. F. (1999). Gorillas in our midst: Sustained inattentional blindness for dynamic events. <em>Perception, 28</em>(9), 1059&ndash;1074.</li>
+            <li>Simons, D. J. (2010). Monkeying around with the gorillas in our midst: Familiarity with an inattentional-blindness task does not improve the detection of unexpected events. <em>i-Perception, 1</em>(1), 3&ndash;6. https://doi.org/10.1068/i0386</li>
+            <li>Simons, D. J. (2010). <em>The Monkey Business Illusion</em> [Video]. YouTube.</li>
+            <li>Bandura, A. (1997). <em>Self-efficacy: The exercise of control</em>. W. H. Freeman.</li>
+            <li>Chiviacowsky, S. (2021). The motivational role of feedback in motor learning: Evidence, interpretations, and implications. In M. Bertollo, E. Filho, &amp; P. C. Terry (Eds.), <em>Advancements in Mental Skills Training</em>. Routledge.</li>
+            <li>Chiviacowsky, S., &amp; Wulf, G. (2007). Feedback after good trials enhances learning. <em>Research Quarterly for Exercise and Sport, 78</em>, 40&ndash;47.</li>
+            <li>Chiviacowsky, S., Wulf, G., &amp; Lewthwaite, R. (2012). Self-controlled learning: The importance of protecting perceptions of competence. <em>Frontiers in Psychology, 3</em>, 458.</li>
+            <li>Chiviacowsky, S., &amp; Drews, R. (2014). Effects of generic versus non-generic feedback on motor learning in children. <em>PLoS ONE, 9</em>, e88989.</li>
+            <li>Emmons, R. A., &amp; McCullough, M. E. (2003). Counting blessings versus burdens: An experimental investigation of gratitude and subjective well-being in daily life. <em>Journal of Personality and Social Psychology, 84</em>, 377&ndash;389.</li>
+            <li>Guerrero, M. D., Martin, J. J., &amp; Prokesova, E. (2021). Psychological interventions with Paralympic athletes. In M. Bertollo, E. Filho, &amp; P. C. Terry (Eds.), <em>Advancements in Mental Skills Training</em>. Routledge.</li>
+            <li>Cowden, R. G., Crust, L., Tibbert, S. J., &amp; Jackman, P. C. (2021). Mental toughness development and training in sport. In M. Bertollo, E. Filho, &amp; P. C. Terry (Eds.), <em>Advancements in Mental Skills Training</em>. Routledge.</li>
+            <li>Fournier, J. (2021). Mindfulness and mental preparation. In M. Bertollo, E. Filho, &amp; P. C. Terry (Eds.), <em>Advancements in Mental Skills Training</em>. Routledge.</li>
+            <li>Harris, R. (2022). <em>The Happiness Trap: How to Stop Struggling and Start Living</em> (2nd ed.). Shambhala.</li>
+          </ol>
+        </details>
+
+        <div class="aj-disclaimer">
+          <p>These skills support the work we do together. They don&rsquo;t replace it, and they aren&rsquo;t therapy or a crisis service. If something here brings up more than you expected, bring it to your next session or contact us sooner. Free, confidential support is available 24/7 across Aotearoa: call or text <a href="tel:1737">1737</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom" style="border-top:none;">
+        <p>&copy; 2026 The Performance Act. Private athlete area.</p>
+        <div class="footer__bottom-links">
+          <a href="/grow-athlete">Skills Journal</a>
+          <a href="/grow-athlete-journal">My Journal</a>
+          <a href="/grow-athlete#sources">Sources</a>
+          <a href="/grow-login" data-aj-logout>Log out</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <button class="support-line-btn" id="supportLineBtn" aria-label="NZ support lines">
+    <span class="support-line-btn__dot" aria-hidden="true"></span>
+    Immediate Support
+  </button>
+  <div class="support-line-modal" id="supportLineModal" role="dialog" aria-modal="true" aria-labelledby="supportLineTitle" aria-hidden="true">
+    <div class="support-line-modal__backdrop"></div>
+    <div class="support-line-modal__panel">
+      <button class="support-line-modal__close" id="supportLineClose" aria-label="Close support lines">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <p class="support-line-modal__eyebrow">Aotearoa, New Zealand</p>
+      <h2 class="support-line-modal__title" id="supportLineTitle">Need immediate support?</h2>
+      <p class="support-line-modal__note">The Performance Act is a sport psychology practice, not a crisis or emergency service. If you or someone you care about needs immediate support, please reach out to one of these trusted services. They are free, confidential, and available 24&#8202;/&#8202;7.</p>
+      <ul class="support-line-modal__list" role="list">
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">1737 &mdash; Need to Talk?</p><p class="sln-resource__desc">Free call or text, any time. Trained counsellors, 24&#47;7.</p></div>
+          <a href="tel:1737" class="sln-resource__number">Call or text 1737</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Lifeline NZ</p><p class="sln-resource__desc">Crisis support and suicide prevention, 24&#47;7.</p></div>
+          <a href="tel:0800543354" class="sln-resource__number">0800 543 354</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Youthline</p><p class="sln-resource__desc">For young people. Free call or text 234, 24&#47;7.</p></div>
+          <a href="tel:0800376633" class="sln-resource__number">0800 376 633</a>
+        </li>
+        <li class="sln-resource">
+          <div class="sln-resource__info"><p class="sln-resource__name">Suicide Crisis Helpline</p><p class="sln-resource__desc">0508 TAUTOKO. Support for those in crisis, 24&#47;7.</p></div>
+          <a href="tel:0508828865" class="sln-resource__number">0508 828 865</a>
+        </li>
+      </ul>
+      <p class="support-line-modal__footer">More resources at <a href="https://www.mentalhealth.org.nz/get-help/in-crisis" target="_blank" rel="noopener">Mental Health Foundation NZ</a> and <a href="https://www.depression.org.nz" target="_blank" rel="noopener">depression.org.nz</a>.</p>
+    </div>
+  </div>
+
+  <script src="script.js?v=5"></script>
+
+  <!-- Point today's form at the right day before the engine binds.
+       Daily answers are saved under reps.YYYY-MM-DD.*, and the Sunday
+       look back under reps.wYYYY-MM-DD.* (keyed to the week's Sunday),
+       so every day keeps its own entry and the journal can list them. -->
+  <script>
+  (function () {
+    'use strict';
+    var DAY_NAMES = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    var DAY_SHORT = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    var MON_SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+    function iso(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+    function midnight(d) { return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
+    function addDays(d, n) { return new Date(d.getFullYear(), d.getMonth(), d.getDate() + n); }
+    function parseIso(s) {
+      var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s || '');
+      if (!m) return null;
+      var d = new Date(+m[1], +m[2] - 1, +m[3]);
+      return iso(d) === s ? d : null;
+    }
+    function shortLabel(d) { return DAY_SHORT[d.getDay()] + ' ' + d.getDate() + ' ' + MON_SHORT[d.getMonth()] + ' ' + d.getFullYear(); }
+    function longLabel(d) { return DAY_NAMES[d.getDay()] + ' ' + d.getDate() + ' ' + MONTHS[d.getMonth()]; }
+
+    var today = midnight(new Date());
+    var asked = null;
+    try { asked = new URLSearchParams(window.location.search).get('d'); } catch (e) {}
+    var day = parseIso(asked) || today;
+    if (day > today) day = today;
+
+    var sunday = addDays(day, (7 - day.getDay()) % 7);
+    var D = iso(day);
+    var W = 'w' + iso(sunday);
+    var DAY_TOOL = 'Three Good Reps · ' + shortLabel(day);
+    var WEEK_TOOL = 'Sunday look back · week ending ' + shortLabel(sunday);
+
+    /* Shared with the live view script further down. */
+    window.GR = {
+      day: day, today: today, sunday: sunday, iso: iso, addDays: addDays, parseIso: parseIso,
+      shortLabel: shortLabel, longLabel: longLabel, DAY_SHORT: DAY_SHORT, MON_SHORT: MON_SHORT
+    };
+
+    function wire(attr, savedAttr, prefix, tool) {
+      document.querySelectorAll('[' + attr + ']').forEach(function (el) {
+        var key = 'reps.' + prefix + '.' + el.getAttribute(attr);
+        el.setAttribute('data-aj', key);
+        el.setAttribute('data-aj-tool', tool);
+        el.setAttribute('data-aj-q', el.getAttribute('data-gr-q') || '');
+      });
+      document.querySelectorAll('[' + savedAttr + ']').forEach(function (el) {
+        el.setAttribute('data-aj-saved', 'reps.' + prefix + '.' + el.getAttribute(savedAttr));
+      });
+    }
+    wire('data-gr', 'data-gr-saved', D, DAY_TOOL);
+    wire('data-grw', 'data-grw-saved', W, WEEK_TOOL);
+    document.querySelectorAll('[data-gr-chips]').forEach(function (el) {
+      el.setAttribute('data-aj-chips', 'reps.' + D + '.' + el.getAttribute('data-gr-chips'));
+      el.setAttribute('data-aj-tool', DAY_TOOL);
+      el.setAttribute('data-aj-q', el.getAttribute('data-gr-q') || '');
+    });
+
+    /* The day bar */
+    var diff = Math.round((today - day) / 86400000);
+    var kEl = document.getElementById('grDateK');
+    var vEl = document.getElementById('grDateV');
+    if (kEl) kEl.textContent = diff === 0 ? 'Today' : (diff === 1 ? 'Yesterday' : diff + ' days ago');
+    if (vEl) vEl.textContent = longLabel(day);
+    var prev = document.getElementById('grPrev');
+    var next = document.getElementById('grNext');
+    if (prev) prev.href = '/grow-athlete-reps?d=' + iso(addDays(day, -1)) + '#today';
+    if (next) {
+      if (diff === 0) { next.setAttribute('aria-disabled', 'true'); next.removeAttribute('href'); next.setAttribute('tabindex', '-1'); }
+      else next.href = diff === 1 ? '/grow-athlete-reps#today' : '/grow-athlete-reps?d=' + iso(addDays(day, 1)) + '#today';
+    }
+    var back = document.getElementById('grBackToday');
+    if (back && diff > 1) back.hidden = false;
+
+    var wt = document.getElementById('grWeekTitle');
+    if (wt) wt.textContent = 'Your week: ' + DAY_SHORT[1] + ' ' + addDays(sunday, -6).getDate() + ' ' + MON_SHORT[addDays(sunday, -6).getMonth()] + ' to Sun ' + sunday.getDate() + ' ' + MON_SHORT[sunday.getMonth()];
+  })();
+  </script>
+
+  <script src="grow-athlete.js?v=6"></script>
+
+  <script>
+  /* Accordions: troubleshooting */
+  (function () {
+    'use strict';
+    document.querySelectorAll('.tb__item').forEach(function (item) {
+      var q = item.querySelector('.tb__q');
+      var a = item.querySelector('.tb__a');
+      if (!q || !a) return;
+      q.addEventListener('click', function () {
+        var open = q.getAttribute('aria-expanded') === 'true';
+        q.setAttribute('aria-expanded', open ? 'false' : 'true');
+        a.hidden = open;
+      });
+    });
+  })();
+
+  /* No spoilers: the explanation stays hidden until they've watched */
+  (function () {
+    'use strict';
+    var btn = document.getElementById('grRevealBtn');
+    var box = document.getElementById('grReveal');
+    if (!btn || !box) return;
+    var hint = document.querySelector('.gr-noscroll');
+    btn.addEventListener('click', function () {
+      box.hidden = false;
+      btn.setAttribute('aria-expanded', 'true');
+      btn.hidden = true;
+      if (hint) hint.hidden = true;
+      if (box.scrollIntoView) box.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    });
+  })();
+
+  /* Your evidence and the week view, read straight from the journal store */
+  (function () {
+    'use strict';
+    var GR = window.GR;
+    if (!GR) return;
+    var NS = 'pact_aj_v1_';
+    var esc = (window.AJ && window.AJ.esc) || function (s) {
+      return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+      });
+    };
+    var CHEV = '<svg class="gr-hist__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+
+    function readDays() {
+      var days = {};
+      try {
+        for (var i = 0; i < localStorage.length; i++) {
+          var k = localStorage.key(i);
+          if (!k || k.indexOf(NS + 'reps.') !== 0) continue;
+          var parts = k.slice(NS.length).split('.');
+          if (parts.length !== 3 || !GR.parseIso(parts[1])) continue;
+          var v = (localStorage.getItem(k) || '').trim();
+          if (!v) continue;
+          if (!days[parts[1]]) days[parts[1]] = {};
+          days[parts[1]][parts[2]] = v;
+        }
+      } catch (e) {}
+      return days;
+    }
+
+    function has(e, f) { return !!(e && e[f]); }
+
+    function dots(e) {
+      return '<span class="gr-dots" aria-hidden="true">' +
+        '<span class="' + (has(e, 'b_again') ? 'is-again' : '') + '"></span>' +
+        '<span class="' + (has(e, 'e_anyway') ? 'is-anyway' : '') + '"></span>' +
+        '<span class="' + (has(e, 'f_given') ? 'is-given' : '') + '"></span>' +
+      '</span>';
+    }
+
+    function row(label, cls, value) {
+      if (!value) return '';
+      return '<div class="gr-hist__row"><div class="gr-hist__k ' + cls + '">' + label + '</div>' +
+             '<div class="gr-hist__v">' + value + '</div></div>';
+    }
+
+    function repCount(e) {
+      return ['b_again', 'e_anyway', 'f_given'].filter(function (f) { return has(e, f); }).length;
+    }
+
+    function renderEvidence(days) {
+      var dates = Object.keys(days).sort().reverse();
+      var again = 0, anyway = 0, given = 0, active = 0;
+      dates.forEach(function (d) {
+        var e = days[d];
+        if (has(e, 'b_again')) again++;
+        if (has(e, 'e_anyway')) anyway++;
+        if (has(e, 'f_given')) given++;
+        if (repCount(e)) active++;
+      });
+      var set = function (id, n) { var el = document.getElementById(id); if (el) el.textContent = n; };
+      set('grCountAgain', again);
+      set('grCountAnyway', anyway);
+      set('grCountGiven', given);
+      var total = again + anyway + given;
+      var t = document.getElementById('grTotal');
+      if (t) {
+        t.innerHTML = total
+          ? '<strong>' + total + (total === 1 ? ' rep' : ' reps') + '</strong> banked across <strong>' + active + (active === 1 ? ' day' : ' days') + '</strong>. Tap a day to read it back.'
+          : '';
+      }
+
+      var host = document.getElementById('grHistory');
+      if (!host) return;
+      var shown = dates.filter(function (d) { return repCount(days[d]) || has(days[d], 'a_land'); }).slice(0, 60);
+      if (!shown.length) {
+        host.innerHTML = '<p class="gr-empty">Nothing here yet. Your first reps will show up here as soon as you write them.</p>';
+        return;
+      }
+      var openIso = GR.iso(GR.day);
+      host.innerHTML = shown.map(function (d) {
+        var e = days[d];
+        var date = GR.parseIso(d);
+        var diff = Math.round((GR.today - date) / 86400000);
+        var when = diff === 0 ? 'Today' : (diff === 1 ? 'Yesterday' : '');
+        var n = repCount(e);
+        var anyway = e.e_anyway ? esc(e.e_anyway) + (e.d_noise ? '\n<em>Noise: ' + esc(e.d_noise) + '</em>' : '') : '';
+        var again = e.b_again ? esc(e.b_again) + (e.c_took ? '\n<em>It took: ' + esc(e.c_took) + '</em>' : '') : '';
+        var given = e.f_given ? esc(e.f_given) + (e.g_tell ? '\n<em>' + esc(e.g_tell) + '</em>' : '') : '';
+        var savour = e.h_savour ? esc(e.h_savour) + (e.i_noticed ? '\n<em>' + esc(e.i_noticed) + '</em>' : '') : '';
+        var editHref = diff === 0 ? '/grow-athlete-reps#today' : '/grow-athlete-reps?d=' + d + '#today';
+        return '<details class="gr-hist"' + (d === openIso ? ' open' : '') + '>' +
+          '<summary><span class="gr-hist__day">' + esc(GR.shortLabel(date)) +
+            '<small>' + (when ? when + ' · ' : '') + n + (n === 1 ? ' rep' : ' reps') + '</small></span>' +
+            dots(e) + CHEV + '</summary>' +
+          '<div class="gr-hist__body">' +
+            row('Noticing', '', e.a_land ? esc(e.a_land) : '') +
+            row('See again', 'gr-hist__k--again', again) +
+            row('Did anyway', 'gr-hist__k--anyway', anyway) +
+            row('Was given', 'gr-hist__k--given', given) +
+            row('Savoured', 'gr-hist__k--savour', savour) +
+            '<p class="gr-hist__edit"><a href="' + editHref + '">' + (d === openIso ? 'You&rsquo;re editing this day above' : 'Open this day to edit') + '</a></p>' +
+          '</div></details>';
+      }).join('');
+    }
+
+    function renderWeek(days) {
+      var host = document.getElementById('grWeek');
+      if (!host) return;
+      var html = '';
+      for (var i = 6; i >= 0; i--) {
+        var date = GR.addDays(GR.sunday, -i);
+        var d = GR.iso(date);
+        var e = days[d] || {};
+        var items = [];
+        if (e.b_again) items.push('<li>' + esc(e.b_again) + '</li>');
+        if (e.e_anyway) items.push('<li class="is-anyway">' + esc(e.e_anyway) + '</li>');
+        if (e.f_given) items.push('<li class="is-given">' + esc(e.f_given) + '</li>');
+        var future = date > GR.today;
+        html += '<div class="gr-week__day"><div class="gr-week__d">' + GR.DAY_SHORT[date.getDay()] +
+          '<small>' + date.getDate() + ' ' + GR.MON_SHORT[date.getMonth()] + '</small></div>' +
+          (items.length ? '<ul class="gr-week__list">' + items.join('') + '</ul>'
+                        : '<div class="gr-week__none">' + (future ? 'Still to come' : 'No reps logged') + '</div>') +
+          '</div>';
+      }
+      host.innerHTML = html;
+    }
+
+    function paint() {
+      var days = readDays();
+      renderEvidence(days);
+      renderWeek(days);
+    }
+
+    /* The engine saves 350ms after typing stops, and straight away on
+       chip clicks, so repaint just after either. */
+    var t;
+    function soon(ms) { clearTimeout(t); t = setTimeout(paint, ms); }
+    document.addEventListener('input', function () { soon(500); });
+    document.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('.aj-chip')) soon(80); });
+    window.addEventListener('storage', function () { soon(50); });
+    paint();
+  })();
+  </script>
+</body>
+</html>

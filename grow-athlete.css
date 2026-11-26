@@ -252,6 +252,17 @@
 .aj-pillar--ace .aj-pillar__word { color: #fff; }
 .aj-pillar--ace .aj-pillar__cta { color: var(--yellow); }
 
+/* Three Good Reps is a daily practice built from three kinds of rep,
+   so its top edge carries the three rep colours: yellow (see again),
+   orange (did anyway) and green (was given). */
+.aj-pillar--reps { position: relative; border-top-color: transparent; }
+.aj-pillar--reps::before {
+  content: ''; position: absolute; top: -4px; left: -1px; right: -1px; height: 4px;
+  background: linear-gradient(90deg, #FFE500 0 33.33%, #FF9D4D 33.33% 66.66%, #8ED88E 66.66% 100%);
+}
+.aj-pillar--reps .aj-pillar__word { color: #fff; }
+.aj-pillar--reps .aj-pillar__cta { color: var(--yellow); }
+
 /* ---------------------------------------------------------
    5. TOOL CARD — the core repeating unit
    --------------------------------------------------------- */
